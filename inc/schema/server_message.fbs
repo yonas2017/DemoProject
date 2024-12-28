@@ -1,0 +1,8 @@
+
+table server_message_t {
+  job_info: ubyte;
+  job_text_length: uint;
+  job_tekst: [byte];
+}
+
+root_type server_message_t;

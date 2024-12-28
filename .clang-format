@@ -1,0 +1,32 @@
+# .clang-format for a C project
+
+# Base style
+BasedOnStyle: Google
+
+# Indentation settings
+IndentWidth: 4
+TabWidth: 4
+UseTab: Never
+
+# Line breaks
+BreakBeforeBraces: Allman
+ColumnLimit: 80
+
+# Pointer alignment (place the * next to the type)
+PointerAlignment: Left
+
+# Formatting for C-style casts
+SpaceAfterCStyleCast: false
+
+# Parentheses formatting
+SpacesInParentheses: false
+
+# Allow short functions and if statements to be on a single line
+AllowShortFunctionsOnASingleLine: true
+AllowShortIfStatementsOnASingleLine: true
+
+# Align consecutive declarations
+AlignConsecutiveDeclarations: true
+
+# Max empty lines between functions
+MaxEmptyLinesToKeep: 1

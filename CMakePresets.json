@@ -1,0 +1,65 @@
+{
+  "version": 10,
+  "cmakeMinimumRequired": {
+    "major": 3,
+    "minor": 31,
+    "patch": 0
+  },
+  "configurePresets": [
+    {
+      "name": "debug",
+      "description": "Debug build using Ninja generator",
+      "hidden": false,
+      "generator": "Ninja",
+      "binaryDir": "${sourceDir}/build/debug",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Debug",
+        "CMAKE_INSTALL_PREFIX": "${sourceDir}/build/install/debug",
+        "CMAKE_EXPORT_COMPILE_COMMANDS": "YES",
+        "CMAKE_C_STANDARD": "99",
+        "CMAKE_CXX_STANDARD": "17",
+        "CMAKE_C_FLAGS": "-Wall -Wextra -Werror -g -O0",
+        "CMAKE_CXX_FLAGS": "-Wall -Wextra -Werror -g -O0",
+        "CMAKE_VERBOSE_MAKEFILE": "TRUE"
+      }
+    },
+    {
+      "name": "release",
+      "description": "Release build using Ninja generator",
+      "hidden": false,
+      "generator": "Ninja",
+      "binaryDir": "${sourceDir}/build/release",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Release",
+        "CMAKE_INSTALL_PREFIX": "${sourceDir}/build/install/release",
+        "CMAKE_EXPORT_COMPILE_COMMANDS": "YES",
+        "CMAKE_C_STANDARD": "99",
+        "CMAKE_CXX_STANDARD": "17",
+        "CMAKE_C_FLAGS": "-Wall -Wextra -Werror -O3 -DNDEBUG",
+        "CMAKE_CXX_FLAGS": "-Wall -Wextra -Werror -O3 -DNDEBUG",
+        "CMAKE_VERBOSE_MAKEFILE": "TRUE"
+      }
+    }
+  ],
+  "buildPresets": [
+    {
+      "name": "debug",
+      "configurePreset": "debug",
+      "verbose": true
+    },
+    {
+      "name": "release",
+      "configurePreset": "release",
+      "verbose": true
+    }
+  ],
+  "packagePresets": [
+    {
+      "name": "release",
+      "configurePreset": "release",
+      "packageVersion": "1.0.0",
+      "packageName": "DemoProject",
+      "generators": ["TGZ"]
+    }
+  ]
+}

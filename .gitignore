@@ -1,0 +1,35 @@
+# Build directories
+/build/
+/out/
+/bin/
+/lib/
+/CMakeFiles/
+/CMakeCache.txt
+/Makefile
+/*.cmake
+
+# IDE specific files
+/.idea/
+/.vscode/
+/*.swp
+*.sublime-workspace
+*.sublime-project
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Compiled object files
+*.o
+*.a
+*.so
+*.dylib
+*.exe
+*.out
+
+# Ignore cmake generated files
+*.cmake
+CMakeCache.txt
+CMakeFiles/
+CMakeUserPresets.json

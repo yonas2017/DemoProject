@@ -1,0 +1,14 @@
+
+enum ClientMessageType: ubyte {
+  GET_JOB = 0, 
+  NORMAL_TERMINATOIN, 
+  FAIL_TERMINATION, QUIT_PROGRAM 
+}
+
+table client_message_t {
+  msg_type: ClientMessageType;
+  all_jobs: bool;
+  num_jobs: ushort;
+}
+
+root_type client_message_t;
