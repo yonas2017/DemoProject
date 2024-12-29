@@ -1,0 +1,799 @@
+\doxysection{alignment\+\_\+test\+\_\+generated.\+h}
+\hypertarget{alignment__test__generated_8h_source}{}\label{alignment__test__generated_8h_source}\index{flatbuffers/tests/alignment\_test\_generated.h@{flatbuffers/tests/alignment\_test\_generated.h}}
+\mbox{\hyperlink{alignment__test__generated_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//\ automatically\ generated\ by\ the\ FlatBuffers\ compiler,\ do\ not\ modify}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#ifndef\ FLATBUFFERS\_GENERATED\_ALIGNMENTTEST\_H\_}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#define\ FLATBUFFERS\_GENERATED\_ALIGNMENTTEST\_H\_}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{flatbuffers_8h}{flatbuffers/flatbuffers.h}}"{}}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{comment}{//\ Ensure\ the\ included\ flatbuffers.h\ is\ the\ same\ version\ as\ when\ this\ file\ was}}
+\DoxyCodeLine{00010\ \textcolor{comment}{//\ generated,\ otherwise\ it\ may\ not\ be\ compatible.}}
+\DoxyCodeLine{00011\ \textcolor{keyword}{static\_assert}(FLATBUFFERS\_VERSION\_MAJOR\ ==\ 24\ \&\&}
+\DoxyCodeLine{00012\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ FLATBUFFERS\_VERSION\_MINOR\ ==\ 12\ \&\&}
+\DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ FLATBUFFERS\_VERSION\_REVISION\ ==\ 23,}
+\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}Non-\/compatible\ flatbuffers\ version\ included"{}});}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \textcolor{keyword}{struct\ }BadAlignmentSmall;}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \textcolor{keyword}{struct\ }BadAlignmentLarge;}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{keyword}{struct\ }OuterLarge;}
+\DoxyCodeLine{00021\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structOuterLargeBuilder}{OuterLargeBuilder}};}
+\DoxyCodeLine{00022\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structOuterLargeT}{OuterLargeT}};}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \textcolor{keyword}{struct\ }BadAlignmentRoot;}
+\DoxyCodeLine{00025\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structBadAlignmentRootBuilder}{BadAlignmentRootBuilder}};}
+\DoxyCodeLine{00026\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structBadAlignmentRootT}{BadAlignmentRootT}};}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \textcolor{keyword}{struct\ }EvenSmallStruct;}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \textcolor{keyword}{struct\ }OddSmallStruct;}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \textcolor{keyword}{struct\ }SmallStructs;}
+\DoxyCodeLine{00033\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structSmallStructsBuilder}{SmallStructsBuilder}};}
+\DoxyCodeLine{00034\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structSmallStructsT}{SmallStructsT}};}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{alignment__test__generated_8h_ad1fa9de04c36fa6d21bcb05cebb648e7}{operator==}}(\textcolor{keyword}{const}\ BadAlignmentSmall\ \&lhs,\ \textcolor{keyword}{const}\ BadAlignmentSmall\ \&rhs);}
+\DoxyCodeLine{00037\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{alignment__test__generated_8h_a82cfd314e4154ba2119005eff00b1ec5}{operator!=}}(\textcolor{keyword}{const}\ BadAlignmentSmall\ \&lhs,\ \textcolor{keyword}{const}\ BadAlignmentSmall\ \&rhs);}
+\DoxyCodeLine{00038\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{alignment__test__generated_8h_ad1fa9de04c36fa6d21bcb05cebb648e7}{operator==}}(\textcolor{keyword}{const}\ BadAlignmentLarge\ \&lhs,\ \textcolor{keyword}{const}\ BadAlignmentLarge\ \&rhs);}
+\DoxyCodeLine{00039\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{alignment__test__generated_8h_a82cfd314e4154ba2119005eff00b1ec5}{operator!=}}(\textcolor{keyword}{const}\ BadAlignmentLarge\ \&lhs,\ \textcolor{keyword}{const}\ BadAlignmentLarge\ \&rhs);}
+\DoxyCodeLine{00040\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{alignment__test__generated_8h_ad1fa9de04c36fa6d21bcb05cebb648e7}{operator==}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{structOuterLargeT}{OuterLargeT}}\ \&lhs,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{structOuterLargeT}{OuterLargeT}}\ \&rhs);}
+\DoxyCodeLine{00041\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{alignment__test__generated_8h_a82cfd314e4154ba2119005eff00b1ec5}{operator!=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{structOuterLargeT}{OuterLargeT}}\ \&lhs,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{structOuterLargeT}{OuterLargeT}}\ \&rhs);}
+\DoxyCodeLine{00042\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{alignment__test__generated_8h_ad1fa9de04c36fa6d21bcb05cebb648e7}{operator==}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{structBadAlignmentRootT}{BadAlignmentRootT}}\ \&lhs,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{structBadAlignmentRootT}{BadAlignmentRootT}}\ \&rhs);}
+\DoxyCodeLine{00043\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{alignment__test__generated_8h_a82cfd314e4154ba2119005eff00b1ec5}{operator!=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{structBadAlignmentRootT}{BadAlignmentRootT}}\ \&lhs,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{structBadAlignmentRootT}{BadAlignmentRootT}}\ \&rhs);}
+\DoxyCodeLine{00044\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{alignment__test__generated_8h_ad1fa9de04c36fa6d21bcb05cebb648e7}{operator==}}(\textcolor{keyword}{const}\ EvenSmallStruct\ \&lhs,\ \textcolor{keyword}{const}\ EvenSmallStruct\ \&rhs);}
+\DoxyCodeLine{00045\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{alignment__test__generated_8h_a82cfd314e4154ba2119005eff00b1ec5}{operator!=}}(\textcolor{keyword}{const}\ EvenSmallStruct\ \&lhs,\ \textcolor{keyword}{const}\ EvenSmallStruct\ \&rhs);}
+\DoxyCodeLine{00046\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{alignment__test__generated_8h_ad1fa9de04c36fa6d21bcb05cebb648e7}{operator==}}(\textcolor{keyword}{const}\ OddSmallStruct\ \&lhs,\ \textcolor{keyword}{const}\ OddSmallStruct\ \&rhs);}
+\DoxyCodeLine{00047\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{alignment__test__generated_8h_a82cfd314e4154ba2119005eff00b1ec5}{operator!=}}(\textcolor{keyword}{const}\ OddSmallStruct\ \&lhs,\ \textcolor{keyword}{const}\ OddSmallStruct\ \&rhs);}
+\DoxyCodeLine{00048\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{alignment__test__generated_8h_ad1fa9de04c36fa6d21bcb05cebb648e7}{operator==}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{structSmallStructsT}{SmallStructsT}}\ \&lhs,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{structSmallStructsT}{SmallStructsT}}\ \&rhs);}
+\DoxyCodeLine{00049\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{alignment__test__generated_8h_a82cfd314e4154ba2119005eff00b1ec5}{operator!=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{structSmallStructsT}{SmallStructsT}}\ \&lhs,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{structSmallStructsT}{SmallStructsT}}\ \&rhs);}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \textcolor{keyword}{inline}\ const\ ::flatbuffers::TypeTable\ *\mbox{\hyperlink{alignment__test__generated_8h_aaae478127f2cc3d4391dfbce458f86bf}{BadAlignmentSmallTypeTable}}();}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \textcolor{keyword}{inline}\ const\ ::flatbuffers::TypeTable\ *\mbox{\hyperlink{alignment__test__generated_8h_ad8b10df81bc9e22f187c86fa78e0ff04}{BadAlignmentLargeTypeTable}}();}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \textcolor{keyword}{inline}\ const\ ::flatbuffers::TypeTable\ *\mbox{\hyperlink{alignment__test__generated_8h_afb7d90902e4581783d414dce17ca4977}{OuterLargeTypeTable}}();}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ \textcolor{keyword}{inline}\ const\ ::flatbuffers::TypeTable\ *\mbox{\hyperlink{alignment__test__generated_8h_aa8b06dd2331d5e68f3e9bf405215f6fc}{BadAlignmentRootTypeTable}}();}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \textcolor{keyword}{inline}\ const\ ::flatbuffers::TypeTable\ *\mbox{\hyperlink{alignment__test__generated_8h_a7e79ebe9db856998e7ee4940638fe6f0}{EvenSmallStructTypeTable}}();}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ \textcolor{keyword}{inline}\ const\ ::flatbuffers::TypeTable\ *\mbox{\hyperlink{alignment__test__generated_8h_a1be700897f51819eb73046017d7d743f}{OddSmallStructTypeTable}}();}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00063\ \textcolor{keyword}{inline}\ const\ ::flatbuffers::TypeTable\ *\mbox{\hyperlink{alignment__test__generated_8h_afe83bf5770fbd3bfc5c730f3964814f9}{SmallStructsTypeTable}}();}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ \mbox{\hyperlink{alignment__test__generated_8h_acb9e699588b1f4cace94b66a72656cfc}{FLATBUFFERS\_MANUALLY\_ALIGNED\_STRUCT}}(4)\ BadAlignmentSmall\ \mbox{\hyperlink{structFLATBUFFERS__FINAL__CLASS}{FLATBUFFERS\_FINAL\_CLASS}}\ \{}
+\DoxyCodeLine{00066\ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00067\ \ \ uint32\_t\ var\_0\_;}
+\DoxyCodeLine{00068\ \ \ uint32\_t\ var\_1\_;}
+\DoxyCodeLine{00069\ \ \ uint32\_t\ var\_2\_;}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00071\ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00072\ \ \ \textcolor{keyword}{static}\ const\ ::flatbuffers::TypeTable\ *MiniReflectTypeTable()\ \{}
+\DoxyCodeLine{00073\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{alignment__test__generated_8h_aaae478127f2cc3d4391dfbce458f86bf}{BadAlignmentSmallTypeTable}}();}
+\DoxyCodeLine{00074\ \ \ \}}
+\DoxyCodeLine{00075\ \ \ BadAlignmentSmall()}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ :\ var\_0\_(0),}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ var\_1\_(0),}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ var\_2\_(0)\ \{}
+\DoxyCodeLine{00079\ \ \ \}}
+\DoxyCodeLine{00080\ \ \ BadAlignmentSmall(uint32\_t\ \_var\_0,\ uint32\_t\ \_var\_1,\ uint32\_t\ \_var\_2)}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ :\ var\_0\_(::flatbuffers::EndianScalar(\_var\_0)),}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ var\_1\_(::flatbuffers::EndianScalar(\_var\_1)),}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ var\_2\_(::flatbuffers::EndianScalar(\_var\_2))\ \{}
+\DoxyCodeLine{00084\ \ \ \}}
+\DoxyCodeLine{00085\ \ \ uint32\_t\ var\_0()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00086\ \ \ \ \ return\ ::flatbuffers::EndianScalar(var\_0\_);}
+\DoxyCodeLine{00087\ \ \ \}}
+\DoxyCodeLine{00088\ \ \ \textcolor{keywordtype}{void}\ mutate\_var\_0(uint32\_t\ \_var\_0)\ \{}
+\DoxyCodeLine{00089\ \ \ \ \ ::flatbuffers::WriteScalar(\&var\_0\_,\ \_var\_0);}
+\DoxyCodeLine{00090\ \ \ \}}
+\DoxyCodeLine{00091\ \ \ uint32\_t\ var\_1()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00092\ \ \ \ \ return\ ::flatbuffers::EndianScalar(var\_1\_);}
+\DoxyCodeLine{00093\ \ \ \}}
+\DoxyCodeLine{00094\ \ \ \textcolor{keywordtype}{void}\ mutate\_var\_1(uint32\_t\ \_var\_1)\ \{}
+\DoxyCodeLine{00095\ \ \ \ \ ::flatbuffers::WriteScalar(\&var\_1\_,\ \_var\_1);}
+\DoxyCodeLine{00096\ \ \ \}}
+\DoxyCodeLine{00097\ \ \ uint32\_t\ var\_2()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00098\ \ \ \ \ return\ ::flatbuffers::EndianScalar(var\_2\_);}
+\DoxyCodeLine{00099\ \ \ \}}
+\DoxyCodeLine{00100\ \ \ \textcolor{keywordtype}{void}\ mutate\_var\_2(uint32\_t\ \_var\_2)\ \{}
+\DoxyCodeLine{00101\ \ \ \ \ ::flatbuffers::WriteScalar(\&var\_2\_,\ \_var\_2);}
+\DoxyCodeLine{00102\ \ \ \}}
+\DoxyCodeLine{00103\ \};}
+\DoxyCodeLine{00104\ \mbox{\hyperlink{alignment__test__generated_8h_ac2f06a303477bf60003d25db6aa108df}{FLATBUFFERS\_STRUCT\_END}}(BadAlignmentSmall,\ 12);}
+\DoxyCodeLine{00105\ }
+\DoxyCodeLine{00106\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{alignment__test__generated_8h_ad1fa9de04c36fa6d21bcb05cebb648e7}{operator==}}(\textcolor{keyword}{const}\ BadAlignmentSmall\ \&lhs,\ \textcolor{keyword}{const}\ BadAlignmentSmall\ \&rhs)\ \{}
+\DoxyCodeLine{00107\ \ \ \textcolor{keywordflow}{return}}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ (lhs.var\_0()\ ==\ rhs.var\_0())\ \&\&}
+\DoxyCodeLine{00109\ \ \ \ \ \ \ (lhs.var\_1()\ ==\ rhs.var\_1())\ \&\&}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ (lhs.var\_2()\ ==\ rhs.var\_2());}
+\DoxyCodeLine{00111\ \}}
+\DoxyCodeLine{00112\ }
+\DoxyCodeLine{00113\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{alignment__test__generated_8h_a82cfd314e4154ba2119005eff00b1ec5}{operator!=}}(\textcolor{keyword}{const}\ BadAlignmentSmall\ \&lhs,\ \textcolor{keyword}{const}\ BadAlignmentSmall\ \&rhs)\ \{}
+\DoxyCodeLine{00114\ \ \ \ \ \textcolor{keywordflow}{return}\ !(lhs\ ==\ rhs);}
+\DoxyCodeLine{00115\ \}}
+\DoxyCodeLine{00116\ }
+\DoxyCodeLine{00117\ }
+\DoxyCodeLine{00118\ \mbox{\hyperlink{alignment__test__generated_8h_acb9e699588b1f4cace94b66a72656cfc}{FLATBUFFERS\_MANUALLY\_ALIGNED\_STRUCT}}(8)\ BadAlignmentLarge\ \mbox{\hyperlink{structFLATBUFFERS__FINAL__CLASS}{FLATBUFFERS\_FINAL\_CLASS}}\ \{}
+\DoxyCodeLine{00119\ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00120\ \ \ uint64\_t\ var\_0\_;}
+\DoxyCodeLine{00121\ }
+\DoxyCodeLine{00122\ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00123\ \ \ \textcolor{keyword}{static}\ const\ ::flatbuffers::TypeTable\ *MiniReflectTypeTable()\ \{}
+\DoxyCodeLine{00124\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{alignment__test__generated_8h_ad8b10df81bc9e22f187c86fa78e0ff04}{BadAlignmentLargeTypeTable}}();}
+\DoxyCodeLine{00125\ \ \ \}}
+\DoxyCodeLine{00126\ \ \ BadAlignmentLarge()}
+\DoxyCodeLine{00127\ \ \ \ \ \ \ :\ var\_0\_(0)\ \{}
+\DoxyCodeLine{00128\ \ \ \}}
+\DoxyCodeLine{00129\ \ \ BadAlignmentLarge(uint64\_t\ \_var\_0)}
+\DoxyCodeLine{00130\ \ \ \ \ \ \ :\ var\_0\_(::flatbuffers::EndianScalar(\_var\_0))\ \{}
+\DoxyCodeLine{00131\ \ \ \}}
+\DoxyCodeLine{00132\ \ \ uint64\_t\ var\_0()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00133\ \ \ \ \ return\ ::flatbuffers::EndianScalar(var\_0\_);}
+\DoxyCodeLine{00134\ \ \ \}}
+\DoxyCodeLine{00135\ \ \ \textcolor{keywordtype}{void}\ mutate\_var\_0(uint64\_t\ \_var\_0)\ \{}
+\DoxyCodeLine{00136\ \ \ \ \ ::flatbuffers::WriteScalar(\&var\_0\_,\ \_var\_0);}
+\DoxyCodeLine{00137\ \ \ \}}
+\DoxyCodeLine{00138\ \};}
+\DoxyCodeLine{00139\ \mbox{\hyperlink{alignment__test__generated_8h_ac2f06a303477bf60003d25db6aa108df}{FLATBUFFERS\_STRUCT\_END}}(BadAlignmentLarge,\ 8);}
+\DoxyCodeLine{00140\ }
+\DoxyCodeLine{00141\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{alignment__test__generated_8h_ad1fa9de04c36fa6d21bcb05cebb648e7}{operator==}}(\textcolor{keyword}{const}\ BadAlignmentLarge\ \&lhs,\ \textcolor{keyword}{const}\ BadAlignmentLarge\ \&rhs)\ \{}
+\DoxyCodeLine{00142\ \ \ \textcolor{keywordflow}{return}}
+\DoxyCodeLine{00143\ \ \ \ \ \ \ (lhs.var\_0()\ ==\ rhs.var\_0());}
+\DoxyCodeLine{00144\ \}}
+\DoxyCodeLine{00145\ }
+\DoxyCodeLine{00146\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{alignment__test__generated_8h_a82cfd314e4154ba2119005eff00b1ec5}{operator!=}}(\textcolor{keyword}{const}\ BadAlignmentLarge\ \&lhs,\ \textcolor{keyword}{const}\ BadAlignmentLarge\ \&rhs)\ \{}
+\DoxyCodeLine{00147\ \ \ \ \ \textcolor{keywordflow}{return}\ !(lhs\ ==\ rhs);}
+\DoxyCodeLine{00148\ \}}
+\DoxyCodeLine{00149\ }
+\DoxyCodeLine{00150\ }
+\DoxyCodeLine{00151\ \mbox{\hyperlink{alignment__test__generated_8h_acb9e699588b1f4cace94b66a72656cfc}{FLATBUFFERS\_MANUALLY\_ALIGNED\_STRUCT}}(1)\ EvenSmallStruct\ \mbox{\hyperlink{structFLATBUFFERS__FINAL__CLASS}{FLATBUFFERS\_FINAL\_CLASS}}\ \{}
+\DoxyCodeLine{00152\ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00153\ \ \ uint8\_t\ var\_0\_;}
+\DoxyCodeLine{00154\ \ \ uint8\_t\ var\_1\_;}
+\DoxyCodeLine{00155\ }
+\DoxyCodeLine{00156\ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00157\ \ \ \textcolor{keyword}{static}\ const\ ::flatbuffers::TypeTable\ *MiniReflectTypeTable()\ \{}
+\DoxyCodeLine{00158\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{alignment__test__generated_8h_a7e79ebe9db856998e7ee4940638fe6f0}{EvenSmallStructTypeTable}}();}
+\DoxyCodeLine{00159\ \ \ \}}
+\DoxyCodeLine{00160\ \ \ EvenSmallStruct()}
+\DoxyCodeLine{00161\ \ \ \ \ \ \ :\ var\_0\_(0),}
+\DoxyCodeLine{00162\ \ \ \ \ \ \ \ \ var\_1\_(0)\ \{}
+\DoxyCodeLine{00163\ \ \ \}}
+\DoxyCodeLine{00164\ \ \ EvenSmallStruct(uint8\_t\ \_var\_0,\ uint8\_t\ \_var\_1)}
+\DoxyCodeLine{00165\ \ \ \ \ \ \ :\ var\_0\_(::flatbuffers::EndianScalar(\_var\_0)),}
+\DoxyCodeLine{00166\ \ \ \ \ \ \ \ \ var\_1\_(::flatbuffers::EndianScalar(\_var\_1))\ \{}
+\DoxyCodeLine{00167\ \ \ \}}
+\DoxyCodeLine{00168\ \ \ uint8\_t\ var\_0()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00169\ \ \ \ \ return\ ::flatbuffers::EndianScalar(var\_0\_);}
+\DoxyCodeLine{00170\ \ \ \}}
+\DoxyCodeLine{00171\ \ \ \textcolor{keywordtype}{void}\ mutate\_var\_0(uint8\_t\ \_var\_0)\ \{}
+\DoxyCodeLine{00172\ \ \ \ \ ::flatbuffers::WriteScalar(\&var\_0\_,\ \_var\_0);}
+\DoxyCodeLine{00173\ \ \ \}}
+\DoxyCodeLine{00174\ \ \ uint8\_t\ var\_1()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00175\ \ \ \ \ return\ ::flatbuffers::EndianScalar(var\_1\_);}
+\DoxyCodeLine{00176\ \ \ \}}
+\DoxyCodeLine{00177\ \ \ \textcolor{keywordtype}{void}\ mutate\_var\_1(uint8\_t\ \_var\_1)\ \{}
+\DoxyCodeLine{00178\ \ \ \ \ ::flatbuffers::WriteScalar(\&var\_1\_,\ \_var\_1);}
+\DoxyCodeLine{00179\ \ \ \}}
+\DoxyCodeLine{00180\ \};}
+\DoxyCodeLine{00181\ \mbox{\hyperlink{alignment__test__generated_8h_ac2f06a303477bf60003d25db6aa108df}{FLATBUFFERS\_STRUCT\_END}}(EvenSmallStruct,\ 2);}
+\DoxyCodeLine{00182\ }
+\DoxyCodeLine{00183\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{alignment__test__generated_8h_ad1fa9de04c36fa6d21bcb05cebb648e7}{operator==}}(\textcolor{keyword}{const}\ EvenSmallStruct\ \&lhs,\ \textcolor{keyword}{const}\ EvenSmallStruct\ \&rhs)\ \{}
+\DoxyCodeLine{00184\ \ \ \textcolor{keywordflow}{return}}
+\DoxyCodeLine{00185\ \ \ \ \ \ \ (lhs.var\_0()\ ==\ rhs.var\_0())\ \&\&}
+\DoxyCodeLine{00186\ \ \ \ \ \ \ (lhs.var\_1()\ ==\ rhs.var\_1());}
+\DoxyCodeLine{00187\ \}}
+\DoxyCodeLine{00188\ }
+\DoxyCodeLine{00189\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{alignment__test__generated_8h_a82cfd314e4154ba2119005eff00b1ec5}{operator!=}}(\textcolor{keyword}{const}\ EvenSmallStruct\ \&lhs,\ \textcolor{keyword}{const}\ EvenSmallStruct\ \&rhs)\ \{}
+\DoxyCodeLine{00190\ \ \ \ \ \textcolor{keywordflow}{return}\ !(lhs\ ==\ rhs);}
+\DoxyCodeLine{00191\ \}}
+\DoxyCodeLine{00192\ }
+\DoxyCodeLine{00193\ }
+\DoxyCodeLine{00194\ \mbox{\hyperlink{alignment__test__generated_8h_acb9e699588b1f4cace94b66a72656cfc}{FLATBUFFERS\_MANUALLY\_ALIGNED\_STRUCT}}(1)\ OddSmallStruct\ \mbox{\hyperlink{structFLATBUFFERS__FINAL__CLASS}{FLATBUFFERS\_FINAL\_CLASS}}\ \{}
+\DoxyCodeLine{00195\ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00196\ \ \ uint8\_t\ var\_0\_;}
+\DoxyCodeLine{00197\ \ \ uint8\_t\ var\_1\_;}
+\DoxyCodeLine{00198\ \ \ uint8\_t\ var\_2\_;}
+\DoxyCodeLine{00199\ }
+\DoxyCodeLine{00200\ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00201\ \ \ \textcolor{keyword}{static}\ const\ ::flatbuffers::TypeTable\ *MiniReflectTypeTable()\ \{}
+\DoxyCodeLine{00202\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{alignment__test__generated_8h_a1be700897f51819eb73046017d7d743f}{OddSmallStructTypeTable}}();}
+\DoxyCodeLine{00203\ \ \ \}}
+\DoxyCodeLine{00204\ \ \ OddSmallStruct()}
+\DoxyCodeLine{00205\ \ \ \ \ \ \ :\ var\_0\_(0),}
+\DoxyCodeLine{00206\ \ \ \ \ \ \ \ \ var\_1\_(0),}
+\DoxyCodeLine{00207\ \ \ \ \ \ \ \ \ var\_2\_(0)\ \{}
+\DoxyCodeLine{00208\ \ \ \}}
+\DoxyCodeLine{00209\ \ \ OddSmallStruct(uint8\_t\ \_var\_0,\ uint8\_t\ \_var\_1,\ uint8\_t\ \_var\_2)}
+\DoxyCodeLine{00210\ \ \ \ \ \ \ :\ var\_0\_(::\mbox{\hyperlink{namespaceflatbuffers}{flatbuffers}}::EndianScalar(\_var\_0)),}
+\DoxyCodeLine{00211\ \ \ \ \ \ \ \ \ var\_1\_(::\mbox{\hyperlink{namespaceflatbuffers}{flatbuffers}}::EndianScalar(\_var\_1)),}
+\DoxyCodeLine{00212\ \ \ \ \ \ \ \ \ var\_2\_(::\mbox{\hyperlink{namespaceflatbuffers}{flatbuffers}}::EndianScalar(\_var\_2))\ \{}
+\DoxyCodeLine{00213\ \ \ \}}
+\DoxyCodeLine{00214\ \ \ uint8\_t\ var\_0()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00215\ \ \ \ \ return\ ::flatbuffers::EndianScalar(var\_0\_);}
+\DoxyCodeLine{00216\ \ \ \}}
+\DoxyCodeLine{00217\ \ \ \textcolor{keywordtype}{void}\ mutate\_var\_0(uint8\_t\ \_var\_0)\ \{}
+\DoxyCodeLine{00218\ \ \ \ \ ::flatbuffers::WriteScalar(\&var\_0\_,\ \_var\_0);}
+\DoxyCodeLine{00219\ \ \ \}}
+\DoxyCodeLine{00220\ \ \ uint8\_t\ var\_1()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00221\ \ \ \ \ return\ ::flatbuffers::EndianScalar(var\_1\_);}
+\DoxyCodeLine{00222\ \ \ \}}
+\DoxyCodeLine{00223\ \ \ \textcolor{keywordtype}{void}\ mutate\_var\_1(uint8\_t\ \_var\_1)\ \{}
+\DoxyCodeLine{00224\ \ \ \ \ ::flatbuffers::WriteScalar(\&var\_1\_,\ \_var\_1);}
+\DoxyCodeLine{00225\ \ \ \}}
+\DoxyCodeLine{00226\ \ \ uint8\_t\ var\_2()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00227\ \ \ \ \ return\ ::flatbuffers::EndianScalar(var\_2\_);}
+\DoxyCodeLine{00228\ \ \ \}}
+\DoxyCodeLine{00229\ \ \ \textcolor{keywordtype}{void}\ mutate\_var\_2(uint8\_t\ \_var\_2)\ \{}
+\DoxyCodeLine{00230\ \ \ \ \ ::flatbuffers::WriteScalar(\&var\_2\_,\ \_var\_2);}
+\DoxyCodeLine{00231\ \ \ \}}
+\DoxyCodeLine{00232\ \};}
+\DoxyCodeLine{00233\ \mbox{\hyperlink{alignment__test__generated_8h_ac2f06a303477bf60003d25db6aa108df}{FLATBUFFERS\_STRUCT\_END}}(OddSmallStruct,\ 3);}
+\DoxyCodeLine{00234\ }
+\DoxyCodeLine{00235\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{alignment__test__generated_8h_ad1fa9de04c36fa6d21bcb05cebb648e7}{operator==}}(\textcolor{keyword}{const}\ OddSmallStruct\ \&lhs,\ \textcolor{keyword}{const}\ OddSmallStruct\ \&rhs)\ \{}
+\DoxyCodeLine{00236\ \ \ \textcolor{keywordflow}{return}}
+\DoxyCodeLine{00237\ \ \ \ \ \ \ (lhs.var\_0()\ ==\ rhs.var\_0())\ \&\&}
+\DoxyCodeLine{00238\ \ \ \ \ \ \ (lhs.var\_1()\ ==\ rhs.var\_1())\ \&\&}
+\DoxyCodeLine{00239\ \ \ \ \ \ \ (lhs.var\_2()\ ==\ rhs.var\_2());}
+\DoxyCodeLine{00240\ \}}
+\DoxyCodeLine{00241\ }
+\DoxyCodeLine{00242\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{alignment__test__generated_8h_a82cfd314e4154ba2119005eff00b1ec5}{operator!=}}(\textcolor{keyword}{const}\ OddSmallStruct\ \&lhs,\ \textcolor{keyword}{const}\ OddSmallStruct\ \&rhs)\ \{}
+\DoxyCodeLine{00243\ \ \ \ \ \textcolor{keywordflow}{return}\ !(lhs\ ==\ rhs);}
+\DoxyCodeLine{00244\ \}}
+\DoxyCodeLine{00245\ }
+\DoxyCodeLine{00246\ }
+\DoxyCodeLine{00247\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structOuterLargeT}{OuterLargeT}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{structflatbuffers_1_1NativeTable}{::flatbuffers::NativeTable}}\ \{}
+\DoxyCodeLine{00248\ \ \ \textcolor{keyword}{typedef}\ OuterLarge\ \mbox{\hyperlink{structOuterLargeT_aee0933d1806fd18c1a700fdb930b59b1}{TableType}};}
+\DoxyCodeLine{00249\ \ \ std::unique\_ptr<BadAlignmentLarge>\ \mbox{\hyperlink{structOuterLargeT_a578da150eec548893e37b4118dcd115a}{large}}\{\};}
+\DoxyCodeLine{00250\ \ \ \mbox{\hyperlink{structOuterLargeT_ab05adfc38b3c8ae2bf4a285d3dac5dc1}{OuterLargeT}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00251\ \ \ \mbox{\hyperlink{structOuterLargeT_ab05adfc38b3c8ae2bf4a285d3dac5dc1}{OuterLargeT}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{structOuterLargeT}{OuterLargeT}}\ \&o);}
+\DoxyCodeLine{00252\ \ \ \mbox{\hyperlink{structOuterLargeT_af9218794262852d1014b01538a3edf8c}{OuterLargeT}}(\mbox{\hyperlink{structOuterLargeT}{OuterLargeT}}\&\&)\ FLATBUFFERS\_NOEXCEPT\ =\ default;}
+\DoxyCodeLine{00253\ \ \ \mbox{\hyperlink{structOuterLargeT}{OuterLargeT}}\ \&operator=(\mbox{\hyperlink{structOuterLargeT}{OuterLargeT}}\ o)\ FLATBUFFERS\_NOEXCEPT;}
+\DoxyCodeLine{00254\ \};}
+\DoxyCodeLine{00255\ }
+\DoxyCodeLine{00256\ struct\ OuterLarge\ \mbox{\hyperlink{structFLATBUFFERS__FINAL__CLASS}{FLATBUFFERS\_FINAL\_CLASS}}\ :\ private\ ::\mbox{\hyperlink{namespaceflatbuffers}{flatbuffers}}::Table\ \{}
+\DoxyCodeLine{00257\ \ \ \textcolor{keyword}{typedef}\ \mbox{\hyperlink{structOuterLargeT}{OuterLargeT}}\ \mbox{\hyperlink{structFLATBUFFERS__FINAL__CLASS_a6bc303e809d258e50c7b8170cb66d056}{NativeTableType}};}
+\DoxyCodeLine{00258\ \ \ \textcolor{keyword}{typedef}\ \mbox{\hyperlink{structOuterLargeBuilder}{OuterLargeBuilder}}\ \mbox{\hyperlink{structFLATBUFFERS__FINAL__CLASS_a488f2060432be187e35a21183b0c2fd0}{Builder}};}
+\DoxyCodeLine{00259\ \ \ \textcolor{keyword}{static}\ const\ ::flatbuffers::TypeTable\ *\mbox{\hyperlink{structFLATBUFFERS__FINAL__CLASS_a4a940e1e91041e4d1e218159aeeda232}{MiniReflectTypeTable}}()\ \{}
+\DoxyCodeLine{00260\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{alignment__test__generated_8h_afb7d90902e4581783d414dce17ca4977}{OuterLargeTypeTable}}();}
+\DoxyCodeLine{00261\ \ \ \}}
+\DoxyCodeLine{00262\ \ \ \textcolor{keyword}{enum}\ FlatBuffersVTableOffset\ FLATBUFFERS\_VTABLE\_UNDERLYING\_TYPE\ \{}
+\DoxyCodeLine{00263\ \ \ \ \ \mbox{\hyperlink{alignment__test__generated_8h_ac4c6ad6d976cf06ceab86caf373e1977}{VT\_LARGE}}\ =\ 4}
+\DoxyCodeLine{00264\ \ \ \};}
+\DoxyCodeLine{00265\ \ \ \textcolor{keyword}{const}\ BadAlignmentLarge\ *\mbox{\hyperlink{structFLATBUFFERS__FINAL__CLASS_ae66c93b671532a9b8aefbfefac3a9847}{large}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00266\ \ \ \ \ \textcolor{keywordflow}{return}\ GetStruct<const\ BadAlignmentLarge\ *>(\mbox{\hyperlink{alignment__test__generated_8h_ac4c6ad6d976cf06ceab86caf373e1977}{VT\_LARGE}});}
+\DoxyCodeLine{00267\ \ \ \}}
+\DoxyCodeLine{00268\ \ \ BadAlignmentLarge\ *\mbox{\hyperlink{structFLATBUFFERS__FINAL__CLASS_a650e1418cc5bf2f769c77b661e0892a0}{mutable\_large}}()\ \{}
+\DoxyCodeLine{00269\ \ \ \ \ \textcolor{keywordflow}{return}\ GetStruct<BadAlignmentLarge\ *>(\mbox{\hyperlink{alignment__test__generated_8h_ac4c6ad6d976cf06ceab86caf373e1977}{VT\_LARGE}});}
+\DoxyCodeLine{00270\ \ \ \}}
+\DoxyCodeLine{00271\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structFLATBUFFERS__FINAL__CLASS_a881787a1eec36576a27a915ea2e52837}{Verify}}(\mbox{\hyperlink{namespaceflatbuffers_a3268477941df91db2eb06442b6e5f922}{::flatbuffers::Verifier}}\ \&verifier)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00272\ \ \ \ \ \textcolor{keywordflow}{return}\ VerifyTableStart(verifier)\ \&\&}
+\DoxyCodeLine{00273\ \ \ \ \ \ \ \ \ \ \ \ VerifyField<BadAlignmentLarge>(verifier,\ \mbox{\hyperlink{alignment__test__generated_8h_ac4c6ad6d976cf06ceab86caf373e1977}{VT\_LARGE}},\ 8)\ \&\&}
+\DoxyCodeLine{00274\ \ \ \ \ \ \ \ \ \ \ \ verifier.EndTable();}
+\DoxyCodeLine{00275\ \ \ \}}
+\DoxyCodeLine{00276\ \ \ \mbox{\hyperlink{structOuterLargeT}{OuterLargeT}}\ *\mbox{\hyperlink{structFLATBUFFERS__FINAL__CLASS_ac1e498b1d61dd0c4a678293fddc68aec}{UnPack}}(const\ ::flatbuffers::resolver\_function\_t\ *\_resolver\ =\ \textcolor{keyword}{nullptr})\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00277\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{structFLATBUFFERS__FINAL__CLASS_a55786ed31dffc424fb4a397d49543723}{UnPackTo}}(\mbox{\hyperlink{structOuterLargeT}{OuterLargeT}}\ *\_o,\ const\ ::flatbuffers::resolver\_function\_t\ *\_resolver\ =\ \textcolor{keyword}{nullptr})\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00278\ \ \ static\ ::flatbuffers::Offset<OuterLarge>\ \mbox{\hyperlink{structFLATBUFFERS__FINAL__CLASS_a7abcab5728119f87f42787b2c442b1b3}{Pack}}(\mbox{\hyperlink{classflatbuffers_1_1FlatBufferBuilderImpl}{::flatbuffers::FlatBufferBuilder}}\ \&\_fbb,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{structOuterLargeT}{OuterLargeT}}*\ \_o,\ const\ ::flatbuffers::rehasher\_function\_t\ *\_rehasher\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00279\ \};}
+\DoxyCodeLine{00280\ }
+\DoxyCodeLine{00281\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structOuterLargeBuilder}{OuterLargeBuilder}}\ \{}
+\DoxyCodeLine{00282\ \ \ \textcolor{keyword}{typedef}\ OuterLarge\ \mbox{\hyperlink{structOuterLargeBuilder_af9b7e67c150c5edc22caaa256bfc8df4}{Table}};}
+\DoxyCodeLine{00283\ \ \ \mbox{\hyperlink{classflatbuffers_1_1FlatBufferBuilderImpl}{::flatbuffers::FlatBufferBuilder}}\ \&\mbox{\hyperlink{structOuterLargeBuilder_a73c57ef9e0519e93b8e43f8c79c58279}{fbb\_}};}
+\DoxyCodeLine{00284\ \ \ ::flatbuffers::uoffset\_t\ \mbox{\hyperlink{structOuterLargeBuilder_a2422cca5c76dd6cfa6d3a124140faaa9}{start\_}};}
+\DoxyCodeLine{00285\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{structOuterLargeBuilder_a21f99d21361c161a071fd6f65e08ab49}{add\_large}}(\textcolor{keyword}{const}\ BadAlignmentLarge\ *large)\ \{}
+\DoxyCodeLine{00286\ \ \ \ \ fbb\_.AddStruct(OuterLarge::VT\_LARGE,\ large);}
+\DoxyCodeLine{00287\ \ \ \}}
+\DoxyCodeLine{00288\ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{structOuterLargeBuilder_a77d4e948a510b0bdf6949844bb5aae57}{OuterLargeBuilder}}(\mbox{\hyperlink{classflatbuffers_1_1FlatBufferBuilderImpl}{::flatbuffers::FlatBufferBuilder}}\ \&\_fbb)}
+\DoxyCodeLine{00289\ \ \ \ \ \ \ \ \ :\ fbb\_(\_fbb)\ \{}
+\DoxyCodeLine{00290\ \ \ \ \ start\_\ =\ fbb\_.StartTable();}
+\DoxyCodeLine{00291\ \ \ \}}
+\DoxyCodeLine{00292\ \ \ ::flatbuffers::Offset<OuterLarge>\ \mbox{\hyperlink{structOuterLargeBuilder_ae76e3e77f8cd5e13a6a7586f6fca1a1d}{Finish}}()\ \{}
+\DoxyCodeLine{00293\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{auto}\ end\ =\ fbb\_.EndTable(start\_);}
+\DoxyCodeLine{00294\ \ \ \ \ \textcolor{keyword}{auto}\ o\ =\ ::flatbuffers::Offset<OuterLarge>(end);}
+\DoxyCodeLine{00295\ \ \ \ \ \textcolor{keywordflow}{return}\ o;}
+\DoxyCodeLine{00296\ \ \ \}}
+\DoxyCodeLine{00297\ \};}
+\DoxyCodeLine{00298\ }
+\DoxyCodeLine{00299\ inline\ ::flatbuffers::Offset<OuterLarge>\ \mbox{\hyperlink{alignment__test__generated_8h_aad0118e9880d146e1f7612fac5a0ec15}{CreateOuterLarge}}(}
+\DoxyCodeLine{00300\ \ \ \ \ \mbox{\hyperlink{classflatbuffers_1_1FlatBufferBuilderImpl}{::flatbuffers::FlatBufferBuilder}}\ \&\_fbb,}
+\DoxyCodeLine{00301\ \ \ \ \ \textcolor{keyword}{const}\ BadAlignmentLarge\ *\mbox{\hyperlink{structOuterLargeT_a578da150eec548893e37b4118dcd115a}{large}}\ =\ \textcolor{keyword}{nullptr})\ \{}
+\DoxyCodeLine{00302\ \ \ \mbox{\hyperlink{structOuterLargeBuilder}{OuterLargeBuilder}}\ builder\_(\_fbb);}
+\DoxyCodeLine{00303\ \ \ builder\_.\mbox{\hyperlink{structOuterLargeBuilder_a21f99d21361c161a071fd6f65e08ab49}{add\_large}}(\mbox{\hyperlink{structOuterLargeT_a578da150eec548893e37b4118dcd115a}{large}});}
+\DoxyCodeLine{00304\ \ \ \textcolor{keywordflow}{return}\ builder\_.\mbox{\hyperlink{structOuterLargeBuilder_ae76e3e77f8cd5e13a6a7586f6fca1a1d}{Finish}}();}
+\DoxyCodeLine{00305\ \}}
+\DoxyCodeLine{00306\ }
+\DoxyCodeLine{00307\ ::flatbuffers::Offset<OuterLarge>\ \mbox{\hyperlink{alignment__test__generated_8h_aad0118e9880d146e1f7612fac5a0ec15}{CreateOuterLarge}}(\mbox{\hyperlink{classflatbuffers_1_1FlatBufferBuilderImpl}{::flatbuffers::FlatBufferBuilder}}\ \&\_fbb,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{structOuterLargeT}{OuterLargeT}}\ *\_o,\ const\ ::flatbuffers::rehasher\_function\_t\ *\_rehasher\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00308\ }
+\DoxyCodeLine{00309\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structBadAlignmentRootT}{BadAlignmentRootT}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{structflatbuffers_1_1NativeTable}{::flatbuffers::NativeTable}}\ \{}
+\DoxyCodeLine{00310\ \ \ \textcolor{keyword}{typedef}\ BadAlignmentRoot\ \mbox{\hyperlink{structBadAlignmentRootT_ac550bc6e393663819cb2351b0f2d9865}{TableType}};}
+\DoxyCodeLine{00311\ \ \ std::unique\_ptr<OuterLargeT>\ large\{\};}
+\DoxyCodeLine{00312\ \ \ std::vector<BadAlignmentSmall>\ small\{\};}
+\DoxyCodeLine{00313\ \ \ \mbox{\hyperlink{structBadAlignmentRootT_af3c06d0014639a797c78a7c42055b68c}{BadAlignmentRootT}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00314\ \ \ \mbox{\hyperlink{structBadAlignmentRootT}{BadAlignmentRootT}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{structBadAlignmentRootT}{BadAlignmentRootT}}\ \&o);}
+\DoxyCodeLine{00315\ \ \ \mbox{\hyperlink{structBadAlignmentRootT_a424d19dfdd174b8177c839fb7ba22a9a}{BadAlignmentRootT}}(\mbox{\hyperlink{structBadAlignmentRootT}{BadAlignmentRootT}}\&\&)\ FLATBUFFERS\_NOEXCEPT\ =\ default;}
+\DoxyCodeLine{00316\ \ \ \mbox{\hyperlink{structBadAlignmentRootT}{BadAlignmentRootT}}\ \&operator=(\mbox{\hyperlink{structBadAlignmentRootT}{BadAlignmentRootT}}\ o)\ FLATBUFFERS\_NOEXCEPT;}
+\DoxyCodeLine{00317\ \};}
+\DoxyCodeLine{00318\ }
+\DoxyCodeLine{00319\ struct\ BadAlignmentRoot\ \mbox{\hyperlink{structFLATBUFFERS__FINAL__CLASS}{FLATBUFFERS\_FINAL\_CLASS}}\ :\ private\ ::\mbox{\hyperlink{namespaceflatbuffers}{flatbuffers}}::Table\ \{}
+\DoxyCodeLine{00320\ \ \ \textcolor{keyword}{typedef}\ \mbox{\hyperlink{structBadAlignmentRootT}{BadAlignmentRootT}}\ \mbox{\hyperlink{structFLATBUFFERS__FINAL__CLASS_aa42bd7c16cfbb3354556e5b31561c992}{NativeTableType}};}
+\DoxyCodeLine{00321\ \ \ \textcolor{keyword}{typedef}\ \mbox{\hyperlink{structBadAlignmentRootBuilder}{BadAlignmentRootBuilder}}\ \mbox{\hyperlink{structFLATBUFFERS__FINAL__CLASS_a12a828c46b7b9b1bc46e9a1d999b479a}{Builder}};}
+\DoxyCodeLine{00322\ \ \ \textcolor{keyword}{static}\ const\ ::flatbuffers::TypeTable\ *\mbox{\hyperlink{structFLATBUFFERS__FINAL__CLASS_a4a940e1e91041e4d1e218159aeeda232}{MiniReflectTypeTable}}()\ \{}
+\DoxyCodeLine{00323\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{alignment__test__generated_8h_aa8b06dd2331d5e68f3e9bf405215f6fc}{BadAlignmentRootTypeTable}}();}
+\DoxyCodeLine{00324\ \ \ \}}
+\DoxyCodeLine{00325\ \ \ \textcolor{keyword}{enum}\ FlatBuffersVTableOffset\ FLATBUFFERS\_VTABLE\_UNDERLYING\_TYPE\ \{}
+\DoxyCodeLine{00326\ \ \ \ \ \mbox{\hyperlink{alignment__test__generated_8h_ac4c6ad6d976cf06ceab86caf373e1977}{VT\_LARGE}}\ =\ 4,}
+\DoxyCodeLine{00327\ \ \ \ \ VT\_SMALL\ =\ 6}
+\DoxyCodeLine{00328\ \ \ \};}
+\DoxyCodeLine{00329\ \ \ \textcolor{keyword}{const}\ OuterLarge\ *\mbox{\hyperlink{structFLATBUFFERS__FINAL__CLASS_aa1804fcac090cc6b078efd357797a262}{large}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00330\ \ \ \ \ \textcolor{keywordflow}{return}\ GetPointer<const\ OuterLarge\ *>(\mbox{\hyperlink{alignment__test__generated_8h_ac4c6ad6d976cf06ceab86caf373e1977}{VT\_LARGE}});}
+\DoxyCodeLine{00331\ \ \ \}}
+\DoxyCodeLine{00332\ \ \ OuterLarge\ *\mbox{\hyperlink{structFLATBUFFERS__FINAL__CLASS_a5a41043baa891dc1f3e2d490fa6a5ea8}{mutable\_large}}()\ \{}
+\DoxyCodeLine{00333\ \ \ \ \ \textcolor{keywordflow}{return}\ GetPointer<OuterLarge\ *>(\mbox{\hyperlink{alignment__test__generated_8h_ac4c6ad6d976cf06ceab86caf373e1977}{VT\_LARGE}});}
+\DoxyCodeLine{00334\ \ \ \}}
+\DoxyCodeLine{00335\ \ \ const\ ::flatbuffers::Vector<const\ BadAlignmentSmall\ *>\ *\mbox{\hyperlink{structFLATBUFFERS__FINAL__CLASS_a5da88faf2608001e7d45680815e80a62}{small}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00336\ \ \ \ \ \textcolor{keywordflow}{return}\ GetPointer<const\ ::flatbuffers::Vector<const\ BadAlignmentSmall\ *>\ *>(VT\_SMALL);}
+\DoxyCodeLine{00337\ \ \ \}}
+\DoxyCodeLine{00338\ \ \ \mbox{\hyperlink{classflatbuffers_1_1Vector}{::flatbuffers::Vector<const\ BadAlignmentSmall\ *>}}\ *\mbox{\hyperlink{structFLATBUFFERS__FINAL__CLASS_ae14b046a009795cea0776fe2fd087c02}{mutable\_small}}()\ \{}
+\DoxyCodeLine{00339\ \ \ \ \ \textcolor{keywordflow}{return}\ GetPointer<::flatbuffers::Vector<const\ BadAlignmentSmall\ *>\ *>(VT\_SMALL);}
+\DoxyCodeLine{00340\ \ \ \}}
+\DoxyCodeLine{00341\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structFLATBUFFERS__FINAL__CLASS_a881787a1eec36576a27a915ea2e52837}{Verify}}(\mbox{\hyperlink{namespaceflatbuffers_a3268477941df91db2eb06442b6e5f922}{::flatbuffers::Verifier}}\ \&verifier)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00342\ \ \ \ \ \textcolor{keywordflow}{return}\ VerifyTableStart(verifier)\ \&\&}
+\DoxyCodeLine{00343\ \ \ \ \ \ \ \ \ \ \ \ VerifyOffset(verifier,\ \mbox{\hyperlink{alignment__test__generated_8h_ac4c6ad6d976cf06ceab86caf373e1977}{VT\_LARGE}})\ \&\&}
+\DoxyCodeLine{00344\ \ \ \ \ \ \ \ \ \ \ \ verifier.VerifyTable(large())\ \&\&}
+\DoxyCodeLine{00345\ \ \ \ \ \ \ \ \ \ \ \ VerifyOffset(verifier,\ VT\_SMALL)\ \&\&}
+\DoxyCodeLine{00346\ \ \ \ \ \ \ \ \ \ \ \ verifier.VerifyVector(small())\ \&\&}
+\DoxyCodeLine{00347\ \ \ \ \ \ \ \ \ \ \ \ verifier.EndTable();}
+\DoxyCodeLine{00348\ \ \ \}}
+\DoxyCodeLine{00349\ \ \ \mbox{\hyperlink{structBadAlignmentRootT}{BadAlignmentRootT}}\ *\mbox{\hyperlink{structFLATBUFFERS__FINAL__CLASS_a3628287da8d3b887e57796172ed20af0}{UnPack}}(const\ ::flatbuffers::resolver\_function\_t\ *\_resolver\ =\ \textcolor{keyword}{nullptr})\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00350\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{structFLATBUFFERS__FINAL__CLASS_a3c49ee13a0db4bf93df59db11eb5d976}{UnPackTo}}(\mbox{\hyperlink{structBadAlignmentRootT}{BadAlignmentRootT}}\ *\_o,\ const\ ::flatbuffers::resolver\_function\_t\ *\_resolver\ =\ \textcolor{keyword}{nullptr})\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00351\ \ \ static\ ::flatbuffers::Offset<BadAlignmentRoot>\ \mbox{\hyperlink{structFLATBUFFERS__FINAL__CLASS_ae788ae0367b5dd53ccd8210b19736750}{Pack}}(\mbox{\hyperlink{classflatbuffers_1_1FlatBufferBuilderImpl}{::flatbuffers::FlatBufferBuilder}}\ \&\_fbb,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{structBadAlignmentRootT}{BadAlignmentRootT}}*\ \_o,\ const\ ::flatbuffers::rehasher\_function\_t\ *\_rehasher\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00352\ \};}
+\DoxyCodeLine{00353\ }
+\DoxyCodeLine{00354\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structBadAlignmentRootBuilder}{BadAlignmentRootBuilder}}\ \{}
+\DoxyCodeLine{00355\ \ \ \textcolor{keyword}{typedef}\ BadAlignmentRoot\ \mbox{\hyperlink{structBadAlignmentRootBuilder_ad47ec0e10bb17d88d8eb2be4772eac51}{Table}};}
+\DoxyCodeLine{00356\ \ \ \mbox{\hyperlink{classflatbuffers_1_1FlatBufferBuilderImpl}{::flatbuffers::FlatBufferBuilder}}\ \&\mbox{\hyperlink{structBadAlignmentRootBuilder_a36a12720b1e8b01702f7f23f1b50392a}{fbb\_}};}
+\DoxyCodeLine{00357\ \ \ ::flatbuffers::uoffset\_t\ \mbox{\hyperlink{structBadAlignmentRootBuilder_a54d85d3ea3d875d136ecb8d1358167c9}{start\_}};}
+\DoxyCodeLine{00358\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{structBadAlignmentRootBuilder_a3dfc0f7799f2e9563481ad1d6c9af45d}{add\_large}}(::flatbuffers::Offset<OuterLarge>\ large)\ \{}
+\DoxyCodeLine{00359\ \ \ \ \ fbb\_.AddOffset(BadAlignmentRoot::VT\_LARGE,\ large);}
+\DoxyCodeLine{00360\ \ \ \}}
+\DoxyCodeLine{00361\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{structBadAlignmentRootBuilder_a7a840565d850ff72ba9684101fba81d1}{add\_small}}(::flatbuffers::Offset<\mbox{\hyperlink{classflatbuffers_1_1Vector}{::flatbuffers::Vector<const\ BadAlignmentSmall\ *>}}>\ small)\ \{}
+\DoxyCodeLine{00362\ \ \ \ \ fbb\_.AddOffset(BadAlignmentRoot::VT\_SMALL,\ small);}
+\DoxyCodeLine{00363\ \ \ \}}
+\DoxyCodeLine{00364\ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{structBadAlignmentRootBuilder_a19bbc4f5942fb79d8c61611bfbf7502a}{BadAlignmentRootBuilder}}(\mbox{\hyperlink{classflatbuffers_1_1FlatBufferBuilderImpl}{::flatbuffers::FlatBufferBuilder}}\ \&\_fbb)}
+\DoxyCodeLine{00365\ \ \ \ \ \ \ \ \ :\ fbb\_(\_fbb)\ \{}
+\DoxyCodeLine{00366\ \ \ \ \ start\_\ =\ fbb\_.StartTable();}
+\DoxyCodeLine{00367\ \ \ \}}
+\DoxyCodeLine{00368\ \ \ ::flatbuffers::Offset<BadAlignmentRoot>\ \mbox{\hyperlink{structBadAlignmentRootBuilder_a90d60bac6821675b27391c146c131e9a}{Finish}}()\ \{}
+\DoxyCodeLine{00369\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{auto}\ end\ =\ fbb\_.EndTable(start\_);}
+\DoxyCodeLine{00370\ \ \ \ \ \textcolor{keyword}{auto}\ o\ =\ ::flatbuffers::Offset<BadAlignmentRoot>(end);}
+\DoxyCodeLine{00371\ \ \ \ \ \textcolor{keywordflow}{return}\ o;}
+\DoxyCodeLine{00372\ \ \ \}}
+\DoxyCodeLine{00373\ \};}
+\DoxyCodeLine{00374\ }
+\DoxyCodeLine{00375\ inline\ ::flatbuffers::Offset<BadAlignmentRoot>\ \mbox{\hyperlink{alignment__test__generated_8h_a9504d0694ce6d3e0f66813a243d284c8}{CreateBadAlignmentRoot}}(}
+\DoxyCodeLine{00376\ \ \ \ \ \mbox{\hyperlink{classflatbuffers_1_1FlatBufferBuilderImpl}{::flatbuffers::FlatBufferBuilder}}\ \&\_fbb,}
+\DoxyCodeLine{00377\ \ \ \ \ ::flatbuffers::Offset<OuterLarge>\ large\ =\ 0,}
+\DoxyCodeLine{00378\ \ \ \ \ ::flatbuffers::Offset<\mbox{\hyperlink{classflatbuffers_1_1Vector}{::flatbuffers::Vector<const\ BadAlignmentSmall\ *>}}>\ small\ =\ 0)\ \{}
+\DoxyCodeLine{00379\ \ \ \mbox{\hyperlink{structBadAlignmentRootBuilder}{BadAlignmentRootBuilder}}\ builder\_(\_fbb);}
+\DoxyCodeLine{00380\ \ \ builder\_.\mbox{\hyperlink{structBadAlignmentRootBuilder_a7a840565d850ff72ba9684101fba81d1}{add\_small}}(small);}
+\DoxyCodeLine{00381\ \ \ builder\_.\mbox{\hyperlink{structBadAlignmentRootBuilder_a3dfc0f7799f2e9563481ad1d6c9af45d}{add\_large}}(large);}
+\DoxyCodeLine{00382\ \ \ \textcolor{keywordflow}{return}\ builder\_.\mbox{\hyperlink{structBadAlignmentRootBuilder_a90d60bac6821675b27391c146c131e9a}{Finish}}();}
+\DoxyCodeLine{00383\ \}}
+\DoxyCodeLine{00384\ }
+\DoxyCodeLine{00385\ inline\ ::flatbuffers::Offset<BadAlignmentRoot>\ \mbox{\hyperlink{alignment__test__generated_8h_aabbda1642442f81f651fb6c7f1e120bb}{CreateBadAlignmentRootDirect}}(}
+\DoxyCodeLine{00386\ \ \ \ \ \mbox{\hyperlink{classflatbuffers_1_1FlatBufferBuilderImpl}{::flatbuffers::FlatBufferBuilder}}\ \&\_fbb,}
+\DoxyCodeLine{00387\ \ \ \ \ ::flatbuffers::Offset<OuterLarge>\ large\ =\ 0,}
+\DoxyCodeLine{00388\ \ \ \ \ \textcolor{keyword}{const}\ std::vector<BadAlignmentSmall>\ *small\ =\ \textcolor{keyword}{nullptr})\ \{}
+\DoxyCodeLine{00389\ \ \ \textcolor{keyword}{auto}\ small\_\_\ =\ small\ ?\ \_fbb.\mbox{\hyperlink{classflatbuffers_1_1FlatBufferBuilderImpl_afe0f3eb9a693cb8913948eb45dc5442f}{CreateVectorOfStructs}}<BadAlignmentSmall>(*small)\ :\ 0;}
+\DoxyCodeLine{00390\ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{alignment__test__generated_8h_a9504d0694ce6d3e0f66813a243d284c8}{CreateBadAlignmentRoot}}(}
+\DoxyCodeLine{00391\ \ \ \ \ \ \ \_fbb,}
+\DoxyCodeLine{00392\ \ \ \ \ \ \ large,}
+\DoxyCodeLine{00393\ \ \ \ \ \ \ small\_\_);}
+\DoxyCodeLine{00394\ \}}
+\DoxyCodeLine{00395\ }
+\DoxyCodeLine{00396\ ::flatbuffers::Offset<BadAlignmentRoot>\ \mbox{\hyperlink{alignment__test__generated_8h_a9504d0694ce6d3e0f66813a243d284c8}{CreateBadAlignmentRoot}}(\mbox{\hyperlink{classflatbuffers_1_1FlatBufferBuilderImpl}{::flatbuffers::FlatBufferBuilder}}\ \&\_fbb,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{structBadAlignmentRootT}{BadAlignmentRootT}}\ *\_o,\ const\ ::flatbuffers::rehasher\_function\_t\ *\_rehasher\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00397\ }
+\DoxyCodeLine{00398\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structSmallStructsT}{SmallStructsT}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{structflatbuffers_1_1NativeTable}{::flatbuffers::NativeTable}}\ \{}
+\DoxyCodeLine{00399\ \ \ \textcolor{keyword}{typedef}\ SmallStructs\ \mbox{\hyperlink{structSmallStructsT_a19dc09cc14b9f82c9fee689aa907a3f0}{TableType}};}
+\DoxyCodeLine{00400\ \ \ std::vector<EvenSmallStruct>\ even\_structs\{\};}
+\DoxyCodeLine{00401\ \ \ std::vector<OddSmallStruct>\ odd\_structs\{\};}
+\DoxyCodeLine{00402\ \};}
+\DoxyCodeLine{00403\ }
+\DoxyCodeLine{00404\ \textcolor{keyword}{struct\ }SmallStructs\ \mbox{\hyperlink{structFLATBUFFERS__FINAL__CLASS}{FLATBUFFERS\_FINAL\_CLASS}}\ :\ \textcolor{keyword}{private}\ \mbox{\hyperlink{classflatbuffers_1_1Table}{::flatbuffers::Table}}\ \{}
+\DoxyCodeLine{00405\ \ \ \textcolor{keyword}{typedef}\ \mbox{\hyperlink{structSmallStructsT}{SmallStructsT}}\ \mbox{\hyperlink{structFLATBUFFERS__FINAL__CLASS_afb020c04851261aef7171743721bfd87}{NativeTableType}};}
+\DoxyCodeLine{00406\ \ \ \textcolor{keyword}{typedef}\ \mbox{\hyperlink{structSmallStructsBuilder}{SmallStructsBuilder}}\ \mbox{\hyperlink{structFLATBUFFERS__FINAL__CLASS_aea9c5ae0e054b2ccdfe69fa5c0c7d4ad}{Builder}};}
+\DoxyCodeLine{00407\ \ \ \textcolor{keyword}{static}\ const\ ::flatbuffers::TypeTable\ *\mbox{\hyperlink{structFLATBUFFERS__FINAL__CLASS_a4a940e1e91041e4d1e218159aeeda232}{MiniReflectTypeTable}}()\ \{}
+\DoxyCodeLine{00408\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{alignment__test__generated_8h_afe83bf5770fbd3bfc5c730f3964814f9}{SmallStructsTypeTable}}();}
+\DoxyCodeLine{00409\ \ \ \}}
+\DoxyCodeLine{00410\ \ \ \textcolor{keyword}{enum}\ FlatBuffersVTableOffset\ FLATBUFFERS\_VTABLE\_UNDERLYING\_TYPE\ \{}
+\DoxyCodeLine{00411\ \ \ \ \ \mbox{\hyperlink{alignment__test__generated_8h_a4ef9c498d6b6b80bb5b9c37ebdabe693}{VT\_EVEN\_STRUCTS}}\ =\ 4,}
+\DoxyCodeLine{00412\ \ \ \ \ VT\_ODD\_STRUCTS\ =\ 6}
+\DoxyCodeLine{00413\ \ \ \};}
+\DoxyCodeLine{00414\ \ \ const\ ::flatbuffers::Vector<const\ EvenSmallStruct\ *>\ *\mbox{\hyperlink{structFLATBUFFERS__FINAL__CLASS_adf433c608df78a2595aa5550e2099b75}{even\_structs}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00415\ \ \ \ \ \textcolor{keywordflow}{return}\ GetPointer<const\ ::flatbuffers::Vector<const\ EvenSmallStruct\ *>\ *>(\mbox{\hyperlink{alignment__test__generated_8h_a4ef9c498d6b6b80bb5b9c37ebdabe693}{VT\_EVEN\_STRUCTS}});}
+\DoxyCodeLine{00416\ \ \ \}}
+\DoxyCodeLine{00417\ \ \ \mbox{\hyperlink{classflatbuffers_1_1Vector}{::flatbuffers::Vector<const\ EvenSmallStruct\ *>}}\ *\mbox{\hyperlink{structFLATBUFFERS__FINAL__CLASS_a8e0340520d9daaaf8c12c229e54c4c17}{mutable\_even\_structs}}()\ \{}
+\DoxyCodeLine{00418\ \ \ \ \ \textcolor{keywordflow}{return}\ GetPointer<::flatbuffers::Vector<const\ EvenSmallStruct\ *>\ *>(\mbox{\hyperlink{alignment__test__generated_8h_a4ef9c498d6b6b80bb5b9c37ebdabe693}{VT\_EVEN\_STRUCTS}});}
+\DoxyCodeLine{00419\ \ \ \}}
+\DoxyCodeLine{00420\ \ \ const\ ::flatbuffers::Vector<const\ OddSmallStruct\ *>\ *\mbox{\hyperlink{structFLATBUFFERS__FINAL__CLASS_ab2d6b590121408bdbe20e9fb5ac93fca}{odd\_structs}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00421\ \ \ \ \ \textcolor{keywordflow}{return}\ GetPointer<const\ ::flatbuffers::Vector<const\ OddSmallStruct\ *>\ *>(VT\_ODD\_STRUCTS);}
+\DoxyCodeLine{00422\ \ \ \}}
+\DoxyCodeLine{00423\ \ \ \mbox{\hyperlink{classflatbuffers_1_1Vector}{::flatbuffers::Vector<const\ OddSmallStruct\ *>}}\ *\mbox{\hyperlink{structFLATBUFFERS__FINAL__CLASS_a42aa3b3182db6d0bcae478dfd2061581}{mutable\_odd\_structs}}()\ \{}
+\DoxyCodeLine{00424\ \ \ \ \ \textcolor{keywordflow}{return}\ GetPointer<::flatbuffers::Vector<const\ OddSmallStruct\ *>\ *>(VT\_ODD\_STRUCTS);}
+\DoxyCodeLine{00425\ \ \ \}}
+\DoxyCodeLine{00426\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structFLATBUFFERS__FINAL__CLASS_a881787a1eec36576a27a915ea2e52837}{Verify}}(\mbox{\hyperlink{namespaceflatbuffers_a3268477941df91db2eb06442b6e5f922}{::flatbuffers::Verifier}}\ \&verifier)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00427\ \ \ \ \ \textcolor{keywordflow}{return}\ VerifyTableStart(verifier)\ \&\&}
+\DoxyCodeLine{00428\ \ \ \ \ \ \ \ \ \ \ \ VerifyOffset(verifier,\ \mbox{\hyperlink{alignment__test__generated_8h_a4ef9c498d6b6b80bb5b9c37ebdabe693}{VT\_EVEN\_STRUCTS}})\ \&\&}
+\DoxyCodeLine{00429\ \ \ \ \ \ \ \ \ \ \ \ verifier.VerifyVector(even\_structs())\ \&\&}
+\DoxyCodeLine{00430\ \ \ \ \ \ \ \ \ \ \ \ VerifyOffset(verifier,\ VT\_ODD\_STRUCTS)\ \&\&}
+\DoxyCodeLine{00431\ \ \ \ \ \ \ \ \ \ \ \ verifier.VerifyVector(odd\_structs())\ \&\&}
+\DoxyCodeLine{00432\ \ \ \ \ \ \ \ \ \ \ \ verifier.EndTable();}
+\DoxyCodeLine{00433\ \ \ \}}
+\DoxyCodeLine{00434\ \ \ \mbox{\hyperlink{structSmallStructsT}{SmallStructsT}}\ *\mbox{\hyperlink{structFLATBUFFERS__FINAL__CLASS_ace2e4d670d63f921df77e2c0955a411f}{UnPack}}(const\ ::flatbuffers::resolver\_function\_t\ *\_resolver\ =\ \textcolor{keyword}{nullptr})\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00435\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{structFLATBUFFERS__FINAL__CLASS_a13e3a27949151d1e7f25a9dfb5a9ba52}{UnPackTo}}(\mbox{\hyperlink{structSmallStructsT}{SmallStructsT}}\ *\_o,\ const\ ::flatbuffers::resolver\_function\_t\ *\_resolver\ =\ \textcolor{keyword}{nullptr})\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00436\ \ \ static\ ::flatbuffers::Offset<SmallStructs>\ \mbox{\hyperlink{structFLATBUFFERS__FINAL__CLASS_aedd9533b8ce3bb43f3c09b4a295beeeb}{Pack}}(\mbox{\hyperlink{classflatbuffers_1_1FlatBufferBuilderImpl}{::flatbuffers::FlatBufferBuilder}}\ \&\_fbb,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{structSmallStructsT}{SmallStructsT}}*\ \_o,\ const\ ::flatbuffers::rehasher\_function\_t\ *\_rehasher\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00437\ \};}
+\DoxyCodeLine{00438\ }
+\DoxyCodeLine{00439\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structSmallStructsBuilder}{SmallStructsBuilder}}\ \{}
+\DoxyCodeLine{00440\ \ \ \textcolor{keyword}{typedef}\ SmallStructs\ \mbox{\hyperlink{structSmallStructsBuilder_ab67d1985086172402eeaf9ca7e790915}{Table}};}
+\DoxyCodeLine{00441\ \ \ \mbox{\hyperlink{classflatbuffers_1_1FlatBufferBuilderImpl}{::flatbuffers::FlatBufferBuilder}}\ \&\mbox{\hyperlink{structSmallStructsBuilder_ac1faa0847f51a944ace1696fafdee672}{fbb\_}};}
+\DoxyCodeLine{00442\ \ \ ::flatbuffers::uoffset\_t\ \mbox{\hyperlink{structSmallStructsBuilder_a7bd2ebf8601162163c16372e8ebbb916}{start\_}};}
+\DoxyCodeLine{00443\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{structSmallStructsBuilder_a30e103d0b30ea73e2149a939937fa7b2}{add\_even\_structs}}(::flatbuffers::Offset<\mbox{\hyperlink{classflatbuffers_1_1Vector}{::flatbuffers::Vector<const\ EvenSmallStruct\ *>}}>\ even\_structs)\ \{}
+\DoxyCodeLine{00444\ \ \ \ \ fbb\_.AddOffset(SmallStructs::VT\_EVEN\_STRUCTS,\ even\_structs);}
+\DoxyCodeLine{00445\ \ \ \}}
+\DoxyCodeLine{00446\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{structSmallStructsBuilder_ad0cccc113fa1e5760340a0d0cbc7befb}{add\_odd\_structs}}(::flatbuffers::Offset<\mbox{\hyperlink{classflatbuffers_1_1Vector}{::flatbuffers::Vector<const\ OddSmallStruct\ *>}}>\ odd\_structs)\ \{}
+\DoxyCodeLine{00447\ \ \ \ \ fbb\_.AddOffset(SmallStructs::VT\_ODD\_STRUCTS,\ odd\_structs);}
+\DoxyCodeLine{00448\ \ \ \}}
+\DoxyCodeLine{00449\ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{structSmallStructsBuilder_af9c8556bda04c21b1072513c0848f279}{SmallStructsBuilder}}(\mbox{\hyperlink{classflatbuffers_1_1FlatBufferBuilderImpl}{::flatbuffers::FlatBufferBuilder}}\ \&\_fbb)}
+\DoxyCodeLine{00450\ \ \ \ \ \ \ \ \ :\ fbb\_(\_fbb)\ \{}
+\DoxyCodeLine{00451\ \ \ \ \ start\_\ =\ fbb\_.StartTable();}
+\DoxyCodeLine{00452\ \ \ \}}
+\DoxyCodeLine{00453\ \ \ ::flatbuffers::Offset<SmallStructs>\ \mbox{\hyperlink{structSmallStructsBuilder_a564a385f04ad8599037258e85acd591c}{Finish}}()\ \{}
+\DoxyCodeLine{00454\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{auto}\ end\ =\ fbb\_.EndTable(start\_);}
+\DoxyCodeLine{00455\ \ \ \ \ \textcolor{keyword}{auto}\ o\ =\ ::flatbuffers::Offset<SmallStructs>(end);}
+\DoxyCodeLine{00456\ \ \ \ \ \textcolor{keywordflow}{return}\ o;}
+\DoxyCodeLine{00457\ \ \ \}}
+\DoxyCodeLine{00458\ \};}
+\DoxyCodeLine{00459\ }
+\DoxyCodeLine{00460\ inline\ ::flatbuffers::Offset<SmallStructs>\ \mbox{\hyperlink{alignment__test__generated_8h_ab8f16aaa8e5545f9317381b334ae98f8}{CreateSmallStructs}}(}
+\DoxyCodeLine{00461\ \ \ \ \ \mbox{\hyperlink{classflatbuffers_1_1FlatBufferBuilderImpl}{::flatbuffers::FlatBufferBuilder}}\ \&\_fbb,}
+\DoxyCodeLine{00462\ \ \ \ \ ::flatbuffers::Offset<\mbox{\hyperlink{classflatbuffers_1_1Vector}{::flatbuffers::Vector<const\ EvenSmallStruct\ *>}}>\ even\_structs\ =\ 0,}
+\DoxyCodeLine{00463\ \ \ \ \ ::flatbuffers::Offset<\mbox{\hyperlink{classflatbuffers_1_1Vector}{::flatbuffers::Vector<const\ OddSmallStruct\ *>}}>\ odd\_structs\ =\ 0)\ \{}
+\DoxyCodeLine{00464\ \ \ \mbox{\hyperlink{structSmallStructsBuilder}{SmallStructsBuilder}}\ builder\_(\_fbb);}
+\DoxyCodeLine{00465\ \ \ builder\_.\mbox{\hyperlink{structSmallStructsBuilder_ad0cccc113fa1e5760340a0d0cbc7befb}{add\_odd\_structs}}(odd\_structs);}
+\DoxyCodeLine{00466\ \ \ builder\_.\mbox{\hyperlink{structSmallStructsBuilder_a30e103d0b30ea73e2149a939937fa7b2}{add\_even\_structs}}(even\_structs);}
+\DoxyCodeLine{00467\ \ \ \textcolor{keywordflow}{return}\ builder\_.\mbox{\hyperlink{structSmallStructsBuilder_a564a385f04ad8599037258e85acd591c}{Finish}}();}
+\DoxyCodeLine{00468\ \}}
+\DoxyCodeLine{00469\ }
+\DoxyCodeLine{00470\ inline\ ::flatbuffers::Offset<SmallStructs>\ \mbox{\hyperlink{alignment__test__generated_8h_ab169289c19fee8338e2b6643990b3a39}{CreateSmallStructsDirect}}(}
+\DoxyCodeLine{00471\ \ \ \ \ \mbox{\hyperlink{classflatbuffers_1_1FlatBufferBuilderImpl}{::flatbuffers::FlatBufferBuilder}}\ \&\_fbb,}
+\DoxyCodeLine{00472\ \ \ \ \ \textcolor{keyword}{const}\ std::vector<EvenSmallStruct>\ *even\_structs\ =\ \textcolor{keyword}{nullptr},}
+\DoxyCodeLine{00473\ \ \ \ \ \textcolor{keyword}{const}\ std::vector<OddSmallStruct>\ *odd\_structs\ =\ \textcolor{keyword}{nullptr})\ \{}
+\DoxyCodeLine{00474\ \ \ \textcolor{keyword}{auto}\ even\_structs\_\_\ =\ even\_structs\ ?\ \_fbb.\mbox{\hyperlink{classflatbuffers_1_1FlatBufferBuilderImpl_afe0f3eb9a693cb8913948eb45dc5442f}{CreateVectorOfStructs}}<EvenSmallStruct>(*even\_structs)\ :\ 0;}
+\DoxyCodeLine{00475\ \ \ \textcolor{keyword}{auto}\ odd\_structs\_\_\ =\ odd\_structs\ ?\ \_fbb.\mbox{\hyperlink{classflatbuffers_1_1FlatBufferBuilderImpl_afe0f3eb9a693cb8913948eb45dc5442f}{CreateVectorOfStructs}}<OddSmallStruct>(*odd\_structs)\ :\ 0;}
+\DoxyCodeLine{00476\ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{alignment__test__generated_8h_ab8f16aaa8e5545f9317381b334ae98f8}{CreateSmallStructs}}(}
+\DoxyCodeLine{00477\ \ \ \ \ \ \ \_fbb,}
+\DoxyCodeLine{00478\ \ \ \ \ \ \ even\_structs\_\_,}
+\DoxyCodeLine{00479\ \ \ \ \ \ \ odd\_structs\_\_);}
+\DoxyCodeLine{00480\ \}}
+\DoxyCodeLine{00481\ }
+\DoxyCodeLine{00482\ ::flatbuffers::Offset<SmallStructs>\ \mbox{\hyperlink{alignment__test__generated_8h_ab8f16aaa8e5545f9317381b334ae98f8}{CreateSmallStructs}}(\mbox{\hyperlink{classflatbuffers_1_1FlatBufferBuilderImpl}{::flatbuffers::FlatBufferBuilder}}\ \&\_fbb,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{structSmallStructsT}{SmallStructsT}}\ *\_o,\ const\ ::flatbuffers::rehasher\_function\_t\ *\_rehasher\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00483\ }
+\DoxyCodeLine{00484\ }
+\DoxyCodeLine{00485\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{test__64bit__generated_8h_a8620dd0a9c12e9652973381941c73bcf}{operator==}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{structOuterLargeT}{OuterLargeT}}\ \&lhs,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{structOuterLargeT}{OuterLargeT}}\ \&rhs)\ \{}
+\DoxyCodeLine{00486\ \ \ \textcolor{keywordflow}{return}}
+\DoxyCodeLine{00487\ \ \ \ \ \ \ ((lhs.\mbox{\hyperlink{structOuterLargeT_a578da150eec548893e37b4118dcd115a}{large}}\ ==\ rhs.\mbox{\hyperlink{structOuterLargeT_a578da150eec548893e37b4118dcd115a}{large}})\ ||\ (lhs.\mbox{\hyperlink{structOuterLargeT_a578da150eec548893e37b4118dcd115a}{large}}\ \&\&\ rhs.\mbox{\hyperlink{structOuterLargeT_a578da150eec548893e37b4118dcd115a}{large}}\ \&\&\ *lhs.\mbox{\hyperlink{structOuterLargeT_a578da150eec548893e37b4118dcd115a}{large}}\ ==\ *rhs.\mbox{\hyperlink{structOuterLargeT_a578da150eec548893e37b4118dcd115a}{large}}));}
+\DoxyCodeLine{00488\ \}}
+\DoxyCodeLine{00489\ }
+\DoxyCodeLine{00490\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{test__64bit__generated_8h_a67acd55d06ae1e60d0bfdedb89d3d63d}{operator!=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{structOuterLargeT}{OuterLargeT}}\ \&lhs,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{structOuterLargeT}{OuterLargeT}}\ \&rhs)\ \{}
+\DoxyCodeLine{00491\ \ \ \ \ \textcolor{keywordflow}{return}\ !(lhs\ ==\ rhs);}
+\DoxyCodeLine{00492\ \}}
+\DoxyCodeLine{00493\ }
+\DoxyCodeLine{00494\ }
+\DoxyCodeLine{00495\ \textcolor{keyword}{inline}\ \mbox{\hyperlink{structOuterLargeT_ab05adfc38b3c8ae2bf4a285d3dac5dc1}{OuterLargeT::OuterLargeT}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{structOuterLargeT}{OuterLargeT}}\ \&o)}
+\DoxyCodeLine{00496\ \ \ \ \ \ \ :\ large((o.large)\ ?\ new\ BadAlignmentLarge(*o.large)\ :\ nullptr)\ \{}
+\DoxyCodeLine{00497\ \}}
+\DoxyCodeLine{00498\ }
+\DoxyCodeLine{00499\ \textcolor{keyword}{inline}\ \mbox{\hyperlink{structOuterLargeT}{OuterLargeT}}\ \&\mbox{\hyperlink{structOuterLargeT_a915a323e1af3a80babaa3b1651dfc648}{OuterLargeT::operator=}}(\mbox{\hyperlink{structOuterLargeT}{OuterLargeT}}\ o)\ FLATBUFFERS\_NOEXCEPT\ \{}
+\DoxyCodeLine{00500\ \ \ std::swap(large,\ o.large);}
+\DoxyCodeLine{00501\ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00502\ \}}
+\DoxyCodeLine{00503\ }
+\DoxyCodeLine{00504\ \textcolor{keyword}{inline}\ \mbox{\hyperlink{structOuterLargeT}{OuterLargeT}}\ *OuterLarge::UnPack(const\ ::flatbuffers::resolver\_function\_t\ *\_resolver)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00505\ \ \ \textcolor{keyword}{auto}\ \_o\ =\ std::unique\_ptr<OuterLargeT>(\textcolor{keyword}{new}\ \mbox{\hyperlink{structOuterLargeT}{OuterLargeT}}());}
+\DoxyCodeLine{00506\ \ \ UnPackTo(\_o.get(),\ \_resolver);}
+\DoxyCodeLine{00507\ \ \ \textcolor{keywordflow}{return}\ \_o.release();}
+\DoxyCodeLine{00508\ \}}
+\DoxyCodeLine{00509\ }
+\DoxyCodeLine{00510\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ OuterLarge::UnPackTo(\mbox{\hyperlink{structOuterLargeT}{OuterLargeT}}\ *\_o,\ const\ ::flatbuffers::resolver\_function\_t\ *\_resolver)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00511\ \ \ (\mbox{\hyperlink{namespaceKeywordTest_ac9113d43992ca4eb6d9c5fba0e88fd6eacab8111fd0b710a336c898e539090e34}{void}})\_o;}
+\DoxyCodeLine{00512\ \ \ (\mbox{\hyperlink{namespaceKeywordTest_ac9113d43992ca4eb6d9c5fba0e88fd6eacab8111fd0b710a336c898e539090e34}{void}})\_resolver;}
+\DoxyCodeLine{00513\ \ \ \{\ \textcolor{keyword}{auto}\ \_e\ =\ large();\ \textcolor{keywordflow}{if}\ (\_e)\ \_o-\/>\mbox{\hyperlink{structOuterLargeT_a578da150eec548893e37b4118dcd115a}{large}}\ =\ std::unique\_ptr<BadAlignmentLarge>(\textcolor{keyword}{new}\ BadAlignmentLarge(*\_e));\ \}}
+\DoxyCodeLine{00514\ \}}
+\DoxyCodeLine{00515\ }
+\DoxyCodeLine{00516\ inline\ ::flatbuffers::Offset<OuterLarge>\ OuterLarge::Pack(\mbox{\hyperlink{classflatbuffers_1_1FlatBufferBuilderImpl}{::flatbuffers::FlatBufferBuilder}}\ \&\_fbb,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{structOuterLargeT}{OuterLargeT}}*\ \_o,\ const\ ::flatbuffers::rehasher\_function\_t\ *\_rehasher)\ \{}
+\DoxyCodeLine{00517\ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{alignment__test__generated_8h_aad0118e9880d146e1f7612fac5a0ec15}{CreateOuterLarge}}(\_fbb,\ \_o,\ \_rehasher);}
+\DoxyCodeLine{00518\ \}}
+\DoxyCodeLine{00519\ }
+\DoxyCodeLine{00520\ inline\ ::flatbuffers::Offset<OuterLarge>\ \mbox{\hyperlink{alignment__test__generated_8h_aad0118e9880d146e1f7612fac5a0ec15}{CreateOuterLarge}}(\mbox{\hyperlink{classflatbuffers_1_1FlatBufferBuilderImpl}{::flatbuffers::FlatBufferBuilder}}\ \&\_fbb,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{structOuterLargeT}{OuterLargeT}}\ *\_o,\ const\ ::flatbuffers::rehasher\_function\_t\ *\_rehasher)\ \{}
+\DoxyCodeLine{00521\ \ \ (void)\_rehasher;}
+\DoxyCodeLine{00522\ \ \ (void)\_o;}
+\DoxyCodeLine{00523\ \ \ \textcolor{keyword}{struct\ }\_VectorArgs\ \{\ \mbox{\hyperlink{classflatbuffers_1_1FlatBufferBuilderImpl}{::flatbuffers::FlatBufferBuilder}}\ *\_\_fbb;\ \textcolor{keyword}{const}\ \mbox{\hyperlink{structOuterLargeT}{OuterLargeT}}*\ \_\_o;\ const\ ::flatbuffers::rehasher\_function\_t\ *\_\_rehasher;\ \}\ \_va\ =\ \{\ \&\_fbb,\ \_o,\ \_rehasher\};\ (void)\_va;}
+\DoxyCodeLine{00524\ \ \ \textcolor{keyword}{auto}\ \_large\ =\ \_o-\/>\mbox{\hyperlink{structOuterLargeT_a578da150eec548893e37b4118dcd115a}{large}}\ ?\ \_o-\/>\mbox{\hyperlink{structOuterLargeT_a578da150eec548893e37b4118dcd115a}{large}}.get()\ :\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00525\ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{alignment__test__generated_8h_aad0118e9880d146e1f7612fac5a0ec15}{CreateOuterLarge}}(}
+\DoxyCodeLine{00526\ \ \ \ \ \ \ \_fbb,}
+\DoxyCodeLine{00527\ \ \ \ \ \ \ \_large);}
+\DoxyCodeLine{00528\ \}}
+\DoxyCodeLine{00529\ }
+\DoxyCodeLine{00530\ }
+\DoxyCodeLine{00531\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{alignment__test__generated_8h_ad1fa9de04c36fa6d21bcb05cebb648e7}{operator==}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{structBadAlignmentRootT}{BadAlignmentRootT}}\ \&lhs,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{structBadAlignmentRootT}{BadAlignmentRootT}}\ \&rhs)\ \{}
+\DoxyCodeLine{00532\ \ \ \textcolor{keywordflow}{return}}
+\DoxyCodeLine{00533\ \ \ \ \ \ \ ((lhs.\mbox{\hyperlink{structBadAlignmentRootT_ae6171c14cc409ec26c85396cf7f61520}{large}}\ ==\ rhs.\mbox{\hyperlink{structBadAlignmentRootT_ae6171c14cc409ec26c85396cf7f61520}{large}})\ ||\ (lhs.\mbox{\hyperlink{structBadAlignmentRootT_ae6171c14cc409ec26c85396cf7f61520}{large}}\ \&\&\ rhs.\mbox{\hyperlink{structBadAlignmentRootT_ae6171c14cc409ec26c85396cf7f61520}{large}}\ \&\&\ *lhs.\mbox{\hyperlink{structBadAlignmentRootT_ae6171c14cc409ec26c85396cf7f61520}{large}}\ ==\ *rhs.\mbox{\hyperlink{structBadAlignmentRootT_ae6171c14cc409ec26c85396cf7f61520}{large}}))\ \&\&}
+\DoxyCodeLine{00534\ \ \ \ \ \ \ (lhs.\mbox{\hyperlink{structBadAlignmentRootT_a7123ac512989104ea7f93bc11b5aa02c}{small}}\ ==\ rhs.\mbox{\hyperlink{structBadAlignmentRootT_a7123ac512989104ea7f93bc11b5aa02c}{small}});}
+\DoxyCodeLine{00535\ \}}
+\DoxyCodeLine{00536\ }
+\DoxyCodeLine{00537\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{alignment__test__generated_8h_a82cfd314e4154ba2119005eff00b1ec5}{operator!=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{structBadAlignmentRootT}{BadAlignmentRootT}}\ \&lhs,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{structBadAlignmentRootT}{BadAlignmentRootT}}\ \&rhs)\ \{}
+\DoxyCodeLine{00538\ \ \ \ \ \textcolor{keywordflow}{return}\ !(lhs\ ==\ rhs);}
+\DoxyCodeLine{00539\ \}}
+\DoxyCodeLine{00540\ }
+\DoxyCodeLine{00541\ }
+\DoxyCodeLine{00542\ \textcolor{keyword}{inline}\ \mbox{\hyperlink{structBadAlignmentRootT_af3c06d0014639a797c78a7c42055b68c}{BadAlignmentRootT::BadAlignmentRootT}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{structBadAlignmentRootT}{BadAlignmentRootT}}\ \&o)}
+\DoxyCodeLine{00543\ \ \ \ \ \ \ :\ large((o.large)\ ?\ new\ \mbox{\hyperlink{structOuterLargeT}{OuterLargeT}}(*o.large)\ :\ nullptr),}
+\DoxyCodeLine{00544\ \ \ \ \ \ \ \ \ small(o.small)\ \{}
+\DoxyCodeLine{00545\ \}}
+\DoxyCodeLine{00546\ }
+\DoxyCodeLine{00547\ \textcolor{keyword}{inline}\ \mbox{\hyperlink{structBadAlignmentRootT}{BadAlignmentRootT}}\ \&\mbox{\hyperlink{structBadAlignmentRootT_a3bee94ac19c10595c4d937246bbd5a5c}{BadAlignmentRootT::operator=}}(\mbox{\hyperlink{structBadAlignmentRootT}{BadAlignmentRootT}}\ o)\ FLATBUFFERS\_NOEXCEPT\ \{}
+\DoxyCodeLine{00548\ \ \ std::swap(large,\ o.large);}
+\DoxyCodeLine{00549\ \ \ std::swap(small,\ o.small);}
+\DoxyCodeLine{00550\ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00551\ \}}
+\DoxyCodeLine{00552\ }
+\DoxyCodeLine{00553\ \textcolor{keyword}{inline}\ \mbox{\hyperlink{structBadAlignmentRootT}{BadAlignmentRootT}}\ *BadAlignmentRoot::UnPack(const\ ::flatbuffers::resolver\_function\_t\ *\_resolver)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00554\ \ \ \textcolor{keyword}{auto}\ \_o\ =\ std::unique\_ptr<BadAlignmentRootT>(\textcolor{keyword}{new}\ \mbox{\hyperlink{structBadAlignmentRootT}{BadAlignmentRootT}}());}
+\DoxyCodeLine{00555\ \ \ UnPackTo(\_o.get(),\ \_resolver);}
+\DoxyCodeLine{00556\ \ \ \textcolor{keywordflow}{return}\ \_o.release();}
+\DoxyCodeLine{00557\ \}}
+\DoxyCodeLine{00558\ }
+\DoxyCodeLine{00559\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ BadAlignmentRoot::UnPackTo(\mbox{\hyperlink{structBadAlignmentRootT}{BadAlignmentRootT}}\ *\_o,\ const\ ::flatbuffers::resolver\_function\_t\ *\_resolver)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00560\ \ \ (\mbox{\hyperlink{namespaceKeywordTest_ac9113d43992ca4eb6d9c5fba0e88fd6eacab8111fd0b710a336c898e539090e34}{void}})\_o;}
+\DoxyCodeLine{00561\ \ \ (\mbox{\hyperlink{namespaceKeywordTest_ac9113d43992ca4eb6d9c5fba0e88fd6eacab8111fd0b710a336c898e539090e34}{void}})\_resolver;}
+\DoxyCodeLine{00562\ \ \ \{\ \textcolor{keyword}{auto}\ \_e\ =\ large();\ \textcolor{keywordflow}{if}\ (\_e)\ \{\ \textcolor{keywordflow}{if}(\_o-\/>\mbox{\hyperlink{structBadAlignmentRootT_ae6171c14cc409ec26c85396cf7f61520}{large}})\ \{\ \_e-\/>UnPackTo(\_o-\/>\mbox{\hyperlink{structBadAlignmentRootT_ae6171c14cc409ec26c85396cf7f61520}{large}}.get(),\ \_resolver);\ \}\ \textcolor{keywordflow}{else}\ \{\ \_o-\/>\mbox{\hyperlink{structBadAlignmentRootT_ae6171c14cc409ec26c85396cf7f61520}{large}}\ =\ std::unique\_ptr<OuterLargeT>(\_e-\/>UnPack(\_resolver));\ \}\ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (\_o-\/>\mbox{\hyperlink{structBadAlignmentRootT_ae6171c14cc409ec26c85396cf7f61520}{large}})\ \{\ \_o-\/>\mbox{\hyperlink{structBadAlignmentRootT_ae6171c14cc409ec26c85396cf7f61520}{large}}.reset();\ \}\ \}}
+\DoxyCodeLine{00563\ \ \ \{\ \textcolor{keyword}{auto}\ \_e\ =\ small();\ \textcolor{keywordflow}{if}\ (\_e)\ \{\ \_o-\/>\mbox{\hyperlink{structBadAlignmentRootT_a7123ac512989104ea7f93bc11b5aa02c}{small}}.resize(\_e-\/>size());\ \textcolor{keywordflow}{for}\ (::flatbuffers::uoffset\_t\ \_i\ =\ 0;\ \_i\ <\ \_e-\/>size();\ \_i++)\ \{\ \_o-\/>\mbox{\hyperlink{structBadAlignmentRootT_a7123ac512989104ea7f93bc11b5aa02c}{small}}[\_i]\ =\ *\_e-\/>Get(\_i);\ \}\ \}\ \textcolor{keywordflow}{else}\ \{\ \_o-\/>\mbox{\hyperlink{structBadAlignmentRootT_a7123ac512989104ea7f93bc11b5aa02c}{small}}.resize(0);\ \}\ \}}
+\DoxyCodeLine{00564\ \}}
+\DoxyCodeLine{00565\ }
+\DoxyCodeLine{00566\ inline\ ::flatbuffers::Offset<BadAlignmentRoot>\ BadAlignmentRoot::Pack(\mbox{\hyperlink{classflatbuffers_1_1FlatBufferBuilderImpl}{::flatbuffers::FlatBufferBuilder}}\ \&\_fbb,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{structBadAlignmentRootT}{BadAlignmentRootT}}*\ \_o,\ const\ ::flatbuffers::rehasher\_function\_t\ *\_rehasher)\ \{}
+\DoxyCodeLine{00567\ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{alignment__test__generated_8h_a9504d0694ce6d3e0f66813a243d284c8}{CreateBadAlignmentRoot}}(\_fbb,\ \_o,\ \_rehasher);}
+\DoxyCodeLine{00568\ \}}
+\DoxyCodeLine{00569\ }
+\DoxyCodeLine{00570\ inline\ ::flatbuffers::Offset<BadAlignmentRoot>\ \mbox{\hyperlink{alignment__test__generated_8h_a9504d0694ce6d3e0f66813a243d284c8}{CreateBadAlignmentRoot}}(\mbox{\hyperlink{classflatbuffers_1_1FlatBufferBuilderImpl}{::flatbuffers::FlatBufferBuilder}}\ \&\_fbb,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{structBadAlignmentRootT}{BadAlignmentRootT}}\ *\_o,\ const\ ::flatbuffers::rehasher\_function\_t\ *\_rehasher)\ \{}
+\DoxyCodeLine{00571\ \ \ (void)\_rehasher;}
+\DoxyCodeLine{00572\ \ \ (void)\_o;}
+\DoxyCodeLine{00573\ \ \ \textcolor{keyword}{struct\ }\_VectorArgs\ \{\ \mbox{\hyperlink{classflatbuffers_1_1FlatBufferBuilderImpl}{::flatbuffers::FlatBufferBuilder}}\ *\_\_fbb;\ \textcolor{keyword}{const}\ \mbox{\hyperlink{structBadAlignmentRootT}{BadAlignmentRootT}}*\ \_\_o;\ const\ ::flatbuffers::rehasher\_function\_t\ *\_\_rehasher;\ \}\ \_va\ =\ \{\ \&\_fbb,\ \_o,\ \_rehasher\};\ (void)\_va;}
+\DoxyCodeLine{00574\ \ \ \textcolor{keyword}{auto}\ \_large\ =\ \_o-\/>\mbox{\hyperlink{structBadAlignmentRootT_ae6171c14cc409ec26c85396cf7f61520}{large}}\ ?\ \mbox{\hyperlink{alignment__test__generated_8h_aad0118e9880d146e1f7612fac5a0ec15}{CreateOuterLarge}}(\_fbb,\ \_o-\/>\mbox{\hyperlink{structBadAlignmentRootT_ae6171c14cc409ec26c85396cf7f61520}{large}}.get(),\ \_rehasher)\ :\ 0;}
+\DoxyCodeLine{00575\ \ \ \textcolor{keyword}{auto}\ \_small\ =\ \_o-\/>\mbox{\hyperlink{structBadAlignmentRootT_a7123ac512989104ea7f93bc11b5aa02c}{small}}.size()\ ?\ \_fbb.\mbox{\hyperlink{classflatbuffers_1_1FlatBufferBuilderImpl_afe0f3eb9a693cb8913948eb45dc5442f}{CreateVectorOfStructs}}(\_o-\/>\mbox{\hyperlink{structBadAlignmentRootT_a7123ac512989104ea7f93bc11b5aa02c}{small}})\ :\ 0;}
+\DoxyCodeLine{00576\ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{alignment__test__generated_8h_a9504d0694ce6d3e0f66813a243d284c8}{CreateBadAlignmentRoot}}(}
+\DoxyCodeLine{00577\ \ \ \ \ \ \ \_fbb,}
+\DoxyCodeLine{00578\ \ \ \ \ \ \ \_large,}
+\DoxyCodeLine{00579\ \ \ \ \ \ \ \_small);}
+\DoxyCodeLine{00580\ \}}
+\DoxyCodeLine{00581\ }
+\DoxyCodeLine{00582\ }
+\DoxyCodeLine{00583\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{alignment__test__generated_8h_ad1fa9de04c36fa6d21bcb05cebb648e7}{operator==}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{structSmallStructsT}{SmallStructsT}}\ \&lhs,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{structSmallStructsT}{SmallStructsT}}\ \&rhs)\ \{}
+\DoxyCodeLine{00584\ \ \ \textcolor{keywordflow}{return}}
+\DoxyCodeLine{00585\ \ \ \ \ \ \ (lhs.\mbox{\hyperlink{structSmallStructsT_a283a466e3fddf88e9dba028a0f715eff}{even\_structs}}\ ==\ rhs.\mbox{\hyperlink{structSmallStructsT_a283a466e3fddf88e9dba028a0f715eff}{even\_structs}})\ \&\&}
+\DoxyCodeLine{00586\ \ \ \ \ \ \ (lhs.\mbox{\hyperlink{structSmallStructsT_a92413849d24702271f63042e6e5df714}{odd\_structs}}\ ==\ rhs.\mbox{\hyperlink{structSmallStructsT_a92413849d24702271f63042e6e5df714}{odd\_structs}});}
+\DoxyCodeLine{00587\ \}}
+\DoxyCodeLine{00588\ }
+\DoxyCodeLine{00589\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{alignment__test__generated_8h_a82cfd314e4154ba2119005eff00b1ec5}{operator!=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{structSmallStructsT}{SmallStructsT}}\ \&lhs,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{structSmallStructsT}{SmallStructsT}}\ \&rhs)\ \{}
+\DoxyCodeLine{00590\ \ \ \ \ \textcolor{keywordflow}{return}\ !(lhs\ ==\ rhs);}
+\DoxyCodeLine{00591\ \}}
+\DoxyCodeLine{00592\ }
+\DoxyCodeLine{00593\ }
+\DoxyCodeLine{00594\ \textcolor{keyword}{inline}\ \mbox{\hyperlink{structSmallStructsT}{SmallStructsT}}\ *SmallStructs::UnPack(const\ ::flatbuffers::resolver\_function\_t\ *\_resolver)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00595\ \ \ \textcolor{keyword}{auto}\ \_o\ =\ std::unique\_ptr<SmallStructsT>(\textcolor{keyword}{new}\ \mbox{\hyperlink{structSmallStructsT}{SmallStructsT}}());}
+\DoxyCodeLine{00596\ \ \ \mbox{\hyperlink{namespaceflatbuffers_1_1tests_a82e9299cd9b640d99182d09729be1dbb}{UnPackTo}}(\_o.get(),\ \_resolver);}
+\DoxyCodeLine{00597\ \ \ \textcolor{keywordflow}{return}\ \_o.release();}
+\DoxyCodeLine{00598\ \}}
+\DoxyCodeLine{00599\ }
+\DoxyCodeLine{00600\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ SmallStructs::UnPackTo(\mbox{\hyperlink{structSmallStructsT}{SmallStructsT}}\ *\_o,\ const\ ::flatbuffers::resolver\_function\_t\ *\_resolver)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00601\ \ \ (\mbox{\hyperlink{namespaceKeywordTest_ac9113d43992ca4eb6d9c5fba0e88fd6eacab8111fd0b710a336c898e539090e34}{void}})\_o;}
+\DoxyCodeLine{00602\ \ \ (\mbox{\hyperlink{namespaceKeywordTest_ac9113d43992ca4eb6d9c5fba0e88fd6eacab8111fd0b710a336c898e539090e34}{void}})\_resolver;}
+\DoxyCodeLine{00603\ \ \ \{\ \textcolor{keyword}{auto}\ \_e\ =\ even\_structs();\ \textcolor{keywordflow}{if}\ (\_e)\ \{\ \_o-\/>\mbox{\hyperlink{structSmallStructsT_a283a466e3fddf88e9dba028a0f715eff}{even\_structs}}.resize(\_e-\/>size());\ \textcolor{keywordflow}{for}\ (::flatbuffers::uoffset\_t\ \_i\ =\ 0;\ \_i\ <\ \_e-\/>size();\ \_i++)\ \{\ \_o-\/>\mbox{\hyperlink{structSmallStructsT_a283a466e3fddf88e9dba028a0f715eff}{even\_structs}}[\_i]\ =\ *\_e-\/>Get(\_i);\ \}\ \}\ \textcolor{keywordflow}{else}\ \{\ \_o-\/>\mbox{\hyperlink{structSmallStructsT_a283a466e3fddf88e9dba028a0f715eff}{even\_structs}}.resize(0);\ \}\ \}}
+\DoxyCodeLine{00604\ \ \ \{\ \textcolor{keyword}{auto}\ \_e\ =\ odd\_structs();\ \textcolor{keywordflow}{if}\ (\_e)\ \{\ \_o-\/>\mbox{\hyperlink{structSmallStructsT_a92413849d24702271f63042e6e5df714}{odd\_structs}}.resize(\_e-\/>size());\ \textcolor{keywordflow}{for}\ (::flatbuffers::uoffset\_t\ \_i\ =\ 0;\ \_i\ <\ \_e-\/>size();\ \_i++)\ \{\ \_o-\/>\mbox{\hyperlink{structSmallStructsT_a92413849d24702271f63042e6e5df714}{odd\_structs}}[\_i]\ =\ *\_e-\/>Get(\_i);\ \}\ \}\ \textcolor{keywordflow}{else}\ \{\ \_o-\/>\mbox{\hyperlink{structSmallStructsT_a92413849d24702271f63042e6e5df714}{odd\_structs}}.resize(0);\ \}\ \}}
+\DoxyCodeLine{00605\ \}}
+\DoxyCodeLine{00606\ }
+\DoxyCodeLine{00607\ inline\ ::flatbuffers::Offset<SmallStructs>\ SmallStructs::Pack(\mbox{\hyperlink{classflatbuffers_1_1FlatBufferBuilderImpl}{::flatbuffers::FlatBufferBuilder}}\ \&\_fbb,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{structSmallStructsT}{SmallStructsT}}*\ \_o,\ const\ ::flatbuffers::rehasher\_function\_t\ *\_rehasher)\ \{}
+\DoxyCodeLine{00608\ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{alignment__test__generated_8h_ab8f16aaa8e5545f9317381b334ae98f8}{CreateSmallStructs}}(\_fbb,\ \_o,\ \_rehasher);}
+\DoxyCodeLine{00609\ \}}
+\DoxyCodeLine{00610\ }
+\DoxyCodeLine{00611\ inline\ ::flatbuffers::Offset<SmallStructs>\ \mbox{\hyperlink{alignment__test__generated_8h_ab8f16aaa8e5545f9317381b334ae98f8}{CreateSmallStructs}}(\mbox{\hyperlink{classflatbuffers_1_1FlatBufferBuilderImpl}{::flatbuffers::FlatBufferBuilder}}\ \&\_fbb,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{structSmallStructsT}{SmallStructsT}}\ *\_o,\ const\ ::flatbuffers::rehasher\_function\_t\ *\_rehasher)\ \{}
+\DoxyCodeLine{00612\ \ \ (void)\_rehasher;}
+\DoxyCodeLine{00613\ \ \ (void)\_o;}
+\DoxyCodeLine{00614\ \ \ \textcolor{keyword}{struct\ }\_VectorArgs\ \{\ \mbox{\hyperlink{classflatbuffers_1_1FlatBufferBuilderImpl}{::flatbuffers::FlatBufferBuilder}}\ *\_\_fbb;\ \textcolor{keyword}{const}\ \mbox{\hyperlink{structSmallStructsT}{SmallStructsT}}*\ \_\_o;\ const\ ::flatbuffers::rehasher\_function\_t\ *\_\_rehasher;\ \}\ \_va\ =\ \{\ \&\_fbb,\ \_o,\ \_rehasher\};\ (void)\_va;}
+\DoxyCodeLine{00615\ \ \ \textcolor{keyword}{auto}\ \_even\_structs\ =\ \_o-\/>\mbox{\hyperlink{structSmallStructsT_a283a466e3fddf88e9dba028a0f715eff}{even\_structs}}.size()\ ?\ \_fbb.\mbox{\hyperlink{classflatbuffers_1_1FlatBufferBuilderImpl_afe0f3eb9a693cb8913948eb45dc5442f}{CreateVectorOfStructs}}(\_o-\/>\mbox{\hyperlink{structSmallStructsT_a283a466e3fddf88e9dba028a0f715eff}{even\_structs}})\ :\ 0;}
+\DoxyCodeLine{00616\ \ \ \textcolor{keyword}{auto}\ \_odd\_structs\ =\ \_o-\/>\mbox{\hyperlink{structSmallStructsT_a92413849d24702271f63042e6e5df714}{odd\_structs}}.size()\ ?\ \_fbb.\mbox{\hyperlink{classflatbuffers_1_1FlatBufferBuilderImpl_afe0f3eb9a693cb8913948eb45dc5442f}{CreateVectorOfStructs}}(\_o-\/>\mbox{\hyperlink{structSmallStructsT_a92413849d24702271f63042e6e5df714}{odd\_structs}})\ :\ 0;}
+\DoxyCodeLine{00617\ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{alignment__test__generated_8h_ab8f16aaa8e5545f9317381b334ae98f8}{CreateSmallStructs}}(}
+\DoxyCodeLine{00618\ \ \ \ \ \ \ \_fbb,}
+\DoxyCodeLine{00619\ \ \ \ \ \ \ \_even\_structs,}
+\DoxyCodeLine{00620\ \ \ \ \ \ \ \_odd\_structs);}
+\DoxyCodeLine{00621\ \}}
+\DoxyCodeLine{00622\ }
+\DoxyCodeLine{00623\ \textcolor{keyword}{inline}\ const\ ::flatbuffers::TypeTable\ *\mbox{\hyperlink{alignment__test__generated_8h_aaae478127f2cc3d4391dfbce458f86bf}{BadAlignmentSmallTypeTable}}()\ \{}
+\DoxyCodeLine{00624\ \ \ \textcolor{keyword}{static}\ const\ ::flatbuffers::TypeCode\ type\_codes[]\ =\ \{}
+\DoxyCodeLine{00625\ \ \ \ \ \{\ ::flatbuffers::ET\_UINT,\ 0,\ -\/1\ \},}
+\DoxyCodeLine{00626\ \ \ \ \ \{\ ::flatbuffers::ET\_UINT,\ 0,\ -\/1\ \},}
+\DoxyCodeLine{00627\ \ \ \ \ \{\ ::flatbuffers::ET\_UINT,\ 0,\ -\/1\ \}}
+\DoxyCodeLine{00628\ \ \ \};}
+\DoxyCodeLine{00629\ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ int64\_t\ values[]\ =\ \{\ 0,\ 4,\ 8,\ 12\ \};}
+\DoxyCodeLine{00630\ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *\ \textcolor{keyword}{const}\ names[]\ =\ \{}
+\DoxyCodeLine{00631\ \ \ \ \ \textcolor{stringliteral}{"{}var\_0"{}},}
+\DoxyCodeLine{00632\ \ \ \ \ \textcolor{stringliteral}{"{}var\_1"{}},}
+\DoxyCodeLine{00633\ \ \ \ \ \textcolor{stringliteral}{"{}var\_2"{}}}
+\DoxyCodeLine{00634\ \ \ \};}
+\DoxyCodeLine{00635\ \ \ \textcolor{keyword}{static}\ const\ ::flatbuffers::TypeTable\ tt\ =\ \{}
+\DoxyCodeLine{00636\ \ \ \ \ \mbox{\hyperlink{namespaceflatbuffers_a38583f915214f05d7cd1841571d07208aa5545269c0d63b635104bec59da367ff}{::flatbuffers::ST\_STRUCT}},\ 3,\ type\_codes,\ \textcolor{keyword}{nullptr},\ \textcolor{keyword}{nullptr},\ values,\ names}
+\DoxyCodeLine{00637\ \ \ \};}
+\DoxyCodeLine{00638\ \ \ \textcolor{keywordflow}{return}\ \&tt;}
+\DoxyCodeLine{00639\ \}}
+\DoxyCodeLine{00640\ }
+\DoxyCodeLine{00641\ \textcolor{keyword}{inline}\ const\ ::flatbuffers::TypeTable\ *\mbox{\hyperlink{alignment__test__generated_8h_ad8b10df81bc9e22f187c86fa78e0ff04}{BadAlignmentLargeTypeTable}}()\ \{}
+\DoxyCodeLine{00642\ \ \ \textcolor{keyword}{static}\ const\ ::flatbuffers::TypeCode\ type\_codes[]\ =\ \{}
+\DoxyCodeLine{00643\ \ \ \ \ \{\ ::flatbuffers::ET\_ULONG,\ 0,\ -\/1\ \}}
+\DoxyCodeLine{00644\ \ \ \};}
+\DoxyCodeLine{00645\ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ int64\_t\ values[]\ =\ \{\ 0,\ 8\ \};}
+\DoxyCodeLine{00646\ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *\ \textcolor{keyword}{const}\ names[]\ =\ \{}
+\DoxyCodeLine{00647\ \ \ \ \ \textcolor{stringliteral}{"{}var\_0"{}}}
+\DoxyCodeLine{00648\ \ \ \};}
+\DoxyCodeLine{00649\ \ \ \textcolor{keyword}{static}\ const\ ::flatbuffers::TypeTable\ tt\ =\ \{}
+\DoxyCodeLine{00650\ \ \ \ \ \mbox{\hyperlink{namespaceflatbuffers_a38583f915214f05d7cd1841571d07208aa5545269c0d63b635104bec59da367ff}{::flatbuffers::ST\_STRUCT}},\ 1,\ type\_codes,\ \textcolor{keyword}{nullptr},\ \textcolor{keyword}{nullptr},\ values,\ names}
+\DoxyCodeLine{00651\ \ \ \};}
+\DoxyCodeLine{00652\ \ \ \textcolor{keywordflow}{return}\ \&tt;}
+\DoxyCodeLine{00653\ \}}
+\DoxyCodeLine{00654\ }
+\DoxyCodeLine{00655\ \textcolor{keyword}{inline}\ const\ ::flatbuffers::TypeTable\ *\mbox{\hyperlink{alignment__test__generated_8h_afb7d90902e4581783d414dce17ca4977}{OuterLargeTypeTable}}()\ \{}
+\DoxyCodeLine{00656\ \ \ \textcolor{keyword}{static}\ const\ ::flatbuffers::TypeCode\ type\_codes[]\ =\ \{}
+\DoxyCodeLine{00657\ \ \ \ \ \{\ ::flatbuffers::ET\_SEQUENCE,\ 0,\ 0\ \}}
+\DoxyCodeLine{00658\ \ \ \};}
+\DoxyCodeLine{00659\ \ \ \textcolor{keyword}{static}\ const\ ::flatbuffers::TypeFunction\ type\_refs[]\ =\ \{}
+\DoxyCodeLine{00660\ \ \ \ \ \mbox{\hyperlink{alignment__test__generated_8h_ad8b10df81bc9e22f187c86fa78e0ff04}{BadAlignmentLargeTypeTable}}}
+\DoxyCodeLine{00661\ \ \ \};}
+\DoxyCodeLine{00662\ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *\ \textcolor{keyword}{const}\ names[]\ =\ \{}
+\DoxyCodeLine{00663\ \ \ \ \ \textcolor{stringliteral}{"{}large"{}}}
+\DoxyCodeLine{00664\ \ \ \};}
+\DoxyCodeLine{00665\ \ \ \textcolor{keyword}{static}\ const\ ::flatbuffers::TypeTable\ tt\ =\ \{}
+\DoxyCodeLine{00666\ \ \ \ \ \mbox{\hyperlink{namespaceflatbuffers_a38583f915214f05d7cd1841571d07208a8ecc4069f66bbf1d6547f0bd888520c0}{::flatbuffers::ST\_TABLE}},\ 1,\ type\_codes,\ type\_refs,\ \textcolor{keyword}{nullptr},\ \textcolor{keyword}{nullptr},\ names}
+\DoxyCodeLine{00667\ \ \ \};}
+\DoxyCodeLine{00668\ \ \ \textcolor{keywordflow}{return}\ \&tt;}
+\DoxyCodeLine{00669\ \}}
+\DoxyCodeLine{00670\ }
+\DoxyCodeLine{00671\ \textcolor{keyword}{inline}\ const\ ::flatbuffers::TypeTable\ *\mbox{\hyperlink{alignment__test__generated_8h_aa8b06dd2331d5e68f3e9bf405215f6fc}{BadAlignmentRootTypeTable}}()\ \{}
+\DoxyCodeLine{00672\ \ \ \textcolor{keyword}{static}\ const\ ::flatbuffers::TypeCode\ type\_codes[]\ =\ \{}
+\DoxyCodeLine{00673\ \ \ \ \ \{\ ::flatbuffers::ET\_SEQUENCE,\ 0,\ 0\ \},}
+\DoxyCodeLine{00674\ \ \ \ \ \{\ ::flatbuffers::ET\_SEQUENCE,\ 1,\ 1\ \}}
+\DoxyCodeLine{00675\ \ \ \};}
+\DoxyCodeLine{00676\ \ \ \textcolor{keyword}{static}\ const\ ::flatbuffers::TypeFunction\ type\_refs[]\ =\ \{}
+\DoxyCodeLine{00677\ \ \ \ \ \mbox{\hyperlink{alignment__test__generated_8h_afb7d90902e4581783d414dce17ca4977}{OuterLargeTypeTable}},}
+\DoxyCodeLine{00678\ \ \ \ \ \mbox{\hyperlink{alignment__test__generated_8h_aaae478127f2cc3d4391dfbce458f86bf}{BadAlignmentSmallTypeTable}}}
+\DoxyCodeLine{00679\ \ \ \};}
+\DoxyCodeLine{00680\ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *\ \textcolor{keyword}{const}\ names[]\ =\ \{}
+\DoxyCodeLine{00681\ \ \ \ \ \textcolor{stringliteral}{"{}large"{}},}
+\DoxyCodeLine{00682\ \ \ \ \ \textcolor{stringliteral}{"{}small"{}}}
+\DoxyCodeLine{00683\ \ \ \};}
+\DoxyCodeLine{00684\ \ \ \textcolor{keyword}{static}\ const\ ::flatbuffers::TypeTable\ tt\ =\ \{}
+\DoxyCodeLine{00685\ \ \ \ \ \mbox{\hyperlink{namespaceflatbuffers_a38583f915214f05d7cd1841571d07208a8ecc4069f66bbf1d6547f0bd888520c0}{::flatbuffers::ST\_TABLE}},\ 2,\ type\_codes,\ type\_refs,\ \textcolor{keyword}{nullptr},\ \textcolor{keyword}{nullptr},\ names}
+\DoxyCodeLine{00686\ \ \ \};}
+\DoxyCodeLine{00687\ \ \ \textcolor{keywordflow}{return}\ \&tt;}
+\DoxyCodeLine{00688\ \}}
+\DoxyCodeLine{00689\ }
+\DoxyCodeLine{00690\ \textcolor{keyword}{inline}\ const\ ::flatbuffers::TypeTable\ *\mbox{\hyperlink{alignment__test__generated_8h_a7e79ebe9db856998e7ee4940638fe6f0}{EvenSmallStructTypeTable}}()\ \{}
+\DoxyCodeLine{00691\ \ \ \textcolor{keyword}{static}\ const\ ::flatbuffers::TypeCode\ type\_codes[]\ =\ \{}
+\DoxyCodeLine{00692\ \ \ \ \ \{\ ::flatbuffers::ET\_UCHAR,\ 0,\ -\/1\ \},}
+\DoxyCodeLine{00693\ \ \ \ \ \{\ ::flatbuffers::ET\_UCHAR,\ 0,\ -\/1\ \}}
+\DoxyCodeLine{00694\ \ \ \};}
+\DoxyCodeLine{00695\ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ int64\_t\ values[]\ =\ \{\ 0,\ 1,\ 2\ \};}
+\DoxyCodeLine{00696\ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *\ \textcolor{keyword}{const}\ names[]\ =\ \{}
+\DoxyCodeLine{00697\ \ \ \ \ \textcolor{stringliteral}{"{}var\_0"{}},}
+\DoxyCodeLine{00698\ \ \ \ \ \textcolor{stringliteral}{"{}var\_1"{}}}
+\DoxyCodeLine{00699\ \ \ \};}
+\DoxyCodeLine{00700\ \ \ \textcolor{keyword}{static}\ const\ ::flatbuffers::TypeTable\ tt\ =\ \{}
+\DoxyCodeLine{00701\ \ \ \ \ \mbox{\hyperlink{namespaceflatbuffers_a38583f915214f05d7cd1841571d07208aa5545269c0d63b635104bec59da367ff}{::flatbuffers::ST\_STRUCT}},\ 2,\ type\_codes,\ \textcolor{keyword}{nullptr},\ \textcolor{keyword}{nullptr},\ values,\ names}
+\DoxyCodeLine{00702\ \ \ \};}
+\DoxyCodeLine{00703\ \ \ \textcolor{keywordflow}{return}\ \&tt;}
+\DoxyCodeLine{00704\ \}}
+\DoxyCodeLine{00705\ }
+\DoxyCodeLine{00706\ \textcolor{keyword}{inline}\ const\ ::flatbuffers::TypeTable\ *\mbox{\hyperlink{alignment__test__generated_8h_a1be700897f51819eb73046017d7d743f}{OddSmallStructTypeTable}}()\ \{}
+\DoxyCodeLine{00707\ \ \ \textcolor{keyword}{static}\ const\ ::flatbuffers::TypeCode\ type\_codes[]\ =\ \{}
+\DoxyCodeLine{00708\ \ \ \ \ \{\ ::flatbuffers::ET\_UCHAR,\ 0,\ -\/1\ \},}
+\DoxyCodeLine{00709\ \ \ \ \ \{\ ::flatbuffers::ET\_UCHAR,\ 0,\ -\/1\ \},}
+\DoxyCodeLine{00710\ \ \ \ \ \{\ ::flatbuffers::ET\_UCHAR,\ 0,\ -\/1\ \}}
+\DoxyCodeLine{00711\ \ \ \};}
+\DoxyCodeLine{00712\ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ int64\_t\ values[]\ =\ \{\ 0,\ 1,\ 2,\ 3\ \};}
+\DoxyCodeLine{00713\ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *\ \textcolor{keyword}{const}\ names[]\ =\ \{}
+\DoxyCodeLine{00714\ \ \ \ \ \textcolor{stringliteral}{"{}var\_0"{}},}
+\DoxyCodeLine{00715\ \ \ \ \ \textcolor{stringliteral}{"{}var\_1"{}},}
+\DoxyCodeLine{00716\ \ \ \ \ \textcolor{stringliteral}{"{}var\_2"{}}}
+\DoxyCodeLine{00717\ \ \ \};}
+\DoxyCodeLine{00718\ \ \ \textcolor{keyword}{static}\ const\ ::flatbuffers::TypeTable\ tt\ =\ \{}
+\DoxyCodeLine{00719\ \ \ \ \ \mbox{\hyperlink{namespaceflatbuffers_a38583f915214f05d7cd1841571d07208aa5545269c0d63b635104bec59da367ff}{::flatbuffers::ST\_STRUCT}},\ 3,\ type\_codes,\ \textcolor{keyword}{nullptr},\ \textcolor{keyword}{nullptr},\ values,\ names}
+\DoxyCodeLine{00720\ \ \ \};}
+\DoxyCodeLine{00721\ \ \ \textcolor{keywordflow}{return}\ \&tt;}
+\DoxyCodeLine{00722\ \}}
+\DoxyCodeLine{00723\ }
+\DoxyCodeLine{00724\ \textcolor{keyword}{inline}\ const\ ::flatbuffers::TypeTable\ *\mbox{\hyperlink{alignment__test__generated_8h_afe83bf5770fbd3bfc5c730f3964814f9}{SmallStructsTypeTable}}()\ \{}
+\DoxyCodeLine{00725\ \ \ \textcolor{keyword}{static}\ const\ ::flatbuffers::TypeCode\ type\_codes[]\ =\ \{}
+\DoxyCodeLine{00726\ \ \ \ \ \{\ ::flatbuffers::ET\_SEQUENCE,\ 1,\ 0\ \},}
+\DoxyCodeLine{00727\ \ \ \ \ \{\ ::flatbuffers::ET\_SEQUENCE,\ 1,\ 1\ \}}
+\DoxyCodeLine{00728\ \ \ \};}
+\DoxyCodeLine{00729\ \ \ \textcolor{keyword}{static}\ const\ ::flatbuffers::TypeFunction\ type\_refs[]\ =\ \{}
+\DoxyCodeLine{00730\ \ \ \ \ \mbox{\hyperlink{alignment__test__generated_8h_a7e79ebe9db856998e7ee4940638fe6f0}{EvenSmallStructTypeTable}},}
+\DoxyCodeLine{00731\ \ \ \ \ \mbox{\hyperlink{alignment__test__generated_8h_a1be700897f51819eb73046017d7d743f}{OddSmallStructTypeTable}}}
+\DoxyCodeLine{00732\ \ \ \};}
+\DoxyCodeLine{00733\ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *\ \textcolor{keyword}{const}\ names[]\ =\ \{}
+\DoxyCodeLine{00734\ \ \ \ \ \textcolor{stringliteral}{"{}even\_structs"{}},}
+\DoxyCodeLine{00735\ \ \ \ \ \textcolor{stringliteral}{"{}odd\_structs"{}}}
+\DoxyCodeLine{00736\ \ \ \};}
+\DoxyCodeLine{00737\ \ \ \textcolor{keyword}{static}\ const\ ::flatbuffers::TypeTable\ tt\ =\ \{}
+\DoxyCodeLine{00738\ \ \ \ \ \mbox{\hyperlink{namespaceflatbuffers_a38583f915214f05d7cd1841571d07208a8ecc4069f66bbf1d6547f0bd888520c0}{::flatbuffers::ST\_TABLE}},\ 2,\ type\_codes,\ type\_refs,\ \textcolor{keyword}{nullptr},\ \textcolor{keyword}{nullptr},\ names}
+\DoxyCodeLine{00739\ \ \ \};}
+\DoxyCodeLine{00740\ \ \ \textcolor{keywordflow}{return}\ \&tt;}
+\DoxyCodeLine{00741\ \}}
+\DoxyCodeLine{00742\ }
+\DoxyCodeLine{00743\ \textcolor{keyword}{inline}\ \textcolor{keyword}{const}\ SmallStructs\ *\mbox{\hyperlink{alignment__test__generated_8h_accf26fc57bba80bdc5590c479c8456b1}{GetSmallStructs}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{void}\ *buf)\ \{}
+\DoxyCodeLine{00744\ \ \ return\ ::flatbuffers::GetRoot<SmallStructs>(buf);}
+\DoxyCodeLine{00745\ \}}
+\DoxyCodeLine{00746\ }
+\DoxyCodeLine{00747\ \textcolor{keyword}{inline}\ \textcolor{keyword}{const}\ SmallStructs\ *\mbox{\hyperlink{alignment__test__generated_8h_aed3749586b04ada6ae284ac2fb610da9}{GetSizePrefixedSmallStructs}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{void}\ *buf)\ \{}
+\DoxyCodeLine{00748\ \ \ return\ ::flatbuffers::GetSizePrefixedRoot<SmallStructs>(buf);}
+\DoxyCodeLine{00749\ \}}
+\DoxyCodeLine{00750\ }
+\DoxyCodeLine{00751\ \textcolor{keyword}{inline}\ SmallStructs\ *\mbox{\hyperlink{alignment__test__generated_8h_aad96b5ed0f10517f58f3a4583003f57a}{GetMutableSmallStructs}}(\textcolor{keywordtype}{void}\ *buf)\ \{}
+\DoxyCodeLine{00752\ \ \ return\ ::flatbuffers::GetMutableRoot<SmallStructs>(buf);}
+\DoxyCodeLine{00753\ \}}
+\DoxyCodeLine{00754\ }
+\DoxyCodeLine{00755\ \textcolor{keyword}{inline}\ SmallStructs\ *\mbox{\hyperlink{alignment__test__generated_8h_a81dee835bc6b40b3486057fb57cc1b8b}{GetMutableSizePrefixedSmallStructs}}(\textcolor{keywordtype}{void}\ *buf)\ \{}
+\DoxyCodeLine{00756\ \ \ return\ ::flatbuffers::GetMutableSizePrefixedRoot<SmallStructs>(buf);}
+\DoxyCodeLine{00757\ \}}
+\DoxyCodeLine{00758\ }
+\DoxyCodeLine{00759\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{alignment__test__generated_8h_a563e80a07237bdcc995cfde3b61f5734}{VerifySmallStructsBuffer}}(}
+\DoxyCodeLine{00760\ \ \ \ \ \mbox{\hyperlink{namespaceflatbuffers_a3268477941df91db2eb06442b6e5f922}{::flatbuffers::Verifier}}\ \&verifier)\ \{}
+\DoxyCodeLine{00761\ \ \ \textcolor{keywordflow}{return}\ verifier.VerifyBuffer<SmallStructs>(\textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00762\ \}}
+\DoxyCodeLine{00763\ }
+\DoxyCodeLine{00764\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{alignment__test__generated_8h_a1b2c551a393990fe124627dfd37a9a4c}{VerifySizePrefixedSmallStructsBuffer}}(}
+\DoxyCodeLine{00765\ \ \ \ \ \mbox{\hyperlink{namespaceflatbuffers_a3268477941df91db2eb06442b6e5f922}{::flatbuffers::Verifier}}\ \&verifier)\ \{}
+\DoxyCodeLine{00766\ \ \ \textcolor{keywordflow}{return}\ verifier.VerifySizePrefixedBuffer<SmallStructs>(\textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00767\ \}}
+\DoxyCodeLine{00768\ }
+\DoxyCodeLine{00769\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{alignment__test__generated_8h_a4f3c90800567d01c18bbb67486ba34ca}{FinishSmallStructsBuffer}}(}
+\DoxyCodeLine{00770\ \ \ \ \ \mbox{\hyperlink{classflatbuffers_1_1FlatBufferBuilderImpl}{::flatbuffers::FlatBufferBuilder}}\ \&fbb,}
+\DoxyCodeLine{00771\ \ \ \ \ ::flatbuffers::Offset<SmallStructs>\ root)\ \{}
+\DoxyCodeLine{00772\ \ \ fbb.\mbox{\hyperlink{classflatbuffers_1_1FlatBufferBuilderImpl_a813b376143a53bd2828d9684713fe03c}{Finish}}(root);}
+\DoxyCodeLine{00773\ \}}
+\DoxyCodeLine{00774\ }
+\DoxyCodeLine{00775\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{alignment__test__generated_8h_a2b22c9e418e59cd69eaab7dfef42b30e}{FinishSizePrefixedSmallStructsBuffer}}(}
+\DoxyCodeLine{00776\ \ \ \ \ \mbox{\hyperlink{classflatbuffers_1_1FlatBufferBuilderImpl}{::flatbuffers::FlatBufferBuilder}}\ \&fbb,}
+\DoxyCodeLine{00777\ \ \ \ \ ::flatbuffers::Offset<SmallStructs>\ root)\ \{}
+\DoxyCodeLine{00778\ \ \ fbb.\mbox{\hyperlink{classflatbuffers_1_1FlatBufferBuilderImpl_aaa87fe5c3b85e47bb959e6d1aec96b2c}{FinishSizePrefixed}}(root);}
+\DoxyCodeLine{00779\ \}}
+\DoxyCodeLine{00780\ }
+\DoxyCodeLine{00781\ \textcolor{keyword}{inline}\ std::unique\_ptr<SmallStructsT>\ \mbox{\hyperlink{alignment__test__generated_8h_aea000cc876a88bef862f2caac3816b4d}{UnPackSmallStructs}}(}
+\DoxyCodeLine{00782\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{void}\ *buf,}
+\DoxyCodeLine{00783\ \ \ \ \ const\ ::flatbuffers::resolver\_function\_t\ *res\ =\ \textcolor{keyword}{nullptr})\ \{}
+\DoxyCodeLine{00784\ \ \ \textcolor{keywordflow}{return}\ std::unique\_ptr<SmallStructsT>(\mbox{\hyperlink{alignment__test__generated_8h_accf26fc57bba80bdc5590c479c8456b1}{GetSmallStructs}}(buf)-\/>UnPack(res));}
+\DoxyCodeLine{00785\ \}}
+\DoxyCodeLine{00786\ }
+\DoxyCodeLine{00787\ \textcolor{keyword}{inline}\ std::unique\_ptr<SmallStructsT>\ \mbox{\hyperlink{alignment__test__generated_8h_a4e7319bb74c9bab49e602165a5ad5bb5}{UnPackSizePrefixedSmallStructs}}(}
+\DoxyCodeLine{00788\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{void}\ *buf,}
+\DoxyCodeLine{00789\ \ \ \ \ const\ ::flatbuffers::resolver\_function\_t\ *res\ =\ \textcolor{keyword}{nullptr})\ \{}
+\DoxyCodeLine{00790\ \ \ \textcolor{keywordflow}{return}\ std::unique\_ptr<SmallStructsT>(\mbox{\hyperlink{alignment__test__generated_8h_aed3749586b04ada6ae284ac2fb610da9}{GetSizePrefixedSmallStructs}}(buf)-\/>UnPack(res));}
+\DoxyCodeLine{00791\ \}}
+\DoxyCodeLine{00792\ }
+\DoxyCodeLine{00793\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ FLATBUFFERS\_GENERATED\_ALIGNMENTTEST\_H\_}}
+
+\end{DoxyCode}

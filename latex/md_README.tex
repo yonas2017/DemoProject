@@ -1,0 +1,95 @@
+\chapter{README}
+\hypertarget{md_README}{}\label{md_README}\index{README@{README}}
+RUNNING \begin{DoxyVerb}$ ./build/debug/bin/client 127.0.0.1 1234 // to run the client.
+$ ./build/debug/bin/server src/server/jobfiles/alice_short.job 1234 // to run the server.
+\end{DoxyVerb}
+ \doxysection*{Configure the Project Using a Preset}
+
+\doxysubsection*{For the Debug build\+:}
+
+\$ cmake --preset=user-\/debug \doxysubsection*{For the Release build\+:}
+
+\$ cmake --preset=user-\/release
+
+\doxysection*{Build the Project\+:}
+
+Once the project is configured, you can build it using\+: \doxysubsection*{For Debug build\+:}
+
+\$ cmake --build --preset=user-\/debug \doxysubsection*{For Release build\+:}
+
+\$ cmake --build --preset=user-\/release
+
+\doxysection*{Clean the project}
+
+\doxysubsection*{For Debug build\+:}
+
+\$ cmake --build --preset=user-\/debug --target=clean \doxysubsection*{For Release build\+:}
+
+\$ cmake --build --preset=user-\/release --target=clean
+
+\doxysection*{Install the Project}
+
+\doxysubsection*{For Debug build\+:}
+
+\$ cmake --install build/debug \doxysubsection*{For Release build\+:}
+
+\$ cmake --install build/release
+
+\doxysection*{Unit\+Test the Project}
+
+\$ ctest --test-\/dir build/debug/test --verbose
+
+\doxysection*{Package the project}
+
+\$ cpack --preset=release
+
+\doxysection*{check content of package without extructing}
+
+\$ cd build/release \&\& tar -\/tzvf Demo\+Project-\/1.\+0.\+0.\+tar.\+gz
+
+\doxysection*{formatting}
+
+\$ cd build/debug \&\& ninja format
+
+\doxysection*{doc generation}
+
+\$ cd build/debug \&\& ninja doc \$ xdg-\/open docs/html/index.\+html \# On Linux
+
+\doxysection*{Profiling\+: Using Valgrind\textquotesingle{}s Callgrind for Profiling}
+
+\$ valgrind --tool=callgrind ./your\+\_\+program \begin{DoxyVerb}This will generate a file called callgrind.out.<pid>
+## Visualize the Profiling Data
+$ kcachegrind callgrind.out.<pid>
+
+## Alternatively, you can use the callgrind_annotate command-line tool to get a text-based report:
+$ callgrind_annotate callgrind.out.<pid> > profiling_report.txt
+\end{DoxyVerb}
+ \doxysection*{Valgrind Tools\+:}
+
+\doxysubsection*{Memcheck\+: Detects memory errors (leaks, uninitialized memory, invalid access).}
+
+\$ valgrind --leak-\/check=full ./your\+\_\+program
+
+\doxysubsection*{Callgrind\+: Analyzes performance and identifies bottlenecks.}
+
+\$ valgrind --tool=callgrind ./your\+\_\+program
+
+\doxysubsection*{Massif\+: Heap profiler for memory usage analysis.}
+
+\$ valgrind --tool=massif ./your\+\_\+program
+
+\doxysubsection*{Helgrind\+: Detects thread-\/related errors (race conditions).}
+
+\$ valgrind --tool=helgrind ./your\+\_\+program
+
+\doxysubsection*{DRD\+: Another race detection tool for multi-\/threading.}
+
+\$ valgrind --tool=drd ./your\+\_\+program
+
+\doxysubsection*{Cachegrind\+: Analyzes cache usage to optimize memory access patterns.}
+
+\$ valgrind --tool=cachegrind ./your\+\_\+program
+
+\doxysubsection*{Lackey and Indigo\+: Low-\/level memory and thread analysis tools.}
+
+\$ valgrind --tool=lackey ./your\+\_\+program \$ valgrind --tool=indigo ./your\+\_\+program 

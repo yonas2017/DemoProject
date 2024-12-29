@@ -1,0 +1,47 @@
+\doxysection{is\+\_\+quiet\+\_\+nan.\+h}
+\hypertarget{is__quiet__nan_8h_source}{}\label{is__quiet__nan_8h_source}\index{flatbuffers/tests/is\_quiet\_nan.h@{flatbuffers/tests/is\_quiet\_nan.h}}
+\mbox{\hyperlink{is__quiet__nan_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ TESTS\_IS\_QUIET\_NAN\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ TESTS\_IS\_QUIET\_NAN\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceflatbuffers}{flatbuffers}}\ \{}
+\DoxyCodeLine{00005\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacetests}{tests}}\ \{}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#if\ defined(FLATBUFFERS\_HAS\_NEW\_STRTOD)\ \&\&\ (FLATBUFFERS\_HAS\_NEW\_STRTOD\ >\ 0)}}
+\DoxyCodeLine{00008\ \textcolor{comment}{//\ The\ IEEE-\/754\ quiet\_NaN\ is\ not\ simple\ binary\ constant.}}
+\DoxyCodeLine{00009\ \textcolor{comment}{//\ All\ binary\ NaN\ bit\ strings\ have\ all\ the\ bits\ of\ the\ biased\ exponent\ field\ E}}
+\DoxyCodeLine{00010\ \textcolor{comment}{//\ set\ to\ 1.\ A\ quiet\ NaN\ bit\ string\ should\ be\ encoded\ with\ the\ first\ bit\ d[1]}}
+\DoxyCodeLine{00011\ \textcolor{comment}{//\ of\ the\ trailing\ significand\ field\ T\ being\ 1\ (d[0]\ is\ implicit\ bit).}}
+\DoxyCodeLine{00012\ \textcolor{comment}{//\ It\ is\ assumed\ that\ endianness\ of\ floating-\/point\ is\ same\ as\ integer.}}
+\DoxyCodeLine{00013\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T,\ \textcolor{keyword}{typename}\ U,\ U\ qnan\_base>\ \textcolor{keywordtype}{bool}\ is\_quiet\_nan\_impl(T\ v)\ \{}
+\DoxyCodeLine{00014\ \ \ \textcolor{keyword}{static\_assert}(\textcolor{keyword}{sizeof}(T)\ ==\ \textcolor{keyword}{sizeof}(U),\ \textcolor{stringliteral}{"{}unexpected"{}});}
+\DoxyCodeLine{00015\ \ \ \mbox{\hyperlink{namespacepython_1_1flatbuffers_1_1flexbuffers_ab684b8fb80023002487f2afbfd7cddd5}{U}}\ b\ =\ 0;}
+\DoxyCodeLine{00016\ \ \ std::memcpy(\&b,\ \&v,\ \textcolor{keyword}{sizeof}(T));}
+\DoxyCodeLine{00017\ \ \ \textcolor{keywordflow}{return}\ ((b\ \&\ qnan\_base)\ ==\ qnan\_base);}
+\DoxyCodeLine{00018\ \}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#\ \ if\ defined(\_\_mips\_\_)\ ||\ defined(\_\_hppa\_\_)}}
+\DoxyCodeLine{00020\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{bool}\ is\_quiet\_nan(\textcolor{keywordtype}{float}\ v)\ \{}
+\DoxyCodeLine{00021\ \ \ \textcolor{keywordflow}{return}\ is\_quiet\_nan\_impl<float,\ uint32\_t,\ 0x7FC00000u>(v)\ ||}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \ is\_quiet\_nan\_impl<float,\ uint32\_t,\ 0x7FBFFFFFu>(v);}
+\DoxyCodeLine{00023\ \}}
+\DoxyCodeLine{00024\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{bool}\ is\_quiet\_nan(\textcolor{keywordtype}{double}\ v)\ \{}
+\DoxyCodeLine{00025\ \ \ \textcolor{keywordflow}{return}\ is\_quiet\_nan\_impl<double,\ uint64\_t,\ 0x7FF8000000000000ul>(v)\ ||}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \ is\_quiet\_nan\_impl<double,\ uint64\_t,\ 0x7FF7FFFFFFFFFFFFu>(v);}
+\DoxyCodeLine{00027\ \}}
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#\ \ else}}
+\DoxyCodeLine{00029\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{bool}\ is\_quiet\_nan(\textcolor{keywordtype}{float}\ v)\ \{}
+\DoxyCodeLine{00030\ \ \ \textcolor{keywordflow}{return}\ is\_quiet\_nan\_impl<float,\ uint32\_t,\ 0x7FC00000u>(v);}
+\DoxyCodeLine{00031\ \}}
+\DoxyCodeLine{00032\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{bool}\ is\_quiet\_nan(\textcolor{keywordtype}{double}\ v)\ \{}
+\DoxyCodeLine{00033\ \ \ \textcolor{keywordflow}{return}\ is\_quiet\_nan\_impl<double,\ uint64\_t,\ 0x7FF8000000000000ul>(v);}
+\DoxyCodeLine{00034\ \}}
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#\ \ endif}}
+\DoxyCodeLine{00036\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \}\ \ \textcolor{comment}{//\ namespace\ tests}}
+\DoxyCodeLine{00039\ \}\ \ \textcolor{comment}{//\ namespace\ flatbuffers}}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ TESTS\_IS\_QUIET\_NAN\_H}}
+
+\end{DoxyCode}

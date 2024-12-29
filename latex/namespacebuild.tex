@@ -1,0 +1,113 @@
+\doxysection{build Namespace Reference}
+\hypertarget{namespacebuild}{}\label{namespacebuild}\index{build@{build}}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespacebuild_aba7f819bfb0f746ec49890ee336b967e}{get\+\_\+branch}} ()
+\item 
+\mbox{\hyperlink{namespacebuild_a507b61ff6e221828c62e9f723446722d}{get\+\_\+version}} ()
+\item 
+\mbox{\hyperlink{namespacebuild_aad4940d8c20d3c48f6da308740ad8dee}{get\+\_\+reference}} (\mbox{\hyperlink{namespacebuild_a5240c20d0783f8575d02c5bcd3232ca4}{username}})
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespacebuild_ae10c3bed08424fdc6b98e0e1b52333c3}{login\+\_\+username}} = os.\+getenv("{}CONAN\+\_\+\+LOGIN\+\_\+\+USERNAME"{}, "{}aardappel"{})
+\item 
+\mbox{\hyperlink{namespacebuild_a5240c20d0783f8575d02c5bcd3232ca4}{username}} = os.\+getenv("{}CONAN\+\_\+\+USERNAME"{}, "{}google"{})
+\item 
+\mbox{\hyperlink{namespacebuild_add8726350bd479396b3a703ef177ae69}{upload}} = os.\+getenv("{}CONAN\+\_\+\+UPLOAD"{}, "{}https\+://api.\+bintray.\+com/conan/aardappel/flatbuffers"{})
+\item 
+\mbox{\hyperlink{namespacebuild_a4ec737af665903085d243df79820071c}{stable\+\_\+branch\+\_\+pattern}} = os.\+getenv("{}CONAN\+\_\+\+STABLE\+\_\+\+BRANCH\+\_\+\+PATTERN"{}, r"{}v\textbackslash{}d+\textbackslash{}.\textbackslash{}d+\textbackslash{}.\textbackslash{}d+.\texorpdfstring{$\ast$}{*}"{})
+\item 
+\mbox{\hyperlink{namespacebuild_a8bd09c331d82e5ff44a30aceb809537b}{test\+\_\+folder}} = os.\+getenv("{}CPT\+\_\+\+TEST\+\_\+\+FOLDER"{}, os.\+path.\+join("{}conan"{}, "{}test\+\_\+package"{}))
+\item 
+\mbox{\hyperlink{namespacebuild_ac325773042e966db7cddfd7dcec40165}{upload\+\_\+only\+\_\+when\+\_\+stable}} = os.\+getenv("{}CONAN\+\_\+\+UPLOAD\+\_\+\+ONLY\+\_\+\+WHEN\+\_\+\+STABLE"{}, True)
+\item 
+\mbox{\hyperlink{namespacebuild_ac88b0ec8265b8fb42c15db20ec716d54}{builder}}
+\item 
+\mbox{\hyperlink{namespacebuild_a3855124bc1b8932f09d003731f98a819}{pure\+\_\+c}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{namespacebuild_aba7f819bfb0f746ec49890ee336b967e}\label{namespacebuild_aba7f819bfb0f746ec49890ee336b967e} 
+\index{build@{build}!get\_branch@{get\_branch}}
+\index{get\_branch@{get\_branch}!build@{build}}
+\doxysubsubsection{\texorpdfstring{get\_branch()}{get\_branch()}}
+{\footnotesize\ttfamily build.\+get\+\_\+branch (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{namespacebuild_aad4940d8c20d3c48f6da308740ad8dee}\label{namespacebuild_aad4940d8c20d3c48f6da308740ad8dee} 
+\index{build@{build}!get\_reference@{get\_reference}}
+\index{get\_reference@{get\_reference}!build@{build}}
+\doxysubsubsection{\texorpdfstring{get\_reference()}{get\_reference()}}
+{\footnotesize\ttfamily build.\+get\+\_\+reference (\begin{DoxyParamCaption}\item[{}]{username }\end{DoxyParamCaption})}
+
+\Hypertarget{namespacebuild_a507b61ff6e221828c62e9f723446722d}\label{namespacebuild_a507b61ff6e221828c62e9f723446722d} 
+\index{build@{build}!get\_version@{get\_version}}
+\index{get\_version@{get\_version}!build@{build}}
+\doxysubsubsection{\texorpdfstring{get\_version()}{get\_version()}}
+{\footnotesize\ttfamily build.\+get\+\_\+version (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{namespacebuild_ac88b0ec8265b8fb42c15db20ec716d54}\label{namespacebuild_ac88b0ec8265b8fb42c15db20ec716d54} 
+\index{build@{build}!builder@{builder}}
+\index{builder@{builder}!build@{build}}
+\doxysubsubsection{\texorpdfstring{builder}{builder}}
+{\footnotesize\ttfamily build.\+builder}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ =\ \ ConanMultiPackager(reference=get\_reference(username),}
+\DoxyCodeLine{00002\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ username=username,}
+\DoxyCodeLine{00003\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ login\_username=login\_username,}
+\DoxyCodeLine{00004\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ upload=upload,}
+\DoxyCodeLine{00005\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ stable\_branch\_pattern=stable\_branch\_pattern,}
+\DoxyCodeLine{00006\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ upload\_only\_when\_stable=upload\_only\_when\_stable,}
+\DoxyCodeLine{00007\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ test\_folder=test\_folder)}
+
+\end{DoxyCode}
+\Hypertarget{namespacebuild_ae10c3bed08424fdc6b98e0e1b52333c3}\label{namespacebuild_ae10c3bed08424fdc6b98e0e1b52333c3} 
+\index{build@{build}!login\_username@{login\_username}}
+\index{login\_username@{login\_username}!build@{build}}
+\doxysubsubsection{\texorpdfstring{login\_username}{login\_username}}
+{\footnotesize\ttfamily build.\+login\+\_\+username = os.\+getenv("{}CONAN\+\_\+\+LOGIN\+\_\+\+USERNAME"{}, "{}aardappel"{})}
+
+\Hypertarget{namespacebuild_a3855124bc1b8932f09d003731f98a819}\label{namespacebuild_a3855124bc1b8932f09d003731f98a819} 
+\index{build@{build}!pure\_c@{pure\_c}}
+\index{pure\_c@{pure\_c}!build@{build}}
+\doxysubsubsection{\texorpdfstring{pure\_c}{pure\_c}}
+{\footnotesize\ttfamily build.\+pure\+\_\+c}
+
+\Hypertarget{namespacebuild_a4ec737af665903085d243df79820071c}\label{namespacebuild_a4ec737af665903085d243df79820071c} 
+\index{build@{build}!stable\_branch\_pattern@{stable\_branch\_pattern}}
+\index{stable\_branch\_pattern@{stable\_branch\_pattern}!build@{build}}
+\doxysubsubsection{\texorpdfstring{stable\_branch\_pattern}{stable\_branch\_pattern}}
+{\footnotesize\ttfamily build.\+stable\+\_\+branch\+\_\+pattern = os.\+getenv("{}CONAN\+\_\+\+STABLE\+\_\+\+BRANCH\+\_\+\+PATTERN"{}, r"{}v\textbackslash{}d+\textbackslash{}.\textbackslash{}d+\textbackslash{}.\textbackslash{}d+.\texorpdfstring{$\ast$}{*}"{})}
+
+\Hypertarget{namespacebuild_a8bd09c331d82e5ff44a30aceb809537b}\label{namespacebuild_a8bd09c331d82e5ff44a30aceb809537b} 
+\index{build@{build}!test\_folder@{test\_folder}}
+\index{test\_folder@{test\_folder}!build@{build}}
+\doxysubsubsection{\texorpdfstring{test\_folder}{test\_folder}}
+{\footnotesize\ttfamily build.\+test\+\_\+folder = os.\+getenv("{}CPT\+\_\+\+TEST\+\_\+\+FOLDER"{}, os.\+path.\+join("{}conan"{}, "{}test\+\_\+package"{}))}
+
+\Hypertarget{namespacebuild_add8726350bd479396b3a703ef177ae69}\label{namespacebuild_add8726350bd479396b3a703ef177ae69} 
+\index{build@{build}!upload@{upload}}
+\index{upload@{upload}!build@{build}}
+\doxysubsubsection{\texorpdfstring{upload}{upload}}
+{\footnotesize\ttfamily build.\+upload = os.\+getenv("{}CONAN\+\_\+\+UPLOAD"{}, "{}https\+://api.\+bintray.\+com/conan/aardappel/flatbuffers"{})}
+
+\Hypertarget{namespacebuild_ac325773042e966db7cddfd7dcec40165}\label{namespacebuild_ac325773042e966db7cddfd7dcec40165} 
+\index{build@{build}!upload\_only\_when\_stable@{upload\_only\_when\_stable}}
+\index{upload\_only\_when\_stable@{upload\_only\_when\_stable}!build@{build}}
+\doxysubsubsection{\texorpdfstring{upload\_only\_when\_stable}{upload\_only\_when\_stable}}
+{\footnotesize\ttfamily build.\+upload\+\_\+only\+\_\+when\+\_\+stable = os.\+getenv("{}CONAN\+\_\+\+UPLOAD\+\_\+\+ONLY\+\_\+\+WHEN\+\_\+\+STABLE"{}, True)}
+
+\Hypertarget{namespacebuild_a5240c20d0783f8575d02c5bcd3232ca4}\label{namespacebuild_a5240c20d0783f8575d02c5bcd3232ca4} 
+\index{build@{build}!username@{username}}
+\index{username@{username}!build@{build}}
+\doxysubsubsection{\texorpdfstring{username}{username}}
+{\footnotesize\ttfamily build.\+username = os.\+getenv("{}CONAN\+\_\+\+USERNAME"{}, "{}google"{})}
+

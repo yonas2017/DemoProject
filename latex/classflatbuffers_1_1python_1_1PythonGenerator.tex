@@ -1,0 +1,749 @@
+\doxysection{flatbuffers\+::python\+::Python\+Generator Class Reference}
+\hypertarget{classflatbuffers_1_1python_1_1PythonGenerator}{}\label{classflatbuffers_1_1python_1_1PythonGenerator}\index{flatbuffers::python::PythonGenerator@{flatbuffers::python::PythonGenerator}}
+
+
+Inheritance diagram for flatbuffers\+::python\+::Python\+Generator\+:
+% FIG 0
+
+
+Collaboration diagram for flatbuffers\+::python\+::Python\+Generator\+:
+% FIG 1
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classflatbuffers_1_1python_1_1PythonGenerator_a5dcf9b975d100ae1e621f3b3c56eb719}{Python\+Generator}} (const \mbox{\hyperlink{classflatbuffers_1_1Parser}{Parser}} \&parser, const std\+::string \&path, const std\+::string \&file\+\_\+name, const \mbox{\hyperlink{structflatbuffers_1_1python_1_1Version}{Version}} \&version)
+\item 
+std\+::string \mbox{\hyperlink{classflatbuffers_1_1python_1_1PythonGenerator_af6f3c0793211bfdfbc7d1946e2b31425}{Offset\+Prefix}} (const \mbox{\hyperlink{structflatbuffers_1_1FieldDef}{Field\+Def}} \&field, bool new\+\_\+line=true) const
+\item 
+void \mbox{\hyperlink{classflatbuffers_1_1python_1_1PythonGenerator_ae23db9fb27608a1fee33b0a10cd49f3f}{Begin\+Class}} (const \mbox{\hyperlink{structflatbuffers_1_1StructDef}{Struct\+Def}} \&struct\+\_\+def, std\+::string \texorpdfstring{$\ast$}{*}code\+\_\+ptr) const
+\item 
+void \mbox{\hyperlink{classflatbuffers_1_1python_1_1PythonGenerator_a063002f49f06229a8440da15e6557318}{Begin\+Enum}} (const \mbox{\hyperlink{structflatbuffers_1_1EnumDef}{Enum\+Def}} \&enum\+\_\+def, std\+::string \texorpdfstring{$\ast$}{*}code\+\_\+ptr) const
+\item 
+std\+::string \mbox{\hyperlink{classflatbuffers_1_1python_1_1PythonGenerator_addbb60a5740432a7e0eb6b68ed76d6dc}{Gen\+Indents}} (int num) const
+\item 
+void \mbox{\hyperlink{classflatbuffers_1_1python_1_1PythonGenerator_a4ae624b7f9496b999e34fb4354350499}{Enum\+Member}} (const \mbox{\hyperlink{structflatbuffers_1_1EnumDef}{Enum\+Def}} \&enum\+\_\+def, const \mbox{\hyperlink{structflatbuffers_1_1EnumVal}{Enum\+Val}} \&ev, std\+::string \texorpdfstring{$\ast$}{*}code\+\_\+ptr) const
+\item 
+void \mbox{\hyperlink{classflatbuffers_1_1python_1_1PythonGenerator_a7884f8278f9d9cf0f5b035cdcd51ffb8}{New\+Root\+Type\+From\+Buffer}} (const \mbox{\hyperlink{structflatbuffers_1_1StructDef}{Struct\+Def}} \&struct\+\_\+def, std\+::string \texorpdfstring{$\ast$}{*}code\+\_\+ptr) const
+\item 
+void \mbox{\hyperlink{classflatbuffers_1_1python_1_1PythonGenerator_a03dd54ca8934122eb349933f69752774}{Initialize\+Existing}} (const \mbox{\hyperlink{structflatbuffers_1_1StructDef}{Struct\+Def}} \&struct\+\_\+def, std\+::string \texorpdfstring{$\ast$}{*}code\+\_\+ptr) const
+\item 
+void \mbox{\hyperlink{classflatbuffers_1_1python_1_1PythonGenerator_a9d9cffeabc3d5caadd369fc4db1f7465}{Get\+Vector\+Len}} (const \mbox{\hyperlink{structflatbuffers_1_1StructDef}{Struct\+Def}} \&struct\+\_\+def, const \mbox{\hyperlink{structflatbuffers_1_1FieldDef}{Field\+Def}} \&field, std\+::string \texorpdfstring{$\ast$}{*}code\+\_\+ptr) const
+\item 
+void \mbox{\hyperlink{classflatbuffers_1_1python_1_1PythonGenerator_afe1f189cc63f16fe7196c1d7f7697e08}{Get\+Vector\+Is\+None}} (const \mbox{\hyperlink{structflatbuffers_1_1StructDef}{Struct\+Def}} \&struct\+\_\+def, const \mbox{\hyperlink{structflatbuffers_1_1FieldDef}{Field\+Def}} \&field, std\+::string \texorpdfstring{$\ast$}{*}code\+\_\+ptr) const
+\item 
+void \mbox{\hyperlink{classflatbuffers_1_1python_1_1PythonGenerator_abc37dfaf54151eb2f97664f55d3bf43d}{Get\+Scalar\+Field\+Of\+Struct}} (const \mbox{\hyperlink{structflatbuffers_1_1StructDef}{Struct\+Def}} \&struct\+\_\+def, const \mbox{\hyperlink{structflatbuffers_1_1FieldDef}{Field\+Def}} \&field, std\+::string \texorpdfstring{$\ast$}{*}code\+\_\+ptr) const
+\item 
+void \mbox{\hyperlink{classflatbuffers_1_1python_1_1PythonGenerator_ad6367d7ce7ac4de48d83c844190e42fd}{Get\+Scalar\+Field\+Of\+Table}} (const \mbox{\hyperlink{structflatbuffers_1_1StructDef}{Struct\+Def}} \&struct\+\_\+def, const \mbox{\hyperlink{structflatbuffers_1_1FieldDef}{Field\+Def}} \&field, std\+::string \texorpdfstring{$\ast$}{*}code\+\_\+ptr) const
+\item 
+void \mbox{\hyperlink{classflatbuffers_1_1python_1_1PythonGenerator_a50cacd8c04b4ae42a06457da6344c14e}{Get\+Struct\+Field\+Of\+Struct}} (const \mbox{\hyperlink{structflatbuffers_1_1StructDef}{Struct\+Def}} \&struct\+\_\+def, const \mbox{\hyperlink{structflatbuffers_1_1FieldDef}{Field\+Def}} \&field, std\+::string \texorpdfstring{$\ast$}{*}code\+\_\+ptr) const
+\item 
+void \mbox{\hyperlink{classflatbuffers_1_1python_1_1PythonGenerator_a8cc911dce0441a2f223d7a8c098d2755}{Get\+Array\+Of\+Struct}} (const \mbox{\hyperlink{structflatbuffers_1_1StructDef}{Struct\+Def}} \&struct\+\_\+def, const \mbox{\hyperlink{structflatbuffers_1_1FieldDef}{Field\+Def}} \&field, std\+::string \texorpdfstring{$\ast$}{*}code\+\_\+ptr, Import\+Map \&imports) const
+\item 
+void \mbox{\hyperlink{classflatbuffers_1_1python_1_1PythonGenerator_a0af18405c9a2c1a3924e12cb7bb80d8e}{Get\+Array\+Of\+Non\+Struct}} (const \mbox{\hyperlink{structflatbuffers_1_1StructDef}{Struct\+Def}} \&struct\+\_\+def, const \mbox{\hyperlink{structflatbuffers_1_1FieldDef}{Field\+Def}} \&field, std\+::string \texorpdfstring{$\ast$}{*}code\+\_\+ptr) const
+\item 
+void \mbox{\hyperlink{classflatbuffers_1_1python_1_1PythonGenerator_aa880494302d40c6773aa9a9f11d95ce5}{Get\+Struct\+Field\+Of\+Table}} (const \mbox{\hyperlink{structflatbuffers_1_1StructDef}{Struct\+Def}} \&struct\+\_\+def, const \mbox{\hyperlink{structflatbuffers_1_1FieldDef}{Field\+Def}} \&field, std\+::string \texorpdfstring{$\ast$}{*}code\+\_\+ptr, Import\+Map \&imports) const
+\item 
+void \mbox{\hyperlink{classflatbuffers_1_1python_1_1PythonGenerator_a0ea4e88c3c60f20bcc250ffc96e7df01}{Get\+String\+Field}} (const \mbox{\hyperlink{structflatbuffers_1_1StructDef}{Struct\+Def}} \&struct\+\_\+def, const \mbox{\hyperlink{structflatbuffers_1_1FieldDef}{Field\+Def}} \&field, std\+::string \texorpdfstring{$\ast$}{*}code\+\_\+ptr, Import\+Map \&imports) const
+\item 
+void \mbox{\hyperlink{classflatbuffers_1_1python_1_1PythonGenerator_a78853e22002b3c08f9be751fff55500b}{Get\+Union\+Field}} (const \mbox{\hyperlink{structflatbuffers_1_1StructDef}{Struct\+Def}} \&struct\+\_\+def, const \mbox{\hyperlink{structflatbuffers_1_1FieldDef}{Field\+Def}} \&field, std\+::string \texorpdfstring{$\ast$}{*}code\+\_\+ptr, Import\+Map \&imports) const
+\item 
+{\footnotesize template$<$typename T $>$ }\\std\+::string \mbox{\hyperlink{classflatbuffers_1_1python_1_1PythonGenerator_aeff88d6abb83546cd1fccd400d42b209}{Module\+For}} (const T \texorpdfstring{$\ast$}{*}def) const
+\item 
+std\+::string \mbox{\hyperlink{classflatbuffers_1_1python_1_1PythonGenerator_af1c914c9e0dd3d526733fa6554343fd4}{Gen\+Package\+Reference}} (const \mbox{\hyperlink{structflatbuffers_1_1Type}{Type}} \&type) const
+\item 
+void \mbox{\hyperlink{classflatbuffers_1_1python_1_1PythonGenerator_a37ff811545a49c6bc805356a06d5d6ea}{Get\+Member\+Of\+Vector\+Of\+Struct}} (const \mbox{\hyperlink{structflatbuffers_1_1StructDef}{Struct\+Def}} \&struct\+\_\+def, const \mbox{\hyperlink{structflatbuffers_1_1FieldDef}{Field\+Def}} \&field, std\+::string \texorpdfstring{$\ast$}{*}code\+\_\+ptr, Import\+Map \&imports) const
+\item 
+void \mbox{\hyperlink{classflatbuffers_1_1python_1_1PythonGenerator_ae6bbe6d9aa81a0ff0f753b059efdc1e1}{Get\+Member\+Of\+Vector\+Of\+Non\+Struct}} (const \mbox{\hyperlink{structflatbuffers_1_1StructDef}{Struct\+Def}} \&struct\+\_\+def, const \mbox{\hyperlink{structflatbuffers_1_1FieldDef}{Field\+Def}} \&field, std\+::string \texorpdfstring{$\ast$}{*}code\+\_\+ptr) const
+\item 
+void \mbox{\hyperlink{classflatbuffers_1_1python_1_1PythonGenerator_afb8c0160743e0234c7004ff4f687311c}{Get\+Vector\+Of\+Non\+Struct\+As\+Numpy}} (const \mbox{\hyperlink{structflatbuffers_1_1StructDef}{Struct\+Def}} \&struct\+\_\+def, const \mbox{\hyperlink{structflatbuffers_1_1FieldDef}{Field\+Def}} \&field, std\+::string \texorpdfstring{$\ast$}{*}code\+\_\+ptr) const
+\item 
+std\+::string \mbox{\hyperlink{classflatbuffers_1_1python_1_1PythonGenerator_a61ac4385339b0cf4a0aac127e30f9941}{Nested\+Flatbuffer\+Type}} (std\+::string unqualified\+\_\+name) const
+\item 
+void \mbox{\hyperlink{classflatbuffers_1_1python_1_1PythonGenerator_a7659dfff687f6707b2bd4f1847ebb309}{Get\+Vector\+As\+Nested\+Flatbuffer}} (const \mbox{\hyperlink{structflatbuffers_1_1StructDef}{Struct\+Def}} \&struct\+\_\+def, const \mbox{\hyperlink{structflatbuffers_1_1FieldDef}{Field\+Def}} \&field, std\+::string \texorpdfstring{$\ast$}{*}code\+\_\+ptr, Import\+Map \&imports) const
+\item 
+void \mbox{\hyperlink{classflatbuffers_1_1python_1_1PythonGenerator_a7c6d0208d9463f822d7f64e071626a39}{Begin\+Builder\+Args}} (const \mbox{\hyperlink{structflatbuffers_1_1StructDef}{Struct\+Def}} \&struct\+\_\+def, std\+::string \texorpdfstring{$\ast$}{*}code\+\_\+ptr) const
+\item 
+void \mbox{\hyperlink{classflatbuffers_1_1python_1_1PythonGenerator_a64c330383a8dafb17e23679f7d8b1f85}{Struct\+Builder\+Args}} (const \mbox{\hyperlink{structflatbuffers_1_1StructDef}{Struct\+Def}} \&struct\+\_\+def, const std\+::string nameprefix, const std\+::string namesuffix, bool has\+\_\+field\+\_\+name, const std\+::string fieldname\+\_\+suffix, std\+::string \texorpdfstring{$\ast$}{*}code\+\_\+ptr) const
+\item 
+void \mbox{\hyperlink{classflatbuffers_1_1python_1_1PythonGenerator_a564e9459b6698214f326837f0b44cfb2}{End\+Builder\+Args}} (std\+::string \texorpdfstring{$\ast$}{*}code\+\_\+ptr) const
+\item 
+void \mbox{\hyperlink{classflatbuffers_1_1python_1_1PythonGenerator_a38c513d45936f5ea2596dc2bef33df9f}{Struct\+Builder\+Body}} (const \mbox{\hyperlink{structflatbuffers_1_1StructDef}{Struct\+Def}} \&struct\+\_\+def, const char \texorpdfstring{$\ast$}{*}nameprefix, std\+::string \texorpdfstring{$\ast$}{*}code\+\_\+ptr, size\+\_\+t index=0, bool in\+\_\+array=false) const
+\item 
+void \mbox{\hyperlink{classflatbuffers_1_1python_1_1PythonGenerator_a1e1f2d2e4a160b0488d722b30bd45056}{End\+Builder\+Body}} (std\+::string \texorpdfstring{$\ast$}{*}code\+\_\+ptr) const
+\item 
+void \mbox{\hyperlink{classflatbuffers_1_1python_1_1PythonGenerator_ae962fd99579c24b661a5bce628aea462}{Get\+Start\+Of\+Table}} (const \mbox{\hyperlink{structflatbuffers_1_1StructDef}{Struct\+Def}} \&struct\+\_\+def, std\+::string \texorpdfstring{$\ast$}{*}code\+\_\+ptr) const
+\item 
+void \mbox{\hyperlink{classflatbuffers_1_1python_1_1PythonGenerator_a931a8a1655615bdc15dc194c02edfbe3}{Build\+Field\+Of\+Table}} (const \mbox{\hyperlink{structflatbuffers_1_1StructDef}{Struct\+Def}} \&struct\+\_\+def, const \mbox{\hyperlink{structflatbuffers_1_1FieldDef}{Field\+Def}} \&field, const size\+\_\+t offset, std\+::string \texorpdfstring{$\ast$}{*}code\+\_\+ptr) const
+\item 
+void \mbox{\hyperlink{classflatbuffers_1_1python_1_1PythonGenerator_a7841cf7eeeac4db6ac6d06f2167db1eb}{Build\+Vector\+Of\+Table}} (const \mbox{\hyperlink{structflatbuffers_1_1StructDef}{Struct\+Def}} \&struct\+\_\+def, const \mbox{\hyperlink{structflatbuffers_1_1FieldDef}{Field\+Def}} \&field, std\+::string \texorpdfstring{$\ast$}{*}code\+\_\+ptr) const
+\item 
+void \mbox{\hyperlink{classflatbuffers_1_1python_1_1PythonGenerator_a507acb8b4b47cd98d2f6eaa43982916f}{Build\+Vector\+Of\+Table\+From\+Bytes}} (const \mbox{\hyperlink{structflatbuffers_1_1StructDef}{Struct\+Def}} \&struct\+\_\+def, const \mbox{\hyperlink{structflatbuffers_1_1FieldDef}{Field\+Def}} \&field, std\+::string \texorpdfstring{$\ast$}{*}code\+\_\+ptr) const
+\item 
+void \mbox{\hyperlink{classflatbuffers_1_1python_1_1PythonGenerator_a6568f3fd0f86b5ad03a9e253e822f7e4}{Get\+End\+Offset\+On\+Table}} (const \mbox{\hyperlink{structflatbuffers_1_1StructDef}{Struct\+Def}} \&struct\+\_\+def, std\+::string \texorpdfstring{$\ast$}{*}code\+\_\+ptr) const
+\item 
+void \mbox{\hyperlink{classflatbuffers_1_1python_1_1PythonGenerator_a4d5aecc1fe64471873f904e8676216ce}{Gen\+Receiver}} (const \mbox{\hyperlink{structflatbuffers_1_1StructDef}{Struct\+Def}} \&struct\+\_\+def, std\+::string \texorpdfstring{$\ast$}{*}code\+\_\+ptr) const
+\item 
+void \mbox{\hyperlink{classflatbuffers_1_1python_1_1PythonGenerator_acd95efb495146d48b41b38e379031c77}{Gen\+Struct\+Accessor}} (const \mbox{\hyperlink{structflatbuffers_1_1StructDef}{Struct\+Def}} \&struct\+\_\+def, const \mbox{\hyperlink{structflatbuffers_1_1FieldDef}{Field\+Def}} \&field, std\+::string \texorpdfstring{$\ast$}{*}code\+\_\+ptr, Import\+Map \&imports) const
+\item 
+void \mbox{\hyperlink{classflatbuffers_1_1python_1_1PythonGenerator_abfb6414ec4f27ef7a1728584367cfcd0}{Gen\+Struct\+Size\+Of}} (const \mbox{\hyperlink{structflatbuffers_1_1StructDef}{Struct\+Def}} \&struct\+\_\+def, std\+::string \texorpdfstring{$\ast$}{*}code\+\_\+ptr) const
+\item 
+void \mbox{\hyperlink{classflatbuffers_1_1python_1_1PythonGenerator_aa7ee852ad0cc7e88adf8a02c5b116aba}{Gen\+Table\+Builders}} (const \mbox{\hyperlink{structflatbuffers_1_1StructDef}{Struct\+Def}} \&struct\+\_\+def, std\+::string \texorpdfstring{$\ast$}{*}code\+\_\+ptr) const
+\item 
+void \mbox{\hyperlink{classflatbuffers_1_1python_1_1PythonGenerator_a159ab96829ebfb10591dd56fffda95f3}{Gen\+Has\+File\+Identifier}} (const \mbox{\hyperlink{structflatbuffers_1_1StructDef}{Struct\+Def}} \&struct\+\_\+def, std\+::string \texorpdfstring{$\ast$}{*}code\+\_\+ptr) const
+\item 
+void \mbox{\hyperlink{classflatbuffers_1_1python_1_1PythonGenerator_a338c72f4685e52b7f85cc3e8506af100}{Gen\+Struct}} (const \mbox{\hyperlink{structflatbuffers_1_1StructDef}{Struct\+Def}} \&struct\+\_\+def, std\+::string \texorpdfstring{$\ast$}{*}code\+\_\+ptr, Import\+Map \&imports) const
+\item 
+void \mbox{\hyperlink{classflatbuffers_1_1python_1_1PythonGenerator_a756b40d51f0c4ac8406a0230490c1d05}{Gen\+Receiver\+For\+Object\+API}} (const \mbox{\hyperlink{structflatbuffers_1_1StructDef}{Struct\+Def}} \&struct\+\_\+def, std\+::string \texorpdfstring{$\ast$}{*}code\+\_\+ptr) const
+\item 
+void \mbox{\hyperlink{classflatbuffers_1_1python_1_1PythonGenerator_a8560f993315438202c521fc0b487acd1}{Begin\+Class\+For\+Object\+API}} (const \mbox{\hyperlink{structflatbuffers_1_1StructDef}{Struct\+Def}} \&struct\+\_\+def, std\+::string \texorpdfstring{$\ast$}{*}code\+\_\+ptr) const
+\item 
+std\+::string \mbox{\hyperlink{classflatbuffers_1_1python_1_1PythonGenerator_a2a76b38c760b2b95c8bb27f9b18676c0}{Get\+Base\+Python\+Type\+For\+Scalar\+And\+String}} (const \mbox{\hyperlink{namespaceflatbuffers_a120ddc06543f62f7dce4619b34cac8d4}{Base\+Type}} \&base\+\_\+type) const
+\item 
+std\+::string \mbox{\hyperlink{classflatbuffers_1_1python_1_1PythonGenerator_a09a76891880d5d1a915964812546cb64}{Get\+Default\+Value}} (const \mbox{\hyperlink{structflatbuffers_1_1FieldDef}{Field\+Def}} \&field) const
+\item 
+void \mbox{\hyperlink{classflatbuffers_1_1python_1_1PythonGenerator_a019e426c57f6ea0d7e35fc8547a67dfd}{Gen\+Union\+Init}} (const \mbox{\hyperlink{structflatbuffers_1_1FieldDef}{Field\+Def}} \&field, std\+::string \texorpdfstring{$\ast$}{*}field\+\_\+types\+\_\+ptr, std\+::set$<$ std\+::string $>$ \texorpdfstring{$\ast$}{*}import\+\_\+list, std\+::set$<$ std\+::string $>$ \texorpdfstring{$\ast$}{*}import\+\_\+typing\+\_\+list) const
+\item 
+void \mbox{\hyperlink{classflatbuffers_1_1python_1_1PythonGenerator_a4d3339a6d755479ab384ed714a1083cd}{Gen\+Struct\+Init}} (const \mbox{\hyperlink{structflatbuffers_1_1FieldDef}{Field\+Def}} \&field, std\+::string \texorpdfstring{$\ast$}{*}out\+\_\+ptr, std\+::set$<$ std\+::string $>$ \texorpdfstring{$\ast$}{*}import\+\_\+list, std\+::set$<$ std\+::string $>$ \texorpdfstring{$\ast$}{*}import\+\_\+typing\+\_\+list) const
+\item 
+void \mbox{\hyperlink{classflatbuffers_1_1python_1_1PythonGenerator_ae4886aa31236398d360a129742bcf41d}{Gen\+Vector\+Init}} (const \mbox{\hyperlink{structflatbuffers_1_1FieldDef}{Field\+Def}} \&field, std\+::string \texorpdfstring{$\ast$}{*}field\+\_\+type\+\_\+ptr, std\+::set$<$ std\+::string $>$ \texorpdfstring{$\ast$}{*}import\+\_\+list, std\+::set$<$ std\+::string $>$ \texorpdfstring{$\ast$}{*}import\+\_\+typing\+\_\+list) const
+\item 
+void \mbox{\hyperlink{classflatbuffers_1_1python_1_1PythonGenerator_ac574940faa04bb94253e41e44a204a15}{Gen\+Initialize}} (const \mbox{\hyperlink{structflatbuffers_1_1StructDef}{Struct\+Def}} \&struct\+\_\+def, std\+::string \texorpdfstring{$\ast$}{*}code\+\_\+ptr, std\+::set$<$ std\+::string $>$ \texorpdfstring{$\ast$}{*}import\+\_\+list) const
+\item 
+void \mbox{\hyperlink{classflatbuffers_1_1python_1_1PythonGenerator_a58c2e90929071d9179060bf1433e1143}{Initialize\+From\+Buf}} (const \mbox{\hyperlink{structflatbuffers_1_1StructDef}{Struct\+Def}} \&struct\+\_\+def, std\+::string \texorpdfstring{$\ast$}{*}code\+\_\+ptr) const
+\item 
+void \mbox{\hyperlink{classflatbuffers_1_1python_1_1PythonGenerator_a10cade459b1947d7fd051f58596407e5}{Initialize\+From\+Packed\+Buf}} (const \mbox{\hyperlink{structflatbuffers_1_1StructDef}{Struct\+Def}} \&struct\+\_\+def, std\+::string \texorpdfstring{$\ast$}{*}code\+\_\+ptr) const
+\item 
+void \mbox{\hyperlink{classflatbuffers_1_1python_1_1PythonGenerator_a09f670c46c3db0efa9df1069ac9582a2}{Initialize\+From\+Obj\+For\+Object}} (const \mbox{\hyperlink{structflatbuffers_1_1StructDef}{Struct\+Def}} \&struct\+\_\+def, std\+::string \texorpdfstring{$\ast$}{*}code\+\_\+ptr) const
+\item 
+void \mbox{\hyperlink{classflatbuffers_1_1python_1_1PythonGenerator_ad12c61fdc0b0cc9e9c7642d50eeb4288}{Gen\+Compare\+Operator}} (const \mbox{\hyperlink{structflatbuffers_1_1StructDef}{Struct\+Def}} \&struct\+\_\+def, std\+::string \texorpdfstring{$\ast$}{*}code\+\_\+ptr) const
+\item 
+void \mbox{\hyperlink{classflatbuffers_1_1python_1_1PythonGenerator_a628b39efdc20ad1d95a1c1802f15ce75}{Gen\+Un\+Pack\+For\+Struct}} (const \mbox{\hyperlink{structflatbuffers_1_1StructDef}{Struct\+Def}} \&struct\+\_\+def, const \mbox{\hyperlink{structflatbuffers_1_1FieldDef}{Field\+Def}} \&field, std\+::string \texorpdfstring{$\ast$}{*}code\+\_\+ptr) const
+\item 
+void \mbox{\hyperlink{classflatbuffers_1_1python_1_1PythonGenerator_a5a0a3e13407a791c301c295f8fb60af5}{Gen\+Un\+Pack\+For\+Union}} (const \mbox{\hyperlink{structflatbuffers_1_1StructDef}{Struct\+Def}} \&struct\+\_\+def, const \mbox{\hyperlink{structflatbuffers_1_1FieldDef}{Field\+Def}} \&field, std\+::string \texorpdfstring{$\ast$}{*}code\+\_\+ptr) const
+\item 
+void \mbox{\hyperlink{classflatbuffers_1_1python_1_1PythonGenerator_afe8a52e43a2327690c5c410aefd58211}{Gen\+Un\+Pack\+For\+Struct\+Vector}} (const \mbox{\hyperlink{structflatbuffers_1_1StructDef}{Struct\+Def}} \&struct\+\_\+def, const \mbox{\hyperlink{structflatbuffers_1_1FieldDef}{Field\+Def}} \&field, std\+::string \texorpdfstring{$\ast$}{*}code\+\_\+ptr) const
+\item 
+void \mbox{\hyperlink{classflatbuffers_1_1python_1_1PythonGenerator_a703a31c284ebfa4f126c80eaed8ee6af}{Gen\+Unpack\+For\+Table\+Vector}} (const \mbox{\hyperlink{structflatbuffers_1_1StructDef}{Struct\+Def}} \&struct\+\_\+def, const \mbox{\hyperlink{structflatbuffers_1_1FieldDef}{Field\+Def}} \&field, std\+::string \texorpdfstring{$\ast$}{*}code\+\_\+ptr) const
+\item 
+void \mbox{\hyperlink{classflatbuffers_1_1python_1_1PythonGenerator_a35e238b280175ae6c003a430158ce807}{Gen\+Unpackfor\+Scalar\+Vector\+Helper}} (const \mbox{\hyperlink{structflatbuffers_1_1StructDef}{Struct\+Def}} \&struct\+\_\+def, const \mbox{\hyperlink{structflatbuffers_1_1FieldDef}{Field\+Def}} \&field, std\+::string \texorpdfstring{$\ast$}{*}code\+\_\+ptr, int indents) const
+\item 
+void \mbox{\hyperlink{classflatbuffers_1_1python_1_1PythonGenerator_afcb101d7483e2a88e1b6b738f19d3412}{Gen\+Un\+Pack\+For\+Scalar\+Vector}} (const \mbox{\hyperlink{structflatbuffers_1_1StructDef}{Struct\+Def}} \&struct\+\_\+def, const \mbox{\hyperlink{structflatbuffers_1_1FieldDef}{Field\+Def}} \&field, std\+::string \texorpdfstring{$\ast$}{*}code\+\_\+ptr) const
+\item 
+void \mbox{\hyperlink{classflatbuffers_1_1python_1_1PythonGenerator_a4651738894e7867a5bda79b565136c82}{Gen\+Un\+Pack\+For\+Scalar}} (const \mbox{\hyperlink{structflatbuffers_1_1StructDef}{Struct\+Def}} \&struct\+\_\+def, const \mbox{\hyperlink{structflatbuffers_1_1FieldDef}{Field\+Def}} \&field, std\+::string \texorpdfstring{$\ast$}{*}code\+\_\+ptr) const
+\item 
+void \mbox{\hyperlink{classflatbuffers_1_1python_1_1PythonGenerator_a5811ff7f4e9a97c2e191899f7bd45556}{Gen\+Un\+Pack}} (const \mbox{\hyperlink{structflatbuffers_1_1StructDef}{Struct\+Def}} \&struct\+\_\+def, std\+::string \texorpdfstring{$\ast$}{*}code\+\_\+ptr) const
+\item 
+void \mbox{\hyperlink{classflatbuffers_1_1python_1_1PythonGenerator_af7e7f48e831b9189f823153693b569e6}{Gen\+Pack\+For\+Struct}} (const \mbox{\hyperlink{structflatbuffers_1_1StructDef}{Struct\+Def}} \&struct\+\_\+def, std\+::string \texorpdfstring{$\ast$}{*}code\+\_\+ptr) const
+\item 
+void \mbox{\hyperlink{classflatbuffers_1_1python_1_1PythonGenerator_ab9050a48823fca4c7d7d7b58be8c997f}{Gen\+Pack\+For\+Struct\+Vector\+Field}} (const \mbox{\hyperlink{structflatbuffers_1_1StructDef}{Struct\+Def}} \&struct\+\_\+def, const \mbox{\hyperlink{structflatbuffers_1_1FieldDef}{Field\+Def}} \&field, std\+::string \texorpdfstring{$\ast$}{*}code\+\_\+prefix\+\_\+ptr, std\+::string \texorpdfstring{$\ast$}{*}code\+\_\+ptr) const
+\item 
+void \mbox{\hyperlink{classflatbuffers_1_1python_1_1PythonGenerator_a9fbd8ca58d2ba4e0614deef9148c8432}{Gen\+Pack\+For\+Scalar\+Vector\+Field\+Helper}} (const \mbox{\hyperlink{structflatbuffers_1_1StructDef}{Struct\+Def}} \&struct\+\_\+def, const \mbox{\hyperlink{structflatbuffers_1_1FieldDef}{Field\+Def}} \&field, std\+::string \texorpdfstring{$\ast$}{*}code\+\_\+ptr, int indents) const
+\item 
+void \mbox{\hyperlink{classflatbuffers_1_1python_1_1PythonGenerator_a593bb1d938008e007f32dae91984341d}{Gen\+Pack\+For\+Scalar\+Vector\+Field}} (const \mbox{\hyperlink{structflatbuffers_1_1StructDef}{Struct\+Def}} \&struct\+\_\+def, const \mbox{\hyperlink{structflatbuffers_1_1FieldDef}{Field\+Def}} \&field, std\+::string \texorpdfstring{$\ast$}{*}code\+\_\+prefix\+\_\+ptr, std\+::string \texorpdfstring{$\ast$}{*}code\+\_\+ptr) const
+\item 
+void \mbox{\hyperlink{classflatbuffers_1_1python_1_1PythonGenerator_ab3446e872da8450398f9370371d754bb}{Gen\+Pack\+For\+Struct\+Field}} (const \mbox{\hyperlink{structflatbuffers_1_1StructDef}{Struct\+Def}} \&struct\+\_\+def, const \mbox{\hyperlink{structflatbuffers_1_1FieldDef}{Field\+Def}} \&field, std\+::string \texorpdfstring{$\ast$}{*}code\+\_\+prefix\+\_\+ptr, std\+::string \texorpdfstring{$\ast$}{*}code\+\_\+ptr) const
+\item 
+void \mbox{\hyperlink{classflatbuffers_1_1python_1_1PythonGenerator_ab461488d0199ee4ddc38e09e4cee8fcd}{Gen\+Pack\+For\+Union\+Field}} (const \mbox{\hyperlink{structflatbuffers_1_1StructDef}{Struct\+Def}} \&struct\+\_\+def, const \mbox{\hyperlink{structflatbuffers_1_1FieldDef}{Field\+Def}} \&field, std\+::string \texorpdfstring{$\ast$}{*}code\+\_\+prefix\+\_\+ptr, std\+::string \texorpdfstring{$\ast$}{*}code\+\_\+ptr) const
+\item 
+void \mbox{\hyperlink{classflatbuffers_1_1python_1_1PythonGenerator_a3808127a8a420a8a2e03096a82d7aa67}{Gen\+Pack\+For\+Table}} (const \mbox{\hyperlink{structflatbuffers_1_1StructDef}{Struct\+Def}} \&struct\+\_\+def, std\+::string \texorpdfstring{$\ast$}{*}code\+\_\+ptr) const
+\item 
+void \mbox{\hyperlink{classflatbuffers_1_1python_1_1PythonGenerator_a31c9c4e602cbbe8123b1b1212404ad44}{Gen\+Struct\+For\+Object\+API}} (const \mbox{\hyperlink{structflatbuffers_1_1StructDef}{Struct\+Def}} \&struct\+\_\+def, std\+::string \texorpdfstring{$\ast$}{*}code\+\_\+ptr) const
+\item 
+void \mbox{\hyperlink{classflatbuffers_1_1python_1_1PythonGenerator_aa42d5052145211b1b01e246982798bb3}{Gen\+Union\+Creator\+For\+Struct}} (const \mbox{\hyperlink{structflatbuffers_1_1EnumDef}{Enum\+Def}} \&enum\+\_\+def, const \mbox{\hyperlink{structflatbuffers_1_1EnumVal}{Enum\+Val}} \&ev, std\+::string \texorpdfstring{$\ast$}{*}code\+\_\+ptr) const
+\item 
+void \mbox{\hyperlink{classflatbuffers_1_1python_1_1PythonGenerator_ab72a035a3f4ce0e4d27be659382e6c2d}{Gen\+Union\+Creator\+For\+String}} (const \mbox{\hyperlink{structflatbuffers_1_1EnumDef}{Enum\+Def}} \&enum\+\_\+def, const \mbox{\hyperlink{structflatbuffers_1_1EnumVal}{Enum\+Val}} \&ev, std\+::string \texorpdfstring{$\ast$}{*}code\+\_\+ptr) const
+\item 
+void \mbox{\hyperlink{classflatbuffers_1_1python_1_1PythonGenerator_ac99435d27e26cbaa31aa714341436658}{Gen\+Union\+Creator}} (const \mbox{\hyperlink{structflatbuffers_1_1EnumDef}{Enum\+Def}} \&enum\+\_\+def, std\+::string \texorpdfstring{$\ast$}{*}code\+\_\+ptr) const
+\item 
+void \mbox{\hyperlink{classflatbuffers_1_1python_1_1PythonGenerator_a398315982257a1caefe596d7f7276373}{Gen\+Enum}} (const \mbox{\hyperlink{structflatbuffers_1_1EnumDef}{Enum\+Def}} \&enum\+\_\+def, std\+::string \texorpdfstring{$\ast$}{*}code\+\_\+ptr) const
+\item 
+std\+::string \mbox{\hyperlink{classflatbuffers_1_1python_1_1PythonGenerator_a98078f2e2cc0686b6266fb69d19ccb51}{Gen\+Getter}} (const \mbox{\hyperlink{structflatbuffers_1_1Type}{Type}} \&type) const
+\item 
+std\+::string \mbox{\hyperlink{classflatbuffers_1_1python_1_1PythonGenerator_ac44787755a8f955f2d730bef6f6b1078}{Gen\+Field\+Ty}} (const \mbox{\hyperlink{structflatbuffers_1_1FieldDef}{Field\+Def}} \&field) const
+\item 
+std\+::string \mbox{\hyperlink{classflatbuffers_1_1python_1_1PythonGenerator_afea60a00728518bb2e106af8113d064d}{Gen\+Method}} (const \mbox{\hyperlink{structflatbuffers_1_1FieldDef}{Field\+Def}} \&field) const
+\item 
+std\+::string \mbox{\hyperlink{classflatbuffers_1_1python_1_1PythonGenerator_a6df9418b64bdb43902abd9168e293dcc}{Gen\+Type\+Basic}} (const \mbox{\hyperlink{structflatbuffers_1_1Type}{Type}} \&type) const
+\item 
+std\+::string \mbox{\hyperlink{classflatbuffers_1_1python_1_1PythonGenerator_af1966ab7cc4ef369d97d931544541475}{Gen\+Type\+Pointer}} (const \mbox{\hyperlink{structflatbuffers_1_1Type}{Type}} \&type) const
+\item 
+std\+::string \mbox{\hyperlink{classflatbuffers_1_1python_1_1PythonGenerator_aa29148364b1e2dd5d94e82c5fcf962ca}{Gen\+Type\+Get}} (const \mbox{\hyperlink{structflatbuffers_1_1Type}{Type}} \&type) const
+\item 
+std\+::string \mbox{\hyperlink{classflatbuffers_1_1python_1_1PythonGenerator_a198de4851f3a74c2a5d6bf3d168a330f}{Type\+Name}} (const \mbox{\hyperlink{structflatbuffers_1_1FieldDef}{Field\+Def}} \&field) const
+\item 
+std\+::string \mbox{\hyperlink{classflatbuffers_1_1python_1_1PythonGenerator_ada5664ea60b2eb69b4f857f9748ebe8b}{Return\+Type}} (const \mbox{\hyperlink{structflatbuffers_1_1StructDef}{Struct\+Def}} \&struct\+\_\+def, const \mbox{\hyperlink{structflatbuffers_1_1FieldDef}{Field\+Def}} \&field) const
+\item 
+void \mbox{\hyperlink{classflatbuffers_1_1python_1_1PythonGenerator_a852084143909bf4c571c6d6a11368f74}{Gen\+Struct\+Builder}} (const \mbox{\hyperlink{structflatbuffers_1_1StructDef}{Struct\+Def}} \&struct\+\_\+def, std\+::string \texorpdfstring{$\ast$}{*}code\+\_\+ptr) const
+\item 
+bool \mbox{\hyperlink{classflatbuffers_1_1python_1_1PythonGenerator_ab02f4f43b314c5cee197389e71e0dd35}{generate}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classflatbuffers_1_1BaseGenerator}{flatbuffers\+::\+Base\+Generator}}}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{classflatbuffers_1_1BaseGenerator_a8559bf41626bdecd53736bfc9153d4b5}{Generated\+File\+Name}} (const std\+::string \&path, const std\+::string \&file\+\_\+name, const \mbox{\hyperlink{structflatbuffers_1_1IDLOptions}{IDLOptions}} \&options) const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Static Public Member Functions inherited from \mbox{\hyperlink{classflatbuffers_1_1BaseGenerator}{flatbuffers\+::\+Base\+Generator}}}
+\begin{DoxyCompactItemize}
+\item 
+static std\+::string \mbox{\hyperlink{classflatbuffers_1_1BaseGenerator_ab7fdb905d7dd8d1177a470eef2da089e}{Namespace\+Dir}} (const \mbox{\hyperlink{classflatbuffers_1_1Parser}{Parser}} \&parser, const std\+::string \&path, const \mbox{\hyperlink{structflatbuffers_1_1Namespace}{Namespace}} \&\mbox{\hyperlink{idl__gen__ts_8cpp_a97618fe2e31e62d92ace9b30478febba}{ns}}, const bool dasherize=false)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{classflatbuffers_1_1BaseGenerator}{flatbuffers\+::\+Base\+Generator}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classflatbuffers_1_1BaseGenerator_aa1607736e698a0105f44e2c167963343}{Base\+Generator}} (const \mbox{\hyperlink{classflatbuffers_1_1Parser}{Parser}} \&parser, const std\+::string \&path, const std\+::string \&file\+\_\+name, std\+::string qualifying\+\_\+start, std\+::string qualifying\+\_\+separator, std\+::string default\+\_\+extension)
+\item 
+virtual \mbox{\hyperlink{classflatbuffers_1_1BaseGenerator_aeab72f6ee75c6753054c84ef9d8a7f04}{\texorpdfstring{$\sim$}{\string~}\+Base\+Generator}} ()
+\item 
+\mbox{\hyperlink{classflatbuffers_1_1BaseGenerator}{Base\+Generator}} \& \mbox{\hyperlink{classflatbuffers_1_1BaseGenerator_a10696c81aa5d52cb15c4365238ba27ed}{operator=}} (const \mbox{\hyperlink{classflatbuffers_1_1BaseGenerator}{Base\+Generator}} \&)
+\item 
+\mbox{\hyperlink{classflatbuffers_1_1BaseGenerator_a6769aab327d5dcb931f9f8c8c1797525}{Base\+Generator}} (const \mbox{\hyperlink{classflatbuffers_1_1BaseGenerator}{Base\+Generator}} \&)
+\item 
+std\+::string \mbox{\hyperlink{classflatbuffers_1_1BaseGenerator_a99f2098106976757252afd99c05bf0ff}{Namespace\+Dir}} (const \mbox{\hyperlink{structflatbuffers_1_1Namespace}{Namespace}} \&\mbox{\hyperlink{idl__gen__ts_8cpp_a97618fe2e31e62d92ace9b30478febba}{ns}}, const bool dasherize=false) const
+\item 
+virtual const \mbox{\hyperlink{structflatbuffers_1_1Namespace}{Namespace}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classflatbuffers_1_1BaseGenerator_ae9894dabc9bac7eff32a810067a9a221}{Current\+Name\+Space}} () const
+\item 
+std\+::string \mbox{\hyperlink{classflatbuffers_1_1BaseGenerator_a4ceefb68a9f65fe861458e82b87c3944}{Wrap\+In\+Name\+Space}} (const \mbox{\hyperlink{structflatbuffers_1_1Namespace}{Namespace}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{idl__gen__ts_8cpp_a97618fe2e31e62d92ace9b30478febba}{ns}}, const std\+::string \&\mbox{\hyperlink{idl__gen__ts_8cpp_a9b45b3e13bd9167aab02e17e08916231}{name}}) const
+\item 
+std\+::string \mbox{\hyperlink{classflatbuffers_1_1BaseGenerator_a1a39f31f1d50c515c1943989765b2330}{Wrap\+In\+Name\+Space}} (const \mbox{\hyperlink{structflatbuffers_1_1Definition}{Definition}} \&def, const std\+::string \&suffix="{}"{}) const
+\item 
+std\+::string \mbox{\hyperlink{classflatbuffers_1_1BaseGenerator_a6b6bbd8e0606f051018d90994bb73e4c}{Get\+Name\+Space}} (const \mbox{\hyperlink{structflatbuffers_1_1Definition}{Definition}} \&def) const
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Protected Member Functions inherited from \mbox{\hyperlink{classflatbuffers_1_1BaseGenerator}{flatbuffers\+::\+Base\+Generator}}}
+\begin{DoxyCompactItemize}
+\item 
+static const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classflatbuffers_1_1BaseGenerator_a04ffaceb3b3c37e9eb8296ddf72ff0f3}{Flat\+Buffers\+Generated\+Warning}} ()
+\item 
+static std\+::string \mbox{\hyperlink{classflatbuffers_1_1BaseGenerator_aa6d96041a6635ba2edc088834fb57ed6}{Full\+Namespace}} (const char \texorpdfstring{$\ast$}{*}separator, const \mbox{\hyperlink{structflatbuffers_1_1Namespace}{Namespace}} \&\mbox{\hyperlink{idl__gen__ts_8cpp_a97618fe2e31e62d92ace9b30478febba}{ns}})
+\item 
+static std\+::string \mbox{\hyperlink{classflatbuffers_1_1BaseGenerator_a8ce0d595629188ca5de97c3b37d556f5}{Last\+Namespace\+Part}} (const \mbox{\hyperlink{structflatbuffers_1_1Namespace}{Namespace}} \&\mbox{\hyperlink{idl__gen__ts_8cpp_a97618fe2e31e62d92ace9b30478febba}{ns}})
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classflatbuffers_1_1BaseGenerator}{flatbuffers\+::\+Base\+Generator}}}
+\begin{DoxyCompactItemize}
+\item 
+const \mbox{\hyperlink{classflatbuffers_1_1Parser}{Parser}} \& \mbox{\hyperlink{classflatbuffers_1_1BaseGenerator_a0cc4eb04a1d94766c92684135b89c245}{parser\+\_\+}}
+\item 
+const std\+::string \& \mbox{\hyperlink{classflatbuffers_1_1BaseGenerator_ad50fb4f2324ac78a5bc86bb6eb97858c}{path\+\_\+}}
+\item 
+const std\+::string \& \mbox{\hyperlink{classflatbuffers_1_1BaseGenerator_af25bcc46e0d71cfc0f23377c30f426c5}{file\+\_\+name\+\_\+}}
+\item 
+const std\+::string \mbox{\hyperlink{classflatbuffers_1_1BaseGenerator_ab3f483b39345cbc52bc266ebcd0643db}{qualifying\+\_\+start\+\_\+}}
+\item 
+const std\+::string \mbox{\hyperlink{classflatbuffers_1_1BaseGenerator_a95353c1506706274d696a79bb4214215}{qualifying\+\_\+separator\+\_\+}}
+\item 
+const std\+::string \mbox{\hyperlink{classflatbuffers_1_1BaseGenerator_a37d8a4da67a4e0272aed29f28f212762}{default\+\_\+extension\+\_\+}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classflatbuffers_1_1python_1_1PythonGenerator_a5dcf9b975d100ae1e621f3b3c56eb719}\label{classflatbuffers_1_1python_1_1PythonGenerator_a5dcf9b975d100ae1e621f3b3c56eb719} 
+\index{flatbuffers::python::PythonGenerator@{flatbuffers::python::PythonGenerator}!PythonGenerator@{PythonGenerator}}
+\index{PythonGenerator@{PythonGenerator}!flatbuffers::python::PythonGenerator@{flatbuffers::python::PythonGenerator}}
+\doxysubsubsection{\texorpdfstring{PythonGenerator()}{PythonGenerator()}}
+{\footnotesize\ttfamily flatbuffers\+::python\+::\+Python\+Generator\+::\+Python\+Generator (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classflatbuffers_1_1Parser}{Parser}} \&}]{parser,  }\item[{const std\+::string \&}]{path,  }\item[{const std\+::string \&}]{file\+\_\+name,  }\item[{const \mbox{\hyperlink{structflatbuffers_1_1python_1_1Version}{Version}} \&}]{version }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classflatbuffers_1_1python_1_1PythonGenerator_a7c6d0208d9463f822d7f64e071626a39}\label{classflatbuffers_1_1python_1_1PythonGenerator_a7c6d0208d9463f822d7f64e071626a39} 
+\index{flatbuffers::python::PythonGenerator@{flatbuffers::python::PythonGenerator}!BeginBuilderArgs@{BeginBuilderArgs}}
+\index{BeginBuilderArgs@{BeginBuilderArgs}!flatbuffers::python::PythonGenerator@{flatbuffers::python::PythonGenerator}}
+\doxysubsubsection{\texorpdfstring{BeginBuilderArgs()}{BeginBuilderArgs()}}
+{\footnotesize\ttfamily void flatbuffers\+::python\+::\+Python\+Generator\+::\+Begin\+Builder\+Args (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structflatbuffers_1_1StructDef}{Struct\+Def}} \&}]{struct\+\_\+def,  }\item[{std\+::string \texorpdfstring{$\ast$}{*}}]{code\+\_\+ptr }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflatbuffers_1_1python_1_1PythonGenerator_ae23db9fb27608a1fee33b0a10cd49f3f}\label{classflatbuffers_1_1python_1_1PythonGenerator_ae23db9fb27608a1fee33b0a10cd49f3f} 
+\index{flatbuffers::python::PythonGenerator@{flatbuffers::python::PythonGenerator}!BeginClass@{BeginClass}}
+\index{BeginClass@{BeginClass}!flatbuffers::python::PythonGenerator@{flatbuffers::python::PythonGenerator}}
+\doxysubsubsection{\texorpdfstring{BeginClass()}{BeginClass()}}
+{\footnotesize\ttfamily void flatbuffers\+::python\+::\+Python\+Generator\+::\+Begin\+Class (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structflatbuffers_1_1StructDef}{Struct\+Def}} \&}]{struct\+\_\+def,  }\item[{std\+::string \texorpdfstring{$\ast$}{*}}]{code\+\_\+ptr }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflatbuffers_1_1python_1_1PythonGenerator_a8560f993315438202c521fc0b487acd1}\label{classflatbuffers_1_1python_1_1PythonGenerator_a8560f993315438202c521fc0b487acd1} 
+\index{flatbuffers::python::PythonGenerator@{flatbuffers::python::PythonGenerator}!BeginClassForObjectAPI@{BeginClassForObjectAPI}}
+\index{BeginClassForObjectAPI@{BeginClassForObjectAPI}!flatbuffers::python::PythonGenerator@{flatbuffers::python::PythonGenerator}}
+\doxysubsubsection{\texorpdfstring{BeginClassForObjectAPI()}{BeginClassForObjectAPI()}}
+{\footnotesize\ttfamily void flatbuffers\+::python\+::\+Python\+Generator\+::\+Begin\+Class\+For\+Object\+API (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structflatbuffers_1_1StructDef}{Struct\+Def}} \&}]{struct\+\_\+def,  }\item[{std\+::string \texorpdfstring{$\ast$}{*}}]{code\+\_\+ptr }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflatbuffers_1_1python_1_1PythonGenerator_a063002f49f06229a8440da15e6557318}\label{classflatbuffers_1_1python_1_1PythonGenerator_a063002f49f06229a8440da15e6557318} 
+\index{flatbuffers::python::PythonGenerator@{flatbuffers::python::PythonGenerator}!BeginEnum@{BeginEnum}}
+\index{BeginEnum@{BeginEnum}!flatbuffers::python::PythonGenerator@{flatbuffers::python::PythonGenerator}}
+\doxysubsubsection{\texorpdfstring{BeginEnum()}{BeginEnum()}}
+{\footnotesize\ttfamily void flatbuffers\+::python\+::\+Python\+Generator\+::\+Begin\+Enum (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structflatbuffers_1_1EnumDef}{Enum\+Def}} \&}]{enum\+\_\+def,  }\item[{std\+::string \texorpdfstring{$\ast$}{*}}]{code\+\_\+ptr }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflatbuffers_1_1python_1_1PythonGenerator_a931a8a1655615bdc15dc194c02edfbe3}\label{classflatbuffers_1_1python_1_1PythonGenerator_a931a8a1655615bdc15dc194c02edfbe3} 
+\index{flatbuffers::python::PythonGenerator@{flatbuffers::python::PythonGenerator}!BuildFieldOfTable@{BuildFieldOfTable}}
+\index{BuildFieldOfTable@{BuildFieldOfTable}!flatbuffers::python::PythonGenerator@{flatbuffers::python::PythonGenerator}}
+\doxysubsubsection{\texorpdfstring{BuildFieldOfTable()}{BuildFieldOfTable()}}
+{\footnotesize\ttfamily void flatbuffers\+::python\+::\+Python\+Generator\+::\+Build\+Field\+Of\+Table (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structflatbuffers_1_1StructDef}{Struct\+Def}} \&}]{struct\+\_\+def,  }\item[{const \mbox{\hyperlink{structflatbuffers_1_1FieldDef}{Field\+Def}} \&}]{field,  }\item[{const size\+\_\+t}]{offset,  }\item[{std\+::string \texorpdfstring{$\ast$}{*}}]{code\+\_\+ptr }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflatbuffers_1_1python_1_1PythonGenerator_a7841cf7eeeac4db6ac6d06f2167db1eb}\label{classflatbuffers_1_1python_1_1PythonGenerator_a7841cf7eeeac4db6ac6d06f2167db1eb} 
+\index{flatbuffers::python::PythonGenerator@{flatbuffers::python::PythonGenerator}!BuildVectorOfTable@{BuildVectorOfTable}}
+\index{BuildVectorOfTable@{BuildVectorOfTable}!flatbuffers::python::PythonGenerator@{flatbuffers::python::PythonGenerator}}
+\doxysubsubsection{\texorpdfstring{BuildVectorOfTable()}{BuildVectorOfTable()}}
+{\footnotesize\ttfamily void flatbuffers\+::python\+::\+Python\+Generator\+::\+Build\+Vector\+Of\+Table (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structflatbuffers_1_1StructDef}{Struct\+Def}} \&}]{struct\+\_\+def,  }\item[{const \mbox{\hyperlink{structflatbuffers_1_1FieldDef}{Field\+Def}} \&}]{field,  }\item[{std\+::string \texorpdfstring{$\ast$}{*}}]{code\+\_\+ptr }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflatbuffers_1_1python_1_1PythonGenerator_a507acb8b4b47cd98d2f6eaa43982916f}\label{classflatbuffers_1_1python_1_1PythonGenerator_a507acb8b4b47cd98d2f6eaa43982916f} 
+\index{flatbuffers::python::PythonGenerator@{flatbuffers::python::PythonGenerator}!BuildVectorOfTableFromBytes@{BuildVectorOfTableFromBytes}}
+\index{BuildVectorOfTableFromBytes@{BuildVectorOfTableFromBytes}!flatbuffers::python::PythonGenerator@{flatbuffers::python::PythonGenerator}}
+\doxysubsubsection{\texorpdfstring{BuildVectorOfTableFromBytes()}{BuildVectorOfTableFromBytes()}}
+{\footnotesize\ttfamily void flatbuffers\+::python\+::\+Python\+Generator\+::\+Build\+Vector\+Of\+Table\+From\+Bytes (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structflatbuffers_1_1StructDef}{Struct\+Def}} \&}]{struct\+\_\+def,  }\item[{const \mbox{\hyperlink{structflatbuffers_1_1FieldDef}{Field\+Def}} \&}]{field,  }\item[{std\+::string \texorpdfstring{$\ast$}{*}}]{code\+\_\+ptr }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflatbuffers_1_1python_1_1PythonGenerator_a564e9459b6698214f326837f0b44cfb2}\label{classflatbuffers_1_1python_1_1PythonGenerator_a564e9459b6698214f326837f0b44cfb2} 
+\index{flatbuffers::python::PythonGenerator@{flatbuffers::python::PythonGenerator}!EndBuilderArgs@{EndBuilderArgs}}
+\index{EndBuilderArgs@{EndBuilderArgs}!flatbuffers::python::PythonGenerator@{flatbuffers::python::PythonGenerator}}
+\doxysubsubsection{\texorpdfstring{EndBuilderArgs()}{EndBuilderArgs()}}
+{\footnotesize\ttfamily void flatbuffers\+::python\+::\+Python\+Generator\+::\+End\+Builder\+Args (\begin{DoxyParamCaption}\item[{std\+::string \texorpdfstring{$\ast$}{*}}]{code\+\_\+ptr }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflatbuffers_1_1python_1_1PythonGenerator_a1e1f2d2e4a160b0488d722b30bd45056}\label{classflatbuffers_1_1python_1_1PythonGenerator_a1e1f2d2e4a160b0488d722b30bd45056} 
+\index{flatbuffers::python::PythonGenerator@{flatbuffers::python::PythonGenerator}!EndBuilderBody@{EndBuilderBody}}
+\index{EndBuilderBody@{EndBuilderBody}!flatbuffers::python::PythonGenerator@{flatbuffers::python::PythonGenerator}}
+\doxysubsubsection{\texorpdfstring{EndBuilderBody()}{EndBuilderBody()}}
+{\footnotesize\ttfamily void flatbuffers\+::python\+::\+Python\+Generator\+::\+End\+Builder\+Body (\begin{DoxyParamCaption}\item[{std\+::string \texorpdfstring{$\ast$}{*}}]{code\+\_\+ptr }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflatbuffers_1_1python_1_1PythonGenerator_a4ae624b7f9496b999e34fb4354350499}\label{classflatbuffers_1_1python_1_1PythonGenerator_a4ae624b7f9496b999e34fb4354350499} 
+\index{flatbuffers::python::PythonGenerator@{flatbuffers::python::PythonGenerator}!EnumMember@{EnumMember}}
+\index{EnumMember@{EnumMember}!flatbuffers::python::PythonGenerator@{flatbuffers::python::PythonGenerator}}
+\doxysubsubsection{\texorpdfstring{EnumMember()}{EnumMember()}}
+{\footnotesize\ttfamily void flatbuffers\+::python\+::\+Python\+Generator\+::\+Enum\+Member (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structflatbuffers_1_1EnumDef}{Enum\+Def}} \&}]{enum\+\_\+def,  }\item[{const \mbox{\hyperlink{structflatbuffers_1_1EnumVal}{Enum\+Val}} \&}]{ev,  }\item[{std\+::string \texorpdfstring{$\ast$}{*}}]{code\+\_\+ptr }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflatbuffers_1_1python_1_1PythonGenerator_ad12c61fdc0b0cc9e9c7642d50eeb4288}\label{classflatbuffers_1_1python_1_1PythonGenerator_ad12c61fdc0b0cc9e9c7642d50eeb4288} 
+\index{flatbuffers::python::PythonGenerator@{flatbuffers::python::PythonGenerator}!GenCompareOperator@{GenCompareOperator}}
+\index{GenCompareOperator@{GenCompareOperator}!flatbuffers::python::PythonGenerator@{flatbuffers::python::PythonGenerator}}
+\doxysubsubsection{\texorpdfstring{GenCompareOperator()}{GenCompareOperator()}}
+{\footnotesize\ttfamily void flatbuffers\+::python\+::\+Python\+Generator\+::\+Gen\+Compare\+Operator (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structflatbuffers_1_1StructDef}{Struct\+Def}} \&}]{struct\+\_\+def,  }\item[{std\+::string \texorpdfstring{$\ast$}{*}}]{code\+\_\+ptr }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflatbuffers_1_1python_1_1PythonGenerator_a398315982257a1caefe596d7f7276373}\label{classflatbuffers_1_1python_1_1PythonGenerator_a398315982257a1caefe596d7f7276373} 
+\index{flatbuffers::python::PythonGenerator@{flatbuffers::python::PythonGenerator}!GenEnum@{GenEnum}}
+\index{GenEnum@{GenEnum}!flatbuffers::python::PythonGenerator@{flatbuffers::python::PythonGenerator}}
+\doxysubsubsection{\texorpdfstring{GenEnum()}{GenEnum()}}
+{\footnotesize\ttfamily void flatbuffers\+::python\+::\+Python\+Generator\+::\+Gen\+Enum (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structflatbuffers_1_1EnumDef}{Enum\+Def}} \&}]{enum\+\_\+def,  }\item[{std\+::string \texorpdfstring{$\ast$}{*}}]{code\+\_\+ptr }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflatbuffers_1_1python_1_1PythonGenerator_ab02f4f43b314c5cee197389e71e0dd35}\label{classflatbuffers_1_1python_1_1PythonGenerator_ab02f4f43b314c5cee197389e71e0dd35} 
+\index{flatbuffers::python::PythonGenerator@{flatbuffers::python::PythonGenerator}!generate@{generate}}
+\index{generate@{generate}!flatbuffers::python::PythonGenerator@{flatbuffers::python::PythonGenerator}}
+\doxysubsubsection{\texorpdfstring{generate()}{generate()}}
+{\footnotesize\ttfamily bool flatbuffers\+::python\+::\+Python\+Generator\+::generate (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classflatbuffers_1_1BaseGenerator_a32156e35f9273398435ce55386874187}{flatbuffers\+::\+Base\+Generator}}.
+
+\Hypertarget{classflatbuffers_1_1python_1_1PythonGenerator_ac44787755a8f955f2d730bef6f6b1078}\label{classflatbuffers_1_1python_1_1PythonGenerator_ac44787755a8f955f2d730bef6f6b1078} 
+\index{flatbuffers::python::PythonGenerator@{flatbuffers::python::PythonGenerator}!GenFieldTy@{GenFieldTy}}
+\index{GenFieldTy@{GenFieldTy}!flatbuffers::python::PythonGenerator@{flatbuffers::python::PythonGenerator}}
+\doxysubsubsection{\texorpdfstring{GenFieldTy()}{GenFieldTy()}}
+{\footnotesize\ttfamily std\+::string flatbuffers\+::python\+::\+Python\+Generator\+::\+Gen\+Field\+Ty (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structflatbuffers_1_1FieldDef}{Field\+Def}} \&}]{field }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflatbuffers_1_1python_1_1PythonGenerator_a98078f2e2cc0686b6266fb69d19ccb51}\label{classflatbuffers_1_1python_1_1PythonGenerator_a98078f2e2cc0686b6266fb69d19ccb51} 
+\index{flatbuffers::python::PythonGenerator@{flatbuffers::python::PythonGenerator}!GenGetter@{GenGetter}}
+\index{GenGetter@{GenGetter}!flatbuffers::python::PythonGenerator@{flatbuffers::python::PythonGenerator}}
+\doxysubsubsection{\texorpdfstring{GenGetter()}{GenGetter()}}
+{\footnotesize\ttfamily std\+::string flatbuffers\+::python\+::\+Python\+Generator\+::\+Gen\+Getter (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structflatbuffers_1_1Type}{Type}} \&}]{type }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflatbuffers_1_1python_1_1PythonGenerator_a159ab96829ebfb10591dd56fffda95f3}\label{classflatbuffers_1_1python_1_1PythonGenerator_a159ab96829ebfb10591dd56fffda95f3} 
+\index{flatbuffers::python::PythonGenerator@{flatbuffers::python::PythonGenerator}!GenHasFileIdentifier@{GenHasFileIdentifier}}
+\index{GenHasFileIdentifier@{GenHasFileIdentifier}!flatbuffers::python::PythonGenerator@{flatbuffers::python::PythonGenerator}}
+\doxysubsubsection{\texorpdfstring{GenHasFileIdentifier()}{GenHasFileIdentifier()}}
+{\footnotesize\ttfamily void flatbuffers\+::python\+::\+Python\+Generator\+::\+Gen\+Has\+File\+Identifier (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structflatbuffers_1_1StructDef}{Struct\+Def}} \&}]{struct\+\_\+def,  }\item[{std\+::string \texorpdfstring{$\ast$}{*}}]{code\+\_\+ptr }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflatbuffers_1_1python_1_1PythonGenerator_addbb60a5740432a7e0eb6b68ed76d6dc}\label{classflatbuffers_1_1python_1_1PythonGenerator_addbb60a5740432a7e0eb6b68ed76d6dc} 
+\index{flatbuffers::python::PythonGenerator@{flatbuffers::python::PythonGenerator}!GenIndents@{GenIndents}}
+\index{GenIndents@{GenIndents}!flatbuffers::python::PythonGenerator@{flatbuffers::python::PythonGenerator}}
+\doxysubsubsection{\texorpdfstring{GenIndents()}{GenIndents()}}
+{\footnotesize\ttfamily std\+::string flatbuffers\+::python\+::\+Python\+Generator\+::\+Gen\+Indents (\begin{DoxyParamCaption}\item[{int}]{num }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflatbuffers_1_1python_1_1PythonGenerator_ac574940faa04bb94253e41e44a204a15}\label{classflatbuffers_1_1python_1_1PythonGenerator_ac574940faa04bb94253e41e44a204a15} 
+\index{flatbuffers::python::PythonGenerator@{flatbuffers::python::PythonGenerator}!GenInitialize@{GenInitialize}}
+\index{GenInitialize@{GenInitialize}!flatbuffers::python::PythonGenerator@{flatbuffers::python::PythonGenerator}}
+\doxysubsubsection{\texorpdfstring{GenInitialize()}{GenInitialize()}}
+{\footnotesize\ttfamily void flatbuffers\+::python\+::\+Python\+Generator\+::\+Gen\+Initialize (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structflatbuffers_1_1StructDef}{Struct\+Def}} \&}]{struct\+\_\+def,  }\item[{std\+::string \texorpdfstring{$\ast$}{*}}]{code\+\_\+ptr,  }\item[{std\+::set$<$ std\+::string $>$ \texorpdfstring{$\ast$}{*}}]{import\+\_\+list }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflatbuffers_1_1python_1_1PythonGenerator_afea60a00728518bb2e106af8113d064d}\label{classflatbuffers_1_1python_1_1PythonGenerator_afea60a00728518bb2e106af8113d064d} 
+\index{flatbuffers::python::PythonGenerator@{flatbuffers::python::PythonGenerator}!GenMethod@{GenMethod}}
+\index{GenMethod@{GenMethod}!flatbuffers::python::PythonGenerator@{flatbuffers::python::PythonGenerator}}
+\doxysubsubsection{\texorpdfstring{GenMethod()}{GenMethod()}}
+{\footnotesize\ttfamily std\+::string flatbuffers\+::python\+::\+Python\+Generator\+::\+Gen\+Method (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structflatbuffers_1_1FieldDef}{Field\+Def}} \&}]{field }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflatbuffers_1_1python_1_1PythonGenerator_af1c914c9e0dd3d526733fa6554343fd4}\label{classflatbuffers_1_1python_1_1PythonGenerator_af1c914c9e0dd3d526733fa6554343fd4} 
+\index{flatbuffers::python::PythonGenerator@{flatbuffers::python::PythonGenerator}!GenPackageReference@{GenPackageReference}}
+\index{GenPackageReference@{GenPackageReference}!flatbuffers::python::PythonGenerator@{flatbuffers::python::PythonGenerator}}
+\doxysubsubsection{\texorpdfstring{GenPackageReference()}{GenPackageReference()}}
+{\footnotesize\ttfamily std\+::string flatbuffers\+::python\+::\+Python\+Generator\+::\+Gen\+Package\+Reference (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structflatbuffers_1_1Type}{Type}} \&}]{type }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflatbuffers_1_1python_1_1PythonGenerator_a593bb1d938008e007f32dae91984341d}\label{classflatbuffers_1_1python_1_1PythonGenerator_a593bb1d938008e007f32dae91984341d} 
+\index{flatbuffers::python::PythonGenerator@{flatbuffers::python::PythonGenerator}!GenPackForScalarVectorField@{GenPackForScalarVectorField}}
+\index{GenPackForScalarVectorField@{GenPackForScalarVectorField}!flatbuffers::python::PythonGenerator@{flatbuffers::python::PythonGenerator}}
+\doxysubsubsection{\texorpdfstring{GenPackForScalarVectorField()}{GenPackForScalarVectorField()}}
+{\footnotesize\ttfamily void flatbuffers\+::python\+::\+Python\+Generator\+::\+Gen\+Pack\+For\+Scalar\+Vector\+Field (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structflatbuffers_1_1StructDef}{Struct\+Def}} \&}]{struct\+\_\+def,  }\item[{const \mbox{\hyperlink{structflatbuffers_1_1FieldDef}{Field\+Def}} \&}]{field,  }\item[{std\+::string \texorpdfstring{$\ast$}{*}}]{code\+\_\+prefix\+\_\+ptr,  }\item[{std\+::string \texorpdfstring{$\ast$}{*}}]{code\+\_\+ptr }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflatbuffers_1_1python_1_1PythonGenerator_a9fbd8ca58d2ba4e0614deef9148c8432}\label{classflatbuffers_1_1python_1_1PythonGenerator_a9fbd8ca58d2ba4e0614deef9148c8432} 
+\index{flatbuffers::python::PythonGenerator@{flatbuffers::python::PythonGenerator}!GenPackForScalarVectorFieldHelper@{GenPackForScalarVectorFieldHelper}}
+\index{GenPackForScalarVectorFieldHelper@{GenPackForScalarVectorFieldHelper}!flatbuffers::python::PythonGenerator@{flatbuffers::python::PythonGenerator}}
+\doxysubsubsection{\texorpdfstring{GenPackForScalarVectorFieldHelper()}{GenPackForScalarVectorFieldHelper()}}
+{\footnotesize\ttfamily void flatbuffers\+::python\+::\+Python\+Generator\+::\+Gen\+Pack\+For\+Scalar\+Vector\+Field\+Helper (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structflatbuffers_1_1StructDef}{Struct\+Def}} \&}]{struct\+\_\+def,  }\item[{const \mbox{\hyperlink{structflatbuffers_1_1FieldDef}{Field\+Def}} \&}]{field,  }\item[{std\+::string \texorpdfstring{$\ast$}{*}}]{code\+\_\+ptr,  }\item[{int}]{indents }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflatbuffers_1_1python_1_1PythonGenerator_af7e7f48e831b9189f823153693b569e6}\label{classflatbuffers_1_1python_1_1PythonGenerator_af7e7f48e831b9189f823153693b569e6} 
+\index{flatbuffers::python::PythonGenerator@{flatbuffers::python::PythonGenerator}!GenPackForStruct@{GenPackForStruct}}
+\index{GenPackForStruct@{GenPackForStruct}!flatbuffers::python::PythonGenerator@{flatbuffers::python::PythonGenerator}}
+\doxysubsubsection{\texorpdfstring{GenPackForStruct()}{GenPackForStruct()}}
+{\footnotesize\ttfamily void flatbuffers\+::python\+::\+Python\+Generator\+::\+Gen\+Pack\+For\+Struct (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structflatbuffers_1_1StructDef}{Struct\+Def}} \&}]{struct\+\_\+def,  }\item[{std\+::string \texorpdfstring{$\ast$}{*}}]{code\+\_\+ptr }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflatbuffers_1_1python_1_1PythonGenerator_ab3446e872da8450398f9370371d754bb}\label{classflatbuffers_1_1python_1_1PythonGenerator_ab3446e872da8450398f9370371d754bb} 
+\index{flatbuffers::python::PythonGenerator@{flatbuffers::python::PythonGenerator}!GenPackForStructField@{GenPackForStructField}}
+\index{GenPackForStructField@{GenPackForStructField}!flatbuffers::python::PythonGenerator@{flatbuffers::python::PythonGenerator}}
+\doxysubsubsection{\texorpdfstring{GenPackForStructField()}{GenPackForStructField()}}
+{\footnotesize\ttfamily void flatbuffers\+::python\+::\+Python\+Generator\+::\+Gen\+Pack\+For\+Struct\+Field (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structflatbuffers_1_1StructDef}{Struct\+Def}} \&}]{struct\+\_\+def,  }\item[{const \mbox{\hyperlink{structflatbuffers_1_1FieldDef}{Field\+Def}} \&}]{field,  }\item[{std\+::string \texorpdfstring{$\ast$}{*}}]{code\+\_\+prefix\+\_\+ptr,  }\item[{std\+::string \texorpdfstring{$\ast$}{*}}]{code\+\_\+ptr }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflatbuffers_1_1python_1_1PythonGenerator_ab9050a48823fca4c7d7d7b58be8c997f}\label{classflatbuffers_1_1python_1_1PythonGenerator_ab9050a48823fca4c7d7d7b58be8c997f} 
+\index{flatbuffers::python::PythonGenerator@{flatbuffers::python::PythonGenerator}!GenPackForStructVectorField@{GenPackForStructVectorField}}
+\index{GenPackForStructVectorField@{GenPackForStructVectorField}!flatbuffers::python::PythonGenerator@{flatbuffers::python::PythonGenerator}}
+\doxysubsubsection{\texorpdfstring{GenPackForStructVectorField()}{GenPackForStructVectorField()}}
+{\footnotesize\ttfamily void flatbuffers\+::python\+::\+Python\+Generator\+::\+Gen\+Pack\+For\+Struct\+Vector\+Field (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structflatbuffers_1_1StructDef}{Struct\+Def}} \&}]{struct\+\_\+def,  }\item[{const \mbox{\hyperlink{structflatbuffers_1_1FieldDef}{Field\+Def}} \&}]{field,  }\item[{std\+::string \texorpdfstring{$\ast$}{*}}]{code\+\_\+prefix\+\_\+ptr,  }\item[{std\+::string \texorpdfstring{$\ast$}{*}}]{code\+\_\+ptr }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflatbuffers_1_1python_1_1PythonGenerator_a3808127a8a420a8a2e03096a82d7aa67}\label{classflatbuffers_1_1python_1_1PythonGenerator_a3808127a8a420a8a2e03096a82d7aa67} 
+\index{flatbuffers::python::PythonGenerator@{flatbuffers::python::PythonGenerator}!GenPackForTable@{GenPackForTable}}
+\index{GenPackForTable@{GenPackForTable}!flatbuffers::python::PythonGenerator@{flatbuffers::python::PythonGenerator}}
+\doxysubsubsection{\texorpdfstring{GenPackForTable()}{GenPackForTable()}}
+{\footnotesize\ttfamily void flatbuffers\+::python\+::\+Python\+Generator\+::\+Gen\+Pack\+For\+Table (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structflatbuffers_1_1StructDef}{Struct\+Def}} \&}]{struct\+\_\+def,  }\item[{std\+::string \texorpdfstring{$\ast$}{*}}]{code\+\_\+ptr }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflatbuffers_1_1python_1_1PythonGenerator_ab461488d0199ee4ddc38e09e4cee8fcd}\label{classflatbuffers_1_1python_1_1PythonGenerator_ab461488d0199ee4ddc38e09e4cee8fcd} 
+\index{flatbuffers::python::PythonGenerator@{flatbuffers::python::PythonGenerator}!GenPackForUnionField@{GenPackForUnionField}}
+\index{GenPackForUnionField@{GenPackForUnionField}!flatbuffers::python::PythonGenerator@{flatbuffers::python::PythonGenerator}}
+\doxysubsubsection{\texorpdfstring{GenPackForUnionField()}{GenPackForUnionField()}}
+{\footnotesize\ttfamily void flatbuffers\+::python\+::\+Python\+Generator\+::\+Gen\+Pack\+For\+Union\+Field (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structflatbuffers_1_1StructDef}{Struct\+Def}} \&}]{struct\+\_\+def,  }\item[{const \mbox{\hyperlink{structflatbuffers_1_1FieldDef}{Field\+Def}} \&}]{field,  }\item[{std\+::string \texorpdfstring{$\ast$}{*}}]{code\+\_\+prefix\+\_\+ptr,  }\item[{std\+::string \texorpdfstring{$\ast$}{*}}]{code\+\_\+ptr }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflatbuffers_1_1python_1_1PythonGenerator_a4d5aecc1fe64471873f904e8676216ce}\label{classflatbuffers_1_1python_1_1PythonGenerator_a4d5aecc1fe64471873f904e8676216ce} 
+\index{flatbuffers::python::PythonGenerator@{flatbuffers::python::PythonGenerator}!GenReceiver@{GenReceiver}}
+\index{GenReceiver@{GenReceiver}!flatbuffers::python::PythonGenerator@{flatbuffers::python::PythonGenerator}}
+\doxysubsubsection{\texorpdfstring{GenReceiver()}{GenReceiver()}}
+{\footnotesize\ttfamily void flatbuffers\+::python\+::\+Python\+Generator\+::\+Gen\+Receiver (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structflatbuffers_1_1StructDef}{Struct\+Def}} \&}]{struct\+\_\+def,  }\item[{std\+::string \texorpdfstring{$\ast$}{*}}]{code\+\_\+ptr }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflatbuffers_1_1python_1_1PythonGenerator_a756b40d51f0c4ac8406a0230490c1d05}\label{classflatbuffers_1_1python_1_1PythonGenerator_a756b40d51f0c4ac8406a0230490c1d05} 
+\index{flatbuffers::python::PythonGenerator@{flatbuffers::python::PythonGenerator}!GenReceiverForObjectAPI@{GenReceiverForObjectAPI}}
+\index{GenReceiverForObjectAPI@{GenReceiverForObjectAPI}!flatbuffers::python::PythonGenerator@{flatbuffers::python::PythonGenerator}}
+\doxysubsubsection{\texorpdfstring{GenReceiverForObjectAPI()}{GenReceiverForObjectAPI()}}
+{\footnotesize\ttfamily void flatbuffers\+::python\+::\+Python\+Generator\+::\+Gen\+Receiver\+For\+Object\+API (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structflatbuffers_1_1StructDef}{Struct\+Def}} \&}]{struct\+\_\+def,  }\item[{std\+::string \texorpdfstring{$\ast$}{*}}]{code\+\_\+ptr }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflatbuffers_1_1python_1_1PythonGenerator_a338c72f4685e52b7f85cc3e8506af100}\label{classflatbuffers_1_1python_1_1PythonGenerator_a338c72f4685e52b7f85cc3e8506af100} 
+\index{flatbuffers::python::PythonGenerator@{flatbuffers::python::PythonGenerator}!GenStruct@{GenStruct}}
+\index{GenStruct@{GenStruct}!flatbuffers::python::PythonGenerator@{flatbuffers::python::PythonGenerator}}
+\doxysubsubsection{\texorpdfstring{GenStruct()}{GenStruct()}}
+{\footnotesize\ttfamily void flatbuffers\+::python\+::\+Python\+Generator\+::\+Gen\+Struct (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structflatbuffers_1_1StructDef}{Struct\+Def}} \&}]{struct\+\_\+def,  }\item[{std\+::string \texorpdfstring{$\ast$}{*}}]{code\+\_\+ptr,  }\item[{Import\+Map \&}]{imports }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflatbuffers_1_1python_1_1PythonGenerator_acd95efb495146d48b41b38e379031c77}\label{classflatbuffers_1_1python_1_1PythonGenerator_acd95efb495146d48b41b38e379031c77} 
+\index{flatbuffers::python::PythonGenerator@{flatbuffers::python::PythonGenerator}!GenStructAccessor@{GenStructAccessor}}
+\index{GenStructAccessor@{GenStructAccessor}!flatbuffers::python::PythonGenerator@{flatbuffers::python::PythonGenerator}}
+\doxysubsubsection{\texorpdfstring{GenStructAccessor()}{GenStructAccessor()}}
+{\footnotesize\ttfamily void flatbuffers\+::python\+::\+Python\+Generator\+::\+Gen\+Struct\+Accessor (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structflatbuffers_1_1StructDef}{Struct\+Def}} \&}]{struct\+\_\+def,  }\item[{const \mbox{\hyperlink{structflatbuffers_1_1FieldDef}{Field\+Def}} \&}]{field,  }\item[{std\+::string \texorpdfstring{$\ast$}{*}}]{code\+\_\+ptr,  }\item[{Import\+Map \&}]{imports }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflatbuffers_1_1python_1_1PythonGenerator_a852084143909bf4c571c6d6a11368f74}\label{classflatbuffers_1_1python_1_1PythonGenerator_a852084143909bf4c571c6d6a11368f74} 
+\index{flatbuffers::python::PythonGenerator@{flatbuffers::python::PythonGenerator}!GenStructBuilder@{GenStructBuilder}}
+\index{GenStructBuilder@{GenStructBuilder}!flatbuffers::python::PythonGenerator@{flatbuffers::python::PythonGenerator}}
+\doxysubsubsection{\texorpdfstring{GenStructBuilder()}{GenStructBuilder()}}
+{\footnotesize\ttfamily void flatbuffers\+::python\+::\+Python\+Generator\+::\+Gen\+Struct\+Builder (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structflatbuffers_1_1StructDef}{Struct\+Def}} \&}]{struct\+\_\+def,  }\item[{std\+::string \texorpdfstring{$\ast$}{*}}]{code\+\_\+ptr }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflatbuffers_1_1python_1_1PythonGenerator_a31c9c4e602cbbe8123b1b1212404ad44}\label{classflatbuffers_1_1python_1_1PythonGenerator_a31c9c4e602cbbe8123b1b1212404ad44} 
+\index{flatbuffers::python::PythonGenerator@{flatbuffers::python::PythonGenerator}!GenStructForObjectAPI@{GenStructForObjectAPI}}
+\index{GenStructForObjectAPI@{GenStructForObjectAPI}!flatbuffers::python::PythonGenerator@{flatbuffers::python::PythonGenerator}}
+\doxysubsubsection{\texorpdfstring{GenStructForObjectAPI()}{GenStructForObjectAPI()}}
+{\footnotesize\ttfamily void flatbuffers\+::python\+::\+Python\+Generator\+::\+Gen\+Struct\+For\+Object\+API (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structflatbuffers_1_1StructDef}{Struct\+Def}} \&}]{struct\+\_\+def,  }\item[{std\+::string \texorpdfstring{$\ast$}{*}}]{code\+\_\+ptr }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflatbuffers_1_1python_1_1PythonGenerator_a4d3339a6d755479ab384ed714a1083cd}\label{classflatbuffers_1_1python_1_1PythonGenerator_a4d3339a6d755479ab384ed714a1083cd} 
+\index{flatbuffers::python::PythonGenerator@{flatbuffers::python::PythonGenerator}!GenStructInit@{GenStructInit}}
+\index{GenStructInit@{GenStructInit}!flatbuffers::python::PythonGenerator@{flatbuffers::python::PythonGenerator}}
+\doxysubsubsection{\texorpdfstring{GenStructInit()}{GenStructInit()}}
+{\footnotesize\ttfamily void flatbuffers\+::python\+::\+Python\+Generator\+::\+Gen\+Struct\+Init (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structflatbuffers_1_1FieldDef}{Field\+Def}} \&}]{field,  }\item[{std\+::string \texorpdfstring{$\ast$}{*}}]{out\+\_\+ptr,  }\item[{std\+::set$<$ std\+::string $>$ \texorpdfstring{$\ast$}{*}}]{import\+\_\+list,  }\item[{std\+::set$<$ std\+::string $>$ \texorpdfstring{$\ast$}{*}}]{import\+\_\+typing\+\_\+list }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflatbuffers_1_1python_1_1PythonGenerator_abfb6414ec4f27ef7a1728584367cfcd0}\label{classflatbuffers_1_1python_1_1PythonGenerator_abfb6414ec4f27ef7a1728584367cfcd0} 
+\index{flatbuffers::python::PythonGenerator@{flatbuffers::python::PythonGenerator}!GenStructSizeOf@{GenStructSizeOf}}
+\index{GenStructSizeOf@{GenStructSizeOf}!flatbuffers::python::PythonGenerator@{flatbuffers::python::PythonGenerator}}
+\doxysubsubsection{\texorpdfstring{GenStructSizeOf()}{GenStructSizeOf()}}
+{\footnotesize\ttfamily void flatbuffers\+::python\+::\+Python\+Generator\+::\+Gen\+Struct\+Size\+Of (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structflatbuffers_1_1StructDef}{Struct\+Def}} \&}]{struct\+\_\+def,  }\item[{std\+::string \texorpdfstring{$\ast$}{*}}]{code\+\_\+ptr }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflatbuffers_1_1python_1_1PythonGenerator_aa7ee852ad0cc7e88adf8a02c5b116aba}\label{classflatbuffers_1_1python_1_1PythonGenerator_aa7ee852ad0cc7e88adf8a02c5b116aba} 
+\index{flatbuffers::python::PythonGenerator@{flatbuffers::python::PythonGenerator}!GenTableBuilders@{GenTableBuilders}}
+\index{GenTableBuilders@{GenTableBuilders}!flatbuffers::python::PythonGenerator@{flatbuffers::python::PythonGenerator}}
+\doxysubsubsection{\texorpdfstring{GenTableBuilders()}{GenTableBuilders()}}
+{\footnotesize\ttfamily void flatbuffers\+::python\+::\+Python\+Generator\+::\+Gen\+Table\+Builders (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structflatbuffers_1_1StructDef}{Struct\+Def}} \&}]{struct\+\_\+def,  }\item[{std\+::string \texorpdfstring{$\ast$}{*}}]{code\+\_\+ptr }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflatbuffers_1_1python_1_1PythonGenerator_a6df9418b64bdb43902abd9168e293dcc}\label{classflatbuffers_1_1python_1_1PythonGenerator_a6df9418b64bdb43902abd9168e293dcc} 
+\index{flatbuffers::python::PythonGenerator@{flatbuffers::python::PythonGenerator}!GenTypeBasic@{GenTypeBasic}}
+\index{GenTypeBasic@{GenTypeBasic}!flatbuffers::python::PythonGenerator@{flatbuffers::python::PythonGenerator}}
+\doxysubsubsection{\texorpdfstring{GenTypeBasic()}{GenTypeBasic()}}
+{\footnotesize\ttfamily std\+::string flatbuffers\+::python\+::\+Python\+Generator\+::\+Gen\+Type\+Basic (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structflatbuffers_1_1Type}{Type}} \&}]{type }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflatbuffers_1_1python_1_1PythonGenerator_aa29148364b1e2dd5d94e82c5fcf962ca}\label{classflatbuffers_1_1python_1_1PythonGenerator_aa29148364b1e2dd5d94e82c5fcf962ca} 
+\index{flatbuffers::python::PythonGenerator@{flatbuffers::python::PythonGenerator}!GenTypeGet@{GenTypeGet}}
+\index{GenTypeGet@{GenTypeGet}!flatbuffers::python::PythonGenerator@{flatbuffers::python::PythonGenerator}}
+\doxysubsubsection{\texorpdfstring{GenTypeGet()}{GenTypeGet()}}
+{\footnotesize\ttfamily std\+::string flatbuffers\+::python\+::\+Python\+Generator\+::\+Gen\+Type\+Get (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structflatbuffers_1_1Type}{Type}} \&}]{type }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflatbuffers_1_1python_1_1PythonGenerator_af1966ab7cc4ef369d97d931544541475}\label{classflatbuffers_1_1python_1_1PythonGenerator_af1966ab7cc4ef369d97d931544541475} 
+\index{flatbuffers::python::PythonGenerator@{flatbuffers::python::PythonGenerator}!GenTypePointer@{GenTypePointer}}
+\index{GenTypePointer@{GenTypePointer}!flatbuffers::python::PythonGenerator@{flatbuffers::python::PythonGenerator}}
+\doxysubsubsection{\texorpdfstring{GenTypePointer()}{GenTypePointer()}}
+{\footnotesize\ttfamily std\+::string flatbuffers\+::python\+::\+Python\+Generator\+::\+Gen\+Type\+Pointer (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structflatbuffers_1_1Type}{Type}} \&}]{type }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflatbuffers_1_1python_1_1PythonGenerator_ac99435d27e26cbaa31aa714341436658}\label{classflatbuffers_1_1python_1_1PythonGenerator_ac99435d27e26cbaa31aa714341436658} 
+\index{flatbuffers::python::PythonGenerator@{flatbuffers::python::PythonGenerator}!GenUnionCreator@{GenUnionCreator}}
+\index{GenUnionCreator@{GenUnionCreator}!flatbuffers::python::PythonGenerator@{flatbuffers::python::PythonGenerator}}
+\doxysubsubsection{\texorpdfstring{GenUnionCreator()}{GenUnionCreator()}}
+{\footnotesize\ttfamily void flatbuffers\+::python\+::\+Python\+Generator\+::\+Gen\+Union\+Creator (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structflatbuffers_1_1EnumDef}{Enum\+Def}} \&}]{enum\+\_\+def,  }\item[{std\+::string \texorpdfstring{$\ast$}{*}}]{code\+\_\+ptr }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflatbuffers_1_1python_1_1PythonGenerator_ab72a035a3f4ce0e4d27be659382e6c2d}\label{classflatbuffers_1_1python_1_1PythonGenerator_ab72a035a3f4ce0e4d27be659382e6c2d} 
+\index{flatbuffers::python::PythonGenerator@{flatbuffers::python::PythonGenerator}!GenUnionCreatorForString@{GenUnionCreatorForString}}
+\index{GenUnionCreatorForString@{GenUnionCreatorForString}!flatbuffers::python::PythonGenerator@{flatbuffers::python::PythonGenerator}}
+\doxysubsubsection{\texorpdfstring{GenUnionCreatorForString()}{GenUnionCreatorForString()}}
+{\footnotesize\ttfamily void flatbuffers\+::python\+::\+Python\+Generator\+::\+Gen\+Union\+Creator\+For\+String (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structflatbuffers_1_1EnumDef}{Enum\+Def}} \&}]{enum\+\_\+def,  }\item[{const \mbox{\hyperlink{structflatbuffers_1_1EnumVal}{Enum\+Val}} \&}]{ev,  }\item[{std\+::string \texorpdfstring{$\ast$}{*}}]{code\+\_\+ptr }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflatbuffers_1_1python_1_1PythonGenerator_aa42d5052145211b1b01e246982798bb3}\label{classflatbuffers_1_1python_1_1PythonGenerator_aa42d5052145211b1b01e246982798bb3} 
+\index{flatbuffers::python::PythonGenerator@{flatbuffers::python::PythonGenerator}!GenUnionCreatorForStruct@{GenUnionCreatorForStruct}}
+\index{GenUnionCreatorForStruct@{GenUnionCreatorForStruct}!flatbuffers::python::PythonGenerator@{flatbuffers::python::PythonGenerator}}
+\doxysubsubsection{\texorpdfstring{GenUnionCreatorForStruct()}{GenUnionCreatorForStruct()}}
+{\footnotesize\ttfamily void flatbuffers\+::python\+::\+Python\+Generator\+::\+Gen\+Union\+Creator\+For\+Struct (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structflatbuffers_1_1EnumDef}{Enum\+Def}} \&}]{enum\+\_\+def,  }\item[{const \mbox{\hyperlink{structflatbuffers_1_1EnumVal}{Enum\+Val}} \&}]{ev,  }\item[{std\+::string \texorpdfstring{$\ast$}{*}}]{code\+\_\+ptr }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflatbuffers_1_1python_1_1PythonGenerator_a019e426c57f6ea0d7e35fc8547a67dfd}\label{classflatbuffers_1_1python_1_1PythonGenerator_a019e426c57f6ea0d7e35fc8547a67dfd} 
+\index{flatbuffers::python::PythonGenerator@{flatbuffers::python::PythonGenerator}!GenUnionInit@{GenUnionInit}}
+\index{GenUnionInit@{GenUnionInit}!flatbuffers::python::PythonGenerator@{flatbuffers::python::PythonGenerator}}
+\doxysubsubsection{\texorpdfstring{GenUnionInit()}{GenUnionInit()}}
+{\footnotesize\ttfamily void flatbuffers\+::python\+::\+Python\+Generator\+::\+Gen\+Union\+Init (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structflatbuffers_1_1FieldDef}{Field\+Def}} \&}]{field,  }\item[{std\+::string \texorpdfstring{$\ast$}{*}}]{field\+\_\+types\+\_\+ptr,  }\item[{std\+::set$<$ std\+::string $>$ \texorpdfstring{$\ast$}{*}}]{import\+\_\+list,  }\item[{std\+::set$<$ std\+::string $>$ \texorpdfstring{$\ast$}{*}}]{import\+\_\+typing\+\_\+list }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflatbuffers_1_1python_1_1PythonGenerator_a5811ff7f4e9a97c2e191899f7bd45556}\label{classflatbuffers_1_1python_1_1PythonGenerator_a5811ff7f4e9a97c2e191899f7bd45556} 
+\index{flatbuffers::python::PythonGenerator@{flatbuffers::python::PythonGenerator}!GenUnPack@{GenUnPack}}
+\index{GenUnPack@{GenUnPack}!flatbuffers::python::PythonGenerator@{flatbuffers::python::PythonGenerator}}
+\doxysubsubsection{\texorpdfstring{GenUnPack()}{GenUnPack()}}
+{\footnotesize\ttfamily void flatbuffers\+::python\+::\+Python\+Generator\+::\+Gen\+Un\+Pack (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structflatbuffers_1_1StructDef}{Struct\+Def}} \&}]{struct\+\_\+def,  }\item[{std\+::string \texorpdfstring{$\ast$}{*}}]{code\+\_\+ptr }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflatbuffers_1_1python_1_1PythonGenerator_a4651738894e7867a5bda79b565136c82}\label{classflatbuffers_1_1python_1_1PythonGenerator_a4651738894e7867a5bda79b565136c82} 
+\index{flatbuffers::python::PythonGenerator@{flatbuffers::python::PythonGenerator}!GenUnPackForScalar@{GenUnPackForScalar}}
+\index{GenUnPackForScalar@{GenUnPackForScalar}!flatbuffers::python::PythonGenerator@{flatbuffers::python::PythonGenerator}}
+\doxysubsubsection{\texorpdfstring{GenUnPackForScalar()}{GenUnPackForScalar()}}
+{\footnotesize\ttfamily void flatbuffers\+::python\+::\+Python\+Generator\+::\+Gen\+Un\+Pack\+For\+Scalar (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structflatbuffers_1_1StructDef}{Struct\+Def}} \&}]{struct\+\_\+def,  }\item[{const \mbox{\hyperlink{structflatbuffers_1_1FieldDef}{Field\+Def}} \&}]{field,  }\item[{std\+::string \texorpdfstring{$\ast$}{*}}]{code\+\_\+ptr }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflatbuffers_1_1python_1_1PythonGenerator_afcb101d7483e2a88e1b6b738f19d3412}\label{classflatbuffers_1_1python_1_1PythonGenerator_afcb101d7483e2a88e1b6b738f19d3412} 
+\index{flatbuffers::python::PythonGenerator@{flatbuffers::python::PythonGenerator}!GenUnPackForScalarVector@{GenUnPackForScalarVector}}
+\index{GenUnPackForScalarVector@{GenUnPackForScalarVector}!flatbuffers::python::PythonGenerator@{flatbuffers::python::PythonGenerator}}
+\doxysubsubsection{\texorpdfstring{GenUnPackForScalarVector()}{GenUnPackForScalarVector()}}
+{\footnotesize\ttfamily void flatbuffers\+::python\+::\+Python\+Generator\+::\+Gen\+Un\+Pack\+For\+Scalar\+Vector (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structflatbuffers_1_1StructDef}{Struct\+Def}} \&}]{struct\+\_\+def,  }\item[{const \mbox{\hyperlink{structflatbuffers_1_1FieldDef}{Field\+Def}} \&}]{field,  }\item[{std\+::string \texorpdfstring{$\ast$}{*}}]{code\+\_\+ptr }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflatbuffers_1_1python_1_1PythonGenerator_a35e238b280175ae6c003a430158ce807}\label{classflatbuffers_1_1python_1_1PythonGenerator_a35e238b280175ae6c003a430158ce807} 
+\index{flatbuffers::python::PythonGenerator@{flatbuffers::python::PythonGenerator}!GenUnpackforScalarVectorHelper@{GenUnpackforScalarVectorHelper}}
+\index{GenUnpackforScalarVectorHelper@{GenUnpackforScalarVectorHelper}!flatbuffers::python::PythonGenerator@{flatbuffers::python::PythonGenerator}}
+\doxysubsubsection{\texorpdfstring{GenUnpackforScalarVectorHelper()}{GenUnpackforScalarVectorHelper()}}
+{\footnotesize\ttfamily void flatbuffers\+::python\+::\+Python\+Generator\+::\+Gen\+Unpackfor\+Scalar\+Vector\+Helper (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structflatbuffers_1_1StructDef}{Struct\+Def}} \&}]{struct\+\_\+def,  }\item[{const \mbox{\hyperlink{structflatbuffers_1_1FieldDef}{Field\+Def}} \&}]{field,  }\item[{std\+::string \texorpdfstring{$\ast$}{*}}]{code\+\_\+ptr,  }\item[{int}]{indents }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflatbuffers_1_1python_1_1PythonGenerator_a628b39efdc20ad1d95a1c1802f15ce75}\label{classflatbuffers_1_1python_1_1PythonGenerator_a628b39efdc20ad1d95a1c1802f15ce75} 
+\index{flatbuffers::python::PythonGenerator@{flatbuffers::python::PythonGenerator}!GenUnPackForStruct@{GenUnPackForStruct}}
+\index{GenUnPackForStruct@{GenUnPackForStruct}!flatbuffers::python::PythonGenerator@{flatbuffers::python::PythonGenerator}}
+\doxysubsubsection{\texorpdfstring{GenUnPackForStruct()}{GenUnPackForStruct()}}
+{\footnotesize\ttfamily void flatbuffers\+::python\+::\+Python\+Generator\+::\+Gen\+Un\+Pack\+For\+Struct (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structflatbuffers_1_1StructDef}{Struct\+Def}} \&}]{struct\+\_\+def,  }\item[{const \mbox{\hyperlink{structflatbuffers_1_1FieldDef}{Field\+Def}} \&}]{field,  }\item[{std\+::string \texorpdfstring{$\ast$}{*}}]{code\+\_\+ptr }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflatbuffers_1_1python_1_1PythonGenerator_afe8a52e43a2327690c5c410aefd58211}\label{classflatbuffers_1_1python_1_1PythonGenerator_afe8a52e43a2327690c5c410aefd58211} 
+\index{flatbuffers::python::PythonGenerator@{flatbuffers::python::PythonGenerator}!GenUnPackForStructVector@{GenUnPackForStructVector}}
+\index{GenUnPackForStructVector@{GenUnPackForStructVector}!flatbuffers::python::PythonGenerator@{flatbuffers::python::PythonGenerator}}
+\doxysubsubsection{\texorpdfstring{GenUnPackForStructVector()}{GenUnPackForStructVector()}}
+{\footnotesize\ttfamily void flatbuffers\+::python\+::\+Python\+Generator\+::\+Gen\+Un\+Pack\+For\+Struct\+Vector (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structflatbuffers_1_1StructDef}{Struct\+Def}} \&}]{struct\+\_\+def,  }\item[{const \mbox{\hyperlink{structflatbuffers_1_1FieldDef}{Field\+Def}} \&}]{field,  }\item[{std\+::string \texorpdfstring{$\ast$}{*}}]{code\+\_\+ptr }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflatbuffers_1_1python_1_1PythonGenerator_a703a31c284ebfa4f126c80eaed8ee6af}\label{classflatbuffers_1_1python_1_1PythonGenerator_a703a31c284ebfa4f126c80eaed8ee6af} 
+\index{flatbuffers::python::PythonGenerator@{flatbuffers::python::PythonGenerator}!GenUnpackForTableVector@{GenUnpackForTableVector}}
+\index{GenUnpackForTableVector@{GenUnpackForTableVector}!flatbuffers::python::PythonGenerator@{flatbuffers::python::PythonGenerator}}
+\doxysubsubsection{\texorpdfstring{GenUnpackForTableVector()}{GenUnpackForTableVector()}}
+{\footnotesize\ttfamily void flatbuffers\+::python\+::\+Python\+Generator\+::\+Gen\+Unpack\+For\+Table\+Vector (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structflatbuffers_1_1StructDef}{Struct\+Def}} \&}]{struct\+\_\+def,  }\item[{const \mbox{\hyperlink{structflatbuffers_1_1FieldDef}{Field\+Def}} \&}]{field,  }\item[{std\+::string \texorpdfstring{$\ast$}{*}}]{code\+\_\+ptr }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflatbuffers_1_1python_1_1PythonGenerator_a5a0a3e13407a791c301c295f8fb60af5}\label{classflatbuffers_1_1python_1_1PythonGenerator_a5a0a3e13407a791c301c295f8fb60af5} 
+\index{flatbuffers::python::PythonGenerator@{flatbuffers::python::PythonGenerator}!GenUnPackForUnion@{GenUnPackForUnion}}
+\index{GenUnPackForUnion@{GenUnPackForUnion}!flatbuffers::python::PythonGenerator@{flatbuffers::python::PythonGenerator}}
+\doxysubsubsection{\texorpdfstring{GenUnPackForUnion()}{GenUnPackForUnion()}}
+{\footnotesize\ttfamily void flatbuffers\+::python\+::\+Python\+Generator\+::\+Gen\+Un\+Pack\+For\+Union (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structflatbuffers_1_1StructDef}{Struct\+Def}} \&}]{struct\+\_\+def,  }\item[{const \mbox{\hyperlink{structflatbuffers_1_1FieldDef}{Field\+Def}} \&}]{field,  }\item[{std\+::string \texorpdfstring{$\ast$}{*}}]{code\+\_\+ptr }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflatbuffers_1_1python_1_1PythonGenerator_ae4886aa31236398d360a129742bcf41d}\label{classflatbuffers_1_1python_1_1PythonGenerator_ae4886aa31236398d360a129742bcf41d} 
+\index{flatbuffers::python::PythonGenerator@{flatbuffers::python::PythonGenerator}!GenVectorInit@{GenVectorInit}}
+\index{GenVectorInit@{GenVectorInit}!flatbuffers::python::PythonGenerator@{flatbuffers::python::PythonGenerator}}
+\doxysubsubsection{\texorpdfstring{GenVectorInit()}{GenVectorInit()}}
+{\footnotesize\ttfamily void flatbuffers\+::python\+::\+Python\+Generator\+::\+Gen\+Vector\+Init (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structflatbuffers_1_1FieldDef}{Field\+Def}} \&}]{field,  }\item[{std\+::string \texorpdfstring{$\ast$}{*}}]{field\+\_\+type\+\_\+ptr,  }\item[{std\+::set$<$ std\+::string $>$ \texorpdfstring{$\ast$}{*}}]{import\+\_\+list,  }\item[{std\+::set$<$ std\+::string $>$ \texorpdfstring{$\ast$}{*}}]{import\+\_\+typing\+\_\+list }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflatbuffers_1_1python_1_1PythonGenerator_a0af18405c9a2c1a3924e12cb7bb80d8e}\label{classflatbuffers_1_1python_1_1PythonGenerator_a0af18405c9a2c1a3924e12cb7bb80d8e} 
+\index{flatbuffers::python::PythonGenerator@{flatbuffers::python::PythonGenerator}!GetArrayOfNonStruct@{GetArrayOfNonStruct}}
+\index{GetArrayOfNonStruct@{GetArrayOfNonStruct}!flatbuffers::python::PythonGenerator@{flatbuffers::python::PythonGenerator}}
+\doxysubsubsection{\texorpdfstring{GetArrayOfNonStruct()}{GetArrayOfNonStruct()}}
+{\footnotesize\ttfamily void flatbuffers\+::python\+::\+Python\+Generator\+::\+Get\+Array\+Of\+Non\+Struct (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structflatbuffers_1_1StructDef}{Struct\+Def}} \&}]{struct\+\_\+def,  }\item[{const \mbox{\hyperlink{structflatbuffers_1_1FieldDef}{Field\+Def}} \&}]{field,  }\item[{std\+::string \texorpdfstring{$\ast$}{*}}]{code\+\_\+ptr }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflatbuffers_1_1python_1_1PythonGenerator_a8cc911dce0441a2f223d7a8c098d2755}\label{classflatbuffers_1_1python_1_1PythonGenerator_a8cc911dce0441a2f223d7a8c098d2755} 
+\index{flatbuffers::python::PythonGenerator@{flatbuffers::python::PythonGenerator}!GetArrayOfStruct@{GetArrayOfStruct}}
+\index{GetArrayOfStruct@{GetArrayOfStruct}!flatbuffers::python::PythonGenerator@{flatbuffers::python::PythonGenerator}}
+\doxysubsubsection{\texorpdfstring{GetArrayOfStruct()}{GetArrayOfStruct()}}
+{\footnotesize\ttfamily void flatbuffers\+::python\+::\+Python\+Generator\+::\+Get\+Array\+Of\+Struct (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structflatbuffers_1_1StructDef}{Struct\+Def}} \&}]{struct\+\_\+def,  }\item[{const \mbox{\hyperlink{structflatbuffers_1_1FieldDef}{Field\+Def}} \&}]{field,  }\item[{std\+::string \texorpdfstring{$\ast$}{*}}]{code\+\_\+ptr,  }\item[{Import\+Map \&}]{imports }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflatbuffers_1_1python_1_1PythonGenerator_a2a76b38c760b2b95c8bb27f9b18676c0}\label{classflatbuffers_1_1python_1_1PythonGenerator_a2a76b38c760b2b95c8bb27f9b18676c0} 
+\index{flatbuffers::python::PythonGenerator@{flatbuffers::python::PythonGenerator}!GetBasePythonTypeForScalarAndString@{GetBasePythonTypeForScalarAndString}}
+\index{GetBasePythonTypeForScalarAndString@{GetBasePythonTypeForScalarAndString}!flatbuffers::python::PythonGenerator@{flatbuffers::python::PythonGenerator}}
+\doxysubsubsection{\texorpdfstring{GetBasePythonTypeForScalarAndString()}{GetBasePythonTypeForScalarAndString()}}
+{\footnotesize\ttfamily std\+::string flatbuffers\+::python\+::\+Python\+Generator\+::\+Get\+Base\+Python\+Type\+For\+Scalar\+And\+String (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{namespaceflatbuffers_a120ddc06543f62f7dce4619b34cac8d4}{Base\+Type}} \&}]{base\+\_\+type }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflatbuffers_1_1python_1_1PythonGenerator_a09a76891880d5d1a915964812546cb64}\label{classflatbuffers_1_1python_1_1PythonGenerator_a09a76891880d5d1a915964812546cb64} 
+\index{flatbuffers::python::PythonGenerator@{flatbuffers::python::PythonGenerator}!GetDefaultValue@{GetDefaultValue}}
+\index{GetDefaultValue@{GetDefaultValue}!flatbuffers::python::PythonGenerator@{flatbuffers::python::PythonGenerator}}
+\doxysubsubsection{\texorpdfstring{GetDefaultValue()}{GetDefaultValue()}}
+{\footnotesize\ttfamily std\+::string flatbuffers\+::python\+::\+Python\+Generator\+::\+Get\+Default\+Value (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structflatbuffers_1_1FieldDef}{Field\+Def}} \&}]{field }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflatbuffers_1_1python_1_1PythonGenerator_a6568f3fd0f86b5ad03a9e253e822f7e4}\label{classflatbuffers_1_1python_1_1PythonGenerator_a6568f3fd0f86b5ad03a9e253e822f7e4} 
+\index{flatbuffers::python::PythonGenerator@{flatbuffers::python::PythonGenerator}!GetEndOffsetOnTable@{GetEndOffsetOnTable}}
+\index{GetEndOffsetOnTable@{GetEndOffsetOnTable}!flatbuffers::python::PythonGenerator@{flatbuffers::python::PythonGenerator}}
+\doxysubsubsection{\texorpdfstring{GetEndOffsetOnTable()}{GetEndOffsetOnTable()}}
+{\footnotesize\ttfamily void flatbuffers\+::python\+::\+Python\+Generator\+::\+Get\+End\+Offset\+On\+Table (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structflatbuffers_1_1StructDef}{Struct\+Def}} \&}]{struct\+\_\+def,  }\item[{std\+::string \texorpdfstring{$\ast$}{*}}]{code\+\_\+ptr }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflatbuffers_1_1python_1_1PythonGenerator_ae6bbe6d9aa81a0ff0f753b059efdc1e1}\label{classflatbuffers_1_1python_1_1PythonGenerator_ae6bbe6d9aa81a0ff0f753b059efdc1e1} 
+\index{flatbuffers::python::PythonGenerator@{flatbuffers::python::PythonGenerator}!GetMemberOfVectorOfNonStruct@{GetMemberOfVectorOfNonStruct}}
+\index{GetMemberOfVectorOfNonStruct@{GetMemberOfVectorOfNonStruct}!flatbuffers::python::PythonGenerator@{flatbuffers::python::PythonGenerator}}
+\doxysubsubsection{\texorpdfstring{GetMemberOfVectorOfNonStruct()}{GetMemberOfVectorOfNonStruct()}}
+{\footnotesize\ttfamily void flatbuffers\+::python\+::\+Python\+Generator\+::\+Get\+Member\+Of\+Vector\+Of\+Non\+Struct (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structflatbuffers_1_1StructDef}{Struct\+Def}} \&}]{struct\+\_\+def,  }\item[{const \mbox{\hyperlink{structflatbuffers_1_1FieldDef}{Field\+Def}} \&}]{field,  }\item[{std\+::string \texorpdfstring{$\ast$}{*}}]{code\+\_\+ptr }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflatbuffers_1_1python_1_1PythonGenerator_a37ff811545a49c6bc805356a06d5d6ea}\label{classflatbuffers_1_1python_1_1PythonGenerator_a37ff811545a49c6bc805356a06d5d6ea} 
+\index{flatbuffers::python::PythonGenerator@{flatbuffers::python::PythonGenerator}!GetMemberOfVectorOfStruct@{GetMemberOfVectorOfStruct}}
+\index{GetMemberOfVectorOfStruct@{GetMemberOfVectorOfStruct}!flatbuffers::python::PythonGenerator@{flatbuffers::python::PythonGenerator}}
+\doxysubsubsection{\texorpdfstring{GetMemberOfVectorOfStruct()}{GetMemberOfVectorOfStruct()}}
+{\footnotesize\ttfamily void flatbuffers\+::python\+::\+Python\+Generator\+::\+Get\+Member\+Of\+Vector\+Of\+Struct (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structflatbuffers_1_1StructDef}{Struct\+Def}} \&}]{struct\+\_\+def,  }\item[{const \mbox{\hyperlink{structflatbuffers_1_1FieldDef}{Field\+Def}} \&}]{field,  }\item[{std\+::string \texorpdfstring{$\ast$}{*}}]{code\+\_\+ptr,  }\item[{Import\+Map \&}]{imports }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflatbuffers_1_1python_1_1PythonGenerator_abc37dfaf54151eb2f97664f55d3bf43d}\label{classflatbuffers_1_1python_1_1PythonGenerator_abc37dfaf54151eb2f97664f55d3bf43d} 
+\index{flatbuffers::python::PythonGenerator@{flatbuffers::python::PythonGenerator}!GetScalarFieldOfStruct@{GetScalarFieldOfStruct}}
+\index{GetScalarFieldOfStruct@{GetScalarFieldOfStruct}!flatbuffers::python::PythonGenerator@{flatbuffers::python::PythonGenerator}}
+\doxysubsubsection{\texorpdfstring{GetScalarFieldOfStruct()}{GetScalarFieldOfStruct()}}
+{\footnotesize\ttfamily void flatbuffers\+::python\+::\+Python\+Generator\+::\+Get\+Scalar\+Field\+Of\+Struct (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structflatbuffers_1_1StructDef}{Struct\+Def}} \&}]{struct\+\_\+def,  }\item[{const \mbox{\hyperlink{structflatbuffers_1_1FieldDef}{Field\+Def}} \&}]{field,  }\item[{std\+::string \texorpdfstring{$\ast$}{*}}]{code\+\_\+ptr }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflatbuffers_1_1python_1_1PythonGenerator_ad6367d7ce7ac4de48d83c844190e42fd}\label{classflatbuffers_1_1python_1_1PythonGenerator_ad6367d7ce7ac4de48d83c844190e42fd} 
+\index{flatbuffers::python::PythonGenerator@{flatbuffers::python::PythonGenerator}!GetScalarFieldOfTable@{GetScalarFieldOfTable}}
+\index{GetScalarFieldOfTable@{GetScalarFieldOfTable}!flatbuffers::python::PythonGenerator@{flatbuffers::python::PythonGenerator}}
+\doxysubsubsection{\texorpdfstring{GetScalarFieldOfTable()}{GetScalarFieldOfTable()}}
+{\footnotesize\ttfamily void flatbuffers\+::python\+::\+Python\+Generator\+::\+Get\+Scalar\+Field\+Of\+Table (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structflatbuffers_1_1StructDef}{Struct\+Def}} \&}]{struct\+\_\+def,  }\item[{const \mbox{\hyperlink{structflatbuffers_1_1FieldDef}{Field\+Def}} \&}]{field,  }\item[{std\+::string \texorpdfstring{$\ast$}{*}}]{code\+\_\+ptr }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflatbuffers_1_1python_1_1PythonGenerator_ae962fd99579c24b661a5bce628aea462}\label{classflatbuffers_1_1python_1_1PythonGenerator_ae962fd99579c24b661a5bce628aea462} 
+\index{flatbuffers::python::PythonGenerator@{flatbuffers::python::PythonGenerator}!GetStartOfTable@{GetStartOfTable}}
+\index{GetStartOfTable@{GetStartOfTable}!flatbuffers::python::PythonGenerator@{flatbuffers::python::PythonGenerator}}
+\doxysubsubsection{\texorpdfstring{GetStartOfTable()}{GetStartOfTable()}}
+{\footnotesize\ttfamily void flatbuffers\+::python\+::\+Python\+Generator\+::\+Get\+Start\+Of\+Table (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structflatbuffers_1_1StructDef}{Struct\+Def}} \&}]{struct\+\_\+def,  }\item[{std\+::string \texorpdfstring{$\ast$}{*}}]{code\+\_\+ptr }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflatbuffers_1_1python_1_1PythonGenerator_a0ea4e88c3c60f20bcc250ffc96e7df01}\label{classflatbuffers_1_1python_1_1PythonGenerator_a0ea4e88c3c60f20bcc250ffc96e7df01} 
+\index{flatbuffers::python::PythonGenerator@{flatbuffers::python::PythonGenerator}!GetStringField@{GetStringField}}
+\index{GetStringField@{GetStringField}!flatbuffers::python::PythonGenerator@{flatbuffers::python::PythonGenerator}}
+\doxysubsubsection{\texorpdfstring{GetStringField()}{GetStringField()}}
+{\footnotesize\ttfamily void flatbuffers\+::python\+::\+Python\+Generator\+::\+Get\+String\+Field (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structflatbuffers_1_1StructDef}{Struct\+Def}} \&}]{struct\+\_\+def,  }\item[{const \mbox{\hyperlink{structflatbuffers_1_1FieldDef}{Field\+Def}} \&}]{field,  }\item[{std\+::string \texorpdfstring{$\ast$}{*}}]{code\+\_\+ptr,  }\item[{Import\+Map \&}]{imports }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflatbuffers_1_1python_1_1PythonGenerator_a50cacd8c04b4ae42a06457da6344c14e}\label{classflatbuffers_1_1python_1_1PythonGenerator_a50cacd8c04b4ae42a06457da6344c14e} 
+\index{flatbuffers::python::PythonGenerator@{flatbuffers::python::PythonGenerator}!GetStructFieldOfStruct@{GetStructFieldOfStruct}}
+\index{GetStructFieldOfStruct@{GetStructFieldOfStruct}!flatbuffers::python::PythonGenerator@{flatbuffers::python::PythonGenerator}}
+\doxysubsubsection{\texorpdfstring{GetStructFieldOfStruct()}{GetStructFieldOfStruct()}}
+{\footnotesize\ttfamily void flatbuffers\+::python\+::\+Python\+Generator\+::\+Get\+Struct\+Field\+Of\+Struct (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structflatbuffers_1_1StructDef}{Struct\+Def}} \&}]{struct\+\_\+def,  }\item[{const \mbox{\hyperlink{structflatbuffers_1_1FieldDef}{Field\+Def}} \&}]{field,  }\item[{std\+::string \texorpdfstring{$\ast$}{*}}]{code\+\_\+ptr }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflatbuffers_1_1python_1_1PythonGenerator_aa880494302d40c6773aa9a9f11d95ce5}\label{classflatbuffers_1_1python_1_1PythonGenerator_aa880494302d40c6773aa9a9f11d95ce5} 
+\index{flatbuffers::python::PythonGenerator@{flatbuffers::python::PythonGenerator}!GetStructFieldOfTable@{GetStructFieldOfTable}}
+\index{GetStructFieldOfTable@{GetStructFieldOfTable}!flatbuffers::python::PythonGenerator@{flatbuffers::python::PythonGenerator}}
+\doxysubsubsection{\texorpdfstring{GetStructFieldOfTable()}{GetStructFieldOfTable()}}
+{\footnotesize\ttfamily void flatbuffers\+::python\+::\+Python\+Generator\+::\+Get\+Struct\+Field\+Of\+Table (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structflatbuffers_1_1StructDef}{Struct\+Def}} \&}]{struct\+\_\+def,  }\item[{const \mbox{\hyperlink{structflatbuffers_1_1FieldDef}{Field\+Def}} \&}]{field,  }\item[{std\+::string \texorpdfstring{$\ast$}{*}}]{code\+\_\+ptr,  }\item[{Import\+Map \&}]{imports }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflatbuffers_1_1python_1_1PythonGenerator_a78853e22002b3c08f9be751fff55500b}\label{classflatbuffers_1_1python_1_1PythonGenerator_a78853e22002b3c08f9be751fff55500b} 
+\index{flatbuffers::python::PythonGenerator@{flatbuffers::python::PythonGenerator}!GetUnionField@{GetUnionField}}
+\index{GetUnionField@{GetUnionField}!flatbuffers::python::PythonGenerator@{flatbuffers::python::PythonGenerator}}
+\doxysubsubsection{\texorpdfstring{GetUnionField()}{GetUnionField()}}
+{\footnotesize\ttfamily void flatbuffers\+::python\+::\+Python\+Generator\+::\+Get\+Union\+Field (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structflatbuffers_1_1StructDef}{Struct\+Def}} \&}]{struct\+\_\+def,  }\item[{const \mbox{\hyperlink{structflatbuffers_1_1FieldDef}{Field\+Def}} \&}]{field,  }\item[{std\+::string \texorpdfstring{$\ast$}{*}}]{code\+\_\+ptr,  }\item[{Import\+Map \&}]{imports }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflatbuffers_1_1python_1_1PythonGenerator_a7659dfff687f6707b2bd4f1847ebb309}\label{classflatbuffers_1_1python_1_1PythonGenerator_a7659dfff687f6707b2bd4f1847ebb309} 
+\index{flatbuffers::python::PythonGenerator@{flatbuffers::python::PythonGenerator}!GetVectorAsNestedFlatbuffer@{GetVectorAsNestedFlatbuffer}}
+\index{GetVectorAsNestedFlatbuffer@{GetVectorAsNestedFlatbuffer}!flatbuffers::python::PythonGenerator@{flatbuffers::python::PythonGenerator}}
+\doxysubsubsection{\texorpdfstring{GetVectorAsNestedFlatbuffer()}{GetVectorAsNestedFlatbuffer()}}
+{\footnotesize\ttfamily void flatbuffers\+::python\+::\+Python\+Generator\+::\+Get\+Vector\+As\+Nested\+Flatbuffer (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structflatbuffers_1_1StructDef}{Struct\+Def}} \&}]{struct\+\_\+def,  }\item[{const \mbox{\hyperlink{structflatbuffers_1_1FieldDef}{Field\+Def}} \&}]{field,  }\item[{std\+::string \texorpdfstring{$\ast$}{*}}]{code\+\_\+ptr,  }\item[{Import\+Map \&}]{imports }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflatbuffers_1_1python_1_1PythonGenerator_afe1f189cc63f16fe7196c1d7f7697e08}\label{classflatbuffers_1_1python_1_1PythonGenerator_afe1f189cc63f16fe7196c1d7f7697e08} 
+\index{flatbuffers::python::PythonGenerator@{flatbuffers::python::PythonGenerator}!GetVectorIsNone@{GetVectorIsNone}}
+\index{GetVectorIsNone@{GetVectorIsNone}!flatbuffers::python::PythonGenerator@{flatbuffers::python::PythonGenerator}}
+\doxysubsubsection{\texorpdfstring{GetVectorIsNone()}{GetVectorIsNone()}}
+{\footnotesize\ttfamily void flatbuffers\+::python\+::\+Python\+Generator\+::\+Get\+Vector\+Is\+None (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structflatbuffers_1_1StructDef}{Struct\+Def}} \&}]{struct\+\_\+def,  }\item[{const \mbox{\hyperlink{structflatbuffers_1_1FieldDef}{Field\+Def}} \&}]{field,  }\item[{std\+::string \texorpdfstring{$\ast$}{*}}]{code\+\_\+ptr }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflatbuffers_1_1python_1_1PythonGenerator_a9d9cffeabc3d5caadd369fc4db1f7465}\label{classflatbuffers_1_1python_1_1PythonGenerator_a9d9cffeabc3d5caadd369fc4db1f7465} 
+\index{flatbuffers::python::PythonGenerator@{flatbuffers::python::PythonGenerator}!GetVectorLen@{GetVectorLen}}
+\index{GetVectorLen@{GetVectorLen}!flatbuffers::python::PythonGenerator@{flatbuffers::python::PythonGenerator}}
+\doxysubsubsection{\texorpdfstring{GetVectorLen()}{GetVectorLen()}}
+{\footnotesize\ttfamily void flatbuffers\+::python\+::\+Python\+Generator\+::\+Get\+Vector\+Len (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structflatbuffers_1_1StructDef}{Struct\+Def}} \&}]{struct\+\_\+def,  }\item[{const \mbox{\hyperlink{structflatbuffers_1_1FieldDef}{Field\+Def}} \&}]{field,  }\item[{std\+::string \texorpdfstring{$\ast$}{*}}]{code\+\_\+ptr }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflatbuffers_1_1python_1_1PythonGenerator_afb8c0160743e0234c7004ff4f687311c}\label{classflatbuffers_1_1python_1_1PythonGenerator_afb8c0160743e0234c7004ff4f687311c} 
+\index{flatbuffers::python::PythonGenerator@{flatbuffers::python::PythonGenerator}!GetVectorOfNonStructAsNumpy@{GetVectorOfNonStructAsNumpy}}
+\index{GetVectorOfNonStructAsNumpy@{GetVectorOfNonStructAsNumpy}!flatbuffers::python::PythonGenerator@{flatbuffers::python::PythonGenerator}}
+\doxysubsubsection{\texorpdfstring{GetVectorOfNonStructAsNumpy()}{GetVectorOfNonStructAsNumpy()}}
+{\footnotesize\ttfamily void flatbuffers\+::python\+::\+Python\+Generator\+::\+Get\+Vector\+Of\+Non\+Struct\+As\+Numpy (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structflatbuffers_1_1StructDef}{Struct\+Def}} \&}]{struct\+\_\+def,  }\item[{const \mbox{\hyperlink{structflatbuffers_1_1FieldDef}{Field\+Def}} \&}]{field,  }\item[{std\+::string \texorpdfstring{$\ast$}{*}}]{code\+\_\+ptr }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflatbuffers_1_1python_1_1PythonGenerator_a03dd54ca8934122eb349933f69752774}\label{classflatbuffers_1_1python_1_1PythonGenerator_a03dd54ca8934122eb349933f69752774} 
+\index{flatbuffers::python::PythonGenerator@{flatbuffers::python::PythonGenerator}!InitializeExisting@{InitializeExisting}}
+\index{InitializeExisting@{InitializeExisting}!flatbuffers::python::PythonGenerator@{flatbuffers::python::PythonGenerator}}
+\doxysubsubsection{\texorpdfstring{InitializeExisting()}{InitializeExisting()}}
+{\footnotesize\ttfamily void flatbuffers\+::python\+::\+Python\+Generator\+::\+Initialize\+Existing (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structflatbuffers_1_1StructDef}{Struct\+Def}} \&}]{struct\+\_\+def,  }\item[{std\+::string \texorpdfstring{$\ast$}{*}}]{code\+\_\+ptr }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflatbuffers_1_1python_1_1PythonGenerator_a58c2e90929071d9179060bf1433e1143}\label{classflatbuffers_1_1python_1_1PythonGenerator_a58c2e90929071d9179060bf1433e1143} 
+\index{flatbuffers::python::PythonGenerator@{flatbuffers::python::PythonGenerator}!InitializeFromBuf@{InitializeFromBuf}}
+\index{InitializeFromBuf@{InitializeFromBuf}!flatbuffers::python::PythonGenerator@{flatbuffers::python::PythonGenerator}}
+\doxysubsubsection{\texorpdfstring{InitializeFromBuf()}{InitializeFromBuf()}}
+{\footnotesize\ttfamily void flatbuffers\+::python\+::\+Python\+Generator\+::\+Initialize\+From\+Buf (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structflatbuffers_1_1StructDef}{Struct\+Def}} \&}]{struct\+\_\+def,  }\item[{std\+::string \texorpdfstring{$\ast$}{*}}]{code\+\_\+ptr }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflatbuffers_1_1python_1_1PythonGenerator_a09f670c46c3db0efa9df1069ac9582a2}\label{classflatbuffers_1_1python_1_1PythonGenerator_a09f670c46c3db0efa9df1069ac9582a2} 
+\index{flatbuffers::python::PythonGenerator@{flatbuffers::python::PythonGenerator}!InitializeFromObjForObject@{InitializeFromObjForObject}}
+\index{InitializeFromObjForObject@{InitializeFromObjForObject}!flatbuffers::python::PythonGenerator@{flatbuffers::python::PythonGenerator}}
+\doxysubsubsection{\texorpdfstring{InitializeFromObjForObject()}{InitializeFromObjForObject()}}
+{\footnotesize\ttfamily void flatbuffers\+::python\+::\+Python\+Generator\+::\+Initialize\+From\+Obj\+For\+Object (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structflatbuffers_1_1StructDef}{Struct\+Def}} \&}]{struct\+\_\+def,  }\item[{std\+::string \texorpdfstring{$\ast$}{*}}]{code\+\_\+ptr }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflatbuffers_1_1python_1_1PythonGenerator_a10cade459b1947d7fd051f58596407e5}\label{classflatbuffers_1_1python_1_1PythonGenerator_a10cade459b1947d7fd051f58596407e5} 
+\index{flatbuffers::python::PythonGenerator@{flatbuffers::python::PythonGenerator}!InitializeFromPackedBuf@{InitializeFromPackedBuf}}
+\index{InitializeFromPackedBuf@{InitializeFromPackedBuf}!flatbuffers::python::PythonGenerator@{flatbuffers::python::PythonGenerator}}
+\doxysubsubsection{\texorpdfstring{InitializeFromPackedBuf()}{InitializeFromPackedBuf()}}
+{\footnotesize\ttfamily void flatbuffers\+::python\+::\+Python\+Generator\+::\+Initialize\+From\+Packed\+Buf (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structflatbuffers_1_1StructDef}{Struct\+Def}} \&}]{struct\+\_\+def,  }\item[{std\+::string \texorpdfstring{$\ast$}{*}}]{code\+\_\+ptr }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflatbuffers_1_1python_1_1PythonGenerator_aeff88d6abb83546cd1fccd400d42b209}\label{classflatbuffers_1_1python_1_1PythonGenerator_aeff88d6abb83546cd1fccd400d42b209} 
+\index{flatbuffers::python::PythonGenerator@{flatbuffers::python::PythonGenerator}!ModuleFor@{ModuleFor}}
+\index{ModuleFor@{ModuleFor}!flatbuffers::python::PythonGenerator@{flatbuffers::python::PythonGenerator}}
+\doxysubsubsection{\texorpdfstring{ModuleFor()}{ModuleFor()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+std\+::string flatbuffers\+::python\+::\+Python\+Generator\+::\+Module\+For (\begin{DoxyParamCaption}\item[{const T \texorpdfstring{$\ast$}{*}}]{def }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflatbuffers_1_1python_1_1PythonGenerator_a61ac4385339b0cf4a0aac127e30f9941}\label{classflatbuffers_1_1python_1_1PythonGenerator_a61ac4385339b0cf4a0aac127e30f9941} 
+\index{flatbuffers::python::PythonGenerator@{flatbuffers::python::PythonGenerator}!NestedFlatbufferType@{NestedFlatbufferType}}
+\index{NestedFlatbufferType@{NestedFlatbufferType}!flatbuffers::python::PythonGenerator@{flatbuffers::python::PythonGenerator}}
+\doxysubsubsection{\texorpdfstring{NestedFlatbufferType()}{NestedFlatbufferType()}}
+{\footnotesize\ttfamily std\+::string flatbuffers\+::python\+::\+Python\+Generator\+::\+Nested\+Flatbuffer\+Type (\begin{DoxyParamCaption}\item[{std\+::string}]{unqualified\+\_\+name }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflatbuffers_1_1python_1_1PythonGenerator_a7884f8278f9d9cf0f5b035cdcd51ffb8}\label{classflatbuffers_1_1python_1_1PythonGenerator_a7884f8278f9d9cf0f5b035cdcd51ffb8} 
+\index{flatbuffers::python::PythonGenerator@{flatbuffers::python::PythonGenerator}!NewRootTypeFromBuffer@{NewRootTypeFromBuffer}}
+\index{NewRootTypeFromBuffer@{NewRootTypeFromBuffer}!flatbuffers::python::PythonGenerator@{flatbuffers::python::PythonGenerator}}
+\doxysubsubsection{\texorpdfstring{NewRootTypeFromBuffer()}{NewRootTypeFromBuffer()}}
+{\footnotesize\ttfamily void flatbuffers\+::python\+::\+Python\+Generator\+::\+New\+Root\+Type\+From\+Buffer (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structflatbuffers_1_1StructDef}{Struct\+Def}} \&}]{struct\+\_\+def,  }\item[{std\+::string \texorpdfstring{$\ast$}{*}}]{code\+\_\+ptr }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflatbuffers_1_1python_1_1PythonGenerator_af6f3c0793211bfdfbc7d1946e2b31425}\label{classflatbuffers_1_1python_1_1PythonGenerator_af6f3c0793211bfdfbc7d1946e2b31425} 
+\index{flatbuffers::python::PythonGenerator@{flatbuffers::python::PythonGenerator}!OffsetPrefix@{OffsetPrefix}}
+\index{OffsetPrefix@{OffsetPrefix}!flatbuffers::python::PythonGenerator@{flatbuffers::python::PythonGenerator}}
+\doxysubsubsection{\texorpdfstring{OffsetPrefix()}{OffsetPrefix()}}
+{\footnotesize\ttfamily std\+::string flatbuffers\+::python\+::\+Python\+Generator\+::\+Offset\+Prefix (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structflatbuffers_1_1FieldDef}{Field\+Def}} \&}]{field,  }\item[{bool}]{new\+\_\+line = {\ttfamily true} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflatbuffers_1_1python_1_1PythonGenerator_ada5664ea60b2eb69b4f857f9748ebe8b}\label{classflatbuffers_1_1python_1_1PythonGenerator_ada5664ea60b2eb69b4f857f9748ebe8b} 
+\index{flatbuffers::python::PythonGenerator@{flatbuffers::python::PythonGenerator}!ReturnType@{ReturnType}}
+\index{ReturnType@{ReturnType}!flatbuffers::python::PythonGenerator@{flatbuffers::python::PythonGenerator}}
+\doxysubsubsection{\texorpdfstring{ReturnType()}{ReturnType()}}
+{\footnotesize\ttfamily std\+::string flatbuffers\+::python\+::\+Python\+Generator\+::\+Return\+Type (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structflatbuffers_1_1StructDef}{Struct\+Def}} \&}]{struct\+\_\+def,  }\item[{const \mbox{\hyperlink{structflatbuffers_1_1FieldDef}{Field\+Def}} \&}]{field }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflatbuffers_1_1python_1_1PythonGenerator_a64c330383a8dafb17e23679f7d8b1f85}\label{classflatbuffers_1_1python_1_1PythonGenerator_a64c330383a8dafb17e23679f7d8b1f85} 
+\index{flatbuffers::python::PythonGenerator@{flatbuffers::python::PythonGenerator}!StructBuilderArgs@{StructBuilderArgs}}
+\index{StructBuilderArgs@{StructBuilderArgs}!flatbuffers::python::PythonGenerator@{flatbuffers::python::PythonGenerator}}
+\doxysubsubsection{\texorpdfstring{StructBuilderArgs()}{StructBuilderArgs()}}
+{\footnotesize\ttfamily void flatbuffers\+::python\+::\+Python\+Generator\+::\+Struct\+Builder\+Args (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structflatbuffers_1_1StructDef}{Struct\+Def}} \&}]{struct\+\_\+def,  }\item[{const std\+::string}]{nameprefix,  }\item[{const std\+::string}]{namesuffix,  }\item[{bool}]{has\+\_\+field\+\_\+name,  }\item[{const std\+::string}]{fieldname\+\_\+suffix,  }\item[{std\+::string \texorpdfstring{$\ast$}{*}}]{code\+\_\+ptr }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflatbuffers_1_1python_1_1PythonGenerator_a38c513d45936f5ea2596dc2bef33df9f}\label{classflatbuffers_1_1python_1_1PythonGenerator_a38c513d45936f5ea2596dc2bef33df9f} 
+\index{flatbuffers::python::PythonGenerator@{flatbuffers::python::PythonGenerator}!StructBuilderBody@{StructBuilderBody}}
+\index{StructBuilderBody@{StructBuilderBody}!flatbuffers::python::PythonGenerator@{flatbuffers::python::PythonGenerator}}
+\doxysubsubsection{\texorpdfstring{StructBuilderBody()}{StructBuilderBody()}}
+{\footnotesize\ttfamily void flatbuffers\+::python\+::\+Python\+Generator\+::\+Struct\+Builder\+Body (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structflatbuffers_1_1StructDef}{Struct\+Def}} \&}]{struct\+\_\+def,  }\item[{const char \texorpdfstring{$\ast$}{*}}]{nameprefix,  }\item[{std\+::string \texorpdfstring{$\ast$}{*}}]{code\+\_\+ptr,  }\item[{size\+\_\+t}]{index = {\ttfamily 0},  }\item[{bool}]{in\+\_\+array = {\ttfamily false} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflatbuffers_1_1python_1_1PythonGenerator_a198de4851f3a74c2a5d6bf3d168a330f}\label{classflatbuffers_1_1python_1_1PythonGenerator_a198de4851f3a74c2a5d6bf3d168a330f} 
+\index{flatbuffers::python::PythonGenerator@{flatbuffers::python::PythonGenerator}!TypeName@{TypeName}}
+\index{TypeName@{TypeName}!flatbuffers::python::PythonGenerator@{flatbuffers::python::PythonGenerator}}
+\doxysubsubsection{\texorpdfstring{TypeName()}{TypeName()}}
+{\footnotesize\ttfamily std\+::string flatbuffers\+::python\+::\+Python\+Generator\+::\+Type\+Name (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structflatbuffers_1_1FieldDef}{Field\+Def}} \&}]{field }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+flatbuffers/src/\mbox{\hyperlink{idl__gen__python_8cpp}{idl\+\_\+gen\+\_\+python.\+cpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,106 @@
+\doxysection{generate\+\_\+annotations Namespace Reference}
+\hypertarget{namespacegenerate__annotations}{}\label{namespacegenerate__annotations}\index{generate\_annotations@{generate\_annotations}}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespacegenerate__annotations_ad84ef75a72ca15afa37c8d9063881de4}{flatc\+\_\+annotate}} (schema, file, cwd=\mbox{\hyperlink{namespacegenerate__annotations_a2500e0d913cea78c745209854cb5d155}{script\+\_\+path}})
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespacegenerate__annotations_a2500e0d913cea78c745209854cb5d155}{script\+\_\+path}} = Path(\+\_\+\+\_\+file\+\_\+\+\_\+).parent.\+resolve()
+\item 
+\mbox{\hyperlink{namespacegenerate__annotations_a9d51e6594d82ba4105f561480f8d5c51}{root\+\_\+path}} = script\+\_\+path.\+parent.\+parent.\+absolute()
+\item 
+\mbox{\hyperlink{namespacegenerate__annotations_a9fd94209c97f7a77390a2ef932abfec3}{flatc\+\_\+exe}}
+\item 
+\mbox{\hyperlink{namespacegenerate__annotations_a1a827fe818628f7f7f5033a094081e8f}{flatc\+\_\+path}} = Path(\mbox{\hyperlink{namespacegenerate__annotations_a9d51e6594d82ba4105f561480f8d5c51}{root\+\_\+path}}, \mbox{\hyperlink{namespacegenerate__annotations_a9fd94209c97f7a77390a2ef932abfec3}{flatc\+\_\+exe}})
+\item 
+\mbox{\hyperlink{namespacegenerate__annotations_ab0b2ffa0806f16663d147862e8456a74}{tests\+\_\+path}} = Path(\mbox{\hyperlink{namespacegenerate__annotations_a2500e0d913cea78c745209854cb5d155}{script\+\_\+path}}, "{}tests"{})
+\item 
+list \mbox{\hyperlink{namespacegenerate__annotations_a639fa72ef9f57fb7afb4c4c20acf599e}{test\+\_\+files}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{namespacegenerate__annotations_ad84ef75a72ca15afa37c8d9063881de4}\label{namespacegenerate__annotations_ad84ef75a72ca15afa37c8d9063881de4} 
+\index{generate\_annotations@{generate\_annotations}!flatc\_annotate@{flatc\_annotate}}
+\index{flatc\_annotate@{flatc\_annotate}!generate\_annotations@{generate\_annotations}}
+\doxysubsubsection{\texorpdfstring{flatc\_annotate()}{flatc\_annotate()}}
+{\footnotesize\ttfamily generate\+\_\+annotations.\+flatc\+\_\+annotate (\begin{DoxyParamCaption}\item[{}]{schema,  }\item[{}]{file,  }\item[{}]{cwd = {\ttfamily \mbox{\hyperlink{namespacegenerate__annotations_a2500e0d913cea78c745209854cb5d155}{script\+\_\+path}}} }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{namespacegenerate__annotations_a9fd94209c97f7a77390a2ef932abfec3}\label{namespacegenerate__annotations_a9fd94209c97f7a77390a2ef932abfec3} 
+\index{generate\_annotations@{generate\_annotations}!flatc\_exe@{flatc\_exe}}
+\index{flatc\_exe@{flatc\_exe}!generate\_annotations@{generate\_annotations}}
+\doxysubsubsection{\texorpdfstring{flatc\_exe}{flatc\_exe}}
+{\footnotesize\ttfamily generate\+\_\+annotations.\+flatc\+\_\+exe}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ =\ \ Path(}
+\DoxyCodeLine{00002\ \ \ \ \ (\textcolor{stringliteral}{"{}flatc"{}}\ \textcolor{keywordflow}{if}\ \textcolor{keywordflow}{not}\ platform.system()\ ==\ \textcolor{stringliteral}{"{}Windows"{}}\ \textcolor{keywordflow}{else}\ \textcolor{stringliteral}{"{}flatc.exe"{}})}
+\DoxyCodeLine{00003\ )}
+
+\end{DoxyCode}
+\Hypertarget{namespacegenerate__annotations_a1a827fe818628f7f7f5033a094081e8f}\label{namespacegenerate__annotations_a1a827fe818628f7f7f5033a094081e8f} 
+\index{generate\_annotations@{generate\_annotations}!flatc\_path@{flatc\_path}}
+\index{flatc\_path@{flatc\_path}!generate\_annotations@{generate\_annotations}}
+\doxysubsubsection{\texorpdfstring{flatc\_path}{flatc\_path}}
+{\footnotesize\ttfamily generate\+\_\+annotations.\+flatc\+\_\+path = Path(\mbox{\hyperlink{namespacegenerate__annotations_a9d51e6594d82ba4105f561480f8d5c51}{root\+\_\+path}}, \mbox{\hyperlink{namespacegenerate__annotations_a9fd94209c97f7a77390a2ef932abfec3}{flatc\+\_\+exe}})}
+
+\Hypertarget{namespacegenerate__annotations_a9d51e6594d82ba4105f561480f8d5c51}\label{namespacegenerate__annotations_a9d51e6594d82ba4105f561480f8d5c51} 
+\index{generate\_annotations@{generate\_annotations}!root\_path@{root\_path}}
+\index{root\_path@{root\_path}!generate\_annotations@{generate\_annotations}}
+\doxysubsubsection{\texorpdfstring{root\_path}{root\_path}}
+{\footnotesize\ttfamily generate\+\_\+annotations.\+root\+\_\+path = script\+\_\+path.\+parent.\+parent.\+absolute()}
+
+\Hypertarget{namespacegenerate__annotations_a2500e0d913cea78c745209854cb5d155}\label{namespacegenerate__annotations_a2500e0d913cea78c745209854cb5d155} 
+\index{generate\_annotations@{generate\_annotations}!script\_path@{script\_path}}
+\index{script\_path@{script\_path}!generate\_annotations@{generate\_annotations}}
+\doxysubsubsection{\texorpdfstring{script\_path}{script\_path}}
+{\footnotesize\ttfamily generate\+\_\+annotations.\+script\+\_\+path = Path(\+\_\+\+\_\+file\+\_\+\+\_\+).parent.\+resolve()}
+
+\Hypertarget{namespacegenerate__annotations_a639fa72ef9f57fb7afb4c4c20acf599e}\label{namespacegenerate__annotations_a639fa72ef9f57fb7afb4c4c20acf599e} 
+\index{generate\_annotations@{generate\_annotations}!test\_files@{test\_files}}
+\index{test\_files@{test\_files}!generate\_annotations@{generate\_annotations}}
+\doxysubsubsection{\texorpdfstring{test\_files}{test\_files}}
+{\footnotesize\ttfamily list generate\+\_\+annotations.\+test\+\_\+files}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ =\ \ [}
+\DoxyCodeLine{00002\ \ \ \ \ \textcolor{stringliteral}{"{}annotated\_binary.bin"{}},}
+\DoxyCodeLine{00003\ \ \ \ \ \textcolor{stringliteral}{"{}tests/invalid\_root\_offset.bin"{}},}
+\DoxyCodeLine{00004\ \ \ \ \ \textcolor{stringliteral}{"{}tests/invalid\_root\_table\_too\_short.bin"{}},}
+\DoxyCodeLine{00005\ \ \ \ \ \textcolor{stringliteral}{"{}tests/invalid\_root\_table\_vtable\_offset.bin"{}},}
+\DoxyCodeLine{00006\ \ \ \ \ \textcolor{stringliteral}{"{}tests/invalid\_string\_length.bin"{}},}
+\DoxyCodeLine{00007\ \ \ \ \ \textcolor{stringliteral}{"{}tests/invalid\_string\_length\_cut\_short.bin"{}},}
+\DoxyCodeLine{00008\ \ \ \ \ \textcolor{stringliteral}{"{}tests/invalid\_struct\_array\_field\_cut\_short.bin"{}},}
+\DoxyCodeLine{00009\ \ \ \ \ \textcolor{stringliteral}{"{}tests/invalid\_struct\_field\_cut\_short.bin"{}},}
+\DoxyCodeLine{00010\ \ \ \ \ \textcolor{stringliteral}{"{}tests/invalid\_table\_field\_size.bin"{}},}
+\DoxyCodeLine{00011\ \ \ \ \ \textcolor{stringliteral}{"{}tests/invalid\_table\_field\_offset.bin"{}},}
+\DoxyCodeLine{00012\ \ \ \ \ \textcolor{stringliteral}{"{}tests/invalid\_union\_type\_value.bin"{}},}
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{stringliteral}{"{}tests/invalid\_vector\_length\_cut\_short.bin"{}},}
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{stringliteral}{"{}tests/invalid\_vector\_scalars\_cut\_short.bin"{}},}
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{stringliteral}{"{}tests/invalid\_vector\_strings\_cut\_short.bin"{}},}
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{stringliteral}{"{}tests/invalid\_vector\_structs\_cut\_short.bin"{}},}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{stringliteral}{"{}tests/invalid\_vector\_tables\_cut\_short.bin"{}},}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{stringliteral}{"{}tests/invalid\_vector\_unions\_cut\_short.bin"{}},}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{stringliteral}{"{}tests/invalid\_vector\_union\_type\_value.bin"{}},}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{stringliteral}{"{}tests/invalid\_vtable\_ref\_table\_size\_short.bin"{}},}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{stringliteral}{"{}tests/invalid\_vtable\_ref\_table\_size.bin"{}},}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{stringliteral}{"{}tests/invalid\_vtable\_size\_short.bin"{}},}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{stringliteral}{"{}tests/invalid\_vtable\_size.bin"{}},}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{stringliteral}{"{}tests/invalid\_vtable\_field\_offset.bin"{}},}
+\DoxyCodeLine{00025\ ]}
+
+\end{DoxyCode}
+\Hypertarget{namespacegenerate__annotations_ab0b2ffa0806f16663d147862e8456a74}\label{namespacegenerate__annotations_ab0b2ffa0806f16663d147862e8456a74} 
+\index{generate\_annotations@{generate\_annotations}!tests\_path@{tests\_path}}
+\index{tests\_path@{tests\_path}!generate\_annotations@{generate\_annotations}}
+\doxysubsubsection{\texorpdfstring{tests\_path}{tests\_path}}
+{\footnotesize\ttfamily generate\+\_\+annotations.\+tests\+\_\+path = Path(\mbox{\hyperlink{namespacegenerate__annotations_a2500e0d913cea78c745209854cb5d155}{script\+\_\+path}}, "{}tests"{})}
+

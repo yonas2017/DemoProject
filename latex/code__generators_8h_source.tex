@@ -1,0 +1,244 @@
+\doxysection{code\+\_\+generators.\+h}
+\hypertarget{code__generators_8h_source}{}\label{code__generators_8h_source}\index{flatbuffers/include/flatbuffers/code\_generators.h@{flatbuffers/include/flatbuffers/code\_generators.h}}
+\mbox{\hyperlink{code__generators_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ Copyright\ 2014\ Google\ Inc.\ All\ rights\ reserved.}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ Licensed\ under\ the\ Apache\ License,\ Version\ 2.0\ (the\ "{}License"{});}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ you\ may\ not\ use\ this\ file\ except\ in\ compliance\ with\ the\ License.}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *\ You\ may\ obtain\ a\ copy\ of\ the\ License\ at}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ *\ \ \ \ \ http://www.apache.org/licenses/LICENSE-\/2.0}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ *\ Unless\ required\ by\ applicable\ law\ or\ agreed\ to\ in\ writing,\ software}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ *\ distributed\ under\ the\ License\ is\ distributed\ on\ an\ "{}AS\ IS"{}\ BASIS,}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ *\ WITHOUT\ WARRANTIES\ OR\ CONDITIONS\ OF\ ANY\ KIND,\ either\ express\ or\ implied.}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ *\ See\ the\ License\ for\ the\ specific\ language\ governing\ permissions\ and}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ *\ limitations\ under\ the\ License.}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#ifndef\ FLATBUFFERS\_CODE\_GENERATORS\_H\_}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#define\ FLATBUFFERS\_CODE\_GENERATORS\_H\_}}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ <map>}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ <sstream>}}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{idl_8h}{flatbuffers/idl.h}}"{}}}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceflatbuffers}{flatbuffers}}\ \{}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \textcolor{comment}{//\ Utility\ class\ to\ assist\ in\ generating\ code\ through\ use\ of\ text\ templates.}}
+\DoxyCodeLine{00028\ \textcolor{comment}{//}}
+\DoxyCodeLine{00029\ \textcolor{comment}{//\ Example\ code:}}
+\DoxyCodeLine{00030\ \textcolor{comment}{//\ \ \ CodeWriter\ code("{}\(\backslash\)t"{});}}
+\DoxyCodeLine{00031\ \textcolor{comment}{//\ \ \ code.SetValue("{}NAME"{},\ "{}Foo"{});}}
+\DoxyCodeLine{00032\ \textcolor{comment}{//\ \ \ code\ +=\ "{}void\ \{\{NAME\}\}()\ \{\ printf("{}\%s"{},\ "{}\{\{NAME\}\}"{});\ \}"{};}}
+\DoxyCodeLine{00033\ \textcolor{comment}{//\ \ \ code.SetValue("{}NAME"{},\ "{}Bar"{});}}
+\DoxyCodeLine{00034\ \textcolor{comment}{//\ \ \ code\ +=\ "{}void\ \{\{NAME\}\}()\ \{\ printf("{}\%s"{},\ "{}\{\{NAME\}\}"{});\ \}"{};}}
+\DoxyCodeLine{00035\ \textcolor{comment}{//\ \ \ std::cout\ <<\ code.ToString()\ <<\ std::endl;}}
+\DoxyCodeLine{00036\ \textcolor{comment}{//}}
+\DoxyCodeLine{00037\ \textcolor{comment}{//\ Output:}}
+\DoxyCodeLine{00038\ \textcolor{comment}{//\ \ void\ Foo()\ \{\ printf("{}\%s"{},\ "{}Foo"{});\ \}}}
+\DoxyCodeLine{00039\ \textcolor{comment}{//\ \ void\ Bar()\ \{\ printf("{}\%s"{},\ "{}Bar"{});\ \}}}
+\DoxyCodeLine{00040\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classflatbuffers_1_1CodeWriter}{CodeWriter}}\ \{}
+\DoxyCodeLine{00041\ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00042\ \ \ \mbox{\hyperlink{classflatbuffers_1_1CodeWriter_a0bc0cdcb1970edf9cf2b84e18a088651}{CodeWriter}}(std::string\ pad\ =\ std::string())}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ :\ pad\_(pad),\ cur\_ident\_lvl\_(0),\ ignore\_ident\_(false)\ \{\}}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \ \ \textcolor{comment}{//\ Clears\ the\ current\ "{}written"{}\ code.}}
+\DoxyCodeLine{00046\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classflatbuffers_1_1CodeWriter_add3e1fe02b9301f79ca9be3b544644f8}{Clear}}()\ \{}
+\DoxyCodeLine{00047\ \ \ \ \ stream\_.str(\textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{00048\ \ \ \ \ stream\_.clear();}
+\DoxyCodeLine{00049\ \ \ \}}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \ \ \textcolor{comment}{//\ Associates\ a\ key\ with\ a\ value.\ \ All\ subsequent\ calls\ to\ operator+=,\ where}}
+\DoxyCodeLine{00052\ \ \ \textcolor{comment}{//\ the\ specified\ key\ is\ contained\ in\ \{\{\ and\ \}\}\ delimiters\ will\ be\ replaced\ by}}
+\DoxyCodeLine{00053\ \ \ \textcolor{comment}{//\ the\ given\ value.}}
+\DoxyCodeLine{00054\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classflatbuffers_1_1CodeWriter_acefe7f0ca062897ef9d38b69ff22f8e4}{SetValue}}(\textcolor{keyword}{const}\ std::string\ \&key,\ \textcolor{keyword}{const}\ std::string\ \&\mbox{\hyperlink{annotated__binary__text__gen_8cpp_a5c33da5929c9f2f9ef8d006d2350e6ec}{value}})\ \{}
+\DoxyCodeLine{00055\ \ \ \ \ value\_map\_[key]\ =\ \mbox{\hyperlink{annotated__binary__text__gen_8cpp_a5c33da5929c9f2f9ef8d006d2350e6ec}{value}};}
+\DoxyCodeLine{00056\ \ \ \}}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ \ \ std::string\ \mbox{\hyperlink{classflatbuffers_1_1CodeWriter_ac62c28f85e5e490d836b4525c2876e2a}{GetValue}}(\textcolor{keyword}{const}\ std::string\ \&key)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{auto}\ it\ =\ value\_map\_.find(key);}
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{keywordflow}{return}\ it\ ==\ value\_map\_.end()\ ?\ \textcolor{stringliteral}{"{}"{}}\ :\ it-\/>second;}
+\DoxyCodeLine{00061\ \ \ \}}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00063\ \ \ \textcolor{comment}{//\ Appends\ the\ given\ text\ to\ the\ generated\ code\ as\ well\ as\ a\ newline}}
+\DoxyCodeLine{00064\ \ \ \textcolor{comment}{//\ character.\ \ Any\ text\ within\ \{\{\ and\ \}\}\ delimiters\ is\ replaced\ by\ values}}
+\DoxyCodeLine{00065\ \ \ \textcolor{comment}{//\ previously\ stored\ in\ the\ CodeWriter\ by\ calling\ SetValue\ above.\ \ The\ newline}}
+\DoxyCodeLine{00066\ \ \ \textcolor{comment}{//\ will\ be\ suppressed\ if\ the\ text\ ends\ with\ the\ \(\backslash\)\(\backslash\)\ character.}}
+\DoxyCodeLine{00067\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classflatbuffers_1_1CodeWriter_acd1b937a92a9c80787e72dda55201d28}{operator+=}}(std::string\ text);}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00069\ \ \ \textcolor{comment}{//\ Returns\ the\ current\ contents\ of\ the\ CodeWriter\ as\ a\ std::string.}}
+\DoxyCodeLine{00070\ \ \ std::string\ \mbox{\hyperlink{classflatbuffers_1_1CodeWriter_a8ea19c5f35e92acd41717b7087faaeb2}{ToString}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ stream\_.str();\ \}}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00072\ \ \ \textcolor{comment}{//\ Increase\ ident\ level\ for\ writing\ code}}
+\DoxyCodeLine{00073\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classflatbuffers_1_1CodeWriter_a9a764730c4f85f481c1a8b09533dccb1}{IncrementIdentLevel}}()\ \{\ cur\_ident\_lvl\_++;\ \}}
+\DoxyCodeLine{00074\ \ \ \textcolor{comment}{//\ Decrease\ ident\ level\ for\ writing\ code}}
+\DoxyCodeLine{00075\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classflatbuffers_1_1CodeWriter_a5adc85be092247fbd8b979398fb40822}{DecrementIdentLevel}}()\ \{}
+\DoxyCodeLine{00076\ \ \ \ \ \textcolor{keywordflow}{if}\ (cur\_ident\_lvl\_)\ cur\_ident\_lvl\_-\/-\/;}
+\DoxyCodeLine{00077\ \ \ \}}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00079\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classflatbuffers_1_1CodeWriter_a09d3e3ef2c89dc4fc39d2233a0fd7c83}{SetPadding}}(\textcolor{keyword}{const}\ std::string\ \&padding)\ \{\ pad\_\ =\ padding;\ \}}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00081\ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00082\ \ \ std::map<std::string,\ std::string>\ value\_map\_;}
+\DoxyCodeLine{00083\ \ \ std::stringstream\ stream\_;}
+\DoxyCodeLine{00084\ \ \ std::string\ pad\_;}
+\DoxyCodeLine{00085\ \ \ \textcolor{keywordtype}{int}\ cur\_ident\_lvl\_;}
+\DoxyCodeLine{00086\ \ \ \textcolor{keywordtype}{bool}\ ignore\_ident\_;}
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00088\ \ \ \textcolor{comment}{//\ Add\ ident\ padding\ (tab\ or\ space)\ based\ on\ ident\ level}}
+\DoxyCodeLine{00089\ \ \ \textcolor{keywordtype}{void}\ AppendIdent(std::stringstream\ \&stream);}
+\DoxyCodeLine{00090\ \};}
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00092\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classflatbuffers_1_1BaseGenerator}{BaseGenerator}}\ \{}
+\DoxyCodeLine{00093\ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00094\ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classflatbuffers_1_1BaseGenerator_a32156e35f9273398435ce55386874187}{generate}}()\ =\ 0;}
+\DoxyCodeLine{00095\ }
+\DoxyCodeLine{00096\ \ \ \textcolor{keyword}{static}\ std::string\ \mbox{\hyperlink{classflatbuffers_1_1BaseGenerator_ab7fdb905d7dd8d1177a470eef2da089e}{NamespaceDir}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classflatbuffers_1_1Parser}{Parser}}\ \&parser,\ \textcolor{keyword}{const}\ std::string\ \&path,}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{structflatbuffers_1_1Namespace}{Namespace}}\ \&\mbox{\hyperlink{idl__gen__ts_8cpp_a97618fe2e31e62d92ace9b30478febba}{ns}},}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{bool}\ dasherize\ =\ \textcolor{keyword}{false});}
+\DoxyCodeLine{00099\ }
+\DoxyCodeLine{00100\ \ \ std::string\ \mbox{\hyperlink{classflatbuffers_1_1BaseGenerator_a8559bf41626bdecd53736bfc9153d4b5}{GeneratedFileName}}(\textcolor{keyword}{const}\ std::string\ \&path,}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\ \&file\_name,}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{structflatbuffers_1_1IDLOptions}{IDLOptions}}\ \&options)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00103\ }
+\DoxyCodeLine{00104\ \ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00105\ \ \ \mbox{\hyperlink{classflatbuffers_1_1BaseGenerator_aa1607736e698a0105f44e2c167963343}{BaseGenerator}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classflatbuffers_1_1Parser}{Parser}}\ \&parser,\ \textcolor{keyword}{const}\ std::string\ \&path,}
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\ \&file\_name,\ std::string\ qualifying\_start,}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ qualifying\_separator,\ std::string\ default\_extension)}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ :\ \mbox{\hyperlink{classflatbuffers_1_1BaseGenerator_a0cc4eb04a1d94766c92684135b89c245}{parser\_}}(parser),}
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classflatbuffers_1_1BaseGenerator_ad50fb4f2324ac78a5bc86bb6eb97858c}{path\_}}(\mbox{\hyperlink{idl__gen__ts_8cpp_a4d455efceee21e97d8e21ee40e9b4a20}{path}}),}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classflatbuffers_1_1BaseGenerator_af25bcc46e0d71cfc0f23377c30f426c5}{file\_name\_}}(file\_name),}
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classflatbuffers_1_1BaseGenerator_ab3f483b39345cbc52bc266ebcd0643db}{qualifying\_start\_}}(qualifying\_start),}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classflatbuffers_1_1BaseGenerator_a95353c1506706274d696a79bb4214215}{qualifying\_separator\_}}(qualifying\_separator),}
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classflatbuffers_1_1BaseGenerator_a37d8a4da67a4e0272aed29f28f212762}{default\_extension\_}}(default\_extension)\ \{\}}
+\DoxyCodeLine{00114\ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classflatbuffers_1_1BaseGenerator_aeab72f6ee75c6753054c84ef9d8a7f04}{\string~BaseGenerator}}()\ \{\}}
+\DoxyCodeLine{00115\ }
+\DoxyCodeLine{00116\ \ \ \textcolor{comment}{//\ No\ copy/assign.}}
+\DoxyCodeLine{00117\ \ \ \mbox{\hyperlink{classflatbuffers_1_1BaseGenerator}{BaseGenerator}}\ \&\mbox{\hyperlink{classflatbuffers_1_1BaseGenerator_a10696c81aa5d52cb15c4365238ba27ed}{operator=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classflatbuffers_1_1BaseGenerator}{BaseGenerator}}\ \&);}
+\DoxyCodeLine{00118\ \ \ \mbox{\hyperlink{classflatbuffers_1_1BaseGenerator_a6769aab327d5dcb931f9f8c8c1797525}{BaseGenerator}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classflatbuffers_1_1BaseGenerator}{BaseGenerator}}\ \&);}
+\DoxyCodeLine{00119\ }
+\DoxyCodeLine{00120\ \ \ std::string\ \mbox{\hyperlink{classflatbuffers_1_1BaseGenerator_ab7fdb905d7dd8d1177a470eef2da089e}{NamespaceDir}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{structflatbuffers_1_1Namespace}{Namespace}}\ \&\mbox{\hyperlink{idl__gen__ts_8cpp_a97618fe2e31e62d92ace9b30478febba}{ns}},}
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{bool}\ dasherize\ =\ \textcolor{keyword}{false})\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00122\ }
+\DoxyCodeLine{00123\ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *\mbox{\hyperlink{classflatbuffers_1_1BaseGenerator_a04ffaceb3b3c37e9eb8296ddf72ff0f3}{FlatBuffersGeneratedWarning}}();}
+\DoxyCodeLine{00124\ }
+\DoxyCodeLine{00125\ \ \ \textcolor{keyword}{static}\ std::string\ \mbox{\hyperlink{classflatbuffers_1_1BaseGenerator_aa6d96041a6635ba2edc088834fb57ed6}{FullNamespace}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *separator,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{structflatbuffers_1_1Namespace}{Namespace}}\ \&\mbox{\hyperlink{idl__gen__ts_8cpp_a97618fe2e31e62d92ace9b30478febba}{ns}});}
+\DoxyCodeLine{00126\ }
+\DoxyCodeLine{00127\ \ \ \textcolor{keyword}{static}\ std::string\ \mbox{\hyperlink{classflatbuffers_1_1BaseGenerator_a8ce0d595629188ca5de97c3b37d556f5}{LastNamespacePart}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{structflatbuffers_1_1Namespace}{Namespace}}\ \&\mbox{\hyperlink{idl__gen__ts_8cpp_a97618fe2e31e62d92ace9b30478febba}{ns}});}
+\DoxyCodeLine{00128\ }
+\DoxyCodeLine{00129\ \ \ \textcolor{comment}{//\ tracks\ the\ current\ namespace\ for\ early\ exit\ in\ WrapInNameSpace}}
+\DoxyCodeLine{00130\ \ \ \textcolor{comment}{//\ c++,\ java\ and\ csharp\ returns\ a\ different\ namespace\ from}}
+\DoxyCodeLine{00131\ \ \ \textcolor{comment}{//\ the\ following\ default\ (no\ early\ exit,\ always\ fully\ qualify),}}
+\DoxyCodeLine{00132\ \ \ \textcolor{comment}{//\ which\ works\ for\ js\ and\ php}}
+\DoxyCodeLine{00133\ \ \ \textcolor{keyword}{virtual}\ \textcolor{keyword}{const}\ \mbox{\hyperlink{structflatbuffers_1_1Namespace}{Namespace}}\ *\mbox{\hyperlink{classflatbuffers_1_1BaseGenerator_ae9894dabc9bac7eff32a810067a9a221}{CurrentNameSpace}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{nullptr};\ \}}
+\DoxyCodeLine{00134\ }
+\DoxyCodeLine{00135\ \ \ \textcolor{comment}{//\ Ensure\ that\ a\ type\ is\ prefixed\ with\ its\ namespace\ even\ within}}
+\DoxyCodeLine{00136\ \ \ \textcolor{comment}{//\ its\ own\ namespace\ to\ avoid\ conflict\ between\ generated\ method}}
+\DoxyCodeLine{00137\ \ \ \textcolor{comment}{//\ names\ and\ similarly\ named\ classes\ or\ structs}}
+\DoxyCodeLine{00138\ \ \ std::string\ \mbox{\hyperlink{classflatbuffers_1_1BaseGenerator_a4ceefb68a9f65fe861458e82b87c3944}{WrapInNameSpace}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{structflatbuffers_1_1Namespace}{Namespace}}\ *\mbox{\hyperlink{idl__gen__ts_8cpp_a97618fe2e31e62d92ace9b30478febba}{ns}},}
+\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\ \&\mbox{\hyperlink{idl__gen__ts_8cpp_a9b45b3e13bd9167aab02e17e08916231}{name}})\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00140\ }
+\DoxyCodeLine{00141\ \ \ std::string\ \mbox{\hyperlink{classflatbuffers_1_1BaseGenerator_a4ceefb68a9f65fe861458e82b87c3944}{WrapInNameSpace}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{structflatbuffers_1_1Definition}{Definition}}\ \&def,}
+\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\ \&suffix\ =\ \textcolor{stringliteral}{"{}"{}})\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00143\ }
+\DoxyCodeLine{00144\ \ \ std::string\ \mbox{\hyperlink{classflatbuffers_1_1BaseGenerator_a6b6bbd8e0606f051018d90994bb73e4c}{GetNameSpace}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{structflatbuffers_1_1Definition}{Definition}}\ \&def)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00145\ }
+\DoxyCodeLine{00146\ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classflatbuffers_1_1Parser}{Parser}}\ \&\mbox{\hyperlink{classflatbuffers_1_1BaseGenerator_a0cc4eb04a1d94766c92684135b89c245}{parser\_}};}
+\DoxyCodeLine{00147\ \ \ \textcolor{keyword}{const}\ std::string\ \&\mbox{\hyperlink{classflatbuffers_1_1BaseGenerator_ad50fb4f2324ac78a5bc86bb6eb97858c}{path\_}};}
+\DoxyCodeLine{00148\ \ \ \textcolor{keyword}{const}\ std::string\ \&\mbox{\hyperlink{classflatbuffers_1_1BaseGenerator_af25bcc46e0d71cfc0f23377c30f426c5}{file\_name\_}};}
+\DoxyCodeLine{00149\ \ \ \textcolor{keyword}{const}\ std::string\ \mbox{\hyperlink{classflatbuffers_1_1BaseGenerator_ab3f483b39345cbc52bc266ebcd0643db}{qualifying\_start\_}};}
+\DoxyCodeLine{00150\ \ \ \textcolor{keyword}{const}\ std::string\ \mbox{\hyperlink{classflatbuffers_1_1BaseGenerator_a95353c1506706274d696a79bb4214215}{qualifying\_separator\_}};}
+\DoxyCodeLine{00151\ \ \ \textcolor{keyword}{const}\ std::string\ \mbox{\hyperlink{classflatbuffers_1_1BaseGenerator_a37d8a4da67a4e0272aed29f28f212762}{default\_extension\_}};}
+\DoxyCodeLine{00152\ \};}
+\DoxyCodeLine{00153\ }
+\DoxyCodeLine{00154\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structflatbuffers_1_1CommentConfig}{CommentConfig}}\ \{}
+\DoxyCodeLine{00155\ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *\mbox{\hyperlink{structflatbuffers_1_1CommentConfig_a76764b1a9c8a20de71a8f0bcb3addc98}{first\_line}};}
+\DoxyCodeLine{00156\ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *\mbox{\hyperlink{structflatbuffers_1_1CommentConfig_a6f642a90b705876ae3d788af4ae38e6d}{content\_line\_prefix}};}
+\DoxyCodeLine{00157\ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *\mbox{\hyperlink{structflatbuffers_1_1CommentConfig_a35bc15bb9e0b4152c83a6b61f59d2195}{last\_line}};}
+\DoxyCodeLine{00158\ \};}
+\DoxyCodeLine{00159\ }
+\DoxyCodeLine{00160\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceflatbuffers_ab8db993ca128ebc5ebbaea3d85673ee6}{GenComment}}(\textcolor{keyword}{const}\ std::vector<std::string>\ \&dc,}
+\DoxyCodeLine{00161\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ *code\_ptr,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{structflatbuffers_1_1CommentConfig}{CommentConfig}}\ *config,}
+\DoxyCodeLine{00162\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *prefix\ =\ \textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{00163\ }
+\DoxyCodeLine{00164\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classflatbuffers_1_1FloatConstantGenerator}{FloatConstantGenerator}}\ \{}
+\DoxyCodeLine{00165\ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00166\ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classflatbuffers_1_1FloatConstantGenerator_a9d1ca33cd8268c8fae62e8cd908447db}{\string~FloatConstantGenerator}}()\ \{\}}
+\DoxyCodeLine{00167\ \ \ std::string\ \mbox{\hyperlink{classflatbuffers_1_1FloatConstantGenerator_afe10350c8fdedce9052fc25da2f5e0f5}{GenFloatConstant}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{structflatbuffers_1_1FieldDef}{FieldDef}}\ \&field)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00168\ }
+\DoxyCodeLine{00169\ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00170\ \ \ \textcolor{keyword}{virtual}\ std::string\ \mbox{\hyperlink{structflatbuffers_1_1Value}{Value}}(\textcolor{keywordtype}{double}\ v,\ \textcolor{keyword}{const}\ std::string\ \&src)\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{00171\ \ \ \textcolor{keyword}{virtual}\ std::string\ Inf(\textcolor{keywordtype}{double}\ v)\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{00172\ \ \ \textcolor{keyword}{virtual}\ std::string\ NaN(\textcolor{keywordtype}{double}\ v)\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{00173\ }
+\DoxyCodeLine{00174\ \ \ \textcolor{keyword}{virtual}\ std::string\ \mbox{\hyperlink{structflatbuffers_1_1Value}{Value}}(\textcolor{keywordtype}{float}\ v,\ \textcolor{keyword}{const}\ std::string\ \&src)\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{00175\ \ \ \textcolor{keyword}{virtual}\ std::string\ Inf(\textcolor{keywordtype}{float}\ v)\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{00176\ \ \ \textcolor{keyword}{virtual}\ std::string\ NaN(\textcolor{keywordtype}{float}\ v)\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{00177\ }
+\DoxyCodeLine{00178\ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00179\ \ \ std::string\ GenFloatConstantImpl(\textcolor{keyword}{const}\ \mbox{\hyperlink{structflatbuffers_1_1FieldDef}{FieldDef}}\ \&field)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00180\ \};}
+\DoxyCodeLine{00181\ }
+\DoxyCodeLine{00182\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classflatbuffers_1_1SimpleFloatConstantGenerator}{SimpleFloatConstantGenerator}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classflatbuffers_1_1FloatConstantGenerator}{FloatConstantGenerator}}\ \{}
+\DoxyCodeLine{00183\ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00184\ \ \ \mbox{\hyperlink{classflatbuffers_1_1SimpleFloatConstantGenerator}{SimpleFloatConstantGenerator}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *nan\_number,}
+\DoxyCodeLine{00185\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *pos\_inf\_number,}
+\DoxyCodeLine{00186\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *neg\_inf\_number);}
+\DoxyCodeLine{00187\ }
+\DoxyCodeLine{00188\ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00189\ \ \ std::string\ \mbox{\hyperlink{structflatbuffers_1_1Value}{Value}}(\textcolor{keywordtype}{double}\ v,}
+\DoxyCodeLine{00190\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\ \&src)\ \textcolor{keyword}{const}\ FLATBUFFERS\_OVERRIDE;}
+\DoxyCodeLine{00191\ \ \ std::string\ Inf(\textcolor{keywordtype}{double}\ v)\ \textcolor{keyword}{const}\ FLATBUFFERS\_OVERRIDE;}
+\DoxyCodeLine{00192\ \ \ std::string\ NaN(\textcolor{keywordtype}{double}\ v)\ \textcolor{keyword}{const}\ FLATBUFFERS\_OVERRIDE;}
+\DoxyCodeLine{00193\ }
+\DoxyCodeLine{00194\ \ \ std::string\ \mbox{\hyperlink{structflatbuffers_1_1Value}{Value}}(\textcolor{keywordtype}{float}\ v,\ \textcolor{keyword}{const}\ std::string\ \&src)\ \textcolor{keyword}{const}\ FLATBUFFERS\_OVERRIDE;}
+\DoxyCodeLine{00195\ \ \ std::string\ Inf(\textcolor{keywordtype}{float}\ v)\ \textcolor{keyword}{const}\ FLATBUFFERS\_OVERRIDE;}
+\DoxyCodeLine{00196\ \ \ std::string\ NaN(\textcolor{keywordtype}{float}\ v)\ \textcolor{keyword}{const}\ FLATBUFFERS\_OVERRIDE;}
+\DoxyCodeLine{00197\ }
+\DoxyCodeLine{00198\ \ \ \textcolor{keyword}{const}\ std::string\ nan\_number\_;}
+\DoxyCodeLine{00199\ \ \ \textcolor{keyword}{const}\ std::string\ pos\_inf\_number\_;}
+\DoxyCodeLine{00200\ \ \ \textcolor{keyword}{const}\ std::string\ neg\_inf\_number\_;}
+\DoxyCodeLine{00201\ \};}
+\DoxyCodeLine{00202\ }
+\DoxyCodeLine{00203\ \textcolor{comment}{//\ C++,\ C\#,\ Java\ like\ generator.}}
+\DoxyCodeLine{00204\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classflatbuffers_1_1TypedFloatConstantGenerator}{TypedFloatConstantGenerator}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classflatbuffers_1_1FloatConstantGenerator}{FloatConstantGenerator}}\ \{}
+\DoxyCodeLine{00205\ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00206\ \ \ \mbox{\hyperlink{classflatbuffers_1_1TypedFloatConstantGenerator}{TypedFloatConstantGenerator}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *double\_prefix,}
+\DoxyCodeLine{00207\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *single\_prefix,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *nan\_number,}
+\DoxyCodeLine{00208\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *pos\_inf\_number,}
+\DoxyCodeLine{00209\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *neg\_inf\_number\ =\ \textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{00210\ }
+\DoxyCodeLine{00211\ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00212\ \ \ std::string\ \mbox{\hyperlink{structflatbuffers_1_1Value}{Value}}(\textcolor{keywordtype}{double}\ v,}
+\DoxyCodeLine{00213\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\ \&src)\ \textcolor{keyword}{const}\ FLATBUFFERS\_OVERRIDE;}
+\DoxyCodeLine{00214\ \ \ std::string\ Inf(\textcolor{keywordtype}{double}\ v)\ \textcolor{keyword}{const}\ FLATBUFFERS\_OVERRIDE;}
+\DoxyCodeLine{00215\ }
+\DoxyCodeLine{00216\ \ \ std::string\ NaN(\textcolor{keywordtype}{double}\ v)\ \textcolor{keyword}{const}\ FLATBUFFERS\_OVERRIDE;}
+\DoxyCodeLine{00217\ }
+\DoxyCodeLine{00218\ \ \ std::string\ \mbox{\hyperlink{structflatbuffers_1_1Value}{Value}}(\textcolor{keywordtype}{float}\ v,\ \textcolor{keyword}{const}\ std::string\ \&src)\ \textcolor{keyword}{const}\ FLATBUFFERS\_OVERRIDE;}
+\DoxyCodeLine{00219\ \ \ std::string\ Inf(\textcolor{keywordtype}{float}\ v)\ \textcolor{keyword}{const}\ FLATBUFFERS\_OVERRIDE;}
+\DoxyCodeLine{00220\ \ \ std::string\ NaN(\textcolor{keywordtype}{float}\ v)\ \textcolor{keyword}{const}\ FLATBUFFERS\_OVERRIDE;}
+\DoxyCodeLine{00221\ }
+\DoxyCodeLine{00222\ \ \ std::string\ MakeNaN(\textcolor{keyword}{const}\ std::string\ \&prefix)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00223\ \ \ std::string\ MakeInf(\textcolor{keywordtype}{bool}\ neg,\ \textcolor{keyword}{const}\ std::string\ \&prefix)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00224\ }
+\DoxyCodeLine{00225\ \ \ \textcolor{keyword}{const}\ std::string\ double\_prefix\_;}
+\DoxyCodeLine{00226\ \ \ \textcolor{keyword}{const}\ std::string\ single\_prefix\_;}
+\DoxyCodeLine{00227\ \ \ \textcolor{keyword}{const}\ std::string\ nan\_number\_;}
+\DoxyCodeLine{00228\ \ \ \textcolor{keyword}{const}\ std::string\ pos\_inf\_number\_;}
+\DoxyCodeLine{00229\ \ \ \textcolor{keyword}{const}\ std::string\ neg\_inf\_number\_;}
+\DoxyCodeLine{00230\ \};}
+\DoxyCodeLine{00231\ }
+\DoxyCodeLine{00232\ std::string\ \mbox{\hyperlink{namespaceflatbuffers_acba37401112bf552c0a3ecefdff21eda}{JavaCSharpMakeRule}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{bool}\ java,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classflatbuffers_1_1Parser}{Parser}}\ \&parser,}
+\DoxyCodeLine{00233\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\ \&path,}
+\DoxyCodeLine{00234\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\ \&file\_name);}
+\DoxyCodeLine{00235\ }
+\DoxyCodeLine{00236\ \}\ \ \textcolor{comment}{//\ namespace\ flatbuffers}}
+\DoxyCodeLine{00237\ }
+\DoxyCodeLine{00238\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ FLATBUFFERS\_CODE\_GENERATORS\_H\_}}
+
+\end{DoxyCode}

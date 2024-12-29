@@ -1,0 +1,20 @@
+\doxysection{flatbuffers/scripts/check\+\_\+generate\+\_\+code.py File Reference}
+\hypertarget{check__generate__code_8py}{}\label{check__generate__code_8py}\index{flatbuffers/scripts/check\_generate\_code.py@{flatbuffers/scripts/check\_generate\_code.py}}
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespacecheck__generate__code}{check\+\_\+generate\+\_\+code}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespacecheck__generate__code_aef2ab34f45e074b9206406fdfb7218b2}{check\+\_\+generate\+\_\+code.\+script\+\_\+path}} = Path(\+\_\+\+\_\+file\+\_\+\+\_\+).parent.\+resolve()
+\item 
+\mbox{\hyperlink{namespacecheck__generate__code_a2c9794d3712edfa2cfbd029023bcd0b7}{check\+\_\+generate\+\_\+code.\+root\+\_\+path}} = script\+\_\+path.\+parent.\+absolute()
+\item 
+\mbox{\hyperlink{namespacecheck__generate__code_a00263d64c70223361f3f2c209eb2e5b2}{check\+\_\+generate\+\_\+code.\+result}} = subprocess.\+run(\mbox{[}"{}git"{}, "{}diff"{}, "{}-\/-\/quiet"{}, "{}-\/-\/ignore-\/cr-\/at-\/eol"{}\mbox{]}, \mbox{\hyperlink{namespacecheck__generate__code_a77eed481ba17566c98acbc237a1665eb}{cwd}}=\mbox{\hyperlink{namespacecheck__generate__code_a2c9794d3712edfa2cfbd029023bcd0b7}{root\+\_\+path}})
+\item 
+\mbox{\hyperlink{namespacecheck__generate__code_a77eed481ba17566c98acbc237a1665eb}{check\+\_\+generate\+\_\+code.\+cwd}}
+\item 
+list \mbox{\hyperlink{namespacecheck__generate__code_a8b6b139fa5f58f17d542aa79054a8591}{check\+\_\+generate\+\_\+code.\+gen\+\_\+cmd}} = \mbox{[}"{}scripts/generate\+\_\+code.\+py"{}\mbox{]} + sys.\+argv\mbox{[}1\+:\mbox{]}
+\end{DoxyCompactItemize}

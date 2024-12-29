@@ -1,0 +1,138 @@
+\doxysection{flatbuffers\+::Enum\+Val Struct Reference}
+\hypertarget{structflatbuffers_1_1EnumVal}{}\label{structflatbuffers_1_1EnumVal}\index{flatbuffers::EnumVal@{flatbuffers::EnumVal}}
+
+
+{\ttfamily \#include $<$idl.\+h$>$}
+
+
+
+Collaboration diagram for flatbuffers\+::Enum\+Val\+:
+% FIG 0
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+Offset$<$ reflection\+::\+Enum\+Val $>$ \mbox{\hyperlink{structflatbuffers_1_1EnumVal_aefd856b2f67476ece77389401f60ab85}{Serialize}} (\mbox{\hyperlink{namespaceflatbuffers_a41ac7b1c8f5f4a869e8f649b6c171ce7}{Flat\+Buffer\+Builder}} \texorpdfstring{$\ast$}{*}builder, const \mbox{\hyperlink{classflatbuffers_1_1Parser}{Parser}} \&parser) const
+\item 
+bool \mbox{\hyperlink{structflatbuffers_1_1EnumVal_ae40880dd1649f7f0e0e323631c8972de}{Deserialize}} (\mbox{\hyperlink{classflatbuffers_1_1Parser}{Parser}} \&parser, const reflection\+::\+Enum\+Val \texorpdfstring{$\ast$}{*}val)
+\item 
+flatbuffers\+::\+Offset$<$ \mbox{\hyperlink{classflatbuffers_1_1Vector}{flatbuffers\+::\+Vector}}$<$ flatbuffers\+::\+Offset$<$ reflection\+::\+Key\+Value $>$ $>$ $>$ \mbox{\hyperlink{structflatbuffers_1_1EnumVal_a2f628d554d7fcdf26cfbf2979bae201e}{Serialize\+Attributes}} (\mbox{\hyperlink{namespaceflatbuffers_a41ac7b1c8f5f4a869e8f649b6c171ce7}{Flat\+Buffer\+Builder}} \texorpdfstring{$\ast$}{*}builder, const \mbox{\hyperlink{classflatbuffers_1_1Parser}{Parser}} \&parser) const
+\item 
+bool \mbox{\hyperlink{structflatbuffers_1_1EnumVal_a84f4ecd8ecaa6c6c3205dc0d8e6d011e}{Deserialize\+Attributes}} (\mbox{\hyperlink{classflatbuffers_1_1Parser}{Parser}} \&parser, const \mbox{\hyperlink{classflatbuffers_1_1Vector}{Vector}}$<$ Offset$<$ reflection\+::\+Key\+Value $>$ $>$ \texorpdfstring{$\ast$}{*}attrs)
+\item 
+uint64\+\_\+t \mbox{\hyperlink{structflatbuffers_1_1EnumVal_a016a4e68c5ea769e384664815f1ea156}{Get\+As\+UInt64}} () const
+\item 
+int64\+\_\+t \mbox{\hyperlink{structflatbuffers_1_1EnumVal_aae1f73b5df90d048ffb62250e972379b}{Get\+As\+Int64}} () const
+\item 
+bool \mbox{\hyperlink{structflatbuffers_1_1EnumVal_a855a477146a6264b7988c7db89c36ae0}{Is\+Zero}} () const
+\item 
+bool \mbox{\hyperlink{structflatbuffers_1_1EnumVal_a7f4cf3223bfa5959be28d09a42685590}{Is\+Non\+Zero}} () const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{structflatbuffers_1_1EnumVal_a2a0a18b9db17e7ffcadac7d2e296540d}{name}}
+\item 
+std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{structflatbuffers_1_1EnumVal_aea9834cdc69044523076b4247fabae19}{doc\+\_\+comment}}
+\item 
+\mbox{\hyperlink{structflatbuffers_1_1Type}{Type}} \mbox{\hyperlink{structflatbuffers_1_1EnumVal_aaf00da7d5617f580ef7e79611f1f3cc1}{union\+\_\+type}}
+\item 
+\mbox{\hyperlink{classflatbuffers_1_1SymbolTable}{Symbol\+Table}}$<$ \mbox{\hyperlink{structflatbuffers_1_1Value}{Value}} $>$ \mbox{\hyperlink{structflatbuffers_1_1EnumVal_a5df3df35b42f738fd4913b2b7599b15e}{attributes}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{structflatbuffers_1_1EnumVal_a3a2b59db4d2046a06da90ada3a303ea1}{operator==}} (const \mbox{\hyperlink{structflatbuffers_1_1EnumVal}{Enum\+Val}} \&lhs, const \mbox{\hyperlink{structflatbuffers_1_1EnumVal}{Enum\+Val}} \&rhs)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{structflatbuffers_1_1EnumVal_ae40880dd1649f7f0e0e323631c8972de}\label{structflatbuffers_1_1EnumVal_ae40880dd1649f7f0e0e323631c8972de} 
+\index{flatbuffers::EnumVal@{flatbuffers::EnumVal}!Deserialize@{Deserialize}}
+\index{Deserialize@{Deserialize}!flatbuffers::EnumVal@{flatbuffers::EnumVal}}
+\doxysubsubsection{\texorpdfstring{Deserialize()}{Deserialize()}}
+{\footnotesize\ttfamily bool flatbuffers\+::\+Enum\+Val\+::\+Deserialize (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classflatbuffers_1_1Parser}{Parser}} \&}]{parser,  }\item[{const reflection\+::\+Enum\+Val \texorpdfstring{$\ast$}{*}}]{val }\end{DoxyParamCaption})}
+
+\Hypertarget{structflatbuffers_1_1EnumVal_a84f4ecd8ecaa6c6c3205dc0d8e6d011e}\label{structflatbuffers_1_1EnumVal_a84f4ecd8ecaa6c6c3205dc0d8e6d011e} 
+\index{flatbuffers::EnumVal@{flatbuffers::EnumVal}!DeserializeAttributes@{DeserializeAttributes}}
+\index{DeserializeAttributes@{DeserializeAttributes}!flatbuffers::EnumVal@{flatbuffers::EnumVal}}
+\doxysubsubsection{\texorpdfstring{DeserializeAttributes()}{DeserializeAttributes()}}
+{\footnotesize\ttfamily bool flatbuffers\+::\+Enum\+Val\+::\+Deserialize\+Attributes (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classflatbuffers_1_1Parser}{Parser}} \&}]{parser,  }\item[{const \mbox{\hyperlink{classflatbuffers_1_1Vector}{Vector}}$<$ Offset$<$ reflection\+::\+Key\+Value $>$ $>$ \texorpdfstring{$\ast$}{*}}]{attrs }\end{DoxyParamCaption})}
+
+\Hypertarget{structflatbuffers_1_1EnumVal_aae1f73b5df90d048ffb62250e972379b}\label{structflatbuffers_1_1EnumVal_aae1f73b5df90d048ffb62250e972379b} 
+\index{flatbuffers::EnumVal@{flatbuffers::EnumVal}!GetAsInt64@{GetAsInt64}}
+\index{GetAsInt64@{GetAsInt64}!flatbuffers::EnumVal@{flatbuffers::EnumVal}}
+\doxysubsubsection{\texorpdfstring{GetAsInt64()}{GetAsInt64()}}
+{\footnotesize\ttfamily int64\+\_\+t flatbuffers\+::\+Enum\+Val\+::\+Get\+As\+Int64 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{structflatbuffers_1_1EnumVal_a016a4e68c5ea769e384664815f1ea156}\label{structflatbuffers_1_1EnumVal_a016a4e68c5ea769e384664815f1ea156} 
+\index{flatbuffers::EnumVal@{flatbuffers::EnumVal}!GetAsUInt64@{GetAsUInt64}}
+\index{GetAsUInt64@{GetAsUInt64}!flatbuffers::EnumVal@{flatbuffers::EnumVal}}
+\doxysubsubsection{\texorpdfstring{GetAsUInt64()}{GetAsUInt64()}}
+{\footnotesize\ttfamily uint64\+\_\+t flatbuffers\+::\+Enum\+Val\+::\+Get\+As\+UInt64 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{structflatbuffers_1_1EnumVal_a7f4cf3223bfa5959be28d09a42685590}\label{structflatbuffers_1_1EnumVal_a7f4cf3223bfa5959be28d09a42685590} 
+\index{flatbuffers::EnumVal@{flatbuffers::EnumVal}!IsNonZero@{IsNonZero}}
+\index{IsNonZero@{IsNonZero}!flatbuffers::EnumVal@{flatbuffers::EnumVal}}
+\doxysubsubsection{\texorpdfstring{IsNonZero()}{IsNonZero()}}
+{\footnotesize\ttfamily bool flatbuffers\+::\+Enum\+Val\+::\+Is\+Non\+Zero (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{structflatbuffers_1_1EnumVal_a855a477146a6264b7988c7db89c36ae0}\label{structflatbuffers_1_1EnumVal_a855a477146a6264b7988c7db89c36ae0} 
+\index{flatbuffers::EnumVal@{flatbuffers::EnumVal}!IsZero@{IsZero}}
+\index{IsZero@{IsZero}!flatbuffers::EnumVal@{flatbuffers::EnumVal}}
+\doxysubsubsection{\texorpdfstring{IsZero()}{IsZero()}}
+{\footnotesize\ttfamily bool flatbuffers\+::\+Enum\+Val\+::\+Is\+Zero (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{structflatbuffers_1_1EnumVal_aefd856b2f67476ece77389401f60ab85}\label{structflatbuffers_1_1EnumVal_aefd856b2f67476ece77389401f60ab85} 
+\index{flatbuffers::EnumVal@{flatbuffers::EnumVal}!Serialize@{Serialize}}
+\index{Serialize@{Serialize}!flatbuffers::EnumVal@{flatbuffers::EnumVal}}
+\doxysubsubsection{\texorpdfstring{Serialize()}{Serialize()}}
+{\footnotesize\ttfamily Offset$<$ reflection\+::\+Enum\+Val $>$ flatbuffers\+::\+Enum\+Val\+::\+Serialize (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceflatbuffers_a41ac7b1c8f5f4a869e8f649b6c171ce7}{Flat\+Buffer\+Builder}} \texorpdfstring{$\ast$}{*}}]{builder,  }\item[{const \mbox{\hyperlink{classflatbuffers_1_1Parser}{Parser}} \&}]{parser }\end{DoxyParamCaption}) const}
+
+\Hypertarget{structflatbuffers_1_1EnumVal_a2f628d554d7fcdf26cfbf2979bae201e}\label{structflatbuffers_1_1EnumVal_a2f628d554d7fcdf26cfbf2979bae201e} 
+\index{flatbuffers::EnumVal@{flatbuffers::EnumVal}!SerializeAttributes@{SerializeAttributes}}
+\index{SerializeAttributes@{SerializeAttributes}!flatbuffers::EnumVal@{flatbuffers::EnumVal}}
+\doxysubsubsection{\texorpdfstring{SerializeAttributes()}{SerializeAttributes()}}
+{\footnotesize\ttfamily flatbuffers\+::\+Offset$<$ \mbox{\hyperlink{classflatbuffers_1_1Vector}{flatbuffers\+::\+Vector}}$<$ flatbuffers\+::\+Offset$<$ reflection\+::\+Key\+Value $>$ $>$ $>$ flatbuffers\+::\+Enum\+Val\+::\+Serialize\+Attributes (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceflatbuffers_a41ac7b1c8f5f4a869e8f649b6c171ce7}{Flat\+Buffer\+Builder}} \texorpdfstring{$\ast$}{*}}]{builder,  }\item[{const \mbox{\hyperlink{classflatbuffers_1_1Parser}{Parser}} \&}]{parser }\end{DoxyParamCaption}) const}
+
+
+
+\doxysubsection{Friends And Related Symbol Documentation}
+\Hypertarget{structflatbuffers_1_1EnumVal_a3a2b59db4d2046a06da90ada3a303ea1}\label{structflatbuffers_1_1EnumVal_a3a2b59db4d2046a06da90ada3a303ea1} 
+\index{flatbuffers::EnumVal@{flatbuffers::EnumVal}!operator==@{operator==}}
+\index{operator==@{operator==}!flatbuffers::EnumVal@{flatbuffers::EnumVal}}
+\doxysubsubsection{\texorpdfstring{operator==}{operator==}}
+{\footnotesize\ttfamily bool operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structflatbuffers_1_1EnumVal}{Enum\+Val}} \&}]{lhs,  }\item[{const \mbox{\hyperlink{structflatbuffers_1_1EnumVal}{Enum\+Val}} \&}]{rhs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{structflatbuffers_1_1EnumVal_a5df3df35b42f738fd4913b2b7599b15e}\label{structflatbuffers_1_1EnumVal_a5df3df35b42f738fd4913b2b7599b15e} 
+\index{flatbuffers::EnumVal@{flatbuffers::EnumVal}!attributes@{attributes}}
+\index{attributes@{attributes}!flatbuffers::EnumVal@{flatbuffers::EnumVal}}
+\doxysubsubsection{\texorpdfstring{attributes}{attributes}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classflatbuffers_1_1SymbolTable}{Symbol\+Table}}$<$\mbox{\hyperlink{structflatbuffers_1_1Value}{Value}}$>$ flatbuffers\+::\+Enum\+Val\+::attributes}
+
+\Hypertarget{structflatbuffers_1_1EnumVal_aea9834cdc69044523076b4247fabae19}\label{structflatbuffers_1_1EnumVal_aea9834cdc69044523076b4247fabae19} 
+\index{flatbuffers::EnumVal@{flatbuffers::EnumVal}!doc\_comment@{doc\_comment}}
+\index{doc\_comment@{doc\_comment}!flatbuffers::EnumVal@{flatbuffers::EnumVal}}
+\doxysubsubsection{\texorpdfstring{doc\_comment}{doc\_comment}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::string$>$ flatbuffers\+::\+Enum\+Val\+::doc\+\_\+comment}
+
+\Hypertarget{structflatbuffers_1_1EnumVal_a2a0a18b9db17e7ffcadac7d2e296540d}\label{structflatbuffers_1_1EnumVal_a2a0a18b9db17e7ffcadac7d2e296540d} 
+\index{flatbuffers::EnumVal@{flatbuffers::EnumVal}!name@{name}}
+\index{name@{name}!flatbuffers::EnumVal@{flatbuffers::EnumVal}}
+\doxysubsubsection{\texorpdfstring{name}{name}}
+{\footnotesize\ttfamily std\+::string flatbuffers\+::\+Enum\+Val\+::name}
+
+\Hypertarget{structflatbuffers_1_1EnumVal_aaf00da7d5617f580ef7e79611f1f3cc1}\label{structflatbuffers_1_1EnumVal_aaf00da7d5617f580ef7e79611f1f3cc1} 
+\index{flatbuffers::EnumVal@{flatbuffers::EnumVal}!union\_type@{union\_type}}
+\index{union\_type@{union\_type}!flatbuffers::EnumVal@{flatbuffers::EnumVal}}
+\doxysubsubsection{\texorpdfstring{union\_type}{union\_type}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structflatbuffers_1_1Type}{Type}} flatbuffers\+::\+Enum\+Val\+::union\+\_\+type}
+
+
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+flatbuffers/include/flatbuffers/\mbox{\hyperlink{idl_8h}{idl.\+h}}\item 
+flatbuffers/src/\mbox{\hyperlink{idl__parser_8cpp}{idl\+\_\+parser.\+cpp}}\end{DoxyCompactItemize}

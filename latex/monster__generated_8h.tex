@@ -1,0 +1,216 @@
+\doxysection{flatbuffers/samples/monster\+\_\+generated.h File Reference}
+\hypertarget{monster__generated_8h}{}\label{monster__generated_8h}\index{flatbuffers/samples/monster\_generated.h@{flatbuffers/samples/monster\_generated.h}}
+{\ttfamily \#include "{}flatbuffers/flatbuffers.\+h"{}}\newline
+Include dependency graph for monster\+\_\+generated.\+h\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structMyGame_1_1Sample_1_1EquipmentTraits}{My\+Game\+::\+Sample\+::\+Equipment\+Traits$<$ T $>$}}
+\item 
+struct \mbox{\hyperlink{structMyGame_1_1Sample_1_1EquipmentTraits_3_01MyGame_1_1Sample_1_1Weapon_01_4}{My\+Game\+::\+Sample\+::\+Equipment\+Traits$<$ My\+Game\+::\+Sample\+::\+Weapon $>$}}
+\item 
+struct \mbox{\hyperlink{structMyGame_1_1Sample_1_1EquipmentUnionTraits}{My\+Game\+::\+Sample\+::\+Equipment\+Union\+Traits$<$ T $>$}}
+\item 
+struct \mbox{\hyperlink{structMyGame_1_1Sample_1_1EquipmentUnionTraits_3_01MyGame_1_1Sample_1_1WeaponT_01_4}{My\+Game\+::\+Sample\+::\+Equipment\+Union\+Traits$<$ My\+Game\+::\+Sample\+::\+Weapon\+T $>$}}
+\item 
+struct \mbox{\hyperlink{structMyGame_1_1Sample_1_1EquipmentUnion}{My\+Game\+::\+Sample\+::\+Equipment\+Union}}
+\item 
+struct \mbox{\hyperlink{structMyGame_1_1Sample_1_1MonsterT}{My\+Game\+::\+Sample\+::\+MonsterT}}
+\item 
+struct \mbox{\hyperlink{structMyGame_1_1Sample_1_1FLATBUFFERS__FINAL__CLASS}{My\+Game\+::\+Sample\+::\+FLATBUFFERS\+\_\+\+FINAL\+\_\+\+CLASS}}
+\item 
+struct \mbox{\hyperlink{structMyGame_1_1Sample_1_1MonsterBuilder}{My\+Game\+::\+Sample\+::\+Monster\+Builder}}
+\item 
+struct \mbox{\hyperlink{structMyGame_1_1Sample_1_1WeaponT}{My\+Game\+::\+Sample\+::\+WeaponT}}
+\item 
+struct \mbox{\hyperlink{structMyGame_1_1Sample_1_1WeaponBuilder}{My\+Game\+::\+Sample\+::\+Weapon\+Builder}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespaceMyGame}{My\+Game}}
+\item 
+namespace \mbox{\hyperlink{namespaceMyGame_1_1Sample}{My\+Game\+::\+Sample}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{namespaceMyGame_1_1Sample_a6bbdedfe7aaf3aa9999a215d6c2e0644}{My\+Game\+::\+Sample\+::\+Color}} \+: int8\+\_\+t \{ \newline
+\mbox{\hyperlink{namespaceMyGame_1_1Sample_a6bbdedfe7aaf3aa9999a215d6c2e0644ab004eba21cd0296cebe85dfd0c762386}{My\+Game\+::\+Sample\+::\+Color\+\_\+\+Red}} = 0
+, \mbox{\hyperlink{namespaceMyGame_1_1Sample_a6bbdedfe7aaf3aa9999a215d6c2e0644aa44b9b6673f8f51f1b88871bcec49012}{My\+Game\+::\+Sample\+::\+Color\+\_\+\+Green}} = 1
+, \mbox{\hyperlink{namespaceMyGame_1_1Sample_a6bbdedfe7aaf3aa9999a215d6c2e0644ac545f2bb61a3ef22c814f26f5f883622}{My\+Game\+::\+Sample\+::\+Color\+\_\+\+Blue}} = 2
+, \mbox{\hyperlink{namespaceMyGame_1_1Sample_a6bbdedfe7aaf3aa9999a215d6c2e0644a7474cb6185e96645e623498765b5f778}{My\+Game\+::\+Sample\+::\+Color\+\_\+\+MIN}} = Color\+\_\+\+Red
+, \newline
+\mbox{\hyperlink{namespaceMyGame_1_1Sample_a6bbdedfe7aaf3aa9999a215d6c2e0644a13e745580ac07135f990f04850932f5b}{My\+Game\+::\+Sample\+::\+Color\+\_\+\+MAX}} = Color\+\_\+\+Blue
+ \}
+\item 
+enum \mbox{\hyperlink{namespaceMyGame_1_1Sample_add5600c8554383eb7a8c7793a9da2a92}{My\+Game\+::\+Sample\+::\+Equipment}} \+: uint8\+\_\+t \{ \mbox{\hyperlink{namespaceMyGame_1_1Sample_add5600c8554383eb7a8c7793a9da2a92abc2fda096c713756abd9e30b43ab257b}{My\+Game\+::\+Sample\+::\+Equipment\+\_\+\+NONE}} = 0
+, \mbox{\hyperlink{namespaceMyGame_1_1Sample_add5600c8554383eb7a8c7793a9da2a92a57eae0c3e3a4e0a159e9bad8316e93f5}{My\+Game\+::\+Sample\+::\+Equipment\+\_\+\+Weapon}} = 1
+, \mbox{\hyperlink{namespaceMyGame_1_1Sample_add5600c8554383eb7a8c7793a9da2a92aa1f0d9dcec387064d4041431a71a74e6}{My\+Game\+::\+Sample\+::\+Equipment\+\_\+\+MIN}} = Equipment\+\_\+\+NONE
+, \mbox{\hyperlink{namespaceMyGame_1_1Sample_add5600c8554383eb7a8c7793a9da2a92a88dbdc87f0e07fc150aa74718385bbb5}{My\+Game\+::\+Sample\+::\+Equipment\+\_\+\+MAX}} = Equipment\+\_\+\+Weapon
+ \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{namespaceMyGame_1_1Sample_a8f8bfd1b47fd6516b8f47bab0280f853}{My\+Game\+::\+Sample\+::operator==}} (const Vec3 \&lhs, const Vec3 \&rhs)
+\item 
+bool \mbox{\hyperlink{namespaceMyGame_1_1Sample_ad962963514f3be9cad8733a83f1a194c}{My\+Game\+::\+Sample\+::operator!=}} (const Vec3 \&lhs, const Vec3 \&rhs)
+\item 
+bool \mbox{\hyperlink{namespaceMyGame_1_1Sample_abfe3927521371d0478de281e3739b27c}{My\+Game\+::\+Sample\+::operator==}} (const \mbox{\hyperlink{structMyGame_1_1Sample_1_1MonsterT}{MonsterT}} \&lhs, const \mbox{\hyperlink{structMyGame_1_1Sample_1_1MonsterT}{MonsterT}} \&rhs)
+\item 
+bool \mbox{\hyperlink{namespaceMyGame_1_1Sample_a8699299c900b724fa5f36895fc0f8c18}{My\+Game\+::\+Sample\+::operator!=}} (const \mbox{\hyperlink{structMyGame_1_1Sample_1_1MonsterT}{MonsterT}} \&lhs, const \mbox{\hyperlink{structMyGame_1_1Sample_1_1MonsterT}{MonsterT}} \&rhs)
+\item 
+bool \mbox{\hyperlink{namespaceMyGame_1_1Sample_a85d4be50639ee032c8edf388a61e70d7}{My\+Game\+::\+Sample\+::operator==}} (const \mbox{\hyperlink{structMyGame_1_1Sample_1_1WeaponT}{WeaponT}} \&lhs, const \mbox{\hyperlink{structMyGame_1_1Sample_1_1WeaponT}{WeaponT}} \&rhs)
+\item 
+bool \mbox{\hyperlink{namespaceMyGame_1_1Sample_a708828f1b5c3fb7d4fdae6462d2c18f9}{My\+Game\+::\+Sample\+::operator!=}} (const \mbox{\hyperlink{structMyGame_1_1Sample_1_1WeaponT}{WeaponT}} \&lhs, const \mbox{\hyperlink{structMyGame_1_1Sample_1_1WeaponT}{WeaponT}} \&rhs)
+\item 
+const \mbox{\hyperlink{structflatbuffers_1_1TypeTable}{\+::flatbuffers\+::\+Type\+Table}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{namespaceMyGame_1_1Sample_abd1b81104dbb2f640ae72cb706ca7d4c}{My\+Game\+::\+Sample\+::\+Vec3\+Type\+Table}} ()
+\item 
+const \mbox{\hyperlink{structflatbuffers_1_1TypeTable}{\+::flatbuffers\+::\+Type\+Table}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{namespaceMyGame_1_1Sample_a044201404b26d94fdc6fad04706b8336}{My\+Game\+::\+Sample\+::\+Monster\+Type\+Table}} ()
+\item 
+const \mbox{\hyperlink{structflatbuffers_1_1TypeTable}{\+::flatbuffers\+::\+Type\+Table}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{namespaceMyGame_1_1Sample_a7ab950dadd66b715f2094001f78c65ee}{My\+Game\+::\+Sample\+::\+Weapon\+Type\+Table}} ()
+\item 
+const \mbox{\hyperlink{namespaceMyGame_1_1Sample_a6bbdedfe7aaf3aa9999a215d6c2e0644}{Color}}(\& \mbox{\hyperlink{namespaceMyGame_1_1Sample_acc08208d9f236456da436dda4e5ad893}{My\+Game\+::\+Sample\+::\+Enum\+Values\+Color}} ())\mbox{[}3\mbox{]}
+\item 
+const char \texorpdfstring{$\ast$}{*}const \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{namespaceMyGame_1_1Sample_a973560492f89124426245ecb4878b0a5}{My\+Game\+::\+Sample\+::\+Enum\+Names\+Color}} ()
+\item 
+const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{namespaceMyGame_1_1Sample_abf4087bd2e890167a97e97aae444f5b0}{My\+Game\+::\+Sample\+::\+Enum\+Name\+Color}} (\mbox{\hyperlink{namespaceMyGame_1_1Sample_a6bbdedfe7aaf3aa9999a215d6c2e0644}{Color}} e)
+\item 
+const \mbox{\hyperlink{namespaceMyGame_1_1Sample_add5600c8554383eb7a8c7793a9da2a92}{Equipment}}(\& \mbox{\hyperlink{namespaceMyGame_1_1Sample_a8ba2fddfbab4a9fb4b68c9ac17920b38}{My\+Game\+::\+Sample\+::\+Enum\+Values\+Equipment}} ())\mbox{[}2\mbox{]}
+\item 
+const char \texorpdfstring{$\ast$}{*}const \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{namespaceMyGame_1_1Sample_ae4e941d8583c7522b4ba41a8fd20b913}{My\+Game\+::\+Sample\+::\+Enum\+Names\+Equipment}} ()
+\item 
+const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{namespaceMyGame_1_1Sample_aed18bef68cd35a8b03987ba3dd104331}{My\+Game\+::\+Sample\+::\+Enum\+Name\+Equipment}} (\mbox{\hyperlink{namespaceMyGame_1_1Sample_add5600c8554383eb7a8c7793a9da2a92}{Equipment}} e)
+\item 
+bool \mbox{\hyperlink{namespaceMyGame_1_1Sample_ac96dd8dd51985d3aed8760319b8f847a}{My\+Game\+::\+Sample\+::operator==}} (const \mbox{\hyperlink{structMyGame_1_1Sample_1_1EquipmentUnion}{Equipment\+Union}} \&lhs, const \mbox{\hyperlink{structMyGame_1_1Sample_1_1EquipmentUnion}{Equipment\+Union}} \&rhs)
+\item 
+bool \mbox{\hyperlink{namespaceMyGame_1_1Sample_a3273e4e3fa540f1cef034c228c783937}{My\+Game\+::\+Sample\+::operator!=}} (const \mbox{\hyperlink{structMyGame_1_1Sample_1_1EquipmentUnion}{Equipment\+Union}} \&lhs, const \mbox{\hyperlink{structMyGame_1_1Sample_1_1EquipmentUnion}{Equipment\+Union}} \&rhs)
+\item 
+bool \mbox{\hyperlink{namespaceMyGame_1_1Sample_a0281d83e5fb4ed72e538baac1a6ca995}{My\+Game\+::\+Sample\+::\+Verify\+Equipment}} (\mbox{\hyperlink{namespaceflatbuffers_a3268477941df91db2eb06442b6e5f922}{\+::flatbuffers\+::\+Verifier}} \&verifier, const void \texorpdfstring{$\ast$}{*}obj, \mbox{\hyperlink{namespaceMyGame_1_1Sample_add5600c8554383eb7a8c7793a9da2a92}{Equipment}} type)
+\item 
+bool \mbox{\hyperlink{namespaceMyGame_1_1Sample_a73a309d2b684340e6e73885ac0664d30}{My\+Game\+::\+Sample\+::\+Verify\+Equipment\+Vector}} (\mbox{\hyperlink{namespaceflatbuffers_a3268477941df91db2eb06442b6e5f922}{\+::flatbuffers\+::\+Verifier}} \&verifier, const \mbox{\hyperlink{classflatbuffers_1_1Vector}{\+::flatbuffers\+::\+Vector}}$<$\+::flatbuffers\+::\+Offset$<$ void $>$ $>$ \texorpdfstring{$\ast$}{*}values, const \mbox{\hyperlink{classflatbuffers_1_1Vector}{\+::flatbuffers\+::\+Vector}}$<$ uint8\+\_\+t $>$ \texorpdfstring{$\ast$}{*}types)
+\item 
+\mbox{\hyperlink{namespaceMyGame_1_1Sample_a8161816aec7551d617117c1c3064610d}{My\+Game\+::\+Sample\+::\+FLATBUFFERS\+\_\+\+MANUALLY\+\_\+\+ALIGNED\+\_\+\+STRUCT}} (4) Vec3 \mbox{\hyperlink{structMyGame_1_1Sample_1_1FLATBUFFERS__FINAL__CLASS}{FLATBUFFERS\+\_\+\+FINAL\+\_\+\+CLASS}}
+\item 
+\mbox{\hyperlink{namespaceMyGame_1_1Sample_ad3a8c0d8a8ad0463fea65749af9ed574}{My\+Game\+::\+Sample\+::\+FLATBUFFERS\+\_\+\+STRUCT\+\_\+\+END}} (Vec3, 12)
+\item 
+template$<$$>$ const My\+Game\+::\+Sample\+::\+Weapon \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{namespaceMyGame_1_1Sample_ac079c30d62906fec1bc0d5040bb69067}{My\+Game\+::\+Sample\+::\+Monster\+::equipped\+\_\+as$<$ My\+Game\+::\+Sample\+::\+Weapon $>$}} () const
+\item 
+inline \+::flatbuffers\+::\+Offset$<$ Monster $>$ \mbox{\hyperlink{namespaceMyGame_1_1Sample_a571543608e4de3824e6dad43621e0f46}{My\+Game\+::\+Sample\+::\+Create\+Monster}} (\mbox{\hyperlink{namespaceflatbuffers_a41ac7b1c8f5f4a869e8f649b6c171ce7}{\+::flatbuffers\+::\+Flat\+Buffer\+Builder}} \&\+\_\+fbb, const My\+Game\+::\+Sample\+::\+Vec3 \texorpdfstring{$\ast$}{*}pos=nullptr, int16\+\_\+t mana=150, int16\+\_\+t hp=100, \+::flatbuffers\+::\+Offset$<$\mbox{\hyperlink{structflatbuffers_1_1String}{\+::flatbuffers\+::\+String}} $>$ \mbox{\hyperlink{idl__gen__ts_8cpp_a9b45b3e13bd9167aab02e17e08916231}{name}}=0, \+::flatbuffers\+::\+Offset$<$\mbox{\hyperlink{classflatbuffers_1_1Vector}{\+::flatbuffers\+::\+Vector}}$<$ uint8\+\_\+t $>$ $>$ inventory=0, \mbox{\hyperlink{namespaceMyGame_1_1Sample_a6bbdedfe7aaf3aa9999a215d6c2e0644}{My\+Game\+::\+Sample\+::\+Color}} color=\mbox{\hyperlink{namespaceMyGame_1_1Sample_a6bbdedfe7aaf3aa9999a215d6c2e0644ac545f2bb61a3ef22c814f26f5f883622}{My\+Game\+::\+Sample\+::\+Color\+\_\+\+Blue}}, \+::flatbuffers\+::\+Offset$<$\mbox{\hyperlink{classflatbuffers_1_1Vector}{\+::flatbuffers\+::\+Vector}}$<$\+::flatbuffers\+::\+Offset$<$ My\+Game\+::\+Sample\+::\+Weapon $>$ $>$ $>$ weapons=0, \mbox{\hyperlink{namespaceMyGame_1_1Sample_add5600c8554383eb7a8c7793a9da2a92}{My\+Game\+::\+Sample\+::\+Equipment}} equipped\+\_\+type=\mbox{\hyperlink{namespaceMyGame_1_1Sample_add5600c8554383eb7a8c7793a9da2a92abc2fda096c713756abd9e30b43ab257b}{My\+Game\+::\+Sample\+::\+Equipment\+\_\+\+NONE}}, \+::flatbuffers\+::\+Offset$<$ void $>$ equipped=0, \+::flatbuffers\+::\+Offset$<$\mbox{\hyperlink{classflatbuffers_1_1Vector}{\+::flatbuffers\+::\+Vector}}$<$ const My\+Game\+::\+Sample\+::\+Vec3 \texorpdfstring{$\ast$}{*} $>$ $>$ path=0)
+\item 
+inline \+::flatbuffers\+::\+Offset$<$ Monster $>$ \mbox{\hyperlink{namespaceMyGame_1_1Sample_a39e38ec09f35955250991d6b8783f1b1}{My\+Game\+::\+Sample\+::\+Create\+Monster\+Direct}} (\mbox{\hyperlink{namespaceflatbuffers_a41ac7b1c8f5f4a869e8f649b6c171ce7}{\+::flatbuffers\+::\+Flat\+Buffer\+Builder}} \&\+\_\+fbb, const My\+Game\+::\+Sample\+::\+Vec3 \texorpdfstring{$\ast$}{*}pos=nullptr, int16\+\_\+t mana=150, int16\+\_\+t hp=100, const char \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{idl__gen__ts_8cpp_a9b45b3e13bd9167aab02e17e08916231}{name}}=nullptr, const std\+::vector$<$ uint8\+\_\+t $>$ \texorpdfstring{$\ast$}{*}inventory=nullptr, \mbox{\hyperlink{namespaceMyGame_1_1Sample_a6bbdedfe7aaf3aa9999a215d6c2e0644}{My\+Game\+::\+Sample\+::\+Color}} color=\mbox{\hyperlink{namespaceMyGame_1_1Sample_a6bbdedfe7aaf3aa9999a215d6c2e0644ac545f2bb61a3ef22c814f26f5f883622}{My\+Game\+::\+Sample\+::\+Color\+\_\+\+Blue}}, const std\+::vector$<$\+::flatbuffers\+::\+Offset$<$ My\+Game\+::\+Sample\+::\+Weapon $>$ $>$ \texorpdfstring{$\ast$}{*}weapons=nullptr, \mbox{\hyperlink{namespaceMyGame_1_1Sample_add5600c8554383eb7a8c7793a9da2a92}{My\+Game\+::\+Sample\+::\+Equipment}} equipped\+\_\+type=\mbox{\hyperlink{namespaceMyGame_1_1Sample_add5600c8554383eb7a8c7793a9da2a92abc2fda096c713756abd9e30b43ab257b}{My\+Game\+::\+Sample\+::\+Equipment\+\_\+\+NONE}}, \+::flatbuffers\+::\+Offset$<$ void $>$ equipped=0, const std\+::vector$<$ My\+Game\+::\+Sample\+::\+Vec3 $>$ \texorpdfstring{$\ast$}{*}path=nullptr)
+\item 
+\+::flatbuffers\+::\+Offset$<$ Monster $>$ \mbox{\hyperlink{namespaceMyGame_1_1Sample_a591c1c12bf11e2ff61cea2fa50931cc0}{My\+Game\+::\+Sample\+::\+Create\+Monster}} (\mbox{\hyperlink{namespaceflatbuffers_a41ac7b1c8f5f4a869e8f649b6c171ce7}{\+::flatbuffers\+::\+Flat\+Buffer\+Builder}} \&\+\_\+fbb, const \mbox{\hyperlink{structMyGame_1_1Sample_1_1MonsterT}{MonsterT}} \texorpdfstring{$\ast$}{*}\+\_\+o, const \mbox{\hyperlink{namespaceflatbuffers_a1a147f1b586c9e452c48e10c3121ed7a}{\+::flatbuffers\+::rehasher\+\_\+function\+\_\+t}} \texorpdfstring{$\ast$}{*}\+\_\+rehasher=nullptr)
+\item 
+inline \+::flatbuffers\+::\+Offset$<$ Weapon $>$ \mbox{\hyperlink{namespaceMyGame_1_1Sample_a2a04d85d1d0be9eadebeb703bc4c8113}{My\+Game\+::\+Sample\+::\+Create\+Weapon}} (\mbox{\hyperlink{namespaceflatbuffers_a41ac7b1c8f5f4a869e8f649b6c171ce7}{\+::flatbuffers\+::\+Flat\+Buffer\+Builder}} \&\+\_\+fbb, \+::flatbuffers\+::\+Offset$<$\mbox{\hyperlink{structflatbuffers_1_1String}{\+::flatbuffers\+::\+String}} $>$ \mbox{\hyperlink{idl__gen__ts_8cpp_a9b45b3e13bd9167aab02e17e08916231}{name}}=0, int16\+\_\+t damage=0)
+\item 
+inline \+::flatbuffers\+::\+Offset$<$ Weapon $>$ \mbox{\hyperlink{namespaceMyGame_1_1Sample_a62278e80131dcddfce007ac9cbe0f44c}{My\+Game\+::\+Sample\+::\+Create\+Weapon\+Direct}} (\mbox{\hyperlink{namespaceflatbuffers_a41ac7b1c8f5f4a869e8f649b6c171ce7}{\+::flatbuffers\+::\+Flat\+Buffer\+Builder}} \&\+\_\+fbb, const char \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{idl__gen__ts_8cpp_a9b45b3e13bd9167aab02e17e08916231}{name}}=nullptr, int16\+\_\+t damage=0)
+\item 
+\+::flatbuffers\+::\+Offset$<$ Weapon $>$ \mbox{\hyperlink{namespaceMyGame_1_1Sample_ae2844d5e9f343ee3989db0a36f4c96ca}{My\+Game\+::\+Sample\+::\+Create\+Weapon}} (\mbox{\hyperlink{namespaceflatbuffers_a41ac7b1c8f5f4a869e8f649b6c171ce7}{\+::flatbuffers\+::\+Flat\+Buffer\+Builder}} \&\+\_\+fbb, const \mbox{\hyperlink{structMyGame_1_1Sample_1_1WeaponT}{WeaponT}} \texorpdfstring{$\ast$}{*}\+\_\+o, const \mbox{\hyperlink{namespaceflatbuffers_a1a147f1b586c9e452c48e10c3121ed7a}{\+::flatbuffers\+::rehasher\+\_\+function\+\_\+t}} \texorpdfstring{$\ast$}{*}\+\_\+rehasher=nullptr)
+\item 
+const \mbox{\hyperlink{structflatbuffers_1_1TypeTable}{\+::flatbuffers\+::\+Type\+Table}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{namespaceMyGame_1_1Sample_ab088bb2a3d0fa1e8cedf11497b65a016}{My\+Game\+::\+Sample\+::\+Color\+Type\+Table}} ()
+\item 
+const \mbox{\hyperlink{structflatbuffers_1_1TypeTable}{\+::flatbuffers\+::\+Type\+Table}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{namespaceMyGame_1_1Sample_ae022e7939d7fc725dfc0b6c68e12f0a1}{My\+Game\+::\+Sample\+::\+Equipment\+Type\+Table}} ()
+\item 
+const My\+Game\+::\+Sample\+::\+Monster \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{namespaceMyGame_1_1Sample_aeffc316d8b80546edb0f37b6ec9f8d7b}{My\+Game\+::\+Sample\+::\+Get\+Monster}} (const void \texorpdfstring{$\ast$}{*}buf)
+\item 
+const My\+Game\+::\+Sample\+::\+Monster \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{namespaceMyGame_1_1Sample_ad0e274c3403afb967ae32109cb93755f}{My\+Game\+::\+Sample\+::\+Get\+Size\+Prefixed\+Monster}} (const void \texorpdfstring{$\ast$}{*}buf)
+\item 
+Monster \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{namespaceMyGame_1_1Sample_a6eafccfe16b681c7e45bb0d335e669af}{My\+Game\+::\+Sample\+::\+Get\+Mutable\+Monster}} (void \texorpdfstring{$\ast$}{*}buf)
+\item 
+My\+Game\+::\+Sample\+::\+Monster \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{namespaceMyGame_1_1Sample_ab2362853dce269d1047a89d4b67d3093}{My\+Game\+::\+Sample\+::\+Get\+Mutable\+Size\+Prefixed\+Monster}} (void \texorpdfstring{$\ast$}{*}buf)
+\item 
+bool \mbox{\hyperlink{namespaceMyGame_1_1Sample_a71cc64a209abe9c54ac37ca7e9ee99a8}{My\+Game\+::\+Sample\+::\+Verify\+Monster\+Buffer}} (\mbox{\hyperlink{namespaceflatbuffers_a3268477941df91db2eb06442b6e5f922}{\+::flatbuffers\+::\+Verifier}} \&verifier)
+\item 
+bool \mbox{\hyperlink{namespaceMyGame_1_1Sample_a9814b463d431ed8b33a9ca1513e555bf}{My\+Game\+::\+Sample\+::\+Verify\+Size\+Prefixed\+Monster\+Buffer}} (\mbox{\hyperlink{namespaceflatbuffers_a3268477941df91db2eb06442b6e5f922}{\+::flatbuffers\+::\+Verifier}} \&verifier)
+\item 
+void \mbox{\hyperlink{namespaceMyGame_1_1Sample_a8154a6df7dcc53221582b610105d7f18}{My\+Game\+::\+Sample\+::\+Finish\+Monster\+Buffer}} (\mbox{\hyperlink{namespaceflatbuffers_a41ac7b1c8f5f4a869e8f649b6c171ce7}{\+::flatbuffers\+::\+Flat\+Buffer\+Builder}} \&fbb, \+::flatbuffers\+::\+Offset$<$ My\+Game\+::\+Sample\+::\+Monster $>$ root)
+\item 
+void \mbox{\hyperlink{namespaceMyGame_1_1Sample_afdb4c9c13c39e703aac634d81af042c6}{My\+Game\+::\+Sample\+::\+Finish\+Size\+Prefixed\+Monster\+Buffer}} (\mbox{\hyperlink{namespaceflatbuffers_a41ac7b1c8f5f4a869e8f649b6c171ce7}{\+::flatbuffers\+::\+Flat\+Buffer\+Builder}} \&fbb, \+::flatbuffers\+::\+Offset$<$ My\+Game\+::\+Sample\+::\+Monster $>$ root)
+\item 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{structMyGame_1_1Sample_1_1MonsterT}{My\+Game\+::\+Sample\+::\+MonsterT}} $>$ \mbox{\hyperlink{namespaceMyGame_1_1Sample_a98d86e1fc8e7eca3a87be04987659743}{My\+Game\+::\+Sample\+::\+Un\+Pack\+Monster}} (const void \texorpdfstring{$\ast$}{*}buf, const \mbox{\hyperlink{namespaceflatbuffers_ac7bfda6e698d13cd1b225df198a24a18}{\+::flatbuffers\+::resolver\+\_\+function\+\_\+t}} \texorpdfstring{$\ast$}{*}res=nullptr)
+\item 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{structMyGame_1_1Sample_1_1MonsterT}{My\+Game\+::\+Sample\+::\+MonsterT}} $>$ \mbox{\hyperlink{namespaceMyGame_1_1Sample_a00e9688138529d86c22f92e07534e1d8}{My\+Game\+::\+Sample\+::\+Un\+Pack\+Size\+Prefixed\+Monster}} (const void \texorpdfstring{$\ast$}{*}buf, const \mbox{\hyperlink{namespaceflatbuffers_ac7bfda6e698d13cd1b225df198a24a18}{\+::flatbuffers\+::resolver\+\_\+function\+\_\+t}} \texorpdfstring{$\ast$}{*}res=nullptr)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{monster__generated_8h_ade174428e94cbeb2fce2e21dac016373}{VT\+\_\+\+POS}} = 4
+\item 
+\mbox{\hyperlink{monster__generated_8h_aaf687d1327dc0b0ba92093aa6d452fb5}{VT\+\_\+\+MANA}} = 6
+\item 
+\mbox{\hyperlink{monster__generated_8h_a8e9dca0d98a0fb49d3c2c294e34eb417}{VT\+\_\+\+HP}} = 8
+\item 
+\mbox{\hyperlink{monster__generated_8h_ad17bb8bd997e6ac35eddbf626077375f}{VT\+\_\+\+NAME}} = 10
+\item 
+\mbox{\hyperlink{monster__generated_8h_aeab3d1a55c8f988f93361db8b377aaae}{VT\+\_\+\+INVENTORY}} = 14
+\item 
+\mbox{\hyperlink{monster__generated_8h_ac52f9ac569257a258afdb4d3402bbfea}{VT\+\_\+\+COLOR}} = 16
+\item 
+\mbox{\hyperlink{monster__generated_8h_a7e0adc10816b238cbf11717005c3cc11}{VT\+\_\+\+WEAPONS}} = 18
+\item 
+\mbox{\hyperlink{monster__generated_8h_a9a0081e1e1a9b737d2288d58dd083024}{VT\+\_\+\+EQUIPPED\+\_\+\+TYPE}} = 20
+\item 
+\mbox{\hyperlink{monster__generated_8h_a0fdea15b96e7a01c56c9cfc774ef81af}{VT\+\_\+\+EQUIPPED}} = 22
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{monster__generated_8h_ac52f9ac569257a258afdb4d3402bbfea}\label{monster__generated_8h_ac52f9ac569257a258afdb4d3402bbfea} 
+\index{monster\_generated.h@{monster\_generated.h}!VT\_COLOR@{VT\_COLOR}}
+\index{VT\_COLOR@{VT\_COLOR}!monster\_generated.h@{monster\_generated.h}}
+\doxysubsubsection{\texorpdfstring{VT\_COLOR}{VT\_COLOR}}
+{\footnotesize\ttfamily VT\+\_\+\+COLOR = 16}
+
+\Hypertarget{monster__generated_8h_a0fdea15b96e7a01c56c9cfc774ef81af}\label{monster__generated_8h_a0fdea15b96e7a01c56c9cfc774ef81af} 
+\index{monster\_generated.h@{monster\_generated.h}!VT\_EQUIPPED@{VT\_EQUIPPED}}
+\index{VT\_EQUIPPED@{VT\_EQUIPPED}!monster\_generated.h@{monster\_generated.h}}
+\doxysubsubsection{\texorpdfstring{VT\_EQUIPPED}{VT\_EQUIPPED}}
+{\footnotesize\ttfamily VT\+\_\+\+EQUIPPED = 22}
+
+\Hypertarget{monster__generated_8h_a9a0081e1e1a9b737d2288d58dd083024}\label{monster__generated_8h_a9a0081e1e1a9b737d2288d58dd083024} 
+\index{monster\_generated.h@{monster\_generated.h}!VT\_EQUIPPED\_TYPE@{VT\_EQUIPPED\_TYPE}}
+\index{VT\_EQUIPPED\_TYPE@{VT\_EQUIPPED\_TYPE}!monster\_generated.h@{monster\_generated.h}}
+\doxysubsubsection{\texorpdfstring{VT\_EQUIPPED\_TYPE}{VT\_EQUIPPED\_TYPE}}
+{\footnotesize\ttfamily VT\+\_\+\+EQUIPPED\+\_\+\+TYPE = 20}
+
+\Hypertarget{monster__generated_8h_a8e9dca0d98a0fb49d3c2c294e34eb417}\label{monster__generated_8h_a8e9dca0d98a0fb49d3c2c294e34eb417} 
+\index{monster\_generated.h@{monster\_generated.h}!VT\_HP@{VT\_HP}}
+\index{VT\_HP@{VT\_HP}!monster\_generated.h@{monster\_generated.h}}
+\doxysubsubsection{\texorpdfstring{VT\_HP}{VT\_HP}}
+{\footnotesize\ttfamily VT\+\_\+\+HP = 8}
+
+\Hypertarget{monster__generated_8h_aeab3d1a55c8f988f93361db8b377aaae}\label{monster__generated_8h_aeab3d1a55c8f988f93361db8b377aaae} 
+\index{monster\_generated.h@{monster\_generated.h}!VT\_INVENTORY@{VT\_INVENTORY}}
+\index{VT\_INVENTORY@{VT\_INVENTORY}!monster\_generated.h@{monster\_generated.h}}
+\doxysubsubsection{\texorpdfstring{VT\_INVENTORY}{VT\_INVENTORY}}
+{\footnotesize\ttfamily VT\+\_\+\+INVENTORY = 14}
+
+\Hypertarget{monster__generated_8h_aaf687d1327dc0b0ba92093aa6d452fb5}\label{monster__generated_8h_aaf687d1327dc0b0ba92093aa6d452fb5} 
+\index{monster\_generated.h@{monster\_generated.h}!VT\_MANA@{VT\_MANA}}
+\index{VT\_MANA@{VT\_MANA}!monster\_generated.h@{monster\_generated.h}}
+\doxysubsubsection{\texorpdfstring{VT\_MANA}{VT\_MANA}}
+{\footnotesize\ttfamily VT\+\_\+\+MANA = 6}
+
+\Hypertarget{monster__generated_8h_ad17bb8bd997e6ac35eddbf626077375f}\label{monster__generated_8h_ad17bb8bd997e6ac35eddbf626077375f} 
+\index{monster\_generated.h@{monster\_generated.h}!VT\_NAME@{VT\_NAME}}
+\index{VT\_NAME@{VT\_NAME}!monster\_generated.h@{monster\_generated.h}}
+\doxysubsubsection{\texorpdfstring{VT\_NAME}{VT\_NAME}}
+{\footnotesize\ttfamily VT\+\_\+\+NAME = 10}
+
+\Hypertarget{monster__generated_8h_ade174428e94cbeb2fce2e21dac016373}\label{monster__generated_8h_ade174428e94cbeb2fce2e21dac016373} 
+\index{monster\_generated.h@{monster\_generated.h}!VT\_POS@{VT\_POS}}
+\index{VT\_POS@{VT\_POS}!monster\_generated.h@{monster\_generated.h}}
+\doxysubsubsection{\texorpdfstring{VT\_POS}{VT\_POS}}
+{\footnotesize\ttfamily VT\+\_\+\+POS = 4}
+
+\Hypertarget{monster__generated_8h_a7e0adc10816b238cbf11717005c3cc11}\label{monster__generated_8h_a7e0adc10816b238cbf11717005c3cc11} 
+\index{monster\_generated.h@{monster\_generated.h}!VT\_WEAPONS@{VT\_WEAPONS}}
+\index{VT\_WEAPONS@{VT\_WEAPONS}!monster\_generated.h@{monster\_generated.h}}
+\doxysubsubsection{\texorpdfstring{VT\_WEAPONS}{VT\_WEAPONS}}
+{\footnotesize\ttfamily VT\+\_\+\+WEAPONS = 18}
+

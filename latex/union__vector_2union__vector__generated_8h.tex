@@ -1,0 +1,767 @@
+\doxysection{flatbuffers/tests/union\+\_\+vector/union\+\_\+vector\+\_\+generated.h File Reference}
+\hypertarget{union__vector_2union__vector__generated_8h}{}\label{union__vector_2union__vector__generated_8h}\index{flatbuffers/tests/union\_vector/union\_vector\_generated.h@{flatbuffers/tests/union\_vector/union\_vector\_generated.h}}
+{\ttfamily \#include "{}flatbuffers/flatbuffers.\+h"{}}\newline
+Include dependency graph for union\+\_\+vector\+\_\+generated.\+h\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structCharacterUnion}{Character\+Union}}
+\item 
+struct \mbox{\hyperlink{structGadgetTraits}{Gadget\+Traits$<$ T $>$}}
+\item 
+struct \mbox{\hyperlink{structGadgetTraits_3_01FallingTub_01_4}{Gadget\+Traits$<$ Falling\+Tub $>$}}
+\item 
+struct \mbox{\hyperlink{structGadgetTraits_3_01HandFan_01_4}{Gadget\+Traits$<$ Hand\+Fan $>$}}
+\item 
+struct \mbox{\hyperlink{structGadgetUnionTraits}{Gadget\+Union\+Traits$<$ T $>$}}
+\item 
+struct \mbox{\hyperlink{structGadgetUnionTraits_3_01FallingTub_01_4}{Gadget\+Union\+Traits$<$ Falling\+Tub $>$}}
+\item 
+struct \mbox{\hyperlink{structGadgetUnionTraits_3_01HandFanT_01_4}{Gadget\+Union\+Traits$<$ Hand\+Fan\+T $>$}}
+\item 
+struct \mbox{\hyperlink{structGadgetUnion}{Gadget\+Union}}
+\item 
+struct \mbox{\hyperlink{structAttackerT}{AttackerT}}
+\item 
+struct \mbox{\hyperlink{structFLATBUFFERS__FINAL__CLASS}{FLATBUFFERS\+\_\+\+FINAL\+\_\+\+CLASS}}
+\item 
+struct \mbox{\hyperlink{structAttackerBuilder}{Attacker\+Builder}}
+\item 
+struct \mbox{\hyperlink{structHandFanT}{Hand\+FanT}}
+\item 
+struct \mbox{\hyperlink{structHandFanBuilder}{Hand\+Fan\+Builder}}
+\item 
+struct \mbox{\hyperlink{structMovieT}{MovieT}}
+\item 
+struct \mbox{\hyperlink{structMovieBuilder}{Movie\+Builder}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{union__vector_2union__vector__generated_8h_a610a708620f190d988395dd925897f91}{Character}} \+: uint8\+\_\+t \{ \newline
+\mbox{\hyperlink{union__vector_2union__vector__generated_8h_a610a708620f190d988395dd925897f91ab50339a10e1de285ac99d4c3990b8693}{NONE}} = 0
+, \mbox{\hyperlink{union__vector_2union__vector__generated_8h_a610a708620f190d988395dd925897f91a3f3919f18b76505338359344e8c95527}{Mu\+Lan}} = 1
+, \mbox{\hyperlink{union__vector_2union__vector__generated_8h_a610a708620f190d988395dd925897f91a2ebac550526c3d79006436f667ad6d13}{Rapunzel}} = 2
+, \mbox{\hyperlink{union__vector_2union__vector__generated_8h_a610a708620f190d988395dd925897f91acd901e0f194d2905f9519c0146692add}{Belle}} = 3
+, \newline
+\mbox{\hyperlink{union__vector_2union__vector__generated_8h_a610a708620f190d988395dd925897f91acea649682ef864fe8ca84a75bb02a65f}{Book\+Fan}} = 4
+, \mbox{\hyperlink{union__vector_2union__vector__generated_8h_a610a708620f190d988395dd925897f91a6311ae17c1ee52b36e68aaf4ad066387}{Other}} = 5
+, \mbox{\hyperlink{union__vector_2union__vector__generated_8h_a610a708620f190d988395dd925897f91a92e592d90b9548016776a6fb68dccded}{Unused}} = 6
+, \mbox{\hyperlink{union__vector_2union__vector__generated_8h_a610a708620f190d988395dd925897f91ace31e2a082d17e038fcc6e3006166653}{MIN}} = NONE
+, \newline
+\mbox{\hyperlink{union__vector_2union__vector__generated_8h_a610a708620f190d988395dd925897f91a26a4b44a837bf97b972628509912b4a5}{MAX}} = Unused
+, \mbox{\hyperlink{union__vector_2union__vector__generated_8h_a610a708620f190d988395dd925897f91ab50339a10e1de285ac99d4c3990b8693}{NONE}} = 0
+, \mbox{\hyperlink{union__vector_2union__vector__generated_8h_a610a708620f190d988395dd925897f91a3f3919f18b76505338359344e8c95527}{Mu\+Lan}} = 1
+, \mbox{\hyperlink{union__vector_2union__vector__generated_8h_a610a708620f190d988395dd925897f91a2ebac550526c3d79006436f667ad6d13}{Rapunzel}} = 2
+, \newline
+\mbox{\hyperlink{union__vector_2union__vector__generated_8h_a610a708620f190d988395dd925897f91acd901e0f194d2905f9519c0146692add}{Belle}} = 3
+, \mbox{\hyperlink{union__vector_2union__vector__generated_8h_a610a708620f190d988395dd925897f91acea649682ef864fe8ca84a75bb02a65f}{Book\+Fan}} = 4
+, \mbox{\hyperlink{union__vector_2union__vector__generated_8h_a610a708620f190d988395dd925897f91a6311ae17c1ee52b36e68aaf4ad066387}{Other}} = 5
+, \mbox{\hyperlink{union__vector_2union__vector__generated_8h_a610a708620f190d988395dd925897f91a92e592d90b9548016776a6fb68dccded}{Unused}} = 6
+, \newline
+\mbox{\hyperlink{union__vector_2union__vector__generated_8h_a610a708620f190d988395dd925897f91aa2ae0dc5168f5aa2b47680357633b395}{Character\+\_\+\+NONE}} = 0
+, \mbox{\hyperlink{union__vector_2union__vector__generated_8h_a610a708620f190d988395dd925897f91a63983ff58d1856ceafae309ec9a6af2c}{Character\+\_\+\+Mu\+Lan}} = 1
+, \mbox{\hyperlink{union__vector_2union__vector__generated_8h_a610a708620f190d988395dd925897f91a64ea0873ea5f54f9243cec767335e47b}{Character\+\_\+\+Rapunzel}} = 2
+, \mbox{\hyperlink{union__vector_2union__vector__generated_8h_a610a708620f190d988395dd925897f91a6c5d6ee9f59c24123e3bcceb7bf8f7d9}{Character\+\_\+\+Belle}} = 3
+, \newline
+\mbox{\hyperlink{union__vector_2union__vector__generated_8h_a610a708620f190d988395dd925897f91a7953295de4d977032548a77ea633d190}{Character\+\_\+\+Book\+Fan}} = 4
+, \mbox{\hyperlink{union__vector_2union__vector__generated_8h_a610a708620f190d988395dd925897f91af38bba3d2fdf4db87e8819483f624fb2}{Character\+\_\+\+Other}} = 5
+, \mbox{\hyperlink{union__vector_2union__vector__generated_8h_a610a708620f190d988395dd925897f91a975e5bff2b476a49f9372b0407415a62}{Character\+\_\+\+Unused}} = 6
+, \mbox{\hyperlink{union__vector_2union__vector__generated_8h_a610a708620f190d988395dd925897f91a1c4bf6d59048f017ee65b2721f723434}{Character\+\_\+\+MIN}} = Character\+\_\+\+NONE
+, \newline
+\mbox{\hyperlink{union__vector_2union__vector__generated_8h_a610a708620f190d988395dd925897f91a735813b3d432a8b5bba8ae399da8ea8a}{Character\+\_\+\+MAX}} = Character\+\_\+\+Unused
+ \}
+\item 
+enum \mbox{\hyperlink{union__vector_2union__vector__generated_8h_aa5a5f30acda83e39216dab6c62267cb2}{Gadget}} \+: uint8\+\_\+t \{ \newline
+\mbox{\hyperlink{union__vector_2union__vector__generated_8h_aa5a5f30acda83e39216dab6c62267cb2ab50339a10e1de285ac99d4c3990b8693}{NONE}} = 0
+, \mbox{\hyperlink{union__vector_2union__vector__generated_8h_aa5a5f30acda83e39216dab6c62267cb2a41849c0f9dd5034f1bce7c96997ef310}{Falling\+Tub}} = 1
+, \mbox{\hyperlink{union__vector_2union__vector__generated_8h_aa5a5f30acda83e39216dab6c62267cb2aae306e37a93b3b6cea843e0d20a39364}{Hand\+Fan}} = 2
+, \mbox{\hyperlink{union__vector_2union__vector__generated_8h_aa5a5f30acda83e39216dab6c62267cb2ace31e2a082d17e038fcc6e3006166653}{MIN}} = NONE
+, \newline
+\mbox{\hyperlink{union__vector_2union__vector__generated_8h_aa5a5f30acda83e39216dab6c62267cb2a26a4b44a837bf97b972628509912b4a5}{MAX}} = Hand\+Fan
+, \mbox{\hyperlink{union__vector_2union__vector__generated_8h_aa5a5f30acda83e39216dab6c62267cb2ab50339a10e1de285ac99d4c3990b8693}{NONE}} = 0
+, \mbox{\hyperlink{union__vector_2union__vector__generated_8h_aa5a5f30acda83e39216dab6c62267cb2a41849c0f9dd5034f1bce7c96997ef310}{Falling\+Tub}} = 1
+, \mbox{\hyperlink{union__vector_2union__vector__generated_8h_aa5a5f30acda83e39216dab6c62267cb2aae306e37a93b3b6cea843e0d20a39364}{Hand\+Fan}} = 2
+, \newline
+\mbox{\hyperlink{union__vector_2union__vector__generated_8h_aa5a5f30acda83e39216dab6c62267cb2a4c3badc4b7e7130a960954911b2be008}{Gadget\+\_\+\+NONE}} = 0
+, \mbox{\hyperlink{union__vector_2union__vector__generated_8h_aa5a5f30acda83e39216dab6c62267cb2aff2f52e78a06cb7e8eec399d4d122c2d}{Gadget\+\_\+\+Falling\+Tub}} = 1
+, \mbox{\hyperlink{union__vector_2union__vector__generated_8h_aa5a5f30acda83e39216dab6c62267cb2aa500d030cbae0f7e5a8fe3f164eb9c76}{Gadget\+\_\+\+Hand\+Fan}} = 2
+, \mbox{\hyperlink{union__vector_2union__vector__generated_8h_aa5a5f30acda83e39216dab6c62267cb2af3117b3e7bd261a266f42bda751b2e51}{Gadget\+\_\+\+MIN}} = Gadget\+\_\+\+NONE
+, \newline
+\mbox{\hyperlink{union__vector_2union__vector__generated_8h_aa5a5f30acda83e39216dab6c62267cb2a8a0ce08ce4fc8c4baa867fafcfdabac4}{Gadget\+\_\+\+MAX}} = Gadget\+\_\+\+Hand\+Fan
+ \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{union__vector_2union__vector__generated_8h_a8f69f7890cddb64dbb2635e96084e0b2}{operator==}} (const \mbox{\hyperlink{structAttackerT}{AttackerT}} \&lhs, const \mbox{\hyperlink{structAttackerT}{AttackerT}} \&rhs)
+\item 
+bool \mbox{\hyperlink{union__vector_2union__vector__generated_8h_abcdb7127ccecb61fada05b3c4381d21d}{operator!=}} (const \mbox{\hyperlink{structAttackerT}{AttackerT}} \&lhs, const \mbox{\hyperlink{structAttackerT}{AttackerT}} \&rhs)
+\item 
+bool \mbox{\hyperlink{union__vector_2union__vector__generated_8h_ae149284b979c76f3ae53010709c31af4}{operator==}} (const \mbox{\hyperlink{structRapunzel}{Rapunzel}} \&lhs, const \mbox{\hyperlink{structRapunzel}{Rapunzel}} \&rhs)
+\item 
+bool \mbox{\hyperlink{union__vector_2union__vector__generated_8h_a675afdf6c0fd1192d3015ee3fbb37c01}{operator!=}} (const \mbox{\hyperlink{structRapunzel}{Rapunzel}} \&lhs, const \mbox{\hyperlink{structRapunzel}{Rapunzel}} \&rhs)
+\item 
+bool \mbox{\hyperlink{union__vector_2union__vector__generated_8h_a204bc394513b2127511369aba1ae3d11}{operator==}} (const \mbox{\hyperlink{structBookReader}{Book\+Reader}} \&lhs, const \mbox{\hyperlink{structBookReader}{Book\+Reader}} \&rhs)
+\item 
+bool \mbox{\hyperlink{union__vector_2union__vector__generated_8h_a9548ab57786d2fb0ae25603379bd27b5}{operator!=}} (const \mbox{\hyperlink{structBookReader}{Book\+Reader}} \&lhs, const \mbox{\hyperlink{structBookReader}{Book\+Reader}} \&rhs)
+\item 
+bool \mbox{\hyperlink{union__vector_2union__vector__generated_8h_a37916cc32912d2ef5586abed43e3e5ce}{operator==}} (const \mbox{\hyperlink{structFallingTub}{Falling\+Tub}} \&lhs, const \mbox{\hyperlink{structFallingTub}{Falling\+Tub}} \&rhs)
+\item 
+bool \mbox{\hyperlink{union__vector_2union__vector__generated_8h_a5977b7591442cf136a2b69f385883e85}{operator!=}} (const \mbox{\hyperlink{structFallingTub}{Falling\+Tub}} \&lhs, const \mbox{\hyperlink{structFallingTub}{Falling\+Tub}} \&rhs)
+\item 
+bool \mbox{\hyperlink{union__vector_2union__vector__generated_8h_aee126b8ec639c9b22d8f2d6d44e4cb88}{operator==}} (const \mbox{\hyperlink{structHandFanT}{Hand\+FanT}} \&lhs, const \mbox{\hyperlink{structHandFanT}{Hand\+FanT}} \&rhs)
+\item 
+bool \mbox{\hyperlink{union__vector_2union__vector__generated_8h_a3e0c868513cfd986cc66e40db79f7dcf}{operator!=}} (const \mbox{\hyperlink{structHandFanT}{Hand\+FanT}} \&lhs, const \mbox{\hyperlink{structHandFanT}{Hand\+FanT}} \&rhs)
+\item 
+bool \mbox{\hyperlink{union__vector_2union__vector__generated_8h_a1d712197a5d100d5aee28e5c29fe45d9}{operator==}} (const \mbox{\hyperlink{structMovieT}{MovieT}} \&lhs, const \mbox{\hyperlink{structMovieT}{MovieT}} \&rhs)
+\item 
+bool \mbox{\hyperlink{union__vector_2union__vector__generated_8h_a37cbdef199047bc6cd8d0305cd69af75}{operator!=}} (const \mbox{\hyperlink{structMovieT}{MovieT}} \&lhs, const \mbox{\hyperlink{structMovieT}{MovieT}} \&rhs)
+\item 
+const \mbox{\hyperlink{structflatbuffers_1_1TypeTable}{\+::flatbuffers\+::\+Type\+Table}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{union__vector_2union__vector__generated_8h_a056c375ad750aa7c6c36e4f0efd1ad59}{Attacker\+Type\+Table}} ()
+\item 
+const \mbox{\hyperlink{structflatbuffers_1_1TypeTable}{\+::flatbuffers\+::\+Type\+Table}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{union__vector_2union__vector__generated_8h_a92be7d5fe84ca16212a24269c1b8aaa9}{Rapunzel\+Type\+Table}} ()
+\item 
+const \mbox{\hyperlink{structflatbuffers_1_1TypeTable}{\+::flatbuffers\+::\+Type\+Table}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{union__vector_2union__vector__generated_8h_a4db1165f0d0fb05d0e703056d06b3e4e}{Book\+Reader\+Type\+Table}} ()
+\item 
+const \mbox{\hyperlink{structflatbuffers_1_1TypeTable}{\+::flatbuffers\+::\+Type\+Table}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{union__vector_2union__vector__generated_8h_a01000185ef5cfe14be54a1f8e471ad55}{Falling\+Tub\+Type\+Table}} ()
+\item 
+const \mbox{\hyperlink{structflatbuffers_1_1TypeTable}{\+::flatbuffers\+::\+Type\+Table}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{union__vector_2union__vector__generated_8h_afa52d18537fe2d4b0fee4b8e38d43eb5}{Hand\+Fan\+Type\+Table}} ()
+\item 
+const \mbox{\hyperlink{structflatbuffers_1_1TypeTable}{\+::flatbuffers\+::\+Type\+Table}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{union__vector_2union__vector__generated_8h_a8a476a3507627c5b78b343eb20890331}{Movie\+Type\+Table}} ()
+\item 
+const \mbox{\hyperlink{classCharacter}{Character}}(\& \mbox{\hyperlink{union__vector_2union__vector__generated_8h_a807ac7b055ae510678f55440b1748318}{Enum\+Values\+Character}} ())\mbox{[}7\mbox{]}
+\item 
+const char \texorpdfstring{$\ast$}{*}const \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{union__vector_2union__vector__generated_8h_af37b97e5754fbf36b6899584e9185f54}{Enum\+Names\+Character}} ()
+\item 
+const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{union__vector_2union__vector__generated_8h_a5c1ebe4448567e495d898a97c3674b3f}{Enum\+Name\+Character}} (\mbox{\hyperlink{classCharacter}{Character}} e)
+\item 
+bool \mbox{\hyperlink{union__vector_2union__vector__generated_8h_a1b839a7d5a0ca09cdfd4bd9e76e7b37c}{operator==}} (const \mbox{\hyperlink{structCharacterUnion}{Character\+Union}} \&lhs, const \mbox{\hyperlink{structCharacterUnion}{Character\+Union}} \&rhs)
+\item 
+bool \mbox{\hyperlink{union__vector_2union__vector__generated_8h_a37c41bd45673dd1f497a46387a0ebd4f}{operator!=}} (const \mbox{\hyperlink{structCharacterUnion}{Character\+Union}} \&lhs, const \mbox{\hyperlink{structCharacterUnion}{Character\+Union}} \&rhs)
+\item 
+bool \mbox{\hyperlink{union__vector_2union__vector__generated_8h_af057f326c87caf9fe1c5c647bfc41da3}{Verify\+Character}} (\mbox{\hyperlink{namespaceflatbuffers_a3268477941df91db2eb06442b6e5f922}{\+::flatbuffers\+::\+Verifier}} \&verifier, const void \texorpdfstring{$\ast$}{*}obj, \mbox{\hyperlink{classCharacter}{Character}} type)
+\item 
+bool \mbox{\hyperlink{union__vector_2union__vector__generated_8h_a5038bf0eeee7635c1585689bbe7f6e8d}{Verify\+Character\+Vector}} (\mbox{\hyperlink{namespaceflatbuffers_a3268477941df91db2eb06442b6e5f922}{\+::flatbuffers\+::\+Verifier}} \&verifier, const \mbox{\hyperlink{classflatbuffers_1_1Vector}{\+::flatbuffers\+::\+Vector}}$<$\+::flatbuffers\+::\+Offset$<$ void $>$ $>$ \texorpdfstring{$\ast$}{*}values, const \mbox{\hyperlink{classflatbuffers_1_1Vector}{\+::flatbuffers\+::\+Vector}}$<$ uint8\+\_\+t $>$ \texorpdfstring{$\ast$}{*}types)
+\item 
+const \mbox{\hyperlink{classGadget}{Gadget}}(\& \mbox{\hyperlink{union__vector_2union__vector__generated_8h_ae5f692a6c4c35762fef2317704ad89bf}{Enum\+Values\+Gadget}} ())\mbox{[}3\mbox{]}
+\item 
+const char \texorpdfstring{$\ast$}{*}const \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{union__vector_2union__vector__generated_8h_ab051296915339c60d91538dd1d058da5}{Enum\+Names\+Gadget}} ()
+\item 
+const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{union__vector_2union__vector__generated_8h_abd49b381a88773a10f84dbf03c87517a}{Enum\+Name\+Gadget}} (\mbox{\hyperlink{classGadget}{Gadget}} e)
+\item 
+bool \mbox{\hyperlink{union__vector_2union__vector__generated_8h_a708aee5ff6f84e5f4ca436cd6f669683}{operator==}} (const \mbox{\hyperlink{structGadgetUnion}{Gadget\+Union}} \&lhs, const \mbox{\hyperlink{structGadgetUnion}{Gadget\+Union}} \&rhs)
+\item 
+bool \mbox{\hyperlink{union__vector_2union__vector__generated_8h_af3b5172c190ab868f7b5dab43c4da4e8}{operator!=}} (const \mbox{\hyperlink{structGadgetUnion}{Gadget\+Union}} \&lhs, const \mbox{\hyperlink{structGadgetUnion}{Gadget\+Union}} \&rhs)
+\item 
+bool \mbox{\hyperlink{union__vector_2union__vector__generated_8h_afb0e77f4a94ce6e55de055f015e4b82b}{Verify\+Gadget}} (\mbox{\hyperlink{namespaceflatbuffers_a3268477941df91db2eb06442b6e5f922}{\+::flatbuffers\+::\+Verifier}} \&verifier, const void \texorpdfstring{$\ast$}{*}obj, \mbox{\hyperlink{classGadget}{Gadget}} type)
+\item 
+bool \mbox{\hyperlink{union__vector_2union__vector__generated_8h_a080aba3bcbf579b4348b4d5ea0bfe57b}{Verify\+Gadget\+Vector}} (\mbox{\hyperlink{namespaceflatbuffers_a3268477941df91db2eb06442b6e5f922}{\+::flatbuffers\+::\+Verifier}} \&verifier, const \mbox{\hyperlink{classflatbuffers_1_1Vector}{\+::flatbuffers\+::\+Vector}}$<$\+::flatbuffers\+::\+Offset$<$ void $>$ $>$ \texorpdfstring{$\ast$}{*}values, const \mbox{\hyperlink{classflatbuffers_1_1Vector}{\+::flatbuffers\+::\+Vector}}$<$ uint8\+\_\+t $>$ \texorpdfstring{$\ast$}{*}types)
+\item 
+\mbox{\hyperlink{union__vector_2union__vector__generated_8h_a92ba1eff8b6ab2bc6db0488b3b118c5c}{FLATBUFFERS\+\_\+\+MANUALLY\+\_\+\+ALIGNED\+\_\+\+STRUCT}} (4) \mbox{\hyperlink{structRapunzel}{Rapunzel}} \mbox{\hyperlink{structFLATBUFFERS__FINAL__CLASS}{FLATBUFFERS\+\_\+\+FINAL\+\_\+\+CLASS}}
+\item 
+\mbox{\hyperlink{union__vector_2union__vector__generated_8h_aa02956c4d08199089a69603526eb85b6}{FLATBUFFERS\+\_\+\+STRUCT\+\_\+\+END}} (\mbox{\hyperlink{structRapunzel}{Rapunzel}}, 4)
+\item 
+\mbox{\hyperlink{union__vector_2union__vector__generated_8h_a3c60c423e136fad0da8bdf6f9a18e8e6}{FLATBUFFERS\+\_\+\+STRUCT\+\_\+\+END}} (\mbox{\hyperlink{structBookReader}{Book\+Reader}}, 4)
+\item 
+\mbox{\hyperlink{union__vector_2union__vector__generated_8h_a6e5e537be81af040d68c6eb89981f7f6}{FLATBUFFERS\+\_\+\+STRUCT\+\_\+\+END}} (\mbox{\hyperlink{structFallingTub}{Falling\+Tub}}, 4)
+\item 
+inline \+::flatbuffers\+::\+Offset$<$ \mbox{\hyperlink{structAttacker}{Attacker}} $>$ \mbox{\hyperlink{union__vector_2union__vector__generated_8h_ae541725eb019932a87d4571f569ce216}{Create\+Attacker}} (\mbox{\hyperlink{namespaceflatbuffers_a41ac7b1c8f5f4a869e8f649b6c171ce7}{\+::flatbuffers\+::\+Flat\+Buffer\+Builder}} \&\+\_\+fbb, int32\+\_\+t sword\+\_\+attack\+\_\+damage=0)
+\item 
+\+::flatbuffers\+::\+Offset$<$ \mbox{\hyperlink{structAttacker}{Attacker}} $>$ \mbox{\hyperlink{union__vector_2union__vector__generated_8h_a46702d458c712f55586ab9b33178c38b}{Create\+Attacker}} (\mbox{\hyperlink{namespaceflatbuffers_a41ac7b1c8f5f4a869e8f649b6c171ce7}{\+::flatbuffers\+::\+Flat\+Buffer\+Builder}} \&\+\_\+fbb, const \mbox{\hyperlink{structAttackerT}{AttackerT}} \texorpdfstring{$\ast$}{*}\+\_\+o, const \mbox{\hyperlink{namespaceflatbuffers_a1a147f1b586c9e452c48e10c3121ed7a}{\+::flatbuffers\+::rehasher\+\_\+function\+\_\+t}} \texorpdfstring{$\ast$}{*}\+\_\+rehasher=nullptr)
+\item 
+inline \+::flatbuffers\+::\+Offset$<$ \mbox{\hyperlink{structHandFan}{Hand\+Fan}} $>$ \mbox{\hyperlink{union__vector_2union__vector__generated_8h_af538f30d6459b581119fe08324fffa18}{Create\+Hand\+Fan}} (\mbox{\hyperlink{namespaceflatbuffers_a41ac7b1c8f5f4a869e8f649b6c171ce7}{\+::flatbuffers\+::\+Flat\+Buffer\+Builder}} \&\+\_\+fbb, int32\+\_\+t length=0)
+\item 
+\+::flatbuffers\+::\+Offset$<$ \mbox{\hyperlink{structHandFan}{Hand\+Fan}} $>$ \mbox{\hyperlink{union__vector_2union__vector__generated_8h_a8c90c76ca4047a1879e3a9e8cd9539c1}{Create\+Hand\+Fan}} (\mbox{\hyperlink{namespaceflatbuffers_a41ac7b1c8f5f4a869e8f649b6c171ce7}{\+::flatbuffers\+::\+Flat\+Buffer\+Builder}} \&\+\_\+fbb, const \mbox{\hyperlink{structHandFanT}{Hand\+FanT}} \texorpdfstring{$\ast$}{*}\+\_\+o, const \mbox{\hyperlink{namespaceflatbuffers_a1a147f1b586c9e452c48e10c3121ed7a}{\+::flatbuffers\+::rehasher\+\_\+function\+\_\+t}} \texorpdfstring{$\ast$}{*}\+\_\+rehasher=nullptr)
+\item 
+inline \+::flatbuffers\+::\+Offset$<$ \mbox{\hyperlink{structMovie}{Movie}} $>$ \mbox{\hyperlink{union__vector_2union__vector__generated_8h_a806cc089b5c6cbe18dc1526ea1893c88}{Create\+Movie}} (\mbox{\hyperlink{namespaceflatbuffers_a41ac7b1c8f5f4a869e8f649b6c171ce7}{\+::flatbuffers\+::\+Flat\+Buffer\+Builder}} \&\+\_\+fbb, \mbox{\hyperlink{classCharacter}{Character}} main\+\_\+character\+\_\+type=\mbox{\hyperlink{union__vector_2union__vector__generated_8h_a610a708620f190d988395dd925897f91aa2ae0dc5168f5aa2b47680357633b395}{Character\+\_\+\+NONE}}, \+::flatbuffers\+::\+Offset$<$ void $>$ main\+\_\+character=0, \+::flatbuffers\+::\+Offset$<$\mbox{\hyperlink{classflatbuffers_1_1Vector}{\+::flatbuffers\+::\+Vector}}$<$ uint8\+\_\+t $>$ $>$ characters\+\_\+type=0, \+::flatbuffers\+::\+Offset$<$\mbox{\hyperlink{classflatbuffers_1_1Vector}{\+::flatbuffers\+::\+Vector}}$<$\+::flatbuffers\+::\+Offset$<$ void $>$ $>$ $>$ characters=0)
+\item 
+inline \+::flatbuffers\+::\+Offset$<$ \mbox{\hyperlink{structMovie}{Movie}} $>$ \mbox{\hyperlink{union__vector_2union__vector__generated_8h_a6fbc1e20d5cb54c2f4a2504e89426d93}{Create\+Movie\+Direct}} (\mbox{\hyperlink{namespaceflatbuffers_a41ac7b1c8f5f4a869e8f649b6c171ce7}{\+::flatbuffers\+::\+Flat\+Buffer\+Builder}} \&\+\_\+fbb, \mbox{\hyperlink{classCharacter}{Character}} main\+\_\+character\+\_\+type=\mbox{\hyperlink{union__vector_2union__vector__generated_8h_a610a708620f190d988395dd925897f91aa2ae0dc5168f5aa2b47680357633b395}{Character\+\_\+\+NONE}}, \+::flatbuffers\+::\+Offset$<$ void $>$ main\+\_\+character=0, const std\+::vector$<$ uint8\+\_\+t $>$ \texorpdfstring{$\ast$}{*}characters\+\_\+type=nullptr, const std\+::vector$<$\+::flatbuffers\+::\+Offset$<$ void $>$ $>$ \texorpdfstring{$\ast$}{*}characters=nullptr)
+\item 
+\+::flatbuffers\+::\+Offset$<$ \mbox{\hyperlink{structMovie}{Movie}} $>$ \mbox{\hyperlink{union__vector_2union__vector__generated_8h_a57707c9a909d6821ab5e67c1f5beec8c}{Create\+Movie}} (\mbox{\hyperlink{namespaceflatbuffers_a41ac7b1c8f5f4a869e8f649b6c171ce7}{\+::flatbuffers\+::\+Flat\+Buffer\+Builder}} \&\+\_\+fbb, const \mbox{\hyperlink{structMovieT}{MovieT}} \texorpdfstring{$\ast$}{*}\+\_\+o, const \mbox{\hyperlink{namespaceflatbuffers_a1a147f1b586c9e452c48e10c3121ed7a}{\+::flatbuffers\+::rehasher\+\_\+function\+\_\+t}} \texorpdfstring{$\ast$}{*}\+\_\+rehasher=nullptr)
+\item 
+const \mbox{\hyperlink{structflatbuffers_1_1TypeTable}{\+::flatbuffers\+::\+Type\+Table}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{union__vector_2union__vector__generated_8h_a23147d03f7e9f47d76c8145181b04255}{Character\+Type\+Table}} ()
+\item 
+const \mbox{\hyperlink{structflatbuffers_1_1TypeTable}{\+::flatbuffers\+::\+Type\+Table}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{union__vector_2union__vector__generated_8h_a0938633f478428c97981836f9b582cdb}{Gadget\+Type\+Table}} ()
+\item 
+const \mbox{\hyperlink{structMovie}{Movie}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{union__vector_2union__vector__generated_8h_a75f8f1be8c97b8e77bfd291b06a939db}{Get\+Movie}} (const void \texorpdfstring{$\ast$}{*}buf)
+\item 
+const \mbox{\hyperlink{structMovie}{Movie}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{union__vector_2union__vector__generated_8h_afeee073fb634b6e52af5c976e36fa699}{Get\+Size\+Prefixed\+Movie}} (const void \texorpdfstring{$\ast$}{*}buf)
+\item 
+\mbox{\hyperlink{structMovie}{Movie}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{union__vector_2union__vector__generated_8h_aeaa11c49f4483c61c2fc5732d1da6924}{Get\+Mutable\+Movie}} (void \texorpdfstring{$\ast$}{*}buf)
+\item 
+\mbox{\hyperlink{structMovie}{Movie}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{union__vector_2union__vector__generated_8h_a696e13491a060dd885ffaf4f3f031ec3}{Get\+Mutable\+Size\+Prefixed\+Movie}} (void \texorpdfstring{$\ast$}{*}buf)
+\item 
+const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{union__vector_2union__vector__generated_8h_a6d271d745615061b96a124a903ce2e29}{Movie\+Identifier}} ()
+\item 
+bool \mbox{\hyperlink{union__vector_2union__vector__generated_8h_a91b75fdac2bd29738b6257e0b0fe4369}{Movie\+Buffer\+Has\+Identifier}} (const void \texorpdfstring{$\ast$}{*}buf)
+\item 
+bool \mbox{\hyperlink{union__vector_2union__vector__generated_8h_adc47717bb78d2ded8b356a127699c956}{Size\+Prefixed\+Movie\+Buffer\+Has\+Identifier}} (const void \texorpdfstring{$\ast$}{*}buf)
+\item 
+bool \mbox{\hyperlink{union__vector_2union__vector__generated_8h_a42bacb452f3e9aacd9c241ba823adc91}{Verify\+Movie\+Buffer}} (\mbox{\hyperlink{namespaceflatbuffers_a3268477941df91db2eb06442b6e5f922}{\+::flatbuffers\+::\+Verifier}} \&verifier)
+\item 
+bool \mbox{\hyperlink{union__vector_2union__vector__generated_8h_a0175a9c07f33c1730fcd91c5546ce9ed}{Verify\+Size\+Prefixed\+Movie\+Buffer}} (\mbox{\hyperlink{namespaceflatbuffers_a3268477941df91db2eb06442b6e5f922}{\+::flatbuffers\+::\+Verifier}} \&verifier)
+\item 
+void \mbox{\hyperlink{union__vector_2union__vector__generated_8h_ac1748f19789bd5d5e1ced742c5828838}{Finish\+Movie\+Buffer}} (\mbox{\hyperlink{namespaceflatbuffers_a41ac7b1c8f5f4a869e8f649b6c171ce7}{\+::flatbuffers\+::\+Flat\+Buffer\+Builder}} \&fbb, \+::flatbuffers\+::\+Offset$<$ \mbox{\hyperlink{structMovie}{Movie}} $>$ root)
+\item 
+void \mbox{\hyperlink{union__vector_2union__vector__generated_8h_ac5906aa3657fa765bb4f2252c0b1a816}{Finish\+Size\+Prefixed\+Movie\+Buffer}} (\mbox{\hyperlink{namespaceflatbuffers_a41ac7b1c8f5f4a869e8f649b6c171ce7}{\+::flatbuffers\+::\+Flat\+Buffer\+Builder}} \&fbb, \+::flatbuffers\+::\+Offset$<$ \mbox{\hyperlink{structMovie}{Movie}} $>$ root)
+\item 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{structMovieT}{MovieT}} $>$ \mbox{\hyperlink{union__vector_2union__vector__generated_8h_a0845c7f1a940fca19926beafebc34e6c}{Un\+Pack\+Movie}} (const void \texorpdfstring{$\ast$}{*}buf, const \mbox{\hyperlink{namespaceflatbuffers_ac7bfda6e698d13cd1b225df198a24a18}{\+::flatbuffers\+::resolver\+\_\+function\+\_\+t}} \texorpdfstring{$\ast$}{*}res=nullptr)
+\item 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{structMovieT}{MovieT}} $>$ \mbox{\hyperlink{union__vector_2union__vector__generated_8h_a88253a321fbb30c629ae02bdc64b0c3e}{Un\+Pack\+Size\+Prefixed\+Movie}} (const void \texorpdfstring{$\ast$}{*}buf, const \mbox{\hyperlink{namespaceflatbuffers_ac7bfda6e698d13cd1b225df198a24a18}{\+::flatbuffers\+::resolver\+\_\+function\+\_\+t}} \texorpdfstring{$\ast$}{*}res=nullptr)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{union__vector_2union__vector__generated_8h_aa4862b92e00db71e6ea6625ef7693d18}{VT\+\_\+\+MAIN\+\_\+\+CHARACTER\+\_\+\+TYPE}} = 4
+\item 
+\mbox{\hyperlink{union__vector_2union__vector__generated_8h_a67fe93f624ed10dd725101c4ed00a56e}{VT\+\_\+\+MAIN\+\_\+\+CHARACTER}} = 6
+\item 
+\mbox{\hyperlink{union__vector_2union__vector__generated_8h_aa525be08713ad99da51f2909d1484514}{VT\+\_\+\+CHARACTERS\+\_\+\+TYPE}} = 8
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Enumeration Type Documentation}
+\Hypertarget{union__vector_2union__vector__generated_8h_a610a708620f190d988395dd925897f91}\label{union__vector_2union__vector__generated_8h_a610a708620f190d988395dd925897f91} 
+\index{union\_vector\_generated.h@{union\_vector\_generated.h}!Character@{Character}}
+\index{Character@{Character}!union\_vector\_generated.h@{union\_vector\_generated.h}}
+\doxysubsubsection{\texorpdfstring{Character}{Character}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{classCharacter}{Character}} \+: uint8\+\_\+t}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NONE@{NONE}!union\_vector\_generated.h@{union\_vector\_generated.h}}\index{union\_vector\_generated.h@{union\_vector\_generated.h}!NONE@{NONE}}}\Hypertarget{union__vector_2union__vector__generated_8h_a610a708620f190d988395dd925897f91ab50339a10e1de285ac99d4c3990b8693}\label{union__vector_2union__vector__generated_8h_a610a708620f190d988395dd925897f91ab50339a10e1de285ac99d4c3990b8693} 
+NONE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MuLan@{MuLan}!union\_vector\_generated.h@{union\_vector\_generated.h}}\index{union\_vector\_generated.h@{union\_vector\_generated.h}!MuLan@{MuLan}}}\Hypertarget{union__vector_2union__vector__generated_8h_a610a708620f190d988395dd925897f91a3f3919f18b76505338359344e8c95527}\label{union__vector_2union__vector__generated_8h_a610a708620f190d988395dd925897f91a3f3919f18b76505338359344e8c95527} 
+Mu\+Lan&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Rapunzel@{Rapunzel}!union\_vector\_generated.h@{union\_vector\_generated.h}}\index{union\_vector\_generated.h@{union\_vector\_generated.h}!Rapunzel@{Rapunzel}}}\Hypertarget{union__vector_2union__vector__generated_8h_a610a708620f190d988395dd925897f91a2ebac550526c3d79006436f667ad6d13}\label{union__vector_2union__vector__generated_8h_a610a708620f190d988395dd925897f91a2ebac550526c3d79006436f667ad6d13} 
+Rapunzel&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Belle@{Belle}!union\_vector\_generated.h@{union\_vector\_generated.h}}\index{union\_vector\_generated.h@{union\_vector\_generated.h}!Belle@{Belle}}}\Hypertarget{union__vector_2union__vector__generated_8h_a610a708620f190d988395dd925897f91acd901e0f194d2905f9519c0146692add}\label{union__vector_2union__vector__generated_8h_a610a708620f190d988395dd925897f91acd901e0f194d2905f9519c0146692add} 
+Belle&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BookFan@{BookFan}!union\_vector\_generated.h@{union\_vector\_generated.h}}\index{union\_vector\_generated.h@{union\_vector\_generated.h}!BookFan@{BookFan}}}\Hypertarget{union__vector_2union__vector__generated_8h_a610a708620f190d988395dd925897f91acea649682ef864fe8ca84a75bb02a65f}\label{union__vector_2union__vector__generated_8h_a610a708620f190d988395dd925897f91acea649682ef864fe8ca84a75bb02a65f} 
+Book\+Fan&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Other@{Other}!union\_vector\_generated.h@{union\_vector\_generated.h}}\index{union\_vector\_generated.h@{union\_vector\_generated.h}!Other@{Other}}}\Hypertarget{union__vector_2union__vector__generated_8h_a610a708620f190d988395dd925897f91a6311ae17c1ee52b36e68aaf4ad066387}\label{union__vector_2union__vector__generated_8h_a610a708620f190d988395dd925897f91a6311ae17c1ee52b36e68aaf4ad066387} 
+Other&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Unused@{Unused}!union\_vector\_generated.h@{union\_vector\_generated.h}}\index{union\_vector\_generated.h@{union\_vector\_generated.h}!Unused@{Unused}}}\Hypertarget{union__vector_2union__vector__generated_8h_a610a708620f190d988395dd925897f91a92e592d90b9548016776a6fb68dccded}\label{union__vector_2union__vector__generated_8h_a610a708620f190d988395dd925897f91a92e592d90b9548016776a6fb68dccded} 
+Unused&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MIN@{MIN}!union\_vector\_generated.h@{union\_vector\_generated.h}}\index{union\_vector\_generated.h@{union\_vector\_generated.h}!MIN@{MIN}}}\Hypertarget{union__vector_2union__vector__generated_8h_a610a708620f190d988395dd925897f91ace31e2a082d17e038fcc6e3006166653}\label{union__vector_2union__vector__generated_8h_a610a708620f190d988395dd925897f91ace31e2a082d17e038fcc6e3006166653} 
+MIN&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MAX@{MAX}!union\_vector\_generated.h@{union\_vector\_generated.h}}\index{union\_vector\_generated.h@{union\_vector\_generated.h}!MAX@{MAX}}}\Hypertarget{union__vector_2union__vector__generated_8h_a610a708620f190d988395dd925897f91a26a4b44a837bf97b972628509912b4a5}\label{union__vector_2union__vector__generated_8h_a610a708620f190d988395dd925897f91a26a4b44a837bf97b972628509912b4a5} 
+MAX&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NONE@{NONE}!union\_vector\_generated.h@{union\_vector\_generated.h}}\index{union\_vector\_generated.h@{union\_vector\_generated.h}!NONE@{NONE}}}\Hypertarget{union__vector_2union__vector__generated_8h_a610a708620f190d988395dd925897f91ab50339a10e1de285ac99d4c3990b8693}\label{union__vector_2union__vector__generated_8h_a610a708620f190d988395dd925897f91ab50339a10e1de285ac99d4c3990b8693} 
+NONE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MuLan@{MuLan}!union\_vector\_generated.h@{union\_vector\_generated.h}}\index{union\_vector\_generated.h@{union\_vector\_generated.h}!MuLan@{MuLan}}}\Hypertarget{union__vector_2union__vector__generated_8h_a610a708620f190d988395dd925897f91a3f3919f18b76505338359344e8c95527}\label{union__vector_2union__vector__generated_8h_a610a708620f190d988395dd925897f91a3f3919f18b76505338359344e8c95527} 
+Mu\+Lan&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Rapunzel@{Rapunzel}!union\_vector\_generated.h@{union\_vector\_generated.h}}\index{union\_vector\_generated.h@{union\_vector\_generated.h}!Rapunzel@{Rapunzel}}}\Hypertarget{union__vector_2union__vector__generated_8h_a610a708620f190d988395dd925897f91a2ebac550526c3d79006436f667ad6d13}\label{union__vector_2union__vector__generated_8h_a610a708620f190d988395dd925897f91a2ebac550526c3d79006436f667ad6d13} 
+Rapunzel&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Belle@{Belle}!union\_vector\_generated.h@{union\_vector\_generated.h}}\index{union\_vector\_generated.h@{union\_vector\_generated.h}!Belle@{Belle}}}\Hypertarget{union__vector_2union__vector__generated_8h_a610a708620f190d988395dd925897f91acd901e0f194d2905f9519c0146692add}\label{union__vector_2union__vector__generated_8h_a610a708620f190d988395dd925897f91acd901e0f194d2905f9519c0146692add} 
+Belle&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BookFan@{BookFan}!union\_vector\_generated.h@{union\_vector\_generated.h}}\index{union\_vector\_generated.h@{union\_vector\_generated.h}!BookFan@{BookFan}}}\Hypertarget{union__vector_2union__vector__generated_8h_a610a708620f190d988395dd925897f91acea649682ef864fe8ca84a75bb02a65f}\label{union__vector_2union__vector__generated_8h_a610a708620f190d988395dd925897f91acea649682ef864fe8ca84a75bb02a65f} 
+Book\+Fan&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Other@{Other}!union\_vector\_generated.h@{union\_vector\_generated.h}}\index{union\_vector\_generated.h@{union\_vector\_generated.h}!Other@{Other}}}\Hypertarget{union__vector_2union__vector__generated_8h_a610a708620f190d988395dd925897f91a6311ae17c1ee52b36e68aaf4ad066387}\label{union__vector_2union__vector__generated_8h_a610a708620f190d988395dd925897f91a6311ae17c1ee52b36e68aaf4ad066387} 
+Other&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Unused@{Unused}!union\_vector\_generated.h@{union\_vector\_generated.h}}\index{union\_vector\_generated.h@{union\_vector\_generated.h}!Unused@{Unused}}}\Hypertarget{union__vector_2union__vector__generated_8h_a610a708620f190d988395dd925897f91a92e592d90b9548016776a6fb68dccded}\label{union__vector_2union__vector__generated_8h_a610a708620f190d988395dd925897f91a92e592d90b9548016776a6fb68dccded} 
+Unused&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Character\_NONE@{Character\_NONE}!union\_vector\_generated.h@{union\_vector\_generated.h}}\index{union\_vector\_generated.h@{union\_vector\_generated.h}!Character\_NONE@{Character\_NONE}}}\Hypertarget{union__vector_2union__vector__generated_8h_a610a708620f190d988395dd925897f91aa2ae0dc5168f5aa2b47680357633b395}\label{union__vector_2union__vector__generated_8h_a610a708620f190d988395dd925897f91aa2ae0dc5168f5aa2b47680357633b395} 
+Character\+\_\+\+NONE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Character\_MuLan@{Character\_MuLan}!union\_vector\_generated.h@{union\_vector\_generated.h}}\index{union\_vector\_generated.h@{union\_vector\_generated.h}!Character\_MuLan@{Character\_MuLan}}}\Hypertarget{union__vector_2union__vector__generated_8h_a610a708620f190d988395dd925897f91a63983ff58d1856ceafae309ec9a6af2c}\label{union__vector_2union__vector__generated_8h_a610a708620f190d988395dd925897f91a63983ff58d1856ceafae309ec9a6af2c} 
+Character\+\_\+\+Mu\+Lan&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Character\_Rapunzel@{Character\_Rapunzel}!union\_vector\_generated.h@{union\_vector\_generated.h}}\index{union\_vector\_generated.h@{union\_vector\_generated.h}!Character\_Rapunzel@{Character\_Rapunzel}}}\Hypertarget{union__vector_2union__vector__generated_8h_a610a708620f190d988395dd925897f91a64ea0873ea5f54f9243cec767335e47b}\label{union__vector_2union__vector__generated_8h_a610a708620f190d988395dd925897f91a64ea0873ea5f54f9243cec767335e47b} 
+Character\+\_\+\+Rapunzel&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Character\_Belle@{Character\_Belle}!union\_vector\_generated.h@{union\_vector\_generated.h}}\index{union\_vector\_generated.h@{union\_vector\_generated.h}!Character\_Belle@{Character\_Belle}}}\Hypertarget{union__vector_2union__vector__generated_8h_a610a708620f190d988395dd925897f91a6c5d6ee9f59c24123e3bcceb7bf8f7d9}\label{union__vector_2union__vector__generated_8h_a610a708620f190d988395dd925897f91a6c5d6ee9f59c24123e3bcceb7bf8f7d9} 
+Character\+\_\+\+Belle&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Character\_BookFan@{Character\_BookFan}!union\_vector\_generated.h@{union\_vector\_generated.h}}\index{union\_vector\_generated.h@{union\_vector\_generated.h}!Character\_BookFan@{Character\_BookFan}}}\Hypertarget{union__vector_2union__vector__generated_8h_a610a708620f190d988395dd925897f91a7953295de4d977032548a77ea633d190}\label{union__vector_2union__vector__generated_8h_a610a708620f190d988395dd925897f91a7953295de4d977032548a77ea633d190} 
+Character\+\_\+\+Book\+Fan&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Character\_Other@{Character\_Other}!union\_vector\_generated.h@{union\_vector\_generated.h}}\index{union\_vector\_generated.h@{union\_vector\_generated.h}!Character\_Other@{Character\_Other}}}\Hypertarget{union__vector_2union__vector__generated_8h_a610a708620f190d988395dd925897f91af38bba3d2fdf4db87e8819483f624fb2}\label{union__vector_2union__vector__generated_8h_a610a708620f190d988395dd925897f91af38bba3d2fdf4db87e8819483f624fb2} 
+Character\+\_\+\+Other&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Character\_Unused@{Character\_Unused}!union\_vector\_generated.h@{union\_vector\_generated.h}}\index{union\_vector\_generated.h@{union\_vector\_generated.h}!Character\_Unused@{Character\_Unused}}}\Hypertarget{union__vector_2union__vector__generated_8h_a610a708620f190d988395dd925897f91a975e5bff2b476a49f9372b0407415a62}\label{union__vector_2union__vector__generated_8h_a610a708620f190d988395dd925897f91a975e5bff2b476a49f9372b0407415a62} 
+Character\+\_\+\+Unused&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Character\_MIN@{Character\_MIN}!union\_vector\_generated.h@{union\_vector\_generated.h}}\index{union\_vector\_generated.h@{union\_vector\_generated.h}!Character\_MIN@{Character\_MIN}}}\Hypertarget{union__vector_2union__vector__generated_8h_a610a708620f190d988395dd925897f91a1c4bf6d59048f017ee65b2721f723434}\label{union__vector_2union__vector__generated_8h_a610a708620f190d988395dd925897f91a1c4bf6d59048f017ee65b2721f723434} 
+Character\+\_\+\+MIN&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Character\_MAX@{Character\_MAX}!union\_vector\_generated.h@{union\_vector\_generated.h}}\index{union\_vector\_generated.h@{union\_vector\_generated.h}!Character\_MAX@{Character\_MAX}}}\Hypertarget{union__vector_2union__vector__generated_8h_a610a708620f190d988395dd925897f91a735813b3d432a8b5bba8ae399da8ea8a}\label{union__vector_2union__vector__generated_8h_a610a708620f190d988395dd925897f91a735813b3d432a8b5bba8ae399da8ea8a} 
+Character\+\_\+\+MAX&\\
+\hline
+
+\end{DoxyEnumFields}
+\Hypertarget{union__vector_2union__vector__generated_8h_aa5a5f30acda83e39216dab6c62267cb2}\label{union__vector_2union__vector__generated_8h_aa5a5f30acda83e39216dab6c62267cb2} 
+\index{union\_vector\_generated.h@{union\_vector\_generated.h}!Gadget@{Gadget}}
+\index{Gadget@{Gadget}!union\_vector\_generated.h@{union\_vector\_generated.h}}
+\doxysubsubsection{\texorpdfstring{Gadget}{Gadget}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{classGadget}{Gadget}} \+: uint8\+\_\+t}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NONE@{NONE}!union\_vector\_generated.h@{union\_vector\_generated.h}}\index{union\_vector\_generated.h@{union\_vector\_generated.h}!NONE@{NONE}}}\Hypertarget{union__vector_2union__vector__generated_8h_aa5a5f30acda83e39216dab6c62267cb2ab50339a10e1de285ac99d4c3990b8693}\label{union__vector_2union__vector__generated_8h_aa5a5f30acda83e39216dab6c62267cb2ab50339a10e1de285ac99d4c3990b8693} 
+NONE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{FallingTub@{FallingTub}!union\_vector\_generated.h@{union\_vector\_generated.h}}\index{union\_vector\_generated.h@{union\_vector\_generated.h}!FallingTub@{FallingTub}}}\Hypertarget{union__vector_2union__vector__generated_8h_aa5a5f30acda83e39216dab6c62267cb2a41849c0f9dd5034f1bce7c96997ef310}\label{union__vector_2union__vector__generated_8h_aa5a5f30acda83e39216dab6c62267cb2a41849c0f9dd5034f1bce7c96997ef310} 
+Falling\+Tub&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{HandFan@{HandFan}!union\_vector\_generated.h@{union\_vector\_generated.h}}\index{union\_vector\_generated.h@{union\_vector\_generated.h}!HandFan@{HandFan}}}\Hypertarget{union__vector_2union__vector__generated_8h_aa5a5f30acda83e39216dab6c62267cb2aae306e37a93b3b6cea843e0d20a39364}\label{union__vector_2union__vector__generated_8h_aa5a5f30acda83e39216dab6c62267cb2aae306e37a93b3b6cea843e0d20a39364} 
+Hand\+Fan&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MIN@{MIN}!union\_vector\_generated.h@{union\_vector\_generated.h}}\index{union\_vector\_generated.h@{union\_vector\_generated.h}!MIN@{MIN}}}\Hypertarget{union__vector_2union__vector__generated_8h_aa5a5f30acda83e39216dab6c62267cb2ace31e2a082d17e038fcc6e3006166653}\label{union__vector_2union__vector__generated_8h_aa5a5f30acda83e39216dab6c62267cb2ace31e2a082d17e038fcc6e3006166653} 
+MIN&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MAX@{MAX}!union\_vector\_generated.h@{union\_vector\_generated.h}}\index{union\_vector\_generated.h@{union\_vector\_generated.h}!MAX@{MAX}}}\Hypertarget{union__vector_2union__vector__generated_8h_aa5a5f30acda83e39216dab6c62267cb2a26a4b44a837bf97b972628509912b4a5}\label{union__vector_2union__vector__generated_8h_aa5a5f30acda83e39216dab6c62267cb2a26a4b44a837bf97b972628509912b4a5} 
+MAX&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NONE@{NONE}!union\_vector\_generated.h@{union\_vector\_generated.h}}\index{union\_vector\_generated.h@{union\_vector\_generated.h}!NONE@{NONE}}}\Hypertarget{union__vector_2union__vector__generated_8h_aa5a5f30acda83e39216dab6c62267cb2ab50339a10e1de285ac99d4c3990b8693}\label{union__vector_2union__vector__generated_8h_aa5a5f30acda83e39216dab6c62267cb2ab50339a10e1de285ac99d4c3990b8693} 
+NONE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{FallingTub@{FallingTub}!union\_vector\_generated.h@{union\_vector\_generated.h}}\index{union\_vector\_generated.h@{union\_vector\_generated.h}!FallingTub@{FallingTub}}}\Hypertarget{union__vector_2union__vector__generated_8h_aa5a5f30acda83e39216dab6c62267cb2a41849c0f9dd5034f1bce7c96997ef310}\label{union__vector_2union__vector__generated_8h_aa5a5f30acda83e39216dab6c62267cb2a41849c0f9dd5034f1bce7c96997ef310} 
+Falling\+Tub&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{HandFan@{HandFan}!union\_vector\_generated.h@{union\_vector\_generated.h}}\index{union\_vector\_generated.h@{union\_vector\_generated.h}!HandFan@{HandFan}}}\Hypertarget{union__vector_2union__vector__generated_8h_aa5a5f30acda83e39216dab6c62267cb2aae306e37a93b3b6cea843e0d20a39364}\label{union__vector_2union__vector__generated_8h_aa5a5f30acda83e39216dab6c62267cb2aae306e37a93b3b6cea843e0d20a39364} 
+Hand\+Fan&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Gadget\_NONE@{Gadget\_NONE}!union\_vector\_generated.h@{union\_vector\_generated.h}}\index{union\_vector\_generated.h@{union\_vector\_generated.h}!Gadget\_NONE@{Gadget\_NONE}}}\Hypertarget{union__vector_2union__vector__generated_8h_aa5a5f30acda83e39216dab6c62267cb2a4c3badc4b7e7130a960954911b2be008}\label{union__vector_2union__vector__generated_8h_aa5a5f30acda83e39216dab6c62267cb2a4c3badc4b7e7130a960954911b2be008} 
+Gadget\+\_\+\+NONE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Gadget\_FallingTub@{Gadget\_FallingTub}!union\_vector\_generated.h@{union\_vector\_generated.h}}\index{union\_vector\_generated.h@{union\_vector\_generated.h}!Gadget\_FallingTub@{Gadget\_FallingTub}}}\Hypertarget{union__vector_2union__vector__generated_8h_aa5a5f30acda83e39216dab6c62267cb2aff2f52e78a06cb7e8eec399d4d122c2d}\label{union__vector_2union__vector__generated_8h_aa5a5f30acda83e39216dab6c62267cb2aff2f52e78a06cb7e8eec399d4d122c2d} 
+Gadget\+\_\+\+Falling\+Tub&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Gadget\_HandFan@{Gadget\_HandFan}!union\_vector\_generated.h@{union\_vector\_generated.h}}\index{union\_vector\_generated.h@{union\_vector\_generated.h}!Gadget\_HandFan@{Gadget\_HandFan}}}\Hypertarget{union__vector_2union__vector__generated_8h_aa5a5f30acda83e39216dab6c62267cb2aa500d030cbae0f7e5a8fe3f164eb9c76}\label{union__vector_2union__vector__generated_8h_aa5a5f30acda83e39216dab6c62267cb2aa500d030cbae0f7e5a8fe3f164eb9c76} 
+Gadget\+\_\+\+Hand\+Fan&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Gadget\_MIN@{Gadget\_MIN}!union\_vector\_generated.h@{union\_vector\_generated.h}}\index{union\_vector\_generated.h@{union\_vector\_generated.h}!Gadget\_MIN@{Gadget\_MIN}}}\Hypertarget{union__vector_2union__vector__generated_8h_aa5a5f30acda83e39216dab6c62267cb2af3117b3e7bd261a266f42bda751b2e51}\label{union__vector_2union__vector__generated_8h_aa5a5f30acda83e39216dab6c62267cb2af3117b3e7bd261a266f42bda751b2e51} 
+Gadget\+\_\+\+MIN&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Gadget\_MAX@{Gadget\_MAX}!union\_vector\_generated.h@{union\_vector\_generated.h}}\index{union\_vector\_generated.h@{union\_vector\_generated.h}!Gadget\_MAX@{Gadget\_MAX}}}\Hypertarget{union__vector_2union__vector__generated_8h_aa5a5f30acda83e39216dab6c62267cb2a8a0ce08ce4fc8c4baa867fafcfdabac4}\label{union__vector_2union__vector__generated_8h_aa5a5f30acda83e39216dab6c62267cb2a8a0ce08ce4fc8c4baa867fafcfdabac4} 
+Gadget\+\_\+\+MAX&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{union__vector_2union__vector__generated_8h_a056c375ad750aa7c6c36e4f0efd1ad59}\label{union__vector_2union__vector__generated_8h_a056c375ad750aa7c6c36e4f0efd1ad59} 
+\index{union\_vector\_generated.h@{union\_vector\_generated.h}!AttackerTypeTable@{AttackerTypeTable}}
+\index{AttackerTypeTable@{AttackerTypeTable}!union\_vector\_generated.h@{union\_vector\_generated.h}}
+\doxysubsubsection{\texorpdfstring{AttackerTypeTable()}{AttackerTypeTable()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{structflatbuffers_1_1TypeTable}{\+::flatbuffers\+::\+Type\+Table}} \texorpdfstring{$\ast$}{*} Attacker\+Type\+Table (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{union__vector_2union__vector__generated_8h_a4db1165f0d0fb05d0e703056d06b3e4e}\label{union__vector_2union__vector__generated_8h_a4db1165f0d0fb05d0e703056d06b3e4e} 
+\index{union\_vector\_generated.h@{union\_vector\_generated.h}!BookReaderTypeTable@{BookReaderTypeTable}}
+\index{BookReaderTypeTable@{BookReaderTypeTable}!union\_vector\_generated.h@{union\_vector\_generated.h}}
+\doxysubsubsection{\texorpdfstring{BookReaderTypeTable()}{BookReaderTypeTable()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{structflatbuffers_1_1TypeTable}{\+::flatbuffers\+::\+Type\+Table}} \texorpdfstring{$\ast$}{*} Book\+Reader\+Type\+Table (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{union__vector_2union__vector__generated_8h_a23147d03f7e9f47d76c8145181b04255}\label{union__vector_2union__vector__generated_8h_a23147d03f7e9f47d76c8145181b04255} 
+\index{union\_vector\_generated.h@{union\_vector\_generated.h}!CharacterTypeTable@{CharacterTypeTable}}
+\index{CharacterTypeTable@{CharacterTypeTable}!union\_vector\_generated.h@{union\_vector\_generated.h}}
+\doxysubsubsection{\texorpdfstring{CharacterTypeTable()}{CharacterTypeTable()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{structflatbuffers_1_1TypeTable}{\+::flatbuffers\+::\+Type\+Table}} \texorpdfstring{$\ast$}{*} Character\+Type\+Table (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{union__vector_2union__vector__generated_8h_a46702d458c712f55586ab9b33178c38b}\label{union__vector_2union__vector__generated_8h_a46702d458c712f55586ab9b33178c38b} 
+\index{union\_vector\_generated.h@{union\_vector\_generated.h}!CreateAttacker@{CreateAttacker}}
+\index{CreateAttacker@{CreateAttacker}!union\_vector\_generated.h@{union\_vector\_generated.h}}
+\doxysubsubsection{\texorpdfstring{CreateAttacker()}{CreateAttacker()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \+::flatbuffers\+::\+Offset$<$ \mbox{\hyperlink{structAttacker}{Attacker}} $>$ Create\+Attacker (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceflatbuffers_a41ac7b1c8f5f4a869e8f649b6c171ce7}{\+::flatbuffers\+::\+Flat\+Buffer\+Builder}} \&}]{\+\_\+fbb,  }\item[{const \mbox{\hyperlink{structAttackerT}{AttackerT}} \texorpdfstring{$\ast$}{*}}]{\+\_\+o,  }\item[{const \mbox{\hyperlink{namespaceflatbuffers_a1a147f1b586c9e452c48e10c3121ed7a}{\+::flatbuffers\+::rehasher\+\_\+function\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{\+\_\+rehasher = {\ttfamily nullptr} }\end{DoxyParamCaption})}
+
+\Hypertarget{union__vector_2union__vector__generated_8h_ae541725eb019932a87d4571f569ce216}\label{union__vector_2union__vector__generated_8h_ae541725eb019932a87d4571f569ce216} 
+\index{union\_vector\_generated.h@{union\_vector\_generated.h}!CreateAttacker@{CreateAttacker}}
+\index{CreateAttacker@{CreateAttacker}!union\_vector\_generated.h@{union\_vector\_generated.h}}
+\doxysubsubsection{\texorpdfstring{CreateAttacker()}{CreateAttacker()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily inline \+::flatbuffers\+::\+Offset$<$ \mbox{\hyperlink{structAttacker}{Attacker}} $>$ Create\+Attacker (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceflatbuffers_a41ac7b1c8f5f4a869e8f649b6c171ce7}{\+::flatbuffers\+::\+Flat\+Buffer\+Builder}} \&}]{\+\_\+fbb,  }\item[{int32\+\_\+t}]{sword\+\_\+attack\+\_\+damage = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+\Hypertarget{union__vector_2union__vector__generated_8h_a8c90c76ca4047a1879e3a9e8cd9539c1}\label{union__vector_2union__vector__generated_8h_a8c90c76ca4047a1879e3a9e8cd9539c1} 
+\index{union\_vector\_generated.h@{union\_vector\_generated.h}!CreateHandFan@{CreateHandFan}}
+\index{CreateHandFan@{CreateHandFan}!union\_vector\_generated.h@{union\_vector\_generated.h}}
+\doxysubsubsection{\texorpdfstring{CreateHandFan()}{CreateHandFan()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \+::flatbuffers\+::\+Offset$<$ \mbox{\hyperlink{structHandFan}{Hand\+Fan}} $>$ Create\+Hand\+Fan (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceflatbuffers_a41ac7b1c8f5f4a869e8f649b6c171ce7}{\+::flatbuffers\+::\+Flat\+Buffer\+Builder}} \&}]{\+\_\+fbb,  }\item[{const \mbox{\hyperlink{structHandFanT}{Hand\+FanT}} \texorpdfstring{$\ast$}{*}}]{\+\_\+o,  }\item[{const \mbox{\hyperlink{namespaceflatbuffers_a1a147f1b586c9e452c48e10c3121ed7a}{\+::flatbuffers\+::rehasher\+\_\+function\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{\+\_\+rehasher = {\ttfamily nullptr} }\end{DoxyParamCaption})}
+
+\Hypertarget{union__vector_2union__vector__generated_8h_af538f30d6459b581119fe08324fffa18}\label{union__vector_2union__vector__generated_8h_af538f30d6459b581119fe08324fffa18} 
+\index{union\_vector\_generated.h@{union\_vector\_generated.h}!CreateHandFan@{CreateHandFan}}
+\index{CreateHandFan@{CreateHandFan}!union\_vector\_generated.h@{union\_vector\_generated.h}}
+\doxysubsubsection{\texorpdfstring{CreateHandFan()}{CreateHandFan()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily inline \+::flatbuffers\+::\+Offset$<$ \mbox{\hyperlink{structHandFan}{Hand\+Fan}} $>$ Create\+Hand\+Fan (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceflatbuffers_a41ac7b1c8f5f4a869e8f649b6c171ce7}{\+::flatbuffers\+::\+Flat\+Buffer\+Builder}} \&}]{\+\_\+fbb,  }\item[{int32\+\_\+t}]{length = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+\Hypertarget{union__vector_2union__vector__generated_8h_a806cc089b5c6cbe18dc1526ea1893c88}\label{union__vector_2union__vector__generated_8h_a806cc089b5c6cbe18dc1526ea1893c88} 
+\index{union\_vector\_generated.h@{union\_vector\_generated.h}!CreateMovie@{CreateMovie}}
+\index{CreateMovie@{CreateMovie}!union\_vector\_generated.h@{union\_vector\_generated.h}}
+\doxysubsubsection{\texorpdfstring{CreateMovie()}{CreateMovie()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily inline \+::flatbuffers\+::\+Offset$<$ \mbox{\hyperlink{structMovie}{Movie}} $>$ Create\+Movie (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceflatbuffers_a41ac7b1c8f5f4a869e8f649b6c171ce7}{\+::flatbuffers\+::\+Flat\+Buffer\+Builder}} \&}]{\+\_\+fbb,  }\item[{\mbox{\hyperlink{classCharacter}{Character}}}]{main\+\_\+character\+\_\+type = {\ttfamily \mbox{\hyperlink{union__vector_2union__vector__generated_8h_a610a708620f190d988395dd925897f91aa2ae0dc5168f5aa2b47680357633b395}{Character\+\_\+\+NONE}}},  }\item[{\+::flatbuffers\+::\+Offset$<$ void $>$}]{main\+\_\+character = {\ttfamily 0},  }\item[{\+::flatbuffers\+::\+Offset$<$\mbox{\hyperlink{classflatbuffers_1_1Vector}{\+::flatbuffers\+::\+Vector}}$<$ uint8\+\_\+t $>$ $>$}]{characters\+\_\+type = {\ttfamily 0},  }\item[{\+::flatbuffers\+::\+Offset$<$\mbox{\hyperlink{classflatbuffers_1_1Vector}{\+::flatbuffers\+::\+Vector}}$<$\+::flatbuffers\+::\+Offset$<$ void $>$ $>$ $>$}]{characters = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+\Hypertarget{union__vector_2union__vector__generated_8h_a57707c9a909d6821ab5e67c1f5beec8c}\label{union__vector_2union__vector__generated_8h_a57707c9a909d6821ab5e67c1f5beec8c} 
+\index{union\_vector\_generated.h@{union\_vector\_generated.h}!CreateMovie@{CreateMovie}}
+\index{CreateMovie@{CreateMovie}!union\_vector\_generated.h@{union\_vector\_generated.h}}
+\doxysubsubsection{\texorpdfstring{CreateMovie()}{CreateMovie()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \+::flatbuffers\+::\+Offset$<$ \mbox{\hyperlink{structMovie}{Movie}} $>$ Create\+Movie (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceflatbuffers_a41ac7b1c8f5f4a869e8f649b6c171ce7}{\+::flatbuffers\+::\+Flat\+Buffer\+Builder}} \&}]{\+\_\+fbb,  }\item[{const \mbox{\hyperlink{structMovieT}{MovieT}} \texorpdfstring{$\ast$}{*}}]{\+\_\+o,  }\item[{const \mbox{\hyperlink{namespaceflatbuffers_a1a147f1b586c9e452c48e10c3121ed7a}{\+::flatbuffers\+::rehasher\+\_\+function\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{\+\_\+rehasher = {\ttfamily nullptr} }\end{DoxyParamCaption})}
+
+\Hypertarget{union__vector_2union__vector__generated_8h_a6fbc1e20d5cb54c2f4a2504e89426d93}\label{union__vector_2union__vector__generated_8h_a6fbc1e20d5cb54c2f4a2504e89426d93} 
+\index{union\_vector\_generated.h@{union\_vector\_generated.h}!CreateMovieDirect@{CreateMovieDirect}}
+\index{CreateMovieDirect@{CreateMovieDirect}!union\_vector\_generated.h@{union\_vector\_generated.h}}
+\doxysubsubsection{\texorpdfstring{CreateMovieDirect()}{CreateMovieDirect()}}
+{\footnotesize\ttfamily inline \+::flatbuffers\+::\+Offset$<$ \mbox{\hyperlink{structMovie}{Movie}} $>$ Create\+Movie\+Direct (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceflatbuffers_a41ac7b1c8f5f4a869e8f649b6c171ce7}{\+::flatbuffers\+::\+Flat\+Buffer\+Builder}} \&}]{\+\_\+fbb,  }\item[{\mbox{\hyperlink{classCharacter}{Character}}}]{main\+\_\+character\+\_\+type = {\ttfamily \mbox{\hyperlink{union__vector_2union__vector__generated_8h_a610a708620f190d988395dd925897f91aa2ae0dc5168f5aa2b47680357633b395}{Character\+\_\+\+NONE}}},  }\item[{\+::flatbuffers\+::\+Offset$<$ void $>$}]{main\+\_\+character = {\ttfamily 0},  }\item[{const std\+::vector$<$ uint8\+\_\+t $>$ \texorpdfstring{$\ast$}{*}}]{characters\+\_\+type = {\ttfamily nullptr},  }\item[{const std\+::vector$<$\+::flatbuffers\+::\+Offset$<$ void $>$ $>$ \texorpdfstring{$\ast$}{*}}]{characters = {\ttfamily nullptr} }\end{DoxyParamCaption})}
+
+\Hypertarget{union__vector_2union__vector__generated_8h_a5c1ebe4448567e495d898a97c3674b3f}\label{union__vector_2union__vector__generated_8h_a5c1ebe4448567e495d898a97c3674b3f} 
+\index{union\_vector\_generated.h@{union\_vector\_generated.h}!EnumNameCharacter@{EnumNameCharacter}}
+\index{EnumNameCharacter@{EnumNameCharacter}!union\_vector\_generated.h@{union\_vector\_generated.h}}
+\doxysubsubsection{\texorpdfstring{EnumNameCharacter()}{EnumNameCharacter()}}
+{\footnotesize\ttfamily const char \texorpdfstring{$\ast$}{*} Enum\+Name\+Character (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classCharacter}{Character}}}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{union__vector_2union__vector__generated_8h_abd49b381a88773a10f84dbf03c87517a}\label{union__vector_2union__vector__generated_8h_abd49b381a88773a10f84dbf03c87517a} 
+\index{union\_vector\_generated.h@{union\_vector\_generated.h}!EnumNameGadget@{EnumNameGadget}}
+\index{EnumNameGadget@{EnumNameGadget}!union\_vector\_generated.h@{union\_vector\_generated.h}}
+\doxysubsubsection{\texorpdfstring{EnumNameGadget()}{EnumNameGadget()}}
+{\footnotesize\ttfamily const char \texorpdfstring{$\ast$}{*} Enum\+Name\+Gadget (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classGadget}{Gadget}}}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{union__vector_2union__vector__generated_8h_af37b97e5754fbf36b6899584e9185f54}\label{union__vector_2union__vector__generated_8h_af37b97e5754fbf36b6899584e9185f54} 
+\index{union\_vector\_generated.h@{union\_vector\_generated.h}!EnumNamesCharacter@{EnumNamesCharacter}}
+\index{EnumNamesCharacter@{EnumNamesCharacter}!union\_vector\_generated.h@{union\_vector\_generated.h}}
+\doxysubsubsection{\texorpdfstring{EnumNamesCharacter()}{EnumNamesCharacter()}}
+{\footnotesize\ttfamily const char \texorpdfstring{$\ast$}{*}const  \texorpdfstring{$\ast$}{*} Enum\+Names\+Character (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{union__vector_2union__vector__generated_8h_ab051296915339c60d91538dd1d058da5}\label{union__vector_2union__vector__generated_8h_ab051296915339c60d91538dd1d058da5} 
+\index{union\_vector\_generated.h@{union\_vector\_generated.h}!EnumNamesGadget@{EnumNamesGadget}}
+\index{EnumNamesGadget@{EnumNamesGadget}!union\_vector\_generated.h@{union\_vector\_generated.h}}
+\doxysubsubsection{\texorpdfstring{EnumNamesGadget()}{EnumNamesGadget()}}
+{\footnotesize\ttfamily const char \texorpdfstring{$\ast$}{*}const  \texorpdfstring{$\ast$}{*} Enum\+Names\+Gadget (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{union__vector_2union__vector__generated_8h_a807ac7b055ae510678f55440b1748318}\label{union__vector_2union__vector__generated_8h_a807ac7b055ae510678f55440b1748318} 
+\index{union\_vector\_generated.h@{union\_vector\_generated.h}!EnumValuesCharacter@{EnumValuesCharacter}}
+\index{EnumValuesCharacter@{EnumValuesCharacter}!union\_vector\_generated.h@{union\_vector\_generated.h}}
+\doxysubsubsection{\texorpdfstring{EnumValuesCharacter()}{EnumValuesCharacter()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{classCharacter}{Character}}(\& Enum\+Values\+Character (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}))\mbox{[}7\mbox{]}\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{union__vector_2union__vector__generated_8h_ae5f692a6c4c35762fef2317704ad89bf}\label{union__vector_2union__vector__generated_8h_ae5f692a6c4c35762fef2317704ad89bf} 
+\index{union\_vector\_generated.h@{union\_vector\_generated.h}!EnumValuesGadget@{EnumValuesGadget}}
+\index{EnumValuesGadget@{EnumValuesGadget}!union\_vector\_generated.h@{union\_vector\_generated.h}}
+\doxysubsubsection{\texorpdfstring{EnumValuesGadget()}{EnumValuesGadget()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{classGadget}{Gadget}}(\& Enum\+Values\+Gadget (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}))\mbox{[}3\mbox{]}\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{union__vector_2union__vector__generated_8h_a01000185ef5cfe14be54a1f8e471ad55}\label{union__vector_2union__vector__generated_8h_a01000185ef5cfe14be54a1f8e471ad55} 
+\index{union\_vector\_generated.h@{union\_vector\_generated.h}!FallingTubTypeTable@{FallingTubTypeTable}}
+\index{FallingTubTypeTable@{FallingTubTypeTable}!union\_vector\_generated.h@{union\_vector\_generated.h}}
+\doxysubsubsection{\texorpdfstring{FallingTubTypeTable()}{FallingTubTypeTable()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{structflatbuffers_1_1TypeTable}{\+::flatbuffers\+::\+Type\+Table}} \texorpdfstring{$\ast$}{*} Falling\+Tub\+Type\+Table (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{union__vector_2union__vector__generated_8h_ac1748f19789bd5d5e1ced742c5828838}\label{union__vector_2union__vector__generated_8h_ac1748f19789bd5d5e1ced742c5828838} 
+\index{union\_vector\_generated.h@{union\_vector\_generated.h}!FinishMovieBuffer@{FinishMovieBuffer}}
+\index{FinishMovieBuffer@{FinishMovieBuffer}!union\_vector\_generated.h@{union\_vector\_generated.h}}
+\doxysubsubsection{\texorpdfstring{FinishMovieBuffer()}{FinishMovieBuffer()}}
+{\footnotesize\ttfamily void Finish\+Movie\+Buffer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceflatbuffers_a41ac7b1c8f5f4a869e8f649b6c171ce7}{\+::flatbuffers\+::\+Flat\+Buffer\+Builder}} \&}]{fbb,  }\item[{\+::flatbuffers\+::\+Offset$<$ \mbox{\hyperlink{structMovie}{Movie}} $>$}]{root }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{union__vector_2union__vector__generated_8h_ac5906aa3657fa765bb4f2252c0b1a816}\label{union__vector_2union__vector__generated_8h_ac5906aa3657fa765bb4f2252c0b1a816} 
+\index{union\_vector\_generated.h@{union\_vector\_generated.h}!FinishSizePrefixedMovieBuffer@{FinishSizePrefixedMovieBuffer}}
+\index{FinishSizePrefixedMovieBuffer@{FinishSizePrefixedMovieBuffer}!union\_vector\_generated.h@{union\_vector\_generated.h}}
+\doxysubsubsection{\texorpdfstring{FinishSizePrefixedMovieBuffer()}{FinishSizePrefixedMovieBuffer()}}
+{\footnotesize\ttfamily void Finish\+Size\+Prefixed\+Movie\+Buffer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceflatbuffers_a41ac7b1c8f5f4a869e8f649b6c171ce7}{\+::flatbuffers\+::\+Flat\+Buffer\+Builder}} \&}]{fbb,  }\item[{\+::flatbuffers\+::\+Offset$<$ \mbox{\hyperlink{structMovie}{Movie}} $>$}]{root }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{union__vector_2union__vector__generated_8h_a92ba1eff8b6ab2bc6db0488b3b118c5c}\label{union__vector_2union__vector__generated_8h_a92ba1eff8b6ab2bc6db0488b3b118c5c} 
+\index{union\_vector\_generated.h@{union\_vector\_generated.h}!FLATBUFFERS\_MANUALLY\_ALIGNED\_STRUCT@{FLATBUFFERS\_MANUALLY\_ALIGNED\_STRUCT}}
+\index{FLATBUFFERS\_MANUALLY\_ALIGNED\_STRUCT@{FLATBUFFERS\_MANUALLY\_ALIGNED\_STRUCT}!union\_vector\_generated.h@{union\_vector\_generated.h}}
+\doxysubsubsection{\texorpdfstring{FLATBUFFERS\_MANUALLY\_ALIGNED\_STRUCT()}{FLATBUFFERS\_MANUALLY\_ALIGNED\_STRUCT()}}
+{\footnotesize\ttfamily FLATBUFFERS\+\_\+\+MANUALLY\+\_\+\+ALIGNED\+\_\+\+STRUCT (\begin{DoxyParamCaption}\item[{4}]{ }\end{DoxyParamCaption})}
+
+\Hypertarget{union__vector_2union__vector__generated_8h_a3c60c423e136fad0da8bdf6f9a18e8e6}\label{union__vector_2union__vector__generated_8h_a3c60c423e136fad0da8bdf6f9a18e8e6} 
+\index{union\_vector\_generated.h@{union\_vector\_generated.h}!FLATBUFFERS\_STRUCT\_END@{FLATBUFFERS\_STRUCT\_END}}
+\index{FLATBUFFERS\_STRUCT\_END@{FLATBUFFERS\_STRUCT\_END}!union\_vector\_generated.h@{union\_vector\_generated.h}}
+\doxysubsubsection{\texorpdfstring{FLATBUFFERS\_STRUCT\_END()}{FLATBUFFERS\_STRUCT\_END()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily FLATBUFFERS\+\_\+\+STRUCT\+\_\+\+END (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structBookReader}{Book\+Reader}}}]{,  }\item[{4}]{ }\end{DoxyParamCaption})}
+
+\Hypertarget{union__vector_2union__vector__generated_8h_a6e5e537be81af040d68c6eb89981f7f6}\label{union__vector_2union__vector__generated_8h_a6e5e537be81af040d68c6eb89981f7f6} 
+\index{union\_vector\_generated.h@{union\_vector\_generated.h}!FLATBUFFERS\_STRUCT\_END@{FLATBUFFERS\_STRUCT\_END}}
+\index{FLATBUFFERS\_STRUCT\_END@{FLATBUFFERS\_STRUCT\_END}!union\_vector\_generated.h@{union\_vector\_generated.h}}
+\doxysubsubsection{\texorpdfstring{FLATBUFFERS\_STRUCT\_END()}{FLATBUFFERS\_STRUCT\_END()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily FLATBUFFERS\+\_\+\+STRUCT\+\_\+\+END (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structFallingTub}{Falling\+Tub}}}]{,  }\item[{4}]{ }\end{DoxyParamCaption})}
+
+\Hypertarget{union__vector_2union__vector__generated_8h_aa02956c4d08199089a69603526eb85b6}\label{union__vector_2union__vector__generated_8h_aa02956c4d08199089a69603526eb85b6} 
+\index{union\_vector\_generated.h@{union\_vector\_generated.h}!FLATBUFFERS\_STRUCT\_END@{FLATBUFFERS\_STRUCT\_END}}
+\index{FLATBUFFERS\_STRUCT\_END@{FLATBUFFERS\_STRUCT\_END}!union\_vector\_generated.h@{union\_vector\_generated.h}}
+\doxysubsubsection{\texorpdfstring{FLATBUFFERS\_STRUCT\_END()}{FLATBUFFERS\_STRUCT\_END()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily FLATBUFFERS\+\_\+\+STRUCT\+\_\+\+END (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structRapunzel}{Rapunzel}}}]{,  }\item[{4}]{ }\end{DoxyParamCaption})}
+
+\Hypertarget{union__vector_2union__vector__generated_8h_a0938633f478428c97981836f9b582cdb}\label{union__vector_2union__vector__generated_8h_a0938633f478428c97981836f9b582cdb} 
+\index{union\_vector\_generated.h@{union\_vector\_generated.h}!GadgetTypeTable@{GadgetTypeTable}}
+\index{GadgetTypeTable@{GadgetTypeTable}!union\_vector\_generated.h@{union\_vector\_generated.h}}
+\doxysubsubsection{\texorpdfstring{GadgetTypeTable()}{GadgetTypeTable()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{structflatbuffers_1_1TypeTable}{\+::flatbuffers\+::\+Type\+Table}} \texorpdfstring{$\ast$}{*} Gadget\+Type\+Table (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{union__vector_2union__vector__generated_8h_a75f8f1be8c97b8e77bfd291b06a939db}\label{union__vector_2union__vector__generated_8h_a75f8f1be8c97b8e77bfd291b06a939db} 
+\index{union\_vector\_generated.h@{union\_vector\_generated.h}!GetMovie@{GetMovie}}
+\index{GetMovie@{GetMovie}!union\_vector\_generated.h@{union\_vector\_generated.h}}
+\doxysubsubsection{\texorpdfstring{GetMovie()}{GetMovie()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{structMovie}{Movie}} \texorpdfstring{$\ast$}{*} Get\+Movie (\begin{DoxyParamCaption}\item[{const void \texorpdfstring{$\ast$}{*}}]{buf }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{union__vector_2union__vector__generated_8h_aeaa11c49f4483c61c2fc5732d1da6924}\label{union__vector_2union__vector__generated_8h_aeaa11c49f4483c61c2fc5732d1da6924} 
+\index{union\_vector\_generated.h@{union\_vector\_generated.h}!GetMutableMovie@{GetMutableMovie}}
+\index{GetMutableMovie@{GetMutableMovie}!union\_vector\_generated.h@{union\_vector\_generated.h}}
+\doxysubsubsection{\texorpdfstring{GetMutableMovie()}{GetMutableMovie()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structMovie}{Movie}} \texorpdfstring{$\ast$}{*} Get\+Mutable\+Movie (\begin{DoxyParamCaption}\item[{void \texorpdfstring{$\ast$}{*}}]{buf }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{union__vector_2union__vector__generated_8h_a696e13491a060dd885ffaf4f3f031ec3}\label{union__vector_2union__vector__generated_8h_a696e13491a060dd885ffaf4f3f031ec3} 
+\index{union\_vector\_generated.h@{union\_vector\_generated.h}!GetMutableSizePrefixedMovie@{GetMutableSizePrefixedMovie}}
+\index{GetMutableSizePrefixedMovie@{GetMutableSizePrefixedMovie}!union\_vector\_generated.h@{union\_vector\_generated.h}}
+\doxysubsubsection{\texorpdfstring{GetMutableSizePrefixedMovie()}{GetMutableSizePrefixedMovie()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structMovie}{Movie}} \texorpdfstring{$\ast$}{*} Get\+Mutable\+Size\+Prefixed\+Movie (\begin{DoxyParamCaption}\item[{void \texorpdfstring{$\ast$}{*}}]{buf }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{union__vector_2union__vector__generated_8h_afeee073fb634b6e52af5c976e36fa699}\label{union__vector_2union__vector__generated_8h_afeee073fb634b6e52af5c976e36fa699} 
+\index{union\_vector\_generated.h@{union\_vector\_generated.h}!GetSizePrefixedMovie@{GetSizePrefixedMovie}}
+\index{GetSizePrefixedMovie@{GetSizePrefixedMovie}!union\_vector\_generated.h@{union\_vector\_generated.h}}
+\doxysubsubsection{\texorpdfstring{GetSizePrefixedMovie()}{GetSizePrefixedMovie()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{structMovie}{Movie}} \texorpdfstring{$\ast$}{*} Get\+Size\+Prefixed\+Movie (\begin{DoxyParamCaption}\item[{const void \texorpdfstring{$\ast$}{*}}]{buf }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{union__vector_2union__vector__generated_8h_afa52d18537fe2d4b0fee4b8e38d43eb5}\label{union__vector_2union__vector__generated_8h_afa52d18537fe2d4b0fee4b8e38d43eb5} 
+\index{union\_vector\_generated.h@{union\_vector\_generated.h}!HandFanTypeTable@{HandFanTypeTable}}
+\index{HandFanTypeTable@{HandFanTypeTable}!union\_vector\_generated.h@{union\_vector\_generated.h}}
+\doxysubsubsection{\texorpdfstring{HandFanTypeTable()}{HandFanTypeTable()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{structflatbuffers_1_1TypeTable}{\+::flatbuffers\+::\+Type\+Table}} \texorpdfstring{$\ast$}{*} Hand\+Fan\+Type\+Table (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{union__vector_2union__vector__generated_8h_a91b75fdac2bd29738b6257e0b0fe4369}\label{union__vector_2union__vector__generated_8h_a91b75fdac2bd29738b6257e0b0fe4369} 
+\index{union\_vector\_generated.h@{union\_vector\_generated.h}!MovieBufferHasIdentifier@{MovieBufferHasIdentifier}}
+\index{MovieBufferHasIdentifier@{MovieBufferHasIdentifier}!union\_vector\_generated.h@{union\_vector\_generated.h}}
+\doxysubsubsection{\texorpdfstring{MovieBufferHasIdentifier()}{MovieBufferHasIdentifier()}}
+{\footnotesize\ttfamily bool Movie\+Buffer\+Has\+Identifier (\begin{DoxyParamCaption}\item[{const void \texorpdfstring{$\ast$}{*}}]{buf }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{union__vector_2union__vector__generated_8h_a6d271d745615061b96a124a903ce2e29}\label{union__vector_2union__vector__generated_8h_a6d271d745615061b96a124a903ce2e29} 
+\index{union\_vector\_generated.h@{union\_vector\_generated.h}!MovieIdentifier@{MovieIdentifier}}
+\index{MovieIdentifier@{MovieIdentifier}!union\_vector\_generated.h@{union\_vector\_generated.h}}
+\doxysubsubsection{\texorpdfstring{MovieIdentifier()}{MovieIdentifier()}}
+{\footnotesize\ttfamily const char \texorpdfstring{$\ast$}{*} Movie\+Identifier (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{union__vector_2union__vector__generated_8h_a8a476a3507627c5b78b343eb20890331}\label{union__vector_2union__vector__generated_8h_a8a476a3507627c5b78b343eb20890331} 
+\index{union\_vector\_generated.h@{union\_vector\_generated.h}!MovieTypeTable@{MovieTypeTable}}
+\index{MovieTypeTable@{MovieTypeTable}!union\_vector\_generated.h@{union\_vector\_generated.h}}
+\doxysubsubsection{\texorpdfstring{MovieTypeTable()}{MovieTypeTable()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{structflatbuffers_1_1TypeTable}{\+::flatbuffers\+::\+Type\+Table}} \texorpdfstring{$\ast$}{*} Movie\+Type\+Table (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{union__vector_2union__vector__generated_8h_abcdb7127ccecb61fada05b3c4381d21d}\label{union__vector_2union__vector__generated_8h_abcdb7127ccecb61fada05b3c4381d21d} 
+\index{union\_vector\_generated.h@{union\_vector\_generated.h}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!union\_vector\_generated.h@{union\_vector\_generated.h}}
+\doxysubsubsection{\texorpdfstring{operator"!=()}{operator!=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/8]}}
+{\footnotesize\ttfamily bool operator!= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structAttackerT}{AttackerT}} \&}]{lhs,  }\item[{const \mbox{\hyperlink{structAttackerT}{AttackerT}} \&}]{rhs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{union__vector_2union__vector__generated_8h_a9548ab57786d2fb0ae25603379bd27b5}\label{union__vector_2union__vector__generated_8h_a9548ab57786d2fb0ae25603379bd27b5} 
+\index{union\_vector\_generated.h@{union\_vector\_generated.h}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!union\_vector\_generated.h@{union\_vector\_generated.h}}
+\doxysubsubsection{\texorpdfstring{operator"!=()}{operator!=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/8]}}
+{\footnotesize\ttfamily bool operator!= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structBookReader}{Book\+Reader}} \&}]{lhs,  }\item[{const \mbox{\hyperlink{structBookReader}{Book\+Reader}} \&}]{rhs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{union__vector_2union__vector__generated_8h_a37c41bd45673dd1f497a46387a0ebd4f}\label{union__vector_2union__vector__generated_8h_a37c41bd45673dd1f497a46387a0ebd4f} 
+\index{union\_vector\_generated.h@{union\_vector\_generated.h}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!union\_vector\_generated.h@{union\_vector\_generated.h}}
+\doxysubsubsection{\texorpdfstring{operator"!=()}{operator!=()}\hspace{0.1cm}{\footnotesize\ttfamily [3/8]}}
+{\footnotesize\ttfamily bool operator!= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structCharacterUnion}{Character\+Union}} \&}]{lhs,  }\item[{const \mbox{\hyperlink{structCharacterUnion}{Character\+Union}} \&}]{rhs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{union__vector_2union__vector__generated_8h_a5977b7591442cf136a2b69f385883e85}\label{union__vector_2union__vector__generated_8h_a5977b7591442cf136a2b69f385883e85} 
+\index{union\_vector\_generated.h@{union\_vector\_generated.h}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!union\_vector\_generated.h@{union\_vector\_generated.h}}
+\doxysubsubsection{\texorpdfstring{operator"!=()}{operator!=()}\hspace{0.1cm}{\footnotesize\ttfamily [4/8]}}
+{\footnotesize\ttfamily bool operator!= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structFallingTub}{Falling\+Tub}} \&}]{lhs,  }\item[{const \mbox{\hyperlink{structFallingTub}{Falling\+Tub}} \&}]{rhs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{union__vector_2union__vector__generated_8h_af3b5172c190ab868f7b5dab43c4da4e8}\label{union__vector_2union__vector__generated_8h_af3b5172c190ab868f7b5dab43c4da4e8} 
+\index{union\_vector\_generated.h@{union\_vector\_generated.h}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!union\_vector\_generated.h@{union\_vector\_generated.h}}
+\doxysubsubsection{\texorpdfstring{operator"!=()}{operator!=()}\hspace{0.1cm}{\footnotesize\ttfamily [5/8]}}
+{\footnotesize\ttfamily bool operator!= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structGadgetUnion}{Gadget\+Union}} \&}]{lhs,  }\item[{const \mbox{\hyperlink{structGadgetUnion}{Gadget\+Union}} \&}]{rhs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{union__vector_2union__vector__generated_8h_a3e0c868513cfd986cc66e40db79f7dcf}\label{union__vector_2union__vector__generated_8h_a3e0c868513cfd986cc66e40db79f7dcf} 
+\index{union\_vector\_generated.h@{union\_vector\_generated.h}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!union\_vector\_generated.h@{union\_vector\_generated.h}}
+\doxysubsubsection{\texorpdfstring{operator"!=()}{operator!=()}\hspace{0.1cm}{\footnotesize\ttfamily [6/8]}}
+{\footnotesize\ttfamily bool operator!= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structHandFanT}{Hand\+FanT}} \&}]{lhs,  }\item[{const \mbox{\hyperlink{structHandFanT}{Hand\+FanT}} \&}]{rhs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{union__vector_2union__vector__generated_8h_a37cbdef199047bc6cd8d0305cd69af75}\label{union__vector_2union__vector__generated_8h_a37cbdef199047bc6cd8d0305cd69af75} 
+\index{union\_vector\_generated.h@{union\_vector\_generated.h}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!union\_vector\_generated.h@{union\_vector\_generated.h}}
+\doxysubsubsection{\texorpdfstring{operator"!=()}{operator!=()}\hspace{0.1cm}{\footnotesize\ttfamily [7/8]}}
+{\footnotesize\ttfamily bool operator!= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structMovieT}{MovieT}} \&}]{lhs,  }\item[{const \mbox{\hyperlink{structMovieT}{MovieT}} \&}]{rhs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{union__vector_2union__vector__generated_8h_a675afdf6c0fd1192d3015ee3fbb37c01}\label{union__vector_2union__vector__generated_8h_a675afdf6c0fd1192d3015ee3fbb37c01} 
+\index{union\_vector\_generated.h@{union\_vector\_generated.h}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!union\_vector\_generated.h@{union\_vector\_generated.h}}
+\doxysubsubsection{\texorpdfstring{operator"!=()}{operator!=()}\hspace{0.1cm}{\footnotesize\ttfamily [8/8]}}
+{\footnotesize\ttfamily bool operator!= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structRapunzel}{Rapunzel}} \&}]{lhs,  }\item[{const \mbox{\hyperlink{structRapunzel}{Rapunzel}} \&}]{rhs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{union__vector_2union__vector__generated_8h_a8f69f7890cddb64dbb2635e96084e0b2}\label{union__vector_2union__vector__generated_8h_a8f69f7890cddb64dbb2635e96084e0b2} 
+\index{union\_vector\_generated.h@{union\_vector\_generated.h}!operator==@{operator==}}
+\index{operator==@{operator==}!union\_vector\_generated.h@{union\_vector\_generated.h}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}\hspace{0.1cm}{\footnotesize\ttfamily [1/8]}}
+{\footnotesize\ttfamily bool operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structAttackerT}{AttackerT}} \&}]{lhs,  }\item[{const \mbox{\hyperlink{structAttackerT}{AttackerT}} \&}]{rhs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{union__vector_2union__vector__generated_8h_a204bc394513b2127511369aba1ae3d11}\label{union__vector_2union__vector__generated_8h_a204bc394513b2127511369aba1ae3d11} 
+\index{union\_vector\_generated.h@{union\_vector\_generated.h}!operator==@{operator==}}
+\index{operator==@{operator==}!union\_vector\_generated.h@{union\_vector\_generated.h}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}\hspace{0.1cm}{\footnotesize\ttfamily [2/8]}}
+{\footnotesize\ttfamily bool operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structBookReader}{Book\+Reader}} \&}]{lhs,  }\item[{const \mbox{\hyperlink{structBookReader}{Book\+Reader}} \&}]{rhs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{union__vector_2union__vector__generated_8h_a1b839a7d5a0ca09cdfd4bd9e76e7b37c}\label{union__vector_2union__vector__generated_8h_a1b839a7d5a0ca09cdfd4bd9e76e7b37c} 
+\index{union\_vector\_generated.h@{union\_vector\_generated.h}!operator==@{operator==}}
+\index{operator==@{operator==}!union\_vector\_generated.h@{union\_vector\_generated.h}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}\hspace{0.1cm}{\footnotesize\ttfamily [3/8]}}
+{\footnotesize\ttfamily bool operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structCharacterUnion}{Character\+Union}} \&}]{lhs,  }\item[{const \mbox{\hyperlink{structCharacterUnion}{Character\+Union}} \&}]{rhs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{union__vector_2union__vector__generated_8h_a37916cc32912d2ef5586abed43e3e5ce}\label{union__vector_2union__vector__generated_8h_a37916cc32912d2ef5586abed43e3e5ce} 
+\index{union\_vector\_generated.h@{union\_vector\_generated.h}!operator==@{operator==}}
+\index{operator==@{operator==}!union\_vector\_generated.h@{union\_vector\_generated.h}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}\hspace{0.1cm}{\footnotesize\ttfamily [4/8]}}
+{\footnotesize\ttfamily bool operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structFallingTub}{Falling\+Tub}} \&}]{lhs,  }\item[{const \mbox{\hyperlink{structFallingTub}{Falling\+Tub}} \&}]{rhs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{union__vector_2union__vector__generated_8h_a708aee5ff6f84e5f4ca436cd6f669683}\label{union__vector_2union__vector__generated_8h_a708aee5ff6f84e5f4ca436cd6f669683} 
+\index{union\_vector\_generated.h@{union\_vector\_generated.h}!operator==@{operator==}}
+\index{operator==@{operator==}!union\_vector\_generated.h@{union\_vector\_generated.h}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}\hspace{0.1cm}{\footnotesize\ttfamily [5/8]}}
+{\footnotesize\ttfamily bool operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structGadgetUnion}{Gadget\+Union}} \&}]{lhs,  }\item[{const \mbox{\hyperlink{structGadgetUnion}{Gadget\+Union}} \&}]{rhs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{union__vector_2union__vector__generated_8h_aee126b8ec639c9b22d8f2d6d44e4cb88}\label{union__vector_2union__vector__generated_8h_aee126b8ec639c9b22d8f2d6d44e4cb88} 
+\index{union\_vector\_generated.h@{union\_vector\_generated.h}!operator==@{operator==}}
+\index{operator==@{operator==}!union\_vector\_generated.h@{union\_vector\_generated.h}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}\hspace{0.1cm}{\footnotesize\ttfamily [6/8]}}
+{\footnotesize\ttfamily bool operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structHandFanT}{Hand\+FanT}} \&}]{lhs,  }\item[{const \mbox{\hyperlink{structHandFanT}{Hand\+FanT}} \&}]{rhs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{union__vector_2union__vector__generated_8h_a1d712197a5d100d5aee28e5c29fe45d9}\label{union__vector_2union__vector__generated_8h_a1d712197a5d100d5aee28e5c29fe45d9} 
+\index{union\_vector\_generated.h@{union\_vector\_generated.h}!operator==@{operator==}}
+\index{operator==@{operator==}!union\_vector\_generated.h@{union\_vector\_generated.h}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}\hspace{0.1cm}{\footnotesize\ttfamily [7/8]}}
+{\footnotesize\ttfamily bool operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structMovieT}{MovieT}} \&}]{lhs,  }\item[{const \mbox{\hyperlink{structMovieT}{MovieT}} \&}]{rhs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{union__vector_2union__vector__generated_8h_ae149284b979c76f3ae53010709c31af4}\label{union__vector_2union__vector__generated_8h_ae149284b979c76f3ae53010709c31af4} 
+\index{union\_vector\_generated.h@{union\_vector\_generated.h}!operator==@{operator==}}
+\index{operator==@{operator==}!union\_vector\_generated.h@{union\_vector\_generated.h}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}\hspace{0.1cm}{\footnotesize\ttfamily [8/8]}}
+{\footnotesize\ttfamily bool operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structRapunzel}{Rapunzel}} \&}]{lhs,  }\item[{const \mbox{\hyperlink{structRapunzel}{Rapunzel}} \&}]{rhs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{union__vector_2union__vector__generated_8h_a92be7d5fe84ca16212a24269c1b8aaa9}\label{union__vector_2union__vector__generated_8h_a92be7d5fe84ca16212a24269c1b8aaa9} 
+\index{union\_vector\_generated.h@{union\_vector\_generated.h}!RapunzelTypeTable@{RapunzelTypeTable}}
+\index{RapunzelTypeTable@{RapunzelTypeTable}!union\_vector\_generated.h@{union\_vector\_generated.h}}
+\doxysubsubsection{\texorpdfstring{RapunzelTypeTable()}{RapunzelTypeTable()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{structflatbuffers_1_1TypeTable}{\+::flatbuffers\+::\+Type\+Table}} \texorpdfstring{$\ast$}{*} Rapunzel\+Type\+Table (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{union__vector_2union__vector__generated_8h_adc47717bb78d2ded8b356a127699c956}\label{union__vector_2union__vector__generated_8h_adc47717bb78d2ded8b356a127699c956} 
+\index{union\_vector\_generated.h@{union\_vector\_generated.h}!SizePrefixedMovieBufferHasIdentifier@{SizePrefixedMovieBufferHasIdentifier}}
+\index{SizePrefixedMovieBufferHasIdentifier@{SizePrefixedMovieBufferHasIdentifier}!union\_vector\_generated.h@{union\_vector\_generated.h}}
+\doxysubsubsection{\texorpdfstring{SizePrefixedMovieBufferHasIdentifier()}{SizePrefixedMovieBufferHasIdentifier()}}
+{\footnotesize\ttfamily bool Size\+Prefixed\+Movie\+Buffer\+Has\+Identifier (\begin{DoxyParamCaption}\item[{const void \texorpdfstring{$\ast$}{*}}]{buf }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{union__vector_2union__vector__generated_8h_a0845c7f1a940fca19926beafebc34e6c}\label{union__vector_2union__vector__generated_8h_a0845c7f1a940fca19926beafebc34e6c} 
+\index{union\_vector\_generated.h@{union\_vector\_generated.h}!UnPackMovie@{UnPackMovie}}
+\index{UnPackMovie@{UnPackMovie}!union\_vector\_generated.h@{union\_vector\_generated.h}}
+\doxysubsubsection{\texorpdfstring{UnPackMovie()}{UnPackMovie()}}
+{\footnotesize\ttfamily std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{structMovieT}{MovieT}} $>$ Un\+Pack\+Movie (\begin{DoxyParamCaption}\item[{const void \texorpdfstring{$\ast$}{*}}]{buf,  }\item[{const \mbox{\hyperlink{namespaceflatbuffers_ac7bfda6e698d13cd1b225df198a24a18}{\+::flatbuffers\+::resolver\+\_\+function\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{res = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{union__vector_2union__vector__generated_8h_a88253a321fbb30c629ae02bdc64b0c3e}\label{union__vector_2union__vector__generated_8h_a88253a321fbb30c629ae02bdc64b0c3e} 
+\index{union\_vector\_generated.h@{union\_vector\_generated.h}!UnPackSizePrefixedMovie@{UnPackSizePrefixedMovie}}
+\index{UnPackSizePrefixedMovie@{UnPackSizePrefixedMovie}!union\_vector\_generated.h@{union\_vector\_generated.h}}
+\doxysubsubsection{\texorpdfstring{UnPackSizePrefixedMovie()}{UnPackSizePrefixedMovie()}}
+{\footnotesize\ttfamily std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{structMovieT}{MovieT}} $>$ Un\+Pack\+Size\+Prefixed\+Movie (\begin{DoxyParamCaption}\item[{const void \texorpdfstring{$\ast$}{*}}]{buf,  }\item[{const \mbox{\hyperlink{namespaceflatbuffers_ac7bfda6e698d13cd1b225df198a24a18}{\+::flatbuffers\+::resolver\+\_\+function\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{res = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{union__vector_2union__vector__generated_8h_af057f326c87caf9fe1c5c647bfc41da3}\label{union__vector_2union__vector__generated_8h_af057f326c87caf9fe1c5c647bfc41da3} 
+\index{union\_vector\_generated.h@{union\_vector\_generated.h}!VerifyCharacter@{VerifyCharacter}}
+\index{VerifyCharacter@{VerifyCharacter}!union\_vector\_generated.h@{union\_vector\_generated.h}}
+\doxysubsubsection{\texorpdfstring{VerifyCharacter()}{VerifyCharacter()}}
+{\footnotesize\ttfamily bool Verify\+Character (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceflatbuffers_a3268477941df91db2eb06442b6e5f922}{\+::flatbuffers\+::\+Verifier}} \&}]{verifier,  }\item[{const void \texorpdfstring{$\ast$}{*}}]{obj,  }\item[{\mbox{\hyperlink{classCharacter}{Character}}}]{type }\end{DoxyParamCaption})}
+
+\Hypertarget{union__vector_2union__vector__generated_8h_a5038bf0eeee7635c1585689bbe7f6e8d}\label{union__vector_2union__vector__generated_8h_a5038bf0eeee7635c1585689bbe7f6e8d} 
+\index{union\_vector\_generated.h@{union\_vector\_generated.h}!VerifyCharacterVector@{VerifyCharacterVector}}
+\index{VerifyCharacterVector@{VerifyCharacterVector}!union\_vector\_generated.h@{union\_vector\_generated.h}}
+\doxysubsubsection{\texorpdfstring{VerifyCharacterVector()}{VerifyCharacterVector()}}
+{\footnotesize\ttfamily bool Verify\+Character\+Vector (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceflatbuffers_a3268477941df91db2eb06442b6e5f922}{\+::flatbuffers\+::\+Verifier}} \&}]{verifier,  }\item[{const \mbox{\hyperlink{classflatbuffers_1_1Vector}{\+::flatbuffers\+::\+Vector}}$<$\+::flatbuffers\+::\+Offset$<$ void $>$ $>$ \texorpdfstring{$\ast$}{*}}]{values,  }\item[{const \mbox{\hyperlink{classflatbuffers_1_1Vector}{\+::flatbuffers\+::\+Vector}}$<$ uint8\+\_\+t $>$ \texorpdfstring{$\ast$}{*}}]{types }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{union__vector_2union__vector__generated_8h_afb0e77f4a94ce6e55de055f015e4b82b}\label{union__vector_2union__vector__generated_8h_afb0e77f4a94ce6e55de055f015e4b82b} 
+\index{union\_vector\_generated.h@{union\_vector\_generated.h}!VerifyGadget@{VerifyGadget}}
+\index{VerifyGadget@{VerifyGadget}!union\_vector\_generated.h@{union\_vector\_generated.h}}
+\doxysubsubsection{\texorpdfstring{VerifyGadget()}{VerifyGadget()}}
+{\footnotesize\ttfamily bool Verify\+Gadget (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceflatbuffers_a3268477941df91db2eb06442b6e5f922}{\+::flatbuffers\+::\+Verifier}} \&}]{verifier,  }\item[{const void \texorpdfstring{$\ast$}{*}}]{obj,  }\item[{\mbox{\hyperlink{classGadget}{Gadget}}}]{type }\end{DoxyParamCaption})}
+
+\Hypertarget{union__vector_2union__vector__generated_8h_a080aba3bcbf579b4348b4d5ea0bfe57b}\label{union__vector_2union__vector__generated_8h_a080aba3bcbf579b4348b4d5ea0bfe57b} 
+\index{union\_vector\_generated.h@{union\_vector\_generated.h}!VerifyGadgetVector@{VerifyGadgetVector}}
+\index{VerifyGadgetVector@{VerifyGadgetVector}!union\_vector\_generated.h@{union\_vector\_generated.h}}
+\doxysubsubsection{\texorpdfstring{VerifyGadgetVector()}{VerifyGadgetVector()}}
+{\footnotesize\ttfamily bool Verify\+Gadget\+Vector (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceflatbuffers_a3268477941df91db2eb06442b6e5f922}{\+::flatbuffers\+::\+Verifier}} \&}]{verifier,  }\item[{const \mbox{\hyperlink{classflatbuffers_1_1Vector}{\+::flatbuffers\+::\+Vector}}$<$\+::flatbuffers\+::\+Offset$<$ void $>$ $>$ \texorpdfstring{$\ast$}{*}}]{values,  }\item[{const \mbox{\hyperlink{classflatbuffers_1_1Vector}{\+::flatbuffers\+::\+Vector}}$<$ uint8\+\_\+t $>$ \texorpdfstring{$\ast$}{*}}]{types }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{union__vector_2union__vector__generated_8h_a42bacb452f3e9aacd9c241ba823adc91}\label{union__vector_2union__vector__generated_8h_a42bacb452f3e9aacd9c241ba823adc91} 
+\index{union\_vector\_generated.h@{union\_vector\_generated.h}!VerifyMovieBuffer@{VerifyMovieBuffer}}
+\index{VerifyMovieBuffer@{VerifyMovieBuffer}!union\_vector\_generated.h@{union\_vector\_generated.h}}
+\doxysubsubsection{\texorpdfstring{VerifyMovieBuffer()}{VerifyMovieBuffer()}}
+{\footnotesize\ttfamily bool Verify\+Movie\+Buffer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceflatbuffers_a3268477941df91db2eb06442b6e5f922}{\+::flatbuffers\+::\+Verifier}} \&}]{verifier }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{union__vector_2union__vector__generated_8h_a0175a9c07f33c1730fcd91c5546ce9ed}\label{union__vector_2union__vector__generated_8h_a0175a9c07f33c1730fcd91c5546ce9ed} 
+\index{union\_vector\_generated.h@{union\_vector\_generated.h}!VerifySizePrefixedMovieBuffer@{VerifySizePrefixedMovieBuffer}}
+\index{VerifySizePrefixedMovieBuffer@{VerifySizePrefixedMovieBuffer}!union\_vector\_generated.h@{union\_vector\_generated.h}}
+\doxysubsubsection{\texorpdfstring{VerifySizePrefixedMovieBuffer()}{VerifySizePrefixedMovieBuffer()}}
+{\footnotesize\ttfamily bool Verify\+Size\+Prefixed\+Movie\+Buffer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceflatbuffers_a3268477941df91db2eb06442b6e5f922}{\+::flatbuffers\+::\+Verifier}} \&}]{verifier }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{union__vector_2union__vector__generated_8h_aa525be08713ad99da51f2909d1484514}\label{union__vector_2union__vector__generated_8h_aa525be08713ad99da51f2909d1484514} 
+\index{union\_vector\_generated.h@{union\_vector\_generated.h}!VT\_CHARACTERS\_TYPE@{VT\_CHARACTERS\_TYPE}}
+\index{VT\_CHARACTERS\_TYPE@{VT\_CHARACTERS\_TYPE}!union\_vector\_generated.h@{union\_vector\_generated.h}}
+\doxysubsubsection{\texorpdfstring{VT\_CHARACTERS\_TYPE}{VT\_CHARACTERS\_TYPE}}
+{\footnotesize\ttfamily VT\+\_\+\+CHARACTERS\+\_\+\+TYPE = 8}
+
+\Hypertarget{union__vector_2union__vector__generated_8h_a67fe93f624ed10dd725101c4ed00a56e}\label{union__vector_2union__vector__generated_8h_a67fe93f624ed10dd725101c4ed00a56e} 
+\index{union\_vector\_generated.h@{union\_vector\_generated.h}!VT\_MAIN\_CHARACTER@{VT\_MAIN\_CHARACTER}}
+\index{VT\_MAIN\_CHARACTER@{VT\_MAIN\_CHARACTER}!union\_vector\_generated.h@{union\_vector\_generated.h}}
+\doxysubsubsection{\texorpdfstring{VT\_MAIN\_CHARACTER}{VT\_MAIN\_CHARACTER}}
+{\footnotesize\ttfamily VT\+\_\+\+MAIN\+\_\+\+CHARACTER = 6}
+
+\Hypertarget{union__vector_2union__vector__generated_8h_aa4862b92e00db71e6ea6625ef7693d18}\label{union__vector_2union__vector__generated_8h_aa4862b92e00db71e6ea6625ef7693d18} 
+\index{union\_vector\_generated.h@{union\_vector\_generated.h}!VT\_MAIN\_CHARACTER\_TYPE@{VT\_MAIN\_CHARACTER\_TYPE}}
+\index{VT\_MAIN\_CHARACTER\_TYPE@{VT\_MAIN\_CHARACTER\_TYPE}!union\_vector\_generated.h@{union\_vector\_generated.h}}
+\doxysubsubsection{\texorpdfstring{VT\_MAIN\_CHARACTER\_TYPE}{VT\_MAIN\_CHARACTER\_TYPE}}
+{\footnotesize\ttfamily VT\+\_\+\+MAIN\+\_\+\+CHARACTER\+\_\+\+TYPE = 4}
+

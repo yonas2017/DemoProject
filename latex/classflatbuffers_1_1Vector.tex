@@ -1,0 +1,426 @@
+\doxysection{flatbuffers\+::Vector\texorpdfstring{$<$}{<} T, SizeT \texorpdfstring{$>$}{>} Class Template Reference}
+\hypertarget{classflatbuffers_1_1Vector}{}\label{classflatbuffers_1_1Vector}\index{flatbuffers::Vector$<$ T, SizeT $>$@{flatbuffers::Vector$<$ T, SizeT $>$}}
+
+
+{\ttfamily \#include $<$vector.\+h$>$}
+
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef \mbox{\hyperlink{structflatbuffers_1_1VectorIterator}{Vector\+Iterator}}$<$ T, typename Indirect\+Helper$<$ T $>$\mbox{\hyperlink{classflatbuffers_1_1Vector_ac0593f49cf45300fc666dce5c4edc467}{\+::mutable\+\_\+return\+\_\+type}}, uint8\+\_\+t \texorpdfstring{$\ast$}{*}, SizeT $>$ \mbox{\hyperlink{classflatbuffers_1_1Vector_a4696f551f98be61c477df2d4d87a8372}{iterator}}
+\item 
+typedef \mbox{\hyperlink{namespaceflatbuffers_a5c10986b468a8b07254c2a78c0a2c480}{Vector\+Const\+Iterator}}$<$ T, typename Indirect\+Helper$<$ T $>$\mbox{\hyperlink{classflatbuffers_1_1Vector_a5fe9f9901a9a0edc91496a980690679b}{\+::return\+\_\+type}}, SizeT $>$ \mbox{\hyperlink{classflatbuffers_1_1Vector_ae5a9d8601c35acf124d08d8fbe5e8bd6}{const\+\_\+iterator}}
+\item 
+typedef \mbox{\hyperlink{structflatbuffers_1_1VectorReverseIterator}{Vector\+Reverse\+Iterator}}$<$ \mbox{\hyperlink{classflatbuffers_1_1Vector_a4696f551f98be61c477df2d4d87a8372}{iterator}} $>$ \mbox{\hyperlink{classflatbuffers_1_1Vector_abfda22473f25a310ce35b2b5937fe265}{reverse\+\_\+iterator}}
+\item 
+typedef \mbox{\hyperlink{structflatbuffers_1_1VectorReverseIterator}{Vector\+Reverse\+Iterator}}$<$ \mbox{\hyperlink{classflatbuffers_1_1Vector_ae5a9d8601c35acf124d08d8fbe5e8bd6}{const\+\_\+iterator}} $>$ \mbox{\hyperlink{classflatbuffers_1_1Vector_a7c36f30c6939fb3cf79424e46569c1c1}{const\+\_\+reverse\+\_\+iterator}}
+\item 
+typedef \mbox{\hyperlink{structflatbuffers_1_1bool__constant}{flatbuffers\+::bool\+\_\+constant}}$<$ \mbox{\hyperlink{structflatbuffers_1_1is__scalar}{flatbuffers\+::is\+\_\+scalar}}$<$ T $>$\mbox{\hyperlink{annotated__binary__text__gen_8cpp_a5c33da5929c9f2f9ef8d006d2350e6ec}{\+::value}} $>$ \mbox{\hyperlink{classflatbuffers_1_1Vector_ab209fa353da92f5b9148ce08fc16f134}{scalar\+\_\+tag}}
+\item 
+typedef SizeT \mbox{\hyperlink{classflatbuffers_1_1Vector_a63bb039a65173fc1d45cfe5cce621288}{size\+\_\+type}}
+\item 
+typedef Indirect\+Helper$<$ T $>$\+::return\+\_\+type \mbox{\hyperlink{classflatbuffers_1_1Vector_a5fe9f9901a9a0edc91496a980690679b}{return\+\_\+type}}
+\item 
+typedef Indirect\+Helper$<$ T $>$\+::mutable\+\_\+return\+\_\+type \mbox{\hyperlink{classflatbuffers_1_1Vector_ac0593f49cf45300fc666dce5c4edc467}{mutable\+\_\+return\+\_\+type}}
+\item 
+typedef \mbox{\hyperlink{classflatbuffers_1_1Vector_a5fe9f9901a9a0edc91496a980690679b}{return\+\_\+type}} \mbox{\hyperlink{classflatbuffers_1_1Vector_acce861fa4f7a4387aa61ef4422560126}{value\+\_\+type}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+SizeT \mbox{\hyperlink{classflatbuffers_1_1Vector_a70e1b54b9c82251be5496f1729d60e9a}{size}} () const
+\item 
+bool \mbox{\hyperlink{classflatbuffers_1_1Vector_a4a6fa20ab0c9f23bd85799a9de6ca338}{empty}} () const
+\item 
+\mbox{\hyperlink{classflatbuffers_1_1Vector_af43581b0b7fc2c5b7e27005f480e4efc}{FLATBUFFERS\+\_\+\+ATTRIBUTE}} () SizeT Length() const
+\item 
+\mbox{\hyperlink{classflatbuffers_1_1Vector_a5fe9f9901a9a0edc91496a980690679b}{return\+\_\+type}} \mbox{\hyperlink{classflatbuffers_1_1Vector_a8fc6efa0d6b5763d971fa9e6b8b4455d}{Get}} (SizeT \mbox{\hyperlink{gmock-matchers-comparisons__test_8cc_acb559820d9ca11295b4500f179ef6392}{i}}) const
+\item 
+\mbox{\hyperlink{classflatbuffers_1_1Vector_a5fe9f9901a9a0edc91496a980690679b}{return\+\_\+type}} \mbox{\hyperlink{classflatbuffers_1_1Vector_a58770a7f4e44fa8fa10b0d451a135bb4}{operator\mbox{[}$\,$\mbox{]}}} (SizeT \mbox{\hyperlink{gmock-matchers-comparisons__test_8cc_acb559820d9ca11295b4500f179ef6392}{i}}) const
+\item 
+{\footnotesize template$<$typename E $>$ }\\E \mbox{\hyperlink{classflatbuffers_1_1Vector_aeec857b7d9c2a566f3ea19ef6f1416c6}{Get\+Enum}} (SizeT \mbox{\hyperlink{gmock-matchers-comparisons__test_8cc_acb559820d9ca11295b4500f179ef6392}{i}}) const
+\item 
+{\footnotesize template$<$typename U $>$ }\\const U \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classflatbuffers_1_1Vector_a87c002681406d6417bb3e08d591bcb25}{Get\+As}} (SizeT \mbox{\hyperlink{gmock-matchers-comparisons__test_8cc_acb559820d9ca11295b4500f179ef6392}{i}}) const
+\item 
+const \mbox{\hyperlink{structflatbuffers_1_1String}{String}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classflatbuffers_1_1Vector_a04135e79ae928cdbe8f89e3785112d11}{Get\+As\+String}} (SizeT \mbox{\hyperlink{gmock-matchers-comparisons__test_8cc_acb559820d9ca11295b4500f179ef6392}{i}}) const
+\item 
+const void \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classflatbuffers_1_1Vector_a0c71ac47892ac9ad8c38b0a5fb32c84d}{Get\+Struct\+From\+Offset}} (size\+\_\+t o) const
+\item 
+\mbox{\hyperlink{classflatbuffers_1_1Vector_a4696f551f98be61c477df2d4d87a8372}{iterator}} \mbox{\hyperlink{classflatbuffers_1_1Vector_a555d11448276c9cc1eb09a10acb59801}{begin}} ()
+\item 
+\mbox{\hyperlink{classflatbuffers_1_1Vector_ae5a9d8601c35acf124d08d8fbe5e8bd6}{const\+\_\+iterator}} \mbox{\hyperlink{classflatbuffers_1_1Vector_ad565235f1c38d673c112f3ba6bb426dc}{begin}} () const
+\item 
+\mbox{\hyperlink{classflatbuffers_1_1Vector_a4696f551f98be61c477df2d4d87a8372}{iterator}} \mbox{\hyperlink{classflatbuffers_1_1Vector_a8576cca3812273d377b33959c23de25a}{end}} ()
+\item 
+\mbox{\hyperlink{classflatbuffers_1_1Vector_ae5a9d8601c35acf124d08d8fbe5e8bd6}{const\+\_\+iterator}} \mbox{\hyperlink{classflatbuffers_1_1Vector_a1c1eead9cbdd6e4fd294e474ab11ae02}{end}} () const
+\item 
+\mbox{\hyperlink{classflatbuffers_1_1Vector_abfda22473f25a310ce35b2b5937fe265}{reverse\+\_\+iterator}} \mbox{\hyperlink{classflatbuffers_1_1Vector_ace6e564529ecc2e7cc38426a015c2b6f}{rbegin}} ()
+\item 
+\mbox{\hyperlink{classflatbuffers_1_1Vector_a7c36f30c6939fb3cf79424e46569c1c1}{const\+\_\+reverse\+\_\+iterator}} \mbox{\hyperlink{classflatbuffers_1_1Vector_aaaf6d15742bdc81da47795d147236467}{rbegin}} () const
+\item 
+\mbox{\hyperlink{classflatbuffers_1_1Vector_abfda22473f25a310ce35b2b5937fe265}{reverse\+\_\+iterator}} \mbox{\hyperlink{classflatbuffers_1_1Vector_a47a954f8a4d6a0d1c8f3ada1758b3668}{rend}} ()
+\item 
+\mbox{\hyperlink{classflatbuffers_1_1Vector_a7c36f30c6939fb3cf79424e46569c1c1}{const\+\_\+reverse\+\_\+iterator}} \mbox{\hyperlink{classflatbuffers_1_1Vector_ae4b0368d0d8a1e8859a644862b843fe7}{rend}} () const
+\item 
+\mbox{\hyperlink{classflatbuffers_1_1Vector_ae5a9d8601c35acf124d08d8fbe5e8bd6}{const\+\_\+iterator}} \mbox{\hyperlink{classflatbuffers_1_1Vector_a099bff85cfb0d5a4015f52c6c813563f}{cbegin}} () const
+\item 
+\mbox{\hyperlink{classflatbuffers_1_1Vector_ae5a9d8601c35acf124d08d8fbe5e8bd6}{const\+\_\+iterator}} \mbox{\hyperlink{classflatbuffers_1_1Vector_abd89c95cc4a12a273ab90ef4b609c1ce}{cend}} () const
+\item 
+\mbox{\hyperlink{classflatbuffers_1_1Vector_a7c36f30c6939fb3cf79424e46569c1c1}{const\+\_\+reverse\+\_\+iterator}} \mbox{\hyperlink{classflatbuffers_1_1Vector_a8602515b59f690d92f9ccbb7beda95f5}{crbegin}} () const
+\item 
+\mbox{\hyperlink{classflatbuffers_1_1Vector_a7c36f30c6939fb3cf79424e46569c1c1}{const\+\_\+reverse\+\_\+iterator}} \mbox{\hyperlink{classflatbuffers_1_1Vector_ac1e8062496f5ed44777a0d2c41f8ce30}{crend}} () const
+\item 
+void \mbox{\hyperlink{classflatbuffers_1_1Vector_a7a5336d0b48d7e6e027af375b0872f9e}{Mutate}} (SizeT \mbox{\hyperlink{gmock-matchers-comparisons__test_8cc_acb559820d9ca11295b4500f179ef6392}{i}}, const T \&val)
+\item 
+void \mbox{\hyperlink{classflatbuffers_1_1Vector_ab9564373fd479ca483cd4095f3903f40}{Mutate\+Offset}} (SizeT \mbox{\hyperlink{gmock-matchers-comparisons__test_8cc_acb559820d9ca11295b4500f179ef6392}{i}}, const uint8\+\_\+t \texorpdfstring{$\ast$}{*}val)
+\item 
+\mbox{\hyperlink{classflatbuffers_1_1Vector_ac0593f49cf45300fc666dce5c4edc467}{mutable\+\_\+return\+\_\+type}} \mbox{\hyperlink{classflatbuffers_1_1Vector_af54dedfd78e632fcc013a2be459ddfec}{Get\+Mutable\+Object}} (SizeT \mbox{\hyperlink{gmock-matchers-comparisons__test_8cc_acb559820d9ca11295b4500f179ef6392}{i}}) const
+\item 
+const uint8\+\_\+t \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classflatbuffers_1_1Vector_ab6a1493f93fed43383a12e6379e06fab}{Data}} () const
+\item 
+uint8\+\_\+t \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classflatbuffers_1_1Vector_a7c28ae4c1e7b931dd454a72f020c93b1}{Data}} ()
+\item 
+const T \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classflatbuffers_1_1Vector_a138405be6fda9f3af1a54ee8725af080}{data}} () const
+\item 
+T \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classflatbuffers_1_1Vector_a718f7d28f613e3e894dc29089e65fb9a}{data}} ()
+\item 
+{\footnotesize template$<$typename K $>$ }\\\mbox{\hyperlink{classflatbuffers_1_1Vector_a5fe9f9901a9a0edc91496a980690679b}{return\+\_\+type}} \mbox{\hyperlink{classflatbuffers_1_1Vector_a4b44ee01b3a8c71a9e141dd16569171c}{Lookup\+By\+Key}} (K key) const
+\item 
+{\footnotesize template$<$typename K $>$ }\\\mbox{\hyperlink{classflatbuffers_1_1Vector_ac0593f49cf45300fc666dce5c4edc467}{mutable\+\_\+return\+\_\+type}} \mbox{\hyperlink{classflatbuffers_1_1Vector_a25f015801447f709cd85b2d72a79004a}{Mutable\+Lookup\+By\+Key}} (K key)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static FLATBUFFERS\+\_\+\+CONSTEXPR bool \mbox{\hyperlink{classflatbuffers_1_1Vector_aa85e7ec863e4f87f96be48f58b5ce06e}{is\+\_\+span\+\_\+observable}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classflatbuffers_1_1Vector_a5a9509bebd134423bc68b35e68c5d28f}{Vector}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+SizeT \mbox{\hyperlink{classflatbuffers_1_1Vector_ab90697a357571f071b392d9400c6c636}{length\+\_\+}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Typedef Documentation}
+\Hypertarget{classflatbuffers_1_1Vector_ae5a9d8601c35acf124d08d8fbe5e8bd6}\label{classflatbuffers_1_1Vector_ae5a9d8601c35acf124d08d8fbe5e8bd6} 
+\index{flatbuffers::Vector$<$ T, SizeT $>$@{flatbuffers::Vector$<$ T, SizeT $>$}!const\_iterator@{const\_iterator}}
+\index{const\_iterator@{const\_iterator}!flatbuffers::Vector$<$ T, SizeT $>$@{flatbuffers::Vector$<$ T, SizeT $>$}}
+\doxysubsubsection{\texorpdfstring{const\_iterator}{const\_iterator}}
+{\footnotesize\ttfamily template$<$typename T , typename SizeT  = uoffset\+\_\+t$>$ \\
+typedef \mbox{\hyperlink{namespaceflatbuffers_a5c10986b468a8b07254c2a78c0a2c480}{Vector\+Const\+Iterator}}$<$T, typename Indirect\+Helper$<$T$>$\mbox{\hyperlink{classflatbuffers_1_1Vector_a5fe9f9901a9a0edc91496a980690679b}{\+::return\+\_\+type}}, SizeT$>$ \mbox{\hyperlink{classflatbuffers_1_1Vector}{flatbuffers\+::\+Vector}}$<$ T, SizeT $>$\+::const\+\_\+iterator}
+
+\Hypertarget{classflatbuffers_1_1Vector_a7c36f30c6939fb3cf79424e46569c1c1}\label{classflatbuffers_1_1Vector_a7c36f30c6939fb3cf79424e46569c1c1} 
+\index{flatbuffers::Vector$<$ T, SizeT $>$@{flatbuffers::Vector$<$ T, SizeT $>$}!const\_reverse\_iterator@{const\_reverse\_iterator}}
+\index{const\_reverse\_iterator@{const\_reverse\_iterator}!flatbuffers::Vector$<$ T, SizeT $>$@{flatbuffers::Vector$<$ T, SizeT $>$}}
+\doxysubsubsection{\texorpdfstring{const\_reverse\_iterator}{const\_reverse\_iterator}}
+{\footnotesize\ttfamily template$<$typename T , typename SizeT  = uoffset\+\_\+t$>$ \\
+typedef \mbox{\hyperlink{structflatbuffers_1_1VectorReverseIterator}{Vector\+Reverse\+Iterator}}$<$\mbox{\hyperlink{classflatbuffers_1_1Vector_ae5a9d8601c35acf124d08d8fbe5e8bd6}{const\+\_\+iterator}}$>$ \mbox{\hyperlink{classflatbuffers_1_1Vector}{flatbuffers\+::\+Vector}}$<$ T, SizeT $>$\+::const\+\_\+reverse\+\_\+iterator}
+
+\Hypertarget{classflatbuffers_1_1Vector_a4696f551f98be61c477df2d4d87a8372}\label{classflatbuffers_1_1Vector_a4696f551f98be61c477df2d4d87a8372} 
+\index{flatbuffers::Vector$<$ T, SizeT $>$@{flatbuffers::Vector$<$ T, SizeT $>$}!iterator@{iterator}}
+\index{iterator@{iterator}!flatbuffers::Vector$<$ T, SizeT $>$@{flatbuffers::Vector$<$ T, SizeT $>$}}
+\doxysubsubsection{\texorpdfstring{iterator}{iterator}}
+{\footnotesize\ttfamily template$<$typename T , typename SizeT  = uoffset\+\_\+t$>$ \\
+typedef \mbox{\hyperlink{structflatbuffers_1_1VectorIterator}{Vector\+Iterator}}$<$T, typename Indirect\+Helper$<$T$>$\mbox{\hyperlink{classflatbuffers_1_1Vector_ac0593f49cf45300fc666dce5c4edc467}{\+::mutable\+\_\+return\+\_\+type}}, uint8\+\_\+t \texorpdfstring{$\ast$}{*}, SizeT$>$ \mbox{\hyperlink{classflatbuffers_1_1Vector}{flatbuffers\+::\+Vector}}$<$ T, SizeT $>$\+::iterator}
+
+\Hypertarget{classflatbuffers_1_1Vector_ac0593f49cf45300fc666dce5c4edc467}\label{classflatbuffers_1_1Vector_ac0593f49cf45300fc666dce5c4edc467} 
+\index{flatbuffers::Vector$<$ T, SizeT $>$@{flatbuffers::Vector$<$ T, SizeT $>$}!mutable\_return\_type@{mutable\_return\_type}}
+\index{mutable\_return\_type@{mutable\_return\_type}!flatbuffers::Vector$<$ T, SizeT $>$@{flatbuffers::Vector$<$ T, SizeT $>$}}
+\doxysubsubsection{\texorpdfstring{mutable\_return\_type}{mutable\_return\_type}}
+{\footnotesize\ttfamily template$<$typename T , typename SizeT  = uoffset\+\_\+t$>$ \\
+typedef Indirect\+Helper$<$T$>$\+::mutable\+\_\+return\+\_\+type \mbox{\hyperlink{classflatbuffers_1_1Vector}{flatbuffers\+::\+Vector}}$<$ T, SizeT $>$\+::mutable\+\_\+return\+\_\+type}
+
+\Hypertarget{classflatbuffers_1_1Vector_a5fe9f9901a9a0edc91496a980690679b}\label{classflatbuffers_1_1Vector_a5fe9f9901a9a0edc91496a980690679b} 
+\index{flatbuffers::Vector$<$ T, SizeT $>$@{flatbuffers::Vector$<$ T, SizeT $>$}!return\_type@{return\_type}}
+\index{return\_type@{return\_type}!flatbuffers::Vector$<$ T, SizeT $>$@{flatbuffers::Vector$<$ T, SizeT $>$}}
+\doxysubsubsection{\texorpdfstring{return\_type}{return\_type}}
+{\footnotesize\ttfamily template$<$typename T , typename SizeT  = uoffset\+\_\+t$>$ \\
+typedef Indirect\+Helper$<$T$>$\+::return\+\_\+type \mbox{\hyperlink{classflatbuffers_1_1Vector}{flatbuffers\+::\+Vector}}$<$ T, SizeT $>$\+::return\+\_\+type}
+
+\Hypertarget{classflatbuffers_1_1Vector_abfda22473f25a310ce35b2b5937fe265}\label{classflatbuffers_1_1Vector_abfda22473f25a310ce35b2b5937fe265} 
+\index{flatbuffers::Vector$<$ T, SizeT $>$@{flatbuffers::Vector$<$ T, SizeT $>$}!reverse\_iterator@{reverse\_iterator}}
+\index{reverse\_iterator@{reverse\_iterator}!flatbuffers::Vector$<$ T, SizeT $>$@{flatbuffers::Vector$<$ T, SizeT $>$}}
+\doxysubsubsection{\texorpdfstring{reverse\_iterator}{reverse\_iterator}}
+{\footnotesize\ttfamily template$<$typename T , typename SizeT  = uoffset\+\_\+t$>$ \\
+typedef \mbox{\hyperlink{structflatbuffers_1_1VectorReverseIterator}{Vector\+Reverse\+Iterator}}$<$\mbox{\hyperlink{classflatbuffers_1_1Vector_a4696f551f98be61c477df2d4d87a8372}{iterator}}$>$ \mbox{\hyperlink{classflatbuffers_1_1Vector}{flatbuffers\+::\+Vector}}$<$ T, SizeT $>$\+::reverse\+\_\+iterator}
+
+\Hypertarget{classflatbuffers_1_1Vector_ab209fa353da92f5b9148ce08fc16f134}\label{classflatbuffers_1_1Vector_ab209fa353da92f5b9148ce08fc16f134} 
+\index{flatbuffers::Vector$<$ T, SizeT $>$@{flatbuffers::Vector$<$ T, SizeT $>$}!scalar\_tag@{scalar\_tag}}
+\index{scalar\_tag@{scalar\_tag}!flatbuffers::Vector$<$ T, SizeT $>$@{flatbuffers::Vector$<$ T, SizeT $>$}}
+\doxysubsubsection{\texorpdfstring{scalar\_tag}{scalar\_tag}}
+{\footnotesize\ttfamily template$<$typename T , typename SizeT  = uoffset\+\_\+t$>$ \\
+typedef \mbox{\hyperlink{structflatbuffers_1_1bool__constant}{flatbuffers\+::bool\+\_\+constant}}$<$\mbox{\hyperlink{structflatbuffers_1_1is__scalar}{flatbuffers\+::is\+\_\+scalar}}$<$T$>$\mbox{\hyperlink{annotated__binary__text__gen_8cpp_a5c33da5929c9f2f9ef8d006d2350e6ec}{\+::value}}$>$ \mbox{\hyperlink{classflatbuffers_1_1Vector}{flatbuffers\+::\+Vector}}$<$ T, SizeT $>$\+::scalar\+\_\+tag}
+
+\Hypertarget{classflatbuffers_1_1Vector_a63bb039a65173fc1d45cfe5cce621288}\label{classflatbuffers_1_1Vector_a63bb039a65173fc1d45cfe5cce621288} 
+\index{flatbuffers::Vector$<$ T, SizeT $>$@{flatbuffers::Vector$<$ T, SizeT $>$}!size\_type@{size\_type}}
+\index{size\_type@{size\_type}!flatbuffers::Vector$<$ T, SizeT $>$@{flatbuffers::Vector$<$ T, SizeT $>$}}
+\doxysubsubsection{\texorpdfstring{size\_type}{size\_type}}
+{\footnotesize\ttfamily template$<$typename T , typename SizeT  = uoffset\+\_\+t$>$ \\
+typedef SizeT \mbox{\hyperlink{classflatbuffers_1_1Vector}{flatbuffers\+::\+Vector}}$<$ T, SizeT $>$\+::size\+\_\+type}
+
+\Hypertarget{classflatbuffers_1_1Vector_acce861fa4f7a4387aa61ef4422560126}\label{classflatbuffers_1_1Vector_acce861fa4f7a4387aa61ef4422560126} 
+\index{flatbuffers::Vector$<$ T, SizeT $>$@{flatbuffers::Vector$<$ T, SizeT $>$}!value\_type@{value\_type}}
+\index{value\_type@{value\_type}!flatbuffers::Vector$<$ T, SizeT $>$@{flatbuffers::Vector$<$ T, SizeT $>$}}
+\doxysubsubsection{\texorpdfstring{value\_type}{value\_type}}
+{\footnotesize\ttfamily template$<$typename T , typename SizeT  = uoffset\+\_\+t$>$ \\
+typedef \mbox{\hyperlink{classflatbuffers_1_1Vector_a5fe9f9901a9a0edc91496a980690679b}{return\+\_\+type}} \mbox{\hyperlink{classflatbuffers_1_1Vector}{flatbuffers\+::\+Vector}}$<$ T, SizeT $>$\+::value\+\_\+type}
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classflatbuffers_1_1Vector_a5a9509bebd134423bc68b35e68c5d28f}\label{classflatbuffers_1_1Vector_a5a9509bebd134423bc68b35e68c5d28f} 
+\index{flatbuffers::Vector$<$ T, SizeT $>$@{flatbuffers::Vector$<$ T, SizeT $>$}!Vector@{Vector}}
+\index{Vector@{Vector}!flatbuffers::Vector$<$ T, SizeT $>$@{flatbuffers::Vector$<$ T, SizeT $>$}}
+\doxysubsubsection{\texorpdfstring{Vector()}{Vector()}}
+{\footnotesize\ttfamily template$<$typename T , typename SizeT  = uoffset\+\_\+t$>$ \\
+\mbox{\hyperlink{classflatbuffers_1_1Vector}{flatbuffers\+::\+Vector}}$<$ T, SizeT $>$\+::\+Vector (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classflatbuffers_1_1Vector_a555d11448276c9cc1eb09a10acb59801}\label{classflatbuffers_1_1Vector_a555d11448276c9cc1eb09a10acb59801} 
+\index{flatbuffers::Vector$<$ T, SizeT $>$@{flatbuffers::Vector$<$ T, SizeT $>$}!begin@{begin}}
+\index{begin@{begin}!flatbuffers::Vector$<$ T, SizeT $>$@{flatbuffers::Vector$<$ T, SizeT $>$}}
+\doxysubsubsection{\texorpdfstring{begin()}{begin()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename T , typename SizeT  = uoffset\+\_\+t$>$ \\
+\mbox{\hyperlink{classflatbuffers_1_1Vector_a4696f551f98be61c477df2d4d87a8372}{iterator}} \mbox{\hyperlink{classflatbuffers_1_1Vector}{flatbuffers\+::\+Vector}}$<$ T, SizeT $>$\+::begin (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflatbuffers_1_1Vector_ad565235f1c38d673c112f3ba6bb426dc}\label{classflatbuffers_1_1Vector_ad565235f1c38d673c112f3ba6bb426dc} 
+\index{flatbuffers::Vector$<$ T, SizeT $>$@{flatbuffers::Vector$<$ T, SizeT $>$}!begin@{begin}}
+\index{begin@{begin}!flatbuffers::Vector$<$ T, SizeT $>$@{flatbuffers::Vector$<$ T, SizeT $>$}}
+\doxysubsubsection{\texorpdfstring{begin()}{begin()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename T , typename SizeT  = uoffset\+\_\+t$>$ \\
+\mbox{\hyperlink{classflatbuffers_1_1Vector_ae5a9d8601c35acf124d08d8fbe5e8bd6}{const\+\_\+iterator}} \mbox{\hyperlink{classflatbuffers_1_1Vector}{flatbuffers\+::\+Vector}}$<$ T, SizeT $>$\+::begin (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflatbuffers_1_1Vector_a099bff85cfb0d5a4015f52c6c813563f}\label{classflatbuffers_1_1Vector_a099bff85cfb0d5a4015f52c6c813563f} 
+\index{flatbuffers::Vector$<$ T, SizeT $>$@{flatbuffers::Vector$<$ T, SizeT $>$}!cbegin@{cbegin}}
+\index{cbegin@{cbegin}!flatbuffers::Vector$<$ T, SizeT $>$@{flatbuffers::Vector$<$ T, SizeT $>$}}
+\doxysubsubsection{\texorpdfstring{cbegin()}{cbegin()}}
+{\footnotesize\ttfamily template$<$typename T , typename SizeT  = uoffset\+\_\+t$>$ \\
+\mbox{\hyperlink{classflatbuffers_1_1Vector_ae5a9d8601c35acf124d08d8fbe5e8bd6}{const\+\_\+iterator}} \mbox{\hyperlink{classflatbuffers_1_1Vector}{flatbuffers\+::\+Vector}}$<$ T, SizeT $>$\+::cbegin (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflatbuffers_1_1Vector_abd89c95cc4a12a273ab90ef4b609c1ce}\label{classflatbuffers_1_1Vector_abd89c95cc4a12a273ab90ef4b609c1ce} 
+\index{flatbuffers::Vector$<$ T, SizeT $>$@{flatbuffers::Vector$<$ T, SizeT $>$}!cend@{cend}}
+\index{cend@{cend}!flatbuffers::Vector$<$ T, SizeT $>$@{flatbuffers::Vector$<$ T, SizeT $>$}}
+\doxysubsubsection{\texorpdfstring{cend()}{cend()}}
+{\footnotesize\ttfamily template$<$typename T , typename SizeT  = uoffset\+\_\+t$>$ \\
+\mbox{\hyperlink{classflatbuffers_1_1Vector_ae5a9d8601c35acf124d08d8fbe5e8bd6}{const\+\_\+iterator}} \mbox{\hyperlink{classflatbuffers_1_1Vector}{flatbuffers\+::\+Vector}}$<$ T, SizeT $>$\+::cend (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflatbuffers_1_1Vector_a8602515b59f690d92f9ccbb7beda95f5}\label{classflatbuffers_1_1Vector_a8602515b59f690d92f9ccbb7beda95f5} 
+\index{flatbuffers::Vector$<$ T, SizeT $>$@{flatbuffers::Vector$<$ T, SizeT $>$}!crbegin@{crbegin}}
+\index{crbegin@{crbegin}!flatbuffers::Vector$<$ T, SizeT $>$@{flatbuffers::Vector$<$ T, SizeT $>$}}
+\doxysubsubsection{\texorpdfstring{crbegin()}{crbegin()}}
+{\footnotesize\ttfamily template$<$typename T , typename SizeT  = uoffset\+\_\+t$>$ \\
+\mbox{\hyperlink{classflatbuffers_1_1Vector_a7c36f30c6939fb3cf79424e46569c1c1}{const\+\_\+reverse\+\_\+iterator}} \mbox{\hyperlink{classflatbuffers_1_1Vector}{flatbuffers\+::\+Vector}}$<$ T, SizeT $>$\+::crbegin (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflatbuffers_1_1Vector_ac1e8062496f5ed44777a0d2c41f8ce30}\label{classflatbuffers_1_1Vector_ac1e8062496f5ed44777a0d2c41f8ce30} 
+\index{flatbuffers::Vector$<$ T, SizeT $>$@{flatbuffers::Vector$<$ T, SizeT $>$}!crend@{crend}}
+\index{crend@{crend}!flatbuffers::Vector$<$ T, SizeT $>$@{flatbuffers::Vector$<$ T, SizeT $>$}}
+\doxysubsubsection{\texorpdfstring{crend()}{crend()}}
+{\footnotesize\ttfamily template$<$typename T , typename SizeT  = uoffset\+\_\+t$>$ \\
+\mbox{\hyperlink{classflatbuffers_1_1Vector_a7c36f30c6939fb3cf79424e46569c1c1}{const\+\_\+reverse\+\_\+iterator}} \mbox{\hyperlink{classflatbuffers_1_1Vector}{flatbuffers\+::\+Vector}}$<$ T, SizeT $>$\+::crend (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflatbuffers_1_1Vector_a7c28ae4c1e7b931dd454a72f020c93b1}\label{classflatbuffers_1_1Vector_a7c28ae4c1e7b931dd454a72f020c93b1} 
+\index{flatbuffers::Vector$<$ T, SizeT $>$@{flatbuffers::Vector$<$ T, SizeT $>$}!Data@{Data}}
+\index{Data@{Data}!flatbuffers::Vector$<$ T, SizeT $>$@{flatbuffers::Vector$<$ T, SizeT $>$}}
+\doxysubsubsection{\texorpdfstring{Data()}{Data()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename T , typename SizeT  = uoffset\+\_\+t$>$ \\
+uint8\+\_\+t \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classflatbuffers_1_1Vector}{flatbuffers\+::\+Vector}}$<$ T, SizeT $>$\+::\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflatbuffers_1_1Vector_a718f7d28f613e3e894dc29089e65fb9a}\label{classflatbuffers_1_1Vector_a718f7d28f613e3e894dc29089e65fb9a} 
+\index{flatbuffers::Vector$<$ T, SizeT $>$@{flatbuffers::Vector$<$ T, SizeT $>$}!data@{data}}
+\index{data@{data}!flatbuffers::Vector$<$ T, SizeT $>$@{flatbuffers::Vector$<$ T, SizeT $>$}}
+\doxysubsubsection{\texorpdfstring{data()}{data()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename T , typename SizeT  = uoffset\+\_\+t$>$ \\
+T \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classflatbuffers_1_1Vector}{flatbuffers\+::\+Vector}}$<$ T, SizeT $>$\+::data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflatbuffers_1_1Vector_ab6a1493f93fed43383a12e6379e06fab}\label{classflatbuffers_1_1Vector_ab6a1493f93fed43383a12e6379e06fab} 
+\index{flatbuffers::Vector$<$ T, SizeT $>$@{flatbuffers::Vector$<$ T, SizeT $>$}!Data@{Data}}
+\index{Data@{Data}!flatbuffers::Vector$<$ T, SizeT $>$@{flatbuffers::Vector$<$ T, SizeT $>$}}
+\doxysubsubsection{\texorpdfstring{Data()}{Data()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename T , typename SizeT  = uoffset\+\_\+t$>$ \\
+const uint8\+\_\+t \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classflatbuffers_1_1Vector}{flatbuffers\+::\+Vector}}$<$ T, SizeT $>$\+::\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflatbuffers_1_1Vector_a138405be6fda9f3af1a54ee8725af080}\label{classflatbuffers_1_1Vector_a138405be6fda9f3af1a54ee8725af080} 
+\index{flatbuffers::Vector$<$ T, SizeT $>$@{flatbuffers::Vector$<$ T, SizeT $>$}!data@{data}}
+\index{data@{data}!flatbuffers::Vector$<$ T, SizeT $>$@{flatbuffers::Vector$<$ T, SizeT $>$}}
+\doxysubsubsection{\texorpdfstring{data()}{data()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename T , typename SizeT  = uoffset\+\_\+t$>$ \\
+const T \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classflatbuffers_1_1Vector}{flatbuffers\+::\+Vector}}$<$ T, SizeT $>$\+::data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflatbuffers_1_1Vector_a4a6fa20ab0c9f23bd85799a9de6ca338}\label{classflatbuffers_1_1Vector_a4a6fa20ab0c9f23bd85799a9de6ca338} 
+\index{flatbuffers::Vector$<$ T, SizeT $>$@{flatbuffers::Vector$<$ T, SizeT $>$}!empty@{empty}}
+\index{empty@{empty}!flatbuffers::Vector$<$ T, SizeT $>$@{flatbuffers::Vector$<$ T, SizeT $>$}}
+\doxysubsubsection{\texorpdfstring{empty()}{empty()}}
+{\footnotesize\ttfamily template$<$typename T , typename SizeT  = uoffset\+\_\+t$>$ \\
+bool \mbox{\hyperlink{classflatbuffers_1_1Vector}{flatbuffers\+::\+Vector}}$<$ T, SizeT $>$\+::empty (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflatbuffers_1_1Vector_a8576cca3812273d377b33959c23de25a}\label{classflatbuffers_1_1Vector_a8576cca3812273d377b33959c23de25a} 
+\index{flatbuffers::Vector$<$ T, SizeT $>$@{flatbuffers::Vector$<$ T, SizeT $>$}!end@{end}}
+\index{end@{end}!flatbuffers::Vector$<$ T, SizeT $>$@{flatbuffers::Vector$<$ T, SizeT $>$}}
+\doxysubsubsection{\texorpdfstring{end()}{end()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename T , typename SizeT  = uoffset\+\_\+t$>$ \\
+\mbox{\hyperlink{classflatbuffers_1_1Vector_a4696f551f98be61c477df2d4d87a8372}{iterator}} \mbox{\hyperlink{classflatbuffers_1_1Vector}{flatbuffers\+::\+Vector}}$<$ T, SizeT $>$\+::end (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflatbuffers_1_1Vector_a1c1eead9cbdd6e4fd294e474ab11ae02}\label{classflatbuffers_1_1Vector_a1c1eead9cbdd6e4fd294e474ab11ae02} 
+\index{flatbuffers::Vector$<$ T, SizeT $>$@{flatbuffers::Vector$<$ T, SizeT $>$}!end@{end}}
+\index{end@{end}!flatbuffers::Vector$<$ T, SizeT $>$@{flatbuffers::Vector$<$ T, SizeT $>$}}
+\doxysubsubsection{\texorpdfstring{end()}{end()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename T , typename SizeT  = uoffset\+\_\+t$>$ \\
+\mbox{\hyperlink{classflatbuffers_1_1Vector_ae5a9d8601c35acf124d08d8fbe5e8bd6}{const\+\_\+iterator}} \mbox{\hyperlink{classflatbuffers_1_1Vector}{flatbuffers\+::\+Vector}}$<$ T, SizeT $>$\+::end (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflatbuffers_1_1Vector_af43581b0b7fc2c5b7e27005f480e4efc}\label{classflatbuffers_1_1Vector_af43581b0b7fc2c5b7e27005f480e4efc} 
+\index{flatbuffers::Vector$<$ T, SizeT $>$@{flatbuffers::Vector$<$ T, SizeT $>$}!FLATBUFFERS\_ATTRIBUTE@{FLATBUFFERS\_ATTRIBUTE}}
+\index{FLATBUFFERS\_ATTRIBUTE@{FLATBUFFERS\_ATTRIBUTE}!flatbuffers::Vector$<$ T, SizeT $>$@{flatbuffers::Vector$<$ T, SizeT $>$}}
+\doxysubsubsection{\texorpdfstring{FLATBUFFERS\_ATTRIBUTE()}{FLATBUFFERS\_ATTRIBUTE()}}
+{\footnotesize\ttfamily template$<$typename T , typename SizeT  = uoffset\+\_\+t$>$ \\
+\mbox{\hyperlink{classflatbuffers_1_1Vector}{flatbuffers\+::\+Vector}}$<$ T, SizeT $>$\+::\+FLATBUFFERS\+\_\+\+ATTRIBUTE (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflatbuffers_1_1Vector_a8fc6efa0d6b5763d971fa9e6b8b4455d}\label{classflatbuffers_1_1Vector_a8fc6efa0d6b5763d971fa9e6b8b4455d} 
+\index{flatbuffers::Vector$<$ T, SizeT $>$@{flatbuffers::Vector$<$ T, SizeT $>$}!Get@{Get}}
+\index{Get@{Get}!flatbuffers::Vector$<$ T, SizeT $>$@{flatbuffers::Vector$<$ T, SizeT $>$}}
+\doxysubsubsection{\texorpdfstring{Get()}{Get()}}
+{\footnotesize\ttfamily template$<$typename T , typename SizeT  = uoffset\+\_\+t$>$ \\
+\mbox{\hyperlink{classflatbuffers_1_1Vector_a5fe9f9901a9a0edc91496a980690679b}{return\+\_\+type}} \mbox{\hyperlink{classflatbuffers_1_1Vector}{flatbuffers\+::\+Vector}}$<$ T, SizeT $>$\+::\+Get (\begin{DoxyParamCaption}\item[{SizeT}]{i }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflatbuffers_1_1Vector_a87c002681406d6417bb3e08d591bcb25}\label{classflatbuffers_1_1Vector_a87c002681406d6417bb3e08d591bcb25} 
+\index{flatbuffers::Vector$<$ T, SizeT $>$@{flatbuffers::Vector$<$ T, SizeT $>$}!GetAs@{GetAs}}
+\index{GetAs@{GetAs}!flatbuffers::Vector$<$ T, SizeT $>$@{flatbuffers::Vector$<$ T, SizeT $>$}}
+\doxysubsubsection{\texorpdfstring{GetAs()}{GetAs()}}
+{\footnotesize\ttfamily template$<$typename T , typename SizeT  = uoffset\+\_\+t$>$ \\
+template$<$typename U $>$ \\
+const U \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classflatbuffers_1_1Vector}{flatbuffers\+::\+Vector}}$<$ T, SizeT $>$\+::\+Get\+As (\begin{DoxyParamCaption}\item[{SizeT}]{i }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflatbuffers_1_1Vector_a04135e79ae928cdbe8f89e3785112d11}\label{classflatbuffers_1_1Vector_a04135e79ae928cdbe8f89e3785112d11} 
+\index{flatbuffers::Vector$<$ T, SizeT $>$@{flatbuffers::Vector$<$ T, SizeT $>$}!GetAsString@{GetAsString}}
+\index{GetAsString@{GetAsString}!flatbuffers::Vector$<$ T, SizeT $>$@{flatbuffers::Vector$<$ T, SizeT $>$}}
+\doxysubsubsection{\texorpdfstring{GetAsString()}{GetAsString()}}
+{\footnotesize\ttfamily template$<$typename T , typename SizeT  = uoffset\+\_\+t$>$ \\
+const \mbox{\hyperlink{structflatbuffers_1_1String}{String}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classflatbuffers_1_1Vector}{flatbuffers\+::\+Vector}}$<$ T, SizeT $>$\+::\+Get\+As\+String (\begin{DoxyParamCaption}\item[{SizeT}]{i }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflatbuffers_1_1Vector_aeec857b7d9c2a566f3ea19ef6f1416c6}\label{classflatbuffers_1_1Vector_aeec857b7d9c2a566f3ea19ef6f1416c6} 
+\index{flatbuffers::Vector$<$ T, SizeT $>$@{flatbuffers::Vector$<$ T, SizeT $>$}!GetEnum@{GetEnum}}
+\index{GetEnum@{GetEnum}!flatbuffers::Vector$<$ T, SizeT $>$@{flatbuffers::Vector$<$ T, SizeT $>$}}
+\doxysubsubsection{\texorpdfstring{GetEnum()}{GetEnum()}}
+{\footnotesize\ttfamily template$<$typename T , typename SizeT  = uoffset\+\_\+t$>$ \\
+template$<$typename E $>$ \\
+E \mbox{\hyperlink{classflatbuffers_1_1Vector}{flatbuffers\+::\+Vector}}$<$ T, SizeT $>$\+::\+Get\+Enum (\begin{DoxyParamCaption}\item[{SizeT}]{i }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflatbuffers_1_1Vector_af54dedfd78e632fcc013a2be459ddfec}\label{classflatbuffers_1_1Vector_af54dedfd78e632fcc013a2be459ddfec} 
+\index{flatbuffers::Vector$<$ T, SizeT $>$@{flatbuffers::Vector$<$ T, SizeT $>$}!GetMutableObject@{GetMutableObject}}
+\index{GetMutableObject@{GetMutableObject}!flatbuffers::Vector$<$ T, SizeT $>$@{flatbuffers::Vector$<$ T, SizeT $>$}}
+\doxysubsubsection{\texorpdfstring{GetMutableObject()}{GetMutableObject()}}
+{\footnotesize\ttfamily template$<$typename T , typename SizeT  = uoffset\+\_\+t$>$ \\
+\mbox{\hyperlink{classflatbuffers_1_1Vector_ac0593f49cf45300fc666dce5c4edc467}{mutable\+\_\+return\+\_\+type}} \mbox{\hyperlink{classflatbuffers_1_1Vector}{flatbuffers\+::\+Vector}}$<$ T, SizeT $>$\+::\+Get\+Mutable\+Object (\begin{DoxyParamCaption}\item[{SizeT}]{i }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflatbuffers_1_1Vector_a0c71ac47892ac9ad8c38b0a5fb32c84d}\label{classflatbuffers_1_1Vector_a0c71ac47892ac9ad8c38b0a5fb32c84d} 
+\index{flatbuffers::Vector$<$ T, SizeT $>$@{flatbuffers::Vector$<$ T, SizeT $>$}!GetStructFromOffset@{GetStructFromOffset}}
+\index{GetStructFromOffset@{GetStructFromOffset}!flatbuffers::Vector$<$ T, SizeT $>$@{flatbuffers::Vector$<$ T, SizeT $>$}}
+\doxysubsubsection{\texorpdfstring{GetStructFromOffset()}{GetStructFromOffset()}}
+{\footnotesize\ttfamily template$<$typename T , typename SizeT  = uoffset\+\_\+t$>$ \\
+const void \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classflatbuffers_1_1Vector}{flatbuffers\+::\+Vector}}$<$ T, SizeT $>$\+::\+Get\+Struct\+From\+Offset (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{o }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflatbuffers_1_1Vector_a4b44ee01b3a8c71a9e141dd16569171c}\label{classflatbuffers_1_1Vector_a4b44ee01b3a8c71a9e141dd16569171c} 
+\index{flatbuffers::Vector$<$ T, SizeT $>$@{flatbuffers::Vector$<$ T, SizeT $>$}!LookupByKey@{LookupByKey}}
+\index{LookupByKey@{LookupByKey}!flatbuffers::Vector$<$ T, SizeT $>$@{flatbuffers::Vector$<$ T, SizeT $>$}}
+\doxysubsubsection{\texorpdfstring{LookupByKey()}{LookupByKey()}}
+{\footnotesize\ttfamily template$<$typename T , typename SizeT  = uoffset\+\_\+t$>$ \\
+template$<$typename K $>$ \\
+\mbox{\hyperlink{classflatbuffers_1_1Vector_a5fe9f9901a9a0edc91496a980690679b}{return\+\_\+type}} \mbox{\hyperlink{classflatbuffers_1_1Vector}{flatbuffers\+::\+Vector}}$<$ T, SizeT $>$\+::\+Lookup\+By\+Key (\begin{DoxyParamCaption}\item[{K}]{key }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflatbuffers_1_1Vector_a25f015801447f709cd85b2d72a79004a}\label{classflatbuffers_1_1Vector_a25f015801447f709cd85b2d72a79004a} 
+\index{flatbuffers::Vector$<$ T, SizeT $>$@{flatbuffers::Vector$<$ T, SizeT $>$}!MutableLookupByKey@{MutableLookupByKey}}
+\index{MutableLookupByKey@{MutableLookupByKey}!flatbuffers::Vector$<$ T, SizeT $>$@{flatbuffers::Vector$<$ T, SizeT $>$}}
+\doxysubsubsection{\texorpdfstring{MutableLookupByKey()}{MutableLookupByKey()}}
+{\footnotesize\ttfamily template$<$typename T , typename SizeT  = uoffset\+\_\+t$>$ \\
+template$<$typename K $>$ \\
+\mbox{\hyperlink{classflatbuffers_1_1Vector_ac0593f49cf45300fc666dce5c4edc467}{mutable\+\_\+return\+\_\+type}} \mbox{\hyperlink{classflatbuffers_1_1Vector}{flatbuffers\+::\+Vector}}$<$ T, SizeT $>$\+::\+Mutable\+Lookup\+By\+Key (\begin{DoxyParamCaption}\item[{K}]{key }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflatbuffers_1_1Vector_a7a5336d0b48d7e6e027af375b0872f9e}\label{classflatbuffers_1_1Vector_a7a5336d0b48d7e6e027af375b0872f9e} 
+\index{flatbuffers::Vector$<$ T, SizeT $>$@{flatbuffers::Vector$<$ T, SizeT $>$}!Mutate@{Mutate}}
+\index{Mutate@{Mutate}!flatbuffers::Vector$<$ T, SizeT $>$@{flatbuffers::Vector$<$ T, SizeT $>$}}
+\doxysubsubsection{\texorpdfstring{Mutate()}{Mutate()}}
+{\footnotesize\ttfamily template$<$typename T , typename SizeT  = uoffset\+\_\+t$>$ \\
+void \mbox{\hyperlink{classflatbuffers_1_1Vector}{flatbuffers\+::\+Vector}}$<$ T, SizeT $>$\+::\+Mutate (\begin{DoxyParamCaption}\item[{SizeT}]{i,  }\item[{const T \&}]{val }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflatbuffers_1_1Vector_ab9564373fd479ca483cd4095f3903f40}\label{classflatbuffers_1_1Vector_ab9564373fd479ca483cd4095f3903f40} 
+\index{flatbuffers::Vector$<$ T, SizeT $>$@{flatbuffers::Vector$<$ T, SizeT $>$}!MutateOffset@{MutateOffset}}
+\index{MutateOffset@{MutateOffset}!flatbuffers::Vector$<$ T, SizeT $>$@{flatbuffers::Vector$<$ T, SizeT $>$}}
+\doxysubsubsection{\texorpdfstring{MutateOffset()}{MutateOffset()}}
+{\footnotesize\ttfamily template$<$typename T , typename SizeT  = uoffset\+\_\+t$>$ \\
+void \mbox{\hyperlink{classflatbuffers_1_1Vector}{flatbuffers\+::\+Vector}}$<$ T, SizeT $>$\+::\+Mutate\+Offset (\begin{DoxyParamCaption}\item[{SizeT}]{i,  }\item[{const uint8\+\_\+t \texorpdfstring{$\ast$}{*}}]{val }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflatbuffers_1_1Vector_a58770a7f4e44fa8fa10b0d451a135bb4}\label{classflatbuffers_1_1Vector_a58770a7f4e44fa8fa10b0d451a135bb4} 
+\index{flatbuffers::Vector$<$ T, SizeT $>$@{flatbuffers::Vector$<$ T, SizeT $>$}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!flatbuffers::Vector$<$ T, SizeT $>$@{flatbuffers::Vector$<$ T, SizeT $>$}}
+\doxysubsubsection{\texorpdfstring{operator[]()}{operator[]()}}
+{\footnotesize\ttfamily template$<$typename T , typename SizeT  = uoffset\+\_\+t$>$ \\
+\mbox{\hyperlink{classflatbuffers_1_1Vector_a5fe9f9901a9a0edc91496a980690679b}{return\+\_\+type}} \mbox{\hyperlink{classflatbuffers_1_1Vector}{flatbuffers\+::\+Vector}}$<$ T, SizeT $>$\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{SizeT}]{i }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflatbuffers_1_1Vector_ace6e564529ecc2e7cc38426a015c2b6f}\label{classflatbuffers_1_1Vector_ace6e564529ecc2e7cc38426a015c2b6f} 
+\index{flatbuffers::Vector$<$ T, SizeT $>$@{flatbuffers::Vector$<$ T, SizeT $>$}!rbegin@{rbegin}}
+\index{rbegin@{rbegin}!flatbuffers::Vector$<$ T, SizeT $>$@{flatbuffers::Vector$<$ T, SizeT $>$}}
+\doxysubsubsection{\texorpdfstring{rbegin()}{rbegin()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename T , typename SizeT  = uoffset\+\_\+t$>$ \\
+\mbox{\hyperlink{classflatbuffers_1_1Vector_abfda22473f25a310ce35b2b5937fe265}{reverse\+\_\+iterator}} \mbox{\hyperlink{classflatbuffers_1_1Vector}{flatbuffers\+::\+Vector}}$<$ T, SizeT $>$\+::rbegin (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflatbuffers_1_1Vector_aaaf6d15742bdc81da47795d147236467}\label{classflatbuffers_1_1Vector_aaaf6d15742bdc81da47795d147236467} 
+\index{flatbuffers::Vector$<$ T, SizeT $>$@{flatbuffers::Vector$<$ T, SizeT $>$}!rbegin@{rbegin}}
+\index{rbegin@{rbegin}!flatbuffers::Vector$<$ T, SizeT $>$@{flatbuffers::Vector$<$ T, SizeT $>$}}
+\doxysubsubsection{\texorpdfstring{rbegin()}{rbegin()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename T , typename SizeT  = uoffset\+\_\+t$>$ \\
+\mbox{\hyperlink{classflatbuffers_1_1Vector_a7c36f30c6939fb3cf79424e46569c1c1}{const\+\_\+reverse\+\_\+iterator}} \mbox{\hyperlink{classflatbuffers_1_1Vector}{flatbuffers\+::\+Vector}}$<$ T, SizeT $>$\+::rbegin (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflatbuffers_1_1Vector_a47a954f8a4d6a0d1c8f3ada1758b3668}\label{classflatbuffers_1_1Vector_a47a954f8a4d6a0d1c8f3ada1758b3668} 
+\index{flatbuffers::Vector$<$ T, SizeT $>$@{flatbuffers::Vector$<$ T, SizeT $>$}!rend@{rend}}
+\index{rend@{rend}!flatbuffers::Vector$<$ T, SizeT $>$@{flatbuffers::Vector$<$ T, SizeT $>$}}
+\doxysubsubsection{\texorpdfstring{rend()}{rend()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename T , typename SizeT  = uoffset\+\_\+t$>$ \\
+\mbox{\hyperlink{classflatbuffers_1_1Vector_abfda22473f25a310ce35b2b5937fe265}{reverse\+\_\+iterator}} \mbox{\hyperlink{classflatbuffers_1_1Vector}{flatbuffers\+::\+Vector}}$<$ T, SizeT $>$\+::rend (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflatbuffers_1_1Vector_ae4b0368d0d8a1e8859a644862b843fe7}\label{classflatbuffers_1_1Vector_ae4b0368d0d8a1e8859a644862b843fe7} 
+\index{flatbuffers::Vector$<$ T, SizeT $>$@{flatbuffers::Vector$<$ T, SizeT $>$}!rend@{rend}}
+\index{rend@{rend}!flatbuffers::Vector$<$ T, SizeT $>$@{flatbuffers::Vector$<$ T, SizeT $>$}}
+\doxysubsubsection{\texorpdfstring{rend()}{rend()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename T , typename SizeT  = uoffset\+\_\+t$>$ \\
+\mbox{\hyperlink{classflatbuffers_1_1Vector_a7c36f30c6939fb3cf79424e46569c1c1}{const\+\_\+reverse\+\_\+iterator}} \mbox{\hyperlink{classflatbuffers_1_1Vector}{flatbuffers\+::\+Vector}}$<$ T, SizeT $>$\+::rend (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflatbuffers_1_1Vector_a70e1b54b9c82251be5496f1729d60e9a}\label{classflatbuffers_1_1Vector_a70e1b54b9c82251be5496f1729d60e9a} 
+\index{flatbuffers::Vector$<$ T, SizeT $>$@{flatbuffers::Vector$<$ T, SizeT $>$}!size@{size}}
+\index{size@{size}!flatbuffers::Vector$<$ T, SizeT $>$@{flatbuffers::Vector$<$ T, SizeT $>$}}
+\doxysubsubsection{\texorpdfstring{size()}{size()}}
+{\footnotesize\ttfamily template$<$typename T , typename SizeT  = uoffset\+\_\+t$>$ \\
+SizeT \mbox{\hyperlink{classflatbuffers_1_1Vector}{flatbuffers\+::\+Vector}}$<$ T, SizeT $>$\+::size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classflatbuffers_1_1Vector_aa85e7ec863e4f87f96be48f58b5ce06e}\label{classflatbuffers_1_1Vector_aa85e7ec863e4f87f96be48f58b5ce06e} 
+\index{flatbuffers::Vector$<$ T, SizeT $>$@{flatbuffers::Vector$<$ T, SizeT $>$}!is\_span\_observable@{is\_span\_observable}}
+\index{is\_span\_observable@{is\_span\_observable}!flatbuffers::Vector$<$ T, SizeT $>$@{flatbuffers::Vector$<$ T, SizeT $>$}}
+\doxysubsubsection{\texorpdfstring{is\_span\_observable}{is\_span\_observable}}
+{\footnotesize\ttfamily template$<$typename T , typename SizeT  = uoffset\+\_\+t$>$ \\
+FLATBUFFERS\+\_\+\+CONSTEXPR bool \mbox{\hyperlink{classflatbuffers_1_1Vector}{flatbuffers\+::\+Vector}}$<$ T, SizeT $>$\+::is\+\_\+span\+\_\+observable\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=}
+\DoxyCodeLine{\ \ \ \ \ \ scalar\_tag::value\ \&\&\ (FLATBUFFERS\_LITTLEENDIAN\ ||\ \textcolor{keyword}{sizeof}(T)\ ==\ 1)}
+
+\end{DoxyCode}
+\Hypertarget{classflatbuffers_1_1Vector_ab90697a357571f071b392d9400c6c636}\label{classflatbuffers_1_1Vector_ab90697a357571f071b392d9400c6c636} 
+\index{flatbuffers::Vector$<$ T, SizeT $>$@{flatbuffers::Vector$<$ T, SizeT $>$}!length\_@{length\_}}
+\index{length\_@{length\_}!flatbuffers::Vector$<$ T, SizeT $>$@{flatbuffers::Vector$<$ T, SizeT $>$}}
+\doxysubsubsection{\texorpdfstring{length\_}{length\_}}
+{\footnotesize\ttfamily template$<$typename T , typename SizeT  = uoffset\+\_\+t$>$ \\
+SizeT \mbox{\hyperlink{classflatbuffers_1_1Vector}{flatbuffers\+::\+Vector}}$<$ T, SizeT $>$\+::length\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+flatbuffers/include/flatbuffers/\mbox{\hyperlink{vector_8h}{vector.\+h}}\end{DoxyCompactItemize}

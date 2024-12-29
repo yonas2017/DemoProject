@@ -1,0 +1,133 @@
+\doxysection{flatbuffers/src/binary\+\_\+annotator.h File Reference}
+\hypertarget{binary__annotator_8h}{}\label{binary__annotator_8h}\index{flatbuffers/src/binary\_annotator.h@{flatbuffers/src/binary\_annotator.h}}
+{\ttfamily \#include $<$cstddef$>$}\newline
+{\ttfamily \#include $<$cstdint$>$}\newline
+{\ttfamily \#include $<$iomanip$>$}\newline
+{\ttfamily \#include $<$ios$>$}\newline
+{\ttfamily \#include $<$list$>$}\newline
+{\ttfamily \#include $<$map$>$}\newline
+{\ttfamily \#include $<$sstream$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$utility$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include "{}flatbuffers/base.\+h"{}}\newline
+{\ttfamily \#include "{}flatbuffers/reflection.\+h"{}}\newline
+{\ttfamily \#include "{}flatbuffers/reflection\+\_\+generated.\+h"{}}\newline
+{\ttfamily \#include "{}flatbuffers/stl\+\_\+emulation.\+h"{}}\newline
+Include dependency graph for binary\+\_\+annotator.\+h\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structflatbuffers_1_1BinaryRegionComment}{flatbuffers\+::\+Binary\+Region\+Comment}}
+\item 
+struct \mbox{\hyperlink{structflatbuffers_1_1BinaryRegion}{flatbuffers\+::\+Binary\+Region}}
+\item 
+struct \mbox{\hyperlink{structflatbuffers_1_1BinarySection}{flatbuffers\+::\+Binary\+Section}}
+\item 
+class \mbox{\hyperlink{classflatbuffers_1_1BinaryAnnotator}{flatbuffers\+::\+Binary\+Annotator}}
+\item 
+struct \mbox{\hyperlink{structflatbuffers_1_1BinaryAnnotator_1_1VTable_1_1Entry}{flatbuffers\+::\+Binary\+Annotator\+::\+VTable\+::\+Entry}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespaceflatbuffers}{flatbuffers}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum class \mbox{\hyperlink{namespaceflatbuffers_a33c27de12587a162bc0111b2e6a58879}{flatbuffers\+::\+Binary\+Region\+Type}} \{ \newline
+\mbox{\hyperlink{namespaceflatbuffers_a33c27de12587a162bc0111b2e6a58879a88183b946cc5f0e8c96b2e66e1c74a7e}{flatbuffers\+::\+Unknown}} = 0
+, \mbox{\hyperlink{namespaceflatbuffers_a33c27de12587a162bc0111b2e6a58879a73cd3aff5b763333c1e8c493bd3d6de9}{flatbuffers\+::\+UOffset}} = 1
+, \mbox{\hyperlink{namespaceflatbuffers_a33c27de12587a162bc0111b2e6a58879a13d20f35f9667f023ee6bd6fd40f27bb}{flatbuffers\+::\+SOffset}} = 2
+, \mbox{\hyperlink{namespaceflatbuffers_a33c27de12587a162bc0111b2e6a58879a5f50b24c4442e0c86b8ab5695a3c098f}{flatbuffers\+::\+VOffset}} = 3
+, \newline
+\mbox{\hyperlink{namespaceflatbuffers_a33c27de12587a162bc0111b2e6a58879ac26f15e86e3de4c398a8273272aba034}{flatbuffers\+::\+Bool}} = 4
+, \mbox{\hyperlink{namespaceflatbuffers_a33c27de12587a162bc0111b2e6a58879aa245c3230debe5c956484ecc6fa93877}{flatbuffers\+::\+Byte}} = 5
+, \mbox{\hyperlink{namespaceflatbuffers_a33c27de12587a162bc0111b2e6a58879a8e95e84813830072b7516cfaa7dbc1a9}{flatbuffers\+::\+Char}} = 6
+, \mbox{\hyperlink{namespaceflatbuffers_a33c27de12587a162bc0111b2e6a58879a3a33b05b1fe0bad48ad87ffbacdddd15}{flatbuffers\+::\+Uint8}} = 7
+, \newline
+\mbox{\hyperlink{namespaceflatbuffers_a33c27de12587a162bc0111b2e6a58879a7d839b2c12bfd40ac121b4cc9e81c539}{flatbuffers\+::\+Int8}} = 8
+, \mbox{\hyperlink{namespaceflatbuffers_a33c27de12587a162bc0111b2e6a58879a3167337450665ae9b3b34004d33cafe8}{flatbuffers\+::\+Uint16}} = 9
+, \mbox{\hyperlink{namespaceflatbuffers_a33c27de12587a162bc0111b2e6a58879a39bc2ae44b184207f560ff8619823208}{flatbuffers\+::\+Int16}} = 10
+, \mbox{\hyperlink{namespaceflatbuffers_a33c27de12587a162bc0111b2e6a58879a2f3a46e0add3a07937412cbeb8f95727}{flatbuffers\+::\+Uint32}} = 11
+, \newline
+\mbox{\hyperlink{namespaceflatbuffers_a33c27de12587a162bc0111b2e6a58879ac06129f6e6e15c09328365e553f1dc31}{flatbuffers\+::\+Int32}} = 12
+, \mbox{\hyperlink{namespaceflatbuffers_a33c27de12587a162bc0111b2e6a58879ac970503874fb72afdf908cb54a4c10ee}{flatbuffers\+::\+Uint64}} = 13
+, \mbox{\hyperlink{namespaceflatbuffers_a33c27de12587a162bc0111b2e6a58879afbde23b11d7e59af7828e81144c8b487}{flatbuffers\+::\+Int64}} = 14
+, \mbox{\hyperlink{namespaceflatbuffers_a33c27de12587a162bc0111b2e6a58879a22ae0e2b89e5e3d477f988cc36d3272b}{flatbuffers\+::\+Float}} = 15
+, \newline
+\mbox{\hyperlink{namespaceflatbuffers_a33c27de12587a162bc0111b2e6a58879ad909d38d705ce75386dd86e611a82f5b}{flatbuffers\+::\+Double}} = 16
+, \mbox{\hyperlink{namespaceflatbuffers_a33c27de12587a162bc0111b2e6a58879a05596c73b0345cc43c028d2e36c2a0f1}{flatbuffers\+::\+UType}} = 17
+, \mbox{\hyperlink{namespaceflatbuffers_a33c27de12587a162bc0111b2e6a58879abd92630a443fa538b56d10dc61fe6b26}{flatbuffers\+::\+UOffset64}} = 18
+ \}
+\item 
+enum class \mbox{\hyperlink{namespaceflatbuffers_ac1f0e15fc3107848716b6e091aa68437}{flatbuffers\+::\+Binary\+Region\+Status}} \{ \newline
+\mbox{\hyperlink{namespaceflatbuffers_ac1f0e15fc3107848716b6e091aa68437ae0aa021e21dddbd6d8cecec71e9cf564}{flatbuffers\+::\+OK}} = 0
+, \mbox{\hyperlink{namespaceflatbuffers_ac1f0e15fc3107848716b6e091aa68437a32bd8a1db2275458673903bdb84cb277}{flatbuffers\+::\+WARN}} = 100
+, \mbox{\hyperlink{namespaceflatbuffers_ac1f0e15fc3107848716b6e091aa68437a5d54cb8c476b9e0881fd332c7b862e3b}{flatbuffers\+::\+WARN\+\_\+\+NO\+\_\+\+REFERENCES}}
+, \mbox{\hyperlink{namespaceflatbuffers_ac1f0e15fc3107848716b6e091aa68437a2cb4cab3ca05929532228a548488ebc2}{flatbuffers\+::\+WARN\+\_\+\+CORRUPTED\+\_\+\+PADDING}}
+, \newline
+\mbox{\hyperlink{namespaceflatbuffers_ac1f0e15fc3107848716b6e091aa68437a87f864a86d1c6506233a85d5d36efcaf}{flatbuffers\+::\+WARN\+\_\+\+PADDING\+\_\+\+LENGTH}}
+, \mbox{\hyperlink{namespaceflatbuffers_ac1f0e15fc3107848716b6e091aa68437abb1ca97ec761fc37101737ba0aa2e7c5}{flatbuffers\+::\+ERROR}} = 200
+, \mbox{\hyperlink{namespaceflatbuffers_ac1f0e15fc3107848716b6e091aa68437adb53ca92d4817eefe5405bd91afef168}{flatbuffers\+::\+ERROR\+\_\+\+OFFSET\+\_\+\+OUT\+\_\+\+OF\+\_\+\+BINARY}}
+, \mbox{\hyperlink{namespaceflatbuffers_ac1f0e15fc3107848716b6e091aa68437a77c42417f663cfb6451937a503fd1989}{flatbuffers\+::\+ERROR\+\_\+\+INCOMPLETE\+\_\+\+BINARY}}
+, \newline
+\mbox{\hyperlink{namespaceflatbuffers_ac1f0e15fc3107848716b6e091aa68437a24cde4d8546ad630e6d218fd5ff4e28e}{flatbuffers\+::\+ERROR\+\_\+\+LENGTH\+\_\+\+TOO\+\_\+\+LONG}}
+, \mbox{\hyperlink{namespaceflatbuffers_ac1f0e15fc3107848716b6e091aa68437af8aa5cc4aa170ed81a69e3ef371fe2fa}{flatbuffers\+::\+ERROR\+\_\+\+LENGTH\+\_\+\+TOO\+\_\+\+SHORT}}
+, \mbox{\hyperlink{namespaceflatbuffers_ac1f0e15fc3107848716b6e091aa68437ab5ebfbb6940b97e7f410b2119c06a236}{flatbuffers\+::\+ERROR\+\_\+\+REQUIRED\+\_\+\+FIELD\+\_\+\+NOT\+\_\+\+PRESENT}}
+, \mbox{\hyperlink{namespaceflatbuffers_ac1f0e15fc3107848716b6e091aa68437ac66f613e428eb529288e4fdcefa28010}{flatbuffers\+::\+ERROR\+\_\+\+INVALID\+\_\+\+UNION\+\_\+\+TYPE}}
+, \newline
+\mbox{\hyperlink{namespaceflatbuffers_ac1f0e15fc3107848716b6e091aa68437aabea9b28d8a9e02cf2c13f3b871dfcc7}{flatbuffers\+::\+ERROR\+\_\+\+CYCLE\+\_\+\+DETECTED}}
+ \}
+\item 
+enum class \mbox{\hyperlink{namespaceflatbuffers_a90c9f831ebebbb6cc3ebcff20848c9b7}{flatbuffers\+::\+Binary\+Region\+Comment\+Type}} \{ \newline
+\mbox{\hyperlink{namespaceflatbuffers_a90c9f831ebebbb6cc3ebcff20848c9b7a88183b946cc5f0e8c96b2e66e1c74a7e}{flatbuffers\+::\+Unknown}} = 0
+, \mbox{\hyperlink{namespaceflatbuffers_a90c9f831ebebbb6cc3ebcff20848c9b7a30f70a78bf63dc38a27280ab7c6fe1f9}{flatbuffers\+::\+Size\+Prefix}}
+, \mbox{\hyperlink{namespaceflatbuffers_a90c9f831ebebbb6cc3ebcff20848c9b7ac585961d59a889f6561f5db50bd32727}{flatbuffers\+::\+Root\+Table\+Offset}}
+, \mbox{\hyperlink{namespaceflatbuffers_a90c9f831ebebbb6cc3ebcff20848c9b7afe99907ea766cac41429f0a9c877f12b}{flatbuffers\+::\+File\+Identifier}}
+, \newline
+\mbox{\hyperlink{namespaceflatbuffers_a90c9f831ebebbb6cc3ebcff20848c9b7aa10443964156b9e87c95e74c8f9baf15}{flatbuffers\+::\+Padding}}
+, \mbox{\hyperlink{namespaceflatbuffers_a90c9f831ebebbb6cc3ebcff20848c9b7afd550b14b38f39911b72964283c5b729}{flatbuffers\+::\+VTable\+Size}}
+, \mbox{\hyperlink{namespaceflatbuffers_a90c9f831ebebbb6cc3ebcff20848c9b7a597cded72b0619e501da1ad1286ec42b}{flatbuffers\+::\+VTable\+Reffering\+Table\+Length}}
+, \mbox{\hyperlink{namespaceflatbuffers_a90c9f831ebebbb6cc3ebcff20848c9b7a6737ca694066ce75575e0011917eb66e}{flatbuffers\+::\+VTable\+Field\+Offset}}
+, \newline
+\mbox{\hyperlink{namespaceflatbuffers_a90c9f831ebebbb6cc3ebcff20848c9b7ae18ed8bf44f9451580624947e8014821}{flatbuffers\+::\+VTable\+Unknown\+Field\+Offset}}
+, \mbox{\hyperlink{namespaceflatbuffers_a90c9f831ebebbb6cc3ebcff20848c9b7a563951a5c4fe378dbe45967984b82d3d}{flatbuffers\+::\+Table\+VTable\+Offset}}
+, \mbox{\hyperlink{namespaceflatbuffers_a90c9f831ebebbb6cc3ebcff20848c9b7a953144aba1511e701fc163cf7a390356}{flatbuffers\+::\+Table\+Field}}
+, \mbox{\hyperlink{namespaceflatbuffers_a90c9f831ebebbb6cc3ebcff20848c9b7af6810af9723b61ddd46609e4fa43ed02}{flatbuffers\+::\+Table\+Unknown\+Field}}
+, \newline
+\mbox{\hyperlink{namespaceflatbuffers_a90c9f831ebebbb6cc3ebcff20848c9b7a7fcca0b9dd24ccd7db82f620c30f9b14}{flatbuffers\+::\+Table\+Offset\+Field}}
+, \mbox{\hyperlink{namespaceflatbuffers_a90c9f831ebebbb6cc3ebcff20848c9b7afb3318a62187d6f696193ca86e00c967}{flatbuffers\+::\+Struct\+Field}}
+, \mbox{\hyperlink{namespaceflatbuffers_a90c9f831ebebbb6cc3ebcff20848c9b7a43c611fc90b15a15ab8f5dc7048bc07a}{flatbuffers\+::\+Array\+Field}}
+, \mbox{\hyperlink{namespaceflatbuffers_a90c9f831ebebbb6cc3ebcff20848c9b7aa67dcce12ff5a0120783533515872746}{flatbuffers\+::\+String\+Length}}
+, \newline
+\mbox{\hyperlink{namespaceflatbuffers_a90c9f831ebebbb6cc3ebcff20848c9b7af6d2b0e17b94cf73adf2a5be1f0ca160}{flatbuffers\+::\+String\+Value}}
+, \mbox{\hyperlink{namespaceflatbuffers_a90c9f831ebebbb6cc3ebcff20848c9b7a3f75dc0fc0b11b1216008fd780ac61b4}{flatbuffers\+::\+String\+Terminator}}
+, \mbox{\hyperlink{namespaceflatbuffers_a90c9f831ebebbb6cc3ebcff20848c9b7a194a4640ba605996c30a058165bb3987}{flatbuffers\+::\+Vector\+Length}}
+, \mbox{\hyperlink{namespaceflatbuffers_a90c9f831ebebbb6cc3ebcff20848c9b7a4f9b5e3187231038a1b4251b90fc9fcc}{flatbuffers\+::\+Vector\+Value}}
+, \newline
+\mbox{\hyperlink{namespaceflatbuffers_a90c9f831ebebbb6cc3ebcff20848c9b7ae6c92fa3bdb3625fb99bd5d30f345e56}{flatbuffers\+::\+Vector\+Table\+Value}}
+, \mbox{\hyperlink{namespaceflatbuffers_a90c9f831ebebbb6cc3ebcff20848c9b7ac3f689e1f5c9152aedcd34b3dc4be1d4}{flatbuffers\+::\+Vector\+String\+Value}}
+, \mbox{\hyperlink{namespaceflatbuffers_a90c9f831ebebbb6cc3ebcff20848c9b7a3f7db4780189dce67bab72f381081f58}{flatbuffers\+::\+Vector\+Union\+Value}}
+ \}
+\item 
+enum class \mbox{\hyperlink{namespaceflatbuffers_a83021555a8107d7d2791e8db0b4d7d18}{flatbuffers\+::\+Binary\+Section\+Type}} \{ \newline
+\mbox{\hyperlink{namespaceflatbuffers_a83021555a8107d7d2791e8db0b4d7d18a88183b946cc5f0e8c96b2e66e1c74a7e}{flatbuffers\+::\+Unknown}} = 0
+, \mbox{\hyperlink{namespaceflatbuffers_a83021555a8107d7d2791e8db0b4d7d18abf50d5e661106d0abe925af3c2e6f7e7}{flatbuffers\+::\+Header}} = 1
+, \mbox{\hyperlink{namespaceflatbuffers_a83021555a8107d7d2791e8db0b4d7d18a51c45b795d5d18a3e4e0c37e8b20a141}{flatbuffers\+::\+Table}} = 2
+, \mbox{\hyperlink{namespaceflatbuffers_a83021555a8107d7d2791e8db0b4d7d18a3c306fb942a417a1b14dbfb030b04138}{flatbuffers\+::\+Root\+Table}} = 3
+, \newline
+\mbox{\hyperlink{namespaceflatbuffers_a83021555a8107d7d2791e8db0b4d7d18a5fe1b444a36c9acc94c001c1add97722}{flatbuffers\+::\+VTable}} = 4
+, \mbox{\hyperlink{namespaceflatbuffers_a83021555a8107d7d2791e8db0b4d7d18a886ef5dbd655a6c97726d7091c6b173e}{flatbuffers\+::\+Struct}} = 5
+, \mbox{\hyperlink{namespaceflatbuffers_a83021555a8107d7d2791e8db0b4d7d18a27118326006d3829667a400ad23d5d98}{flatbuffers\+::\+String}} = 6
+, \mbox{\hyperlink{namespaceflatbuffers_a83021555a8107d7d2791e8db0b4d7d18a57dea6f5039281b7fee517fc43bf3110}{flatbuffers\+::\+Vector}} = 7
+, \newline
+\mbox{\hyperlink{namespaceflatbuffers_a83021555a8107d7d2791e8db0b4d7d18aaef12e903e606a4895a16b393bfdec8c}{flatbuffers\+::\+Union}} = 8
+, \mbox{\hyperlink{namespaceflatbuffers_a83021555a8107d7d2791e8db0b4d7d18aa10443964156b9e87c95e74c8f9baf15}{flatbuffers\+::\+Padding}} = 9
+, \mbox{\hyperlink{namespaceflatbuffers_a83021555a8107d7d2791e8db0b4d7d18a7cb39c97e01644b58f5097044d589a58}{flatbuffers\+::\+Vector64}} = 10
+ \}
+\end{DoxyCompactItemize}

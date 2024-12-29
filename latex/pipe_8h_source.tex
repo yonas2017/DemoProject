@@ -1,0 +1,55 @@
+\doxysection{pipe.\+h}
+\hypertarget{pipe_8h_source}{}\label{pipe_8h_source}\index{src/client/pipe.h@{src/client/pipe.h}}
+\mbox{\hyperlink{pipe_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{client_8h}{client.h}}"{}}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{messages_8h}{messages.h}}"{}}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{comment}{//\ Defines\ for\ message\ types.}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#define\ JOB\_INFO\_TYPE\_O\ 'O'}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#define\ JOB\_INFO\_TYPE\_E\ 'E'}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#define\ JOB\_INFO\_TYPE\_Q\ 'Q'}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ NORMAL\_EXIT\_STATUS\ 100}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ *\ Create\ pipe\ for\ Child\ A\ and\ B.}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ *@param\ pipeA:\ pipe\ pointer\ A}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ *@param\ pipeB:\ pipe\ pointer\ B}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00016\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{pipe_8h_abc029c38d8ebda9706a926d8e64810f1}{create\_pipe}}(\textcolor{keywordtype}{int}*\ pipeA,\ \textcolor{keywordtype}{int}*\ pipeB);}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ *\ Connects\ to\ Child\ pipe,\ \ then\ it\ reads\ data\ from\ pipe..}}
+\DoxyCodeLine{00020\ \textcolor{comment}{\ *@param\ pipeFd:\ pipe\ file\ descriptor\ pointer}}
+\DoxyCodeLine{00021\ \textcolor{comment}{\ *@param\ pipeTermFd:\ pipe\ terminate\ file\ descriptor\ pointer}}
+\DoxyCodeLine{00022\ \textcolor{comment}{\ *@param\ fdOut:\ STDOUT/STDERR\ file\ descriptor}}
+\DoxyCodeLine{00023\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00024\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{pipe_8h_a3c8419236142047d349efb64a77220d9}{child\_process}}(\textcolor{keywordtype}{int}*\ pipeFd,\ \textcolor{keywordtype}{int}*\ pipeTermFd,\ \textcolor{keywordtype}{int}\ fdOut);}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00027\ \textcolor{comment}{\ *\ Connects\ to\ Child\ pipe,\ and\ then\ writes\ to\ the\ pipe.}}
+\DoxyCodeLine{00028\ \textcolor{comment}{\ *@param\ pipeFd:\ pipe\ file\ descriptor\ pointer}}
+\DoxyCodeLine{00029\ \textcolor{comment}{\ *@param\ jobType:\ job\ type.}}
+\DoxyCodeLine{00030\ \textcolor{comment}{\ *@param\ msg:\ server\ message\ pointer}}
+\DoxyCodeLine{00031\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00032\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{pipe_8h_acdf8411b1bd4382b7868105628325a59}{write\_to\_pipe}}(\textcolor{keywordtype}{int}*\ pipeFd,\ \textcolor{keywordtype}{char}\ jobType,\ \mbox{\hyperlink{structserver__message__t}{server\_message\_t}}*\ msg);}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00035\ \textcolor{comment}{\ *\ Function\ that\ processes\ server\ data\ and\ assign\ text\ to}}
+\DoxyCodeLine{00036\ \textcolor{comment}{\ *\ the\ correct\ child.}}
+\DoxyCodeLine{00037\ \textcolor{comment}{\ *@param\ client:\ client}}
+\DoxyCodeLine{00038\ \textcolor{comment}{\ *@param\ pipeChildA:\ pipeChildA\ pointer\ for\ STD\_OUT}}
+\DoxyCodeLine{00039\ \textcolor{comment}{\ *@param\ pipeChildB:\ pipeChildA\ pointer\ for\ STD\_ERROR}}
+\DoxyCodeLine{00040\ \textcolor{comment}{\ *@param\ pipeTermChildA:\ pipe\ for\ terminating\ child\ A\ pointer}}
+\DoxyCodeLine{00041\ \textcolor{comment}{\ *@param\ pipeTermChildB:\ pipe\ for\ terminating\ child\ B\ pointer}}
+\DoxyCodeLine{00042\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00043\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{pipe_8h_a9c8c58f61f71f7d19021b703f694d13c}{parent\_process}}(\mbox{\hyperlink{structclient__t}{client\_t}}*\ \mbox{\hyperlink{namespaceclient}{client}},\ \textcolor{keywordtype}{int}*\ pipeChildA,\ \textcolor{keywordtype}{int}*\ pipeChildB,}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}*\ pipeTermChildA,\ \textcolor{keywordtype}{int}*\ pipeTermChildB);}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00047\ \textcolor{comment}{\ *\ Wait\ and\ terminate\ child.}}
+\DoxyCodeLine{00048\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00049\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{pipe_8h_a1b937e37c39824bb86201105cbc16df6}{wait\_child}}();}
+
+\end{DoxyCode}

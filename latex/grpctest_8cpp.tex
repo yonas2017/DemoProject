@@ -1,0 +1,101 @@
+\doxysection{flatbuffers/grpc/tests/grpctest.cpp File Reference}
+\hypertarget{grpctest_8cpp}{}\label{grpctest_8cpp}\index{flatbuffers/grpc/tests/grpctest.cpp@{flatbuffers/grpc/tests/grpctest.cpp}}
+{\ttfamily \#include $<$grpcpp/grpcpp.\+h$>$}\newline
+{\ttfamily \#include $<$condition\+\_\+variable$>$}\newline
+{\ttfamily \#include $<$thread$>$}\newline
+{\ttfamily \#include "{}monster\+\_\+test.\+grpc.\+fb.\+h"{}}\newline
+{\ttfamily \#include "{}monster\+\_\+test\+\_\+generated.\+h"{}}\newline
+{\ttfamily \#include "{}test\+\_\+assert.\+h"{}}\newline
+Include dependency graph for grpctest.\+cpp\+:
+% FIG 0
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classServiceImpl}{Service\+Impl}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{grpctest_8cpp_a86b31262299caf080737a91789fd673e}{message\+\_\+builder\+\_\+tests}} ()
+\item 
+void \mbox{\hyperlink{grpctest_8cpp_afec70f4aa13559a9e64d869bb52e2b2f}{Run\+Server}} ()
+\item 
+{\footnotesize template$<$class Builder $>$ }\\void \mbox{\hyperlink{grpctest_8cpp_aeeb4f0aa59aa6ef1b825141dd97d421d}{Store\+RPC}} (\mbox{\hyperlink{classMyGame_1_1Example_1_1MonsterStorage_1_1Stub}{Monster\+Storage\+::\+Stub}} \texorpdfstring{$\ast$}{*}stub)
+\item 
+{\footnotesize template$<$class Builder $>$ }\\void \mbox{\hyperlink{grpctest_8cpp_a0f1fd6569fe0b7209095e775e1503ac8}{Retrieve\+RPC}} (\mbox{\hyperlink{classMyGame_1_1Example_1_1MonsterStorage_1_1Stub}{Monster\+Storage\+::\+Stub}} \texorpdfstring{$\ast$}{*}stub)
+\item 
+int \mbox{\hyperlink{grpctest_8cpp_abe70f84af1a605b9bcad0e1cf859fae8}{grpc\+\_\+server\+\_\+test}} ()
+\item 
+int \mbox{\hyperlink{grpctest_8cpp_a78a7822383144f4e823de9fc40650104}{main}} (int, const char \texorpdfstring{$\ast$}{*}\mbox{[}$\,$\mbox{]})
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+grpc\+::\+Server \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{grpctest_8cpp_a4dbd8d3fefb86e18f693c51b37a7d91f}{server\+\_\+instance}} = nullptr
+\item 
+std\+::mutex \mbox{\hyperlink{grpctest_8cpp_a11fa7d6d88e32e110ca5e55c38b487a0}{wait\+\_\+for\+\_\+server}}
+\item 
+std\+::condition\+\_\+variable \mbox{\hyperlink{grpctest_8cpp_a5eee259596262aa11584dd2d9c975878}{server\+\_\+instance\+\_\+cv}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{grpctest_8cpp_abe70f84af1a605b9bcad0e1cf859fae8}\label{grpctest_8cpp_abe70f84af1a605b9bcad0e1cf859fae8} 
+\index{grpctest.cpp@{grpctest.cpp}!grpc\_server\_test@{grpc\_server\_test}}
+\index{grpc\_server\_test@{grpc\_server\_test}!grpctest.cpp@{grpctest.cpp}}
+\doxysubsubsection{\texorpdfstring{grpc\_server\_test()}{grpc\_server\_test()}}
+{\footnotesize\ttfamily int grpc\+\_\+server\+\_\+test (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{grpctest_8cpp_a78a7822383144f4e823de9fc40650104}\label{grpctest_8cpp_a78a7822383144f4e823de9fc40650104} 
+\index{grpctest.cpp@{grpctest.cpp}!main@{main}}
+\index{main@{main}!grpctest.cpp@{grpctest.cpp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{int}]{,  }\item[{const char \texorpdfstring{$\ast$}{*}}]{\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+\Hypertarget{grpctest_8cpp_a86b31262299caf080737a91789fd673e}\label{grpctest_8cpp_a86b31262299caf080737a91789fd673e} 
+\index{grpctest.cpp@{grpctest.cpp}!message\_builder\_tests@{message\_builder\_tests}}
+\index{message\_builder\_tests@{message\_builder\_tests}!grpctest.cpp@{grpctest.cpp}}
+\doxysubsubsection{\texorpdfstring{message\_builder\_tests()}{message\_builder\_tests()}}
+{\footnotesize\ttfamily void message\+\_\+builder\+\_\+tests (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{grpctest_8cpp_a0f1fd6569fe0b7209095e775e1503ac8}\label{grpctest_8cpp_a0f1fd6569fe0b7209095e775e1503ac8} 
+\index{grpctest.cpp@{grpctest.cpp}!RetrieveRPC@{RetrieveRPC}}
+\index{RetrieveRPC@{RetrieveRPC}!grpctest.cpp@{grpctest.cpp}}
+\doxysubsubsection{\texorpdfstring{RetrieveRPC()}{RetrieveRPC()}}
+{\footnotesize\ttfamily template$<$class Builder $>$ \\
+void Retrieve\+RPC (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classMyGame_1_1Example_1_1MonsterStorage_1_1Stub}{Monster\+Storage\+::\+Stub}} \texorpdfstring{$\ast$}{*}}]{stub }\end{DoxyParamCaption})}
+
+\Hypertarget{grpctest_8cpp_afec70f4aa13559a9e64d869bb52e2b2f}\label{grpctest_8cpp_afec70f4aa13559a9e64d869bb52e2b2f} 
+\index{grpctest.cpp@{grpctest.cpp}!RunServer@{RunServer}}
+\index{RunServer@{RunServer}!grpctest.cpp@{grpctest.cpp}}
+\doxysubsubsection{\texorpdfstring{RunServer()}{RunServer()}}
+{\footnotesize\ttfamily void Run\+Server (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{grpctest_8cpp_aeeb4f0aa59aa6ef1b825141dd97d421d}\label{grpctest_8cpp_aeeb4f0aa59aa6ef1b825141dd97d421d} 
+\index{grpctest.cpp@{grpctest.cpp}!StoreRPC@{StoreRPC}}
+\index{StoreRPC@{StoreRPC}!grpctest.cpp@{grpctest.cpp}}
+\doxysubsubsection{\texorpdfstring{StoreRPC()}{StoreRPC()}}
+{\footnotesize\ttfamily template$<$class Builder $>$ \\
+void Store\+RPC (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classMyGame_1_1Example_1_1MonsterStorage_1_1Stub}{Monster\+Storage\+::\+Stub}} \texorpdfstring{$\ast$}{*}}]{stub }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{grpctest_8cpp_a4dbd8d3fefb86e18f693c51b37a7d91f}\label{grpctest_8cpp_a4dbd8d3fefb86e18f693c51b37a7d91f} 
+\index{grpctest.cpp@{grpctest.cpp}!server\_instance@{server\_instance}}
+\index{server\_instance@{server\_instance}!grpctest.cpp@{grpctest.cpp}}
+\doxysubsubsection{\texorpdfstring{server\_instance}{server\_instance}}
+{\footnotesize\ttfamily grpc\+::\+Server\texorpdfstring{$\ast$}{*} server\+\_\+instance = nullptr}
+
+\Hypertarget{grpctest_8cpp_a5eee259596262aa11584dd2d9c975878}\label{grpctest_8cpp_a5eee259596262aa11584dd2d9c975878} 
+\index{grpctest.cpp@{grpctest.cpp}!server\_instance\_cv@{server\_instance\_cv}}
+\index{server\_instance\_cv@{server\_instance\_cv}!grpctest.cpp@{grpctest.cpp}}
+\doxysubsubsection{\texorpdfstring{server\_instance\_cv}{server\_instance\_cv}}
+{\footnotesize\ttfamily std\+::condition\+\_\+variable server\+\_\+instance\+\_\+cv}
+
+\Hypertarget{grpctest_8cpp_a11fa7d6d88e32e110ca5e55c38b487a0}\label{grpctest_8cpp_a11fa7d6d88e32e110ca5e55c38b487a0} 
+\index{grpctest.cpp@{grpctest.cpp}!wait\_for\_server@{wait\_for\_server}}
+\index{wait\_for\_server@{wait\_for\_server}!grpctest.cpp@{grpctest.cpp}}
+\doxysubsubsection{\texorpdfstring{wait\_for\_server}{wait\_for\_server}}
+{\footnotesize\ttfamily std\+::mutex wait\+\_\+for\+\_\+server}
+

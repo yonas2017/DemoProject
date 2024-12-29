@@ -1,0 +1,99 @@
+\doxysection{python.\+h}
+\hypertarget{python_8h_source}{}\label{python_8h_source}\index{flatbuffers/include/codegen/python.h@{flatbuffers/include/codegen/python.h}}
+\mbox{\hyperlink{python_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ FLATBUFFERS\_INCLUDE\_CODEGEN\_PYTHON\_H\_}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ FLATBUFFERS\_INCLUDE\_CODEGEN\_PYTHON\_H\_}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <cstdint>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <set>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{include_2codegen_2namer_8h}{codegen/namer.h}}"{}}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceflatbuffers}{flatbuffers}}\ \{}
+\DoxyCodeLine{00012\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacepython}{python}}\ \{}
+\DoxyCodeLine{00013\ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ Namer::Config\ kConfig\ =\ \{}
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{comment}{/*types=*/}\mbox{\hyperlink{namespaceflatbuffers_a51f13331958603317b446d2ea6d46c55afae526507e17bfc6f0d14e125189063a}{Case::kKeep}},}
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{comment}{/*constants=*/}\mbox{\hyperlink{namespaceflatbuffers_a51f13331958603317b446d2ea6d46c55a0b18c153eab45af9b74f271de1a78678}{Case::kScreamingSnake}},}
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{comment}{/*methods=*/}\mbox{\hyperlink{namespaceflatbuffers_a51f13331958603317b446d2ea6d46c55a9f2f58218b575491fdfd8059304771b4}{Case::kUpperCamel}},}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{comment}{/*functions=*/}\mbox{\hyperlink{namespaceflatbuffers_a51f13331958603317b446d2ea6d46c55a9f2f58218b575491fdfd8059304771b4}{Case::kUpperCamel}},}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{comment}{/*fields=*/}\mbox{\hyperlink{namespaceflatbuffers_a51f13331958603317b446d2ea6d46c55a7e914b0f91be0644bfcdb1b41bea4276}{Case::kLowerCamel}},}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{comment}{/*variable=*/}\mbox{\hyperlink{namespaceflatbuffers_a51f13331958603317b446d2ea6d46c55a7e914b0f91be0644bfcdb1b41bea4276}{Case::kLowerCamel}},}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{comment}{/*variants=*/}\mbox{\hyperlink{namespaceflatbuffers_a51f13331958603317b446d2ea6d46c55afae526507e17bfc6f0d14e125189063a}{Case::kKeep}},}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{comment}{/*enum\_variant\_seperator=*/}\textcolor{stringliteral}{"{}."{}},}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{comment}{/*escape\_keywords=*/}\mbox{\hyperlink{structflatbuffers_1_1Namer_1_1Config_a43d11e85acac80a53f28b50bdd884e5da1f8b280a2a5adbb0a1082bb461adbcff}{Namer::Config::Escape::AfterConvertingCase}},}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{comment}{/*namespaces=*/}\mbox{\hyperlink{namespaceflatbuffers_a51f13331958603317b446d2ea6d46c55afae526507e17bfc6f0d14e125189063a}{Case::kKeep}},\ \ \textcolor{comment}{//\ Packages\ in\ python.}}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{comment}{/*namespace\_seperator=*/}\textcolor{stringliteral}{"{}."{}},}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{comment}{/*object\_prefix=*/}\textcolor{stringliteral}{"{}"{}},}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{comment}{/*object\_suffix=*/}\textcolor{stringliteral}{"{}T"{}},}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{comment}{/*keyword\_prefix=*/}\textcolor{stringliteral}{"{}"{}},}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{comment}{/*keyword\_suffix=*/}\textcolor{stringliteral}{"{}\_"{}},}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{comment}{/*filenames=*/}\mbox{\hyperlink{namespaceflatbuffers_a51f13331958603317b446d2ea6d46c55afae526507e17bfc6f0d14e125189063a}{Case::kKeep}},}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{comment}{/*directories=*/}\mbox{\hyperlink{namespaceflatbuffers_a51f13331958603317b446d2ea6d46c55afae526507e17bfc6f0d14e125189063a}{Case::kKeep}},}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{comment}{/*output\_path=*/}\textcolor{stringliteral}{"{}"{}},}
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{comment}{/*filename\_suffix=*/}\textcolor{stringliteral}{"{}"{}},}
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{comment}{/*filename\_extension=*/}\textcolor{stringliteral}{"{}.py"{}},}
+\DoxyCodeLine{00034\ \};}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ Namer::Config\ kStubConfig\ =\ \{}
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{comment}{/*types=*/}\mbox{\hyperlink{namespaceflatbuffers_a51f13331958603317b446d2ea6d46c55afae526507e17bfc6f0d14e125189063a}{Case::kKeep}},}
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{comment}{/*constants=*/}\mbox{\hyperlink{namespaceflatbuffers_a51f13331958603317b446d2ea6d46c55a0b18c153eab45af9b74f271de1a78678}{Case::kScreamingSnake}},}
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{comment}{/*methods=*/}\mbox{\hyperlink{namespaceflatbuffers_a51f13331958603317b446d2ea6d46c55a9f2f58218b575491fdfd8059304771b4}{Case::kUpperCamel}},}
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{comment}{/*functions=*/}\mbox{\hyperlink{namespaceflatbuffers_a51f13331958603317b446d2ea6d46c55a9f2f58218b575491fdfd8059304771b4}{Case::kUpperCamel}},}
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{comment}{/*fields=*/}\mbox{\hyperlink{namespaceflatbuffers_a51f13331958603317b446d2ea6d46c55a7e914b0f91be0644bfcdb1b41bea4276}{Case::kLowerCamel}},}
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{comment}{/*variables=*/}\mbox{\hyperlink{namespaceflatbuffers_a51f13331958603317b446d2ea6d46c55a7e914b0f91be0644bfcdb1b41bea4276}{Case::kLowerCamel}},}
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{comment}{/*variants=*/}\mbox{\hyperlink{namespaceflatbuffers_a51f13331958603317b446d2ea6d46c55afae526507e17bfc6f0d14e125189063a}{Case::kKeep}},}
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{comment}{/*enum\_variant\_seperator=*/}\textcolor{stringliteral}{"{}."{}},}
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{comment}{/*escape\_keywords=*/}\mbox{\hyperlink{structflatbuffers_1_1Namer_1_1Config_a43d11e85acac80a53f28b50bdd884e5da1f8b280a2a5adbb0a1082bb461adbcff}{Namer::Config::Escape::AfterConvertingCase}},}
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{comment}{/*namespaces=*/}\mbox{\hyperlink{namespaceflatbuffers_a51f13331958603317b446d2ea6d46c55afae526507e17bfc6f0d14e125189063a}{Case::kKeep}},\ \ \textcolor{comment}{//\ Packages\ in\ python.}}
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{comment}{/*namespace\_seperator=*/}\textcolor{stringliteral}{"{}."{}},}
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{comment}{/*object\_prefix=*/}\textcolor{stringliteral}{"{}"{}},}
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{comment}{/*object\_suffix=*/}\textcolor{stringliteral}{"{}T"{}},}
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{comment}{/*keyword\_prefix=*/}\textcolor{stringliteral}{"{}"{}},}
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{comment}{/*keyword\_suffix=*/}\textcolor{stringliteral}{"{}\_"{}},}
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{comment}{/*filenames=*/}\mbox{\hyperlink{namespaceflatbuffers_a51f13331958603317b446d2ea6d46c55afae526507e17bfc6f0d14e125189063a}{Case::kKeep}},}
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{comment}{/*directories=*/}\mbox{\hyperlink{namespaceflatbuffers_a51f13331958603317b446d2ea6d46c55afae526507e17bfc6f0d14e125189063a}{Case::kKeep}},}
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{comment}{/*output\_path=*/}\textcolor{stringliteral}{"{}"{}},}
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{comment}{/*filename\_suffix=*/}\textcolor{stringliteral}{"{}"{}},}
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{comment}{/*filename\_extension=*/}\textcolor{stringliteral}{"{}.pyi"{}},}
+\DoxyCodeLine{00057\ \};}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \textcolor{comment}{//\ \`{}Version`\ represent\ a\ Python\ version.}}
+\DoxyCodeLine{00060\ \textcolor{comment}{//}}
+\DoxyCodeLine{00061\ \textcolor{comment}{//\ The\ zero\ value\ (i.e.\ \`{}Version\{\}`)\ represents\ both\ Python2\ and\ Python3.}}
+\DoxyCodeLine{00062\ \textcolor{comment}{//}}
+\DoxyCodeLine{00063\ \textcolor{comment}{//\ https://docs.python.org/3/faq/general.html\#how-\/does-\/the-\/python-\/version-\/numbering-\/scheme-\/work}}
+\DoxyCodeLine{00064\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structflatbuffers_1_1python_1_1Version}{Version}}\ \{}
+\DoxyCodeLine{00065\ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{structflatbuffers_1_1python_1_1Version}{Version}}(\textcolor{keyword}{const}\ std::string\ \&version);}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00067\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structflatbuffers_1_1python_1_1Version_ae59848e370f6e67830c02d5c0d8c9173}{IsValid}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00069\ \ \ int16\_t\ \mbox{\hyperlink{structflatbuffers_1_1python_1_1Version_af09e8c166d0a2d3a2cad5d202c0c0021}{major}}\ =\ 0;}
+\DoxyCodeLine{00070\ \ \ int16\_t\ \mbox{\hyperlink{structflatbuffers_1_1python_1_1Version_a4b1cb34249d668a20b839391a2133ef1}{minor}}\ =\ 0;}
+\DoxyCodeLine{00071\ \ \ int16\_t\ \mbox{\hyperlink{structflatbuffers_1_1python_1_1Version_a58693eecf86d4fb29bd7650f677f5f40}{micro}}\ =\ 0;}
+\DoxyCodeLine{00072\ \};}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00074\ std::set<std::string>\ \mbox{\hyperlink{namespaceflatbuffers_1_1python_abfcb8669b0ea5114fc24cb66fe16ecf1}{Keywords}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{structflatbuffers_1_1python_1_1Version}{Version}}\ \&version);}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00076\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structflatbuffers_1_1python_1_1Import}{Import}}\ \{}
+\DoxyCodeLine{00077\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structflatbuffers_1_1python_1_1Import_a2ea0622f05f06ed0a1ed631f11bc6ffd}{IsLocal}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{module}\ ==\ "{}."{};\ \}}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00079\ \ \ std::string\ \textcolor{keyword}{module};}
+\DoxyCodeLine{00080\ \ \ std::string\ \mbox{\hyperlink{structflatbuffers_1_1python_1_1Import_a809ff920af2e3c9ba9c29f55e8914a85}{name}};}
+\DoxyCodeLine{00081\ \};}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00083\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structflatbuffers_1_1python_1_1Imports}{Imports}}\ \{}
+\DoxyCodeLine{00084\ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{structflatbuffers_1_1python_1_1Import}{python::Import}}\ \&\mbox{\hyperlink{structflatbuffers_1_1python_1_1Import}{Import}}(\textcolor{keyword}{const}\ std::string\ \&module);}
+\DoxyCodeLine{00085\ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{structflatbuffers_1_1python_1_1Import}{python::Import}}\ \&\mbox{\hyperlink{structflatbuffers_1_1python_1_1Import}{Import}}(\textcolor{keyword}{const}\ std::string\ \&module,}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\ \&\mbox{\hyperlink{idl__gen__ts_8cpp_a9b45b3e13bd9167aab02e17e08916231}{name}});}
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00088\ \ \ std::vector<python::Import>\ \mbox{\hyperlink{structflatbuffers_1_1python_1_1Imports_a703f82e02bc7e1038b5bd5c9d96159f5}{imports}};}
+\DoxyCodeLine{00089\ \};}
+\DoxyCodeLine{00090\ \}\ \ \textcolor{comment}{//\ namespace\ python}}
+\DoxyCodeLine{00091\ \}\ \ \textcolor{comment}{//\ namespace\ flatbuffers}}
+\DoxyCodeLine{00092\ }
+\DoxyCodeLine{00093\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ FLATBUFFERS\_INCLUDE\_CODEGEN\_PYTHON\_H\_}}
+
+\end{DoxyCode}

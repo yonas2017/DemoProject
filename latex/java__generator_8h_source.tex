@@ -1,0 +1,91 @@
+\doxysection{java\+\_\+generator.\+h}
+\hypertarget{java__generator_8h_source}{}\label{java__generator_8h_source}\index{flatbuffers/grpc/src/compiler/java\_generator.h@{flatbuffers/grpc/src/compiler/java\_generator.h}}
+\mbox{\hyperlink{java__generator_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ Copyright\ 2016\ Google\ Inc.\ All\ rights\ reserved.}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ Licensed\ under\ the\ Apache\ License,\ Version\ 2.0\ (the\ "{}License"{});}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ you\ may\ not\ use\ this\ file\ except\ in\ compliance\ with\ the\ License.}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *\ You\ may\ obtain\ a\ copy\ of\ the\ License\ at}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ *\ \ \ \ \ http://www.apache.org/licenses/LICENSE-\/2.0}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ *\ Unless\ required\ by\ applicable\ law\ or\ agreed\ to\ in\ writing,\ software}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ *\ distributed\ under\ the\ License\ is\ distributed\ on\ an\ "{}AS\ IS"{}\ BASIS,}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ *\ WITHOUT\ WARRANTIES\ OR\ CONDITIONS\ OF\ ANY\ KIND,\ either\ express\ or\ implied.}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ *\ See\ the\ License\ for\ the\ specific\ language\ governing\ permissions\ and}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ *\ limitations\ under\ the\ License.}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#ifndef\ NET\_GRPC\_COMPILER\_JAVA\_GENERATOR\_H\_}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#define\ NET\_GRPC\_COMPILER\_JAVA\_GENERATOR\_H\_}}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ <stdlib.h>}\ \ \textcolor{comment}{//\ for\ abort()}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#include\ <map>}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{schema__interface_8h}{src/compiler/schema\_interface.h}}"{}}}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classLogMessageVoidify}{LogMessageVoidify}}\ \{}
+\DoxyCodeLine{00028\ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00029\ \ \ \mbox{\hyperlink{classLogMessageVoidify_ab40841cc4be845ae4f8ae8bd8de5fb56}{LogMessageVoidify}}()\ \{\}}
+\DoxyCodeLine{00030\ \ \ \textcolor{comment}{//\ This\ has\ to\ be\ an\ operator\ with\ a\ precedence\ lower\ than\ <<\ but}}
+\DoxyCodeLine{00031\ \ \ \textcolor{comment}{//\ higher\ than\ ?:}}
+\DoxyCodeLine{00032\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classLogMessageVoidify_add2b26d320d7baafa27ef0deb57fa281}{operator\&}}(std::ostream\&)\ \{\}}
+\DoxyCodeLine{00033\ \};}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classLogHelper}{LogHelper}}\ \{}
+\DoxyCodeLine{00036\ \ \ std::ostream*\ os\_;}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00039\ \ \ \mbox{\hyperlink{classLogHelper_a161e93998a86a6ee1c065bed1337e6bf}{LogHelper}}(std::ostream*\ os)\ :\ os\_(os)\ \{\}}
+\DoxyCodeLine{00040\ \textcolor{preprocessor}{\#if\ defined(\_MSC\_VER)}}
+\DoxyCodeLine{00041\ \textcolor{preprocessor}{\#pragma\ warning(push)}}
+\DoxyCodeLine{00042\ \textcolor{preprocessor}{\#pragma\ warning(\ \(\backslash\)}}
+\DoxyCodeLine{00043\ \textcolor{preprocessor}{\ \ \ \ disable\ :\ 4722)\ \ }\textcolor{comment}{//\ the\ flow\ of\ control\ terminates\ in\ a\ destructor}}
+\DoxyCodeLine{00044\ \ \ \textcolor{comment}{//\ (needed\ to\ compile\ \string~LogHelper\ where\ destructor\ emits\ abort\ intentionally\ -\/}}
+\DoxyCodeLine{00045\ \ \ \textcolor{comment}{//\ inherited\ from\ grpc/java\ code\ generator).}}
+\DoxyCodeLine{00046\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00047\ \ \ \mbox{\hyperlink{classLogHelper_a9e64a4235ad4baaa5a36b64ff1faf02a}{\string~LogHelper}}()\ \{}
+\DoxyCodeLine{00048\ \ \ \ \ *os\_\ <<\ std::endl;}
+\DoxyCodeLine{00049\ \ \ \ \ ::abort();}
+\DoxyCodeLine{00050\ \ \ \}}
+\DoxyCodeLine{00051\ \textcolor{preprocessor}{\#if\ defined(\_MSC\_VER)}}
+\DoxyCodeLine{00052\ \textcolor{preprocessor}{\#pragma\ warning(pop)}}
+\DoxyCodeLine{00053\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00054\ \ \ std::ostream\&\ \mbox{\hyperlink{classLogHelper_aa0077f354bfadf41d3bff8e3a41cfef4}{get\_os}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ *os\_;\ \}}
+\DoxyCodeLine{00055\ \};}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ \textcolor{comment}{//\ Abort\ the\ program\ after\ logging\ the\ mesage\ if\ the\ given\ condition\ is\ not}}
+\DoxyCodeLine{00058\ \textcolor{comment}{//\ true.\ Otherwise,\ do\ nothing.}}
+\DoxyCodeLine{00059\ \textcolor{preprocessor}{\#define\ GRPC\_CODEGEN\_CHECK(x)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00060\ \textcolor{preprocessor}{\ \ (x)\ ?\ (void)0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00061\ \textcolor{preprocessor}{\ \ \ \ \ \ :\ LogMessageVoidify()\ \&\ LogHelper(\&std::cerr).get\_os()\ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00062\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ "{}CHECK\ FAILED:\ "{}\ <<\ \_\_FILE\_\_\ <<\ "{}:"{}\ \(\backslash\)}}
+\DoxyCodeLine{00063\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \_\_LINE\_\_\ <<\ "{}:\ "{}}}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ \textcolor{comment}{//\ Abort\ the\ program\ after\ logging\ the\ mesage.}}
+\DoxyCodeLine{00066\ \textcolor{preprocessor}{\#define\ GRPC\_CODEGEN\_FAIL\ GRPC\_CODEGEN\_CHECK(false)}}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00068\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacegrpc__java__generator}{grpc\_java\_generator}}\ \{}
+\DoxyCodeLine{00069\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structgrpc__java__generator_1_1Parameters}{Parameters}}\ \{}
+\DoxyCodeLine{00070\ \ \ \textcolor{comment}{//\ \ \ \ \ \ \ \ //Defines\ the\ custom\ parameter\ types\ for\ methods}}
+\DoxyCodeLine{00071\ \ \ \textcolor{comment}{//\ \ \ \ \ \ \ \ //eg:\ flatbuffers\ uses\ flatbuffers.Builder\ as\ input\ for\ the\ client}}
+\DoxyCodeLine{00072\ \ \ \textcolor{comment}{//\ \ \ \ \ \ \ \ and\ output\ for\ the\ server\ grpc::string\ custom\_method\_io\_type;}}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00074\ \ \ \textcolor{comment}{//\ Package\ name\ for\ the\ service}}
+\DoxyCodeLine{00075\ \ \ \mbox{\hyperlink{namespacegrpc_a77f15e90a2c3651195f88645e4512267}{grpc::string}}\ \mbox{\hyperlink{structgrpc__java__generator_1_1Parameters_a2a718867f15c4366ceb018fa1f5db6e5}{package\_name}};}
+\DoxyCodeLine{00076\ \};}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00078\ \textcolor{comment}{//\ Return\ the\ source\ of\ the\ generated\ service\ file.}}
+\DoxyCodeLine{00079\ \mbox{\hyperlink{namespacegrpc_a77f15e90a2c3651195f88645e4512267}{grpc::string}}\ \mbox{\hyperlink{namespacegrpc__java__generator_a8c79b1a547232939a22619e7e4ba3722}{GenerateServiceSource}}(\mbox{\hyperlink{structgrpc__generator_1_1File}{grpc\_generator::File}}*\ file,}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{structgrpc__generator_1_1Service}{grpc\_generator::Service}}*\ service,}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structgrpc__java__generator_1_1Parameters}{grpc\_java\_generator::Parameters}}*\ parameters);}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00083\ \}\ \ \textcolor{comment}{//\ namespace\ grpc\_java\_generator}}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00085\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ NET\_GRPC\_COMPILER\_JAVA\_GENERATOR\_H\_}}
+
+\end{DoxyCode}

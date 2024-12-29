@@ -1,0 +1,132 @@
+\doxysection{reflection\+::Enum\+Builder Struct Reference}
+\hypertarget{structreflection_1_1EnumBuilder}{}\label{structreflection_1_1EnumBuilder}\index{reflection::EnumBuilder@{reflection::EnumBuilder}}
+
+
+{\ttfamily \#include $<$reflection\+\_\+generated.\+h$>$}
+
+
+
+Collaboration diagram for reflection\+::Enum\+Builder\+:
+% FIG 0
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef Enum \mbox{\hyperlink{structreflection_1_1EnumBuilder_a9b3ab7307d5c6af090b07a876d155484}{Table}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{structreflection_1_1EnumBuilder_a20112c1f3ca319c514e22c16ad1b6f23}{add\+\_\+name}} (\+::flatbuffers\+::\+Offset$<$\mbox{\hyperlink{structflatbuffers_1_1String}{\+::flatbuffers\+::\+String}} $>$ \mbox{\hyperlink{idl__gen__ts_8cpp_a9b45b3e13bd9167aab02e17e08916231}{name}})
+\item 
+void \mbox{\hyperlink{structreflection_1_1EnumBuilder_a26c543f12c3ca24cf153905d7e109b29}{add\+\_\+values}} (\+::flatbuffers\+::\+Offset$<$\mbox{\hyperlink{classflatbuffers_1_1Vector}{\+::flatbuffers\+::\+Vector}}$<$\+::flatbuffers\+::\+Offset$<$ reflection\+::\+Enum\+Val $>$ $>$ $>$ values)
+\item 
+void \mbox{\hyperlink{structreflection_1_1EnumBuilder_aa55847315359c491b18ec3538e25a260}{add\+\_\+is\+\_\+union}} (bool is\+\_\+union)
+\item 
+void \mbox{\hyperlink{structreflection_1_1EnumBuilder_ad59ef26ffb0e59d2eaf589ee93446b88}{add\+\_\+underlying\+\_\+type}} (\+::flatbuffers\+::\+Offset$<$ reflection\+::\+Type $>$ underlying\+\_\+type)
+\item 
+void \mbox{\hyperlink{structreflection_1_1EnumBuilder_a5b8953f671d31c2974dee80f7c6058e5}{add\+\_\+attributes}} (\+::flatbuffers\+::\+Offset$<$\mbox{\hyperlink{classflatbuffers_1_1Vector}{\+::flatbuffers\+::\+Vector}}$<$\+::flatbuffers\+::\+Offset$<$ reflection\+::\+Key\+Value $>$ $>$ $>$ attributes)
+\item 
+void \mbox{\hyperlink{structreflection_1_1EnumBuilder_aee51259776203f9b676db6f6a5524f1a}{add\+\_\+documentation}} (\+::flatbuffers\+::\+Offset$<$\mbox{\hyperlink{classflatbuffers_1_1Vector}{\+::flatbuffers\+::\+Vector}}$<$\+::flatbuffers\+::\+Offset$<$\mbox{\hyperlink{structflatbuffers_1_1String}{\+::flatbuffers\+::\+String}} $>$ $>$ $>$ documentation)
+\item 
+void \mbox{\hyperlink{structreflection_1_1EnumBuilder_abfe5394392aecd9fce6f6e818ce2c674}{add\+\_\+declaration\+\_\+file}} (\+::flatbuffers\+::\+Offset$<$\mbox{\hyperlink{structflatbuffers_1_1String}{\+::flatbuffers\+::\+String}} $>$ declaration\+\_\+file)
+\item 
+\mbox{\hyperlink{structreflection_1_1EnumBuilder_a6cb5dcc35d53e62a12b42694a95cf521}{Enum\+Builder}} (\mbox{\hyperlink{namespaceflatbuffers_a41ac7b1c8f5f4a869e8f649b6c171ce7}{\+::flatbuffers\+::\+Flat\+Buffer\+Builder}} \&\+\_\+fbb)
+\item 
+\+::flatbuffers\+::\+Offset$<$ Enum $>$ \mbox{\hyperlink{structreflection_1_1EnumBuilder_a64e966ac875696e0ae12d45205379af0}{Finish}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespaceflatbuffers_a41ac7b1c8f5f4a869e8f649b6c171ce7}{\+::flatbuffers\+::\+Flat\+Buffer\+Builder}} \& \mbox{\hyperlink{structreflection_1_1EnumBuilder_aa73a9145bf4cdd04fdd54e3fa67a1a3b}{fbb\+\_\+}}
+\item 
+\+::flatbuffers\+::uoffset\+\_\+t \mbox{\hyperlink{structreflection_1_1EnumBuilder_a01d5b88e04ea4de1d1795d4db9b78cc5}{start\+\_\+}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Typedef Documentation}
+\Hypertarget{structreflection_1_1EnumBuilder_a9b3ab7307d5c6af090b07a876d155484}\label{structreflection_1_1EnumBuilder_a9b3ab7307d5c6af090b07a876d155484} 
+\index{reflection::EnumBuilder@{reflection::EnumBuilder}!Table@{Table}}
+\index{Table@{Table}!reflection::EnumBuilder@{reflection::EnumBuilder}}
+\doxysubsubsection{\texorpdfstring{Table}{Table}}
+{\footnotesize\ttfamily typedef Enum reflection\+::\+Enum\+Builder\+::\+Table}
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{structreflection_1_1EnumBuilder_a6cb5dcc35d53e62a12b42694a95cf521}\label{structreflection_1_1EnumBuilder_a6cb5dcc35d53e62a12b42694a95cf521} 
+\index{reflection::EnumBuilder@{reflection::EnumBuilder}!EnumBuilder@{EnumBuilder}}
+\index{EnumBuilder@{EnumBuilder}!reflection::EnumBuilder@{reflection::EnumBuilder}}
+\doxysubsubsection{\texorpdfstring{EnumBuilder()}{EnumBuilder()}}
+{\footnotesize\ttfamily reflection\+::\+Enum\+Builder\+::\+Enum\+Builder (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceflatbuffers_a41ac7b1c8f5f4a869e8f649b6c171ce7}{\+::flatbuffers\+::\+Flat\+Buffer\+Builder}} \&}]{\+\_\+fbb }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{structreflection_1_1EnumBuilder_a5b8953f671d31c2974dee80f7c6058e5}\label{structreflection_1_1EnumBuilder_a5b8953f671d31c2974dee80f7c6058e5} 
+\index{reflection::EnumBuilder@{reflection::EnumBuilder}!add\_attributes@{add\_attributes}}
+\index{add\_attributes@{add\_attributes}!reflection::EnumBuilder@{reflection::EnumBuilder}}
+\doxysubsubsection{\texorpdfstring{add\_attributes()}{add\_attributes()}}
+{\footnotesize\ttfamily void reflection\+::\+Enum\+Builder\+::add\+\_\+attributes (\begin{DoxyParamCaption}\item[{\+::flatbuffers\+::\+Offset$<$\mbox{\hyperlink{classflatbuffers_1_1Vector}{\+::flatbuffers\+::\+Vector}}$<$\+::flatbuffers\+::\+Offset$<$ reflection\+::\+Key\+Value $>$ $>$ $>$}]{attributes }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{structreflection_1_1EnumBuilder_abfe5394392aecd9fce6f6e818ce2c674}\label{structreflection_1_1EnumBuilder_abfe5394392aecd9fce6f6e818ce2c674} 
+\index{reflection::EnumBuilder@{reflection::EnumBuilder}!add\_declaration\_file@{add\_declaration\_file}}
+\index{add\_declaration\_file@{add\_declaration\_file}!reflection::EnumBuilder@{reflection::EnumBuilder}}
+\doxysubsubsection{\texorpdfstring{add\_declaration\_file()}{add\_declaration\_file()}}
+{\footnotesize\ttfamily void reflection\+::\+Enum\+Builder\+::add\+\_\+declaration\+\_\+file (\begin{DoxyParamCaption}\item[{\+::flatbuffers\+::\+Offset$<$\mbox{\hyperlink{structflatbuffers_1_1String}{\+::flatbuffers\+::\+String}} $>$}]{declaration\+\_\+file }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{structreflection_1_1EnumBuilder_aee51259776203f9b676db6f6a5524f1a}\label{structreflection_1_1EnumBuilder_aee51259776203f9b676db6f6a5524f1a} 
+\index{reflection::EnumBuilder@{reflection::EnumBuilder}!add\_documentation@{add\_documentation}}
+\index{add\_documentation@{add\_documentation}!reflection::EnumBuilder@{reflection::EnumBuilder}}
+\doxysubsubsection{\texorpdfstring{add\_documentation()}{add\_documentation()}}
+{\footnotesize\ttfamily void reflection\+::\+Enum\+Builder\+::add\+\_\+documentation (\begin{DoxyParamCaption}\item[{\+::flatbuffers\+::\+Offset$<$\mbox{\hyperlink{classflatbuffers_1_1Vector}{\+::flatbuffers\+::\+Vector}}$<$\+::flatbuffers\+::\+Offset$<$\mbox{\hyperlink{structflatbuffers_1_1String}{\+::flatbuffers\+::\+String}} $>$ $>$ $>$}]{documentation }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{structreflection_1_1EnumBuilder_aa55847315359c491b18ec3538e25a260}\label{structreflection_1_1EnumBuilder_aa55847315359c491b18ec3538e25a260} 
+\index{reflection::EnumBuilder@{reflection::EnumBuilder}!add\_is\_union@{add\_is\_union}}
+\index{add\_is\_union@{add\_is\_union}!reflection::EnumBuilder@{reflection::EnumBuilder}}
+\doxysubsubsection{\texorpdfstring{add\_is\_union()}{add\_is\_union()}}
+{\footnotesize\ttfamily void reflection\+::\+Enum\+Builder\+::add\+\_\+is\+\_\+union (\begin{DoxyParamCaption}\item[{bool}]{is\+\_\+union }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{structreflection_1_1EnumBuilder_a20112c1f3ca319c514e22c16ad1b6f23}\label{structreflection_1_1EnumBuilder_a20112c1f3ca319c514e22c16ad1b6f23} 
+\index{reflection::EnumBuilder@{reflection::EnumBuilder}!add\_name@{add\_name}}
+\index{add\_name@{add\_name}!reflection::EnumBuilder@{reflection::EnumBuilder}}
+\doxysubsubsection{\texorpdfstring{add\_name()}{add\_name()}}
+{\footnotesize\ttfamily void reflection\+::\+Enum\+Builder\+::add\+\_\+name (\begin{DoxyParamCaption}\item[{\+::flatbuffers\+::\+Offset$<$\mbox{\hyperlink{structflatbuffers_1_1String}{\+::flatbuffers\+::\+String}} $>$}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{structreflection_1_1EnumBuilder_ad59ef26ffb0e59d2eaf589ee93446b88}\label{structreflection_1_1EnumBuilder_ad59ef26ffb0e59d2eaf589ee93446b88} 
+\index{reflection::EnumBuilder@{reflection::EnumBuilder}!add\_underlying\_type@{add\_underlying\_type}}
+\index{add\_underlying\_type@{add\_underlying\_type}!reflection::EnumBuilder@{reflection::EnumBuilder}}
+\doxysubsubsection{\texorpdfstring{add\_underlying\_type()}{add\_underlying\_type()}}
+{\footnotesize\ttfamily void reflection\+::\+Enum\+Builder\+::add\+\_\+underlying\+\_\+type (\begin{DoxyParamCaption}\item[{\+::flatbuffers\+::\+Offset$<$ reflection\+::\+Type $>$}]{underlying\+\_\+type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{structreflection_1_1EnumBuilder_a26c543f12c3ca24cf153905d7e109b29}\label{structreflection_1_1EnumBuilder_a26c543f12c3ca24cf153905d7e109b29} 
+\index{reflection::EnumBuilder@{reflection::EnumBuilder}!add\_values@{add\_values}}
+\index{add\_values@{add\_values}!reflection::EnumBuilder@{reflection::EnumBuilder}}
+\doxysubsubsection{\texorpdfstring{add\_values()}{add\_values()}}
+{\footnotesize\ttfamily void reflection\+::\+Enum\+Builder\+::add\+\_\+values (\begin{DoxyParamCaption}\item[{\+::flatbuffers\+::\+Offset$<$\mbox{\hyperlink{classflatbuffers_1_1Vector}{\+::flatbuffers\+::\+Vector}}$<$\+::flatbuffers\+::\+Offset$<$ reflection\+::\+Enum\+Val $>$ $>$ $>$}]{values }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{structreflection_1_1EnumBuilder_a64e966ac875696e0ae12d45205379af0}\label{structreflection_1_1EnumBuilder_a64e966ac875696e0ae12d45205379af0} 
+\index{reflection::EnumBuilder@{reflection::EnumBuilder}!Finish@{Finish}}
+\index{Finish@{Finish}!reflection::EnumBuilder@{reflection::EnumBuilder}}
+\doxysubsubsection{\texorpdfstring{Finish()}{Finish()}}
+{\footnotesize\ttfamily \+::flatbuffers\+::\+Offset$<$ Enum $>$ reflection\+::\+Enum\+Builder\+::\+Finish (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{structreflection_1_1EnumBuilder_aa73a9145bf4cdd04fdd54e3fa67a1a3b}\label{structreflection_1_1EnumBuilder_aa73a9145bf4cdd04fdd54e3fa67a1a3b} 
+\index{reflection::EnumBuilder@{reflection::EnumBuilder}!fbb\_@{fbb\_}}
+\index{fbb\_@{fbb\_}!reflection::EnumBuilder@{reflection::EnumBuilder}}
+\doxysubsubsection{\texorpdfstring{fbb\_}{fbb\_}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespaceflatbuffers_a41ac7b1c8f5f4a869e8f649b6c171ce7}{\+::flatbuffers\+::\+Flat\+Buffer\+Builder}}\& reflection\+::\+Enum\+Builder\+::fbb\+\_\+}
+
+\Hypertarget{structreflection_1_1EnumBuilder_a01d5b88e04ea4de1d1795d4db9b78cc5}\label{structreflection_1_1EnumBuilder_a01d5b88e04ea4de1d1795d4db9b78cc5} 
+\index{reflection::EnumBuilder@{reflection::EnumBuilder}!start\_@{start\_}}
+\index{start\_@{start\_}!reflection::EnumBuilder@{reflection::EnumBuilder}}
+\doxysubsubsection{\texorpdfstring{start\_}{start\_}}
+{\footnotesize\ttfamily \+::flatbuffers\+::uoffset\+\_\+t reflection\+::\+Enum\+Builder\+::start\+\_\+}
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+flatbuffers/include/flatbuffers/\mbox{\hyperlink{reflection__generated_8h}{reflection\+\_\+generated.\+h}}\end{DoxyCompactItemize}

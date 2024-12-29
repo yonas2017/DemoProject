@@ -1,0 +1,146 @@
+\doxysection{flatbuffers\+::ts\+::Ts\+Generator Class Reference}
+\hypertarget{classflatbuffers_1_1ts_1_1TsGenerator}{}\label{classflatbuffers_1_1ts_1_1TsGenerator}\index{flatbuffers::ts::TsGenerator@{flatbuffers::ts::TsGenerator}}
+
+
+Inheritance diagram for flatbuffers\+::ts\+::Ts\+Generator\+:
+% FIG 0
+
+
+Collaboration diagram for flatbuffers\+::ts\+::Ts\+Generator\+:
+% FIG 1
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef std\+::map$<$ std\+::string, Import\+Definition $>$ \mbox{\hyperlink{classflatbuffers_1_1ts_1_1TsGenerator_a513c16e613b3603ce1203bc78b860413}{import\+\_\+set}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classflatbuffers_1_1ts_1_1TsGenerator_a4588fb138bbbc518427d1dc4869cf7b5}{Ts\+Generator}} (const \mbox{\hyperlink{classflatbuffers_1_1Parser}{Parser}} \&parser, const std\+::string \&path, const std\+::string \&file\+\_\+name)
+\item 
+bool \mbox{\hyperlink{classflatbuffers_1_1ts_1_1TsGenerator_a638cdf1ddf17021782482e1a3b650c09}{generate}} ()
+\item 
+std\+::string \mbox{\hyperlink{classflatbuffers_1_1ts_1_1TsGenerator_a7fc4d8eb0d840b905b33d664bca9a2f5}{Get\+Type\+Name}} (const \mbox{\hyperlink{structflatbuffers_1_1EnumDef}{Enum\+Def}} \&def, const bool=false, const bool force\+\_\+ns\+\_\+wrap=false)
+\item 
+std\+::string \mbox{\hyperlink{classflatbuffers_1_1ts_1_1TsGenerator_a82ddf1b8bfb73ce726dfbc78842b798a}{Get\+Type\+Name}} (const \mbox{\hyperlink{structflatbuffers_1_1StructDef}{Struct\+Def}} \&def, const bool object\+\_\+api=false, const bool force\+\_\+ns\+\_\+wrap=false)
+\item 
+bool \mbox{\hyperlink{classflatbuffers_1_1ts_1_1TsGenerator_a0c64f7479bc80ee8adebd7e6f5aa9da1}{Save\+Type}} (const \mbox{\hyperlink{structflatbuffers_1_1Definition}{Definition}} \&definition, const std\+::string \&class\+\_\+code, \mbox{\hyperlink{classflatbuffers_1_1ts_1_1TsGenerator_a513c16e613b3603ce1203bc78b860413}{import\+\_\+set}} \&imports, \mbox{\hyperlink{classflatbuffers_1_1ts_1_1TsGenerator_a513c16e613b3603ce1203bc78b860413}{import\+\_\+set}} \&bare\+\_\+imports)
+\item 
+void \mbox{\hyperlink{classflatbuffers_1_1ts_1_1TsGenerator_afdab17522829672c099f1427368982db}{Track\+Ns\+Def}} (const \mbox{\hyperlink{structflatbuffers_1_1Definition}{Definition}} \&definition, std\+::string type\+\_\+name)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classflatbuffers_1_1BaseGenerator}{flatbuffers\+::\+Base\+Generator}}}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{classflatbuffers_1_1BaseGenerator_a8559bf41626bdecd53736bfc9153d4b5}{Generated\+File\+Name}} (const std\+::string \&path, const std\+::string \&file\+\_\+name, const \mbox{\hyperlink{structflatbuffers_1_1IDLOptions}{IDLOptions}} \&options) const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Static Public Member Functions inherited from \mbox{\hyperlink{classflatbuffers_1_1BaseGenerator}{flatbuffers\+::\+Base\+Generator}}}
+\begin{DoxyCompactItemize}
+\item 
+static std\+::string \mbox{\hyperlink{classflatbuffers_1_1BaseGenerator_ab7fdb905d7dd8d1177a470eef2da089e}{Namespace\+Dir}} (const \mbox{\hyperlink{classflatbuffers_1_1Parser}{Parser}} \&parser, const std\+::string \&path, const \mbox{\hyperlink{structflatbuffers_1_1Namespace}{Namespace}} \&\mbox{\hyperlink{idl__gen__ts_8cpp_a97618fe2e31e62d92ace9b30478febba}{ns}}, const bool dasherize=false)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{classflatbuffers_1_1BaseGenerator}{flatbuffers\+::\+Base\+Generator}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classflatbuffers_1_1BaseGenerator_aa1607736e698a0105f44e2c167963343}{Base\+Generator}} (const \mbox{\hyperlink{classflatbuffers_1_1Parser}{Parser}} \&parser, const std\+::string \&path, const std\+::string \&file\+\_\+name, std\+::string qualifying\+\_\+start, std\+::string qualifying\+\_\+separator, std\+::string default\+\_\+extension)
+\item 
+virtual \mbox{\hyperlink{classflatbuffers_1_1BaseGenerator_aeab72f6ee75c6753054c84ef9d8a7f04}{\texorpdfstring{$\sim$}{\string~}\+Base\+Generator}} ()
+\item 
+\mbox{\hyperlink{classflatbuffers_1_1BaseGenerator}{Base\+Generator}} \& \mbox{\hyperlink{classflatbuffers_1_1BaseGenerator_a10696c81aa5d52cb15c4365238ba27ed}{operator=}} (const \mbox{\hyperlink{classflatbuffers_1_1BaseGenerator}{Base\+Generator}} \&)
+\item 
+\mbox{\hyperlink{classflatbuffers_1_1BaseGenerator_a6769aab327d5dcb931f9f8c8c1797525}{Base\+Generator}} (const \mbox{\hyperlink{classflatbuffers_1_1BaseGenerator}{Base\+Generator}} \&)
+\item 
+std\+::string \mbox{\hyperlink{classflatbuffers_1_1BaseGenerator_a99f2098106976757252afd99c05bf0ff}{Namespace\+Dir}} (const \mbox{\hyperlink{structflatbuffers_1_1Namespace}{Namespace}} \&\mbox{\hyperlink{idl__gen__ts_8cpp_a97618fe2e31e62d92ace9b30478febba}{ns}}, const bool dasherize=false) const
+\item 
+virtual const \mbox{\hyperlink{structflatbuffers_1_1Namespace}{Namespace}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classflatbuffers_1_1BaseGenerator_ae9894dabc9bac7eff32a810067a9a221}{Current\+Name\+Space}} () const
+\item 
+std\+::string \mbox{\hyperlink{classflatbuffers_1_1BaseGenerator_a4ceefb68a9f65fe861458e82b87c3944}{Wrap\+In\+Name\+Space}} (const \mbox{\hyperlink{structflatbuffers_1_1Namespace}{Namespace}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{idl__gen__ts_8cpp_a97618fe2e31e62d92ace9b30478febba}{ns}}, const std\+::string \&\mbox{\hyperlink{idl__gen__ts_8cpp_a9b45b3e13bd9167aab02e17e08916231}{name}}) const
+\item 
+std\+::string \mbox{\hyperlink{classflatbuffers_1_1BaseGenerator_a1a39f31f1d50c515c1943989765b2330}{Wrap\+In\+Name\+Space}} (const \mbox{\hyperlink{structflatbuffers_1_1Definition}{Definition}} \&def, const std\+::string \&suffix="{}"{}) const
+\item 
+std\+::string \mbox{\hyperlink{classflatbuffers_1_1BaseGenerator_a6b6bbd8e0606f051018d90994bb73e4c}{Get\+Name\+Space}} (const \mbox{\hyperlink{structflatbuffers_1_1Definition}{Definition}} \&def) const
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Protected Member Functions inherited from \mbox{\hyperlink{classflatbuffers_1_1BaseGenerator}{flatbuffers\+::\+Base\+Generator}}}
+\begin{DoxyCompactItemize}
+\item 
+static const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classflatbuffers_1_1BaseGenerator_a04ffaceb3b3c37e9eb8296ddf72ff0f3}{Flat\+Buffers\+Generated\+Warning}} ()
+\item 
+static std\+::string \mbox{\hyperlink{classflatbuffers_1_1BaseGenerator_aa6d96041a6635ba2edc088834fb57ed6}{Full\+Namespace}} (const char \texorpdfstring{$\ast$}{*}separator, const \mbox{\hyperlink{structflatbuffers_1_1Namespace}{Namespace}} \&\mbox{\hyperlink{idl__gen__ts_8cpp_a97618fe2e31e62d92ace9b30478febba}{ns}})
+\item 
+static std\+::string \mbox{\hyperlink{classflatbuffers_1_1BaseGenerator_a8ce0d595629188ca5de97c3b37d556f5}{Last\+Namespace\+Part}} (const \mbox{\hyperlink{structflatbuffers_1_1Namespace}{Namespace}} \&\mbox{\hyperlink{idl__gen__ts_8cpp_a97618fe2e31e62d92ace9b30478febba}{ns}})
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classflatbuffers_1_1BaseGenerator}{flatbuffers\+::\+Base\+Generator}}}
+\begin{DoxyCompactItemize}
+\item 
+const \mbox{\hyperlink{classflatbuffers_1_1Parser}{Parser}} \& \mbox{\hyperlink{classflatbuffers_1_1BaseGenerator_a0cc4eb04a1d94766c92684135b89c245}{parser\+\_\+}}
+\item 
+const std\+::string \& \mbox{\hyperlink{classflatbuffers_1_1BaseGenerator_ad50fb4f2324ac78a5bc86bb6eb97858c}{path\+\_\+}}
+\item 
+const std\+::string \& \mbox{\hyperlink{classflatbuffers_1_1BaseGenerator_af25bcc46e0d71cfc0f23377c30f426c5}{file\+\_\+name\+\_\+}}
+\item 
+const std\+::string \mbox{\hyperlink{classflatbuffers_1_1BaseGenerator_ab3f483b39345cbc52bc266ebcd0643db}{qualifying\+\_\+start\+\_\+}}
+\item 
+const std\+::string \mbox{\hyperlink{classflatbuffers_1_1BaseGenerator_a95353c1506706274d696a79bb4214215}{qualifying\+\_\+separator\+\_\+}}
+\item 
+const std\+::string \mbox{\hyperlink{classflatbuffers_1_1BaseGenerator_a37d8a4da67a4e0272aed29f28f212762}{default\+\_\+extension\+\_\+}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Typedef Documentation}
+\Hypertarget{classflatbuffers_1_1ts_1_1TsGenerator_a513c16e613b3603ce1203bc78b860413}\label{classflatbuffers_1_1ts_1_1TsGenerator_a513c16e613b3603ce1203bc78b860413} 
+\index{flatbuffers::ts::TsGenerator@{flatbuffers::ts::TsGenerator}!import\_set@{import\_set}}
+\index{import\_set@{import\_set}!flatbuffers::ts::TsGenerator@{flatbuffers::ts::TsGenerator}}
+\doxysubsubsection{\texorpdfstring{import\_set}{import\_set}}
+{\footnotesize\ttfamily typedef std\+::map$<$std\+::string, Import\+Definition$>$ \mbox{\hyperlink{classflatbuffers_1_1ts_1_1TsGenerator_a513c16e613b3603ce1203bc78b860413}{flatbuffers\+::ts\+::\+Ts\+Generator\+::import\+\_\+set}}}
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classflatbuffers_1_1ts_1_1TsGenerator_a4588fb138bbbc518427d1dc4869cf7b5}\label{classflatbuffers_1_1ts_1_1TsGenerator_a4588fb138bbbc518427d1dc4869cf7b5} 
+\index{flatbuffers::ts::TsGenerator@{flatbuffers::ts::TsGenerator}!TsGenerator@{TsGenerator}}
+\index{TsGenerator@{TsGenerator}!flatbuffers::ts::TsGenerator@{flatbuffers::ts::TsGenerator}}
+\doxysubsubsection{\texorpdfstring{TsGenerator()}{TsGenerator()}}
+{\footnotesize\ttfamily flatbuffers\+::ts\+::\+Ts\+Generator\+::\+Ts\+Generator (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classflatbuffers_1_1Parser}{Parser}} \&}]{parser,  }\item[{const std\+::string \&}]{path,  }\item[{const std\+::string \&}]{file\+\_\+name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classflatbuffers_1_1ts_1_1TsGenerator_a638cdf1ddf17021782482e1a3b650c09}\label{classflatbuffers_1_1ts_1_1TsGenerator_a638cdf1ddf17021782482e1a3b650c09} 
+\index{flatbuffers::ts::TsGenerator@{flatbuffers::ts::TsGenerator}!generate@{generate}}
+\index{generate@{generate}!flatbuffers::ts::TsGenerator@{flatbuffers::ts::TsGenerator}}
+\doxysubsubsection{\texorpdfstring{generate()}{generate()}}
+{\footnotesize\ttfamily bool flatbuffers\+::ts\+::\+Ts\+Generator\+::generate (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classflatbuffers_1_1BaseGenerator_a32156e35f9273398435ce55386874187}{flatbuffers\+::\+Base\+Generator}}.
+
+\Hypertarget{classflatbuffers_1_1ts_1_1TsGenerator_a7fc4d8eb0d840b905b33d664bca9a2f5}\label{classflatbuffers_1_1ts_1_1TsGenerator_a7fc4d8eb0d840b905b33d664bca9a2f5} 
+\index{flatbuffers::ts::TsGenerator@{flatbuffers::ts::TsGenerator}!GetTypeName@{GetTypeName}}
+\index{GetTypeName@{GetTypeName}!flatbuffers::ts::TsGenerator@{flatbuffers::ts::TsGenerator}}
+\doxysubsubsection{\texorpdfstring{GetTypeName()}{GetTypeName()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily std\+::string flatbuffers\+::ts\+::\+Ts\+Generator\+::\+Get\+Type\+Name (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structflatbuffers_1_1EnumDef}{Enum\+Def}} \&}]{def,  }\item[{const bool}]{ = {\ttfamily false},  }\item[{const bool}]{force\+\_\+ns\+\_\+wrap = {\ttfamily false} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflatbuffers_1_1ts_1_1TsGenerator_a82ddf1b8bfb73ce726dfbc78842b798a}\label{classflatbuffers_1_1ts_1_1TsGenerator_a82ddf1b8bfb73ce726dfbc78842b798a} 
+\index{flatbuffers::ts::TsGenerator@{flatbuffers::ts::TsGenerator}!GetTypeName@{GetTypeName}}
+\index{GetTypeName@{GetTypeName}!flatbuffers::ts::TsGenerator@{flatbuffers::ts::TsGenerator}}
+\doxysubsubsection{\texorpdfstring{GetTypeName()}{GetTypeName()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily std\+::string flatbuffers\+::ts\+::\+Ts\+Generator\+::\+Get\+Type\+Name (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structflatbuffers_1_1StructDef}{Struct\+Def}} \&}]{def,  }\item[{const bool}]{object\+\_\+api = {\ttfamily false},  }\item[{const bool}]{force\+\_\+ns\+\_\+wrap = {\ttfamily false} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflatbuffers_1_1ts_1_1TsGenerator_a0c64f7479bc80ee8adebd7e6f5aa9da1}\label{classflatbuffers_1_1ts_1_1TsGenerator_a0c64f7479bc80ee8adebd7e6f5aa9da1} 
+\index{flatbuffers::ts::TsGenerator@{flatbuffers::ts::TsGenerator}!SaveType@{SaveType}}
+\index{SaveType@{SaveType}!flatbuffers::ts::TsGenerator@{flatbuffers::ts::TsGenerator}}
+\doxysubsubsection{\texorpdfstring{SaveType()}{SaveType()}}
+{\footnotesize\ttfamily bool flatbuffers\+::ts\+::\+Ts\+Generator\+::\+Save\+Type (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structflatbuffers_1_1Definition}{Definition}} \&}]{definition,  }\item[{const std\+::string \&}]{class\+\_\+code,  }\item[{\mbox{\hyperlink{classflatbuffers_1_1ts_1_1TsGenerator_a513c16e613b3603ce1203bc78b860413}{import\+\_\+set}} \&}]{imports,  }\item[{\mbox{\hyperlink{classflatbuffers_1_1ts_1_1TsGenerator_a513c16e613b3603ce1203bc78b860413}{import\+\_\+set}} \&}]{bare\+\_\+imports }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflatbuffers_1_1ts_1_1TsGenerator_afdab17522829672c099f1427368982db}\label{classflatbuffers_1_1ts_1_1TsGenerator_afdab17522829672c099f1427368982db} 
+\index{flatbuffers::ts::TsGenerator@{flatbuffers::ts::TsGenerator}!TrackNsDef@{TrackNsDef}}
+\index{TrackNsDef@{TrackNsDef}!flatbuffers::ts::TsGenerator@{flatbuffers::ts::TsGenerator}}
+\doxysubsubsection{\texorpdfstring{TrackNsDef()}{TrackNsDef()}}
+{\footnotesize\ttfamily void flatbuffers\+::ts\+::\+Ts\+Generator\+::\+Track\+Ns\+Def (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structflatbuffers_1_1Definition}{Definition}} \&}]{definition,  }\item[{std\+::string}]{type\+\_\+name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+flatbuffers/src/\mbox{\hyperlink{idl__gen__ts_8cpp}{idl\+\_\+gen\+\_\+ts.\+cpp}}\end{DoxyCompactItemize}

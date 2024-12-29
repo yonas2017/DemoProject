@@ -1,0 +1,59 @@
+\doxysection{buffer\+\_\+ref.\+h}
+\hypertarget{buffer__ref_8h_source}{}\label{buffer__ref_8h_source}\index{flatbuffers/include/flatbuffers/buffer\_ref.h@{flatbuffers/include/flatbuffers/buffer\_ref.h}}
+\mbox{\hyperlink{buffer__ref_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ Copyright\ 2021\ Google\ Inc.\ All\ rights\ reserved.}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ Licensed\ under\ the\ Apache\ License,\ Version\ 2.0\ (the\ "{}License"{});}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ you\ may\ not\ use\ this\ file\ except\ in\ compliance\ with\ the\ License.}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *\ You\ may\ obtain\ a\ copy\ of\ the\ License\ at}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ *\ \ \ \ \ http://www.apache.org/licenses/LICENSE-\/2.0}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ *\ Unless\ required\ by\ applicable\ law\ or\ agreed\ to\ in\ writing,\ software}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ *\ distributed\ under\ the\ License\ is\ distributed\ on\ an\ "{}AS\ IS"{}\ BASIS,}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ *\ WITHOUT\ WARRANTIES\ OR\ CONDITIONS\ OF\ ANY\ KIND,\ either\ express\ or\ implied.}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ *\ See\ the\ License\ for\ the\ specific\ language\ governing\ permissions\ and}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ *\ limitations\ under\ the\ License.}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#ifndef\ FLATBUFFERS\_BUFFER\_REF\_H\_}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#define\ FLATBUFFERS\_BUFFER\_REF\_H\_}}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{base_8h}{flatbuffers/base.h}}"{}}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{verifier_8h}{flatbuffers/verifier.h}}"{}}}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceflatbuffers}{flatbuffers}}\ \{}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \textcolor{comment}{//\ Convenient\ way\ to\ bundle\ a\ buffer\ and\ its\ length,\ to\ pass\ it\ around}}
+\DoxyCodeLine{00026\ \textcolor{comment}{//\ typed\ by\ its\ root.}}
+\DoxyCodeLine{00027\ \textcolor{comment}{//\ A\ BufferRef\ does\ not\ own\ its\ buffer.}}
+\DoxyCodeLine{00028\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structflatbuffers_1_1BufferRefBase}{BufferRefBase}}\ \{\};\ \ \textcolor{comment}{//\ for\ std::is\_base\_of}}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structflatbuffers_1_1BufferRef}{BufferRef}}\ :\ \mbox{\hyperlink{structflatbuffers_1_1BufferRefBase}{BufferRefBase}}\ \{}
+\DoxyCodeLine{00031\ \ \ \mbox{\hyperlink{structflatbuffers_1_1BufferRef_a5626346e450be81be7467dac7a79ab0f}{BufferRef}}()\ :\ \mbox{\hyperlink{structflatbuffers_1_1BufferRef_a50496b611e288c7bdb44dcd974bc7c1b}{buf}}(nullptr),\ \mbox{\hyperlink{structflatbuffers_1_1BufferRef_a52d071837551cf516564c597a4e06dda}{len}}(0),\ \mbox{\hyperlink{structflatbuffers_1_1BufferRef_a52a3d32f35acf0a542593da818cfda6b}{must\_free}}(false)\ \{\}}
+\DoxyCodeLine{00032\ \ \ \mbox{\hyperlink{structflatbuffers_1_1BufferRef_ad409802209ce30bad2cee73017820ee1}{BufferRef}}(uint8\_t\ *\_buf,\ uoffset\_t\ \_len)}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ :\ \mbox{\hyperlink{structflatbuffers_1_1BufferRef_a50496b611e288c7bdb44dcd974bc7c1b}{buf}}(\_buf),\ \mbox{\hyperlink{structflatbuffers_1_1BufferRef_a52d071837551cf516564c597a4e06dda}{len}}(\_len),\ \mbox{\hyperlink{structflatbuffers_1_1BufferRef_a52a3d32f35acf0a542593da818cfda6b}{must\_free}}(false)\ \{\}}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \ \ \mbox{\hyperlink{structflatbuffers_1_1BufferRef_ae5f6eeeb3d5e54ac32a4cf3b63c5e5dc}{\string~BufferRef}}()\ \{}
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{structflatbuffers_1_1BufferRef_a52a3d32f35acf0a542593da818cfda6b}{must\_free}})\ free(\mbox{\hyperlink{structflatbuffers_1_1BufferRef_a50496b611e288c7bdb44dcd974bc7c1b}{buf}});}
+\DoxyCodeLine{00037\ \ \ \}}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \ \ \textcolor{keyword}{const}\ T\ *\mbox{\hyperlink{structflatbuffers_1_1BufferRef_a0e9897f2080958cb9c34b263539726ec}{GetRoot}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ flatbuffers::GetRoot<T>(\mbox{\hyperlink{structflatbuffers_1_1BufferRef_a50496b611e288c7bdb44dcd974bc7c1b}{buf}});\ \}}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structflatbuffers_1_1BufferRef_a47630549c0caf62d5dfc058d5bd5f916}{Verify}}()\ \{}
+\DoxyCodeLine{00042\ \ \ \ \ \mbox{\hyperlink{namespaceflatbuffers_a3268477941df91db2eb06442b6e5f922}{Verifier}}\ verifier(\mbox{\hyperlink{structflatbuffers_1_1BufferRef_a50496b611e288c7bdb44dcd974bc7c1b}{buf}},\ \mbox{\hyperlink{structflatbuffers_1_1BufferRef_a52d071837551cf516564c597a4e06dda}{len}});}
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keywordflow}{return}\ verifier.VerifyBuffer<T>(\textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00044\ \ \ \}}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \ \ uint8\_t\ *\mbox{\hyperlink{structflatbuffers_1_1BufferRef_a50496b611e288c7bdb44dcd974bc7c1b}{buf}};}
+\DoxyCodeLine{00047\ \ \ uoffset\_t\ \mbox{\hyperlink{structflatbuffers_1_1BufferRef_a52d071837551cf516564c597a4e06dda}{len}};}
+\DoxyCodeLine{00048\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structflatbuffers_1_1BufferRef_a52a3d32f35acf0a542593da818cfda6b}{must\_free}};}
+\DoxyCodeLine{00049\ \};}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \}\ \ \textcolor{comment}{//\ namespace\ flatbuffers}}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ FLATBUFFERS\_BUFFER\_REF\_H\_}}
+
+\end{DoxyCode}

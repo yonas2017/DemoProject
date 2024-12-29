@@ -1,0 +1,70 @@
+\doxysection{default\+\_\+allocator.\+h}
+\hypertarget{default__allocator_8h_source}{}\label{default__allocator_8h_source}\index{flatbuffers/include/flatbuffers/default\_allocator.h@{flatbuffers/include/flatbuffers/default\_allocator.h}}
+\mbox{\hyperlink{default__allocator_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ Copyright\ 2021\ Google\ Inc.\ All\ rights\ reserved.}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ Licensed\ under\ the\ Apache\ License,\ Version\ 2.0\ (the\ "{}License"{});}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ you\ may\ not\ use\ this\ file\ except\ in\ compliance\ with\ the\ License.}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *\ You\ may\ obtain\ a\ copy\ of\ the\ License\ at}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ *\ \ \ \ \ http://www.apache.org/licenses/LICENSE-\/2.0}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ *\ Unless\ required\ by\ applicable\ law\ or\ agreed\ to\ in\ writing,\ software}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ *\ distributed\ under\ the\ License\ is\ distributed\ on\ an\ "{}AS\ IS"{}\ BASIS,}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ *\ WITHOUT\ WARRANTIES\ OR\ CONDITIONS\ OF\ ANY\ KIND,\ either\ express\ or\ implied.}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ *\ See\ the\ License\ for\ the\ specific\ language\ governing\ permissions\ and}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ *\ limitations\ under\ the\ License.}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#ifndef\ FLATBUFFERS\_DEFAULT\_ALLOCATOR\_H\_}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#define\ FLATBUFFERS\_DEFAULT\_ALLOCATOR\_H\_}}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{allocator_8h}{flatbuffers/allocator.h}}"{}}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{base_8h}{flatbuffers/base.h}}"{}}}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceflatbuffers}{flatbuffers}}\ \{}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \textcolor{comment}{//\ DefaultAllocator\ uses\ new/delete\ to\ allocate\ memory\ regions}}
+\DoxyCodeLine{00026\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classflatbuffers_1_1DefaultAllocator}{DefaultAllocator}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classflatbuffers_1_1Allocator}{Allocator}}\ \{}
+\DoxyCodeLine{00027\ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00028\ \ \ uint8\_t\ *\mbox{\hyperlink{classflatbuffers_1_1DefaultAllocator_aeba7d4a7c546d7725b707ecbeaf68ebf}{allocate}}(\textcolor{keywordtype}{size\_t}\ size)\ FLATBUFFERS\_OVERRIDE\ \{}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ uint8\_t[size];}
+\DoxyCodeLine{00030\ \ \ \}}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classflatbuffers_1_1DefaultAllocator_acfc866696fe9db8e74d9529d8fc70aac}{deallocate}}(uint8\_t\ *\mbox{\hyperlink{gmock-matchers-containers__test_8cc_a6bc6b007533335efe02bafff799ec64c}{p}},\ \textcolor{keywordtype}{size\_t})\ FLATBUFFERS\_OVERRIDE\ \{\ \textcolor{keyword}{delete}[]\ \mbox{\hyperlink{gmock-matchers-containers__test_8cc_a6bc6b007533335efe02bafff799ec64c}{p}};\ \}}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classflatbuffers_1_1DefaultAllocator_a7549b946d7bd892dcb773db38a44907c}{dealloc}}(\textcolor{keywordtype}{void}\ *\mbox{\hyperlink{gmock-matchers-containers__test_8cc_a6bc6b007533335efe02bafff799ec64c}{p}},\ \textcolor{keywordtype}{size\_t})\ \{\ \textcolor{keyword}{delete}[]\ \textcolor{keyword}{static\_cast<}uint8\_t\ *\textcolor{keyword}{>}(\mbox{\hyperlink{gmock-matchers-containers__test_8cc_a6bc6b007533335efe02bafff799ec64c}{p}});\ \}}
+\DoxyCodeLine{00035\ \};}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \textcolor{comment}{//\ These\ functions\ allow\ for\ a\ null\ allocator\ to\ mean\ use\ the\ default\ allocator,}}
+\DoxyCodeLine{00038\ \textcolor{comment}{//\ as\ used\ by\ DetachedBuffer\ and\ vector\_downward\ below.}}
+\DoxyCodeLine{00039\ \textcolor{comment}{//\ This\ is\ to\ avoid\ having\ a\ statically\ or\ dynamically\ allocated\ default}}
+\DoxyCodeLine{00040\ \textcolor{comment}{//\ allocator,\ or\ having\ to\ move\ it\ between\ the\ classes\ that\ may\ own\ it.}}
+\DoxyCodeLine{00041\ \textcolor{keyword}{inline}\ uint8\_t\ *\mbox{\hyperlink{namespaceflatbuffers_af3b8caf92e8d8f87431ef6754dfa1176}{Allocate}}(\mbox{\hyperlink{classflatbuffers_1_1Allocator}{Allocator}}\ *allocator,\ \textcolor{keywordtype}{size\_t}\ size)\ \{}
+\DoxyCodeLine{00042\ \ \ \textcolor{keywordflow}{return}\ allocator\ ?\ allocator-\/>\mbox{\hyperlink{classflatbuffers_1_1Allocator_a8fde2800ed6bfcc35472c1219862573e}{allocate}}(size)}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{classflatbuffers_1_1DefaultAllocator}{DefaultAllocator}}().\mbox{\hyperlink{classflatbuffers_1_1DefaultAllocator_aeba7d4a7c546d7725b707ecbeaf68ebf}{allocate}}(size);}
+\DoxyCodeLine{00044\ \}}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceflatbuffers_ab4e316cb50b04b9c80411c528bf815e4}{Deallocate}}(\mbox{\hyperlink{classflatbuffers_1_1Allocator}{Allocator}}\ *allocator,\ uint8\_t\ *\mbox{\hyperlink{gmock-matchers-containers__test_8cc_a6bc6b007533335efe02bafff799ec64c}{p}},\ \textcolor{keywordtype}{size\_t}\ size)\ \{}
+\DoxyCodeLine{00047\ \ \ \textcolor{keywordflow}{if}\ (allocator)}
+\DoxyCodeLine{00048\ \ \ \ \ allocator-\/>\mbox{\hyperlink{classflatbuffers_1_1Allocator_ab72efb51f31b9238373f5922ac282a89}{deallocate}}(\mbox{\hyperlink{gmock-matchers-containers__test_8cc_a6bc6b007533335efe02bafff799ec64c}{p}},\ size);}
+\DoxyCodeLine{00049\ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00050\ \ \ \ \ \mbox{\hyperlink{classflatbuffers_1_1DefaultAllocator}{DefaultAllocator}}().\mbox{\hyperlink{classflatbuffers_1_1DefaultAllocator_acfc866696fe9db8e74d9529d8fc70aac}{deallocate}}(\mbox{\hyperlink{gmock-matchers-containers__test_8cc_a6bc6b007533335efe02bafff799ec64c}{p}},\ size);}
+\DoxyCodeLine{00051\ \}}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \textcolor{keyword}{inline}\ uint8\_t\ *\mbox{\hyperlink{namespaceflatbuffers_a21b917a50571e8b866f8b5185e328b58}{ReallocateDownward}}(\mbox{\hyperlink{classflatbuffers_1_1Allocator}{Allocator}}\ *allocator,\ uint8\_t\ *old\_p,}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ old\_size,\ \textcolor{keywordtype}{size\_t}\ new\_size,}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ in\_use\_back,\ \textcolor{keywordtype}{size\_t}\ in\_use\_front)\ \{}
+\DoxyCodeLine{00056\ \ \ \textcolor{keywordflow}{return}\ allocator\ ?\ allocator-\/>\mbox{\hyperlink{classflatbuffers_1_1Allocator_a5c213f8ead50ce81e4427f65ba639892}{reallocate\_downward}}(old\_p,\ old\_size,\ new\_size,}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ in\_use\_back,\ in\_use\_front)}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{classflatbuffers_1_1DefaultAllocator}{DefaultAllocator}}().\mbox{\hyperlink{classflatbuffers_1_1Allocator_a5c213f8ead50ce81e4427f65ba639892}{reallocate\_downward}}(}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ old\_p,\ old\_size,\ new\_size,\ in\_use\_back,\ in\_use\_front);}
+\DoxyCodeLine{00060\ \}}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ \}\ \ \textcolor{comment}{//\ namespace\ flatbuffers}}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00064\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ FLATBUFFERS\_DEFAULT\_ALLOCATOR\_H\_}}
+
+\end{DoxyCode}

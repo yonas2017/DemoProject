@@ -1,0 +1,785 @@
+\doxysection{flexbuffers\+::FLATBUFFERS\+\_\+\+FINAL\+\_\+\+CLASS Class Reference}
+\hypertarget{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS}{}\label{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS}\index{flexbuffers::FLATBUFFERS\_FINAL\_CLASS@{flexbuffers::FLATBUFFERS\_FINAL\_CLASS}}
+
+
+{\ttfamily \#include $<$flexbuffers.\+h$>$}
+
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_1_1Value}{Value}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_ae2031c98fb28f694e895e47668134606}{Builder}} (size\+\_\+t initial\+\_\+size=256, \mbox{\hyperlink{namespaceflexbuffers_a1d799e72faa9a9fe98270bb33a6864af}{Builder\+Flag}} flags=\mbox{\hyperlink{namespaceflexbuffers_a1d799e72faa9a9fe98270bb33a6864afa70f65074918dfb3b4d122f7faee872e1}{BUILDER\+\_\+\+FLAG\+\_\+\+SHARE\+\_\+\+KEYS}})
+\item 
+const std\+::vector$<$ uint8\+\_\+t $>$ \& \mbox{\hyperlink{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_af3c7848b79ee54d0764645ea55156058}{Get\+Buffer}} () const
+\begin{DoxyCompactList}\small\item\em Get the serialized buffer (after you call {\ttfamily \doxylink{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_a5e9864417759a4d8ed505054d20fa0f0}{Finish()}}). \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_a46a7602b3486775b6b9a5ec7c178b572}{Get\+Size}} () const
+\item 
+void \mbox{\hyperlink{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_a6f82819dc4488346512c4d975f07e4a8}{Clear}} ()
+\item 
+void \mbox{\hyperlink{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_a8fc1398ab2d4e2cd6d8b3687f594dc75}{Null}} ()
+\item 
+void \mbox{\hyperlink{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_a324725ca0f2c6e2ae042c5dddea8cb35}{Null}} (const char \texorpdfstring{$\ast$}{*}key)
+\item 
+void \mbox{\hyperlink{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_a18bb8f5b6871abdec753cc771e331ab0}{Int}} (int64\+\_\+t \mbox{\hyperlink{gmock-matchers-comparisons__test_8cc_acb559820d9ca11295b4500f179ef6392}{i}})
+\item 
+void \mbox{\hyperlink{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_a74edf6b9e50d5ddbc9f55ee2a3cd8d15}{Int}} (const char \texorpdfstring{$\ast$}{*}key, int64\+\_\+t \mbox{\hyperlink{gmock-matchers-comparisons__test_8cc_acb559820d9ca11295b4500f179ef6392}{i}})
+\item 
+void \mbox{\hyperlink{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_a3a37cd9955de5061afb5e7af243ac377}{UInt}} (uint64\+\_\+t u)
+\item 
+void \mbox{\hyperlink{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_aacb59e39a8aeb188300d123f90572342}{UInt}} (const char \texorpdfstring{$\ast$}{*}key, uint64\+\_\+t u)
+\item 
+void \mbox{\hyperlink{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_ab3dc41285ea8c06a6dbcb961cb442577}{Float}} (float f)
+\item 
+void \mbox{\hyperlink{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_a2ce25ebbc8c328ad9119628847920a2e}{Float}} (const char \texorpdfstring{$\ast$}{*}key, float f)
+\item 
+void \mbox{\hyperlink{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_ac2ea28ed24df0c8c6aaa43634e9a85fd}{Double}} (double f)
+\item 
+void \mbox{\hyperlink{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_ab4cda9e6a3d99d5944383772545f6389}{Double}} (const char \texorpdfstring{$\ast$}{*}key, double d)
+\item 
+void \mbox{\hyperlink{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_a4d4980e975c30610c0c46cf06cc36de3}{Bool}} (bool b)
+\item 
+void \mbox{\hyperlink{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_a75bfc6d338d42be168a1b39e62be65d1}{Bool}} (const char \texorpdfstring{$\ast$}{*}key, bool b)
+\item 
+void \mbox{\hyperlink{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_a83c77f82ccbde554f532e32cd0d9d34c}{Indirect\+Int}} (int64\+\_\+t \mbox{\hyperlink{gmock-matchers-comparisons__test_8cc_acb559820d9ca11295b4500f179ef6392}{i}})
+\item 
+void \mbox{\hyperlink{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_a5d129ce5c04042be0a42ecdff24749d5}{Indirect\+Int}} (const char \texorpdfstring{$\ast$}{*}key, int64\+\_\+t \mbox{\hyperlink{gmock-matchers-comparisons__test_8cc_acb559820d9ca11295b4500f179ef6392}{i}})
+\item 
+void \mbox{\hyperlink{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_a7bd9c8cf132b02e812b515240210a7e3}{Indirect\+UInt}} (uint64\+\_\+t u)
+\item 
+void \mbox{\hyperlink{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_ab3f9a2e68e756795608ef1158960e5ac}{Indirect\+UInt}} (const char \texorpdfstring{$\ast$}{*}key, uint64\+\_\+t u)
+\item 
+void \mbox{\hyperlink{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_aed1e4bbdcc4d9173d1ccb5934ad149ef}{Indirect\+Float}} (float f)
+\item 
+void \mbox{\hyperlink{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_a01eba724298e8e90b2c3f0e66abaa2b6}{Indirect\+Float}} (const char \texorpdfstring{$\ast$}{*}key, float f)
+\item 
+void \mbox{\hyperlink{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_aa11b5a58f7a6ad39e95ba7432bf4b321}{Indirect\+Double}} (double f)
+\item 
+void \mbox{\hyperlink{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_ada5ff92397e4edf2fbd0172bc4bbe94b}{Indirect\+Double}} (const char \texorpdfstring{$\ast$}{*}key, double d)
+\item 
+size\+\_\+t \mbox{\hyperlink{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_a9f763001cc6a2231479298cc7b6dd6c1}{Key}} (const char \texorpdfstring{$\ast$}{*}str, size\+\_\+t len)
+\item 
+size\+\_\+t \mbox{\hyperlink{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_a538320e2740c720703deab4d65097301}{Key}} (const char \texorpdfstring{$\ast$}{*}str)
+\item 
+size\+\_\+t \mbox{\hyperlink{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_a3d85a21a571ac28b8fdbe1bbd711f1d2}{Key}} (const std\+::string \&str)
+\item 
+size\+\_\+t \mbox{\hyperlink{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_a8d3ddfa8998c1035016ff0f038e7ea2a}{String}} (const char \texorpdfstring{$\ast$}{*}str, size\+\_\+t len)
+\item 
+size\+\_\+t \mbox{\hyperlink{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_ad032c818f6f9f40a3adf58bb0326d77b}{String}} (const char \texorpdfstring{$\ast$}{*}str)
+\item 
+size\+\_\+t \mbox{\hyperlink{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_ad209a4411b4609c0560e0f4d78e45c52}{String}} (const std\+::string \&str)
+\item 
+void \mbox{\hyperlink{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_a303ce07202bcc0d617d55444a8593e3b}{String}} (const \mbox{\hyperlink{classflexbuffers_1_1String}{flexbuffers\+::\+String}} \&str)
+\item 
+void \mbox{\hyperlink{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_afade800223569695d7faf582819a29c6}{String}} (const char \texorpdfstring{$\ast$}{*}key, const char \texorpdfstring{$\ast$}{*}str)
+\item 
+void \mbox{\hyperlink{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_ac2800309b8d6154e13419344cba26185}{String}} (const char \texorpdfstring{$\ast$}{*}key, const std\+::string \&str)
+\item 
+void \mbox{\hyperlink{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_a71b6be3cd8d39e88cfa7f3b5ffce906f}{String}} (const char \texorpdfstring{$\ast$}{*}key, const \mbox{\hyperlink{classflexbuffers_1_1String}{flexbuffers\+::\+String}} \&str)
+\item 
+size\+\_\+t \mbox{\hyperlink{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_ae79f47b7c70944ccad2955683647f150}{Blob}} (const void \texorpdfstring{$\ast$}{*}data, size\+\_\+t len)
+\item 
+size\+\_\+t \mbox{\hyperlink{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_adc8efacf5e0ab9b0725caa6f1fd464c9}{Blob}} (const std\+::vector$<$ uint8\+\_\+t $>$ \&v)
+\item 
+void \mbox{\hyperlink{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_a47422a91ca5ab39b080f777f316b5ad3}{Blob}} (const char \texorpdfstring{$\ast$}{*}key, const void \texorpdfstring{$\ast$}{*}data, size\+\_\+t len)
+\item 
+void \mbox{\hyperlink{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_a56cd0548dbc314d40e67a275b23d9e66}{Blob}} (const char \texorpdfstring{$\ast$}{*}key, const std\+::vector$<$ uint8\+\_\+t $>$ \&v)
+\item 
+size\+\_\+t \mbox{\hyperlink{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_ace8e3364828fc99c84efe99dbb9834f1}{Start\+Vector}} ()
+\item 
+size\+\_\+t \mbox{\hyperlink{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_a7fae62e8c8dacd596d5b53124c9f3d1a}{Start\+Vector}} (const char \texorpdfstring{$\ast$}{*}key)
+\item 
+size\+\_\+t \mbox{\hyperlink{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_ae7e44c6da5e9e90101564de7da73e338}{Start\+Map}} ()
+\item 
+size\+\_\+t \mbox{\hyperlink{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_a0025756d7e665f51943f3e406925f776}{Start\+Map}} (const char \texorpdfstring{$\ast$}{*}key)
+\item 
+size\+\_\+t \mbox{\hyperlink{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_ace9316eb85175c65651ed8e2bd592739}{End\+Vector}} (size\+\_\+t start, bool typed, bool fixed)
+\item 
+size\+\_\+t \mbox{\hyperlink{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_a5ef891643db1f48b00cdd188636335b4}{End\+Map}} (size\+\_\+t start)
+\item 
+bool \mbox{\hyperlink{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_a52ef6079ef7c09a7fc7c9b57d0933710}{Has\+Duplicate\+Keys}} () const
+\item 
+{\footnotesize template$<$typename F $>$ }\\size\+\_\+t \mbox{\hyperlink{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_ab5c3509750afeb9a62e02cafb968579c}{Vector}} (F f)
+\item 
+{\footnotesize template$<$typename F , typename T $>$ }\\size\+\_\+t \mbox{\hyperlink{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_ac2673629226d2bb0de74786a53a09994}{Vector}} (F f, T \&state)
+\item 
+{\footnotesize template$<$typename F $>$ }\\size\+\_\+t \mbox{\hyperlink{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_a148e70beeaa46397129cd3c6df54c4e1}{Vector}} (const char \texorpdfstring{$\ast$}{*}key, F f)
+\item 
+{\footnotesize template$<$typename F , typename T $>$ }\\size\+\_\+t \mbox{\hyperlink{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_aef0be3f18a6976676a37a1fd86d60c9a}{Vector}} (const char \texorpdfstring{$\ast$}{*}key, F f, T \&state)
+\item 
+{\footnotesize template$<$typename T $>$ }\\void \mbox{\hyperlink{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_a8458d7a7750238dbac737f7aa07fa9c3}{Vector}} (const T \texorpdfstring{$\ast$}{*}elems, size\+\_\+t len)
+\item 
+{\footnotesize template$<$typename T $>$ }\\void \mbox{\hyperlink{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_adb9fcb0a89fcfe03ebe8605166103399}{Vector}} (const char \texorpdfstring{$\ast$}{*}key, const T \texorpdfstring{$\ast$}{*}elems, size\+\_\+t len)
+\item 
+{\footnotesize template$<$typename T $>$ }\\void \mbox{\hyperlink{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_a1f5138fc5656f4c0af7d9c93769cdbb4}{Vector}} (const std\+::vector$<$ T $>$ \&vec)
+\item 
+{\footnotesize template$<$typename F $>$ }\\size\+\_\+t \mbox{\hyperlink{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_a5d0fd47acd692f2ecd440e8f905f8da2}{Typed\+Vector}} (F f)
+\item 
+{\footnotesize template$<$typename F , typename T $>$ }\\size\+\_\+t \mbox{\hyperlink{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_a6364a526057993812423b883c36351ea}{Typed\+Vector}} (F f, T \&state)
+\item 
+{\footnotesize template$<$typename F $>$ }\\size\+\_\+t \mbox{\hyperlink{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_a03dce4b913c186542a2e40acd9dd7238}{Typed\+Vector}} (const char \texorpdfstring{$\ast$}{*}key, F f)
+\item 
+{\footnotesize template$<$typename F , typename T $>$ }\\size\+\_\+t \mbox{\hyperlink{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_aa673821d8276c60fd73a14bdb37dce20}{Typed\+Vector}} (const char \texorpdfstring{$\ast$}{*}key, F f, T \&state)
+\item 
+{\footnotesize template$<$typename T $>$ }\\size\+\_\+t \mbox{\hyperlink{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_af112b788bd6cab4188d6e70c819bb028}{Fixed\+Typed\+Vector}} (const T \texorpdfstring{$\ast$}{*}elems, size\+\_\+t len)
+\item 
+{\footnotesize template$<$typename T $>$ }\\size\+\_\+t \mbox{\hyperlink{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_af9b2e8b94f5be368c3db586fe6bf94f2}{Fixed\+Typed\+Vector}} (const char \texorpdfstring{$\ast$}{*}key, const T \texorpdfstring{$\ast$}{*}elems, size\+\_\+t len)
+\item 
+{\footnotesize template$<$typename F $>$ }\\size\+\_\+t \mbox{\hyperlink{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_a4c2cbc511b6ae5a5a4b9d34451732306}{Map}} (F f)
+\item 
+{\footnotesize template$<$typename F , typename T $>$ }\\size\+\_\+t \mbox{\hyperlink{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_ac1e5a4657579fe7a58fd31e86609d9bf}{Map}} (F f, T \&state)
+\item 
+{\footnotesize template$<$typename F $>$ }\\size\+\_\+t \mbox{\hyperlink{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_a0c719aff86547d71b315b356838b44f9}{Map}} (const char \texorpdfstring{$\ast$}{*}key, F f)
+\item 
+{\footnotesize template$<$typename F , typename T $>$ }\\size\+\_\+t \mbox{\hyperlink{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_a64a5aab73dfe8eab72e04f2931082167}{Map}} (const char \texorpdfstring{$\ast$}{*}key, F f, T \&state)
+\item 
+{\footnotesize template$<$typename T $>$ }\\void \mbox{\hyperlink{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_a8ba1d218537e1fb4dd51f7211579be65}{Map}} (const std\+::map$<$ std\+::string, T $>$ \&map)
+\item 
+size\+\_\+t \mbox{\hyperlink{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_a60066cc94122641d18134e65aa28ba14}{Map\+Element\+Count}} (size\+\_\+t start)
+\item 
+\mbox{\hyperlink{structflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_1_1Value}{Value}} \mbox{\hyperlink{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_a89fc562226a132ca57545a197cee5d71}{Last\+Value}} ()
+\item 
+void \mbox{\hyperlink{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_ab0b5d54bf3d62ba17b75cad0208f70f1}{Reuse\+Value}} (\mbox{\hyperlink{structflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_1_1Value}{Value}} v)
+\item 
+void \mbox{\hyperlink{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_a02f14bb59b08863e4e2f0fe959edfafd}{Reuse\+Value}} (const char \texorpdfstring{$\ast$}{*}key, \mbox{\hyperlink{structflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_1_1Value}{Value}} v)
+\item 
+void \mbox{\hyperlink{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_ab2b486563ffb608b1be72e336acaa516}{Undo}} ()
+\item 
+void \mbox{\hyperlink{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_a81a1a5f30f979144240b917a89839cdd}{Add}} (int8\+\_\+t \mbox{\hyperlink{gmock-matchers-comparisons__test_8cc_acb559820d9ca11295b4500f179ef6392}{i}})
+\item 
+void \mbox{\hyperlink{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_ad0b385111df1113e9f2a89ad066b3357}{Add}} (int16\+\_\+t \mbox{\hyperlink{gmock-matchers-comparisons__test_8cc_acb559820d9ca11295b4500f179ef6392}{i}})
+\item 
+void \mbox{\hyperlink{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_a989bfccfca80d905f5e0b6dc3c8e6d1f}{Add}} (int32\+\_\+t \mbox{\hyperlink{gmock-matchers-comparisons__test_8cc_acb559820d9ca11295b4500f179ef6392}{i}})
+\item 
+void \mbox{\hyperlink{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_a69a33dee6582fa12f47891cd9b8aa0d7}{Add}} (int64\+\_\+t \mbox{\hyperlink{gmock-matchers-comparisons__test_8cc_acb559820d9ca11295b4500f179ef6392}{i}})
+\item 
+void \mbox{\hyperlink{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_ace9786d16678995eb55f7ec68fcca20d}{Add}} (uint8\+\_\+t u)
+\item 
+void \mbox{\hyperlink{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_a8bcc439d94e8e4922fd8ccafaee74402}{Add}} (uint16\+\_\+t u)
+\item 
+void \mbox{\hyperlink{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_a96e9df657b775009a15dfe95011c2a31}{Add}} (uint32\+\_\+t u)
+\item 
+void \mbox{\hyperlink{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_a7d8c952d1642a5effeb3b507f4572946}{Add}} (uint64\+\_\+t u)
+\item 
+void \mbox{\hyperlink{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_aeb8567e52578081374ad5d40097c5cc8}{Add}} (float f)
+\item 
+void \mbox{\hyperlink{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_a9860d7fe43ba89e57af5bd68c782127a}{Add}} (double d)
+\item 
+void \mbox{\hyperlink{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_a0e555d08bb23bbf7c6c2d4d150f69479}{Add}} (bool b)
+\item 
+void \mbox{\hyperlink{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_a86d1e2c1f89b65907ebd35095ba4f9b4}{Add}} (const char \texorpdfstring{$\ast$}{*}str)
+\item 
+void \mbox{\hyperlink{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_ac8d30fcc9ce63c69718055df2dde9785}{Add}} (const std\+::string \&str)
+\item 
+void \mbox{\hyperlink{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_a7e61ed859a2bb67c4a664e301700bd2d}{Add}} (const \mbox{\hyperlink{classflexbuffers_1_1String}{flexbuffers\+::\+String}} \&str)
+\item 
+{\footnotesize template$<$typename T $>$ }\\void \mbox{\hyperlink{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_a816954e803e72422b5c5e7c91689fc10}{Add}} (const std\+::vector$<$ T $>$ \&vec)
+\item 
+{\footnotesize template$<$typename T $>$ }\\void \mbox{\hyperlink{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_ad631359b037b385c6ac7ec1e2c754ed2}{Add}} (const char \texorpdfstring{$\ast$}{*}key, const T \&t)
+\item 
+{\footnotesize template$<$typename T $>$ }\\void \mbox{\hyperlink{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_aefdc9970065a9a4276924762667d008c}{Add}} (const std\+::map$<$ std\+::string, T $>$ \&map)
+\item 
+{\footnotesize template$<$typename T $>$ }\\void \mbox{\hyperlink{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_af35813bc86fa43c616d996f4578e3a09}{operator+=}} (const T \&t)
+\item 
+void \mbox{\hyperlink{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_a6df28a7d9da941fb23820cc79d1ede9b}{Force\+Minimum\+Bit\+Width}} (\mbox{\hyperlink{namespaceflexbuffers_a76cc4a8eb404468982af5bd160912e8b}{Bit\+Width}} bw=\mbox{\hyperlink{namespaceflexbuffers_a76cc4a8eb404468982af5bd160912e8bade28525748185d07d8ad6b3ff6bb7a71}{BIT\+\_\+\+WIDTH\+\_\+8}})
+\item 
+void \mbox{\hyperlink{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_a5e9864417759a4d8ed505054d20fa0f0}{Finish}} ()
+\item 
+\mbox{\hyperlink{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_a9551a63a8fb74fcd4c2faf5466186f9f}{Verifier}} (const uint8\+\_\+t \texorpdfstring{$\ast$}{*}buf, size\+\_\+t buf\+\_\+len, std\+::vector$<$ uint8\+\_\+t $>$ \texorpdfstring{$\ast$}{*}reuse\+\_\+tracker=nullptr, bool \+\_\+check\+\_\+alignment=true, size\+\_\+t max\+\_\+depth=64)
+\item 
+bool \mbox{\hyperlink{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_a8c18f1f3f42ce9d6105b2e2e4840a5fc}{Verify\+Buffer}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_a871285414448937aa5f297649dc8242a}{Verifier}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_a0e555d08bb23bbf7c6c2d4d150f69479}\label{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_a0e555d08bb23bbf7c6c2d4d150f69479} 
+\index{flexbuffers::FLATBUFFERS\_FINAL\_CLASS@{flexbuffers::FLATBUFFERS\_FINAL\_CLASS}!Add@{Add}}
+\index{Add@{Add}!flexbuffers::FLATBUFFERS\_FINAL\_CLASS@{flexbuffers::FLATBUFFERS\_FINAL\_CLASS}}
+\doxysubsubsection{\texorpdfstring{Add()}{Add()}\hspace{0.1cm}{\footnotesize\ttfamily [1/17]}}
+{\footnotesize\ttfamily void flexbuffers\+::\+FLATBUFFERS\+\_\+\+FINAL\+\_\+\+CLASS\+::\+Add (\begin{DoxyParamCaption}\item[{bool}]{b }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_ad631359b037b385c6ac7ec1e2c754ed2}\label{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_ad631359b037b385c6ac7ec1e2c754ed2} 
+\index{flexbuffers::FLATBUFFERS\_FINAL\_CLASS@{flexbuffers::FLATBUFFERS\_FINAL\_CLASS}!Add@{Add}}
+\index{Add@{Add}!flexbuffers::FLATBUFFERS\_FINAL\_CLASS@{flexbuffers::FLATBUFFERS\_FINAL\_CLASS}}
+\doxysubsubsection{\texorpdfstring{Add()}{Add()}\hspace{0.1cm}{\footnotesize\ttfamily [2/17]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void flexbuffers\+::\+FLATBUFFERS\+\_\+\+FINAL\+\_\+\+CLASS\+::\+Add (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{key,  }\item[{const T \&}]{t }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_a86d1e2c1f89b65907ebd35095ba4f9b4}\label{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_a86d1e2c1f89b65907ebd35095ba4f9b4} 
+\index{flexbuffers::FLATBUFFERS\_FINAL\_CLASS@{flexbuffers::FLATBUFFERS\_FINAL\_CLASS}!Add@{Add}}
+\index{Add@{Add}!flexbuffers::FLATBUFFERS\_FINAL\_CLASS@{flexbuffers::FLATBUFFERS\_FINAL\_CLASS}}
+\doxysubsubsection{\texorpdfstring{Add()}{Add()}\hspace{0.1cm}{\footnotesize\ttfamily [3/17]}}
+{\footnotesize\ttfamily void flexbuffers\+::\+FLATBUFFERS\+\_\+\+FINAL\+\_\+\+CLASS\+::\+Add (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{str }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_a7e61ed859a2bb67c4a664e301700bd2d}\label{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_a7e61ed859a2bb67c4a664e301700bd2d} 
+\index{flexbuffers::FLATBUFFERS\_FINAL\_CLASS@{flexbuffers::FLATBUFFERS\_FINAL\_CLASS}!Add@{Add}}
+\index{Add@{Add}!flexbuffers::FLATBUFFERS\_FINAL\_CLASS@{flexbuffers::FLATBUFFERS\_FINAL\_CLASS}}
+\doxysubsubsection{\texorpdfstring{Add()}{Add()}\hspace{0.1cm}{\footnotesize\ttfamily [4/17]}}
+{\footnotesize\ttfamily void flexbuffers\+::\+FLATBUFFERS\+\_\+\+FINAL\+\_\+\+CLASS\+::\+Add (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classflexbuffers_1_1String}{flexbuffers\+::\+String}} \&}]{str }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_aefdc9970065a9a4276924762667d008c}\label{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_aefdc9970065a9a4276924762667d008c} 
+\index{flexbuffers::FLATBUFFERS\_FINAL\_CLASS@{flexbuffers::FLATBUFFERS\_FINAL\_CLASS}!Add@{Add}}
+\index{Add@{Add}!flexbuffers::FLATBUFFERS\_FINAL\_CLASS@{flexbuffers::FLATBUFFERS\_FINAL\_CLASS}}
+\doxysubsubsection{\texorpdfstring{Add()}{Add()}\hspace{0.1cm}{\footnotesize\ttfamily [5/17]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void flexbuffers\+::\+FLATBUFFERS\+\_\+\+FINAL\+\_\+\+CLASS\+::\+Add (\begin{DoxyParamCaption}\item[{const std\+::map$<$ std\+::string, T $>$ \&}]{map }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_ac8d30fcc9ce63c69718055df2dde9785}\label{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_ac8d30fcc9ce63c69718055df2dde9785} 
+\index{flexbuffers::FLATBUFFERS\_FINAL\_CLASS@{flexbuffers::FLATBUFFERS\_FINAL\_CLASS}!Add@{Add}}
+\index{Add@{Add}!flexbuffers::FLATBUFFERS\_FINAL\_CLASS@{flexbuffers::FLATBUFFERS\_FINAL\_CLASS}}
+\doxysubsubsection{\texorpdfstring{Add()}{Add()}\hspace{0.1cm}{\footnotesize\ttfamily [6/17]}}
+{\footnotesize\ttfamily void flexbuffers\+::\+FLATBUFFERS\+\_\+\+FINAL\+\_\+\+CLASS\+::\+Add (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{str }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_a816954e803e72422b5c5e7c91689fc10}\label{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_a816954e803e72422b5c5e7c91689fc10} 
+\index{flexbuffers::FLATBUFFERS\_FINAL\_CLASS@{flexbuffers::FLATBUFFERS\_FINAL\_CLASS}!Add@{Add}}
+\index{Add@{Add}!flexbuffers::FLATBUFFERS\_FINAL\_CLASS@{flexbuffers::FLATBUFFERS\_FINAL\_CLASS}}
+\doxysubsubsection{\texorpdfstring{Add()}{Add()}\hspace{0.1cm}{\footnotesize\ttfamily [7/17]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void flexbuffers\+::\+FLATBUFFERS\+\_\+\+FINAL\+\_\+\+CLASS\+::\+Add (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ T $>$ \&}]{vec }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_a9860d7fe43ba89e57af5bd68c782127a}\label{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_a9860d7fe43ba89e57af5bd68c782127a} 
+\index{flexbuffers::FLATBUFFERS\_FINAL\_CLASS@{flexbuffers::FLATBUFFERS\_FINAL\_CLASS}!Add@{Add}}
+\index{Add@{Add}!flexbuffers::FLATBUFFERS\_FINAL\_CLASS@{flexbuffers::FLATBUFFERS\_FINAL\_CLASS}}
+\doxysubsubsection{\texorpdfstring{Add()}{Add()}\hspace{0.1cm}{\footnotesize\ttfamily [8/17]}}
+{\footnotesize\ttfamily void flexbuffers\+::\+FLATBUFFERS\+\_\+\+FINAL\+\_\+\+CLASS\+::\+Add (\begin{DoxyParamCaption}\item[{double}]{d }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_aeb8567e52578081374ad5d40097c5cc8}\label{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_aeb8567e52578081374ad5d40097c5cc8} 
+\index{flexbuffers::FLATBUFFERS\_FINAL\_CLASS@{flexbuffers::FLATBUFFERS\_FINAL\_CLASS}!Add@{Add}}
+\index{Add@{Add}!flexbuffers::FLATBUFFERS\_FINAL\_CLASS@{flexbuffers::FLATBUFFERS\_FINAL\_CLASS}}
+\doxysubsubsection{\texorpdfstring{Add()}{Add()}\hspace{0.1cm}{\footnotesize\ttfamily [9/17]}}
+{\footnotesize\ttfamily void flexbuffers\+::\+FLATBUFFERS\+\_\+\+FINAL\+\_\+\+CLASS\+::\+Add (\begin{DoxyParamCaption}\item[{float}]{f }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_ad0b385111df1113e9f2a89ad066b3357}\label{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_ad0b385111df1113e9f2a89ad066b3357} 
+\index{flexbuffers::FLATBUFFERS\_FINAL\_CLASS@{flexbuffers::FLATBUFFERS\_FINAL\_CLASS}!Add@{Add}}
+\index{Add@{Add}!flexbuffers::FLATBUFFERS\_FINAL\_CLASS@{flexbuffers::FLATBUFFERS\_FINAL\_CLASS}}
+\doxysubsubsection{\texorpdfstring{Add()}{Add()}\hspace{0.1cm}{\footnotesize\ttfamily [10/17]}}
+{\footnotesize\ttfamily void flexbuffers\+::\+FLATBUFFERS\+\_\+\+FINAL\+\_\+\+CLASS\+::\+Add (\begin{DoxyParamCaption}\item[{int16\+\_\+t}]{i }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_a989bfccfca80d905f5e0b6dc3c8e6d1f}\label{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_a989bfccfca80d905f5e0b6dc3c8e6d1f} 
+\index{flexbuffers::FLATBUFFERS\_FINAL\_CLASS@{flexbuffers::FLATBUFFERS\_FINAL\_CLASS}!Add@{Add}}
+\index{Add@{Add}!flexbuffers::FLATBUFFERS\_FINAL\_CLASS@{flexbuffers::FLATBUFFERS\_FINAL\_CLASS}}
+\doxysubsubsection{\texorpdfstring{Add()}{Add()}\hspace{0.1cm}{\footnotesize\ttfamily [11/17]}}
+{\footnotesize\ttfamily void flexbuffers\+::\+FLATBUFFERS\+\_\+\+FINAL\+\_\+\+CLASS\+::\+Add (\begin{DoxyParamCaption}\item[{int32\+\_\+t}]{i }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_a69a33dee6582fa12f47891cd9b8aa0d7}\label{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_a69a33dee6582fa12f47891cd9b8aa0d7} 
+\index{flexbuffers::FLATBUFFERS\_FINAL\_CLASS@{flexbuffers::FLATBUFFERS\_FINAL\_CLASS}!Add@{Add}}
+\index{Add@{Add}!flexbuffers::FLATBUFFERS\_FINAL\_CLASS@{flexbuffers::FLATBUFFERS\_FINAL\_CLASS}}
+\doxysubsubsection{\texorpdfstring{Add()}{Add()}\hspace{0.1cm}{\footnotesize\ttfamily [12/17]}}
+{\footnotesize\ttfamily void flexbuffers\+::\+FLATBUFFERS\+\_\+\+FINAL\+\_\+\+CLASS\+::\+Add (\begin{DoxyParamCaption}\item[{int64\+\_\+t}]{i }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_a81a1a5f30f979144240b917a89839cdd}\label{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_a81a1a5f30f979144240b917a89839cdd} 
+\index{flexbuffers::FLATBUFFERS\_FINAL\_CLASS@{flexbuffers::FLATBUFFERS\_FINAL\_CLASS}!Add@{Add}}
+\index{Add@{Add}!flexbuffers::FLATBUFFERS\_FINAL\_CLASS@{flexbuffers::FLATBUFFERS\_FINAL\_CLASS}}
+\doxysubsubsection{\texorpdfstring{Add()}{Add()}\hspace{0.1cm}{\footnotesize\ttfamily [13/17]}}
+{\footnotesize\ttfamily void flexbuffers\+::\+FLATBUFFERS\+\_\+\+FINAL\+\_\+\+CLASS\+::\+Add (\begin{DoxyParamCaption}\item[{int8\+\_\+t}]{i }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_a8bcc439d94e8e4922fd8ccafaee74402}\label{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_a8bcc439d94e8e4922fd8ccafaee74402} 
+\index{flexbuffers::FLATBUFFERS\_FINAL\_CLASS@{flexbuffers::FLATBUFFERS\_FINAL\_CLASS}!Add@{Add}}
+\index{Add@{Add}!flexbuffers::FLATBUFFERS\_FINAL\_CLASS@{flexbuffers::FLATBUFFERS\_FINAL\_CLASS}}
+\doxysubsubsection{\texorpdfstring{Add()}{Add()}\hspace{0.1cm}{\footnotesize\ttfamily [14/17]}}
+{\footnotesize\ttfamily void flexbuffers\+::\+FLATBUFFERS\+\_\+\+FINAL\+\_\+\+CLASS\+::\+Add (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{u }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_a96e9df657b775009a15dfe95011c2a31}\label{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_a96e9df657b775009a15dfe95011c2a31} 
+\index{flexbuffers::FLATBUFFERS\_FINAL\_CLASS@{flexbuffers::FLATBUFFERS\_FINAL\_CLASS}!Add@{Add}}
+\index{Add@{Add}!flexbuffers::FLATBUFFERS\_FINAL\_CLASS@{flexbuffers::FLATBUFFERS\_FINAL\_CLASS}}
+\doxysubsubsection{\texorpdfstring{Add()}{Add()}\hspace{0.1cm}{\footnotesize\ttfamily [15/17]}}
+{\footnotesize\ttfamily void flexbuffers\+::\+FLATBUFFERS\+\_\+\+FINAL\+\_\+\+CLASS\+::\+Add (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{u }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_a7d8c952d1642a5effeb3b507f4572946}\label{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_a7d8c952d1642a5effeb3b507f4572946} 
+\index{flexbuffers::FLATBUFFERS\_FINAL\_CLASS@{flexbuffers::FLATBUFFERS\_FINAL\_CLASS}!Add@{Add}}
+\index{Add@{Add}!flexbuffers::FLATBUFFERS\_FINAL\_CLASS@{flexbuffers::FLATBUFFERS\_FINAL\_CLASS}}
+\doxysubsubsection{\texorpdfstring{Add()}{Add()}\hspace{0.1cm}{\footnotesize\ttfamily [16/17]}}
+{\footnotesize\ttfamily void flexbuffers\+::\+FLATBUFFERS\+\_\+\+FINAL\+\_\+\+CLASS\+::\+Add (\begin{DoxyParamCaption}\item[{uint64\+\_\+t}]{u }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_ace9786d16678995eb55f7ec68fcca20d}\label{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_ace9786d16678995eb55f7ec68fcca20d} 
+\index{flexbuffers::FLATBUFFERS\_FINAL\_CLASS@{flexbuffers::FLATBUFFERS\_FINAL\_CLASS}!Add@{Add}}
+\index{Add@{Add}!flexbuffers::FLATBUFFERS\_FINAL\_CLASS@{flexbuffers::FLATBUFFERS\_FINAL\_CLASS}}
+\doxysubsubsection{\texorpdfstring{Add()}{Add()}\hspace{0.1cm}{\footnotesize\ttfamily [17/17]}}
+{\footnotesize\ttfamily void flexbuffers\+::\+FLATBUFFERS\+\_\+\+FINAL\+\_\+\+CLASS\+::\+Add (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{u }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_a56cd0548dbc314d40e67a275b23d9e66}\label{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_a56cd0548dbc314d40e67a275b23d9e66} 
+\index{flexbuffers::FLATBUFFERS\_FINAL\_CLASS@{flexbuffers::FLATBUFFERS\_FINAL\_CLASS}!Blob@{Blob}}
+\index{Blob@{Blob}!flexbuffers::FLATBUFFERS\_FINAL\_CLASS@{flexbuffers::FLATBUFFERS\_FINAL\_CLASS}}
+\doxysubsubsection{\texorpdfstring{Blob()}{Blob()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily void flexbuffers\+::\+FLATBUFFERS\+\_\+\+FINAL\+\_\+\+CLASS\+::\+Blob (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{key,  }\item[{const std\+::vector$<$ uint8\+\_\+t $>$ \&}]{v }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_a47422a91ca5ab39b080f777f316b5ad3}\label{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_a47422a91ca5ab39b080f777f316b5ad3} 
+\index{flexbuffers::FLATBUFFERS\_FINAL\_CLASS@{flexbuffers::FLATBUFFERS\_FINAL\_CLASS}!Blob@{Blob}}
+\index{Blob@{Blob}!flexbuffers::FLATBUFFERS\_FINAL\_CLASS@{flexbuffers::FLATBUFFERS\_FINAL\_CLASS}}
+\doxysubsubsection{\texorpdfstring{Blob()}{Blob()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily void flexbuffers\+::\+FLATBUFFERS\+\_\+\+FINAL\+\_\+\+CLASS\+::\+Blob (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{key,  }\item[{const void \texorpdfstring{$\ast$}{*}}]{data,  }\item[{size\+\_\+t}]{len }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_adc8efacf5e0ab9b0725caa6f1fd464c9}\label{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_adc8efacf5e0ab9b0725caa6f1fd464c9} 
+\index{flexbuffers::FLATBUFFERS\_FINAL\_CLASS@{flexbuffers::FLATBUFFERS\_FINAL\_CLASS}!Blob@{Blob}}
+\index{Blob@{Blob}!flexbuffers::FLATBUFFERS\_FINAL\_CLASS@{flexbuffers::FLATBUFFERS\_FINAL\_CLASS}}
+\doxysubsubsection{\texorpdfstring{Blob()}{Blob()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily size\+\_\+t flexbuffers\+::\+FLATBUFFERS\+\_\+\+FINAL\+\_\+\+CLASS\+::\+Blob (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ uint8\+\_\+t $>$ \&}]{v }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_ae79f47b7c70944ccad2955683647f150}\label{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_ae79f47b7c70944ccad2955683647f150} 
+\index{flexbuffers::FLATBUFFERS\_FINAL\_CLASS@{flexbuffers::FLATBUFFERS\_FINAL\_CLASS}!Blob@{Blob}}
+\index{Blob@{Blob}!flexbuffers::FLATBUFFERS\_FINAL\_CLASS@{flexbuffers::FLATBUFFERS\_FINAL\_CLASS}}
+\doxysubsubsection{\texorpdfstring{Blob()}{Blob()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily size\+\_\+t flexbuffers\+::\+FLATBUFFERS\+\_\+\+FINAL\+\_\+\+CLASS\+::\+Blob (\begin{DoxyParamCaption}\item[{const void \texorpdfstring{$\ast$}{*}}]{data,  }\item[{size\+\_\+t}]{len }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_a4d4980e975c30610c0c46cf06cc36de3}\label{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_a4d4980e975c30610c0c46cf06cc36de3} 
+\index{flexbuffers::FLATBUFFERS\_FINAL\_CLASS@{flexbuffers::FLATBUFFERS\_FINAL\_CLASS}!Bool@{Bool}}
+\index{Bool@{Bool}!flexbuffers::FLATBUFFERS\_FINAL\_CLASS@{flexbuffers::FLATBUFFERS\_FINAL\_CLASS}}
+\doxysubsubsection{\texorpdfstring{Bool()}{Bool()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void flexbuffers\+::\+FLATBUFFERS\+\_\+\+FINAL\+\_\+\+CLASS\+::\+Bool (\begin{DoxyParamCaption}\item[{bool}]{b }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_a75bfc6d338d42be168a1b39e62be65d1}\label{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_a75bfc6d338d42be168a1b39e62be65d1} 
+\index{flexbuffers::FLATBUFFERS\_FINAL\_CLASS@{flexbuffers::FLATBUFFERS\_FINAL\_CLASS}!Bool@{Bool}}
+\index{Bool@{Bool}!flexbuffers::FLATBUFFERS\_FINAL\_CLASS@{flexbuffers::FLATBUFFERS\_FINAL\_CLASS}}
+\doxysubsubsection{\texorpdfstring{Bool()}{Bool()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void flexbuffers\+::\+FLATBUFFERS\+\_\+\+FINAL\+\_\+\+CLASS\+::\+Bool (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{key,  }\item[{bool}]{b }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_ae2031c98fb28f694e895e47668134606}\label{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_ae2031c98fb28f694e895e47668134606} 
+\index{flexbuffers::FLATBUFFERS\_FINAL\_CLASS@{flexbuffers::FLATBUFFERS\_FINAL\_CLASS}!Builder@{Builder}}
+\index{Builder@{Builder}!flexbuffers::FLATBUFFERS\_FINAL\_CLASS@{flexbuffers::FLATBUFFERS\_FINAL\_CLASS}}
+\doxysubsubsection{\texorpdfstring{Builder()}{Builder()}}
+{\footnotesize\ttfamily flexbuffers\+::\+FLATBUFFERS\+\_\+\+FINAL\+\_\+\+CLASS\+::\+Builder (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{initial\+\_\+size = {\ttfamily 256},  }\item[{\mbox{\hyperlink{namespaceflexbuffers_a1d799e72faa9a9fe98270bb33a6864af}{Builder\+Flag}}}]{flags = {\ttfamily \mbox{\hyperlink{namespaceflexbuffers_a1d799e72faa9a9fe98270bb33a6864afa70f65074918dfb3b4d122f7faee872e1}{BUILDER\+\_\+\+FLAG\+\_\+\+SHARE\+\_\+\+KEYS}}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_a6f82819dc4488346512c4d975f07e4a8}\label{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_a6f82819dc4488346512c4d975f07e4a8} 
+\index{flexbuffers::FLATBUFFERS\_FINAL\_CLASS@{flexbuffers::FLATBUFFERS\_FINAL\_CLASS}!Clear@{Clear}}
+\index{Clear@{Clear}!flexbuffers::FLATBUFFERS\_FINAL\_CLASS@{flexbuffers::FLATBUFFERS\_FINAL\_CLASS}}
+\doxysubsubsection{\texorpdfstring{Clear()}{Clear()}}
+{\footnotesize\ttfamily void flexbuffers\+::\+FLATBUFFERS\+\_\+\+FINAL\+\_\+\+CLASS\+::\+Clear (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_ab4cda9e6a3d99d5944383772545f6389}\label{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_ab4cda9e6a3d99d5944383772545f6389} 
+\index{flexbuffers::FLATBUFFERS\_FINAL\_CLASS@{flexbuffers::FLATBUFFERS\_FINAL\_CLASS}!Double@{Double}}
+\index{Double@{Double}!flexbuffers::FLATBUFFERS\_FINAL\_CLASS@{flexbuffers::FLATBUFFERS\_FINAL\_CLASS}}
+\doxysubsubsection{\texorpdfstring{Double()}{Double()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void flexbuffers\+::\+FLATBUFFERS\+\_\+\+FINAL\+\_\+\+CLASS\+::\+Double (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{key,  }\item[{double}]{d }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_ac2ea28ed24df0c8c6aaa43634e9a85fd}\label{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_ac2ea28ed24df0c8c6aaa43634e9a85fd} 
+\index{flexbuffers::FLATBUFFERS\_FINAL\_CLASS@{flexbuffers::FLATBUFFERS\_FINAL\_CLASS}!Double@{Double}}
+\index{Double@{Double}!flexbuffers::FLATBUFFERS\_FINAL\_CLASS@{flexbuffers::FLATBUFFERS\_FINAL\_CLASS}}
+\doxysubsubsection{\texorpdfstring{Double()}{Double()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void flexbuffers\+::\+FLATBUFFERS\+\_\+\+FINAL\+\_\+\+CLASS\+::\+Double (\begin{DoxyParamCaption}\item[{double}]{f }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_a5ef891643db1f48b00cdd188636335b4}\label{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_a5ef891643db1f48b00cdd188636335b4} 
+\index{flexbuffers::FLATBUFFERS\_FINAL\_CLASS@{flexbuffers::FLATBUFFERS\_FINAL\_CLASS}!EndMap@{EndMap}}
+\index{EndMap@{EndMap}!flexbuffers::FLATBUFFERS\_FINAL\_CLASS@{flexbuffers::FLATBUFFERS\_FINAL\_CLASS}}
+\doxysubsubsection{\texorpdfstring{EndMap()}{EndMap()}}
+{\footnotesize\ttfamily size\+\_\+t flexbuffers\+::\+FLATBUFFERS\+\_\+\+FINAL\+\_\+\+CLASS\+::\+End\+Map (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{start }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_ace9316eb85175c65651ed8e2bd592739}\label{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_ace9316eb85175c65651ed8e2bd592739} 
+\index{flexbuffers::FLATBUFFERS\_FINAL\_CLASS@{flexbuffers::FLATBUFFERS\_FINAL\_CLASS}!EndVector@{EndVector}}
+\index{EndVector@{EndVector}!flexbuffers::FLATBUFFERS\_FINAL\_CLASS@{flexbuffers::FLATBUFFERS\_FINAL\_CLASS}}
+\doxysubsubsection{\texorpdfstring{EndVector()}{EndVector()}}
+{\footnotesize\ttfamily size\+\_\+t flexbuffers\+::\+FLATBUFFERS\+\_\+\+FINAL\+\_\+\+CLASS\+::\+End\+Vector (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{start,  }\item[{bool}]{typed,  }\item[{bool}]{fixed }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_a5e9864417759a4d8ed505054d20fa0f0}\label{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_a5e9864417759a4d8ed505054d20fa0f0} 
+\index{flexbuffers::FLATBUFFERS\_FINAL\_CLASS@{flexbuffers::FLATBUFFERS\_FINAL\_CLASS}!Finish@{Finish}}
+\index{Finish@{Finish}!flexbuffers::FLATBUFFERS\_FINAL\_CLASS@{flexbuffers::FLATBUFFERS\_FINAL\_CLASS}}
+\doxysubsubsection{\texorpdfstring{Finish()}{Finish()}}
+{\footnotesize\ttfamily void flexbuffers\+::\+FLATBUFFERS\+\_\+\+FINAL\+\_\+\+CLASS\+::\+Finish (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_af9b2e8b94f5be368c3db586fe6bf94f2}\label{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_af9b2e8b94f5be368c3db586fe6bf94f2} 
+\index{flexbuffers::FLATBUFFERS\_FINAL\_CLASS@{flexbuffers::FLATBUFFERS\_FINAL\_CLASS}!FixedTypedVector@{FixedTypedVector}}
+\index{FixedTypedVector@{FixedTypedVector}!flexbuffers::FLATBUFFERS\_FINAL\_CLASS@{flexbuffers::FLATBUFFERS\_FINAL\_CLASS}}
+\doxysubsubsection{\texorpdfstring{FixedTypedVector()}{FixedTypedVector()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+size\+\_\+t flexbuffers\+::\+FLATBUFFERS\+\_\+\+FINAL\+\_\+\+CLASS\+::\+Fixed\+Typed\+Vector (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{key,  }\item[{const T \texorpdfstring{$\ast$}{*}}]{elems,  }\item[{size\+\_\+t}]{len }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_af112b788bd6cab4188d6e70c819bb028}\label{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_af112b788bd6cab4188d6e70c819bb028} 
+\index{flexbuffers::FLATBUFFERS\_FINAL\_CLASS@{flexbuffers::FLATBUFFERS\_FINAL\_CLASS}!FixedTypedVector@{FixedTypedVector}}
+\index{FixedTypedVector@{FixedTypedVector}!flexbuffers::FLATBUFFERS\_FINAL\_CLASS@{flexbuffers::FLATBUFFERS\_FINAL\_CLASS}}
+\doxysubsubsection{\texorpdfstring{FixedTypedVector()}{FixedTypedVector()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+size\+\_\+t flexbuffers\+::\+FLATBUFFERS\+\_\+\+FINAL\+\_\+\+CLASS\+::\+Fixed\+Typed\+Vector (\begin{DoxyParamCaption}\item[{const T \texorpdfstring{$\ast$}{*}}]{elems,  }\item[{size\+\_\+t}]{len }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_a2ce25ebbc8c328ad9119628847920a2e}\label{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_a2ce25ebbc8c328ad9119628847920a2e} 
+\index{flexbuffers::FLATBUFFERS\_FINAL\_CLASS@{flexbuffers::FLATBUFFERS\_FINAL\_CLASS}!Float@{Float}}
+\index{Float@{Float}!flexbuffers::FLATBUFFERS\_FINAL\_CLASS@{flexbuffers::FLATBUFFERS\_FINAL\_CLASS}}
+\doxysubsubsection{\texorpdfstring{Float()}{Float()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void flexbuffers\+::\+FLATBUFFERS\+\_\+\+FINAL\+\_\+\+CLASS\+::\+Float (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{key,  }\item[{float}]{f }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_ab3dc41285ea8c06a6dbcb961cb442577}\label{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_ab3dc41285ea8c06a6dbcb961cb442577} 
+\index{flexbuffers::FLATBUFFERS\_FINAL\_CLASS@{flexbuffers::FLATBUFFERS\_FINAL\_CLASS}!Float@{Float}}
+\index{Float@{Float}!flexbuffers::FLATBUFFERS\_FINAL\_CLASS@{flexbuffers::FLATBUFFERS\_FINAL\_CLASS}}
+\doxysubsubsection{\texorpdfstring{Float()}{Float()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void flexbuffers\+::\+FLATBUFFERS\+\_\+\+FINAL\+\_\+\+CLASS\+::\+Float (\begin{DoxyParamCaption}\item[{float}]{f }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_a6df28a7d9da941fb23820cc79d1ede9b}\label{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_a6df28a7d9da941fb23820cc79d1ede9b} 
+\index{flexbuffers::FLATBUFFERS\_FINAL\_CLASS@{flexbuffers::FLATBUFFERS\_FINAL\_CLASS}!ForceMinimumBitWidth@{ForceMinimumBitWidth}}
+\index{ForceMinimumBitWidth@{ForceMinimumBitWidth}!flexbuffers::FLATBUFFERS\_FINAL\_CLASS@{flexbuffers::FLATBUFFERS\_FINAL\_CLASS}}
+\doxysubsubsection{\texorpdfstring{ForceMinimumBitWidth()}{ForceMinimumBitWidth()}}
+{\footnotesize\ttfamily void flexbuffers\+::\+FLATBUFFERS\+\_\+\+FINAL\+\_\+\+CLASS\+::\+Force\+Minimum\+Bit\+Width (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceflexbuffers_a76cc4a8eb404468982af5bd160912e8b}{Bit\+Width}}}]{bw = {\ttfamily \mbox{\hyperlink{namespaceflexbuffers_a76cc4a8eb404468982af5bd160912e8bade28525748185d07d8ad6b3ff6bb7a71}{BIT\+\_\+\+WIDTH\+\_\+8}}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_af3c7848b79ee54d0764645ea55156058}\label{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_af3c7848b79ee54d0764645ea55156058} 
+\index{flexbuffers::FLATBUFFERS\_FINAL\_CLASS@{flexbuffers::FLATBUFFERS\_FINAL\_CLASS}!GetBuffer@{GetBuffer}}
+\index{GetBuffer@{GetBuffer}!flexbuffers::FLATBUFFERS\_FINAL\_CLASS@{flexbuffers::FLATBUFFERS\_FINAL\_CLASS}}
+\doxysubsubsection{\texorpdfstring{GetBuffer()}{GetBuffer()}}
+{\footnotesize\ttfamily const std\+::vector$<$ uint8\+\_\+t $>$ \& flexbuffers\+::\+FLATBUFFERS\+\_\+\+FINAL\+\_\+\+CLASS\+::\+Get\+Buffer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the serialized buffer (after you call {\ttfamily \doxylink{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_a5e9864417759a4d8ed505054d20fa0f0}{Finish()}}). 
+
+\begin{DoxyReturn}{Returns}
+Returns a vector owned by this class. 
+\end{DoxyReturn}
+\Hypertarget{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_a46a7602b3486775b6b9a5ec7c178b572}\label{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_a46a7602b3486775b6b9a5ec7c178b572} 
+\index{flexbuffers::FLATBUFFERS\_FINAL\_CLASS@{flexbuffers::FLATBUFFERS\_FINAL\_CLASS}!GetSize@{GetSize}}
+\index{GetSize@{GetSize}!flexbuffers::FLATBUFFERS\_FINAL\_CLASS@{flexbuffers::FLATBUFFERS\_FINAL\_CLASS}}
+\doxysubsubsection{\texorpdfstring{GetSize()}{GetSize()}}
+{\footnotesize\ttfamily size\+\_\+t flexbuffers\+::\+FLATBUFFERS\+\_\+\+FINAL\+\_\+\+CLASS\+::\+Get\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_a52ef6079ef7c09a7fc7c9b57d0933710}\label{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_a52ef6079ef7c09a7fc7c9b57d0933710} 
+\index{flexbuffers::FLATBUFFERS\_FINAL\_CLASS@{flexbuffers::FLATBUFFERS\_FINAL\_CLASS}!HasDuplicateKeys@{HasDuplicateKeys}}
+\index{HasDuplicateKeys@{HasDuplicateKeys}!flexbuffers::FLATBUFFERS\_FINAL\_CLASS@{flexbuffers::FLATBUFFERS\_FINAL\_CLASS}}
+\doxysubsubsection{\texorpdfstring{HasDuplicateKeys()}{HasDuplicateKeys()}}
+{\footnotesize\ttfamily bool flexbuffers\+::\+FLATBUFFERS\+\_\+\+FINAL\+\_\+\+CLASS\+::\+Has\+Duplicate\+Keys (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_ada5ff92397e4edf2fbd0172bc4bbe94b}\label{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_ada5ff92397e4edf2fbd0172bc4bbe94b} 
+\index{flexbuffers::FLATBUFFERS\_FINAL\_CLASS@{flexbuffers::FLATBUFFERS\_FINAL\_CLASS}!IndirectDouble@{IndirectDouble}}
+\index{IndirectDouble@{IndirectDouble}!flexbuffers::FLATBUFFERS\_FINAL\_CLASS@{flexbuffers::FLATBUFFERS\_FINAL\_CLASS}}
+\doxysubsubsection{\texorpdfstring{IndirectDouble()}{IndirectDouble()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void flexbuffers\+::\+FLATBUFFERS\+\_\+\+FINAL\+\_\+\+CLASS\+::\+Indirect\+Double (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{key,  }\item[{double}]{d }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_aa11b5a58f7a6ad39e95ba7432bf4b321}\label{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_aa11b5a58f7a6ad39e95ba7432bf4b321} 
+\index{flexbuffers::FLATBUFFERS\_FINAL\_CLASS@{flexbuffers::FLATBUFFERS\_FINAL\_CLASS}!IndirectDouble@{IndirectDouble}}
+\index{IndirectDouble@{IndirectDouble}!flexbuffers::FLATBUFFERS\_FINAL\_CLASS@{flexbuffers::FLATBUFFERS\_FINAL\_CLASS}}
+\doxysubsubsection{\texorpdfstring{IndirectDouble()}{IndirectDouble()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void flexbuffers\+::\+FLATBUFFERS\+\_\+\+FINAL\+\_\+\+CLASS\+::\+Indirect\+Double (\begin{DoxyParamCaption}\item[{double}]{f }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_a01eba724298e8e90b2c3f0e66abaa2b6}\label{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_a01eba724298e8e90b2c3f0e66abaa2b6} 
+\index{flexbuffers::FLATBUFFERS\_FINAL\_CLASS@{flexbuffers::FLATBUFFERS\_FINAL\_CLASS}!IndirectFloat@{IndirectFloat}}
+\index{IndirectFloat@{IndirectFloat}!flexbuffers::FLATBUFFERS\_FINAL\_CLASS@{flexbuffers::FLATBUFFERS\_FINAL\_CLASS}}
+\doxysubsubsection{\texorpdfstring{IndirectFloat()}{IndirectFloat()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void flexbuffers\+::\+FLATBUFFERS\+\_\+\+FINAL\+\_\+\+CLASS\+::\+Indirect\+Float (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{key,  }\item[{float}]{f }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_aed1e4bbdcc4d9173d1ccb5934ad149ef}\label{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_aed1e4bbdcc4d9173d1ccb5934ad149ef} 
+\index{flexbuffers::FLATBUFFERS\_FINAL\_CLASS@{flexbuffers::FLATBUFFERS\_FINAL\_CLASS}!IndirectFloat@{IndirectFloat}}
+\index{IndirectFloat@{IndirectFloat}!flexbuffers::FLATBUFFERS\_FINAL\_CLASS@{flexbuffers::FLATBUFFERS\_FINAL\_CLASS}}
+\doxysubsubsection{\texorpdfstring{IndirectFloat()}{IndirectFloat()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void flexbuffers\+::\+FLATBUFFERS\+\_\+\+FINAL\+\_\+\+CLASS\+::\+Indirect\+Float (\begin{DoxyParamCaption}\item[{float}]{f }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_a5d129ce5c04042be0a42ecdff24749d5}\label{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_a5d129ce5c04042be0a42ecdff24749d5} 
+\index{flexbuffers::FLATBUFFERS\_FINAL\_CLASS@{flexbuffers::FLATBUFFERS\_FINAL\_CLASS}!IndirectInt@{IndirectInt}}
+\index{IndirectInt@{IndirectInt}!flexbuffers::FLATBUFFERS\_FINAL\_CLASS@{flexbuffers::FLATBUFFERS\_FINAL\_CLASS}}
+\doxysubsubsection{\texorpdfstring{IndirectInt()}{IndirectInt()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void flexbuffers\+::\+FLATBUFFERS\+\_\+\+FINAL\+\_\+\+CLASS\+::\+Indirect\+Int (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{key,  }\item[{int64\+\_\+t}]{i }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_a83c77f82ccbde554f532e32cd0d9d34c}\label{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_a83c77f82ccbde554f532e32cd0d9d34c} 
+\index{flexbuffers::FLATBUFFERS\_FINAL\_CLASS@{flexbuffers::FLATBUFFERS\_FINAL\_CLASS}!IndirectInt@{IndirectInt}}
+\index{IndirectInt@{IndirectInt}!flexbuffers::FLATBUFFERS\_FINAL\_CLASS@{flexbuffers::FLATBUFFERS\_FINAL\_CLASS}}
+\doxysubsubsection{\texorpdfstring{IndirectInt()}{IndirectInt()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void flexbuffers\+::\+FLATBUFFERS\+\_\+\+FINAL\+\_\+\+CLASS\+::\+Indirect\+Int (\begin{DoxyParamCaption}\item[{int64\+\_\+t}]{i }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_ab3f9a2e68e756795608ef1158960e5ac}\label{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_ab3f9a2e68e756795608ef1158960e5ac} 
+\index{flexbuffers::FLATBUFFERS\_FINAL\_CLASS@{flexbuffers::FLATBUFFERS\_FINAL\_CLASS}!IndirectUInt@{IndirectUInt}}
+\index{IndirectUInt@{IndirectUInt}!flexbuffers::FLATBUFFERS\_FINAL\_CLASS@{flexbuffers::FLATBUFFERS\_FINAL\_CLASS}}
+\doxysubsubsection{\texorpdfstring{IndirectUInt()}{IndirectUInt()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void flexbuffers\+::\+FLATBUFFERS\+\_\+\+FINAL\+\_\+\+CLASS\+::\+Indirect\+UInt (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{key,  }\item[{uint64\+\_\+t}]{u }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_a7bd9c8cf132b02e812b515240210a7e3}\label{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_a7bd9c8cf132b02e812b515240210a7e3} 
+\index{flexbuffers::FLATBUFFERS\_FINAL\_CLASS@{flexbuffers::FLATBUFFERS\_FINAL\_CLASS}!IndirectUInt@{IndirectUInt}}
+\index{IndirectUInt@{IndirectUInt}!flexbuffers::FLATBUFFERS\_FINAL\_CLASS@{flexbuffers::FLATBUFFERS\_FINAL\_CLASS}}
+\doxysubsubsection{\texorpdfstring{IndirectUInt()}{IndirectUInt()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void flexbuffers\+::\+FLATBUFFERS\+\_\+\+FINAL\+\_\+\+CLASS\+::\+Indirect\+UInt (\begin{DoxyParamCaption}\item[{uint64\+\_\+t}]{u }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_a74edf6b9e50d5ddbc9f55ee2a3cd8d15}\label{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_a74edf6b9e50d5ddbc9f55ee2a3cd8d15} 
+\index{flexbuffers::FLATBUFFERS\_FINAL\_CLASS@{flexbuffers::FLATBUFFERS\_FINAL\_CLASS}!Int@{Int}}
+\index{Int@{Int}!flexbuffers::FLATBUFFERS\_FINAL\_CLASS@{flexbuffers::FLATBUFFERS\_FINAL\_CLASS}}
+\doxysubsubsection{\texorpdfstring{Int()}{Int()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void flexbuffers\+::\+FLATBUFFERS\+\_\+\+FINAL\+\_\+\+CLASS\+::\+Int (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{key,  }\item[{int64\+\_\+t}]{i }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_a18bb8f5b6871abdec753cc771e331ab0}\label{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_a18bb8f5b6871abdec753cc771e331ab0} 
+\index{flexbuffers::FLATBUFFERS\_FINAL\_CLASS@{flexbuffers::FLATBUFFERS\_FINAL\_CLASS}!Int@{Int}}
+\index{Int@{Int}!flexbuffers::FLATBUFFERS\_FINAL\_CLASS@{flexbuffers::FLATBUFFERS\_FINAL\_CLASS}}
+\doxysubsubsection{\texorpdfstring{Int()}{Int()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void flexbuffers\+::\+FLATBUFFERS\+\_\+\+FINAL\+\_\+\+CLASS\+::\+Int (\begin{DoxyParamCaption}\item[{int64\+\_\+t}]{i }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_a538320e2740c720703deab4d65097301}\label{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_a538320e2740c720703deab4d65097301} 
+\index{flexbuffers::FLATBUFFERS\_FINAL\_CLASS@{flexbuffers::FLATBUFFERS\_FINAL\_CLASS}!Key@{Key}}
+\index{Key@{Key}!flexbuffers::FLATBUFFERS\_FINAL\_CLASS@{flexbuffers::FLATBUFFERS\_FINAL\_CLASS}}
+\doxysubsubsection{\texorpdfstring{Key()}{Key()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily size\+\_\+t flexbuffers\+::\+FLATBUFFERS\+\_\+\+FINAL\+\_\+\+CLASS\+::\+Key (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{str }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_a9f763001cc6a2231479298cc7b6dd6c1}\label{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_a9f763001cc6a2231479298cc7b6dd6c1} 
+\index{flexbuffers::FLATBUFFERS\_FINAL\_CLASS@{flexbuffers::FLATBUFFERS\_FINAL\_CLASS}!Key@{Key}}
+\index{Key@{Key}!flexbuffers::FLATBUFFERS\_FINAL\_CLASS@{flexbuffers::FLATBUFFERS\_FINAL\_CLASS}}
+\doxysubsubsection{\texorpdfstring{Key()}{Key()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily size\+\_\+t flexbuffers\+::\+FLATBUFFERS\+\_\+\+FINAL\+\_\+\+CLASS\+::\+Key (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{str,  }\item[{size\+\_\+t}]{len }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_a3d85a21a571ac28b8fdbe1bbd711f1d2}\label{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_a3d85a21a571ac28b8fdbe1bbd711f1d2} 
+\index{flexbuffers::FLATBUFFERS\_FINAL\_CLASS@{flexbuffers::FLATBUFFERS\_FINAL\_CLASS}!Key@{Key}}
+\index{Key@{Key}!flexbuffers::FLATBUFFERS\_FINAL\_CLASS@{flexbuffers::FLATBUFFERS\_FINAL\_CLASS}}
+\doxysubsubsection{\texorpdfstring{Key()}{Key()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily size\+\_\+t flexbuffers\+::\+FLATBUFFERS\+\_\+\+FINAL\+\_\+\+CLASS\+::\+Key (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{str }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_a89fc562226a132ca57545a197cee5d71}\label{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_a89fc562226a132ca57545a197cee5d71} 
+\index{flexbuffers::FLATBUFFERS\_FINAL\_CLASS@{flexbuffers::FLATBUFFERS\_FINAL\_CLASS}!LastValue@{LastValue}}
+\index{LastValue@{LastValue}!flexbuffers::FLATBUFFERS\_FINAL\_CLASS@{flexbuffers::FLATBUFFERS\_FINAL\_CLASS}}
+\doxysubsubsection{\texorpdfstring{LastValue()}{LastValue()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_1_1Value}{Value}} flexbuffers\+::\+FLATBUFFERS\+\_\+\+FINAL\+\_\+\+CLASS\+::\+Last\+Value (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_a0c719aff86547d71b315b356838b44f9}\label{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_a0c719aff86547d71b315b356838b44f9} 
+\index{flexbuffers::FLATBUFFERS\_FINAL\_CLASS@{flexbuffers::FLATBUFFERS\_FINAL\_CLASS}!Map@{Map}}
+\index{Map@{Map}!flexbuffers::FLATBUFFERS\_FINAL\_CLASS@{flexbuffers::FLATBUFFERS\_FINAL\_CLASS}}
+\doxysubsubsection{\texorpdfstring{Map()}{Map()}\hspace{0.1cm}{\footnotesize\ttfamily [1/5]}}
+{\footnotesize\ttfamily template$<$typename F $>$ \\
+size\+\_\+t flexbuffers\+::\+FLATBUFFERS\+\_\+\+FINAL\+\_\+\+CLASS\+::\+Map (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{key,  }\item[{F}]{f }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_a64a5aab73dfe8eab72e04f2931082167}\label{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_a64a5aab73dfe8eab72e04f2931082167} 
+\index{flexbuffers::FLATBUFFERS\_FINAL\_CLASS@{flexbuffers::FLATBUFFERS\_FINAL\_CLASS}!Map@{Map}}
+\index{Map@{Map}!flexbuffers::FLATBUFFERS\_FINAL\_CLASS@{flexbuffers::FLATBUFFERS\_FINAL\_CLASS}}
+\doxysubsubsection{\texorpdfstring{Map()}{Map()}\hspace{0.1cm}{\footnotesize\ttfamily [2/5]}}
+{\footnotesize\ttfamily template$<$typename F , typename T $>$ \\
+size\+\_\+t flexbuffers\+::\+FLATBUFFERS\+\_\+\+FINAL\+\_\+\+CLASS\+::\+Map (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{key,  }\item[{F}]{f,  }\item[{T \&}]{state }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_a8ba1d218537e1fb4dd51f7211579be65}\label{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_a8ba1d218537e1fb4dd51f7211579be65} 
+\index{flexbuffers::FLATBUFFERS\_FINAL\_CLASS@{flexbuffers::FLATBUFFERS\_FINAL\_CLASS}!Map@{Map}}
+\index{Map@{Map}!flexbuffers::FLATBUFFERS\_FINAL\_CLASS@{flexbuffers::FLATBUFFERS\_FINAL\_CLASS}}
+\doxysubsubsection{\texorpdfstring{Map()}{Map()}\hspace{0.1cm}{\footnotesize\ttfamily [3/5]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void flexbuffers\+::\+FLATBUFFERS\+\_\+\+FINAL\+\_\+\+CLASS\+::\+Map (\begin{DoxyParamCaption}\item[{const std\+::map$<$ std\+::string, T $>$ \&}]{map }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_a4c2cbc511b6ae5a5a4b9d34451732306}\label{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_a4c2cbc511b6ae5a5a4b9d34451732306} 
+\index{flexbuffers::FLATBUFFERS\_FINAL\_CLASS@{flexbuffers::FLATBUFFERS\_FINAL\_CLASS}!Map@{Map}}
+\index{Map@{Map}!flexbuffers::FLATBUFFERS\_FINAL\_CLASS@{flexbuffers::FLATBUFFERS\_FINAL\_CLASS}}
+\doxysubsubsection{\texorpdfstring{Map()}{Map()}\hspace{0.1cm}{\footnotesize\ttfamily [4/5]}}
+{\footnotesize\ttfamily template$<$typename F $>$ \\
+size\+\_\+t flexbuffers\+::\+FLATBUFFERS\+\_\+\+FINAL\+\_\+\+CLASS\+::\+Map (\begin{DoxyParamCaption}\item[{F}]{f }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_ac1e5a4657579fe7a58fd31e86609d9bf}\label{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_ac1e5a4657579fe7a58fd31e86609d9bf} 
+\index{flexbuffers::FLATBUFFERS\_FINAL\_CLASS@{flexbuffers::FLATBUFFERS\_FINAL\_CLASS}!Map@{Map}}
+\index{Map@{Map}!flexbuffers::FLATBUFFERS\_FINAL\_CLASS@{flexbuffers::FLATBUFFERS\_FINAL\_CLASS}}
+\doxysubsubsection{\texorpdfstring{Map()}{Map()}\hspace{0.1cm}{\footnotesize\ttfamily [5/5]}}
+{\footnotesize\ttfamily template$<$typename F , typename T $>$ \\
+size\+\_\+t flexbuffers\+::\+FLATBUFFERS\+\_\+\+FINAL\+\_\+\+CLASS\+::\+Map (\begin{DoxyParamCaption}\item[{F}]{f,  }\item[{T \&}]{state }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_a60066cc94122641d18134e65aa28ba14}\label{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_a60066cc94122641d18134e65aa28ba14} 
+\index{flexbuffers::FLATBUFFERS\_FINAL\_CLASS@{flexbuffers::FLATBUFFERS\_FINAL\_CLASS}!MapElementCount@{MapElementCount}}
+\index{MapElementCount@{MapElementCount}!flexbuffers::FLATBUFFERS\_FINAL\_CLASS@{flexbuffers::FLATBUFFERS\_FINAL\_CLASS}}
+\doxysubsubsection{\texorpdfstring{MapElementCount()}{MapElementCount()}}
+{\footnotesize\ttfamily size\+\_\+t flexbuffers\+::\+FLATBUFFERS\+\_\+\+FINAL\+\_\+\+CLASS\+::\+Map\+Element\+Count (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{start }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_a8fc1398ab2d4e2cd6d8b3687f594dc75}\label{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_a8fc1398ab2d4e2cd6d8b3687f594dc75} 
+\index{flexbuffers::FLATBUFFERS\_FINAL\_CLASS@{flexbuffers::FLATBUFFERS\_FINAL\_CLASS}!Null@{Null}}
+\index{Null@{Null}!flexbuffers::FLATBUFFERS\_FINAL\_CLASS@{flexbuffers::FLATBUFFERS\_FINAL\_CLASS}}
+\doxysubsubsection{\texorpdfstring{Null()}{Null()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void flexbuffers\+::\+FLATBUFFERS\+\_\+\+FINAL\+\_\+\+CLASS\+::\+Null (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_a324725ca0f2c6e2ae042c5dddea8cb35}\label{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_a324725ca0f2c6e2ae042c5dddea8cb35} 
+\index{flexbuffers::FLATBUFFERS\_FINAL\_CLASS@{flexbuffers::FLATBUFFERS\_FINAL\_CLASS}!Null@{Null}}
+\index{Null@{Null}!flexbuffers::FLATBUFFERS\_FINAL\_CLASS@{flexbuffers::FLATBUFFERS\_FINAL\_CLASS}}
+\doxysubsubsection{\texorpdfstring{Null()}{Null()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void flexbuffers\+::\+FLATBUFFERS\+\_\+\+FINAL\+\_\+\+CLASS\+::\+Null (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{key }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_af35813bc86fa43c616d996f4578e3a09}\label{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_af35813bc86fa43c616d996f4578e3a09} 
+\index{flexbuffers::FLATBUFFERS\_FINAL\_CLASS@{flexbuffers::FLATBUFFERS\_FINAL\_CLASS}!operator+=@{operator+=}}
+\index{operator+=@{operator+=}!flexbuffers::FLATBUFFERS\_FINAL\_CLASS@{flexbuffers::FLATBUFFERS\_FINAL\_CLASS}}
+\doxysubsubsection{\texorpdfstring{operator+=()}{operator+=()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void flexbuffers\+::\+FLATBUFFERS\+\_\+\+FINAL\+\_\+\+CLASS\+::operator+= (\begin{DoxyParamCaption}\item[{const T \&}]{t }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_a02f14bb59b08863e4e2f0fe959edfafd}\label{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_a02f14bb59b08863e4e2f0fe959edfafd} 
+\index{flexbuffers::FLATBUFFERS\_FINAL\_CLASS@{flexbuffers::FLATBUFFERS\_FINAL\_CLASS}!ReuseValue@{ReuseValue}}
+\index{ReuseValue@{ReuseValue}!flexbuffers::FLATBUFFERS\_FINAL\_CLASS@{flexbuffers::FLATBUFFERS\_FINAL\_CLASS}}
+\doxysubsubsection{\texorpdfstring{ReuseValue()}{ReuseValue()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void flexbuffers\+::\+FLATBUFFERS\+\_\+\+FINAL\+\_\+\+CLASS\+::\+Reuse\+Value (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{key,  }\item[{\mbox{\hyperlink{structflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_1_1Value}{Value}}}]{v }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_ab0b5d54bf3d62ba17b75cad0208f70f1}\label{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_ab0b5d54bf3d62ba17b75cad0208f70f1} 
+\index{flexbuffers::FLATBUFFERS\_FINAL\_CLASS@{flexbuffers::FLATBUFFERS\_FINAL\_CLASS}!ReuseValue@{ReuseValue}}
+\index{ReuseValue@{ReuseValue}!flexbuffers::FLATBUFFERS\_FINAL\_CLASS@{flexbuffers::FLATBUFFERS\_FINAL\_CLASS}}
+\doxysubsubsection{\texorpdfstring{ReuseValue()}{ReuseValue()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void flexbuffers\+::\+FLATBUFFERS\+\_\+\+FINAL\+\_\+\+CLASS\+::\+Reuse\+Value (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_1_1Value}{Value}}}]{v }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_ae7e44c6da5e9e90101564de7da73e338}\label{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_ae7e44c6da5e9e90101564de7da73e338} 
+\index{flexbuffers::FLATBUFFERS\_FINAL\_CLASS@{flexbuffers::FLATBUFFERS\_FINAL\_CLASS}!StartMap@{StartMap}}
+\index{StartMap@{StartMap}!flexbuffers::FLATBUFFERS\_FINAL\_CLASS@{flexbuffers::FLATBUFFERS\_FINAL\_CLASS}}
+\doxysubsubsection{\texorpdfstring{StartMap()}{StartMap()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily size\+\_\+t flexbuffers\+::\+FLATBUFFERS\+\_\+\+FINAL\+\_\+\+CLASS\+::\+Start\+Map (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_a0025756d7e665f51943f3e406925f776}\label{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_a0025756d7e665f51943f3e406925f776} 
+\index{flexbuffers::FLATBUFFERS\_FINAL\_CLASS@{flexbuffers::FLATBUFFERS\_FINAL\_CLASS}!StartMap@{StartMap}}
+\index{StartMap@{StartMap}!flexbuffers::FLATBUFFERS\_FINAL\_CLASS@{flexbuffers::FLATBUFFERS\_FINAL\_CLASS}}
+\doxysubsubsection{\texorpdfstring{StartMap()}{StartMap()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily size\+\_\+t flexbuffers\+::\+FLATBUFFERS\+\_\+\+FINAL\+\_\+\+CLASS\+::\+Start\+Map (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{key }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_ace8e3364828fc99c84efe99dbb9834f1}\label{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_ace8e3364828fc99c84efe99dbb9834f1} 
+\index{flexbuffers::FLATBUFFERS\_FINAL\_CLASS@{flexbuffers::FLATBUFFERS\_FINAL\_CLASS}!StartVector@{StartVector}}
+\index{StartVector@{StartVector}!flexbuffers::FLATBUFFERS\_FINAL\_CLASS@{flexbuffers::FLATBUFFERS\_FINAL\_CLASS}}
+\doxysubsubsection{\texorpdfstring{StartVector()}{StartVector()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily size\+\_\+t flexbuffers\+::\+FLATBUFFERS\+\_\+\+FINAL\+\_\+\+CLASS\+::\+Start\+Vector (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_a7fae62e8c8dacd596d5b53124c9f3d1a}\label{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_a7fae62e8c8dacd596d5b53124c9f3d1a} 
+\index{flexbuffers::FLATBUFFERS\_FINAL\_CLASS@{flexbuffers::FLATBUFFERS\_FINAL\_CLASS}!StartVector@{StartVector}}
+\index{StartVector@{StartVector}!flexbuffers::FLATBUFFERS\_FINAL\_CLASS@{flexbuffers::FLATBUFFERS\_FINAL\_CLASS}}
+\doxysubsubsection{\texorpdfstring{StartVector()}{StartVector()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily size\+\_\+t flexbuffers\+::\+FLATBUFFERS\+\_\+\+FINAL\+\_\+\+CLASS\+::\+Start\+Vector (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{key }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_afade800223569695d7faf582819a29c6}\label{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_afade800223569695d7faf582819a29c6} 
+\index{flexbuffers::FLATBUFFERS\_FINAL\_CLASS@{flexbuffers::FLATBUFFERS\_FINAL\_CLASS}!String@{String}}
+\index{String@{String}!flexbuffers::FLATBUFFERS\_FINAL\_CLASS@{flexbuffers::FLATBUFFERS\_FINAL\_CLASS}}
+\doxysubsubsection{\texorpdfstring{String()}{String()}\hspace{0.1cm}{\footnotesize\ttfamily [1/7]}}
+{\footnotesize\ttfamily void flexbuffers\+::\+FLATBUFFERS\+\_\+\+FINAL\+\_\+\+CLASS\+::\+String (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{key,  }\item[{const char \texorpdfstring{$\ast$}{*}}]{str }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_a71b6be3cd8d39e88cfa7f3b5ffce906f}\label{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_a71b6be3cd8d39e88cfa7f3b5ffce906f} 
+\index{flexbuffers::FLATBUFFERS\_FINAL\_CLASS@{flexbuffers::FLATBUFFERS\_FINAL\_CLASS}!String@{String}}
+\index{String@{String}!flexbuffers::FLATBUFFERS\_FINAL\_CLASS@{flexbuffers::FLATBUFFERS\_FINAL\_CLASS}}
+\doxysubsubsection{\texorpdfstring{String()}{String()}\hspace{0.1cm}{\footnotesize\ttfamily [2/7]}}
+{\footnotesize\ttfamily void flexbuffers\+::\+FLATBUFFERS\+\_\+\+FINAL\+\_\+\+CLASS\+::\+String (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{key,  }\item[{const \mbox{\hyperlink{classflexbuffers_1_1String}{flexbuffers\+::\+String}} \&}]{str }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_ac2800309b8d6154e13419344cba26185}\label{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_ac2800309b8d6154e13419344cba26185} 
+\index{flexbuffers::FLATBUFFERS\_FINAL\_CLASS@{flexbuffers::FLATBUFFERS\_FINAL\_CLASS}!String@{String}}
+\index{String@{String}!flexbuffers::FLATBUFFERS\_FINAL\_CLASS@{flexbuffers::FLATBUFFERS\_FINAL\_CLASS}}
+\doxysubsubsection{\texorpdfstring{String()}{String()}\hspace{0.1cm}{\footnotesize\ttfamily [3/7]}}
+{\footnotesize\ttfamily void flexbuffers\+::\+FLATBUFFERS\+\_\+\+FINAL\+\_\+\+CLASS\+::\+String (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{key,  }\item[{const std\+::string \&}]{str }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_ad032c818f6f9f40a3adf58bb0326d77b}\label{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_ad032c818f6f9f40a3adf58bb0326d77b} 
+\index{flexbuffers::FLATBUFFERS\_FINAL\_CLASS@{flexbuffers::FLATBUFFERS\_FINAL\_CLASS}!String@{String}}
+\index{String@{String}!flexbuffers::FLATBUFFERS\_FINAL\_CLASS@{flexbuffers::FLATBUFFERS\_FINAL\_CLASS}}
+\doxysubsubsection{\texorpdfstring{String()}{String()}\hspace{0.1cm}{\footnotesize\ttfamily [4/7]}}
+{\footnotesize\ttfamily size\+\_\+t flexbuffers\+::\+FLATBUFFERS\+\_\+\+FINAL\+\_\+\+CLASS\+::\+String (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{str }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_a8d3ddfa8998c1035016ff0f038e7ea2a}\label{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_a8d3ddfa8998c1035016ff0f038e7ea2a} 
+\index{flexbuffers::FLATBUFFERS\_FINAL\_CLASS@{flexbuffers::FLATBUFFERS\_FINAL\_CLASS}!String@{String}}
+\index{String@{String}!flexbuffers::FLATBUFFERS\_FINAL\_CLASS@{flexbuffers::FLATBUFFERS\_FINAL\_CLASS}}
+\doxysubsubsection{\texorpdfstring{String()}{String()}\hspace{0.1cm}{\footnotesize\ttfamily [5/7]}}
+{\footnotesize\ttfamily size\+\_\+t flexbuffers\+::\+FLATBUFFERS\+\_\+\+FINAL\+\_\+\+CLASS\+::\+String (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{str,  }\item[{size\+\_\+t}]{len }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_a303ce07202bcc0d617d55444a8593e3b}\label{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_a303ce07202bcc0d617d55444a8593e3b} 
+\index{flexbuffers::FLATBUFFERS\_FINAL\_CLASS@{flexbuffers::FLATBUFFERS\_FINAL\_CLASS}!String@{String}}
+\index{String@{String}!flexbuffers::FLATBUFFERS\_FINAL\_CLASS@{flexbuffers::FLATBUFFERS\_FINAL\_CLASS}}
+\doxysubsubsection{\texorpdfstring{String()}{String()}\hspace{0.1cm}{\footnotesize\ttfamily [6/7]}}
+{\footnotesize\ttfamily void flexbuffers\+::\+FLATBUFFERS\+\_\+\+FINAL\+\_\+\+CLASS\+::\+String (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classflexbuffers_1_1String}{flexbuffers\+::\+String}} \&}]{str }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_ad209a4411b4609c0560e0f4d78e45c52}\label{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_ad209a4411b4609c0560e0f4d78e45c52} 
+\index{flexbuffers::FLATBUFFERS\_FINAL\_CLASS@{flexbuffers::FLATBUFFERS\_FINAL\_CLASS}!String@{String}}
+\index{String@{String}!flexbuffers::FLATBUFFERS\_FINAL\_CLASS@{flexbuffers::FLATBUFFERS\_FINAL\_CLASS}}
+\doxysubsubsection{\texorpdfstring{String()}{String()}\hspace{0.1cm}{\footnotesize\ttfamily [7/7]}}
+{\footnotesize\ttfamily size\+\_\+t flexbuffers\+::\+FLATBUFFERS\+\_\+\+FINAL\+\_\+\+CLASS\+::\+String (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{str }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_a03dce4b913c186542a2e40acd9dd7238}\label{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_a03dce4b913c186542a2e40acd9dd7238} 
+\index{flexbuffers::FLATBUFFERS\_FINAL\_CLASS@{flexbuffers::FLATBUFFERS\_FINAL\_CLASS}!TypedVector@{TypedVector}}
+\index{TypedVector@{TypedVector}!flexbuffers::FLATBUFFERS\_FINAL\_CLASS@{flexbuffers::FLATBUFFERS\_FINAL\_CLASS}}
+\doxysubsubsection{\texorpdfstring{TypedVector()}{TypedVector()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily template$<$typename F $>$ \\
+size\+\_\+t flexbuffers\+::\+FLATBUFFERS\+\_\+\+FINAL\+\_\+\+CLASS\+::\+Typed\+Vector (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{key,  }\item[{F}]{f }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_aa673821d8276c60fd73a14bdb37dce20}\label{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_aa673821d8276c60fd73a14bdb37dce20} 
+\index{flexbuffers::FLATBUFFERS\_FINAL\_CLASS@{flexbuffers::FLATBUFFERS\_FINAL\_CLASS}!TypedVector@{TypedVector}}
+\index{TypedVector@{TypedVector}!flexbuffers::FLATBUFFERS\_FINAL\_CLASS@{flexbuffers::FLATBUFFERS\_FINAL\_CLASS}}
+\doxysubsubsection{\texorpdfstring{TypedVector()}{TypedVector()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily template$<$typename F , typename T $>$ \\
+size\+\_\+t flexbuffers\+::\+FLATBUFFERS\+\_\+\+FINAL\+\_\+\+CLASS\+::\+Typed\+Vector (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{key,  }\item[{F}]{f,  }\item[{T \&}]{state }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_a5d0fd47acd692f2ecd440e8f905f8da2}\label{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_a5d0fd47acd692f2ecd440e8f905f8da2} 
+\index{flexbuffers::FLATBUFFERS\_FINAL\_CLASS@{flexbuffers::FLATBUFFERS\_FINAL\_CLASS}!TypedVector@{TypedVector}}
+\index{TypedVector@{TypedVector}!flexbuffers::FLATBUFFERS\_FINAL\_CLASS@{flexbuffers::FLATBUFFERS\_FINAL\_CLASS}}
+\doxysubsubsection{\texorpdfstring{TypedVector()}{TypedVector()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily template$<$typename F $>$ \\
+size\+\_\+t flexbuffers\+::\+FLATBUFFERS\+\_\+\+FINAL\+\_\+\+CLASS\+::\+Typed\+Vector (\begin{DoxyParamCaption}\item[{F}]{f }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_a6364a526057993812423b883c36351ea}\label{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_a6364a526057993812423b883c36351ea} 
+\index{flexbuffers::FLATBUFFERS\_FINAL\_CLASS@{flexbuffers::FLATBUFFERS\_FINAL\_CLASS}!TypedVector@{TypedVector}}
+\index{TypedVector@{TypedVector}!flexbuffers::FLATBUFFERS\_FINAL\_CLASS@{flexbuffers::FLATBUFFERS\_FINAL\_CLASS}}
+\doxysubsubsection{\texorpdfstring{TypedVector()}{TypedVector()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily template$<$typename F , typename T $>$ \\
+size\+\_\+t flexbuffers\+::\+FLATBUFFERS\+\_\+\+FINAL\+\_\+\+CLASS\+::\+Typed\+Vector (\begin{DoxyParamCaption}\item[{F}]{f,  }\item[{T \&}]{state }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_aacb59e39a8aeb188300d123f90572342}\label{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_aacb59e39a8aeb188300d123f90572342} 
+\index{flexbuffers::FLATBUFFERS\_FINAL\_CLASS@{flexbuffers::FLATBUFFERS\_FINAL\_CLASS}!UInt@{UInt}}
+\index{UInt@{UInt}!flexbuffers::FLATBUFFERS\_FINAL\_CLASS@{flexbuffers::FLATBUFFERS\_FINAL\_CLASS}}
+\doxysubsubsection{\texorpdfstring{UInt()}{UInt()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void flexbuffers\+::\+FLATBUFFERS\+\_\+\+FINAL\+\_\+\+CLASS\+::\+UInt (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{key,  }\item[{uint64\+\_\+t}]{u }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_a3a37cd9955de5061afb5e7af243ac377}\label{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_a3a37cd9955de5061afb5e7af243ac377} 
+\index{flexbuffers::FLATBUFFERS\_FINAL\_CLASS@{flexbuffers::FLATBUFFERS\_FINAL\_CLASS}!UInt@{UInt}}
+\index{UInt@{UInt}!flexbuffers::FLATBUFFERS\_FINAL\_CLASS@{flexbuffers::FLATBUFFERS\_FINAL\_CLASS}}
+\doxysubsubsection{\texorpdfstring{UInt()}{UInt()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void flexbuffers\+::\+FLATBUFFERS\+\_\+\+FINAL\+\_\+\+CLASS\+::\+UInt (\begin{DoxyParamCaption}\item[{uint64\+\_\+t}]{u }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_ab2b486563ffb608b1be72e336acaa516}\label{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_ab2b486563ffb608b1be72e336acaa516} 
+\index{flexbuffers::FLATBUFFERS\_FINAL\_CLASS@{flexbuffers::FLATBUFFERS\_FINAL\_CLASS}!Undo@{Undo}}
+\index{Undo@{Undo}!flexbuffers::FLATBUFFERS\_FINAL\_CLASS@{flexbuffers::FLATBUFFERS\_FINAL\_CLASS}}
+\doxysubsubsection{\texorpdfstring{Undo()}{Undo()}}
+{\footnotesize\ttfamily void flexbuffers\+::\+FLATBUFFERS\+\_\+\+FINAL\+\_\+\+CLASS\+::\+Undo (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_adb9fcb0a89fcfe03ebe8605166103399}\label{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_adb9fcb0a89fcfe03ebe8605166103399} 
+\index{flexbuffers::FLATBUFFERS\_FINAL\_CLASS@{flexbuffers::FLATBUFFERS\_FINAL\_CLASS}!Vector@{Vector}}
+\index{Vector@{Vector}!flexbuffers::FLATBUFFERS\_FINAL\_CLASS@{flexbuffers::FLATBUFFERS\_FINAL\_CLASS}}
+\doxysubsubsection{\texorpdfstring{Vector()}{Vector()}\hspace{0.1cm}{\footnotesize\ttfamily [1/7]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void flexbuffers\+::\+FLATBUFFERS\+\_\+\+FINAL\+\_\+\+CLASS\+::\+Vector (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{key,  }\item[{const T \texorpdfstring{$\ast$}{*}}]{elems,  }\item[{size\+\_\+t}]{len }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_a148e70beeaa46397129cd3c6df54c4e1}\label{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_a148e70beeaa46397129cd3c6df54c4e1} 
+\index{flexbuffers::FLATBUFFERS\_FINAL\_CLASS@{flexbuffers::FLATBUFFERS\_FINAL\_CLASS}!Vector@{Vector}}
+\index{Vector@{Vector}!flexbuffers::FLATBUFFERS\_FINAL\_CLASS@{flexbuffers::FLATBUFFERS\_FINAL\_CLASS}}
+\doxysubsubsection{\texorpdfstring{Vector()}{Vector()}\hspace{0.1cm}{\footnotesize\ttfamily [2/7]}}
+{\footnotesize\ttfamily template$<$typename F $>$ \\
+size\+\_\+t flexbuffers\+::\+FLATBUFFERS\+\_\+\+FINAL\+\_\+\+CLASS\+::\+Vector (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{key,  }\item[{F}]{f }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_aef0be3f18a6976676a37a1fd86d60c9a}\label{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_aef0be3f18a6976676a37a1fd86d60c9a} 
+\index{flexbuffers::FLATBUFFERS\_FINAL\_CLASS@{flexbuffers::FLATBUFFERS\_FINAL\_CLASS}!Vector@{Vector}}
+\index{Vector@{Vector}!flexbuffers::FLATBUFFERS\_FINAL\_CLASS@{flexbuffers::FLATBUFFERS\_FINAL\_CLASS}}
+\doxysubsubsection{\texorpdfstring{Vector()}{Vector()}\hspace{0.1cm}{\footnotesize\ttfamily [3/7]}}
+{\footnotesize\ttfamily template$<$typename F , typename T $>$ \\
+size\+\_\+t flexbuffers\+::\+FLATBUFFERS\+\_\+\+FINAL\+\_\+\+CLASS\+::\+Vector (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{key,  }\item[{F}]{f,  }\item[{T \&}]{state }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_a1f5138fc5656f4c0af7d9c93769cdbb4}\label{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_a1f5138fc5656f4c0af7d9c93769cdbb4} 
+\index{flexbuffers::FLATBUFFERS\_FINAL\_CLASS@{flexbuffers::FLATBUFFERS\_FINAL\_CLASS}!Vector@{Vector}}
+\index{Vector@{Vector}!flexbuffers::FLATBUFFERS\_FINAL\_CLASS@{flexbuffers::FLATBUFFERS\_FINAL\_CLASS}}
+\doxysubsubsection{\texorpdfstring{Vector()}{Vector()}\hspace{0.1cm}{\footnotesize\ttfamily [4/7]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void flexbuffers\+::\+FLATBUFFERS\+\_\+\+FINAL\+\_\+\+CLASS\+::\+Vector (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ T $>$ \&}]{vec }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_a8458d7a7750238dbac737f7aa07fa9c3}\label{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_a8458d7a7750238dbac737f7aa07fa9c3} 
+\index{flexbuffers::FLATBUFFERS\_FINAL\_CLASS@{flexbuffers::FLATBUFFERS\_FINAL\_CLASS}!Vector@{Vector}}
+\index{Vector@{Vector}!flexbuffers::FLATBUFFERS\_FINAL\_CLASS@{flexbuffers::FLATBUFFERS\_FINAL\_CLASS}}
+\doxysubsubsection{\texorpdfstring{Vector()}{Vector()}\hspace{0.1cm}{\footnotesize\ttfamily [5/7]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void flexbuffers\+::\+FLATBUFFERS\+\_\+\+FINAL\+\_\+\+CLASS\+::\+Vector (\begin{DoxyParamCaption}\item[{const T \texorpdfstring{$\ast$}{*}}]{elems,  }\item[{size\+\_\+t}]{len }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_ab5c3509750afeb9a62e02cafb968579c}\label{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_ab5c3509750afeb9a62e02cafb968579c} 
+\index{flexbuffers::FLATBUFFERS\_FINAL\_CLASS@{flexbuffers::FLATBUFFERS\_FINAL\_CLASS}!Vector@{Vector}}
+\index{Vector@{Vector}!flexbuffers::FLATBUFFERS\_FINAL\_CLASS@{flexbuffers::FLATBUFFERS\_FINAL\_CLASS}}
+\doxysubsubsection{\texorpdfstring{Vector()}{Vector()}\hspace{0.1cm}{\footnotesize\ttfamily [6/7]}}
+{\footnotesize\ttfamily template$<$typename F $>$ \\
+size\+\_\+t flexbuffers\+::\+FLATBUFFERS\+\_\+\+FINAL\+\_\+\+CLASS\+::\+Vector (\begin{DoxyParamCaption}\item[{F}]{f }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_ac2673629226d2bb0de74786a53a09994}\label{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_ac2673629226d2bb0de74786a53a09994} 
+\index{flexbuffers::FLATBUFFERS\_FINAL\_CLASS@{flexbuffers::FLATBUFFERS\_FINAL\_CLASS}!Vector@{Vector}}
+\index{Vector@{Vector}!flexbuffers::FLATBUFFERS\_FINAL\_CLASS@{flexbuffers::FLATBUFFERS\_FINAL\_CLASS}}
+\doxysubsubsection{\texorpdfstring{Vector()}{Vector()}\hspace{0.1cm}{\footnotesize\ttfamily [7/7]}}
+{\footnotesize\ttfamily template$<$typename F , typename T $>$ \\
+size\+\_\+t flexbuffers\+::\+FLATBUFFERS\+\_\+\+FINAL\+\_\+\+CLASS\+::\+Vector (\begin{DoxyParamCaption}\item[{F}]{f,  }\item[{T \&}]{state }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_a9551a63a8fb74fcd4c2faf5466186f9f}\label{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_a9551a63a8fb74fcd4c2faf5466186f9f} 
+\index{flexbuffers::FLATBUFFERS\_FINAL\_CLASS@{flexbuffers::FLATBUFFERS\_FINAL\_CLASS}!Verifier@{Verifier}}
+\index{Verifier@{Verifier}!flexbuffers::FLATBUFFERS\_FINAL\_CLASS@{flexbuffers::FLATBUFFERS\_FINAL\_CLASS}}
+\doxysubsubsection{\texorpdfstring{Verifier()}{Verifier()}}
+{\footnotesize\ttfamily flexbuffers\+::\+FLATBUFFERS\+\_\+\+FINAL\+\_\+\+CLASS\+::\+Verifier (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t \texorpdfstring{$\ast$}{*}}]{buf,  }\item[{size\+\_\+t}]{buf\+\_\+len,  }\item[{std\+::vector$<$ uint8\+\_\+t $>$ \texorpdfstring{$\ast$}{*}}]{reuse\+\_\+tracker = {\ttfamily nullptr},  }\item[{bool}]{\+\_\+check\+\_\+alignment = {\ttfamily true},  }\item[{size\+\_\+t}]{max\+\_\+depth = {\ttfamily 64} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_a8c18f1f3f42ce9d6105b2e2e4840a5fc}\label{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_a8c18f1f3f42ce9d6105b2e2e4840a5fc} 
+\index{flexbuffers::FLATBUFFERS\_FINAL\_CLASS@{flexbuffers::FLATBUFFERS\_FINAL\_CLASS}!VerifyBuffer@{VerifyBuffer}}
+\index{VerifyBuffer@{VerifyBuffer}!flexbuffers::FLATBUFFERS\_FINAL\_CLASS@{flexbuffers::FLATBUFFERS\_FINAL\_CLASS}}
+\doxysubsubsection{\texorpdfstring{VerifyBuffer()}{VerifyBuffer()}}
+{\footnotesize\ttfamily bool flexbuffers\+::\+FLATBUFFERS\+\_\+\+FINAL\+\_\+\+CLASS\+::\+Verify\+Buffer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Friends And Related Symbol Documentation}
+\Hypertarget{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_a871285414448937aa5f297649dc8242a}\label{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS_a871285414448937aa5f297649dc8242a} 
+\index{flexbuffers::FLATBUFFERS\_FINAL\_CLASS@{flexbuffers::FLATBUFFERS\_FINAL\_CLASS}!Verifier@{Verifier}}
+\index{Verifier@{Verifier}!flexbuffers::FLATBUFFERS\_FINAL\_CLASS@{flexbuffers::FLATBUFFERS\_FINAL\_CLASS}}
+\doxysubsubsection{\texorpdfstring{Verifier}{Verifier}}
+{\footnotesize\ttfamily friend class Verifier\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+flatbuffers/include/flatbuffers/\mbox{\hyperlink{flexbuffers_8h}{flexbuffers.\+h}}\end{DoxyCompactItemize}

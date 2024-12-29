@@ -1,0 +1,167 @@
+\doxysection{client\+\_\+message\+\_\+generated.\+h}
+\hypertarget{client__message__generated_8h_source}{}\label{client__message__generated_8h_source}\index{inc/client\_message\_generated.h@{inc/client\_message\_generated.h}}
+\mbox{\hyperlink{client__message__generated_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//\ automatically\ generated\ by\ the\ FlatBuffers\ compiler,\ do\ not\ modify}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#ifndef\ FLATBUFFERS\_GENERATED\_CLIENTMESSAGE\_H\_}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#define\ FLATBUFFERS\_GENERATED\_CLIENTMESSAGE\_H\_}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{flatbuffers_8h}{flatbuffers/flatbuffers.h}}"{}}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{comment}{//\ Ensure\ the\ included\ flatbuffers.h\ is\ the\ same\ version\ as\ when\ this\ file\ was}}
+\DoxyCodeLine{00010\ \textcolor{comment}{//\ generated,\ otherwise\ it\ may\ not\ be\ compatible.}}
+\DoxyCodeLine{00011\ \textcolor{keyword}{static\_assert}(FLATBUFFERS\_VERSION\_MAJOR\ ==\ 24\ \&\&}
+\DoxyCodeLine{00012\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ FLATBUFFERS\_VERSION\_MINOR\ ==\ 12\ \&\&}
+\DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ FLATBUFFERS\_VERSION\_REVISION\ ==\ 23,}
+\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}Non-\/compatible\ flatbuffers\ version\ included"{}});}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structclient__message__t}{client\_message\_t}};}
+\DoxyCodeLine{00017\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structclient__message__tBuilder}{client\_message\_tBuilder}};}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{client__message__generated_8h_abcaf815fb7b793ff81f55346c08c3396}{ClientMessageType}}\ \{}
+\DoxyCodeLine{00020\ \ \ \mbox{\hyperlink{client__message__generated_8h_abcaf815fb7b793ff81f55346c08c3396ac1c50e0504ec21583b7ba451a87b7d1e}{GET\_JOB}}\ =\ 0,}
+\DoxyCodeLine{00021\ \ \ \mbox{\hyperlink{client__message__generated_8h_abcaf815fb7b793ff81f55346c08c3396ae990ca423d4f138a5e5023f6ca19d574}{NORMAL\_TERMINATOIN}}\ =\ 1,}
+\DoxyCodeLine{00022\ \ \ \mbox{\hyperlink{client__message__generated_8h_abcaf815fb7b793ff81f55346c08c3396a8a1adfd5e3c7e2b12cac1d7abe3982e1}{FAIL\_TERMINATION}}\ =\ 2,}
+\DoxyCodeLine{00023\ \ \ \mbox{\hyperlink{client__message__generated_8h_abcaf815fb7b793ff81f55346c08c3396a8409965ae2573c6cf11db5215bec7774}{QUIT\_PROGRAM}}\ =\ 3}
+\DoxyCodeLine{00024\ \};}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \textcolor{keyword}{inline}\ \textcolor{keyword}{const}\ \mbox{\hyperlink{client__message__generated_8h_abcaf815fb7b793ff81f55346c08c3396}{ClientMessageType}}\ (\&\mbox{\hyperlink{client__message__generated_8h_a7f26b7c54d02facbd8d13899d962aead}{EnumValuesClientMessageType}}())[4]\ \{}
+\DoxyCodeLine{00027\ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \mbox{\hyperlink{client__message__generated_8h_abcaf815fb7b793ff81f55346c08c3396}{ClientMessageType}}\ values[]\ =\ \{}
+\DoxyCodeLine{00028\ \ \ \ \ \mbox{\hyperlink{client__message__generated_8h_abcaf815fb7b793ff81f55346c08c3396ac1c50e0504ec21583b7ba451a87b7d1e}{GET\_JOB}},}
+\DoxyCodeLine{00029\ \ \ \ \ \mbox{\hyperlink{client__message__generated_8h_abcaf815fb7b793ff81f55346c08c3396ae990ca423d4f138a5e5023f6ca19d574}{NORMAL\_TERMINATOIN}},}
+\DoxyCodeLine{00030\ \ \ \ \ \mbox{\hyperlink{client__message__generated_8h_abcaf815fb7b793ff81f55346c08c3396a8a1adfd5e3c7e2b12cac1d7abe3982e1}{FAIL\_TERMINATION}},}
+\DoxyCodeLine{00031\ \ \ \ \ \mbox{\hyperlink{client__message__generated_8h_abcaf815fb7b793ff81f55346c08c3396a8409965ae2573c6cf11db5215bec7774}{QUIT\_PROGRAM}}}
+\DoxyCodeLine{00032\ \ \ \};}
+\DoxyCodeLine{00033\ \ \ \textcolor{keywordflow}{return}\ values;}
+\DoxyCodeLine{00034\ \}}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \textcolor{keyword}{inline}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *\ \textcolor{keyword}{const}\ *\mbox{\hyperlink{client__message__generated_8h_a62a937046aeaae8c60464cd22a1e6e44}{EnumNamesClientMessageType}}()\ \{}
+\DoxyCodeLine{00037\ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *\ \textcolor{keyword}{const}\ names[5]\ =\ \{}
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{stringliteral}{"{}GET\_JOB"{}},}
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{stringliteral}{"{}NORMAL\_TERMINATOIN"{}},}
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{stringliteral}{"{}FAIL\_TERMINATION"{}},}
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{stringliteral}{"{}QUIT\_PROGRAM"{}},}
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keyword}{nullptr}}
+\DoxyCodeLine{00043\ \ \ \};}
+\DoxyCodeLine{00044\ \ \ \textcolor{keywordflow}{return}\ names;}
+\DoxyCodeLine{00045\ \}}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \textcolor{keyword}{inline}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *\mbox{\hyperlink{client__message__generated_8h_a4a6349c4d144d69b03c304e9cf57a7ea}{EnumNameClientMessageType}}(\mbox{\hyperlink{client__message__generated_8h_abcaf815fb7b793ff81f55346c08c3396}{ClientMessageType}}\ e)\ \{}
+\DoxyCodeLine{00048\ \ \ \textcolor{keywordflow}{if}\ (::flatbuffers::IsOutRange(e,\ \mbox{\hyperlink{client__message__generated_8h_abcaf815fb7b793ff81f55346c08c3396ac1c50e0504ec21583b7ba451a87b7d1e}{GET\_JOB}},\ \mbox{\hyperlink{client__message__generated_8h_abcaf815fb7b793ff81f55346c08c3396a8409965ae2573c6cf11db5215bec7774}{QUIT\_PROGRAM}}))\ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{00049\ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ index\ =\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{size\_t}\textcolor{keyword}{>}(e);}
+\DoxyCodeLine{00050\ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{client__message__generated_8h_a62a937046aeaae8c60464cd22a1e6e44}{EnumNamesClientMessageType}}()[index];}
+\DoxyCodeLine{00051\ \}}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structclient__message__t}{client\_message\_t}}\ \mbox{\hyperlink{structFLATBUFFERS__FINAL__CLASS}{FLATBUFFERS\_FINAL\_CLASS}}\ :\ \textcolor{keyword}{private}\ \mbox{\hyperlink{classflatbuffers_1_1Table}{::flatbuffers::Table}}\ \{}
+\DoxyCodeLine{00054\ \ \ \textcolor{keyword}{typedef}\ \mbox{\hyperlink{structclient__message__tBuilder}{client\_message\_tBuilder}}\ \mbox{\hyperlink{structFLATBUFFERS__FINAL__CLASS_acc3d9eae4fccbe409835e9f79df5c543}{Builder}};}
+\DoxyCodeLine{00055\ \ \ \textcolor{keyword}{enum}\ FlatBuffersVTableOffset\ FLATBUFFERS\_VTABLE\_UNDERLYING\_TYPE\ \{}
+\DoxyCodeLine{00056\ \ \ \ \ \mbox{\hyperlink{client__message__generated_8h_a5c3ae3aa9b1ea1a1495ff0aa28090e86}{VT\_MSG\_TYPE}}\ =\ 4,}
+\DoxyCodeLine{00057\ \ \ \ \ \mbox{\hyperlink{client__message__generated_8h_af96c5d5674fc0f8105e04089d952f6ab}{VT\_ALL\_JOBS}}\ =\ 6,}
+\DoxyCodeLine{00058\ \ \ \ \ VT\_NUM\_JOBS\ =\ 8}
+\DoxyCodeLine{00059\ \ \ \};}
+\DoxyCodeLine{00060\ \ \ \mbox{\hyperlink{client__message__generated_8h_abcaf815fb7b793ff81f55346c08c3396}{ClientMessageType}}\ \mbox{\hyperlink{structFLATBUFFERS__FINAL__CLASS_af2568f935716c7eba058219075ed3944}{msg\_type}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{static\_cast<}\mbox{\hyperlink{client__message__generated_8h_abcaf815fb7b793ff81f55346c08c3396}{ClientMessageType}}\textcolor{keyword}{>}(GetField<uint8\_t>(\mbox{\hyperlink{client__message__generated_8h_a5c3ae3aa9b1ea1a1495ff0aa28090e86}{VT\_MSG\_TYPE}},\ 0));}
+\DoxyCodeLine{00062\ \ \ \}}
+\DoxyCodeLine{00063\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structFLATBUFFERS__FINAL__CLASS_a3c772fec0d748810e63fe45d0b97a994}{mutate\_msg\_type}}(\mbox{\hyperlink{client__message__generated_8h_abcaf815fb7b793ff81f55346c08c3396}{ClientMessageType}}\ \_msg\_type\ =\ \textcolor{keyword}{static\_cast<}\mbox{\hyperlink{client__message__generated_8h_abcaf815fb7b793ff81f55346c08c3396}{ClientMessageType}}\textcolor{keyword}{>}(0))\ \{}
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keywordflow}{return}\ SetField<uint8\_t>(\mbox{\hyperlink{client__message__generated_8h_a5c3ae3aa9b1ea1a1495ff0aa28090e86}{VT\_MSG\_TYPE}},\ \textcolor{keyword}{static\_cast<}uint8\_t\textcolor{keyword}{>}(\_msg\_type),\ 0);}
+\DoxyCodeLine{00065\ \ \ \}}
+\DoxyCodeLine{00066\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structFLATBUFFERS__FINAL__CLASS_a408f2d1117c199cc07a60e7bf5f2c1c5}{all\_jobs}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00067\ \ \ \ \ \textcolor{keywordflow}{return}\ GetField<uint8\_t>(\mbox{\hyperlink{client__message__generated_8h_af96c5d5674fc0f8105e04089d952f6ab}{VT\_ALL\_JOBS}},\ 0)\ !=\ 0;}
+\DoxyCodeLine{00068\ \ \ \}}
+\DoxyCodeLine{00069\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structFLATBUFFERS__FINAL__CLASS_ae3fe12204305eaece6d41efad122f8e6}{mutate\_all\_jobs}}(\textcolor{keywordtype}{bool}\ \_all\_jobs\ =\ 0)\ \{}
+\DoxyCodeLine{00070\ \ \ \ \ \textcolor{keywordflow}{return}\ SetField<uint8\_t>(\mbox{\hyperlink{client__message__generated_8h_af96c5d5674fc0f8105e04089d952f6ab}{VT\_ALL\_JOBS}},\ \textcolor{keyword}{static\_cast<}uint8\_t\textcolor{keyword}{>}(\_all\_jobs),\ 0);}
+\DoxyCodeLine{00071\ \ \ \}}
+\DoxyCodeLine{00072\ \ \ uint16\_t\ \mbox{\hyperlink{structFLATBUFFERS__FINAL__CLASS_a8e8fcd089b996464d831ec26b3ccf59b}{num\_jobs}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00073\ \ \ \ \ \textcolor{keywordflow}{return}\ GetField<uint16\_t>(VT\_NUM\_JOBS,\ 0);}
+\DoxyCodeLine{00074\ \ \ \}}
+\DoxyCodeLine{00075\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structFLATBUFFERS__FINAL__CLASS_a6ee0fbd9ccec2b94fc7d07e10886f6b3}{mutate\_num\_jobs}}(uint16\_t\ \_num\_jobs\ =\ 0)\ \{}
+\DoxyCodeLine{00076\ \ \ \ \ \textcolor{keywordflow}{return}\ SetField<uint16\_t>(VT\_NUM\_JOBS,\ \_num\_jobs,\ 0);}
+\DoxyCodeLine{00077\ \ \ \}}
+\DoxyCodeLine{00078\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structFLATBUFFERS__FINAL__CLASS_a881787a1eec36576a27a915ea2e52837}{Verify}}(\mbox{\hyperlink{namespaceflatbuffers_a3268477941df91db2eb06442b6e5f922}{::flatbuffers::Verifier}}\ \&verifier)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00079\ \ \ \ \ \textcolor{keywordflow}{return}\ VerifyTableStart(verifier)\ \&\&}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \ \ \ VerifyField<uint8\_t>(verifier,\ \mbox{\hyperlink{client__message__generated_8h_a5c3ae3aa9b1ea1a1495ff0aa28090e86}{VT\_MSG\_TYPE}},\ 1)\ \&\&}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \ \ \ VerifyField<uint8\_t>(verifier,\ \mbox{\hyperlink{client__message__generated_8h_af96c5d5674fc0f8105e04089d952f6ab}{VT\_ALL\_JOBS}},\ 1)\ \&\&}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \ \ \ VerifyField<uint16\_t>(verifier,\ VT\_NUM\_JOBS,\ 2)\ \&\&}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \ \ \ verifier.EndTable();}
+\DoxyCodeLine{00084\ \ \ \}}
+\DoxyCodeLine{00085\ \};}
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00087\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structclient__message__tBuilder}{client\_message\_tBuilder}}\ \{}
+\DoxyCodeLine{00088\ \ \ \textcolor{keyword}{typedef}\ \mbox{\hyperlink{structclient__message__t}{client\_message\_t}}\ \mbox{\hyperlink{structclient__message__tBuilder_a82adb59e1ffdfa20f6597615b7bdd0e5}{Table}};}
+\DoxyCodeLine{00089\ \ \ \mbox{\hyperlink{classflatbuffers_1_1FlatBufferBuilderImpl}{::flatbuffers::FlatBufferBuilder}}\ \&\mbox{\hyperlink{structclient__message__tBuilder_a91de3c7c48e8932dc8ccdc9b8240daef}{fbb\_}};}
+\DoxyCodeLine{00090\ \ \ ::flatbuffers::uoffset\_t\ \mbox{\hyperlink{structclient__message__tBuilder_a632f6851ba3a7ba9ab1ed6d0c8d90e3c}{start\_}};}
+\DoxyCodeLine{00091\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{structclient__message__tBuilder_a0725288254c570ee84d49043851631b4}{add\_msg\_type}}(\mbox{\hyperlink{client__message__generated_8h_abcaf815fb7b793ff81f55346c08c3396}{ClientMessageType}}\ msg\_type)\ \{}
+\DoxyCodeLine{00092\ \ \ \ \ \mbox{\hyperlink{structclient__message__tBuilder_a91de3c7c48e8932dc8ccdc9b8240daef}{fbb\_}}.AddElement<uint8\_t>(client\_message\_t::VT\_MSG\_TYPE,\ \textcolor{keyword}{static\_cast<}uint8\_t\textcolor{keyword}{>}(msg\_type),\ 0);}
+\DoxyCodeLine{00093\ \ \ \}}
+\DoxyCodeLine{00094\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{structclient__message__tBuilder_a6b03ad372ef01924e5f0e7f1fb7ea926}{add\_all\_jobs}}(\textcolor{keywordtype}{bool}\ all\_jobs)\ \{}
+\DoxyCodeLine{00095\ \ \ \ \ \mbox{\hyperlink{structclient__message__tBuilder_a91de3c7c48e8932dc8ccdc9b8240daef}{fbb\_}}.AddElement<uint8\_t>(client\_message\_t::VT\_ALL\_JOBS,\ \textcolor{keyword}{static\_cast<}uint8\_t\textcolor{keyword}{>}(all\_jobs),\ 0);}
+\DoxyCodeLine{00096\ \ \ \}}
+\DoxyCodeLine{00097\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{structclient__message__tBuilder_adfc5fb66c32c95e42792bec8af6931b2}{add\_num\_jobs}}(uint16\_t\ num\_jobs)\ \{}
+\DoxyCodeLine{00098\ \ \ \ \ \mbox{\hyperlink{structclient__message__tBuilder_a91de3c7c48e8932dc8ccdc9b8240daef}{fbb\_}}.AddElement<uint16\_t>(client\_message\_t::VT\_NUM\_JOBS,\ num\_jobs,\ 0);}
+\DoxyCodeLine{00099\ \ \ \}}
+\DoxyCodeLine{00100\ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{structclient__message__tBuilder_ade2d405f209d26978b4491bf3bdbf3cb}{client\_message\_tBuilder}}(\mbox{\hyperlink{classflatbuffers_1_1FlatBufferBuilderImpl}{::flatbuffers::FlatBufferBuilder}}\ \&\_fbb)}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{structclient__message__tBuilder_a91de3c7c48e8932dc8ccdc9b8240daef}{fbb\_}}(\_fbb)\ \{}
+\DoxyCodeLine{00102\ \ \ \ \ \mbox{\hyperlink{structclient__message__tBuilder_a632f6851ba3a7ba9ab1ed6d0c8d90e3c}{start\_}}\ =\ \mbox{\hyperlink{structclient__message__tBuilder_a91de3c7c48e8932dc8ccdc9b8240daef}{fbb\_}}.StartTable();}
+\DoxyCodeLine{00103\ \ \ \}}
+\DoxyCodeLine{00104\ \ \ ::flatbuffers::Offset<client\_message\_t>\ \mbox{\hyperlink{structclient__message__tBuilder_a4a9ba332516b0e21b56d24f9de39afc6}{Finish}}()\ \{}
+\DoxyCodeLine{00105\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{auto}\ end\ =\ \mbox{\hyperlink{structclient__message__tBuilder_a91de3c7c48e8932dc8ccdc9b8240daef}{fbb\_}}.EndTable(\mbox{\hyperlink{structclient__message__tBuilder_a632f6851ba3a7ba9ab1ed6d0c8d90e3c}{start\_}});}
+\DoxyCodeLine{00106\ \ \ \ \ \textcolor{keyword}{auto}\ o\ =\ ::flatbuffers::Offset<client\_message\_t>(end);}
+\DoxyCodeLine{00107\ \ \ \ \ \textcolor{keywordflow}{return}\ o;}
+\DoxyCodeLine{00108\ \ \ \}}
+\DoxyCodeLine{00109\ \};}
+\DoxyCodeLine{00110\ }
+\DoxyCodeLine{00111\ inline\ ::flatbuffers::Offset<client\_message\_t>\ \mbox{\hyperlink{client__message__generated_8h_a48e63e7553dccc585881028f55ec3ca1}{Createclient\_message\_t}}(}
+\DoxyCodeLine{00112\ \ \ \ \ \mbox{\hyperlink{classflatbuffers_1_1FlatBufferBuilderImpl}{::flatbuffers::FlatBufferBuilder}}\ \&\_fbb,}
+\DoxyCodeLine{00113\ \ \ \ \ \mbox{\hyperlink{client__message__generated_8h_abcaf815fb7b793ff81f55346c08c3396}{ClientMessageType}}\ msg\_type\ =\ \mbox{\hyperlink{client__message__generated_8h_abcaf815fb7b793ff81f55346c08c3396ac1c50e0504ec21583b7ba451a87b7d1e}{GET\_JOB}},}
+\DoxyCodeLine{00114\ \ \ \ \ \textcolor{keywordtype}{bool}\ all\_jobs\ =\ \textcolor{keyword}{false},}
+\DoxyCodeLine{00115\ \ \ \ \ uint16\_t\ num\_jobs\ =\ 0)\ \{}
+\DoxyCodeLine{00116\ \ \ \mbox{\hyperlink{structclient__message__tBuilder}{client\_message\_tBuilder}}\ builder\_(\_fbb);}
+\DoxyCodeLine{00117\ \ \ builder\_.\mbox{\hyperlink{structclient__message__tBuilder_adfc5fb66c32c95e42792bec8af6931b2}{add\_num\_jobs}}(num\_jobs);}
+\DoxyCodeLine{00118\ \ \ builder\_.\mbox{\hyperlink{structclient__message__tBuilder_a6b03ad372ef01924e5f0e7f1fb7ea926}{add\_all\_jobs}}(all\_jobs);}
+\DoxyCodeLine{00119\ \ \ builder\_.\mbox{\hyperlink{structclient__message__tBuilder_a0725288254c570ee84d49043851631b4}{add\_msg\_type}}(msg\_type);}
+\DoxyCodeLine{00120\ \ \ \textcolor{keywordflow}{return}\ builder\_.\mbox{\hyperlink{structclient__message__tBuilder_a4a9ba332516b0e21b56d24f9de39afc6}{Finish}}();}
+\DoxyCodeLine{00121\ \}}
+\DoxyCodeLine{00122\ }
+\DoxyCodeLine{00123\ \textcolor{keyword}{inline}\ \textcolor{keyword}{const}\ \mbox{\hyperlink{structclient__message__t}{client\_message\_t}}\ *\mbox{\hyperlink{client__message__generated_8h_ac5fe97b30786cad2df66f7d7e46bdf6a}{Getclient\_message\_t}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{void}\ *buf)\ \{}
+\DoxyCodeLine{00124\ \ \ return\ ::flatbuffers::GetRoot<client\_message\_t>(buf);}
+\DoxyCodeLine{00125\ \}}
+\DoxyCodeLine{00126\ }
+\DoxyCodeLine{00127\ \textcolor{keyword}{inline}\ \textcolor{keyword}{const}\ \mbox{\hyperlink{structclient__message__t}{client\_message\_t}}\ *\mbox{\hyperlink{client__message__generated_8h_a74834d373c256dbdf0b3b415356ea8f7}{GetSizePrefixedclient\_message\_t}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{void}\ *buf)\ \{}
+\DoxyCodeLine{00128\ \ \ return\ ::flatbuffers::GetSizePrefixedRoot<client\_message\_t>(buf);}
+\DoxyCodeLine{00129\ \}}
+\DoxyCodeLine{00130\ }
+\DoxyCodeLine{00131\ \textcolor{keyword}{inline}\ \mbox{\hyperlink{structclient__message__t}{client\_message\_t}}\ *\mbox{\hyperlink{client__message__generated_8h_a3f9dd6c23ec430a32e54ccba9217c0bc}{GetMutableclient\_message\_t}}(\textcolor{keywordtype}{void}\ *buf)\ \{}
+\DoxyCodeLine{00132\ \ \ return\ ::flatbuffers::GetMutableRoot<client\_message\_t>(buf);}
+\DoxyCodeLine{00133\ \}}
+\DoxyCodeLine{00134\ }
+\DoxyCodeLine{00135\ \textcolor{keyword}{inline}\ \mbox{\hyperlink{structclient__message__t}{client\_message\_t}}\ *\mbox{\hyperlink{client__message__generated_8h_aa92b8155eefac7933809c2d24d1c3078}{GetMutableSizePrefixedclient\_message\_t}}(\textcolor{keywordtype}{void}\ *buf)\ \{}
+\DoxyCodeLine{00136\ \ \ return\ ::flatbuffers::GetMutableSizePrefixedRoot<client\_message\_t>(buf);}
+\DoxyCodeLine{00137\ \}}
+\DoxyCodeLine{00138\ }
+\DoxyCodeLine{00139\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{client__message__generated_8h_a10a6ef1bca21e8c0c2091990767d994e}{Verifyclient\_message\_tBuffer}}(}
+\DoxyCodeLine{00140\ \ \ \ \ \mbox{\hyperlink{namespaceflatbuffers_a3268477941df91db2eb06442b6e5f922}{::flatbuffers::Verifier}}\ \&verifier)\ \{}
+\DoxyCodeLine{00141\ \ \ \textcolor{keywordflow}{return}\ verifier.VerifyBuffer<\mbox{\hyperlink{structclient__message__t}{client\_message\_t}}>(\textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00142\ \}}
+\DoxyCodeLine{00143\ }
+\DoxyCodeLine{00144\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{client__message__generated_8h_ae3023695b125dc87a3d63cdfcdac20ee}{VerifySizePrefixedclient\_message\_tBuffer}}(}
+\DoxyCodeLine{00145\ \ \ \ \ \mbox{\hyperlink{namespaceflatbuffers_a3268477941df91db2eb06442b6e5f922}{::flatbuffers::Verifier}}\ \&verifier)\ \{}
+\DoxyCodeLine{00146\ \ \ \textcolor{keywordflow}{return}\ verifier.VerifySizePrefixedBuffer<\mbox{\hyperlink{structclient__message__t}{client\_message\_t}}>(\textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00147\ \}}
+\DoxyCodeLine{00148\ }
+\DoxyCodeLine{00149\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{client__message__generated_8h_a04edc17b49711e94022599f0d916d223}{Finishclient\_message\_tBuffer}}(}
+\DoxyCodeLine{00150\ \ \ \ \ \mbox{\hyperlink{classflatbuffers_1_1FlatBufferBuilderImpl}{::flatbuffers::FlatBufferBuilder}}\ \&fbb,}
+\DoxyCodeLine{00151\ \ \ \ \ ::flatbuffers::Offset<client\_message\_t>\ root)\ \{}
+\DoxyCodeLine{00152\ \ \ fbb.\mbox{\hyperlink{classflatbuffers_1_1FlatBufferBuilderImpl_a813b376143a53bd2828d9684713fe03c}{Finish}}(root);}
+\DoxyCodeLine{00153\ \}}
+\DoxyCodeLine{00154\ }
+\DoxyCodeLine{00155\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{client__message__generated_8h_a647d36b82534fd2c1335c0e28f5e4c66}{FinishSizePrefixedclient\_message\_tBuffer}}(}
+\DoxyCodeLine{00156\ \ \ \ \ \mbox{\hyperlink{classflatbuffers_1_1FlatBufferBuilderImpl}{::flatbuffers::FlatBufferBuilder}}\ \&fbb,}
+\DoxyCodeLine{00157\ \ \ \ \ ::flatbuffers::Offset<client\_message\_t>\ root)\ \{}
+\DoxyCodeLine{00158\ \ \ fbb.\mbox{\hyperlink{classflatbuffers_1_1FlatBufferBuilderImpl_aaa87fe5c3b85e47bb959e6d1aec96b2c}{FinishSizePrefixed}}(root);}
+\DoxyCodeLine{00159\ \}}
+\DoxyCodeLine{00160\ }
+\DoxyCodeLine{00161\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ FLATBUFFERS\_GENERATED\_CLIENTMESSAGE\_H\_}}
+
+\end{DoxyCode}

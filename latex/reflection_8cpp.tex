@@ -1,0 +1,67 @@
+\doxysection{flatbuffers/src/reflection.cpp File Reference}
+\hypertarget{reflection_8cpp}{}\label{reflection_8cpp}\index{flatbuffers/src/reflection.cpp@{flatbuffers/src/reflection.cpp}}
+{\ttfamily \#include "{}flatbuffers/reflection.\+h"{}}\newline
+{\ttfamily \#include "{}flatbuffers/util.\+h"{}}\newline
+Include dependency graph for reflection.\+cpp\+:
+% FIG 0
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classflatbuffers_1_1ResizeContext}{flatbuffers\+::\+Resize\+Context}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespaceflatbuffers}{flatbuffers}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{reflection_8cpp_a6664f050ec005ee913e85c7b957a9f7b}{FLATBUFFERS\+\_\+\+GET}}(T)~static\+\_\+cast$<$int64\+\_\+t$>$(Read\+Scalar$<$T$>$(data))
+\item 
+\#define \mbox{\hyperlink{reflection_8cpp_a7069552f55dc568ab3b810b2e9e24b9f}{FLATBUFFERS\+\_\+\+SET}}(T)~Write\+Scalar(data, static\+\_\+cast$<$T$>$(val))
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int64\+\_\+t \mbox{\hyperlink{namespaceflatbuffers_a1db6339cfb67d126328446110560ce6c}{flatbuffers\+::\+Get\+Any\+ValueI}} (\mbox{\hyperlink{namespacereflection_a94d99018201fa75e6e29207136c64d98}{reflection\+::\+Base\+Type}} type, const uint8\+\_\+t \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{namespaceflatbuffers_ae8b86e00c88ce4892cc7f5bfe7545e06}{data}})
+\item 
+double \mbox{\hyperlink{namespaceflatbuffers_aad95da3b09cefc93204ce391eecc4e5e}{flatbuffers\+::\+Get\+Any\+ValueF}} (\mbox{\hyperlink{namespacereflection_a94d99018201fa75e6e29207136c64d98}{reflection\+::\+Base\+Type}} type, const uint8\+\_\+t \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{namespaceflatbuffers_ae8b86e00c88ce4892cc7f5bfe7545e06}{data}})
+\item 
+std\+::string \mbox{\hyperlink{namespaceflatbuffers_a35d15ad002ee533c34c544e4d29efb83}{flatbuffers\+::\+Get\+Any\+ValueS}} (\mbox{\hyperlink{namespacereflection_a94d99018201fa75e6e29207136c64d98}{reflection\+::\+Base\+Type}} type, const uint8\+\_\+t \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{namespaceflatbuffers_ae8b86e00c88ce4892cc7f5bfe7545e06}{data}}, const reflection\+::\+Schema \texorpdfstring{$\ast$}{*}schema, int type\+\_\+index)
+\item 
+void \mbox{\hyperlink{namespaceflatbuffers_a7d6b1f479b75d650d67e7ef600f0614d}{flatbuffers\+::\+For\+All\+Fields}} (const reflection\+::\+Object \texorpdfstring{$\ast$}{*}object, bool reverse, std\+::function$<$ void(const reflection\+::\+Field \texorpdfstring{$\ast$}{*})$>$ func)
+\item 
+void \mbox{\hyperlink{namespaceflatbuffers_a3f62dcfc891f1a20af26f5ecc69652fa}{flatbuffers\+::\+Set\+Any\+ValueI}} (\mbox{\hyperlink{namespacereflection_a94d99018201fa75e6e29207136c64d98}{reflection\+::\+Base\+Type}} type, uint8\+\_\+t \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{namespaceflatbuffers_ae8b86e00c88ce4892cc7f5bfe7545e06}{data}}, int64\+\_\+t val)
+\item 
+void \mbox{\hyperlink{namespaceflatbuffers_ab6b6756b34be36d6163ae02d0b12b89f}{flatbuffers\+::\+Set\+Any\+ValueF}} (\mbox{\hyperlink{namespacereflection_a94d99018201fa75e6e29207136c64d98}{reflection\+::\+Base\+Type}} type, uint8\+\_\+t \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{namespaceflatbuffers_ae8b86e00c88ce4892cc7f5bfe7545e06}{data}}, double val)
+\item 
+void \mbox{\hyperlink{namespaceflatbuffers_a843738aa286090ee78a9ce6827bd3770}{flatbuffers\+::\+Set\+Any\+ValueS}} (\mbox{\hyperlink{namespacereflection_a94d99018201fa75e6e29207136c64d98}{reflection\+::\+Base\+Type}} type, uint8\+\_\+t \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{namespaceflatbuffers_ae8b86e00c88ce4892cc7f5bfe7545e06}{data}}, const char \texorpdfstring{$\ast$}{*}val)
+\item 
+void \mbox{\hyperlink{namespaceflatbuffers_a93006e6a81b482a2454a94c6b39c9d01}{flatbuffers\+::\+Set\+String}} (const reflection\+::\+Schema \&schema, const std\+::string \&val, const \mbox{\hyperlink{structflatbuffers_1_1String}{String}} \texorpdfstring{$\ast$}{*}str, std\+::vector$<$ uint8\+\_\+t $>$ \texorpdfstring{$\ast$}{*}flatbuf, const reflection\+::\+Object \texorpdfstring{$\ast$}{*}root\+\_\+table=nullptr)
+\item 
+uint8\+\_\+t \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{namespaceflatbuffers_a5823aa658e5bd8632579596c21f76bcf}{flatbuffers\+::\+Resize\+Any\+Vector}} (const reflection\+::\+Schema \&schema, uoffset\+\_\+t newsize, const \mbox{\hyperlink{classflatbuffers_1_1VectorOfAny}{Vector\+Of\+Any}} \texorpdfstring{$\ast$}{*}vec, uoffset\+\_\+t num\+\_\+elems, uoffset\+\_\+t elem\+\_\+size, std\+::vector$<$ uint8\+\_\+t $>$ \texorpdfstring{$\ast$}{*}flatbuf, const reflection\+::\+Object \texorpdfstring{$\ast$}{*}root\+\_\+table=nullptr)
+\item 
+const uint8\+\_\+t \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{namespaceflatbuffers_a06d4b97a3d782d99eef774f8b6f3286d}{flatbuffers\+::\+Add\+Flat\+Buffer}} (std\+::vector$<$ uint8\+\_\+t $>$ \&flatbuf, const uint8\+\_\+t \texorpdfstring{$\ast$}{*}newbuf, size\+\_\+t newlen)
+\item 
+Offset$<$ const \mbox{\hyperlink{classflatbuffers_1_1Table}{Table}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{namespaceflatbuffers_a8b53687caed8f8359d3462dbfe8b92b2}{flatbuffers\+::\+Copy\+Table}} (\mbox{\hyperlink{namespaceflatbuffers_a41ac7b1c8f5f4a869e8f649b6c171ce7}{Flat\+Buffer\+Builder}} \&fbb, const reflection\+::\+Schema \&schema, const reflection\+::\+Object \&objectdef, const \mbox{\hyperlink{classflatbuffers_1_1Table}{Table}} \&table, bool use\+\_\+string\+\_\+pooling=false)
+\item 
+bool \mbox{\hyperlink{namespaceflatbuffers_a4ef3e887c57753881c4042767bc9c35f}{flatbuffers\+::\+Verify}} (const reflection\+::\+Schema \&schema, const reflection\+::\+Object \&root, const uint8\+\_\+t \texorpdfstring{$\ast$}{*}buf, size\+\_\+t length, uoffset\+\_\+t max\+\_\+depth=64, uoffset\+\_\+t max\+\_\+tables=1000000)
+\item 
+bool \mbox{\hyperlink{namespaceflatbuffers_a5f2567a88795386d6b6332e5e359ccb4}{flatbuffers\+::\+Verify\+Size\+Prefixed}} (const reflection\+::\+Schema \&schema, const reflection\+::\+Object \&root, const uint8\+\_\+t \texorpdfstring{$\ast$}{*}buf, size\+\_\+t length, uoffset\+\_\+t max\+\_\+depth=64, uoffset\+\_\+t max\+\_\+tables=1000000)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{reflection_8cpp_a6664f050ec005ee913e85c7b957a9f7b}\label{reflection_8cpp_a6664f050ec005ee913e85c7b957a9f7b} 
+\index{reflection.cpp@{reflection.cpp}!FLATBUFFERS\_GET@{FLATBUFFERS\_GET}}
+\index{FLATBUFFERS\_GET@{FLATBUFFERS\_GET}!reflection.cpp@{reflection.cpp}}
+\doxysubsubsection{\texorpdfstring{FLATBUFFERS\_GET}{FLATBUFFERS\_GET}}
+{\footnotesize\ttfamily \#define FLATBUFFERS\+\_\+\+GET(\begin{DoxyParamCaption}\item[{}]{T }\end{DoxyParamCaption})~static\+\_\+cast$<$int64\+\_\+t$>$(Read\+Scalar$<$T$>$(data))}
+
+\Hypertarget{reflection_8cpp_a7069552f55dc568ab3b810b2e9e24b9f}\label{reflection_8cpp_a7069552f55dc568ab3b810b2e9e24b9f} 
+\index{reflection.cpp@{reflection.cpp}!FLATBUFFERS\_SET@{FLATBUFFERS\_SET}}
+\index{FLATBUFFERS\_SET@{FLATBUFFERS\_SET}!reflection.cpp@{reflection.cpp}}
+\doxysubsubsection{\texorpdfstring{FLATBUFFERS\_SET}{FLATBUFFERS\_SET}}
+{\footnotesize\ttfamily \#define FLATBUFFERS\+\_\+\+SET(\begin{DoxyParamCaption}\item[{}]{T }\end{DoxyParamCaption})~Write\+Scalar(data, static\+\_\+cast$<$T$>$(val))}
+

@@ -1,0 +1,53 @@
+\doxysection{flatbuffers/tests/cpp17/stringify\+\_\+util.h File Reference}
+\hypertarget{stringify__util_8h}{}\label{stringify__util_8h}\index{flatbuffers/tests/cpp17/stringify\_util.h@{flatbuffers/tests/cpp17/stringify\_util.h}}
+{\ttfamily \#include $<$optional$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$type\+\_\+traits$>$}\newline
+{\ttfamily \#include $<$utility$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include "{}flatbuffers/flatbuffers.\+h"{}}\newline
+{\ttfamily \#include "{}flatbuffers/util.\+h"{}}\newline
+Include dependency graph for stringify\+\_\+util.\+h\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structcpp17_1_1detail_1_1is__flatbuffers__table__or__struct}{cpp17\+::detail\+::is\+\_\+flatbuffers\+\_\+table\+\_\+or\+\_\+struct$<$ FBS, typename $>$}}
+\item 
+struct \mbox{\hyperlink{structcpp17_1_1detail_1_1is__flatbuffers__table__or__struct_3_01FBS_00_01std_1_1void__t_3_01typename_01FBS_1_1Traits_01_4_01_4}{cpp17\+::detail\+::is\+\_\+flatbuffers\+\_\+table\+\_\+or\+\_\+struct$<$ FBS, std\+::void\+\_\+t$<$ typename FBS\+::\+Traits $>$ $>$}}
+\item 
+struct \mbox{\hyperlink{structcpp17_1_1detail_1_1is__flatbuffers__vector}{cpp17\+::detail\+::is\+\_\+flatbuffers\+\_\+vector$<$ T $>$}}
+\item 
+struct \mbox{\hyperlink{structcpp17_1_1detail_1_1is__flatbuffers__vector_3_01flatbuffers_1_1Vector_3_01T_01_4_01_4}{cpp17\+::detail\+::is\+\_\+flatbuffers\+\_\+vector$<$ flatbuffers\+::\+Vector$<$ T $>$ $>$}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespacecpp17}{cpp17}}
+\item 
+namespace \mbox{\hyperlink{namespacecpp17_1_1detail}{cpp17\+::detail}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename T $>$ }\\std\+::optional$<$ std\+::string $>$ \mbox{\hyperlink{namespacecpp17_ad251c7744f2680824d1593b7b9214585}{cpp17\+::\+Stringify\+Flatbuffer\+Value}} (T \&\&val, const std\+::string \&indent="{}"{})
+\item 
+{\footnotesize template$<$size\+\_\+t Index, typename FBS $>$ }\\std\+::string \mbox{\hyperlink{namespacecpp17_1_1detail_aac8ec8ee2d7041a984ac12389da1a0e1}{cpp17\+::detail\+::\+Add\+Stringified\+Field}} (const FBS \&fbs, const std\+::string \&indent)
+\item 
+{\footnotesize template$<$typename FBS , size\+\_\+t... Indexes$>$ }\\std\+::string \mbox{\hyperlink{namespacecpp17_1_1detail_a71ba43ddc420d19d4b6a4b9d7eb14d27}{cpp17\+::detail\+::\+Stringify\+Table\+Or\+Struct\+Impl}} (const FBS \&fbs, const std\+::string \&indent, std\+::index\+\_\+sequence$<$ Indexes... $>$)
+\item 
+{\footnotesize template$<$typename FBS $>$ }\\std\+::string \mbox{\hyperlink{namespacecpp17_1_1detail_af0a06dc1270fe5d0b6d0581b55e8fd86}{cpp17\+::detail\+::\+Stringify\+Table\+Or\+Struct}} (const FBS \&fbs, const std\+::string \&indent)
+\item 
+{\footnotesize template$<$typename T $>$ }\\std\+::string \mbox{\hyperlink{namespacecpp17_1_1detail_a88c23c9c4f7076538ccf2ac5ddaedbb9}{cpp17\+::detail\+::\+Stringify\+Vector}} (const \mbox{\hyperlink{classflatbuffers_1_1Vector}{flatbuffers\+::\+Vector}}$<$ T $>$ \&vec, const std\+::string \&indent)
+\item 
+{\footnotesize template$<$typename T $>$ }\\std\+::string \mbox{\hyperlink{namespacecpp17_1_1detail_a8d468b75504397f7693b0337197d3c4e}{cpp17\+::detail\+::\+Stringify\+Arithmetic\+Type}} (T val)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename FBS $>$ }\\constexpr bool \mbox{\hyperlink{namespacecpp17_1_1detail_af1a4c7d27d5a07dc8ac9a7ba95f4bbb2}{cpp17\+::detail\+::is\+\_\+flatbuffers\+\_\+table\+\_\+or\+\_\+struct\+\_\+v}}
+\item 
+{\footnotesize template$<$typename T $>$ }\\constexpr bool \mbox{\hyperlink{namespacecpp17_1_1detail_a8fca1fb63bb34234867f9a1bfe50317b}{cpp17\+::detail\+::is\+\_\+flatbuffers\+\_\+vector\+\_\+v}} = \mbox{\hyperlink{structcpp17_1_1detail_1_1is__flatbuffers__vector}{is\+\_\+flatbuffers\+\_\+vector}}$<$T$>$\mbox{\hyperlink{annotated__binary__text__gen_8cpp_a5c33da5929c9f2f9ef8d006d2350e6ec}{\+::value}}
+\end{DoxyCompactItemize}

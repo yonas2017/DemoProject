@@ -1,0 +1,95 @@
+\chapter{Use in Dart}
+\hypertarget{flatbuffers_guide_use_dart}{}\label{flatbuffers_guide_use_dart}\index{Use in Dart@{Use in Dart}}
+\doxysection*{Before you get started}
+
+Before diving into the Flat\+Buffers usage in Dart, it should be noted that the \doxysectlink{flatbuffers_guide_tutorial}{Tutorial}{0} page has a complete guide to general Flat\+Buffers usage in all of the supported languages (including Dart). This page is designed to cover the nuances of Flat\+Buffers usage, specific to Dart.
+
+You should also have read the \doxysectlink{flatbuffers_guide_building}{Building}{0} documentation to build {\ttfamily flatc} and should be familiar with \doxysectlink{flatbuffers_guide_using_schema_compiler}{Using the schema compiler}{0} and \doxysectlink{flatbuffers_guide_writing_schema}{Writing a schema}{0}.
+
+\doxysection*{Flat\+Buffers Dart library code location}
+
+The code for the Flat\+Buffers Dart library can be found at {\ttfamily flatbuffers/dart}. You can browse the library code on the \href{https://github.com/google/flatbuffers/tree/master/dart}{\texttt{ Flat\+Buffers Git\+Hub page}}.
+
+\doxysection*{Testing the Flat\+Buffers Dart library}
+
+The code to test the Dart library can be found at {\ttfamily flatbuffers/tests}. The test code itself is located in \href{https://github.com/google/
+flatbuffers/blob/master/tests/dart_test.dart}{\texttt{ dart\+\_\+test.\+dart}}.
+
+To run the tests, use the \href{https://github.com/google/flatbuffers/
+blob/master/tests/DartTest.sh}{\texttt{ Dart\+Test.\+sh}} shell script.
+
+{\itshape Note\+: The shell script requires the \href{https://www.dartlang.org/tools/sdk}{\texttt{ Dart SDK}} to be installed.}
+
+\doxysection*{Using the Flat\+Buffers Dart library}
+
+{\itshape Note\+: See \doxysectlink{flatbuffers_guide_tutorial}{Tutorial}{0} for a more in-\/depth example of how to use Flat\+Buffers in Dart.}
+
+Flat\+Buffers supports reading and writing binary Flat\+Buffers in Dart.
+
+To use Flat\+Buffers in your own code, first generate Dart classes from your schema with the {\ttfamily -\/-\/dart} option to {\ttfamily flatc}. Then you can include both Flat\+Buffers and the generated code to read or write a Flat\+Buffer.
+
+For example, here is how you would read a Flat\+Buffer binary file in Dart\+: First, include the library and generated code. Then read a Flat\+Buffer binary file into a {\ttfamily List\texorpdfstring{$<$}{<}int\texorpdfstring{$>$}{>}}, which you pass to the factory constructor for {\ttfamily Monster}\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{import\ 'dart:io'\ as\ io;}
+\DoxyCodeLine{}
+\DoxyCodeLine{import\ 'package:flat\_buffers/flat\_buffers.dart'\ as\ fb;}
+\DoxyCodeLine{import\ './monster\_my\_game.sample\_generated.dart'\ as\ myGame;}
+\DoxyCodeLine{}
+\DoxyCodeLine{List<int>\ data\ =\ await\ new\ io.File('monster.dat').readAsBytes();}
+\DoxyCodeLine{var\ monster\ =\ new\ myGame.Monster(data);}
+
+\end{DoxyCode}
+
+
+Now you can access values like this\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{var\ hp\ =\ monster.hp;}
+\DoxyCodeLine{var\ pos\ =\ monster.pos;}
+
+\end{DoxyCode}
+
+
+\doxysection*{Differences from the Dart SDK Front End flat\+\_\+buffers}
+
+The work in this repository is signfiicantly based on the implementation used internally by the Dart SDK in the front end/analyzer package. Several significant changes have been made.
+
+
+\begin{DoxyEnumerate}
+\item Support for packed boolean lists has been removed. This is not standard in other implementations and is not compatible with them. Do note that, like in the Java\+Script implementation, {\bfseries{null values in boolean lists will be treated as false}}. It is also still entirely possible to pack data in a single scalar field, but that would have to be done on the application side.
+\item The SDK implementation supports enums with regular Dart enums, which works if enums are always indexed at 1; however, Flat\+Buffers does not require that. This implementation uses specialized enum-\/like classes to ensure proper mapping from Flat\+Buffers to Dart and other platforms.
+\item The SDK implementation does not appear to support Flat\+Buffer structs or vectors of structs -\/ it treated everything as a built-\/in scalar or a table. This implementation treats structs in a way that is compatible with other non-\/\+Dart implementations, and properly handles vectors of structs. Many of the methods prefixed with \textquotesingle{}low\textquotesingle{} have been prepurposed to support this.
+\item The SDK implementation treats int64 and uint64 as float64s. This implementation does not. This may cause problems with Java\+Script compatibility -\/ however, it should be possible to use the Java\+Script implementation, or to do a customized implementation that treats all 64 bit numbers as floats. Supporting the Dart VM and Flutter was a more important goal of this implementation. Support for 16 bit integers was also added.
+\item The code generation in this offers an "{}\+Object\+Builder"{}, which generates code very similar to the SDK classes that consume Flat\+Buffers, as well as Builder classes, which produces code which more closely resembles the builders in other languages. The Object\+Builder classes are easier to use, at the cost of additional references allocated.
+\end{DoxyEnumerate}
+
+\doxysection*{Text Parsing}
+
+There currently is no support for parsing text (Schema\textquotesingle{}s and JSON) directly from Dart, though you could use the C++ parser through Dart \doxylink{namespaceNative}{Native} Extensions. Please see the C++ documentation for more on text parsing (note that this is not currently an option in Flutter -\/ follow \href{https://github.com/flutter/flutter/issues/7053}{\texttt{ this issue}} for the latest).
+
+\doxysection*{Object based API}
+
+Flat\+Buffers is all about memory efficiency, which is why its base API is written around using as little as possible of it. This does make the API clumsier (requiring pre-\/order construction of all data, and making mutation harder).
+
+For times when efficiency is less important a more convenient object based API can be used (through {\ttfamily -\/-\/gen-\/object-\/api}) that is able to unpack \& pack a Flat\+Buffer into objects and lists, allowing for convenient construction, access and mutation.
+
+To use\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{//\ Deserialize\ from\ buffer\ into\ object.}
+\DoxyCodeLine{MonsterT\ monster\ =\ Monster(flatbuffer).unpack();}
+\DoxyCodeLine{}
+\DoxyCodeLine{//\ Update\ object\ directly\ like\ a\ Dart\ class\ instance.}
+\DoxyCodeLine{print(monster.Name);}
+\DoxyCodeLine{monster.Name\ =\ "{}Bob"{};\ \ //\ Change\ the\ name.}
+\DoxyCodeLine{}
+\DoxyCodeLine{//\ Serialize\ into\ new\ flatbuffer.}
+\DoxyCodeLine{final\ fbb\ =\ Builder();}
+\DoxyCodeLine{fbb.Finish(monster.pack(fbb));}
+
+\end{DoxyCode}
+ 

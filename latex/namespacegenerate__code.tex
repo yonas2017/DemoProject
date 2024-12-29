@@ -1,0 +1,392 @@
+\doxysection{generate\+\_\+code Namespace Reference}
+\hypertarget{namespacegenerate__code}{}\label{namespacegenerate__code}\index{generate\_code@{generate\_code}}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespacegenerate__code_a267fa6631d72dcbbc6f92a497a4aaff2}{flatc\+\_\+reflection}} (\mbox{\hyperlink{namespacegenerate__code_a992579c11cdd8b54f04043696abaf68a}{options}}, location, target)
+\item 
+\mbox{\hyperlink{namespacegenerate__code_acaf33db8b3a8ad85ab2a0a7fa5340263}{flatc\+\_\+annotate}} (\mbox{\hyperlink{namespacegenerate__code_ac8611c9313fac6b5bae9ef61a6ae680b}{schema}}, \mbox{\hyperlink{namespacegenerate__code_a4a52b83494b4a06fafe03df1f41ddfbc}{file}}, \mbox{\hyperlink{namespacegenerate__code_a2ecbf37d9f01d389591ff1d4eef83645}{include}}=None, \mbox{\hyperlink{namespacegenerate__code_ae69d6408c8e56b8f992a696be6954cd8}{cwd}}=tests\+\_\+path)
+\item 
+\mbox{\hyperlink{namespacegenerate__code_afcc7d8ef8c0bf67d7c6db06e6767546c}{glob}} (path, pattern)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespacegenerate__code_aac77a46213575c601bcadca976652daf}{swift\+\_\+code\+\_\+gen}} = Path(root\+\_\+path, "{}tests/swift/tests/Code\+Generation\+Tests"{})
+\item 
+\mbox{\hyperlink{namespacegenerate__code_a155feaed5a5acf9387f2c2941b00ed2c}{ts\+\_\+code\+\_\+gen}} = Path(root\+\_\+path, "{}tests/ts"{})
+\item 
+\mbox{\hyperlink{namespacegenerate__code_a7d75aa89ffb6d4ad6585c70fd3d8e589}{samples\+\_\+path}} = Path(root\+\_\+path, "{}samples"{})
+\item 
+\mbox{\hyperlink{namespacegenerate__code_afe7c5bd1372df88dd38926c08a204e73}{reflection\+\_\+path}} = Path(root\+\_\+path, "{}reflection"{})
+\item 
+list \mbox{\hyperlink{namespacegenerate__code_a048d545de979531c93459ee47ce73eb0}{BASE\+\_\+\+OPTS}} = \mbox{[}"{}-\/-\/reflect-\/names"{}, "{}-\/-\/gen-\/mutable"{}, "{}-\/-\/gen-\/object-\/api"{}\mbox{]}
+\item 
+list \mbox{\hyperlink{namespacegenerate__code_afeed51d6e4e6e79e0b5e0163337ecee9}{NO\+\_\+\+INCL\+\_\+\+OPTS}} = \mbox{\hyperlink{namespacegenerate__code_a048d545de979531c93459ee47ce73eb0}{BASE\+\_\+\+OPTS}} + \mbox{[}"{}-\/-\/no-\/includes"{}\mbox{]}
+\item 
+list \mbox{\hyperlink{namespacegenerate__code_a85099c19cb6fb3cd176b1244f1d87829}{CS\+\_\+\+OPTS}} = \mbox{[}"{}-\/-\/csharp"{}, "{}-\/-\/cs-\/gen-\/json-\/serializer"{}\mbox{]}
+\item 
+list \mbox{\hyperlink{namespacegenerate__code_a229fa87a8b054e23f9ff8e89db11de41}{CPP\+\_\+\+OPTS}}
+\item 
+list \mbox{\hyperlink{namespacegenerate__code_abd082b505e268aa45361a0eb20fe24a9}{CPP\+\_\+17\+\_\+\+OPTS}}
+\item 
+list \mbox{\hyperlink{namespacegenerate__code_a09a1654f18e830f7171830a70e791c48}{RUST\+\_\+\+OPTS}}
+\item 
+list \mbox{\hyperlink{namespacegenerate__code_a185a4d23a82c2b9d021fc3829899a25c}{RUST\+\_\+\+SERIALIZE\+\_\+\+OPTS}}
+\item 
+list \mbox{\hyperlink{namespacegenerate__code_afab0549aa9839dc1a9a704c85ac0294c}{TS\+\_\+\+OPTS}} = \mbox{[}"{}-\/-\/ts"{}, "{}-\/-\/gen-\/\mbox{\hyperlink{idl__gen__ts_8cpp_a9b45b3e13bd9167aab02e17e08916231}{name}}-\/strings"{}\mbox{]}
+\item 
+list \mbox{\hyperlink{namespacegenerate__code_af1e8ccb82773059a44f6323c97e709c9}{LOBSTER\+\_\+\+OPTS}} = \mbox{[}"{}-\/-\/lobster"{}\mbox{]}
+\item 
+list \mbox{\hyperlink{namespacegenerate__code_a747e4a0f59c115f2847d634a6cee1b58}{SWIFT\+\_\+\+OPTS}} = \mbox{[}"{}-\/-\/swift"{}, "{}-\/-\/gen-\/json-\/emit"{}, "{}-\/-\/bfbs-\/filenames"{}, str(tests\+\_\+path)\mbox{]}
+\item 
+list \mbox{\hyperlink{namespacegenerate__code_ac02fc0f16834004ba17e1d720ba6d5d7}{SWIFT\+\_\+\+OPTS\+\_\+\+CODE\+\_\+\+GEN}}
+\item 
+list \mbox{\hyperlink{namespacegenerate__code_aca75bfbe8873f27bfd8517854d92c7bf}{JAVA\+\_\+\+OPTS}} = \mbox{[}"{}-\/-\/java"{}\mbox{]}
+\item 
+list \mbox{\hyperlink{namespacegenerate__code_a19e399db5228e65057d95da6c1f7e65c}{KOTLIN\+\_\+\+OPTS}} = \mbox{[}"{}-\/-\/kotlin"{}\mbox{]}
+\item 
+list \mbox{\hyperlink{namespacegenerate__code_ad98196d9b185c2ea5094540f7835ed46}{PHP\+\_\+\+OPTS}} = \mbox{[}"{}-\/-\/php"{}\mbox{]}
+\item 
+list \mbox{\hyperlink{namespacegenerate__code_a152a50d2f23184b1c92401024fb4a666}{DART\+\_\+\+OPTS}} = \mbox{[}"{}-\/-\/dart"{}\mbox{]}
+\item 
+list \mbox{\hyperlink{namespacegenerate__code_a964997fe9c130906b65c2eec3da6aeed}{PYTHON\+\_\+\+OPTS}} = \mbox{[}"{}-\/-\/python"{}, "{}-\/-\/python-\/typing"{}\mbox{]}
+\item 
+list \mbox{\hyperlink{namespacegenerate__code_a98a2c25916fbfd984d6f82568bcb3c97}{BINARY\+\_\+\+OPTS}} = \mbox{[}"{}-\/b"{}, "{}-\/-\/schema"{}, "{}-\/-\/bfbs-\/comments"{}, "{}-\/-\/bfbs-\/builtins"{}\mbox{]}
+\item 
+list \mbox{\hyperlink{namespacegenerate__code_a7b9fcc91df8ea54127650636f6b92892}{PROTO\+\_\+\+OPTS}} = \mbox{[}"{}-\/-\/proto"{}\mbox{]}
+\item 
+\mbox{\hyperlink{namespacegenerate__code_ac8611c9313fac6b5bae9ef61a6ae680b}{schema}}
+\item 
+\mbox{\hyperlink{namespacegenerate__code_a2ecbf37d9f01d389591ff1d4eef83645}{include}}
+\item 
+\mbox{\hyperlink{namespacegenerate__code_aebc120e8b184d051fc85a24ac04dc891}{data}}
+\item 
+\mbox{\hyperlink{namespacegenerate__code_ae69d6408c8e56b8f992a696be6954cd8}{cwd}}
+\item 
+\mbox{\hyperlink{namespacegenerate__code_ae05cd3befa4ed853be5c64429013e767}{prefix}}
+\item 
+\mbox{\hyperlink{namespacegenerate__code_a992579c11cdd8b54f04043696abaf68a}{options}}
+\item 
+\mbox{\hyperlink{namespacegenerate__code_a4a52b83494b4a06fafe03df1f41ddfbc}{file}}
+\item 
+str \mbox{\hyperlink{namespacegenerate__code_abd8d09548966d5ade0625f14df72f402}{optional\+\_\+scalars\+\_\+schema}} = "{}optional\+\_\+scalars.\+fbs"{}
+\item 
+str \mbox{\hyperlink{namespacegenerate__code_a5fdb712882e7eec2c678bdc739ef2a71}{type\+\_\+field\+\_\+collsion\+\_\+schema}} = "{}type\+\_\+field\+\_\+collsion.\+fbs"{}
+\item 
+str \mbox{\hyperlink{namespacegenerate__code_aac9ce57a64fe2a555cf8ce8744ab579d}{dictionary\+\_\+lookup\+\_\+schema}} = "{}dictionary\+\_\+lookup.\+fbs"{}
+\item 
+str \mbox{\hyperlink{namespacegenerate__code_adbcb94af374a7359a8eeb25f2f0fbcab}{swift\+\_\+prefix}} = "{}swift/tests/Tests/Flat\+Buffers.\+Test.\+Swift\+Tests"{}
+\item 
+str \mbox{\hyperlink{namespacegenerate__code_a9dda38d60bcbed480385cf9d778ecba4}{swift\+\_\+\+Wasm\+\_\+prefix}} = "{}swift/Wasm.\+tests/Tests/Flat\+Buffers.\+Test.\+Swift.\+Wasm\+Tests"{}
+\item 
+list \mbox{\hyperlink{namespacegenerate__code_adc5e93c8534aadc1eb57fa6f8fb64be0}{NIM\+\_\+\+OPTS}} = \mbox{\hyperlink{namespacegenerate__code_a048d545de979531c93459ee47ce73eb0}{BASE\+\_\+\+OPTS}} + \mbox{[}"{}-\/-\/nim"{}\mbox{]}
+\item 
+str \mbox{\hyperlink{namespacegenerate__code_a1998abba74014a09de108779055927fc}{cpp\+\_\+17\+\_\+prefix}} = "{}cpp17/generated\+\_\+cpp17"{}
+\item 
+str \mbox{\hyperlink{namespacegenerate__code_a758adf1363c9481b1c5c37e02da2b8b0}{annotations\+\_\+test\+\_\+schema}} = "{}private\+\_\+annotation\+\_\+test.\+fbs"{}
+\item 
+str \mbox{\hyperlink{namespacegenerate__code_a1ed80d017145d6ee15614409bc0339e1}{samples\+\_\+schema}} = "{}monster.\+fbs"{}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{namespacegenerate__code_acaf33db8b3a8ad85ab2a0a7fa5340263}\label{namespacegenerate__code_acaf33db8b3a8ad85ab2a0a7fa5340263} 
+\index{generate\_code@{generate\_code}!flatc\_annotate@{flatc\_annotate}}
+\index{flatc\_annotate@{flatc\_annotate}!generate\_code@{generate\_code}}
+\doxysubsubsection{\texorpdfstring{flatc\_annotate()}{flatc\_annotate()}}
+{\footnotesize\ttfamily generate\+\_\+code.\+flatc\+\_\+annotate (\begin{DoxyParamCaption}\item[{}]{schema,  }\item[{}]{file = {\ttfamily None},  }\item[{}]{include = {\ttfamily None},  }\item[{}]{cwd = {\ttfamily tests\+\_\+path} }\end{DoxyParamCaption})}
+
+\Hypertarget{namespacegenerate__code_a267fa6631d72dcbbc6f92a497a4aaff2}\label{namespacegenerate__code_a267fa6631d72dcbbc6f92a497a4aaff2} 
+\index{generate\_code@{generate\_code}!flatc\_reflection@{flatc\_reflection}}
+\index{flatc\_reflection@{flatc\_reflection}!generate\_code@{generate\_code}}
+\doxysubsubsection{\texorpdfstring{flatc\_reflection()}{flatc\_reflection()}}
+{\footnotesize\ttfamily generate\+\_\+code.\+flatc\+\_\+reflection (\begin{DoxyParamCaption}\item[{}]{options,  }\item[{}]{location,  }\item[{}]{target }\end{DoxyParamCaption})}
+
+\Hypertarget{namespacegenerate__code_afcc7d8ef8c0bf67d7c6db06e6767546c}\label{namespacegenerate__code_afcc7d8ef8c0bf67d7c6db06e6767546c} 
+\index{generate\_code@{generate\_code}!glob@{glob}}
+\index{glob@{glob}!generate\_code@{generate\_code}}
+\doxysubsubsection{\texorpdfstring{glob()}{glob()}}
+{\footnotesize\ttfamily generate\+\_\+code.\+glob (\begin{DoxyParamCaption}\item[{}]{path,  }\item[{}]{pattern }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{namespacegenerate__code_a758adf1363c9481b1c5c37e02da2b8b0}\label{namespacegenerate__code_a758adf1363c9481b1c5c37e02da2b8b0} 
+\index{generate\_code@{generate\_code}!annotations\_test\_schema@{annotations\_test\_schema}}
+\index{annotations\_test\_schema@{annotations\_test\_schema}!generate\_code@{generate\_code}}
+\doxysubsubsection{\texorpdfstring{annotations\_test\_schema}{annotations\_test\_schema}}
+{\footnotesize\ttfamily str generate\+\_\+code.\+annotations\+\_\+test\+\_\+schema = "{}private\+\_\+annotation\+\_\+test.\+fbs"{}}
+
+\Hypertarget{namespacegenerate__code_a048d545de979531c93459ee47ce73eb0}\label{namespacegenerate__code_a048d545de979531c93459ee47ce73eb0} 
+\index{generate\_code@{generate\_code}!BASE\_OPTS@{BASE\_OPTS}}
+\index{BASE\_OPTS@{BASE\_OPTS}!generate\_code@{generate\_code}}
+\doxysubsubsection{\texorpdfstring{BASE\_OPTS}{BASE\_OPTS}}
+{\footnotesize\ttfamily list generate\+\_\+code.\+BASE\+\_\+\+OPTS = \mbox{[}"{}-\/-\/reflect-\/names"{}, "{}-\/-\/gen-\/mutable"{}, "{}-\/-\/gen-\/object-\/api"{}\mbox{]}}
+
+\Hypertarget{namespacegenerate__code_a98a2c25916fbfd984d6f82568bcb3c97}\label{namespacegenerate__code_a98a2c25916fbfd984d6f82568bcb3c97} 
+\index{generate\_code@{generate\_code}!BINARY\_OPTS@{BINARY\_OPTS}}
+\index{BINARY\_OPTS@{BINARY\_OPTS}!generate\_code@{generate\_code}}
+\doxysubsubsection{\texorpdfstring{BINARY\_OPTS}{BINARY\_OPTS}}
+{\footnotesize\ttfamily list generate\+\_\+code.\+BINARY\+\_\+\+OPTS = \mbox{[}"{}-\/b"{}, "{}-\/-\/schema"{}, "{}-\/-\/bfbs-\/comments"{}, "{}-\/-\/bfbs-\/builtins"{}\mbox{]}}
+
+\Hypertarget{namespacegenerate__code_abd082b505e268aa45361a0eb20fe24a9}\label{namespacegenerate__code_abd082b505e268aa45361a0eb20fe24a9} 
+\index{generate\_code@{generate\_code}!CPP\_17\_OPTS@{CPP\_17\_OPTS}}
+\index{CPP\_17\_OPTS@{CPP\_17\_OPTS}!generate\_code@{generate\_code}}
+\doxysubsubsection{\texorpdfstring{CPP\_17\_OPTS}{CPP\_17\_OPTS}}
+{\footnotesize\ttfamily list generate\+\_\+code.\+CPP\+\_\+17\+\_\+\+OPTS}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ =\ \ NO\_INCL\_OPTS\ +\ [}
+\DoxyCodeLine{00002\ \ \ \ \ \textcolor{stringliteral}{"{}-\/-\/cpp"{}},}
+\DoxyCodeLine{00003\ \ \ \ \ \textcolor{stringliteral}{"{}-\/-\/cpp-\/std"{}},}
+\DoxyCodeLine{00004\ \ \ \ \ \textcolor{stringliteral}{"{}c++17"{}},}
+\DoxyCodeLine{00005\ \ \ \ \ \textcolor{stringliteral}{"{}-\/-\/cpp-\/static-\/reflection"{}},}
+\DoxyCodeLine{00006\ \ \ \ \ \textcolor{stringliteral}{"{}-\/-\/gen-\/object-\/api"{}},}
+\DoxyCodeLine{00007\ ]}
+
+\end{DoxyCode}
+\Hypertarget{namespacegenerate__code_a1998abba74014a09de108779055927fc}\label{namespacegenerate__code_a1998abba74014a09de108779055927fc} 
+\index{generate\_code@{generate\_code}!cpp\_17\_prefix@{cpp\_17\_prefix}}
+\index{cpp\_17\_prefix@{cpp\_17\_prefix}!generate\_code@{generate\_code}}
+\doxysubsubsection{\texorpdfstring{cpp\_17\_prefix}{cpp\_17\_prefix}}
+{\footnotesize\ttfamily str generate\+\_\+code.\+cpp\+\_\+17\+\_\+prefix = "{}cpp17/generated\+\_\+cpp17"{}}
+
+\Hypertarget{namespacegenerate__code_a229fa87a8b054e23f9ff8e89db11de41}\label{namespacegenerate__code_a229fa87a8b054e23f9ff8e89db11de41} 
+\index{generate\_code@{generate\_code}!CPP\_OPTS@{CPP\_OPTS}}
+\index{CPP\_OPTS@{CPP\_OPTS}!generate\_code@{generate\_code}}
+\doxysubsubsection{\texorpdfstring{CPP\_OPTS}{CPP\_OPTS}}
+{\footnotesize\ttfamily generate\+\_\+code.\+CPP\+\_\+\+OPTS}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ =\ \ [}
+\DoxyCodeLine{00002\ \ \ \ \ \textcolor{stringliteral}{"{}-\/-\/cpp"{}},}
+\DoxyCodeLine{00003\ \ \ \ \ \textcolor{stringliteral}{"{}-\/-\/gen-\/compare"{}},}
+\DoxyCodeLine{00004\ ]\ +\ ([\textcolor{stringliteral}{"{}-\/-\/cpp-\/std"{}},\ \textcolor{stringliteral}{"{}c++0x"{}}]\ \textcolor{keywordflow}{if}\ args.cpp\_0x\ \textcolor{keywordflow}{else}\ [])}
+
+\end{DoxyCode}
+\Hypertarget{namespacegenerate__code_a85099c19cb6fb3cd176b1244f1d87829}\label{namespacegenerate__code_a85099c19cb6fb3cd176b1244f1d87829} 
+\index{generate\_code@{generate\_code}!CS\_OPTS@{CS\_OPTS}}
+\index{CS\_OPTS@{CS\_OPTS}!generate\_code@{generate\_code}}
+\doxysubsubsection{\texorpdfstring{CS\_OPTS}{CS\_OPTS}}
+{\footnotesize\ttfamily generate\+\_\+code.\+CS\+\_\+\+OPTS = \mbox{[}"{}-\/-\/csharp"{}, "{}-\/-\/cs-\/gen-\/json-\/serializer"{}\mbox{]}}
+
+\Hypertarget{namespacegenerate__code_ae69d6408c8e56b8f992a696be6954cd8}\label{namespacegenerate__code_ae69d6408c8e56b8f992a696be6954cd8} 
+\index{generate\_code@{generate\_code}!cwd@{cwd}}
+\index{cwd@{cwd}!generate\_code@{generate\_code}}
+\doxysubsubsection{\texorpdfstring{cwd}{cwd}}
+{\footnotesize\ttfamily generate\+\_\+code.\+cwd}
+
+\Hypertarget{namespacegenerate__code_a152a50d2f23184b1c92401024fb4a666}\label{namespacegenerate__code_a152a50d2f23184b1c92401024fb4a666} 
+\index{generate\_code@{generate\_code}!DART\_OPTS@{DART\_OPTS}}
+\index{DART\_OPTS@{DART\_OPTS}!generate\_code@{generate\_code}}
+\doxysubsubsection{\texorpdfstring{DART\_OPTS}{DART\_OPTS}}
+{\footnotesize\ttfamily generate\+\_\+code.\+DART\+\_\+\+OPTS = \mbox{[}"{}-\/-\/dart"{}\mbox{]}}
+
+\Hypertarget{namespacegenerate__code_aebc120e8b184d051fc85a24ac04dc891}\label{namespacegenerate__code_aebc120e8b184d051fc85a24ac04dc891} 
+\index{generate\_code@{generate\_code}!data@{data}}
+\index{data@{data}!generate\_code@{generate\_code}}
+\doxysubsubsection{\texorpdfstring{data}{data}}
+{\footnotesize\ttfamily generate\+\_\+code.\+data}
+
+\Hypertarget{namespacegenerate__code_aac9ce57a64fe2a555cf8ce8744ab579d}\label{namespacegenerate__code_aac9ce57a64fe2a555cf8ce8744ab579d} 
+\index{generate\_code@{generate\_code}!dictionary\_lookup\_schema@{dictionary\_lookup\_schema}}
+\index{dictionary\_lookup\_schema@{dictionary\_lookup\_schema}!generate\_code@{generate\_code}}
+\doxysubsubsection{\texorpdfstring{dictionary\_lookup\_schema}{dictionary\_lookup\_schema}}
+{\footnotesize\ttfamily str generate\+\_\+code.\+dictionary\+\_\+lookup\+\_\+schema = "{}dictionary\+\_\+lookup.\+fbs"{}}
+
+\Hypertarget{namespacegenerate__code_a4a52b83494b4a06fafe03df1f41ddfbc}\label{namespacegenerate__code_a4a52b83494b4a06fafe03df1f41ddfbc} 
+\index{generate\_code@{generate\_code}!file@{file}}
+\index{file@{file}!generate\_code@{generate\_code}}
+\doxysubsubsection{\texorpdfstring{file}{file}}
+{\footnotesize\ttfamily generate\+\_\+code.\+file}
+
+\Hypertarget{namespacegenerate__code_a2ecbf37d9f01d389591ff1d4eef83645}\label{namespacegenerate__code_a2ecbf37d9f01d389591ff1d4eef83645} 
+\index{generate\_code@{generate\_code}!include@{include}}
+\index{include@{include}!generate\_code@{generate\_code}}
+\doxysubsubsection{\texorpdfstring{include}{include}}
+{\footnotesize\ttfamily generate\+\_\+code.\+include}
+
+\Hypertarget{namespacegenerate__code_aca75bfbe8873f27bfd8517854d92c7bf}\label{namespacegenerate__code_aca75bfbe8873f27bfd8517854d92c7bf} 
+\index{generate\_code@{generate\_code}!JAVA\_OPTS@{JAVA\_OPTS}}
+\index{JAVA\_OPTS@{JAVA\_OPTS}!generate\_code@{generate\_code}}
+\doxysubsubsection{\texorpdfstring{JAVA\_OPTS}{JAVA\_OPTS}}
+{\footnotesize\ttfamily list generate\+\_\+code.\+JAVA\+\_\+\+OPTS = \mbox{[}"{}-\/-\/java"{}\mbox{]}}
+
+\Hypertarget{namespacegenerate__code_a19e399db5228e65057d95da6c1f7e65c}\label{namespacegenerate__code_a19e399db5228e65057d95da6c1f7e65c} 
+\index{generate\_code@{generate\_code}!KOTLIN\_OPTS@{KOTLIN\_OPTS}}
+\index{KOTLIN\_OPTS@{KOTLIN\_OPTS}!generate\_code@{generate\_code}}
+\doxysubsubsection{\texorpdfstring{KOTLIN\_OPTS}{KOTLIN\_OPTS}}
+{\footnotesize\ttfamily list generate\+\_\+code.\+KOTLIN\+\_\+\+OPTS = \mbox{[}"{}-\/-\/kotlin"{}\mbox{]}}
+
+\Hypertarget{namespacegenerate__code_af1e8ccb82773059a44f6323c97e709c9}\label{namespacegenerate__code_af1e8ccb82773059a44f6323c97e709c9} 
+\index{generate\_code@{generate\_code}!LOBSTER\_OPTS@{LOBSTER\_OPTS}}
+\index{LOBSTER\_OPTS@{LOBSTER\_OPTS}!generate\_code@{generate\_code}}
+\doxysubsubsection{\texorpdfstring{LOBSTER\_OPTS}{LOBSTER\_OPTS}}
+{\footnotesize\ttfamily generate\+\_\+code.\+LOBSTER\+\_\+\+OPTS = \mbox{[}"{}-\/-\/lobster"{}\mbox{]}}
+
+\Hypertarget{namespacegenerate__code_adc5e93c8534aadc1eb57fa6f8fb64be0}\label{namespacegenerate__code_adc5e93c8534aadc1eb57fa6f8fb64be0} 
+\index{generate\_code@{generate\_code}!NIM\_OPTS@{NIM\_OPTS}}
+\index{NIM\_OPTS@{NIM\_OPTS}!generate\_code@{generate\_code}}
+\doxysubsubsection{\texorpdfstring{NIM\_OPTS}{NIM\_OPTS}}
+{\footnotesize\ttfamily generate\+\_\+code.\+NIM\+\_\+\+OPTS = \mbox{\hyperlink{namespacegenerate__code_a048d545de979531c93459ee47ce73eb0}{BASE\+\_\+\+OPTS}} + \mbox{[}"{}-\/-\/nim"{}\mbox{]}}
+
+\Hypertarget{namespacegenerate__code_afeed51d6e4e6e79e0b5e0163337ecee9}\label{namespacegenerate__code_afeed51d6e4e6e79e0b5e0163337ecee9} 
+\index{generate\_code@{generate\_code}!NO\_INCL\_OPTS@{NO\_INCL\_OPTS}}
+\index{NO\_INCL\_OPTS@{NO\_INCL\_OPTS}!generate\_code@{generate\_code}}
+\doxysubsubsection{\texorpdfstring{NO\_INCL\_OPTS}{NO\_INCL\_OPTS}}
+{\footnotesize\ttfamily list generate\+\_\+code.\+NO\+\_\+\+INCL\+\_\+\+OPTS = \mbox{\hyperlink{namespacegenerate__code_a048d545de979531c93459ee47ce73eb0}{BASE\+\_\+\+OPTS}} + \mbox{[}"{}-\/-\/no-\/includes"{}\mbox{]}}
+
+\Hypertarget{namespacegenerate__code_abd8d09548966d5ade0625f14df72f402}\label{namespacegenerate__code_abd8d09548966d5ade0625f14df72f402} 
+\index{generate\_code@{generate\_code}!optional\_scalars\_schema@{optional\_scalars\_schema}}
+\index{optional\_scalars\_schema@{optional\_scalars\_schema}!generate\_code@{generate\_code}}
+\doxysubsubsection{\texorpdfstring{optional\_scalars\_schema}{optional\_scalars\_schema}}
+{\footnotesize\ttfamily str generate\+\_\+code.\+optional\+\_\+scalars\+\_\+schema = "{}optional\+\_\+scalars.\+fbs"{}}
+
+\Hypertarget{namespacegenerate__code_a992579c11cdd8b54f04043696abaf68a}\label{namespacegenerate__code_a992579c11cdd8b54f04043696abaf68a} 
+\index{generate\_code@{generate\_code}!options@{options}}
+\index{options@{options}!generate\_code@{generate\_code}}
+\doxysubsubsection{\texorpdfstring{options}{options}}
+{\footnotesize\ttfamily generate\+\_\+code.\+options}
+
+\Hypertarget{namespacegenerate__code_ad98196d9b185c2ea5094540f7835ed46}\label{namespacegenerate__code_ad98196d9b185c2ea5094540f7835ed46} 
+\index{generate\_code@{generate\_code}!PHP\_OPTS@{PHP\_OPTS}}
+\index{PHP\_OPTS@{PHP\_OPTS}!generate\_code@{generate\_code}}
+\doxysubsubsection{\texorpdfstring{PHP\_OPTS}{PHP\_OPTS}}
+{\footnotesize\ttfamily list generate\+\_\+code.\+PHP\+\_\+\+OPTS = \mbox{[}"{}-\/-\/php"{}\mbox{]}}
+
+\Hypertarget{namespacegenerate__code_ae05cd3befa4ed853be5c64429013e767}\label{namespacegenerate__code_ae05cd3befa4ed853be5c64429013e767} 
+\index{generate\_code@{generate\_code}!prefix@{prefix}}
+\index{prefix@{prefix}!generate\_code@{generate\_code}}
+\doxysubsubsection{\texorpdfstring{prefix}{prefix}}
+{\footnotesize\ttfamily generate\+\_\+code.\+prefix}
+
+\Hypertarget{namespacegenerate__code_a7b9fcc91df8ea54127650636f6b92892}\label{namespacegenerate__code_a7b9fcc91df8ea54127650636f6b92892} 
+\index{generate\_code@{generate\_code}!PROTO\_OPTS@{PROTO\_OPTS}}
+\index{PROTO\_OPTS@{PROTO\_OPTS}!generate\_code@{generate\_code}}
+\doxysubsubsection{\texorpdfstring{PROTO\_OPTS}{PROTO\_OPTS}}
+{\footnotesize\ttfamily list generate\+\_\+code.\+PROTO\+\_\+\+OPTS = \mbox{[}"{}-\/-\/proto"{}\mbox{]}}
+
+\Hypertarget{namespacegenerate__code_a964997fe9c130906b65c2eec3da6aeed}\label{namespacegenerate__code_a964997fe9c130906b65c2eec3da6aeed} 
+\index{generate\_code@{generate\_code}!PYTHON\_OPTS@{PYTHON\_OPTS}}
+\index{PYTHON\_OPTS@{PYTHON\_OPTS}!generate\_code@{generate\_code}}
+\doxysubsubsection{\texorpdfstring{PYTHON\_OPTS}{PYTHON\_OPTS}}
+{\footnotesize\ttfamily list generate\+\_\+code.\+PYTHON\+\_\+\+OPTS = \mbox{[}"{}-\/-\/python"{}, "{}-\/-\/python-\/typing"{}\mbox{]}}
+
+\Hypertarget{namespacegenerate__code_afe7c5bd1372df88dd38926c08a204e73}\label{namespacegenerate__code_afe7c5bd1372df88dd38926c08a204e73} 
+\index{generate\_code@{generate\_code}!reflection\_path@{reflection\_path}}
+\index{reflection\_path@{reflection\_path}!generate\_code@{generate\_code}}
+\doxysubsubsection{\texorpdfstring{reflection\_path}{reflection\_path}}
+{\footnotesize\ttfamily generate\+\_\+code.\+reflection\+\_\+path = Path(root\+\_\+path, "{}reflection"{})}
+
+\Hypertarget{namespacegenerate__code_a09a1654f18e830f7171830a70e791c48}\label{namespacegenerate__code_a09a1654f18e830f7171830a70e791c48} 
+\index{generate\_code@{generate\_code}!RUST\_OPTS@{RUST\_OPTS}}
+\index{RUST\_OPTS@{RUST\_OPTS}!generate\_code@{generate\_code}}
+\doxysubsubsection{\texorpdfstring{RUST\_OPTS}{RUST\_OPTS}}
+{\footnotesize\ttfamily generate\+\_\+code.\+RUST\+\_\+\+OPTS}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ =\ \ BASE\_OPTS\ +\ [}
+\DoxyCodeLine{00002\ \ \ \ \ \textcolor{stringliteral}{"{}-\/-\/rust"{}},}
+\DoxyCodeLine{00003\ \ \ \ \ \textcolor{stringliteral}{"{}-\/-\/gen-\/all"{}},}
+\DoxyCodeLine{00004\ \ \ \ \ \textcolor{stringliteral}{"{}-\/-\/gen-\/name-\/strings"{}},}
+\DoxyCodeLine{00005\ \ \ \ \ \textcolor{stringliteral}{"{}-\/-\/rust-\/module-\/root-\/file"{}},}
+\DoxyCodeLine{00006\ ]}
+
+\end{DoxyCode}
+\Hypertarget{namespacegenerate__code_a185a4d23a82c2b9d021fc3829899a25c}\label{namespacegenerate__code_a185a4d23a82c2b9d021fc3829899a25c} 
+\index{generate\_code@{generate\_code}!RUST\_SERIALIZE\_OPTS@{RUST\_SERIALIZE\_OPTS}}
+\index{RUST\_SERIALIZE\_OPTS@{RUST\_SERIALIZE\_OPTS}!generate\_code@{generate\_code}}
+\doxysubsubsection{\texorpdfstring{RUST\_SERIALIZE\_OPTS}{RUST\_SERIALIZE\_OPTS}}
+{\footnotesize\ttfamily list generate\+\_\+code.\+RUST\+\_\+\+SERIALIZE\+\_\+\+OPTS}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ =\ \ BASE\_OPTS\ +\ [}
+\DoxyCodeLine{00002\ \ \ \ \ \textcolor{stringliteral}{"{}-\/-\/rust"{}},}
+\DoxyCodeLine{00003\ \ \ \ \ \textcolor{stringliteral}{"{}-\/-\/gen-\/all"{}},}
+\DoxyCodeLine{00004\ \ \ \ \ \textcolor{stringliteral}{"{}-\/-\/gen-\/name-\/strings"{}},}
+\DoxyCodeLine{00005\ \ \ \ \ \textcolor{stringliteral}{"{}-\/-\/rust-\/serialize"{}},}
+\DoxyCodeLine{00006\ \ \ \ \ \textcolor{stringliteral}{"{}-\/-\/rust-\/module-\/root-\/file"{}},}
+\DoxyCodeLine{00007\ ]}
+
+\end{DoxyCode}
+\Hypertarget{namespacegenerate__code_a7d75aa89ffb6d4ad6585c70fd3d8e589}\label{namespacegenerate__code_a7d75aa89ffb6d4ad6585c70fd3d8e589} 
+\index{generate\_code@{generate\_code}!samples\_path@{samples\_path}}
+\index{samples\_path@{samples\_path}!generate\_code@{generate\_code}}
+\doxysubsubsection{\texorpdfstring{samples\_path}{samples\_path}}
+{\footnotesize\ttfamily generate\+\_\+code.\+samples\+\_\+path = Path(root\+\_\+path, "{}samples"{})}
+
+\Hypertarget{namespacegenerate__code_a1ed80d017145d6ee15614409bc0339e1}\label{namespacegenerate__code_a1ed80d017145d6ee15614409bc0339e1} 
+\index{generate\_code@{generate\_code}!samples\_schema@{samples\_schema}}
+\index{samples\_schema@{samples\_schema}!generate\_code@{generate\_code}}
+\doxysubsubsection{\texorpdfstring{samples\_schema}{samples\_schema}}
+{\footnotesize\ttfamily generate\+\_\+code.\+samples\+\_\+schema = "{}monster.\+fbs"{}}
+
+\Hypertarget{namespacegenerate__code_ac8611c9313fac6b5bae9ef61a6ae680b}\label{namespacegenerate__code_ac8611c9313fac6b5bae9ef61a6ae680b} 
+\index{generate\_code@{generate\_code}!schema@{schema}}
+\index{schema@{schema}!generate\_code@{generate\_code}}
+\doxysubsubsection{\texorpdfstring{schema}{schema}}
+{\footnotesize\ttfamily generate\+\_\+code.\+schema}
+
+\Hypertarget{namespacegenerate__code_aac77a46213575c601bcadca976652daf}\label{namespacegenerate__code_aac77a46213575c601bcadca976652daf} 
+\index{generate\_code@{generate\_code}!swift\_code\_gen@{swift\_code\_gen}}
+\index{swift\_code\_gen@{swift\_code\_gen}!generate\_code@{generate\_code}}
+\doxysubsubsection{\texorpdfstring{swift\_code\_gen}{swift\_code\_gen}}
+{\footnotesize\ttfamily generate\+\_\+code.\+swift\+\_\+code\+\_\+gen = Path(root\+\_\+path, "{}tests/swift/tests/Code\+Generation\+Tests"{})}
+
+\Hypertarget{namespacegenerate__code_a747e4a0f59c115f2847d634a6cee1b58}\label{namespacegenerate__code_a747e4a0f59c115f2847d634a6cee1b58} 
+\index{generate\_code@{generate\_code}!SWIFT\_OPTS@{SWIFT\_OPTS}}
+\index{SWIFT\_OPTS@{SWIFT\_OPTS}!generate\_code@{generate\_code}}
+\doxysubsubsection{\texorpdfstring{SWIFT\_OPTS}{SWIFT\_OPTS}}
+{\footnotesize\ttfamily generate\+\_\+code.\+SWIFT\+\_\+\+OPTS = \mbox{[}"{}-\/-\/swift"{}, "{}-\/-\/gen-\/json-\/emit"{}, "{}-\/-\/bfbs-\/filenames"{}, str(tests\+\_\+path)\mbox{]}}
+
+\Hypertarget{namespacegenerate__code_ac02fc0f16834004ba17e1d720ba6d5d7}\label{namespacegenerate__code_ac02fc0f16834004ba17e1d720ba6d5d7} 
+\index{generate\_code@{generate\_code}!SWIFT\_OPTS\_CODE\_GEN@{SWIFT\_OPTS\_CODE\_GEN}}
+\index{SWIFT\_OPTS\_CODE\_GEN@{SWIFT\_OPTS\_CODE\_GEN}!generate\_code@{generate\_code}}
+\doxysubsubsection{\texorpdfstring{SWIFT\_OPTS\_CODE\_GEN}{SWIFT\_OPTS\_CODE\_GEN}}
+{\footnotesize\ttfamily list generate\+\_\+code.\+SWIFT\+\_\+\+OPTS\+\_\+\+CODE\+\_\+\+GEN}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ =\ \ [}
+\DoxyCodeLine{00002\ \ \ \ \ \textcolor{stringliteral}{"{}-\/-\/swift"{}},}
+\DoxyCodeLine{00003\ \ \ \ \ \textcolor{stringliteral}{"{}-\/-\/gen-\/json-\/emit"{}},}
+\DoxyCodeLine{00004\ \ \ \ \ \textcolor{stringliteral}{"{}-\/-\/bfbs-\/filenames"{}},}
+\DoxyCodeLine{00005\ \ \ \ \ str(swift\_code\_gen),}
+\DoxyCodeLine{00006\ ]}
+
+\end{DoxyCode}
+\Hypertarget{namespacegenerate__code_adbcb94af374a7359a8eeb25f2f0fbcab}\label{namespacegenerate__code_adbcb94af374a7359a8eeb25f2f0fbcab} 
+\index{generate\_code@{generate\_code}!swift\_prefix@{swift\_prefix}}
+\index{swift\_prefix@{swift\_prefix}!generate\_code@{generate\_code}}
+\doxysubsubsection{\texorpdfstring{swift\_prefix}{swift\_prefix}}
+{\footnotesize\ttfamily str generate\+\_\+code.\+swift\+\_\+prefix = "{}swift/tests/Tests/Flat\+Buffers.\+Test.\+Swift\+Tests"{}}
+
+\Hypertarget{namespacegenerate__code_a9dda38d60bcbed480385cf9d778ecba4}\label{namespacegenerate__code_a9dda38d60bcbed480385cf9d778ecba4} 
+\index{generate\_code@{generate\_code}!swift\_Wasm\_prefix@{swift\_Wasm\_prefix}}
+\index{swift\_Wasm\_prefix@{swift\_Wasm\_prefix}!generate\_code@{generate\_code}}
+\doxysubsubsection{\texorpdfstring{swift\_Wasm\_prefix}{swift\_Wasm\_prefix}}
+{\footnotesize\ttfamily str generate\+\_\+code.\+swift\+\_\+\+Wasm\+\_\+prefix = "{}swift/Wasm.\+tests/Tests/Flat\+Buffers.\+Test.\+Swift.\+Wasm\+Tests"{}}
+
+\Hypertarget{namespacegenerate__code_a155feaed5a5acf9387f2c2941b00ed2c}\label{namespacegenerate__code_a155feaed5a5acf9387f2c2941b00ed2c} 
+\index{generate\_code@{generate\_code}!ts\_code\_gen@{ts\_code\_gen}}
+\index{ts\_code\_gen@{ts\_code\_gen}!generate\_code@{generate\_code}}
+\doxysubsubsection{\texorpdfstring{ts\_code\_gen}{ts\_code\_gen}}
+{\footnotesize\ttfamily generate\+\_\+code.\+ts\+\_\+code\+\_\+gen = Path(root\+\_\+path, "{}tests/ts"{})}
+
+\Hypertarget{namespacegenerate__code_afab0549aa9839dc1a9a704c85ac0294c}\label{namespacegenerate__code_afab0549aa9839dc1a9a704c85ac0294c} 
+\index{generate\_code@{generate\_code}!TS\_OPTS@{TS\_OPTS}}
+\index{TS\_OPTS@{TS\_OPTS}!generate\_code@{generate\_code}}
+\doxysubsubsection{\texorpdfstring{TS\_OPTS}{TS\_OPTS}}
+{\footnotesize\ttfamily generate\+\_\+code.\+TS\+\_\+\+OPTS = \mbox{[}"{}-\/-\/ts"{}, "{}-\/-\/gen-\/\mbox{\hyperlink{idl__gen__ts_8cpp_a9b45b3e13bd9167aab02e17e08916231}{name}}-\/strings"{}\mbox{]}}
+
+\Hypertarget{namespacegenerate__code_a5fdb712882e7eec2c678bdc739ef2a71}\label{namespacegenerate__code_a5fdb712882e7eec2c678bdc739ef2a71} 
+\index{generate\_code@{generate\_code}!type\_field\_collsion\_schema@{type\_field\_collsion\_schema}}
+\index{type\_field\_collsion\_schema@{type\_field\_collsion\_schema}!generate\_code@{generate\_code}}
+\doxysubsubsection{\texorpdfstring{type\_field\_collsion\_schema}{type\_field\_collsion\_schema}}
+{\footnotesize\ttfamily str generate\+\_\+code.\+type\+\_\+field\+\_\+collsion\+\_\+schema = "{}type\+\_\+field\+\_\+collsion.\+fbs"{}}
+

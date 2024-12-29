@@ -1,0 +1,115 @@
+\doxysection{flatbuffers/src/idl\+\_\+gen\+\_\+ts.cpp File Reference}
+\hypertarget{idl__gen__ts_8cpp}{}\label{idl__gen__ts_8cpp}\index{flatbuffers/src/idl\_gen\_ts.cpp@{flatbuffers/src/idl\_gen\_ts.cpp}}
+{\ttfamily \#include "{}idl\+\_\+gen\+\_\+ts.\+h"{}}\newline
+{\ttfamily \#include $<$algorithm$>$}\newline
+{\ttfamily \#include $<$cassert$>$}\newline
+{\ttfamily \#include $<$cmath$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$unordered\+\_\+map$>$}\newline
+{\ttfamily \#include $<$unordered\+\_\+set$>$}\newline
+{\ttfamily \#include "{}flatbuffers/code\+\_\+generators.\+h"{}}\newline
+{\ttfamily \#include "{}flatbuffers/flatbuffers.\+h"{}}\newline
+{\ttfamily \#include "{}flatbuffers/flatc.\+h"{}}\newline
+{\ttfamily \#include "{}flatbuffers/idl.\+h"{}}\newline
+{\ttfamily \#include "{}flatbuffers/util.\+h"{}}\newline
+{\ttfamily \#include "{}idl\+\_\+namer.\+h"{}}\newline
+Include dependency graph for idl\+\_\+gen\+\_\+ts.\+cpp\+:
+% FIG 0
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classflatbuffers_1_1ts_1_1TsGenerator}{flatbuffers\+::ts\+::\+Ts\+Generator}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespaceflatbuffers}{flatbuffers}}
+\item 
+namespace \mbox{\hyperlink{namespaceflatbuffers_1_1ts}{flatbuffers\+::ts}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classflatbuffers_1_1CodeGenerator}{Code\+Generator}} $>$ \mbox{\hyperlink{namespaceflatbuffers_a0878fb4cef591fb64c44fc2e3ddbc528}{flatbuffers\+::\+New\+Ts\+Code\+Generator}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{idl__gen__ts_8cpp_a13a85d56055c1ba5ab15cb3564fc954d}\label{idl__gen__ts_8cpp_a13a85d56055c1ba5ab15cb3564fc954d} 
+\index{idl\_gen\_ts.cpp@{idl\_gen\_ts.cpp}!bare\_file\_path@{bare\_file\_path}}
+\index{bare\_file\_path@{bare\_file\_path}!idl\_gen\_ts.cpp@{idl\_gen\_ts.cpp}}
+\doxysubsubsection{\texorpdfstring{bare\_file\_path}{bare\_file\_path}}
+{\footnotesize\ttfamily std\+::string bare\+\_\+file\+\_\+path}
+
+\Hypertarget{idl__gen__ts_8cpp_aa8efab847e70d495cf5e0c5160df0352}\label{idl__gen__ts_8cpp_aa8efab847e70d495cf5e0c5160df0352} 
+\index{idl\_gen\_ts.cpp@{idl\_gen\_ts.cpp}!definitions@{definitions}}
+\index{definitions@{definitions}!idl\_gen\_ts.cpp@{idl\_gen\_ts.cpp}}
+\doxysubsubsection{\texorpdfstring{definitions}{definitions}}
+{\footnotesize\ttfamily std\+::map$<$std\+::string, const Definition \texorpdfstring{$\ast$}{*}$>$ definitions}
+
+\Hypertarget{idl__gen__ts_8cpp_a0b2cb7fc861167da37e98e9261554b7a}\label{idl__gen__ts_8cpp_a0b2cb7fc861167da37e98e9261554b7a} 
+\index{idl\_gen\_ts.cpp@{idl\_gen\_ts.cpp}!dependency@{dependency}}
+\index{dependency@{dependency}!idl\_gen\_ts.cpp@{idl\_gen\_ts.cpp}}
+\doxysubsubsection{\texorpdfstring{dependency}{dependency}}
+{\footnotesize\ttfamily const Definition\texorpdfstring{$\ast$}{*} dependency = nullptr}
+
+\Hypertarget{idl__gen__ts_8cpp_a18e9b07de39874d2b388484f7b8083d8}\label{idl__gen__ts_8cpp_a18e9b07de39874d2b388484f7b8083d8} 
+\index{idl\_gen\_ts.cpp@{idl\_gen\_ts.cpp}!dependent@{dependent}}
+\index{dependent@{dependent}!idl\_gen\_ts.cpp@{idl\_gen\_ts.cpp}}
+\doxysubsubsection{\texorpdfstring{dependent}{dependent}}
+{\footnotesize\ttfamily const Definition\texorpdfstring{$\ast$}{*} dependent = nullptr}
+
+\Hypertarget{idl__gen__ts_8cpp_ac1440c9d1896bd68c46d2945bf3dec38}\label{idl__gen__ts_8cpp_ac1440c9d1896bd68c46d2945bf3dec38} 
+\index{idl\_gen\_ts.cpp@{idl\_gen\_ts.cpp}!export\_statement@{export\_statement}}
+\index{export\_statement@{export\_statement}!idl\_gen\_ts.cpp@{idl\_gen\_ts.cpp}}
+\doxysubsubsection{\texorpdfstring{export\_statement}{export\_statement}}
+{\footnotesize\ttfamily std\+::string export\+\_\+statement}
+
+\Hypertarget{idl__gen__ts_8cpp_a01bc76119a191c5eaa74ceca20aedd14}\label{idl__gen__ts_8cpp_a01bc76119a191c5eaa74ceca20aedd14} 
+\index{idl\_gen\_ts.cpp@{idl\_gen\_ts.cpp}!filepath@{filepath}}
+\index{filepath@{filepath}!idl\_gen\_ts.cpp@{idl\_gen\_ts.cpp}}
+\doxysubsubsection{\texorpdfstring{filepath}{filepath}}
+{\footnotesize\ttfamily std\+::string filepath}
+
+\Hypertarget{idl__gen__ts_8cpp_af70ad502f4e7989e23444c3375fffc2a}\label{idl__gen__ts_8cpp_af70ad502f4e7989e23444c3375fffc2a} 
+\index{idl\_gen\_ts.cpp@{idl\_gen\_ts.cpp}!import\_statement@{import\_statement}}
+\index{import\_statement@{import\_statement}!idl\_gen\_ts.cpp@{idl\_gen\_ts.cpp}}
+\doxysubsubsection{\texorpdfstring{import\_statement}{import\_statement}}
+{\footnotesize\ttfamily std\+::string import\+\_\+statement}
+
+\Hypertarget{idl__gen__ts_8cpp_a9b45b3e13bd9167aab02e17e08916231}\label{idl__gen__ts_8cpp_a9b45b3e13bd9167aab02e17e08916231} 
+\index{idl\_gen\_ts.cpp@{idl\_gen\_ts.cpp}!name@{name}}
+\index{name@{name}!idl\_gen\_ts.cpp@{idl\_gen\_ts.cpp}}
+\doxysubsubsection{\texorpdfstring{name}{name}}
+{\footnotesize\ttfamily std\+::string name}
+
+\Hypertarget{idl__gen__ts_8cpp_a97618fe2e31e62d92ace9b30478febba}\label{idl__gen__ts_8cpp_a97618fe2e31e62d92ace9b30478febba} 
+\index{idl\_gen\_ts.cpp@{idl\_gen\_ts.cpp}!ns@{ns}}
+\index{ns@{ns}!idl\_gen\_ts.cpp@{idl\_gen\_ts.cpp}}
+\doxysubsubsection{\texorpdfstring{ns}{ns}}
+{\footnotesize\ttfamily const Namespace\texorpdfstring{$\ast$}{*} ns}
+
+\Hypertarget{idl__gen__ts_8cpp_a7f273b9fdca92300f7f34a2120efef29}\label{idl__gen__ts_8cpp_a7f273b9fdca92300f7f34a2120efef29} 
+\index{idl\_gen\_ts.cpp@{idl\_gen\_ts.cpp}!object\_name@{object\_name}}
+\index{object\_name@{object\_name}!idl\_gen\_ts.cpp@{idl\_gen\_ts.cpp}}
+\doxysubsubsection{\texorpdfstring{object\_name}{object\_name}}
+{\footnotesize\ttfamily std\+::string object\+\_\+name}
+
+\Hypertarget{idl__gen__ts_8cpp_a4d455efceee21e97d8e21ee40e9b4a20}\label{idl__gen__ts_8cpp_a4d455efceee21e97d8e21ee40e9b4a20} 
+\index{idl\_gen\_ts.cpp@{idl\_gen\_ts.cpp}!path@{path}}
+\index{path@{path}!idl\_gen\_ts.cpp@{idl\_gen\_ts.cpp}}
+\doxysubsubsection{\texorpdfstring{path}{path}}
+{\footnotesize\ttfamily std\+::string path}
+
+\Hypertarget{idl__gen__ts_8cpp_a374d0f05e32922f3d02974fbc2dd1076}\label{idl__gen__ts_8cpp_a374d0f05e32922f3d02974fbc2dd1076} 
+\index{idl\_gen\_ts.cpp@{idl\_gen\_ts.cpp}!rel\_file\_path@{rel\_file\_path}}
+\index{rel\_file\_path@{rel\_file\_path}!idl\_gen\_ts.cpp@{idl\_gen\_ts.cpp}}
+\doxysubsubsection{\texorpdfstring{rel\_file\_path}{rel\_file\_path}}
+{\footnotesize\ttfamily std\+::string rel\+\_\+file\+\_\+path}
+
+\Hypertarget{idl__gen__ts_8cpp_abfc9443064270a1b9262c6b893334705}\label{idl__gen__ts_8cpp_abfc9443064270a1b9262c6b893334705} 
+\index{idl\_gen\_ts.cpp@{idl\_gen\_ts.cpp}!symbolic\_name@{symbolic\_name}}
+\index{symbolic\_name@{symbolic\_name}!idl\_gen\_ts.cpp@{idl\_gen\_ts.cpp}}
+\doxysubsubsection{\texorpdfstring{symbolic\_name}{symbolic\_name}}
+{\footnotesize\ttfamily std\+::string symbolic\+\_\+name}
+

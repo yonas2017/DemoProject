@@ -1,0 +1,12 @@
+\doxysection{Flatbuffers\+\_\+cpp\+\_\+api}
+\hypertarget{group__flatbuffers__cpp__api}{}\label{group__flatbuffers__cpp__api}\index{Flatbuffers\_cpp\_api@{Flatbuffers\_cpp\_api}}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classflatbuffers_1_1FlatBufferBuilderImpl}{flatbuffers\+::\+Flat\+Buffer\+Builder\+Impl$<$ Is64\+Aware $>$}}
+\item 
+class \mbox{\hyperlink{classFlatBufferBuilder}{Flat\+Buffer\+Builder}}
+\begin{DoxyCompactList}\small\item\em Helper class to hold data needed in creation of a Flat\+Buffer. To serialize data, you typically call one of the {\ttfamily Create\texorpdfstring{$\ast$}{*}()} functions in the generated code, which in turn call a sequence of {\ttfamily Start\+Table}/ {\ttfamily Push\+Element}/{\ttfamily Add\+Element}/{\ttfamily End\+Table}, or the builtin {\ttfamily Create\+String}/ {\ttfamily Create\+Vector} functions. Do this is depth-\/first order to build up a tree to the root. {\ttfamily Finish()} wraps up the buffer ready for transport. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}

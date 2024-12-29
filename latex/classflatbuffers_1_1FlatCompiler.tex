@@ -1,0 +1,96 @@
+\doxysection{flatbuffers\+::Flat\+Compiler Class Reference}
+\hypertarget{classflatbuffers_1_1FlatCompiler}{}\label{classflatbuffers_1_1FlatCompiler}\index{flatbuffers::FlatCompiler@{flatbuffers::FlatCompiler}}
+
+
+{\ttfamily \#include $<$flatc.\+h$>$}
+
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structflatbuffers_1_1FlatCompiler_1_1InitParams}{Init\+Params}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef void(\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classflatbuffers_1_1FlatCompiler_a6eccbef426fd45f425c9af2ab3f722ce}{Warn\+Fn}}) (const \mbox{\hyperlink{classflatbuffers_1_1FlatCompiler}{Flat\+Compiler}} \texorpdfstring{$\ast$}{*}flatc, const std\+::string \&warn, bool show\+\_\+exe\+\_\+name)
+\item 
+typedef void(\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classflatbuffers_1_1FlatCompiler_a1e32baf1cdb659996fd415fdc3de9783}{Error\+Fn}}) (const \mbox{\hyperlink{classflatbuffers_1_1FlatCompiler}{Flat\+Compiler}} \texorpdfstring{$\ast$}{*}flatc, const std\+::string \&err, bool usage, bool show\+\_\+exe\+\_\+name)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classflatbuffers_1_1FlatCompiler_a5270fc97f139aa5e5c78e66f39d24140}{Flat\+Compiler}} (const \mbox{\hyperlink{structflatbuffers_1_1FlatCompiler_1_1InitParams}{Init\+Params}} \&params)
+\item 
+bool \mbox{\hyperlink{classflatbuffers_1_1FlatCompiler_a31acac48d380b110b504242425573553}{Register\+Code\+Generator}} (const \mbox{\hyperlink{structflatbuffers_1_1FlatCOption}{Flat\+COption}} \&option, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classflatbuffers_1_1CodeGenerator}{Code\+Generator}} $>$ code\+\_\+generator)
+\item 
+int \mbox{\hyperlink{classflatbuffers_1_1FlatCompiler_a51f164bbf2b6f68d1ad908930cd5d749}{Compile}} (const \mbox{\hyperlink{structflatbuffers_1_1FlatCOptions}{Flat\+COptions}} \&options)
+\item 
+std\+::string \mbox{\hyperlink{classflatbuffers_1_1FlatCompiler_abddc028af453426ccb1e191d6849d63d}{Get\+Short\+Usage\+String}} (const std\+::string \&program\+\_\+name) const
+\item 
+std\+::string \mbox{\hyperlink{classflatbuffers_1_1FlatCompiler_af0292afa9dec8191aad44600de890ab7}{Get\+Usage\+String}} (const std\+::string \&program\+\_\+name) const
+\item 
+\mbox{\hyperlink{structflatbuffers_1_1FlatCOptions}{Flat\+COptions}} \mbox{\hyperlink{classflatbuffers_1_1FlatCompiler_aa115c7b7ec476a407d877115e3969f64}{Parse\+From\+Command\+Line\+Arguments}} (int argc, const char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}argv)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Typedef Documentation}
+\Hypertarget{classflatbuffers_1_1FlatCompiler_a1e32baf1cdb659996fd415fdc3de9783}\label{classflatbuffers_1_1FlatCompiler_a1e32baf1cdb659996fd415fdc3de9783} 
+\index{flatbuffers::FlatCompiler@{flatbuffers::FlatCompiler}!ErrorFn@{ErrorFn}}
+\index{ErrorFn@{ErrorFn}!flatbuffers::FlatCompiler@{flatbuffers::FlatCompiler}}
+\doxysubsubsection{\texorpdfstring{ErrorFn}{ErrorFn}}
+{\footnotesize\ttfamily typedef void(\texorpdfstring{$\ast$}{*} flatbuffers\+::\+Flat\+Compiler\+::\+Error\+Fn) (const \mbox{\hyperlink{classflatbuffers_1_1FlatCompiler}{Flat\+Compiler}} \texorpdfstring{$\ast$}{*}flatc, const std\+::string \&err, bool usage, bool show\+\_\+exe\+\_\+name)}
+
+\Hypertarget{classflatbuffers_1_1FlatCompiler_a6eccbef426fd45f425c9af2ab3f722ce}\label{classflatbuffers_1_1FlatCompiler_a6eccbef426fd45f425c9af2ab3f722ce} 
+\index{flatbuffers::FlatCompiler@{flatbuffers::FlatCompiler}!WarnFn@{WarnFn}}
+\index{WarnFn@{WarnFn}!flatbuffers::FlatCompiler@{flatbuffers::FlatCompiler}}
+\doxysubsubsection{\texorpdfstring{WarnFn}{WarnFn}}
+{\footnotesize\ttfamily typedef void(\texorpdfstring{$\ast$}{*} flatbuffers\+::\+Flat\+Compiler\+::\+Warn\+Fn) (const \mbox{\hyperlink{classflatbuffers_1_1FlatCompiler}{Flat\+Compiler}} \texorpdfstring{$\ast$}{*}flatc, const std\+::string \&warn, bool show\+\_\+exe\+\_\+name)}
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classflatbuffers_1_1FlatCompiler_a5270fc97f139aa5e5c78e66f39d24140}\label{classflatbuffers_1_1FlatCompiler_a5270fc97f139aa5e5c78e66f39d24140} 
+\index{flatbuffers::FlatCompiler@{flatbuffers::FlatCompiler}!FlatCompiler@{FlatCompiler}}
+\index{FlatCompiler@{FlatCompiler}!flatbuffers::FlatCompiler@{flatbuffers::FlatCompiler}}
+\doxysubsubsection{\texorpdfstring{FlatCompiler()}{FlatCompiler()}}
+{\footnotesize\ttfamily flatbuffers\+::\+Flat\+Compiler\+::\+Flat\+Compiler (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structflatbuffers_1_1FlatCompiler_1_1InitParams}{Init\+Params}} \&}]{params }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classflatbuffers_1_1FlatCompiler_a51f164bbf2b6f68d1ad908930cd5d749}\label{classflatbuffers_1_1FlatCompiler_a51f164bbf2b6f68d1ad908930cd5d749} 
+\index{flatbuffers::FlatCompiler@{flatbuffers::FlatCompiler}!Compile@{Compile}}
+\index{Compile@{Compile}!flatbuffers::FlatCompiler@{flatbuffers::FlatCompiler}}
+\doxysubsubsection{\texorpdfstring{Compile()}{Compile()}}
+{\footnotesize\ttfamily int flatbuffers\+::\+Flat\+Compiler\+::\+Compile (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structflatbuffers_1_1FlatCOptions}{Flat\+COptions}} \&}]{options }\end{DoxyParamCaption})}
+
+\Hypertarget{classflatbuffers_1_1FlatCompiler_abddc028af453426ccb1e191d6849d63d}\label{classflatbuffers_1_1FlatCompiler_abddc028af453426ccb1e191d6849d63d} 
+\index{flatbuffers::FlatCompiler@{flatbuffers::FlatCompiler}!GetShortUsageString@{GetShortUsageString}}
+\index{GetShortUsageString@{GetShortUsageString}!flatbuffers::FlatCompiler@{flatbuffers::FlatCompiler}}
+\doxysubsubsection{\texorpdfstring{GetShortUsageString()}{GetShortUsageString()}}
+{\footnotesize\ttfamily std\+::string flatbuffers\+::\+Flat\+Compiler\+::\+Get\+Short\+Usage\+String (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{program\+\_\+name }\end{DoxyParamCaption}) const}
+
+\Hypertarget{classflatbuffers_1_1FlatCompiler_af0292afa9dec8191aad44600de890ab7}\label{classflatbuffers_1_1FlatCompiler_af0292afa9dec8191aad44600de890ab7} 
+\index{flatbuffers::FlatCompiler@{flatbuffers::FlatCompiler}!GetUsageString@{GetUsageString}}
+\index{GetUsageString@{GetUsageString}!flatbuffers::FlatCompiler@{flatbuffers::FlatCompiler}}
+\doxysubsubsection{\texorpdfstring{GetUsageString()}{GetUsageString()}}
+{\footnotesize\ttfamily std\+::string flatbuffers\+::\+Flat\+Compiler\+::\+Get\+Usage\+String (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{program\+\_\+name }\end{DoxyParamCaption}) const}
+
+\Hypertarget{classflatbuffers_1_1FlatCompiler_aa115c7b7ec476a407d877115e3969f64}\label{classflatbuffers_1_1FlatCompiler_aa115c7b7ec476a407d877115e3969f64} 
+\index{flatbuffers::FlatCompiler@{flatbuffers::FlatCompiler}!ParseFromCommandLineArguments@{ParseFromCommandLineArguments}}
+\index{ParseFromCommandLineArguments@{ParseFromCommandLineArguments}!flatbuffers::FlatCompiler@{flatbuffers::FlatCompiler}}
+\doxysubsubsection{\texorpdfstring{ParseFromCommandLineArguments()}{ParseFromCommandLineArguments()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structflatbuffers_1_1FlatCOptions}{Flat\+COptions}} flatbuffers\+::\+Flat\+Compiler\+::\+Parse\+From\+Command\+Line\+Arguments (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{const char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{argv }\end{DoxyParamCaption})}
+
+\Hypertarget{classflatbuffers_1_1FlatCompiler_a31acac48d380b110b504242425573553}\label{classflatbuffers_1_1FlatCompiler_a31acac48d380b110b504242425573553} 
+\index{flatbuffers::FlatCompiler@{flatbuffers::FlatCompiler}!RegisterCodeGenerator@{RegisterCodeGenerator}}
+\index{RegisterCodeGenerator@{RegisterCodeGenerator}!flatbuffers::FlatCompiler@{flatbuffers::FlatCompiler}}
+\doxysubsubsection{\texorpdfstring{RegisterCodeGenerator()}{RegisterCodeGenerator()}}
+{\footnotesize\ttfamily bool flatbuffers\+::\+Flat\+Compiler\+::\+Register\+Code\+Generator (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structflatbuffers_1_1FlatCOption}{Flat\+COption}} \&}]{option,  }\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classflatbuffers_1_1CodeGenerator}{Code\+Generator}} $>$}]{code\+\_\+generator }\end{DoxyParamCaption})}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+flatbuffers/include/flatbuffers/\mbox{\hyperlink{flatc_8h}{flatc.\+h}}\item 
+flatbuffers/src/\mbox{\hyperlink{flatc_8cpp}{flatc.\+cpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,137 @@
+\doxysection{flatbuffers\+::grpc\+::Message\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>} Class Template Reference}
+\hypertarget{classflatbuffers_1_1grpc_1_1Message}{}\label{classflatbuffers_1_1grpc_1_1Message}\index{flatbuffers::grpc::Message$<$ T $>$@{flatbuffers::grpc::Message$<$ T $>$}}
+
+
+{\ttfamily \#include $<$grpc.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classflatbuffers_1_1grpc_1_1Message_a8091fcd5486d28282035e0e1586fbced}{Message}} ()
+\item 
+\mbox{\hyperlink{classflatbuffers_1_1grpc_1_1Message_a5d599c8fc0c4bbb2d9f30581a8d545c5}{Message}} (\+::grpc\+::\+Slice slice)
+\item 
+\mbox{\hyperlink{classflatbuffers_1_1grpc_1_1Message}{Message}} \& \mbox{\hyperlink{classflatbuffers_1_1grpc_1_1Message_ae4844533b40a830bf6b3dcc65135211c}{operator=}} (const \mbox{\hyperlink{classflatbuffers_1_1grpc_1_1Message}{Message}} \&other)=delete
+\item 
+\mbox{\hyperlink{classflatbuffers_1_1grpc_1_1Message_aaa8483d6cbda185567f43b909590aeba}{Message}} (\mbox{\hyperlink{classflatbuffers_1_1grpc_1_1Message}{Message}} \&\&other)=default
+\item 
+\mbox{\hyperlink{classflatbuffers_1_1grpc_1_1Message_ac1b5058205cc40a6bfb2fe4493e50b0a}{Message}} (const \mbox{\hyperlink{classflatbuffers_1_1grpc_1_1Message}{Message}} \&other)=delete
+\item 
+\mbox{\hyperlink{classflatbuffers_1_1grpc_1_1Message}{Message}} \& \mbox{\hyperlink{classflatbuffers_1_1grpc_1_1Message_ac6d010dceeacf7cb2f52298bb06d6797}{operator=}} (\mbox{\hyperlink{classflatbuffers_1_1grpc_1_1Message}{Message}} \&\&other)=default
+\item 
+const uint8\+\_\+t \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classflatbuffers_1_1grpc_1_1Message_a0a871e1f6d0b7d093f7e4b45a5833fd8}{mutable\+\_\+data}} () const
+\item 
+const uint8\+\_\+t \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classflatbuffers_1_1grpc_1_1Message_a6f4a08ab75be322bc927bd8ccd30101d}{data}} () const
+\item 
+size\+\_\+t \mbox{\hyperlink{classflatbuffers_1_1grpc_1_1Message_aaf4b90f6d9a0373dcacd2bd27a08be05}{size}} () const
+\item 
+bool \mbox{\hyperlink{classflatbuffers_1_1grpc_1_1Message_acab487f89068069c51aed1f45288884d}{Verify}} () const
+\item 
+T \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classflatbuffers_1_1grpc_1_1Message_a43b4af3a3b44a1c40b525fae218365b0}{Get\+Mutable\+Root}} ()
+\item 
+const T \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classflatbuffers_1_1grpc_1_1Message_ad49e679cb1743bc5401e991ea08f9ae4}{Get\+Root}} () const
+\item 
+const \+::grpc\+::\+Slice \& \mbox{\hyperlink{classflatbuffers_1_1grpc_1_1Message_a471309b0b7a666ff3a37a1939dd30fec}{Borrow\+Slice}} () const
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classflatbuffers_1_1grpc_1_1Message_a8091fcd5486d28282035e0e1586fbced}\label{classflatbuffers_1_1grpc_1_1Message_a8091fcd5486d28282035e0e1586fbced} 
+\index{flatbuffers::grpc::Message$<$ T $>$@{flatbuffers::grpc::Message$<$ T $>$}!Message@{Message}}
+\index{Message@{Message}!flatbuffers::grpc::Message$<$ T $>$@{flatbuffers::grpc::Message$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{Message()}{Message()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+\mbox{\hyperlink{classflatbuffers_1_1grpc_1_1Message}{flatbuffers\+::grpc\+::\+Message}}$<$ T $>$\+::\+Message (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflatbuffers_1_1grpc_1_1Message_a5d599c8fc0c4bbb2d9f30581a8d545c5}\label{classflatbuffers_1_1grpc_1_1Message_a5d599c8fc0c4bbb2d9f30581a8d545c5} 
+\index{flatbuffers::grpc::Message$<$ T $>$@{flatbuffers::grpc::Message$<$ T $>$}!Message@{Message}}
+\index{Message@{Message}!flatbuffers::grpc::Message$<$ T $>$@{flatbuffers::grpc::Message$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{Message()}{Message()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+\mbox{\hyperlink{classflatbuffers_1_1grpc_1_1Message}{flatbuffers\+::grpc\+::\+Message}}$<$ T $>$\+::\+Message (\begin{DoxyParamCaption}\item[{\+::grpc\+::\+Slice}]{slice }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflatbuffers_1_1grpc_1_1Message_aaa8483d6cbda185567f43b909590aeba}\label{classflatbuffers_1_1grpc_1_1Message_aaa8483d6cbda185567f43b909590aeba} 
+\index{flatbuffers::grpc::Message$<$ T $>$@{flatbuffers::grpc::Message$<$ T $>$}!Message@{Message}}
+\index{Message@{Message}!flatbuffers::grpc::Message$<$ T $>$@{flatbuffers::grpc::Message$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{Message()}{Message()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+\mbox{\hyperlink{classflatbuffers_1_1grpc_1_1Message}{flatbuffers\+::grpc\+::\+Message}}$<$ T $>$\+::\+Message (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classflatbuffers_1_1grpc_1_1Message}{Message}}$<$ T $>$ \&\&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+\Hypertarget{classflatbuffers_1_1grpc_1_1Message_ac1b5058205cc40a6bfb2fe4493e50b0a}\label{classflatbuffers_1_1grpc_1_1Message_ac1b5058205cc40a6bfb2fe4493e50b0a} 
+\index{flatbuffers::grpc::Message$<$ T $>$@{flatbuffers::grpc::Message$<$ T $>$}!Message@{Message}}
+\index{Message@{Message}!flatbuffers::grpc::Message$<$ T $>$@{flatbuffers::grpc::Message$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{Message()}{Message()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+\mbox{\hyperlink{classflatbuffers_1_1grpc_1_1Message}{flatbuffers\+::grpc\+::\+Message}}$<$ T $>$\+::\+Message (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classflatbuffers_1_1grpc_1_1Message}{Message}}$<$ T $>$ \&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classflatbuffers_1_1grpc_1_1Message_a471309b0b7a666ff3a37a1939dd30fec}\label{classflatbuffers_1_1grpc_1_1Message_a471309b0b7a666ff3a37a1939dd30fec} 
+\index{flatbuffers::grpc::Message$<$ T $>$@{flatbuffers::grpc::Message$<$ T $>$}!BorrowSlice@{BorrowSlice}}
+\index{BorrowSlice@{BorrowSlice}!flatbuffers::grpc::Message$<$ T $>$@{flatbuffers::grpc::Message$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{BorrowSlice()}{BorrowSlice()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+const \+::grpc\+::\+Slice \& \mbox{\hyperlink{classflatbuffers_1_1grpc_1_1Message}{flatbuffers\+::grpc\+::\+Message}}$<$ T $>$\+::\+Borrow\+Slice (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflatbuffers_1_1grpc_1_1Message_a6f4a08ab75be322bc927bd8ccd30101d}\label{classflatbuffers_1_1grpc_1_1Message_a6f4a08ab75be322bc927bd8ccd30101d} 
+\index{flatbuffers::grpc::Message$<$ T $>$@{flatbuffers::grpc::Message$<$ T $>$}!data@{data}}
+\index{data@{data}!flatbuffers::grpc::Message$<$ T $>$@{flatbuffers::grpc::Message$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{data()}{data()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+const uint8\+\_\+t \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classflatbuffers_1_1grpc_1_1Message}{flatbuffers\+::grpc\+::\+Message}}$<$ T $>$\+::data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflatbuffers_1_1grpc_1_1Message_a43b4af3a3b44a1c40b525fae218365b0}\label{classflatbuffers_1_1grpc_1_1Message_a43b4af3a3b44a1c40b525fae218365b0} 
+\index{flatbuffers::grpc::Message$<$ T $>$@{flatbuffers::grpc::Message$<$ T $>$}!GetMutableRoot@{GetMutableRoot}}
+\index{GetMutableRoot@{GetMutableRoot}!flatbuffers::grpc::Message$<$ T $>$@{flatbuffers::grpc::Message$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{GetMutableRoot()}{GetMutableRoot()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+T \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classflatbuffers_1_1grpc_1_1Message}{flatbuffers\+::grpc\+::\+Message}}$<$ T $>$\+::\+Get\+Mutable\+Root (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflatbuffers_1_1grpc_1_1Message_ad49e679cb1743bc5401e991ea08f9ae4}\label{classflatbuffers_1_1grpc_1_1Message_ad49e679cb1743bc5401e991ea08f9ae4} 
+\index{flatbuffers::grpc::Message$<$ T $>$@{flatbuffers::grpc::Message$<$ T $>$}!GetRoot@{GetRoot}}
+\index{GetRoot@{GetRoot}!flatbuffers::grpc::Message$<$ T $>$@{flatbuffers::grpc::Message$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{GetRoot()}{GetRoot()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+const T \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classflatbuffers_1_1grpc_1_1Message}{flatbuffers\+::grpc\+::\+Message}}$<$ T $>$\+::\+Get\+Root (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflatbuffers_1_1grpc_1_1Message_a0a871e1f6d0b7d093f7e4b45a5833fd8}\label{classflatbuffers_1_1grpc_1_1Message_a0a871e1f6d0b7d093f7e4b45a5833fd8} 
+\index{flatbuffers::grpc::Message$<$ T $>$@{flatbuffers::grpc::Message$<$ T $>$}!mutable\_data@{mutable\_data}}
+\index{mutable\_data@{mutable\_data}!flatbuffers::grpc::Message$<$ T $>$@{flatbuffers::grpc::Message$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{mutable\_data()}{mutable\_data()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+const uint8\+\_\+t \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classflatbuffers_1_1grpc_1_1Message}{flatbuffers\+::grpc\+::\+Message}}$<$ T $>$\+::mutable\+\_\+data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflatbuffers_1_1grpc_1_1Message_ae4844533b40a830bf6b3dcc65135211c}\label{classflatbuffers_1_1grpc_1_1Message_ae4844533b40a830bf6b3dcc65135211c} 
+\index{flatbuffers::grpc::Message$<$ T $>$@{flatbuffers::grpc::Message$<$ T $>$}!operator=@{operator=}}
+\index{operator=@{operator=}!flatbuffers::grpc::Message$<$ T $>$@{flatbuffers::grpc::Message$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+\mbox{\hyperlink{classflatbuffers_1_1grpc_1_1Message}{Message}} \& \mbox{\hyperlink{classflatbuffers_1_1grpc_1_1Message}{flatbuffers\+::grpc\+::\+Message}}$<$ T $>$\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classflatbuffers_1_1grpc_1_1Message}{Message}}$<$ T $>$ \&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+\Hypertarget{classflatbuffers_1_1grpc_1_1Message_ac6d010dceeacf7cb2f52298bb06d6797}\label{classflatbuffers_1_1grpc_1_1Message_ac6d010dceeacf7cb2f52298bb06d6797} 
+\index{flatbuffers::grpc::Message$<$ T $>$@{flatbuffers::grpc::Message$<$ T $>$}!operator=@{operator=}}
+\index{operator=@{operator=}!flatbuffers::grpc::Message$<$ T $>$@{flatbuffers::grpc::Message$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+\mbox{\hyperlink{classflatbuffers_1_1grpc_1_1Message}{Message}} \& \mbox{\hyperlink{classflatbuffers_1_1grpc_1_1Message}{flatbuffers\+::grpc\+::\+Message}}$<$ T $>$\+::operator= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classflatbuffers_1_1grpc_1_1Message}{Message}}$<$ T $>$ \&\&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+\Hypertarget{classflatbuffers_1_1grpc_1_1Message_aaf4b90f6d9a0373dcacd2bd27a08be05}\label{classflatbuffers_1_1grpc_1_1Message_aaf4b90f6d9a0373dcacd2bd27a08be05} 
+\index{flatbuffers::grpc::Message$<$ T $>$@{flatbuffers::grpc::Message$<$ T $>$}!size@{size}}
+\index{size@{size}!flatbuffers::grpc::Message$<$ T $>$@{flatbuffers::grpc::Message$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{size()}{size()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+size\+\_\+t \mbox{\hyperlink{classflatbuffers_1_1grpc_1_1Message}{flatbuffers\+::grpc\+::\+Message}}$<$ T $>$\+::size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflatbuffers_1_1grpc_1_1Message_acab487f89068069c51aed1f45288884d}\label{classflatbuffers_1_1grpc_1_1Message_acab487f89068069c51aed1f45288884d} 
+\index{flatbuffers::grpc::Message$<$ T $>$@{flatbuffers::grpc::Message$<$ T $>$}!Verify@{Verify}}
+\index{Verify@{Verify}!flatbuffers::grpc::Message$<$ T $>$@{flatbuffers::grpc::Message$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{Verify()}{Verify()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+bool \mbox{\hyperlink{classflatbuffers_1_1grpc_1_1Message}{flatbuffers\+::grpc\+::\+Message}}$<$ T $>$\+::\+Verify (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+flatbuffers/include/flatbuffers/\mbox{\hyperlink{grpc_8h}{grpc.\+h}}\end{DoxyCompactItemize}

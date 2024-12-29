@@ -1,0 +1,89 @@
+\chapter{Use in Go}
+\hypertarget{flatbuffers_guide_use_go}{}\label{flatbuffers_guide_use_go}\index{Use in Go@{Use in Go}}
+\doxysection*{Before you get started}
+
+Before diving into the Flat\+Buffers usage in Go, it should be noted that the \doxysectlink{flatbuffers_guide_tutorial}{Tutorial}{0} page has a complete guide to general Flat\+Buffers usage in all of the supported languages (including Go). This page is designed to cover the nuances of Flat\+Buffers usage, specific to Go.
+
+You should also have read the \doxysectlink{flatbuffers_guide_building}{Building}{0} documentation to build {\ttfamily flatc} and should be familiar with \doxysectlink{flatbuffers_guide_using_schema_compiler}{Using the schema compiler}{0} and \doxysectlink{flatbuffers_guide_writing_schema}{Writing a schema}{0}.
+
+\doxysection*{Flat\+Buffers Go library code location}
+
+The code for the Flat\+Buffers Go library can be found at {\ttfamily flatbuffers/go}. You can browse the library code on the \href{https://github.com/google/flatbuffers/tree/master/go}{\texttt{ Flat\+Buffers Git\+Hub page}}.
+
+\doxysection*{Testing the Flat\+Buffers Go library}
+
+The code to test the Go library can be found at {\ttfamily flatbuffers/tests}. The test code itself is located in \href{https://github.com/google/
+flatbuffers/blob/master/tests/go_test.go}{\texttt{ go\+\_\+test.\+go}}.
+
+To run the tests, use the \href{https://github.com/google/flatbuffers/
+blob/master/tests/GoTest.sh}{\texttt{ Go\+Test.\+sh}} shell script.
+
+{\itshape Note\+: The shell script requires \href{https://golang.org/doc/install}{\texttt{ Go}} to be installed.}
+
+\doxysection*{Using the Flat\+Buffers Go library}
+
+{\itshape Note\+: See \doxysectlink{flatbuffers_guide_tutorial}{Tutorial}{0} for a more in-\/depth example of how to use Flat\+Buffers in Go.}
+
+Flat\+Buffers supports reading and writing binary Flat\+Buffers in Go.
+
+To use Flat\+Buffers in your own code, first generate Go classes from your schema with the {\ttfamily -\/-\/go} option to {\ttfamily flatc}. Then you can include both Flat\+Buffers and the generated code to read or write a Flat\+Buffer.
+
+For example, here is how you would read a Flat\+Buffer binary file in Go\+: First, include the library and generated code. Then read a Flat\+Buffer binary file into a {\ttfamily \mbox{[}\mbox{]}byte}, which you pass to the {\ttfamily Get\+Root\+As\+Monster} function\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{import\ (}
+\DoxyCodeLine{\ \ \ example\ "{}MyGame/Example"{}}
+\DoxyCodeLine{\ \ \ flatbuffers\ "{}github.com/google/flatbuffers/go"{}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ "{}os"{}}
+\DoxyCodeLine{)}
+\DoxyCodeLine{}
+\DoxyCodeLine{buf,\ err\ :=\ os.ReadFile("{}monster.dat"{})}
+\DoxyCodeLine{//\ handle\ err}
+\DoxyCodeLine{monster\ :=\ example.GetRootAsMonster(buf,\ 0)}
+
+\end{DoxyCode}
+
+
+Now you can access values like this\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{hp\ :=\ monster.Hp()}
+\DoxyCodeLine{pos\ :=\ monster.Pos(nil)}
+
+\end{DoxyCode}
+
+
+In some cases it\textquotesingle{}s necessary to modify values in an existing Flat\+Buffer in place (without creating a copy). For this reason, scalar fields of a Flatbuffer table or struct can be mutated.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{monster\ :=\ example.GetRootAsMonster(buf,\ 0)}
+\DoxyCodeLine{}
+\DoxyCodeLine{//\ Set\ table\ field.}
+\DoxyCodeLine{if\ ok\ :=\ monster.MutateHp(10);\ !ok\ \{}
+\DoxyCodeLine{\ \ panic("{}failed\ to\ mutate\ Hp"{})}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{}
+\DoxyCodeLine{//\ Set\ struct\ field.}
+\DoxyCodeLine{monster.Pos().MutateZ(4)}
+\DoxyCodeLine{}
+\DoxyCodeLine{//\ This\ mutation\ will\ fail\ because\ the\ mana\ field\ is\ not\ available\ in}
+\DoxyCodeLine{//\ the\ buffer.\ It\ should\ be\ set\ when\ creating\ the\ buffer.}
+\DoxyCodeLine{if\ ok\ :=\ monster.MutateMana(20);\ !ok\ \{}
+\DoxyCodeLine{\ \ panic("{}failed\ to\ mutate\ Hp"{})}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+The term {\ttfamily mutate} is used instead of {\ttfamily set} to indicate that this is a special use case. All mutate functions return a boolean value which is false if the field we\textquotesingle{}re trying to mutate is not available in the buffer.
+
+\doxysection*{Text Parsing}
+
+There currently is no support for parsing text (Schema\textquotesingle{}s and JSON) directly from Go, though you could use the C++ parser through cgo. Please see the C++ documentation for more on text parsing.
+
+~\newline
+ 

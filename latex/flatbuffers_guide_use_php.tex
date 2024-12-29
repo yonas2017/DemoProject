@@ -1,0 +1,76 @@
+\chapter{Use in PHP}
+\hypertarget{flatbuffers_guide_use_php}{}\label{flatbuffers_guide_use_php}\index{Use in PHP@{Use in PHP}}
+\doxysection*{Before you get started}
+
+Before diving into the Flat\+Buffers usage in PHP, it should be noted that the \doxysectlink{flatbuffers_guide_tutorial}{Tutorial}{0} page has a complete guide to general Flat\+Buffers usage in all of the supported languages (including PHP). This page is specifically designed to cover the nuances of Flat\+Buffers usage in PHP.
+
+You should also have read the \doxysectlink{flatbuffers_guide_building}{Building}{0} documentation to build {\ttfamily flatc} and should be familiar with \doxysectlink{flatbuffers_guide_using_schema_compiler}{Using the schema compiler}{0} and \doxysectlink{flatbuffers_guide_writing_schema}{Writing a schema}{0}.
+
+\doxysection*{Flat\+Buffers PHP library code location}
+
+The code for Flat\+Buffers PHP library can be found at {\ttfamily flatbuffers/php}. You can browse the library code on the \href{https://github.com/google/flatbuffers/tree/master/php}{\texttt{ Flat\+Buffers Git\+Hub page}}.
+
+\doxysection*{Testing the Flat\+Buffers Java\+Script library}
+
+The code to test the PHP library can be found at {\ttfamily flatbuffers/tests}. The test code itself is located in \href{https://github.com/google/
+flatbuffers/blob/master/tests/phpTest.php}{\texttt{ php\+Test.\+php}}.
+
+You can run the test with {\ttfamily php \doxylink{phpTest_8php}{php\+Test.\+php}} from the command line.
+
+{\itshape Note\+: The PHP test file requires \href{http://php.net/manual/en/install.php}{\texttt{ PHP}} to be installed.}
+
+\doxysection*{Using the\+Flat\+Buffers PHP library}
+
+{\itshape Note\+: See \doxysectlink{flatbuffers_guide_tutorial}{Tutorial}{0} for a more in-\/depth example of how to use Flat\+Buffers in PHP.}
+
+Flat\+Buffers supports both reading and writing Flat\+Buffers in PHP.
+
+To use Flat\+Buffers in your own code, first generate PHP classes from your schema with the {\ttfamily -\/-\/php} option to {\ttfamily flatc}. Then you can include both Flat\+Buffers and the generated code to read or write a Flat\+Buffer.
+
+For example, here is how you would read a Flat\+Buffer binary file in PHP\+: First, include the library and generated code (using the PSR {\ttfamily autoload} function). Then you can read a Flat\+Buffer binary file, which you pass the contents of to the {\ttfamily Get\+Root\+As\+Monster} function\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{comment}{//\ It\ is\ recommended\ that\ your\ use\ PSR\ autoload\ when\ using\ FlatBuffers\ in\ PHP.}}
+\DoxyCodeLine{\textcolor{comment}{//\ Here\ is\ an\ example:}}
+\DoxyCodeLine{\textcolor{keyword}{function}\ \mbox{\hyperlink{SampleBinary_8php_a80a3892ecad687b96b542109495df0f0}{\_\_autoload}}(\$class\_name)\ \{}
+\DoxyCodeLine{\ \ \textcolor{comment}{//\ The\ last\ segment\ of\ the\ class\ name\ matches\ the\ file\ name.}}
+\DoxyCodeLine{\ \ \$class\ =\ substr(\$class\_name,\ strrpos(\$class\_name,\ \textcolor{stringliteral}{"{}\(\backslash\)\(\backslash\)"{}})\ +\ 1);}
+\DoxyCodeLine{\ \ \$root\_dir\ =\ join(DIRECTORY\_SEPARATOR,\ array(dirname(dirname(\_\_FILE\_\_))));\ \textcolor{comment}{//\ \`{}flatbuffers`\ root.}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \textcolor{comment}{//\ Contains\ the\ \`{}*.php`\ files\ for\ the\ FlatBuffers\ library\ and\ the\ \`{}flatc`\ generated\ files.}}
+\DoxyCodeLine{\ \ \$paths\ =\ array(join(DIRECTORY\_SEPARATOR,\ array(\$root\_dir,\ \textcolor{stringliteral}{"{}php"{}})),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ join(DIRECTORY\_SEPARATOR,\ array(\$root\_dir,\ \textcolor{stringliteral}{"{}tests"{}},\ \textcolor{stringliteral}{"{}MyGame"{}},\ \textcolor{stringliteral}{"{}Example"{}})));}
+\DoxyCodeLine{\ \ \textcolor{keywordflow}{foreach}\ (\$paths\ as\ \$path)\ \{}
+\DoxyCodeLine{\ \ \ \ \$file\ =\ join(DIRECTORY\_SEPARATOR,\ array(\$path,\ \$class\ .\ \textcolor{stringliteral}{"{}.php"{}}));}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{if}\ (file\_exists(\$file))\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ require(\$file);}
+\DoxyCodeLine{\ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\ \ \}}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ Read\ the\ contents\ of\ the\ FlatBuffer\ binary\ file.}}
+\DoxyCodeLine{\$filename\ =\ \textcolor{stringliteral}{"{}monster.dat"{}};}
+\DoxyCodeLine{\$handle\ =\ fopen(\$filename,\ \textcolor{stringliteral}{"{}rb"{}});}
+\DoxyCodeLine{\$contents\ =\ \$fread(\$handle,\ filesize(\$filename));}
+\DoxyCodeLine{fclose(\$handle);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ Pass\ the\ contents\ to\ \`{}GetRootAsMonster`.}}
+\DoxyCodeLine{\$monster\ =\ \(\backslash\)MyGame\(\backslash\)Example\(\backslash\)Monster::GetRootAsMonster(\$contents);}
+
+\end{DoxyCode}
+
+
+Now you can access values like this\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\$hp\ =\ \$monster-\/>GetHp();}
+\DoxyCodeLine{\$pos\ =\ \$monster-\/>GetPos();}
+
+\end{DoxyCode}
+
+
+\doxysection*{Text Parsing}
+
+There currently is no support for parsing text (Schema\textquotesingle{}s and JSON) directly from PHP. 

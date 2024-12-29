@@ -1,0 +1,173 @@
+\doxysection{python.\+flatbuffers.\+flexbuffers.\+Value Class Reference}
+\hypertarget{classpython_1_1flatbuffers_1_1flexbuffers_1_1Value}{}\label{classpython_1_1flatbuffers_1_1flexbuffers_1_1Value}\index{python.flatbuffers.flexbuffers.Value@{python.flatbuffers.flexbuffers.Value}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classpython_1_1flatbuffers_1_1flexbuffers_1_1Value_a9588c4685438cba26dbe256013de667b}{\+\_\+\+\_\+init\+\_\+\+\_\+}} (self, \mbox{\hyperlink{annotated__binary__text__gen_8cpp_a5c33da5929c9f2f9ef8d006d2350e6ec}{value}}, type\+\_\+, min\+\_\+bit\+\_\+width)
+\item 
+\mbox{\hyperlink{classpython_1_1flatbuffers_1_1flexbuffers_1_1Value_a66f8af6c84b11e41c36479344dfe38a6}{Value}} (self)
+\item 
+\mbox{\hyperlink{classpython_1_1flatbuffers_1_1flexbuffers_1_1Value_a4a2e9005acf0a55743ad106f7feaef57}{Type}} (self)
+\item 
+\mbox{\hyperlink{classpython_1_1flatbuffers_1_1flexbuffers_1_1Value_a36c0053b8fcf9f857f17775604519f65}{Min\+Bit\+Width}} (self)
+\item 
+\mbox{\hyperlink{classpython_1_1flatbuffers_1_1flexbuffers_1_1Value_a29dd70cd20a620863e857232f1716f92}{Stored\+Packed\+Type}} (self, parent\+\_\+bit\+\_\+width=\mbox{\hyperlink{classpython_1_1flatbuffers_1_1flexbuffers_1_1BitWidth_a77765ef47fd0ec1099fba0e750e0179c}{Bit\+Width.\+W8}})
+\item 
+\mbox{\hyperlink{classpython_1_1flatbuffers_1_1flexbuffers_1_1Value_a86b6d819085772b43d7bf7f74e186334}{Elem\+Width}} (self, buf\+\_\+size, elem\+\_\+index=0)
+\item 
+\mbox{\hyperlink{classpython_1_1flatbuffers_1_1flexbuffers_1_1Value_aec31a64809ea2578f758a809520af5bf}{Stored\+Width}} (self, parent\+\_\+bit\+\_\+width=\mbox{\hyperlink{classpython_1_1flatbuffers_1_1flexbuffers_1_1BitWidth_a77765ef47fd0ec1099fba0e750e0179c}{Bit\+Width.\+W8}})
+\item 
+\mbox{\hyperlink{classpython_1_1flatbuffers_1_1flexbuffers_1_1Value_af8b25a3146ebd76e8770383b6ed774ee}{\+\_\+\+\_\+repr\+\_\+\+\_\+}} (self)
+\item 
+\mbox{\hyperlink{classpython_1_1flatbuffers_1_1flexbuffers_1_1Value_a6ba8783e030060d91406cdab45c0ceff}{\+\_\+\+\_\+str\+\_\+\+\_\+}} (self)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classpython_1_1flatbuffers_1_1flexbuffers_1_1Value_ad8bcb06330c4dbd8d40dbea5aef03385}{Null}} ()
+\item 
+\mbox{\hyperlink{classpython_1_1flatbuffers_1_1flexbuffers_1_1Value_a126a27eeacc60c1a149c26c0cfb6e5a0}{Bool}} (\mbox{\hyperlink{annotated__binary__text__gen_8cpp_a5c33da5929c9f2f9ef8d006d2350e6ec}{value}})
+\item 
+\mbox{\hyperlink{classpython_1_1flatbuffers_1_1flexbuffers_1_1Value_a3aed6bf4116b70b5264121e9d15de285}{Int}} (\mbox{\hyperlink{annotated__binary__text__gen_8cpp_a5c33da5929c9f2f9ef8d006d2350e6ec}{value}}, bit\+\_\+width)
+\item 
+\mbox{\hyperlink{classpython_1_1flatbuffers_1_1flexbuffers_1_1Value_a2d2b69b0538829a29f6e6f0bff2e056c}{UInt}} (\mbox{\hyperlink{annotated__binary__text__gen_8cpp_a5c33da5929c9f2f9ef8d006d2350e6ec}{value}}, bit\+\_\+width)
+\item 
+\mbox{\hyperlink{classpython_1_1flatbuffers_1_1flexbuffers_1_1Value_afb6ba31a8a66ab1a373d635185c38a2d}{Float}} (\mbox{\hyperlink{annotated__binary__text__gen_8cpp_a5c33da5929c9f2f9ef8d006d2350e6ec}{value}}, bit\+\_\+width)
+\item 
+\mbox{\hyperlink{classpython_1_1flatbuffers_1_1flexbuffers_1_1Value_a69fd6904ac837c7f7f3313f1cb8dad19}{Key}} (offset)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classpython_1_1flatbuffers_1_1flexbuffers_1_1Value_a1be0f7273b9439dfa6b1718b3d1ae8d4}{\+\_\+value}}
+\item 
+\mbox{\hyperlink{classpython_1_1flatbuffers_1_1flexbuffers_1_1Value_aed0a1211b89bc55b9b21c74b7caff1fb}{\+\_\+type}}
+\item 
+\mbox{\hyperlink{classpython_1_1flatbuffers_1_1flexbuffers_1_1Value_ae6377498ed04596fe4d208e63a06b2a5}{\+\_\+min\+\_\+bit\+\_\+width}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}Class to represent given value during the encoding process.\end{DoxyVerb}
+ 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classpython_1_1flatbuffers_1_1flexbuffers_1_1Value_a9588c4685438cba26dbe256013de667b}\label{classpython_1_1flatbuffers_1_1flexbuffers_1_1Value_a9588c4685438cba26dbe256013de667b} 
+\index{python.flatbuffers.flexbuffers.Value@{python.flatbuffers.flexbuffers.Value}!\_\_init\_\_@{\_\_init\_\_}}
+\index{\_\_init\_\_@{\_\_init\_\_}!python.flatbuffers.flexbuffers.Value@{python.flatbuffers.flexbuffers.Value}}
+\doxysubsubsection{\texorpdfstring{\_\_init\_\_()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily python.\+flatbuffers.\+flexbuffers.\+Value.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{value,  }\item[{}]{type\+\_\+,  }\item[{}]{min\+\_\+bit\+\_\+width }\end{DoxyParamCaption})}
+
+\Hypertarget{classpython_1_1flatbuffers_1_1flexbuffers_1_1Value_a66f8af6c84b11e41c36479344dfe38a6}\label{classpython_1_1flatbuffers_1_1flexbuffers_1_1Value_a66f8af6c84b11e41c36479344dfe38a6} 
+\index{python.flatbuffers.flexbuffers.Value@{python.flatbuffers.flexbuffers.Value}!Value@{Value}}
+\index{Value@{Value}!python.flatbuffers.flexbuffers.Value@{python.flatbuffers.flexbuffers.Value}}
+\doxysubsubsection{\texorpdfstring{Value()}{Value()}}
+{\footnotesize\ttfamily python.\+flatbuffers.\+flexbuffers.\+Value.\+Value (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classpython_1_1flatbuffers_1_1flexbuffers_1_1Value_af8b25a3146ebd76e8770383b6ed774ee}\label{classpython_1_1flatbuffers_1_1flexbuffers_1_1Value_af8b25a3146ebd76e8770383b6ed774ee} 
+\index{python.flatbuffers.flexbuffers.Value@{python.flatbuffers.flexbuffers.Value}!\_\_repr\_\_@{\_\_repr\_\_}}
+\index{\_\_repr\_\_@{\_\_repr\_\_}!python.flatbuffers.flexbuffers.Value@{python.flatbuffers.flexbuffers.Value}}
+\doxysubsubsection{\texorpdfstring{\_\_repr\_\_()}{\_\_repr\_\_()}}
+{\footnotesize\ttfamily python.\+flatbuffers.\+flexbuffers.\+Value.\+\_\+\+\_\+repr\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\Hypertarget{classpython_1_1flatbuffers_1_1flexbuffers_1_1Value_a6ba8783e030060d91406cdab45c0ceff}\label{classpython_1_1flatbuffers_1_1flexbuffers_1_1Value_a6ba8783e030060d91406cdab45c0ceff} 
+\index{python.flatbuffers.flexbuffers.Value@{python.flatbuffers.flexbuffers.Value}!\_\_str\_\_@{\_\_str\_\_}}
+\index{\_\_str\_\_@{\_\_str\_\_}!python.flatbuffers.flexbuffers.Value@{python.flatbuffers.flexbuffers.Value}}
+\doxysubsubsection{\texorpdfstring{\_\_str\_\_()}{\_\_str\_\_()}}
+{\footnotesize\ttfamily python.\+flatbuffers.\+flexbuffers.\+Value.\+\_\+\+\_\+str\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\Hypertarget{classpython_1_1flatbuffers_1_1flexbuffers_1_1Value_a126a27eeacc60c1a149c26c0cfb6e5a0}\label{classpython_1_1flatbuffers_1_1flexbuffers_1_1Value_a126a27eeacc60c1a149c26c0cfb6e5a0} 
+\index{python.flatbuffers.flexbuffers.Value@{python.flatbuffers.flexbuffers.Value}!Bool@{Bool}}
+\index{Bool@{Bool}!python.flatbuffers.flexbuffers.Value@{python.flatbuffers.flexbuffers.Value}}
+\doxysubsubsection{\texorpdfstring{Bool()}{Bool()}}
+{\footnotesize\ttfamily python.\+flatbuffers.\+flexbuffers.\+Value.\+Bool (\begin{DoxyParamCaption}\item[{}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{classpython_1_1flatbuffers_1_1flexbuffers_1_1Value_a86b6d819085772b43d7bf7f74e186334}\label{classpython_1_1flatbuffers_1_1flexbuffers_1_1Value_a86b6d819085772b43d7bf7f74e186334} 
+\index{python.flatbuffers.flexbuffers.Value@{python.flatbuffers.flexbuffers.Value}!ElemWidth@{ElemWidth}}
+\index{ElemWidth@{ElemWidth}!python.flatbuffers.flexbuffers.Value@{python.flatbuffers.flexbuffers.Value}}
+\doxysubsubsection{\texorpdfstring{ElemWidth()}{ElemWidth()}}
+{\footnotesize\ttfamily python.\+flatbuffers.\+flexbuffers.\+Value.\+Elem\+Width (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{buf\+\_\+size,  }\item[{}]{elem\+\_\+index = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+\Hypertarget{classpython_1_1flatbuffers_1_1flexbuffers_1_1Value_afb6ba31a8a66ab1a373d635185c38a2d}\label{classpython_1_1flatbuffers_1_1flexbuffers_1_1Value_afb6ba31a8a66ab1a373d635185c38a2d} 
+\index{python.flatbuffers.flexbuffers.Value@{python.flatbuffers.flexbuffers.Value}!Float@{Float}}
+\index{Float@{Float}!python.flatbuffers.flexbuffers.Value@{python.flatbuffers.flexbuffers.Value}}
+\doxysubsubsection{\texorpdfstring{Float()}{Float()}}
+{\footnotesize\ttfamily python.\+flatbuffers.\+flexbuffers.\+Value.\+Float (\begin{DoxyParamCaption}\item[{}]{value,  }\item[{}]{bit\+\_\+width }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{classpython_1_1flatbuffers_1_1flexbuffers_1_1Value_a3aed6bf4116b70b5264121e9d15de285}\label{classpython_1_1flatbuffers_1_1flexbuffers_1_1Value_a3aed6bf4116b70b5264121e9d15de285} 
+\index{python.flatbuffers.flexbuffers.Value@{python.flatbuffers.flexbuffers.Value}!Int@{Int}}
+\index{Int@{Int}!python.flatbuffers.flexbuffers.Value@{python.flatbuffers.flexbuffers.Value}}
+\doxysubsubsection{\texorpdfstring{Int()}{Int()}}
+{\footnotesize\ttfamily python.\+flatbuffers.\+flexbuffers.\+Value.\+Int (\begin{DoxyParamCaption}\item[{}]{value,  }\item[{}]{bit\+\_\+width }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{classpython_1_1flatbuffers_1_1flexbuffers_1_1Value_a69fd6904ac837c7f7f3313f1cb8dad19}\label{classpython_1_1flatbuffers_1_1flexbuffers_1_1Value_a69fd6904ac837c7f7f3313f1cb8dad19} 
+\index{python.flatbuffers.flexbuffers.Value@{python.flatbuffers.flexbuffers.Value}!Key@{Key}}
+\index{Key@{Key}!python.flatbuffers.flexbuffers.Value@{python.flatbuffers.flexbuffers.Value}}
+\doxysubsubsection{\texorpdfstring{Key()}{Key()}}
+{\footnotesize\ttfamily python.\+flatbuffers.\+flexbuffers.\+Value.\+Key (\begin{DoxyParamCaption}\item[{}]{offset }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{classpython_1_1flatbuffers_1_1flexbuffers_1_1Value_a36c0053b8fcf9f857f17775604519f65}\label{classpython_1_1flatbuffers_1_1flexbuffers_1_1Value_a36c0053b8fcf9f857f17775604519f65} 
+\index{python.flatbuffers.flexbuffers.Value@{python.flatbuffers.flexbuffers.Value}!MinBitWidth@{MinBitWidth}}
+\index{MinBitWidth@{MinBitWidth}!python.flatbuffers.flexbuffers.Value@{python.flatbuffers.flexbuffers.Value}}
+\doxysubsubsection{\texorpdfstring{MinBitWidth()}{MinBitWidth()}}
+{\footnotesize\ttfamily python.\+flatbuffers.\+flexbuffers.\+Value.\+Min\+Bit\+Width (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\Hypertarget{classpython_1_1flatbuffers_1_1flexbuffers_1_1Value_ad8bcb06330c4dbd8d40dbea5aef03385}\label{classpython_1_1flatbuffers_1_1flexbuffers_1_1Value_ad8bcb06330c4dbd8d40dbea5aef03385} 
+\index{python.flatbuffers.flexbuffers.Value@{python.flatbuffers.flexbuffers.Value}!Null@{Null}}
+\index{Null@{Null}!python.flatbuffers.flexbuffers.Value@{python.flatbuffers.flexbuffers.Value}}
+\doxysubsubsection{\texorpdfstring{Null()}{Null()}}
+{\footnotesize\ttfamily python.\+flatbuffers.\+flexbuffers.\+Value.\+Null (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{classpython_1_1flatbuffers_1_1flexbuffers_1_1Value_a29dd70cd20a620863e857232f1716f92}\label{classpython_1_1flatbuffers_1_1flexbuffers_1_1Value_a29dd70cd20a620863e857232f1716f92} 
+\index{python.flatbuffers.flexbuffers.Value@{python.flatbuffers.flexbuffers.Value}!StoredPackedType@{StoredPackedType}}
+\index{StoredPackedType@{StoredPackedType}!python.flatbuffers.flexbuffers.Value@{python.flatbuffers.flexbuffers.Value}}
+\doxysubsubsection{\texorpdfstring{StoredPackedType()}{StoredPackedType()}}
+{\footnotesize\ttfamily python.\+flatbuffers.\+flexbuffers.\+Value.\+Stored\+Packed\+Type (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{parent\+\_\+bit\+\_\+width = {\ttfamily \mbox{\hyperlink{classpython_1_1flatbuffers_1_1flexbuffers_1_1BitWidth_a77765ef47fd0ec1099fba0e750e0179c}{Bit\+Width.\+W8}}} }\end{DoxyParamCaption})}
+
+\Hypertarget{classpython_1_1flatbuffers_1_1flexbuffers_1_1Value_aec31a64809ea2578f758a809520af5bf}\label{classpython_1_1flatbuffers_1_1flexbuffers_1_1Value_aec31a64809ea2578f758a809520af5bf} 
+\index{python.flatbuffers.flexbuffers.Value@{python.flatbuffers.flexbuffers.Value}!StoredWidth@{StoredWidth}}
+\index{StoredWidth@{StoredWidth}!python.flatbuffers.flexbuffers.Value@{python.flatbuffers.flexbuffers.Value}}
+\doxysubsubsection{\texorpdfstring{StoredWidth()}{StoredWidth()}}
+{\footnotesize\ttfamily python.\+flatbuffers.\+flexbuffers.\+Value.\+Stored\+Width (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{parent\+\_\+bit\+\_\+width = {\ttfamily \mbox{\hyperlink{classpython_1_1flatbuffers_1_1flexbuffers_1_1BitWidth_a77765ef47fd0ec1099fba0e750e0179c}{Bit\+Width.\+W8}}} }\end{DoxyParamCaption})}
+
+\Hypertarget{classpython_1_1flatbuffers_1_1flexbuffers_1_1Value_a4a2e9005acf0a55743ad106f7feaef57}\label{classpython_1_1flatbuffers_1_1flexbuffers_1_1Value_a4a2e9005acf0a55743ad106f7feaef57} 
+\index{python.flatbuffers.flexbuffers.Value@{python.flatbuffers.flexbuffers.Value}!Type@{Type}}
+\index{Type@{Type}!python.flatbuffers.flexbuffers.Value@{python.flatbuffers.flexbuffers.Value}}
+\doxysubsubsection{\texorpdfstring{Type()}{Type()}}
+{\footnotesize\ttfamily python.\+flatbuffers.\+flexbuffers.\+Value.\+Type (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\Hypertarget{classpython_1_1flatbuffers_1_1flexbuffers_1_1Value_a2d2b69b0538829a29f6e6f0bff2e056c}\label{classpython_1_1flatbuffers_1_1flexbuffers_1_1Value_a2d2b69b0538829a29f6e6f0bff2e056c} 
+\index{python.flatbuffers.flexbuffers.Value@{python.flatbuffers.flexbuffers.Value}!UInt@{UInt}}
+\index{UInt@{UInt}!python.flatbuffers.flexbuffers.Value@{python.flatbuffers.flexbuffers.Value}}
+\doxysubsubsection{\texorpdfstring{UInt()}{UInt()}}
+{\footnotesize\ttfamily python.\+flatbuffers.\+flexbuffers.\+Value.\+UInt (\begin{DoxyParamCaption}\item[{}]{value,  }\item[{}]{bit\+\_\+width }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classpython_1_1flatbuffers_1_1flexbuffers_1_1Value_ae6377498ed04596fe4d208e63a06b2a5}\label{classpython_1_1flatbuffers_1_1flexbuffers_1_1Value_ae6377498ed04596fe4d208e63a06b2a5} 
+\index{python.flatbuffers.flexbuffers.Value@{python.flatbuffers.flexbuffers.Value}!\_min\_bit\_width@{\_min\_bit\_width}}
+\index{\_min\_bit\_width@{\_min\_bit\_width}!python.flatbuffers.flexbuffers.Value@{python.flatbuffers.flexbuffers.Value}}
+\doxysubsubsection{\texorpdfstring{\_min\_bit\_width}{\_min\_bit\_width}}
+{\footnotesize\ttfamily python.\+flatbuffers.\+flexbuffers.\+Value.\+\_\+min\+\_\+bit\+\_\+width\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{classpython_1_1flatbuffers_1_1flexbuffers_1_1Value_aed0a1211b89bc55b9b21c74b7caff1fb}\label{classpython_1_1flatbuffers_1_1flexbuffers_1_1Value_aed0a1211b89bc55b9b21c74b7caff1fb} 
+\index{python.flatbuffers.flexbuffers.Value@{python.flatbuffers.flexbuffers.Value}!\_type@{\_type}}
+\index{\_type@{\_type}!python.flatbuffers.flexbuffers.Value@{python.flatbuffers.flexbuffers.Value}}
+\doxysubsubsection{\texorpdfstring{\_type}{\_type}}
+{\footnotesize\ttfamily python.\+flatbuffers.\+flexbuffers.\+Value.\+\_\+type\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{classpython_1_1flatbuffers_1_1flexbuffers_1_1Value_a1be0f7273b9439dfa6b1718b3d1ae8d4}\label{classpython_1_1flatbuffers_1_1flexbuffers_1_1Value_a1be0f7273b9439dfa6b1718b3d1ae8d4} 
+\index{python.flatbuffers.flexbuffers.Value@{python.flatbuffers.flexbuffers.Value}!\_value@{\_value}}
+\index{\_value@{\_value}!python.flatbuffers.flexbuffers.Value@{python.flatbuffers.flexbuffers.Value}}
+\doxysubsubsection{\texorpdfstring{\_value}{\_value}}
+{\footnotesize\ttfamily python.\+flatbuffers.\+flexbuffers.\+Value.\+\_\+value\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+flatbuffers/python/flatbuffers/\mbox{\hyperlink{flexbuffers_8py}{flexbuffers.\+py}}\end{DoxyCompactItemize}

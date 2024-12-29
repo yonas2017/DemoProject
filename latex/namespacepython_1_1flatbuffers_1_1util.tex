@@ -1,0 +1,45 @@
+\doxysection{python.\+flatbuffers.\+util Namespace Reference}
+\hypertarget{namespacepython_1_1flatbuffers_1_1util}{}\label{namespacepython_1_1flatbuffers_1_1util}\index{python.flatbuffers.util@{python.flatbuffers.util}}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespacepython_1_1flatbuffers_1_1util_aff2efa450985895a531d272f66642619}{Get\+Size\+Prefix}} (buf, offset)
+\item 
+\mbox{\hyperlink{namespacepython_1_1flatbuffers_1_1util_ae1d914fc3bca9a1cf8ebd884c870f62e}{Get\+Buffer\+Identifier}} (buf, offset, size\+\_\+prefixed=False)
+\item 
+\mbox{\hyperlink{namespacepython_1_1flatbuffers_1_1util_ae8ccf2bd03e562c82d9218337e25d3fe}{Buffer\+Has\+Identifier}} (buf, offset, file\+\_\+identifier, size\+\_\+prefixed=False)
+\item 
+\mbox{\hyperlink{namespacepython_1_1flatbuffers_1_1util_ac470336cc68fec22c36dedd205ccb329}{Remove\+Size\+Prefix}} (buf, offset)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{namespacepython_1_1flatbuffers_1_1util_ae8ccf2bd03e562c82d9218337e25d3fe}\label{namespacepython_1_1flatbuffers_1_1util_ae8ccf2bd03e562c82d9218337e25d3fe} 
+\index{python.flatbuffers.util@{python.flatbuffers.util}!BufferHasIdentifier@{BufferHasIdentifier}}
+\index{BufferHasIdentifier@{BufferHasIdentifier}!python.flatbuffers.util@{python.flatbuffers.util}}
+\doxysubsubsection{\texorpdfstring{BufferHasIdentifier()}{BufferHasIdentifier()}}
+{\footnotesize\ttfamily python.\+flatbuffers.\+util.\+Buffer\+Has\+Identifier (\begin{DoxyParamCaption}\item[{}]{buf,  }\item[{}]{offset,  }\item[{}]{file\+\_\+identifier,  }\item[{}]{size\+\_\+prefixed = {\ttfamily False} }\end{DoxyParamCaption})}
+
+\Hypertarget{namespacepython_1_1flatbuffers_1_1util_ae1d914fc3bca9a1cf8ebd884c870f62e}\label{namespacepython_1_1flatbuffers_1_1util_ae1d914fc3bca9a1cf8ebd884c870f62e} 
+\index{python.flatbuffers.util@{python.flatbuffers.util}!GetBufferIdentifier@{GetBufferIdentifier}}
+\index{GetBufferIdentifier@{GetBufferIdentifier}!python.flatbuffers.util@{python.flatbuffers.util}}
+\doxysubsubsection{\texorpdfstring{GetBufferIdentifier()}{GetBufferIdentifier()}}
+{\footnotesize\ttfamily python.\+flatbuffers.\+util.\+Get\+Buffer\+Identifier (\begin{DoxyParamCaption}\item[{}]{buf,  }\item[{}]{offset,  }\item[{}]{size\+\_\+prefixed = {\ttfamily False} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Extract the file_identifier from a buffer\end{DoxyVerb}
+ \Hypertarget{namespacepython_1_1flatbuffers_1_1util_aff2efa450985895a531d272f66642619}\label{namespacepython_1_1flatbuffers_1_1util_aff2efa450985895a531d272f66642619} 
+\index{python.flatbuffers.util@{python.flatbuffers.util}!GetSizePrefix@{GetSizePrefix}}
+\index{GetSizePrefix@{GetSizePrefix}!python.flatbuffers.util@{python.flatbuffers.util}}
+\doxysubsubsection{\texorpdfstring{GetSizePrefix()}{GetSizePrefix()}}
+{\footnotesize\ttfamily python.\+flatbuffers.\+util.\+Get\+Size\+Prefix (\begin{DoxyParamCaption}\item[{}]{buf,  }\item[{}]{offset }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Extract the size prefix from a buffer.\end{DoxyVerb}
+ \Hypertarget{namespacepython_1_1flatbuffers_1_1util_ac470336cc68fec22c36dedd205ccb329}\label{namespacepython_1_1flatbuffers_1_1util_ac470336cc68fec22c36dedd205ccb329} 
+\index{python.flatbuffers.util@{python.flatbuffers.util}!RemoveSizePrefix@{RemoveSizePrefix}}
+\index{RemoveSizePrefix@{RemoveSizePrefix}!python.flatbuffers.util@{python.flatbuffers.util}}
+\doxysubsubsection{\texorpdfstring{RemoveSizePrefix()}{RemoveSizePrefix()}}
+{\footnotesize\ttfamily python.\+flatbuffers.\+util.\+Remove\+Size\+Prefix (\begin{DoxyParamCaption}\item[{}]{buf,  }\item[{}]{offset }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}    Create a slice of a size-prefixed buffer that has
+    its position advanced just past the size prefix.\end{DoxyVerb}
+ 

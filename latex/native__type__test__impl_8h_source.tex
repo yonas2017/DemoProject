@@ -1,0 +1,41 @@
+\doxysection{native\+\_\+type\+\_\+test\+\_\+impl.\+h}
+\hypertarget{native__type__test__impl_8h_source}{}\label{native__type__test__impl_8h_source}\index{flatbuffers/tests/native\_type\_test\_impl.h@{flatbuffers/tests/native\_type\_test\_impl.h}}
+\mbox{\hyperlink{native__type__test__impl_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ NATIVE\_TYPE\_TEST\_IMPL\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ NATIVE\_TYPE\_TEST\_IMPL\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceNative}{Native}}\ \{}
+\DoxyCodeLine{00005\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structNative_1_1Vector3D}{Vector3D}}\ \{}
+\DoxyCodeLine{00006\ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{structNative_1_1Vector3D_a415c2640ee6b98a3bc393614969d72fa}{x}};}
+\DoxyCodeLine{00007\ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{structNative_1_1Vector3D_adcba89bee67e0a2b01001ef4ed6cbdc7}{y}};}
+\DoxyCodeLine{00008\ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{structNative_1_1Vector3D_a6eaa0d59423025fc48faa68cc378f788}{z}};}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \ \ \mbox{\hyperlink{structNative_1_1Vector3D_a0d31a49b927821ad06640069743933b2}{Vector3D}}()\ \{}
+\DoxyCodeLine{00011\ \ \ \ \ \mbox{\hyperlink{structNative_1_1Vector3D_a415c2640ee6b98a3bc393614969d72fa}{x}}\ =\ 0;}
+\DoxyCodeLine{00012\ \ \ \ \ \mbox{\hyperlink{structNative_1_1Vector3D_adcba89bee67e0a2b01001ef4ed6cbdc7}{y}}\ =\ 0;}
+\DoxyCodeLine{00013\ \ \ \ \ \mbox{\hyperlink{structNative_1_1Vector3D_a6eaa0d59423025fc48faa68cc378f788}{z}}\ =\ 0;}
+\DoxyCodeLine{00014\ \ \ \}}
+\DoxyCodeLine{00015\ \ \ \mbox{\hyperlink{structNative_1_1Vector3D_a767e735f2e045e187c57c113629918a7}{Vector3D}}(\textcolor{keywordtype}{float}\ \_x,\ \textcolor{keywordtype}{float}\ \_y,\ \textcolor{keywordtype}{float}\ \_z)\ \{}
+\DoxyCodeLine{00016\ \ \ \ \ this-\/>x\ =\ \_x;}
+\DoxyCodeLine{00017\ \ \ \ \ this-\/>y\ =\ \_y;}
+\DoxyCodeLine{00018\ \ \ \ \ this-\/>z\ =\ \_z;}
+\DoxyCodeLine{00019\ \ \ \}}
+\DoxyCodeLine{00020\ \};}
+\DoxyCodeLine{00021\ \}\ \ \textcolor{comment}{//\ namespace\ Native}}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceGeometry}{Geometry}}\ \{}
+\DoxyCodeLine{00024\ \textcolor{keyword}{struct\ }Vector3D;}
+\DoxyCodeLine{00025\ \textcolor{keyword}{struct\ }Vector3DAlt;}
+\DoxyCodeLine{00026\ \}\ \ \textcolor{comment}{//\ namespace\ Geometry}}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceflatbuffers}{flatbuffers}}\ \{}
+\DoxyCodeLine{00029\ Geometry::Vector3D\ \mbox{\hyperlink{namespaceflatbuffers_acfc7ca1fa2c229666815f8cc67643524}{Pack}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{structNative_1_1Vector3D}{Native::Vector3D}}\ \&obj);}
+\DoxyCodeLine{00030\ \textcolor{keyword}{const}\ \mbox{\hyperlink{structNative_1_1Vector3D}{Native::Vector3D}}\ \mbox{\hyperlink{namespaceflatbuffers_a5fea507e495ecad734b697b029cef510}{UnPack}}(\textcolor{keyword}{const}\ Geometry::Vector3D\ \&obj);}
+\DoxyCodeLine{00031\ Geometry::Vector3DAlt\ \mbox{\hyperlink{namespaceflatbuffers_a8d58666860c9b0e0d00519f79c901e74}{PackVector3DAlt}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{structNative_1_1Vector3D}{Native::Vector3D}}\ \&obj);}
+\DoxyCodeLine{00032\ \textcolor{keyword}{const}\ \mbox{\hyperlink{structNative_1_1Vector3D}{Native::Vector3D}}\ \mbox{\hyperlink{namespaceflatbuffers_a9f41f133dd13e04df9eb47aaa160dac0}{UnPackVector3DAlt}}(\textcolor{keyword}{const}\ Geometry::Vector3DAlt\ \&obj);}
+\DoxyCodeLine{00033\ \}\ \ \textcolor{comment}{//\ namespace\ flatbuffers}}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ VECTOR3D\_PACK\_H}}
+
+\end{DoxyCode}

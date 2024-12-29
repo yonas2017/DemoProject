@@ -1,0 +1,134 @@
+\doxysection{Type\+Script\+Test Namespace Reference}
+\hypertarget{namespaceTypeScriptTest}{}\label{namespaceTypeScriptTest}\index{TypeScriptTest@{TypeScriptTest}}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespaceTypeScriptTest_adb3de63c0c43643094e00d603c4be07a}{check\+\_\+call}} (args, cwd=\mbox{\hyperlink{namespaceTypeScriptTest_a896376d66b7df924cae44a2d673d0a97}{tests\+\_\+path}})
+\item 
+\mbox{\hyperlink{namespaceTypeScriptTest_a9c29568cabf312b293592d568ccd330c}{flatc}} (\mbox{\hyperlink{namespaceTypeScriptTest_a9535e2c6c8faae01be7c357cf1d3f273}{options}}, \mbox{\hyperlink{namespaceTypeScriptTest_aab91508bae2774e1bbebaece53eebe7f}{schema}}, \mbox{\hyperlink{namespaceTypeScriptTest_aa6653191693beb861283778796e8b28e}{prefix}}=None, \mbox{\hyperlink{namespaceTypeScriptTest_aafbe5c0d8c6ff76714f16f7ccb39036e}{include}}=None, \mbox{\hyperlink{namespaceTypeScriptTest_a2030fc005ea7093343b48761a9d3f9c5}{data}}=None, cwd=\mbox{\hyperlink{namespaceTypeScriptTest_a896376d66b7df924cae44a2d673d0a97}{tests\+\_\+path}})
+\item 
+\mbox{\hyperlink{namespaceTypeScriptTest_a1b5e2863438174233693f1087b3ca6a3}{esbuild}} (input, output)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespaceTypeScriptTest_a896376d66b7df924cae44a2d673d0a97}{tests\+\_\+path}} = Path(\+\_\+\+\_\+file\+\_\+\+\_\+).parent.\+resolve()
+\item 
+\mbox{\hyperlink{namespaceTypeScriptTest_a0ff723737a51a2843dabb0d994af1289}{root\+\_\+path}} = tests\+\_\+path.\+parent.\+parent.\+absolute()
+\item 
+str \mbox{\hyperlink{namespaceTypeScriptTest_a1e657e9c7e501e908fc33c49e3be4cf2}{is\+\_\+windows}} = "{}Windows"{}
+\item 
+\mbox{\hyperlink{namespaceTypeScriptTest_a85c743b86976ec3220afd464d353b067}{flatc\+\_\+exe}} = Path("{}flatc.\+exe"{} if \mbox{\hyperlink{namespaceTypeScriptTest_a1e657e9c7e501e908fc33c49e3be4cf2}{is\+\_\+windows}} else "{}flatc"{})
+\item 
+\mbox{\hyperlink{namespaceTypeScriptTest_ae7f0b2b82172168ed19e8994a88976d4}{flatc\+\_\+path}} = Path(\mbox{\hyperlink{namespaceTypeScriptTest_a0ff723737a51a2843dabb0d994af1289}{root\+\_\+path}}, \mbox{\hyperlink{namespaceTypeScriptTest_a85c743b86976ec3220afd464d353b067}{flatc\+\_\+exe}})
+\item 
+\mbox{\hyperlink{namespaceTypeScriptTest_ae3dddbe81cd2d66ff291913e668a4c57}{ignore\+\_\+errors}}
+\item 
+\mbox{\hyperlink{namespaceTypeScriptTest_a9535e2c6c8faae01be7c357cf1d3f273}{options}}
+\item 
+\mbox{\hyperlink{namespaceTypeScriptTest_aab91508bae2774e1bbebaece53eebe7f}{schema}}
+\item 
+\mbox{\hyperlink{namespaceTypeScriptTest_aafbe5c0d8c6ff76714f16f7ccb39036e}{include}}
+\item 
+\mbox{\hyperlink{namespaceTypeScriptTest_a2030fc005ea7093343b48761a9d3f9c5}{data}}
+\item 
+\mbox{\hyperlink{namespaceTypeScriptTest_aa6653191693beb861283778796e8b28e}{prefix}}
+\item 
+list \mbox{\hyperlink{namespaceTypeScriptTest_acf8664fa8d4a3ad7312011247e5b9b1d}{NODE\+\_\+\+CMD}} = \mbox{[}"{}node"{}\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{namespaceTypeScriptTest_adb3de63c0c43643094e00d603c4be07a}\label{namespaceTypeScriptTest_adb3de63c0c43643094e00d603c4be07a} 
+\index{TypeScriptTest@{TypeScriptTest}!check\_call@{check\_call}}
+\index{check\_call@{check\_call}!TypeScriptTest@{TypeScriptTest}}
+\doxysubsubsection{\texorpdfstring{check\_call()}{check\_call()}}
+{\footnotesize\ttfamily Type\+Script\+Test.\+check\+\_\+call (\begin{DoxyParamCaption}\item[{}]{args,  }\item[{}]{cwd = {\ttfamily \mbox{\hyperlink{namespaceTypeScriptTest_a896376d66b7df924cae44a2d673d0a97}{tests\+\_\+path}}} }\end{DoxyParamCaption})}
+
+\Hypertarget{namespaceTypeScriptTest_a1b5e2863438174233693f1087b3ca6a3}\label{namespaceTypeScriptTest_a1b5e2863438174233693f1087b3ca6a3} 
+\index{TypeScriptTest@{TypeScriptTest}!esbuild@{esbuild}}
+\index{esbuild@{esbuild}!TypeScriptTest@{TypeScriptTest}}
+\doxysubsubsection{\texorpdfstring{esbuild()}{esbuild()}}
+{\footnotesize\ttfamily Type\+Script\+Test.\+esbuild (\begin{DoxyParamCaption}\item[{}]{input,  }\item[{}]{output }\end{DoxyParamCaption})}
+
+\Hypertarget{namespaceTypeScriptTest_a9c29568cabf312b293592d568ccd330c}\label{namespaceTypeScriptTest_a9c29568cabf312b293592d568ccd330c} 
+\index{TypeScriptTest@{TypeScriptTest}!flatc@{flatc}}
+\index{flatc@{flatc}!TypeScriptTest@{TypeScriptTest}}
+\doxysubsubsection{\texorpdfstring{flatc()}{flatc()}}
+{\footnotesize\ttfamily Type\+Script\+Test.\+flatc (\begin{DoxyParamCaption}\item[{}]{options,  }\item[{}]{schema,  }\item[{}]{prefix = {\ttfamily None},  }\item[{}]{include = {\ttfamily None},  }\item[{}]{data = {\ttfamily None},  }\item[{}]{cwd = {\ttfamily \mbox{\hyperlink{namespaceTypeScriptTest_a896376d66b7df924cae44a2d673d0a97}{tests\+\_\+path}}} }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{namespaceTypeScriptTest_a2030fc005ea7093343b48761a9d3f9c5}\label{namespaceTypeScriptTest_a2030fc005ea7093343b48761a9d3f9c5} 
+\index{TypeScriptTest@{TypeScriptTest}!data@{data}}
+\index{data@{data}!TypeScriptTest@{TypeScriptTest}}
+\doxysubsubsection{\texorpdfstring{data}{data}}
+{\footnotesize\ttfamily Type\+Script\+Test.\+data}
+
+\Hypertarget{namespaceTypeScriptTest_a85c743b86976ec3220afd464d353b067}\label{namespaceTypeScriptTest_a85c743b86976ec3220afd464d353b067} 
+\index{TypeScriptTest@{TypeScriptTest}!flatc\_exe@{flatc\_exe}}
+\index{flatc\_exe@{flatc\_exe}!TypeScriptTest@{TypeScriptTest}}
+\doxysubsubsection{\texorpdfstring{flatc\_exe}{flatc\_exe}}
+{\footnotesize\ttfamily Type\+Script\+Test.\+flatc\+\_\+exe = Path("{}flatc.\+exe"{} if \mbox{\hyperlink{namespaceTypeScriptTest_a1e657e9c7e501e908fc33c49e3be4cf2}{is\+\_\+windows}} else "{}flatc"{})}
+
+\Hypertarget{namespaceTypeScriptTest_ae7f0b2b82172168ed19e8994a88976d4}\label{namespaceTypeScriptTest_ae7f0b2b82172168ed19e8994a88976d4} 
+\index{TypeScriptTest@{TypeScriptTest}!flatc\_path@{flatc\_path}}
+\index{flatc\_path@{flatc\_path}!TypeScriptTest@{TypeScriptTest}}
+\doxysubsubsection{\texorpdfstring{flatc\_path}{flatc\_path}}
+{\footnotesize\ttfamily Type\+Script\+Test.\+flatc\+\_\+path = Path(\mbox{\hyperlink{namespaceTypeScriptTest_a0ff723737a51a2843dabb0d994af1289}{root\+\_\+path}}, \mbox{\hyperlink{namespaceTypeScriptTest_a85c743b86976ec3220afd464d353b067}{flatc\+\_\+exe}})}
+
+\Hypertarget{namespaceTypeScriptTest_ae3dddbe81cd2d66ff291913e668a4c57}\label{namespaceTypeScriptTest_ae3dddbe81cd2d66ff291913e668a4c57} 
+\index{TypeScriptTest@{TypeScriptTest}!ignore\_errors@{ignore\_errors}}
+\index{ignore\_errors@{ignore\_errors}!TypeScriptTest@{TypeScriptTest}}
+\doxysubsubsection{\texorpdfstring{ignore\_errors}{ignore\_errors}}
+{\footnotesize\ttfamily Type\+Script\+Test.\+ignore\+\_\+errors}
+
+\Hypertarget{namespaceTypeScriptTest_aafbe5c0d8c6ff76714f16f7ccb39036e}\label{namespaceTypeScriptTest_aafbe5c0d8c6ff76714f16f7ccb39036e} 
+\index{TypeScriptTest@{TypeScriptTest}!include@{include}}
+\index{include@{include}!TypeScriptTest@{TypeScriptTest}}
+\doxysubsubsection{\texorpdfstring{include}{include}}
+{\footnotesize\ttfamily Type\+Script\+Test.\+include}
+
+\Hypertarget{namespaceTypeScriptTest_a1e657e9c7e501e908fc33c49e3be4cf2}\label{namespaceTypeScriptTest_a1e657e9c7e501e908fc33c49e3be4cf2} 
+\index{TypeScriptTest@{TypeScriptTest}!is\_windows@{is\_windows}}
+\index{is\_windows@{is\_windows}!TypeScriptTest@{TypeScriptTest}}
+\doxysubsubsection{\texorpdfstring{is\_windows}{is\_windows}}
+{\footnotesize\ttfamily str Type\+Script\+Test.\+is\+\_\+windows = "{}Windows"{}}
+
+\Hypertarget{namespaceTypeScriptTest_acf8664fa8d4a3ad7312011247e5b9b1d}\label{namespaceTypeScriptTest_acf8664fa8d4a3ad7312011247e5b9b1d} 
+\index{TypeScriptTest@{TypeScriptTest}!NODE\_CMD@{NODE\_CMD}}
+\index{NODE\_CMD@{NODE\_CMD}!TypeScriptTest@{TypeScriptTest}}
+\doxysubsubsection{\texorpdfstring{NODE\_CMD}{NODE\_CMD}}
+{\footnotesize\ttfamily list Type\+Script\+Test.\+NODE\+\_\+\+CMD = \mbox{[}"{}node"{}\mbox{]}}
+
+\Hypertarget{namespaceTypeScriptTest_a9535e2c6c8faae01be7c357cf1d3f273}\label{namespaceTypeScriptTest_a9535e2c6c8faae01be7c357cf1d3f273} 
+\index{TypeScriptTest@{TypeScriptTest}!options@{options}}
+\index{options@{options}!TypeScriptTest@{TypeScriptTest}}
+\doxysubsubsection{\texorpdfstring{options}{options}}
+{\footnotesize\ttfamily Type\+Script\+Test.\+options}
+
+\Hypertarget{namespaceTypeScriptTest_aa6653191693beb861283778796e8b28e}\label{namespaceTypeScriptTest_aa6653191693beb861283778796e8b28e} 
+\index{TypeScriptTest@{TypeScriptTest}!prefix@{prefix}}
+\index{prefix@{prefix}!TypeScriptTest@{TypeScriptTest}}
+\doxysubsubsection{\texorpdfstring{prefix}{prefix}}
+{\footnotesize\ttfamily Type\+Script\+Test.\+prefix}
+
+\Hypertarget{namespaceTypeScriptTest_a0ff723737a51a2843dabb0d994af1289}\label{namespaceTypeScriptTest_a0ff723737a51a2843dabb0d994af1289} 
+\index{TypeScriptTest@{TypeScriptTest}!root\_path@{root\_path}}
+\index{root\_path@{root\_path}!TypeScriptTest@{TypeScriptTest}}
+\doxysubsubsection{\texorpdfstring{root\_path}{root\_path}}
+{\footnotesize\ttfamily Type\+Script\+Test.\+root\+\_\+path = tests\+\_\+path.\+parent.\+parent.\+absolute()}
+
+\Hypertarget{namespaceTypeScriptTest_aab91508bae2774e1bbebaece53eebe7f}\label{namespaceTypeScriptTest_aab91508bae2774e1bbebaece53eebe7f} 
+\index{TypeScriptTest@{TypeScriptTest}!schema@{schema}}
+\index{schema@{schema}!TypeScriptTest@{TypeScriptTest}}
+\doxysubsubsection{\texorpdfstring{schema}{schema}}
+{\footnotesize\ttfamily Type\+Script\+Test.\+schema}
+
+\Hypertarget{namespaceTypeScriptTest_a896376d66b7df924cae44a2d673d0a97}\label{namespaceTypeScriptTest_a896376d66b7df924cae44a2d673d0a97} 
+\index{TypeScriptTest@{TypeScriptTest}!tests\_path@{tests\_path}}
+\index{tests\_path@{tests\_path}!TypeScriptTest@{TypeScriptTest}}
+\doxysubsubsection{\texorpdfstring{tests\_path}{tests\_path}}
+{\footnotesize\ttfamily Type\+Script\+Test.\+tests\+\_\+path = Path(\+\_\+\+\_\+file\+\_\+\+\_\+).parent.\+resolve()}
+

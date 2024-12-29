@@ -1,0 +1,42 @@
+\doxysection{flatbuffers/tests/fuzzer/flatbuffers\+\_\+64bit\+\_\+fuzzer.cc File Reference}
+\hypertarget{flatbuffers__64bit__fuzzer_8cc}{}\label{flatbuffers__64bit__fuzzer_8cc}\index{flatbuffers/tests/fuzzer/flatbuffers\_64bit\_fuzzer.cc@{flatbuffers/tests/fuzzer/flatbuffers\_64bit\_fuzzer.cc}}
+{\ttfamily \#include $<$cstdint$>$}\newline
+{\ttfamily \#include $<$filesystem$>$}\newline
+{\ttfamily \#include $<$type\+\_\+traits$>$}\newline
+{\ttfamily \#include "{}64bit/test\+\_\+64bit\+\_\+bfbs\+\_\+generated.\+h"{}}\newline
+{\ttfamily \#include "{}64bit/test\+\_\+64bit\+\_\+generated.\+h"{}}\newline
+{\ttfamily \#include "{}flatbuffers/base.\+h"{}}\newline
+{\ttfamily \#include "{}flatbuffers/flatbuffer\+\_\+builder.\+h"{}}\newline
+{\ttfamily \#include "{}flatbuffers/flatbuffers.\+h"{}}\newline
+{\ttfamily \#include "{}flatbuffers/reflection.\+h"{}}\newline
+{\ttfamily \#include "{}flatbuffers/verifier.\+h"{}}\newline
+{\ttfamily \#include "{}test\+\_\+assert.\+h"{}}\newline
+{\ttfamily \#include "{}test\+\_\+init.\+h"{}}\newline
+Include dependency graph for flatbuffers\+\_\+64bit\+\_\+fuzzer.\+cc\+:
+% FIG 0
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespaceflatbuffers}{flatbuffers}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename T , typename  = std\+::enable\+\_\+if\+\_\+t$<$std\+::is\+\_\+integral\+\_\+v$<$\+T$>$$>$$>$ }\\uint64\+\_\+t \mbox{\hyperlink{namespaceflatbuffers_a1a7967cc9170ada923c4dcb9b9ec2b97}{flatbuffers\+::\+Hash}} (T \mbox{\hyperlink{annotated__binary__text__gen_8cpp_a5c33da5929c9f2f9ef8d006d2350e6ec}{value}}, uint64\+\_\+t hash)
+\item 
+uint64\+\_\+t \mbox{\hyperlink{namespaceflatbuffers_a48b2239ead38f5e48d030e43af7f35f2}{flatbuffers\+::\+Hash}} (double \mbox{\hyperlink{annotated__binary__text__gen_8cpp_a5c33da5929c9f2f9ef8d006d2350e6ec}{value}}, uint64\+\_\+t hash)
+\item 
+uint64\+\_\+t \mbox{\hyperlink{namespaceflatbuffers_acf186f7003e0e96fd6bd100fe1ad5da7}{flatbuffers\+::\+Hash}} (const \mbox{\hyperlink{structflatbuffers_1_1String}{flatbuffers\+::\+String}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{annotated__binary__text__gen_8cpp_a5c33da5929c9f2f9ef8d006d2350e6ec}{value}}, uint64\+\_\+t hash)
+\item 
+uint64\+\_\+t \mbox{\hyperlink{namespaceflatbuffers_a77a1f5e012540c9bc23c2007efce4747}{flatbuffers\+::\+Hash}} (const Leaf\+Struct \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{annotated__binary__text__gen_8cpp_a5c33da5929c9f2f9ef8d006d2350e6ec}{value}}, uint64\+\_\+t hash)
+\item 
+{\footnotesize template$<$typename T $>$ }\\uint64\+\_\+t \mbox{\hyperlink{namespaceflatbuffers_acdf16e7d9b9ecfa79b7ee4efaf4a34ff}{flatbuffers\+::\+Hash}} (const \mbox{\hyperlink{classflatbuffers_1_1Vector}{Vector}}$<$ T $>$ \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{annotated__binary__text__gen_8cpp_a5c33da5929c9f2f9ef8d006d2350e6ec}{value}}, uint64\+\_\+t hash)
+\item 
+{\footnotesize template$<$typename T $>$ }\\uint64\+\_\+t \mbox{\hyperlink{namespaceflatbuffers_a580254a4cfdc7bee3a00a9bac9acd3b0}{flatbuffers\+::\+Hash}} (const \mbox{\hyperlink{namespaceflatbuffers_ad5e5e141264d9946a7a168897b2ad286}{Vector64}}$<$ T $>$ \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{annotated__binary__text__gen_8cpp_a5c33da5929c9f2f9ef8d006d2350e6ec}{value}}, uint64\+\_\+t hash)
+\item 
+uint64\+\_\+t \mbox{\hyperlink{namespaceflatbuffers_a374d2cbd1e4b8da0a455c194dfa4a90e}{flatbuffers\+::\+Hash}} (const \mbox{\hyperlink{namespaceflatbuffers_a83021555a8107d7d2791e8db0b4d7d18a3c306fb942a417a1b14dbfb030b04138}{Root\+Table}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{annotated__binary__text__gen_8cpp_a5c33da5929c9f2f9ef8d006d2350e6ec}{value}}, uint64\+\_\+t hash)
+\item 
+int \mbox{\hyperlink{namespaceflatbuffers_a03630cfff15615818194af137815a84c}{flatbuffers\+::\+LLVMFuzzer\+Initialize}} (int \texorpdfstring{$\ast$}{*}, char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}argv)
+\item 
+int \mbox{\hyperlink{namespaceflatbuffers_a920aa8ef76091e22c1ae93447669e6da}{flatbuffers\+::\+LLVMFuzzer\+Test\+One\+Input}} (const uint8\+\_\+t \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{namespaceflatbuffers_ae8b86e00c88ce4892cc7f5bfe7545e06}{data}}, size\+\_\+t size)
+\end{DoxyCompactItemize}

@@ -1,0 +1,60 @@
+\doxysection{flatbuffers\+::File\+Manager Class Reference}
+\hypertarget{classflatbuffers_1_1FileManager}{}\label{classflatbuffers_1_1FileManager}\index{flatbuffers::FileManager@{flatbuffers::FileManager}}
+
+
+{\ttfamily \#include $<$file\+\_\+manager.\+h$>$}
+
+
+
+Inheritance diagram for flatbuffers\+::File\+Manager\+:
+% FIG 0
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classflatbuffers_1_1FileManager_a3f6670a8bba00a6887f69da39d31c857}{File\+Manager}} ()=default
+\item 
+virtual \mbox{\hyperlink{classflatbuffers_1_1FileManager_aa49e45d5f2d12138249f46318d58a70a}{\texorpdfstring{$\sim$}{\string~}\+File\+Manager}} ()=default
+\item 
+virtual bool \mbox{\hyperlink{classflatbuffers_1_1FileManager_a5b6ac80a18c1071a7a0b24edf30fc49b}{Save\+File}} (const std\+::string \&absolute\+\_\+file\+\_\+name, const std\+::string \&content)=0
+\item 
+virtual bool \mbox{\hyperlink{classflatbuffers_1_1FileManager_af7d67cea3829392f2a41a543b2d6e297}{Load\+File}} (const std\+::string \&absolute\+\_\+file\+\_\+name, std\+::string \texorpdfstring{$\ast$}{*}buf)=0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classflatbuffers_1_1FileManager_a3f6670a8bba00a6887f69da39d31c857}\label{classflatbuffers_1_1FileManager_a3f6670a8bba00a6887f69da39d31c857} 
+\index{flatbuffers::FileManager@{flatbuffers::FileManager}!FileManager@{FileManager}}
+\index{FileManager@{FileManager}!flatbuffers::FileManager@{flatbuffers::FileManager}}
+\doxysubsubsection{\texorpdfstring{FileManager()}{FileManager()}}
+{\footnotesize\ttfamily flatbuffers\+::\+File\+Manager\+::\+File\+Manager (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+\Hypertarget{classflatbuffers_1_1FileManager_aa49e45d5f2d12138249f46318d58a70a}\label{classflatbuffers_1_1FileManager_aa49e45d5f2d12138249f46318d58a70a} 
+\index{flatbuffers::FileManager@{flatbuffers::FileManager}!````~FileManager@{\texorpdfstring{$\sim$}{\string~}FileManager}}
+\index{````~FileManager@{\texorpdfstring{$\sim$}{\string~}FileManager}!flatbuffers::FileManager@{flatbuffers::FileManager}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}FileManager()}{\string~FileManager()}}
+{\footnotesize\ttfamily virtual flatbuffers\+::\+File\+Manager\+::\texorpdfstring{$\sim$}{\string~}\+File\+Manager (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classflatbuffers_1_1FileManager_af7d67cea3829392f2a41a543b2d6e297}\label{classflatbuffers_1_1FileManager_af7d67cea3829392f2a41a543b2d6e297} 
+\index{flatbuffers::FileManager@{flatbuffers::FileManager}!LoadFile@{LoadFile}}
+\index{LoadFile@{LoadFile}!flatbuffers::FileManager@{flatbuffers::FileManager}}
+\doxysubsubsection{\texorpdfstring{LoadFile()}{LoadFile()}}
+{\footnotesize\ttfamily virtual bool flatbuffers\+::\+File\+Manager\+::\+Load\+File (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{absolute\+\_\+file\+\_\+name,  }\item[{std\+::string \texorpdfstring{$\ast$}{*}}]{buf }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+\Hypertarget{classflatbuffers_1_1FileManager_a5b6ac80a18c1071a7a0b24edf30fc49b}\label{classflatbuffers_1_1FileManager_a5b6ac80a18c1071a7a0b24edf30fc49b} 
+\index{flatbuffers::FileManager@{flatbuffers::FileManager}!SaveFile@{SaveFile}}
+\index{SaveFile@{SaveFile}!flatbuffers::FileManager@{flatbuffers::FileManager}}
+\doxysubsubsection{\texorpdfstring{SaveFile()}{SaveFile()}}
+{\footnotesize\ttfamily virtual bool flatbuffers\+::\+File\+Manager\+::\+Save\+File (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{absolute\+\_\+file\+\_\+name,  }\item[{const std\+::string \&}]{content }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{classflatbuffers_1_1FileBinaryWriter_a00c46575b57565c876df27752767766e}{flatbuffers\+::\+File\+Binary\+Writer}}, \mbox{\hyperlink{classflatbuffers_1_1FileNameSavingFileManager_ab4b009cc6960ed8bd5825bdbd3a09134}{flatbuffers\+::\+File\+Name\+Saving\+File\+Manager}}, and \mbox{\hyperlink{classflatbuffers_1_1FileWriter_aab80846cb46b7bf81db226db19c54c73}{flatbuffers\+::\+File\+Writer}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+flatbuffers/include/flatbuffers/\mbox{\hyperlink{file__manager_8h}{file\+\_\+manager.\+h}}\end{DoxyCompactItemize}

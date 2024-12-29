@@ -1,0 +1,350 @@
+\doxysection{flatbuffers\+::Bfbs\+Namer Class Reference}
+\hypertarget{classflatbuffers_1_1BfbsNamer}{}\label{classflatbuffers_1_1BfbsNamer}\index{flatbuffers::BfbsNamer@{flatbuffers::BfbsNamer}}
+
+
+{\ttfamily \#include $<$bfbs\+\_\+namer.\+h$>$}
+
+
+
+Inheritance diagram for flatbuffers\+::Bfbs\+Namer\+:
+% FIG 0
+
+
+Collaboration diagram for flatbuffers\+::Bfbs\+Namer\+:
+% FIG 1
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classflatbuffers_1_1BfbsNamer_ac8f82eab736520206ad754cd65f5803f}{Bfbs\+Namer}} (\mbox{\hyperlink{structflatbuffers_1_1Namer_1_1Config}{Config}} config, std\+::set$<$ std\+::string $>$ keywords)
+\item 
+{\footnotesize template$<$typename T $>$ }\\std\+::string \mbox{\hyperlink{classflatbuffers_1_1BfbsNamer_a3846755396c5f0314494f65dd4ca2a44}{Denamespace}} (T t, std\+::string \&namespace\+\_\+prefix, const char \mbox{\hyperlink{annotated__binary__text__gen_8cpp_a2d937314efe2f7ab8dfda68ccd6815bf}{delimiter}}=\textquotesingle{}.\textquotesingle{}) const
+\item 
+{\footnotesize template$<$typename T $>$ }\\std\+::string \mbox{\hyperlink{classflatbuffers_1_1BfbsNamer_a289423fd18ad210f0b89765556034838}{Denamespace}} (T t, const char \mbox{\hyperlink{annotated__binary__text__gen_8cpp_a2d937314efe2f7ab8dfda68ccd6815bf}{delimiter}}=\textquotesingle{}.\textquotesingle{}) const
+\item 
+virtual std\+::string \mbox{\hyperlink{classflatbuffers_1_1BfbsNamer_a6f75c5a4a1796e8a7ff93f671a0d2756}{Field}} (const \+::reflection\+::\+Field \&f) const
+\item 
+virtual std\+::string \mbox{\hyperlink{classflatbuffers_1_1BfbsNamer_a2c699293b46e75654ca88b1525014d19}{Variable}} (const \+::reflection\+::\+Field \&f) const
+\item 
+virtual std\+::string \mbox{\hyperlink{classflatbuffers_1_1BfbsNamer_a8664159cfd317e6a64f9b42f5da53544}{Constant}} (const std\+::string \&s) const
+\item 
+virtual std\+::string \mbox{\hyperlink{classflatbuffers_1_1BfbsNamer_af1f5753ac85a2f2a65e3f1d9fa0bb488}{Denamespace}} (const std\+::string \&s, std\+::string \&namespace\+\_\+prefix, const char \mbox{\hyperlink{annotated__binary__text__gen_8cpp_a2d937314efe2f7ab8dfda68ccd6815bf}{delimiter}}=\textquotesingle{}.\textquotesingle{}) const
+\item 
+virtual std\+::string \mbox{\hyperlink{classflatbuffers_1_1BfbsNamer_a44a36e62ce6553900e0d646d2225f60b}{Denamespace}} (const std\+::string \&s, const char \mbox{\hyperlink{annotated__binary__text__gen_8cpp_a2d937314efe2f7ab8dfda68ccd6815bf}{delimiter}}=\textquotesingle{}.\textquotesingle{}) const
+\item 
+virtual std\+::string \mbox{\hyperlink{classflatbuffers_1_1BfbsNamer_a1a34c7f54718cacbc4ed6d06586698c5}{Directories}} (const std\+::vector$<$ std\+::string $>$ \&directories, \mbox{\hyperlink{namespaceflatbuffers_ac8fb13afcc4ada7592285690e8c42870}{Skip\+Dir}} skips=\mbox{\hyperlink{namespaceflatbuffers_ac8fb13afcc4ada7592285690e8c42870a6adf97f83acf6453d4a6a4b1070f3754}{Skip\+Dir\+::\+None}}, \mbox{\hyperlink{namespaceflatbuffers_a51f13331958603317b446d2ea6d46c55}{Case}} input\+\_\+case=\mbox{\hyperlink{namespaceflatbuffers_a51f13331958603317b446d2ea6d46c55a9f2f58218b575491fdfd8059304771b4}{Case\+::k\+Upper\+Camel}}) const
+\item 
+virtual std\+::string \mbox{\hyperlink{classflatbuffers_1_1BfbsNamer_a7fc01b7292953acf8ad5511d74cbdcec}{Field}} (const std\+::string \&s) const
+\item 
+virtual std\+::string \mbox{\hyperlink{classflatbuffers_1_1BfbsNamer_a7ba0fac80802fe467c7aa1182acbfe5a}{File}} (const std\+::string \&filename, \mbox{\hyperlink{namespaceflatbuffers_a77a8b67a8dd834785bcf61b5788e56e1}{Skip\+File}} skips=\mbox{\hyperlink{namespaceflatbuffers_a77a8b67a8dd834785bcf61b5788e56e1a6adf97f83acf6453d4a6a4b1070f3754}{Skip\+File\+::\+None}}) const
+\item 
+{\footnotesize template$<$typename T $>$ }\\std\+::string \mbox{\hyperlink{classflatbuffers_1_1BfbsNamer_a2d5a609743174788e7e678a68e8961a9}{File}} (const T \&f, \mbox{\hyperlink{namespaceflatbuffers_a77a8b67a8dd834785bcf61b5788e56e1}{Skip\+File}} skips=\mbox{\hyperlink{namespaceflatbuffers_a77a8b67a8dd834785bcf61b5788e56e1a6adf97f83acf6453d4a6a4b1070f3754}{Skip\+File\+::\+None}}) const
+\item 
+virtual std\+::string \mbox{\hyperlink{classflatbuffers_1_1BfbsNamer_a66e38ef43f91696c1209167564e64192}{Function}} (const std\+::string \&s) const
+\item 
+{\footnotesize template$<$typename T $>$ }\\std\+::string \mbox{\hyperlink{classflatbuffers_1_1BfbsNamer_ae040995ecbde3ec2583fb69ce0b5f4ae}{Method}} (const T \&s) const
+\item 
+virtual std\+::string \mbox{\hyperlink{classflatbuffers_1_1BfbsNamer_a77acbbf79466a6e4b0348ce83078a8c6}{Method}} (const std\+::string \&pre, const std\+::string \&mid, const std\+::string \&suf) const
+\item 
+virtual std\+::string \mbox{\hyperlink{classflatbuffers_1_1BfbsNamer_ad9f5122ba4bb121eefe6847046975b2c}{Method}} (const std\+::string \&pre, const std\+::string \&suf) const
+\item 
+virtual std\+::string \mbox{\hyperlink{classflatbuffers_1_1BfbsNamer_a36274f331452b436dcbedc0db6aa096e}{Method}} (const std\+::string \&s) const
+\item 
+virtual std\+::string \mbox{\hyperlink{classflatbuffers_1_1BfbsNamer_a6fce1d2696851be63ac7f232ef0bd8cf}{Namespace}} (const std\+::string \&s) const
+\item 
+virtual std\+::string \mbox{\hyperlink{classflatbuffers_1_1BfbsNamer_a76f994e2a7badd6d84fedcd661389cb0}{Namespace}} (const std\+::vector$<$ std\+::string $>$ \&\mbox{\hyperlink{idl__gen__ts_8cpp_a97618fe2e31e62d92ace9b30478febba}{ns}}) const
+\item 
+virtual std\+::string \mbox{\hyperlink{classflatbuffers_1_1BfbsNamer_a99ab48ea84573e5de215e3c439641df0}{Namespaced\+Type}} (const std\+::vector$<$ std\+::string $>$ \&\mbox{\hyperlink{idl__gen__ts_8cpp_a97618fe2e31e62d92ace9b30478febba}{ns}}, const std\+::string \&s) const
+\item 
+virtual std\+::string \mbox{\hyperlink{classflatbuffers_1_1BfbsNamer_a997d8c13d879452749a55bf95f4ca9fc}{Object\+Type}} (const std\+::string \&s) const
+\item 
+virtual std\+::string \mbox{\hyperlink{classflatbuffers_1_1BfbsNamer_ac74869999ef842db7847e8d540db3f53}{Type}} (const std\+::string \&s) const
+\item 
+virtual std\+::string \mbox{\hyperlink{classflatbuffers_1_1BfbsNamer_a7f299714cc3bac24b35d58c22aa0c111}{Type}} (const std\+::string \&t, const std\+::string \&s) const
+\item 
+virtual std\+::string \mbox{\hyperlink{classflatbuffers_1_1BfbsNamer_ac784ab9f000916c4d7251d94309734c6}{Variable}} (const std\+::string \&s) const
+\item 
+{\footnotesize template$<$typename T $>$ }\\std\+::string \mbox{\hyperlink{classflatbuffers_1_1BfbsNamer_ad494ba91b667f70b77b5b0397f57d72c}{Variable}} (const std\+::string \&\mbox{\hyperlink{gmock-matchers-containers__test_8cc_a6bc6b007533335efe02bafff799ec64c}{p}}, const T \&s) const
+\item 
+virtual std\+::string \mbox{\hyperlink{classflatbuffers_1_1BfbsNamer_a7162f181183bbd4ee1328c20e232c3b1}{Variable}} (const std\+::string \&\mbox{\hyperlink{gmock-matchers-containers__test_8cc_a6bc6b007533335efe02bafff799ec64c}{p}}, const std\+::string \&s) const
+\item 
+virtual std\+::string \mbox{\hyperlink{classflatbuffers_1_1BfbsNamer_ab3aeb25dd3103103f3d12c45012c8b11}{Variant}} (const std\+::string \&s) const
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classflatbuffers_1_1Namer}{flatbuffers\+::\+Namer}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classflatbuffers_1_1Namer_aeff94a1ac3d3399d62fbe44b6c149860}{Namer}} (\mbox{\hyperlink{structflatbuffers_1_1Namer_1_1Config}{Config}} config, std\+::set$<$ std\+::string $>$ keywords)
+\item 
+virtual \mbox{\hyperlink{classflatbuffers_1_1Namer_affe706473b5f48e6ec54d71cd0c595c9}{\texorpdfstring{$\sim$}{\string~}\+Namer}} ()
+\item 
+{\footnotesize template$<$typename T $>$ }\\std\+::string \mbox{\hyperlink{classflatbuffers_1_1Namer_ae040995ecbde3ec2583fb69ce0b5f4ae}{Method}} (const T \&s) const
+\item 
+{\footnotesize template$<$typename T $>$ }\\std\+::string \mbox{\hyperlink{classflatbuffers_1_1Namer_ad494ba91b667f70b77b5b0397f57d72c}{Variable}} (const std\+::string \&\mbox{\hyperlink{gmock-matchers-containers__test_8cc_a6bc6b007533335efe02bafff799ec64c}{p}}, const T \&s) const
+\item 
+{\footnotesize template$<$typename T $>$ }\\std\+::string \mbox{\hyperlink{classflatbuffers_1_1Namer_a2d5a609743174788e7e678a68e8961a9}{File}} (const T \&f, \mbox{\hyperlink{namespaceflatbuffers_a77a8b67a8dd834785bcf61b5788e56e1}{Skip\+File}} skips=\mbox{\hyperlink{namespaceflatbuffers_a77a8b67a8dd834785bcf61b5788e56e1a6adf97f83acf6453d4a6a4b1070f3754}{Skip\+File\+::\+None}}) const
+\item 
+virtual std\+::string \mbox{\hyperlink{classflatbuffers_1_1Namer_a034918fb748f5d4a1f3b4be59cd34289}{Escape\+Keyword}} (const std\+::string \&\mbox{\hyperlink{idl__gen__ts_8cpp_a9b45b3e13bd9167aab02e17e08916231}{name}}) const
+\item 
+virtual std\+::string \mbox{\hyperlink{classflatbuffers_1_1Namer_a5a14c9167f55c1ee1a55c4b30d797424}{Format}} (const std\+::string \&s, \mbox{\hyperlink{namespaceflatbuffers_a51f13331958603317b446d2ea6d46c55}{Case}} casing) const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Public Attributes inherited from \mbox{\hyperlink{classflatbuffers_1_1Namer}{flatbuffers\+::\+Namer}}}
+\begin{DoxyCompactItemize}
+\item 
+const \mbox{\hyperlink{structflatbuffers_1_1Namer_1_1Config}{Config}} \mbox{\hyperlink{classflatbuffers_1_1Namer_a7f4965fdf7b82ade573688c90e0aef9e}{config\+\_\+}}
+\item 
+const std\+::set$<$ std\+::string $>$ \mbox{\hyperlink{classflatbuffers_1_1Namer_aec4d483168abcd3071e41d0dcff6603d}{keywords\+\_\+}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classflatbuffers_1_1BfbsNamer_ac8f82eab736520206ad754cd65f5803f}\label{classflatbuffers_1_1BfbsNamer_ac8f82eab736520206ad754cd65f5803f} 
+\index{flatbuffers::BfbsNamer@{flatbuffers::BfbsNamer}!BfbsNamer@{BfbsNamer}}
+\index{BfbsNamer@{BfbsNamer}!flatbuffers::BfbsNamer@{flatbuffers::BfbsNamer}}
+\doxysubsubsection{\texorpdfstring{BfbsNamer()}{BfbsNamer()}}
+{\footnotesize\ttfamily flatbuffers\+::\+Bfbs\+Namer\+::\+Bfbs\+Namer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structflatbuffers_1_1Namer_1_1Config}{Config}}}]{config,  }\item[{std\+::set$<$ std\+::string $>$}]{keywords }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classflatbuffers_1_1BfbsNamer_a8664159cfd317e6a64f9b42f5da53544}\label{classflatbuffers_1_1BfbsNamer_a8664159cfd317e6a64f9b42f5da53544} 
+\index{flatbuffers::BfbsNamer@{flatbuffers::BfbsNamer}!Constant@{Constant}}
+\index{Constant@{Constant}!flatbuffers::BfbsNamer@{flatbuffers::BfbsNamer}}
+\doxysubsubsection{\texorpdfstring{Constant()}{Constant()}}
+{\footnotesize\ttfamily virtual std\+::string flatbuffers\+::\+Namer\+::\+Constant (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{s }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classflatbuffers_1_1Namer_a8664159cfd317e6a64f9b42f5da53544}{flatbuffers\+::\+Namer}}.
+
+\Hypertarget{classflatbuffers_1_1BfbsNamer_a44a36e62ce6553900e0d646d2225f60b}\label{classflatbuffers_1_1BfbsNamer_a44a36e62ce6553900e0d646d2225f60b} 
+\index{flatbuffers::BfbsNamer@{flatbuffers::BfbsNamer}!Denamespace@{Denamespace}}
+\index{Denamespace@{Denamespace}!flatbuffers::BfbsNamer@{flatbuffers::BfbsNamer}}
+\doxysubsubsection{\texorpdfstring{Denamespace()}{Denamespace()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily virtual std\+::string flatbuffers\+::\+Namer\+::\+Denamespace (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{s,  }\item[{const char}]{delimiter = {\ttfamily \textquotesingle{}.\textquotesingle{}} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classflatbuffers_1_1Namer_a44a36e62ce6553900e0d646d2225f60b}{flatbuffers\+::\+Namer}}.
+
+\Hypertarget{classflatbuffers_1_1BfbsNamer_af1f5753ac85a2f2a65e3f1d9fa0bb488}\label{classflatbuffers_1_1BfbsNamer_af1f5753ac85a2f2a65e3f1d9fa0bb488} 
+\index{flatbuffers::BfbsNamer@{flatbuffers::BfbsNamer}!Denamespace@{Denamespace}}
+\index{Denamespace@{Denamespace}!flatbuffers::BfbsNamer@{flatbuffers::BfbsNamer}}
+\doxysubsubsection{\texorpdfstring{Denamespace()}{Denamespace()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily virtual std\+::string flatbuffers\+::\+Namer\+::\+Denamespace (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{s,  }\item[{std\+::string \&}]{namespace\+\_\+prefix,  }\item[{const char}]{delimiter = {\ttfamily \textquotesingle{}.\textquotesingle{}} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classflatbuffers_1_1Namer_af1f5753ac85a2f2a65e3f1d9fa0bb488}{flatbuffers\+::\+Namer}}.
+
+\Hypertarget{classflatbuffers_1_1BfbsNamer_a289423fd18ad210f0b89765556034838}\label{classflatbuffers_1_1BfbsNamer_a289423fd18ad210f0b89765556034838} 
+\index{flatbuffers::BfbsNamer@{flatbuffers::BfbsNamer}!Denamespace@{Denamespace}}
+\index{Denamespace@{Denamespace}!flatbuffers::BfbsNamer@{flatbuffers::BfbsNamer}}
+\doxysubsubsection{\texorpdfstring{Denamespace()}{Denamespace()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+std\+::string flatbuffers\+::\+Bfbs\+Namer\+::\+Denamespace (\begin{DoxyParamCaption}\item[{T}]{t,  }\item[{const char}]{delimiter = {\ttfamily \textquotesingle{}.\textquotesingle{}} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflatbuffers_1_1BfbsNamer_a3846755396c5f0314494f65dd4ca2a44}\label{classflatbuffers_1_1BfbsNamer_a3846755396c5f0314494f65dd4ca2a44} 
+\index{flatbuffers::BfbsNamer@{flatbuffers::BfbsNamer}!Denamespace@{Denamespace}}
+\index{Denamespace@{Denamespace}!flatbuffers::BfbsNamer@{flatbuffers::BfbsNamer}}
+\doxysubsubsection{\texorpdfstring{Denamespace()}{Denamespace()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+std\+::string flatbuffers\+::\+Bfbs\+Namer\+::\+Denamespace (\begin{DoxyParamCaption}\item[{T}]{t,  }\item[{std\+::string \&}]{namespace\+\_\+prefix,  }\item[{const char}]{delimiter = {\ttfamily \textquotesingle{}.\textquotesingle{}} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflatbuffers_1_1BfbsNamer_a1a34c7f54718cacbc4ed6d06586698c5}\label{classflatbuffers_1_1BfbsNamer_a1a34c7f54718cacbc4ed6d06586698c5} 
+\index{flatbuffers::BfbsNamer@{flatbuffers::BfbsNamer}!Directories@{Directories}}
+\index{Directories@{Directories}!flatbuffers::BfbsNamer@{flatbuffers::BfbsNamer}}
+\doxysubsubsection{\texorpdfstring{Directories()}{Directories()}}
+{\footnotesize\ttfamily virtual std\+::string flatbuffers\+::\+Namer\+::\+Directories (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ std\+::string $>$ \&}]{directories,  }\item[{\mbox{\hyperlink{namespaceflatbuffers_ac8fb13afcc4ada7592285690e8c42870}{Skip\+Dir}}}]{skips = {\ttfamily \mbox{\hyperlink{namespaceflatbuffers_ac8fb13afcc4ada7592285690e8c42870a6adf97f83acf6453d4a6a4b1070f3754}{Skip\+Dir\+::\+None}}},  }\item[{\mbox{\hyperlink{namespaceflatbuffers_a51f13331958603317b446d2ea6d46c55}{Case}}}]{input\+\_\+case = {\ttfamily \mbox{\hyperlink{namespaceflatbuffers_a51f13331958603317b446d2ea6d46c55a9f2f58218b575491fdfd8059304771b4}{Case\+::k\+Upper\+Camel}}} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classflatbuffers_1_1Namer_a1a34c7f54718cacbc4ed6d06586698c5}{flatbuffers\+::\+Namer}}.
+
+\Hypertarget{classflatbuffers_1_1BfbsNamer_a6f75c5a4a1796e8a7ff93f671a0d2756}\label{classflatbuffers_1_1BfbsNamer_a6f75c5a4a1796e8a7ff93f671a0d2756} 
+\index{flatbuffers::BfbsNamer@{flatbuffers::BfbsNamer}!Field@{Field}}
+\index{Field@{Field}!flatbuffers::BfbsNamer@{flatbuffers::BfbsNamer}}
+\doxysubsubsection{\texorpdfstring{Field()}{Field()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual std\+::string flatbuffers\+::\+Bfbs\+Namer\+::\+Field (\begin{DoxyParamCaption}\item[{const \+::reflection\+::\+Field \&}]{f }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+\Hypertarget{classflatbuffers_1_1BfbsNamer_a7fc01b7292953acf8ad5511d74cbdcec}\label{classflatbuffers_1_1BfbsNamer_a7fc01b7292953acf8ad5511d74cbdcec} 
+\index{flatbuffers::BfbsNamer@{flatbuffers::BfbsNamer}!Field@{Field}}
+\index{Field@{Field}!flatbuffers::BfbsNamer@{flatbuffers::BfbsNamer}}
+\doxysubsubsection{\texorpdfstring{Field()}{Field()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual std\+::string flatbuffers\+::\+Namer\+::\+Field (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{s }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classflatbuffers_1_1Namer_a7fc01b7292953acf8ad5511d74cbdcec}{flatbuffers\+::\+Namer}}.
+
+\Hypertarget{classflatbuffers_1_1BfbsNamer_a7ba0fac80802fe467c7aa1182acbfe5a}\label{classflatbuffers_1_1BfbsNamer_a7ba0fac80802fe467c7aa1182acbfe5a} 
+\index{flatbuffers::BfbsNamer@{flatbuffers::BfbsNamer}!File@{File}}
+\index{File@{File}!flatbuffers::BfbsNamer@{flatbuffers::BfbsNamer}}
+\doxysubsubsection{\texorpdfstring{File()}{File()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual std\+::string flatbuffers\+::\+Namer\+::\+File (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filename,  }\item[{\mbox{\hyperlink{namespaceflatbuffers_a77a8b67a8dd834785bcf61b5788e56e1}{Skip\+File}}}]{skips = {\ttfamily \mbox{\hyperlink{namespaceflatbuffers_a77a8b67a8dd834785bcf61b5788e56e1a6adf97f83acf6453d4a6a4b1070f3754}{Skip\+File\+::\+None}}} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classflatbuffers_1_1Namer_a7ba0fac80802fe467c7aa1182acbfe5a}{flatbuffers\+::\+Namer}}.
+
+\Hypertarget{classflatbuffers_1_1BfbsNamer_a2d5a609743174788e7e678a68e8961a9}\label{classflatbuffers_1_1BfbsNamer_a2d5a609743174788e7e678a68e8961a9} 
+\index{flatbuffers::BfbsNamer@{flatbuffers::BfbsNamer}!File@{File}}
+\index{File@{File}!flatbuffers::BfbsNamer@{flatbuffers::BfbsNamer}}
+\doxysubsubsection{\texorpdfstring{File()}{File()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+std\+::string flatbuffers\+::\+Namer\+::\+File (\begin{DoxyParamCaption}\item[{const T \&}]{f,  }\item[{\mbox{\hyperlink{namespaceflatbuffers_a77a8b67a8dd834785bcf61b5788e56e1}{Skip\+File}}}]{skips = {\ttfamily \mbox{\hyperlink{namespaceflatbuffers_a77a8b67a8dd834785bcf61b5788e56e1a6adf97f83acf6453d4a6a4b1070f3754}{Skip\+File\+::\+None}}} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflatbuffers_1_1BfbsNamer_a66e38ef43f91696c1209167564e64192}\label{classflatbuffers_1_1BfbsNamer_a66e38ef43f91696c1209167564e64192} 
+\index{flatbuffers::BfbsNamer@{flatbuffers::BfbsNamer}!Function@{Function}}
+\index{Function@{Function}!flatbuffers::BfbsNamer@{flatbuffers::BfbsNamer}}
+\doxysubsubsection{\texorpdfstring{Function()}{Function()}}
+{\footnotesize\ttfamily virtual std\+::string flatbuffers\+::\+Namer\+::\+Function (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{s }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classflatbuffers_1_1Namer_a66e38ef43f91696c1209167564e64192}{flatbuffers\+::\+Namer}}.
+
+\Hypertarget{classflatbuffers_1_1BfbsNamer_a77acbbf79466a6e4b0348ce83078a8c6}\label{classflatbuffers_1_1BfbsNamer_a77acbbf79466a6e4b0348ce83078a8c6} 
+\index{flatbuffers::BfbsNamer@{flatbuffers::BfbsNamer}!Method@{Method}}
+\index{Method@{Method}!flatbuffers::BfbsNamer@{flatbuffers::BfbsNamer}}
+\doxysubsubsection{\texorpdfstring{Method()}{Method()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily virtual std\+::string flatbuffers\+::\+Namer\+::\+Method (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{pre,  }\item[{const std\+::string \&}]{mid,  }\item[{const std\+::string \&}]{suf }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classflatbuffers_1_1Namer_a77acbbf79466a6e4b0348ce83078a8c6}{flatbuffers\+::\+Namer}}.
+
+\Hypertarget{classflatbuffers_1_1BfbsNamer_ad9f5122ba4bb121eefe6847046975b2c}\label{classflatbuffers_1_1BfbsNamer_ad9f5122ba4bb121eefe6847046975b2c} 
+\index{flatbuffers::BfbsNamer@{flatbuffers::BfbsNamer}!Method@{Method}}
+\index{Method@{Method}!flatbuffers::BfbsNamer@{flatbuffers::BfbsNamer}}
+\doxysubsubsection{\texorpdfstring{Method()}{Method()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily virtual std\+::string flatbuffers\+::\+Namer\+::\+Method (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{pre,  }\item[{const std\+::string \&}]{suf }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classflatbuffers_1_1Namer_ad9f5122ba4bb121eefe6847046975b2c}{flatbuffers\+::\+Namer}}.
+
+\Hypertarget{classflatbuffers_1_1BfbsNamer_a36274f331452b436dcbedc0db6aa096e}\label{classflatbuffers_1_1BfbsNamer_a36274f331452b436dcbedc0db6aa096e} 
+\index{flatbuffers::BfbsNamer@{flatbuffers::BfbsNamer}!Method@{Method}}
+\index{Method@{Method}!flatbuffers::BfbsNamer@{flatbuffers::BfbsNamer}}
+\doxysubsubsection{\texorpdfstring{Method()}{Method()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily virtual std\+::string flatbuffers\+::\+Namer\+::\+Method (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{s }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classflatbuffers_1_1Namer_a36274f331452b436dcbedc0db6aa096e}{flatbuffers\+::\+Namer}}.
+
+\Hypertarget{classflatbuffers_1_1BfbsNamer_ae040995ecbde3ec2583fb69ce0b5f4ae}\label{classflatbuffers_1_1BfbsNamer_ae040995ecbde3ec2583fb69ce0b5f4ae} 
+\index{flatbuffers::BfbsNamer@{flatbuffers::BfbsNamer}!Method@{Method}}
+\index{Method@{Method}!flatbuffers::BfbsNamer@{flatbuffers::BfbsNamer}}
+\doxysubsubsection{\texorpdfstring{Method()}{Method()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+std\+::string flatbuffers\+::\+Namer\+::\+Method (\begin{DoxyParamCaption}\item[{const T \&}]{s }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflatbuffers_1_1BfbsNamer_a6fce1d2696851be63ac7f232ef0bd8cf}\label{classflatbuffers_1_1BfbsNamer_a6fce1d2696851be63ac7f232ef0bd8cf} 
+\index{flatbuffers::BfbsNamer@{flatbuffers::BfbsNamer}!Namespace@{Namespace}}
+\index{Namespace@{Namespace}!flatbuffers::BfbsNamer@{flatbuffers::BfbsNamer}}
+\doxysubsubsection{\texorpdfstring{Namespace()}{Namespace()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual std\+::string flatbuffers\+::\+Namer\+::\+Namespace (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{s }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classflatbuffers_1_1Namer_a6fce1d2696851be63ac7f232ef0bd8cf}{flatbuffers\+::\+Namer}}.
+
+\Hypertarget{classflatbuffers_1_1BfbsNamer_a76f994e2a7badd6d84fedcd661389cb0}\label{classflatbuffers_1_1BfbsNamer_a76f994e2a7badd6d84fedcd661389cb0} 
+\index{flatbuffers::BfbsNamer@{flatbuffers::BfbsNamer}!Namespace@{Namespace}}
+\index{Namespace@{Namespace}!flatbuffers::BfbsNamer@{flatbuffers::BfbsNamer}}
+\doxysubsubsection{\texorpdfstring{Namespace()}{Namespace()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual std\+::string flatbuffers\+::\+Namer\+::\+Namespace (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ std\+::string $>$ \&}]{ns }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classflatbuffers_1_1Namer_a76f994e2a7badd6d84fedcd661389cb0}{flatbuffers\+::\+Namer}}.
+
+\Hypertarget{classflatbuffers_1_1BfbsNamer_a99ab48ea84573e5de215e3c439641df0}\label{classflatbuffers_1_1BfbsNamer_a99ab48ea84573e5de215e3c439641df0} 
+\index{flatbuffers::BfbsNamer@{flatbuffers::BfbsNamer}!NamespacedType@{NamespacedType}}
+\index{NamespacedType@{NamespacedType}!flatbuffers::BfbsNamer@{flatbuffers::BfbsNamer}}
+\doxysubsubsection{\texorpdfstring{NamespacedType()}{NamespacedType()}}
+{\footnotesize\ttfamily virtual std\+::string flatbuffers\+::\+Namer\+::\+Namespaced\+Type (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ std\+::string $>$ \&}]{ns,  }\item[{const std\+::string \&}]{s }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classflatbuffers_1_1Namer_a99ab48ea84573e5de215e3c439641df0}{flatbuffers\+::\+Namer}}.
+
+\Hypertarget{classflatbuffers_1_1BfbsNamer_a997d8c13d879452749a55bf95f4ca9fc}\label{classflatbuffers_1_1BfbsNamer_a997d8c13d879452749a55bf95f4ca9fc} 
+\index{flatbuffers::BfbsNamer@{flatbuffers::BfbsNamer}!ObjectType@{ObjectType}}
+\index{ObjectType@{ObjectType}!flatbuffers::BfbsNamer@{flatbuffers::BfbsNamer}}
+\doxysubsubsection{\texorpdfstring{ObjectType()}{ObjectType()}}
+{\footnotesize\ttfamily virtual std\+::string flatbuffers\+::\+Namer\+::\+Object\+Type (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{s }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classflatbuffers_1_1Namer_a997d8c13d879452749a55bf95f4ca9fc}{flatbuffers\+::\+Namer}}.
+
+\Hypertarget{classflatbuffers_1_1BfbsNamer_ac74869999ef842db7847e8d540db3f53}\label{classflatbuffers_1_1BfbsNamer_ac74869999ef842db7847e8d540db3f53} 
+\index{flatbuffers::BfbsNamer@{flatbuffers::BfbsNamer}!Type@{Type}}
+\index{Type@{Type}!flatbuffers::BfbsNamer@{flatbuffers::BfbsNamer}}
+\doxysubsubsection{\texorpdfstring{Type()}{Type()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual std\+::string flatbuffers\+::\+Namer\+::\+Type (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{s }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classflatbuffers_1_1Namer_ac74869999ef842db7847e8d540db3f53}{flatbuffers\+::\+Namer}}.
+
+\Hypertarget{classflatbuffers_1_1BfbsNamer_a7f299714cc3bac24b35d58c22aa0c111}\label{classflatbuffers_1_1BfbsNamer_a7f299714cc3bac24b35d58c22aa0c111} 
+\index{flatbuffers::BfbsNamer@{flatbuffers::BfbsNamer}!Type@{Type}}
+\index{Type@{Type}!flatbuffers::BfbsNamer@{flatbuffers::BfbsNamer}}
+\doxysubsubsection{\texorpdfstring{Type()}{Type()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual std\+::string flatbuffers\+::\+Namer\+::\+Type (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{t,  }\item[{const std\+::string \&}]{s }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classflatbuffers_1_1Namer_a7f299714cc3bac24b35d58c22aa0c111}{flatbuffers\+::\+Namer}}.
+
+\Hypertarget{classflatbuffers_1_1BfbsNamer_a2c699293b46e75654ca88b1525014d19}\label{classflatbuffers_1_1BfbsNamer_a2c699293b46e75654ca88b1525014d19} 
+\index{flatbuffers::BfbsNamer@{flatbuffers::BfbsNamer}!Variable@{Variable}}
+\index{Variable@{Variable}!flatbuffers::BfbsNamer@{flatbuffers::BfbsNamer}}
+\doxysubsubsection{\texorpdfstring{Variable()}{Variable()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily virtual std\+::string flatbuffers\+::\+Bfbs\+Namer\+::\+Variable (\begin{DoxyParamCaption}\item[{const \+::reflection\+::\+Field \&}]{f }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+\Hypertarget{classflatbuffers_1_1BfbsNamer_a7162f181183bbd4ee1328c20e232c3b1}\label{classflatbuffers_1_1BfbsNamer_a7162f181183bbd4ee1328c20e232c3b1} 
+\index{flatbuffers::BfbsNamer@{flatbuffers::BfbsNamer}!Variable@{Variable}}
+\index{Variable@{Variable}!flatbuffers::BfbsNamer@{flatbuffers::BfbsNamer}}
+\doxysubsubsection{\texorpdfstring{Variable()}{Variable()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily virtual std\+::string flatbuffers\+::\+Namer\+::\+Variable (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{p,  }\item[{const std\+::string \&}]{s }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classflatbuffers_1_1Namer_a7162f181183bbd4ee1328c20e232c3b1}{flatbuffers\+::\+Namer}}.
+
+\Hypertarget{classflatbuffers_1_1BfbsNamer_ad494ba91b667f70b77b5b0397f57d72c}\label{classflatbuffers_1_1BfbsNamer_ad494ba91b667f70b77b5b0397f57d72c} 
+\index{flatbuffers::BfbsNamer@{flatbuffers::BfbsNamer}!Variable@{Variable}}
+\index{Variable@{Variable}!flatbuffers::BfbsNamer@{flatbuffers::BfbsNamer}}
+\doxysubsubsection{\texorpdfstring{Variable()}{Variable()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+std\+::string flatbuffers\+::\+Namer\+::\+Variable (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{p,  }\item[{const T \&}]{s }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflatbuffers_1_1BfbsNamer_ac784ab9f000916c4d7251d94309734c6}\label{classflatbuffers_1_1BfbsNamer_ac784ab9f000916c4d7251d94309734c6} 
+\index{flatbuffers::BfbsNamer@{flatbuffers::BfbsNamer}!Variable@{Variable}}
+\index{Variable@{Variable}!flatbuffers::BfbsNamer@{flatbuffers::BfbsNamer}}
+\doxysubsubsection{\texorpdfstring{Variable()}{Variable()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily virtual std\+::string flatbuffers\+::\+Namer\+::\+Variable (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{s }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classflatbuffers_1_1Namer_ac784ab9f000916c4d7251d94309734c6}{flatbuffers\+::\+Namer}}.
+
+\Hypertarget{classflatbuffers_1_1BfbsNamer_ab3aeb25dd3103103f3d12c45012c8b11}\label{classflatbuffers_1_1BfbsNamer_ab3aeb25dd3103103f3d12c45012c8b11} 
+\index{flatbuffers::BfbsNamer@{flatbuffers::BfbsNamer}!Variant@{Variant}}
+\index{Variant@{Variant}!flatbuffers::BfbsNamer@{flatbuffers::BfbsNamer}}
+\doxysubsubsection{\texorpdfstring{Variant()}{Variant()}}
+{\footnotesize\ttfamily virtual std\+::string flatbuffers\+::\+Namer\+::\+Variant (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{s }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classflatbuffers_1_1Namer_ab3aeb25dd3103103f3d12c45012c8b11}{flatbuffers\+::\+Namer}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+flatbuffers/src/\mbox{\hyperlink{bfbs__namer_8h}{bfbs\+\_\+namer.\+h}}\end{DoxyCompactItemize}

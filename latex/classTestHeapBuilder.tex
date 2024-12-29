@@ -1,0 +1,225 @@
+\doxysection{Test\+Heap\+Builder Class Reference}
+\hypertarget{classTestHeapBuilder}{}\label{classTestHeapBuilder}\index{TestHeapBuilder@{TestHeapBuilder}}
+
+
+Inheritance diagram for Test\+Heap\+Builder\+:
+% FIG 0
+
+
+Collaboration diagram for Test\+Heap\+Builder\+:
+% FIG 1
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classTestHeapBuilder_a16f86cb05be425c338eb727efb018aae}{Test\+Heap\+Builder}} ()
+\item 
+\mbox{\hyperlink{classTestHeapBuilder_a5c287d3d32a4e2fc796fae480928e60e}{Test\+Heap\+Builder}} (\mbox{\hyperlink{classTestHeapBuilder}{Test\+Heap\+Builder}} \&\&other)
+\item 
+\mbox{\hyperlink{classTestHeapBuilder}{Test\+Heap\+Builder}} \& \mbox{\hyperlink{classTestHeapBuilder_a8957b89ff734bcfe0cd6c2fbd7aba83c}{operator=}} (\mbox{\hyperlink{classTestHeapBuilder}{Test\+Heap\+Builder}} \&\&other)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classflatbuffers_1_1FlatBufferBuilderImpl}{flatbuffers\+::\+Flat\+Buffer\+Builder\+Impl$<$ false $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classflatbuffers_1_1FlatBufferBuilderImpl_a2d9b10ac5e27356f5f2feae8bb9ab11e}{Flat\+Buffer\+Builder\+Impl}} (size\+\_\+t initial\+\_\+size=1024, \mbox{\hyperlink{classflatbuffers_1_1Allocator}{Allocator}} \texorpdfstring{$\ast$}{*}allocator=nullptr, bool own\+\_\+allocator=false, size\+\_\+t buffer\+\_\+minalign=Align\+Of$<$ largest\+\_\+scalar\+\_\+t $>$())
+\begin{DoxyCompactList}\small\item\em Default constructor for \doxylink{classFlatBufferBuilder}{Flat\+Buffer\+Builder}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classflatbuffers_1_1FlatBufferBuilderImpl_ac80934bc554db4b34538cc7674051b24}{Flat\+Buffer\+Builder\+Impl}} (\mbox{\hyperlink{classflatbuffers_1_1FlatBufferBuilderImpl}{Flat\+Buffer\+Builder\+Impl}} \&\&other) noexcept
+\begin{DoxyCompactList}\small\item\em Move constructor for \doxylink{classFlatBufferBuilder}{Flat\+Buffer\+Builder}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classflatbuffers_1_1FlatBufferBuilderImpl}{Flat\+Buffer\+Builder\+Impl}} \& \mbox{\hyperlink{classflatbuffers_1_1FlatBufferBuilderImpl_a1f3279cb50752dcebf518c5eba18c1ab}{operator=}} (\mbox{\hyperlink{classflatbuffers_1_1FlatBufferBuilderImpl}{Flat\+Buffer\+Builder\+Impl}} \&\&other) noexcept
+\begin{DoxyCompactList}\small\item\em Move assignment operator for \doxylink{classFlatBufferBuilder}{Flat\+Buffer\+Builder}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classflatbuffers_1_1FlatBufferBuilderImpl_aa97db149bc3d9dfcc896e1d4a0db30fa}{Swap}} (\mbox{\hyperlink{classflatbuffers_1_1FlatBufferBuilderImpl}{Flat\+Buffer\+Builder\+Impl}} \&other)
+\item 
+\mbox{\hyperlink{classflatbuffers_1_1FlatBufferBuilderImpl_ac0d27fadabbb3f67beb402afc5ded699}{\texorpdfstring{$\sim$}{\string~}\+Flat\+Buffer\+Builder\+Impl}} ()
+\item 
+void \mbox{\hyperlink{classflatbuffers_1_1FlatBufferBuilderImpl_a72d2808ab314b43279540e6e4e758081}{Reset}} ()
+\item 
+void \mbox{\hyperlink{classflatbuffers_1_1FlatBufferBuilderImpl_a9e69cad35f73516131459006d60af837}{Clear}} ()
+\begin{DoxyCompactList}\small\item\em Reset all the state in this \doxylink{classFlatBufferBuilder}{Flat\+Buffer\+Builder} so it can be reused to construct another buffer. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classflatbuffers_1_1FlatBufferBuilderImpl_a6ac617de424af6503ed7b578df0b9fe6}{SizeT}} \mbox{\hyperlink{classflatbuffers_1_1FlatBufferBuilderImpl_a8a256e49d00ffc1f1a34b07feae14db3}{Get\+Size}} () const
+\begin{DoxyCompactList}\small\item\em The current size of the serialized buffer, counting from the end. \end{DoxyCompactList}\item 
+std\+::enable\+\_\+if$<$ is\+\_\+64, uoffset\+\_\+t $>$\+::type \mbox{\hyperlink{classflatbuffers_1_1FlatBufferBuilderImpl_ae9b2834c1cb85db3750313d1b2134616}{Get\+Size\+Relative32\+Bit\+Region}} () const
+\begin{DoxyCompactList}\small\item\em The current size of the serialized buffer relative to the end of the 32-\/bit region. \end{DoxyCompactList}\item 
+std\+::enable\+\_\+if$<$!is\+\_\+64, uoffset\+\_\+t $>$\+::type \mbox{\hyperlink{classflatbuffers_1_1FlatBufferBuilderImpl_a970c88a72bc06235b931fea7642f6721}{Get\+Size\+Relative32\+Bit\+Region}} () const
+\item 
+uint8\+\_\+t \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classflatbuffers_1_1FlatBufferBuilderImpl_af9648566859d51578dfc9bb3f9462f07}{Get\+Buffer\+Pointer}} () const
+\begin{DoxyCompactList}\small\item\em Get the serialized buffer (after you call {\ttfamily \doxylink{classflatbuffers_1_1FlatBufferBuilderImpl_a813b376143a53bd2828d9684713fe03c}{Finish()}}). \end{DoxyCompactList}\item 
+flatbuffers\+::span$<$ uint8\+\_\+t $>$ \mbox{\hyperlink{classflatbuffers_1_1FlatBufferBuilderImpl_ad0359efea38824192e9ff974744c8f83}{Get\+Buffer\+Span}} () const
+\begin{DoxyCompactList}\small\item\em Get the serialized buffer (after you call {\ttfamily \doxylink{classflatbuffers_1_1FlatBufferBuilderImpl_a813b376143a53bd2828d9684713fe03c}{Finish()}}) as a span. \end{DoxyCompactList}\item 
+uint8\+\_\+t \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classflatbuffers_1_1FlatBufferBuilderImpl_a315aaa9712e3c5e06c0022c335e86061}{Get\+Current\+Buffer\+Pointer}} () const
+\begin{DoxyCompactList}\small\item\em Get a pointer to an unfinished buffer. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classflatbuffers_1_1DetachedBuffer}{Detached\+Buffer}} \mbox{\hyperlink{classflatbuffers_1_1FlatBufferBuilderImpl_a8fd9d4ec764b4de8a0abb64e54af92c4}{Release}} ()
+\begin{DoxyCompactList}\small\item\em Get the released \doxylink{classflatbuffers_1_1DetachedBuffer}{Detached\+Buffer}. \end{DoxyCompactList}\item 
+uint8\+\_\+t \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classflatbuffers_1_1FlatBufferBuilderImpl_a1705d872e13ea8c9732ca023c3a7b221}{Release\+Raw}} (size\+\_\+t \&size, size\+\_\+t \&offset)
+\begin{DoxyCompactList}\small\item\em Get the released pointer to the serialized buffer. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{classflatbuffers_1_1FlatBufferBuilderImpl_a31e208903bd5e0ea9c347df00ace17c5}{Get\+Buffer\+Min\+Alignment}} () const
+\begin{DoxyCompactList}\small\item\em get the minimum alignment this buffer needs to be accessed properly. This is only known once all elements have been written (after you call \doxylink{classflatbuffers_1_1FlatBufferBuilderImpl_a813b376143a53bd2828d9684713fe03c}{Finish()}). You can use this information if you need to embed a Flat\+Buffer in some other buffer, such that you can later read it without first having to copy it into its own buffer. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classflatbuffers_1_1FlatBufferBuilderImpl_acd6497c6201f91cf5ff6b7c8d2f8c72f}{Force\+Defaults}} (bool fd)
+\begin{DoxyCompactList}\small\item\em In order to save space, fields that are set to their default value don\textquotesingle{}t get serialized into the buffer. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classflatbuffers_1_1FlatBufferBuilderImpl_ad429e3cf60df0905d2d67a630cc5154d}{Dedup\+Vtables}} (bool dedup)
+\begin{DoxyCompactList}\small\item\em By default vtables are deduped in order to save space. \end{DoxyCompactList}\item 
+OffsetT$<$ \mbox{\hyperlink{structflatbuffers_1_1String}{String}} $>$ \mbox{\hyperlink{classflatbuffers_1_1FlatBufferBuilderImpl_a302e3db0669a9597d8d613077cc6c203}{Create\+String}} (const char \texorpdfstring{$\ast$}{*}str, size\+\_\+t len)
+\begin{DoxyCompactList}\small\item\em Store a string in the buffer, which can contain any binary data. \end{DoxyCompactList}\item 
+OffsetT$<$ \mbox{\hyperlink{structflatbuffers_1_1String}{String}} $>$ \mbox{\hyperlink{classflatbuffers_1_1FlatBufferBuilderImpl_ac69120ff6fb7fcf6221d1855cd8e4fea}{Create\+String}} (const char \texorpdfstring{$\ast$}{*}str)
+\begin{DoxyCompactList}\small\item\em Store a string in the buffer, which is null-\/terminated. \end{DoxyCompactList}\item 
+OffsetT$<$ \mbox{\hyperlink{structflatbuffers_1_1String}{String}} $>$ \mbox{\hyperlink{classflatbuffers_1_1FlatBufferBuilderImpl_a1991eb6328a97002fd6e927cb4c6840d}{Create\+String}} (char \texorpdfstring{$\ast$}{*}str)
+\begin{DoxyCompactList}\small\item\em Store a string in the buffer, which is null-\/terminated. \end{DoxyCompactList}\item 
+OffsetT$<$ \mbox{\hyperlink{structflatbuffers_1_1String}{String}} $>$ \mbox{\hyperlink{classflatbuffers_1_1FlatBufferBuilderImpl_a8a0f04b7cddedfcfd6e322158ebd27d1}{Create\+String}} (const std\+::string \&str)
+\begin{DoxyCompactList}\small\item\em Store a string in the buffer, which can contain any binary data. \end{DoxyCompactList}\item 
+OffsetT$<$ \mbox{\hyperlink{structflatbuffers_1_1String}{String}} $>$ \mbox{\hyperlink{classflatbuffers_1_1FlatBufferBuilderImpl_a2e5805e617ad1570da952d8f62e0f127}{Create\+String}} (const \mbox{\hyperlink{structflatbuffers_1_1String}{String}} \texorpdfstring{$\ast$}{*}str)
+\begin{DoxyCompactList}\small\item\em Store a string in the buffer, which can contain any binary data. \end{DoxyCompactList}\item 
+OffsetT$<$ \mbox{\hyperlink{structflatbuffers_1_1String}{String}} $>$ \mbox{\hyperlink{classflatbuffers_1_1FlatBufferBuilderImpl_a5759cae7b7050d6dea551933ecb82782}{Create\+String}} (const T \&str)
+\begin{DoxyCompactList}\small\item\em Store a string in the buffer, which can contain any binary data. \end{DoxyCompactList}\item 
+Offset$<$ \mbox{\hyperlink{structflatbuffers_1_1String}{String}} $>$ \mbox{\hyperlink{classflatbuffers_1_1FlatBufferBuilderImpl_a7d8ac0dabd8dbc8cbb6d942bdd7ff981}{Create\+Shared\+String}} (const char \texorpdfstring{$\ast$}{*}str, size\+\_\+t len)
+\begin{DoxyCompactList}\small\item\em Store a string in the buffer, which can contain any binary data. If a string with this exact contents has already been serialized before, instead simply returns the offset of the existing string. This uses a map stored on the heap, but only stores the numerical offsets. \end{DoxyCompactList}\item 
+Offset$<$ \mbox{\hyperlink{structflatbuffers_1_1String}{String}} $>$ \mbox{\hyperlink{classflatbuffers_1_1FlatBufferBuilderImpl_abd517ae81cb58760fe78e8c41a5ad231}{Create\+Shared\+String}} (const char \texorpdfstring{$\ast$}{*}str)
+\begin{DoxyCompactList}\small\item\em Store a string in the buffer, which null-\/terminated. If a string with this exact contents has already been serialized before, instead simply returns the offset of the existing string. This uses a map stored on the heap, but only stores the numerical offsets. \end{DoxyCompactList}\item 
+Offset$<$ \mbox{\hyperlink{structflatbuffers_1_1String}{String}} $>$ \mbox{\hyperlink{classflatbuffers_1_1FlatBufferBuilderImpl_a4f83df44b4b111b5173b22fa277e62d7}{Create\+Shared\+String}} (const std\+::string \&str)
+\begin{DoxyCompactList}\small\item\em Store a string in the buffer, which can contain any binary data. If a string with this exact contents has already been serialized before, instead simply returns the offset of the existing string. This uses a map stored on the heap, but only stores the numerical offsets. \end{DoxyCompactList}\item 
+Offset$<$ \mbox{\hyperlink{structflatbuffers_1_1String}{String}} $>$ \mbox{\hyperlink{classflatbuffers_1_1FlatBufferBuilderImpl_a37522c363d99b139eb09756a815e48ee}{Create\+Shared\+String}} (const \mbox{\hyperlink{structflatbuffers_1_1String}{String}} \texorpdfstring{$\ast$}{*}str)
+\begin{DoxyCompactList}\small\item\em Store a string in the buffer, which can contain any binary data. If a string with this exact contents has already been serialized before, instead simply returns the offset of the existing string. This uses a map stored on the heap, but only stores the numerical offsets. \end{DoxyCompactList}\item 
+OffsetT$<$ VectorT$<$ T $>$ $>$ \mbox{\hyperlink{classflatbuffers_1_1FlatBufferBuilderImpl_aceecafe87cf7fa1dd4117af618784884}{Create\+Vector}} (const T \texorpdfstring{$\ast$}{*}v, size\+\_\+t len)
+\begin{DoxyCompactList}\small\item\em Serialize an array into a Flat\+Buffer {\ttfamily vector}. \end{DoxyCompactList}\item 
+Offset$<$ \mbox{\hyperlink{classflatbuffers_1_1Vector}{Vector}}$<$ T $>$ $>$ \mbox{\hyperlink{classflatbuffers_1_1FlatBufferBuilderImpl_af89b220dac56e808bafa77b88fc1c3a1}{Create\+Vector}} (const C \&array)
+\begin{DoxyCompactList}\small\item\em Serialize an array like object into a Flat\+Buffer {\ttfamily vector}. \end{DoxyCompactList}\item 
+Offset$<$ \mbox{\hyperlink{classflatbuffers_1_1Vector}{Vector}}$<$ T $>$ $>$ \mbox{\hyperlink{classflatbuffers_1_1FlatBufferBuilderImpl_a8298418f14e27f48dfab4740b5672e6e}{Create\+Vector}} (std\+::initializer\+\_\+list$<$ T $>$ v)
+\begin{DoxyCompactList}\small\item\em Serialize an initializer list into a Flat\+Buffer {\ttfamily vector}. \end{DoxyCompactList}\item 
+Offset$<$ \mbox{\hyperlink{classflatbuffers_1_1Vector}{Vector}}$<$ Offset$<$ T $>$ $>$ $>$ \mbox{\hyperlink{classflatbuffers_1_1FlatBufferBuilderImpl_a7909ee5fedb89f519c39fd35b7f74c32}{Create\+Vector}} (const Offset$<$ T $>$ \texorpdfstring{$\ast$}{*}v, size\+\_\+t len)
+\item 
+Offset$<$ \mbox{\hyperlink{classflatbuffers_1_1Vector}{Vector}}$<$ T $>$ $>$ \mbox{\hyperlink{classflatbuffers_1_1FlatBufferBuilderImpl_a9cb69c547bfa57cd845c5c0a56c3c688}{Create\+Vector}} (const std\+::vector$<$ T, Alloc $>$ \&v)
+\begin{DoxyCompactList}\small\item\em Serialize a {\ttfamily std\+::vector} into a Flat\+Buffer {\ttfamily vector}. \end{DoxyCompactList}\item 
+Offset$<$ \mbox{\hyperlink{classflatbuffers_1_1Vector}{Vector}}$<$ uint8\+\_\+t $>$ $>$ \mbox{\hyperlink{classflatbuffers_1_1FlatBufferBuilderImpl_a74aea81fbfffd23d4f70e65226fe73dc}{Create\+Vector}} (const std\+::vector$<$ bool $>$ \&v)
+\item 
+Offset$<$ \mbox{\hyperlink{classflatbuffers_1_1Vector}{Vector}}$<$ T $>$ $>$ \mbox{\hyperlink{classflatbuffers_1_1FlatBufferBuilderImpl_a577ca119ca1a61c283525170333f5ee1}{Create\+Vector}} (size\+\_\+t vector\+\_\+size, const std\+::function$<$ T(size\+\_\+t \mbox{\hyperlink{gmock-matchers-comparisons__test_8cc_acb559820d9ca11295b4500f179ef6392}{i}})$>$ \&f)
+\begin{DoxyCompactList}\small\item\em Serialize values returned by a function into a Flat\+Buffer {\ttfamily vector}. This is a convenience function that takes care of iteration for you. \end{DoxyCompactList}\item 
+Offset$<$ \mbox{\hyperlink{classflatbuffers_1_1Vector}{Vector}}$<$ T $>$ $>$ \mbox{\hyperlink{classflatbuffers_1_1FlatBufferBuilderImpl_a519d2659159fcd2c5784f3431340e0be}{Create\+Vector}} (size\+\_\+t vector\+\_\+size, F f, S \texorpdfstring{$\ast$}{*}state)
+\begin{DoxyCompactList}\small\item\em Serialize values returned by a function into a Flat\+Buffer {\ttfamily vector}. This is a convenience function that takes care of iteration for you. This uses a vector stored on the heap to store the intermediate results of the iteration. \end{DoxyCompactList}\item 
+Offset64$<$ VectorT$<$ T $>$ $>$ \mbox{\hyperlink{classflatbuffers_1_1FlatBufferBuilderImpl_abd31de9e53fd43c0de3622b40bb27e40}{Create\+Vector64}} (const std\+::vector$<$ T $>$ \&v)
+\item 
+Offset$<$ \mbox{\hyperlink{classflatbuffers_1_1Vector}{Vector}}$<$ Offset$<$ \mbox{\hyperlink{structflatbuffers_1_1String}{String}} $>$ $>$ $>$ \mbox{\hyperlink{classflatbuffers_1_1FlatBufferBuilderImpl_a82a5777139e3daf84364877b2db228c4}{Create\+Vector\+Of\+Strings}} (const std\+::vector$<$ String\+Type, Alloc $>$ \&v)
+\begin{DoxyCompactList}\small\item\em Serialize a {\ttfamily std\+::vector\texorpdfstring{$<$}{<}String\+Type\texorpdfstring{$>$}{>}} into a Flat\+Buffer {\ttfamily vector}. whereas String\+Type is any type that is accepted by the \doxylink{classflatbuffers_1_1FlatBufferBuilderImpl_a302e3db0669a9597d8d613077cc6c203}{Create\+String()} overloads. This is a convenience function for a common case. \end{DoxyCompactList}\item 
+Offset$<$ \mbox{\hyperlink{classflatbuffers_1_1Vector}{Vector}}$<$ Offset$<$ \mbox{\hyperlink{structflatbuffers_1_1String}{String}} $>$ $>$ $>$ \mbox{\hyperlink{classflatbuffers_1_1FlatBufferBuilderImpl_a7f13ba6968d2b4a7a75de94dd4341556}{Create\+Vector\+Of\+Strings}} (It begin, It end)
+\begin{DoxyCompactList}\small\item\em Serialize a collection of Strings into a Flat\+Buffer {\ttfamily vector}. This is a convenience function for a common case. \end{DoxyCompactList}\item 
+OffsetT$<$ VectorT$<$ const T \texorpdfstring{$\ast$}{*} $>$ $>$ \mbox{\hyperlink{classflatbuffers_1_1FlatBufferBuilderImpl_afe0f3eb9a693cb8913948eb45dc5442f}{Create\+Vector\+Of\+Structs}} (const T \texorpdfstring{$\ast$}{*}v, size\+\_\+t len)
+\begin{DoxyCompactList}\small\item\em Serialize an array of structs into a Flat\+Buffer {\ttfamily vector}. \end{DoxyCompactList}\item 
+Offset$<$ \mbox{\hyperlink{classflatbuffers_1_1Vector}{Vector}}$<$ const T \texorpdfstring{$\ast$}{*} $>$ $>$ \mbox{\hyperlink{classflatbuffers_1_1FlatBufferBuilderImpl_a644220ea67db506ec70eff105948ed7b}{Create\+Vector\+Of\+Structs}} (size\+\_\+t vector\+\_\+size, const std\+::function$<$ void(size\+\_\+t \mbox{\hyperlink{gmock-matchers-comparisons__test_8cc_acb559820d9ca11295b4500f179ef6392}{i}}, T \texorpdfstring{$\ast$}{*})$>$ \&filler)
+\begin{DoxyCompactList}\small\item\em Serialize an array of structs into a Flat\+Buffer {\ttfamily vector}. \end{DoxyCompactList}\item 
+Offset$<$ \mbox{\hyperlink{classflatbuffers_1_1Vector}{Vector}}$<$ const T \texorpdfstring{$\ast$}{*} $>$ $>$ \mbox{\hyperlink{classflatbuffers_1_1FlatBufferBuilderImpl_a8b9ec79cd2ba32c0920320536b689ad7}{Create\+Vector\+Of\+Structs}} (size\+\_\+t vector\+\_\+size, F f, S \texorpdfstring{$\ast$}{*}state)
+\begin{DoxyCompactList}\small\item\em Serialize an array of structs into a Flat\+Buffer {\ttfamily vector}. \end{DoxyCompactList}\item 
+OffsetT$<$ VectorT$<$ const T \texorpdfstring{$\ast$}{*} $>$ $>$ \mbox{\hyperlink{classflatbuffers_1_1FlatBufferBuilderImpl_aa32051af0e3e55bc9da238887743523c}{Create\+Vector\+Of\+Structs}} (const std\+::vector$<$ T, Alloc $>$ \&v)
+\begin{DoxyCompactList}\small\item\em Serialize a {\ttfamily std\+::vector} of structs into a Flat\+Buffer {\ttfamily vector}. \end{DoxyCompactList}\item 
+Offset64$<$ VectorT$<$ const T \texorpdfstring{$\ast$}{*} $>$ $>$ \mbox{\hyperlink{classflatbuffers_1_1FlatBufferBuilderImpl_a9e7b2ea87d918730c475b3d72a2231d5}{Create\+Vector\+Of\+Structs64}} (const std\+::vector$<$ T $>$ \&v)
+\item 
+Offset$<$ \mbox{\hyperlink{classflatbuffers_1_1Vector}{Vector}}$<$ const T \texorpdfstring{$\ast$}{*} $>$ $>$ \mbox{\hyperlink{classflatbuffers_1_1FlatBufferBuilderImpl_adb80a52ed6acb0dad9fb2d2743c35b32}{Create\+Vector\+Of\+Native\+Structs}} (const S \texorpdfstring{$\ast$}{*}v, size\+\_\+t len, T(\texorpdfstring{$\ast$}{*}const pack\+\_\+func)(const S \&))
+\begin{DoxyCompactList}\small\item\em Serialize an array of native structs into a Flat\+Buffer {\ttfamily vector}. \end{DoxyCompactList}\item 
+Offset$<$ \mbox{\hyperlink{classflatbuffers_1_1Vector}{Vector}}$<$ const T \texorpdfstring{$\ast$}{*} $>$ $>$ \mbox{\hyperlink{classflatbuffers_1_1FlatBufferBuilderImpl_afa3ffdabe29b1785ca8b4ffcbef4508d}{Create\+Vector\+Of\+Native\+Structs}} (const S \texorpdfstring{$\ast$}{*}v, size\+\_\+t len)
+\begin{DoxyCompactList}\small\item\em Serialize an array of native structs into a Flat\+Buffer {\ttfamily vector}. \end{DoxyCompactList}\item 
+Offset$<$ \mbox{\hyperlink{classflatbuffers_1_1Vector}{Vector}}$<$ const T \texorpdfstring{$\ast$}{*} $>$ $>$ \mbox{\hyperlink{classflatbuffers_1_1FlatBufferBuilderImpl_a4d6505b31e597444720ae33dcae4da3e}{Create\+Vector\+Of\+Native\+Structs}} (const std\+::vector$<$ S, Alloc $>$ \&v, T(\texorpdfstring{$\ast$}{*}const pack\+\_\+func)(const S \&))
+\begin{DoxyCompactList}\small\item\em Serialize a {\ttfamily std\+::vector} of native structs into a Flat\+Buffer {\ttfamily vector}. \end{DoxyCompactList}\item 
+Offset$<$ \mbox{\hyperlink{classflatbuffers_1_1Vector}{Vector}}$<$ const T \texorpdfstring{$\ast$}{*} $>$ $>$ \mbox{\hyperlink{classflatbuffers_1_1FlatBufferBuilderImpl_aa6b64e1d46d95c3d55296a2417af4e64}{Create\+Vector\+Of\+Native\+Structs}} (const std\+::vector$<$ S, Alloc $>$ \&v)
+\begin{DoxyCompactList}\small\item\em Serialize a {\ttfamily std\+::vector} of native structs into a Flat\+Buffer {\ttfamily vector}. \end{DoxyCompactList}\item 
+Offset$<$ \mbox{\hyperlink{classflatbuffers_1_1Vector}{Vector}}$<$ const T \texorpdfstring{$\ast$}{*} $>$ $>$ \mbox{\hyperlink{classflatbuffers_1_1FlatBufferBuilderImpl_a8bcf00cb043e688d6a70ca36d75bc6db}{Create\+Vector\+Of\+Sorted\+Structs}} (std\+::vector$<$ T, Alloc $>$ \texorpdfstring{$\ast$}{*}v)
+\begin{DoxyCompactList}\small\item\em Serialize a {\ttfamily std\+::vector} of structs into a Flat\+Buffer {\ttfamily vector} in sorted order. \end{DoxyCompactList}\item 
+Offset$<$ \mbox{\hyperlink{classflatbuffers_1_1Vector}{Vector}}$<$ const T \texorpdfstring{$\ast$}{*} $>$ $>$ \mbox{\hyperlink{classflatbuffers_1_1FlatBufferBuilderImpl_af1d1e41eef4be253c57fbe6783fa4e1a}{Create\+Vector\+Of\+Sorted\+Structs}} (T \texorpdfstring{$\ast$}{*}v, size\+\_\+t len)
+\begin{DoxyCompactList}\small\item\em Serialize an array of structs into a Flat\+Buffer {\ttfamily vector} in sorted order. \end{DoxyCompactList}\item 
+Offset$<$ \mbox{\hyperlink{classflatbuffers_1_1Vector}{Vector}}$<$ const T \texorpdfstring{$\ast$}{*} $>$ $>$ \mbox{\hyperlink{classflatbuffers_1_1FlatBufferBuilderImpl_aacd6c747cd2883e931b00df5ee0258df}{Create\+Vector\+Of\+Sorted\+Native\+Structs}} (std\+::vector$<$ S, Alloc $>$ \texorpdfstring{$\ast$}{*}v)
+\begin{DoxyCompactList}\small\item\em Serialize a {\ttfamily std\+::vector} of native structs into a Flat\+Buffer {\ttfamily vector} in sorted order. \end{DoxyCompactList}\item 
+Offset$<$ \mbox{\hyperlink{classflatbuffers_1_1Vector}{Vector}}$<$ const T \texorpdfstring{$\ast$}{*} $>$ $>$ \mbox{\hyperlink{classflatbuffers_1_1FlatBufferBuilderImpl_a77a823f38d6730b009ea752bb98bae87}{Create\+Vector\+Of\+Sorted\+Native\+Structs}} (S \texorpdfstring{$\ast$}{*}v, size\+\_\+t len)
+\begin{DoxyCompactList}\small\item\em Serialize an array of native structs into a Flat\+Buffer {\ttfamily vector} in sorted order. \end{DoxyCompactList}\item 
+Offset$<$ \mbox{\hyperlink{classflatbuffers_1_1Vector}{Vector}}$<$ Offset$<$ T $>$ $>$ $>$ \mbox{\hyperlink{classflatbuffers_1_1FlatBufferBuilderImpl_aef35f8185569984f57716d64285b8dc7}{Create\+Vector\+Of\+Sorted\+Tables}} (Offset$<$ T $>$ \texorpdfstring{$\ast$}{*}v, size\+\_\+t len)
+\begin{DoxyCompactList}\small\item\em Serialize an array of {\ttfamily table} offsets as a {\ttfamily vector} in the buffer in sorted order. \end{DoxyCompactList}\item 
+Offset$<$ \mbox{\hyperlink{classflatbuffers_1_1Vector}{Vector}}$<$ Offset$<$ T $>$ $>$ $>$ \mbox{\hyperlink{classflatbuffers_1_1FlatBufferBuilderImpl_a52eac296eb39b1fcd0601288cc6136f5}{Create\+Vector\+Of\+Sorted\+Tables}} (std\+::vector$<$ Offset$<$ T $>$, Alloc $>$ \texorpdfstring{$\ast$}{*}v)
+\begin{DoxyCompactList}\small\item\em Serialize an array of {\ttfamily table} offsets as a {\ttfamily vector} in the buffer in sorted order. \end{DoxyCompactList}\item 
+uoffset\+\_\+t \mbox{\hyperlink{classflatbuffers_1_1FlatBufferBuilderImpl_a15cf7894395780b4af519c046b20b125}{Create\+Uninitialized\+Vector}} (size\+\_\+t len, size\+\_\+t elemsize, size\+\_\+t alignment, uint8\+\_\+t \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}buf)
+\begin{DoxyCompactList}\small\item\em Specialized version of {\ttfamily Create\+Vector} for non-\/copying use cases. Write the data any time later to the returned buffer pointer {\ttfamily buf}. \end{DoxyCompactList}\item 
+uoffset\+\_\+t \mbox{\hyperlink{classflatbuffers_1_1FlatBufferBuilderImpl_aa22013f6d19faba268eb2d9a47353969}{Create\+Uninitialized\+Vector}} (size\+\_\+t len, size\+\_\+t elemsize, uint8\+\_\+t \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}buf)
+\item 
+Offset$<$ \mbox{\hyperlink{classflatbuffers_1_1Vector}{Vector}}$<$ T $>$ $>$ \mbox{\hyperlink{classflatbuffers_1_1FlatBufferBuilderImpl_adcbe2fc958d1937a1657b0235a467cc0}{Create\+Uninitialized\+Vector}} (size\+\_\+t len, T \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}buf)
+\begin{DoxyCompactList}\small\item\em Specialized version of {\ttfamily Create\+Vector} for non-\/copying use cases. Write the data any time later to the returned buffer pointer {\ttfamily buf}. \end{DoxyCompactList}\item 
+Offset$<$ \mbox{\hyperlink{classflatbuffers_1_1Vector}{Vector}}$<$ const T \texorpdfstring{$\ast$}{*} $>$ $>$ \mbox{\hyperlink{classflatbuffers_1_1FlatBufferBuilderImpl_a45c7b9fd7d8c3f0f5018ff83aa3f35e4}{Create\+Uninitialized\+Vector\+Of\+Structs}} (size\+\_\+t len, T \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}buf)
+\item 
+Offset$<$ \mbox{\hyperlink{classflatbuffers_1_1Vector}{Vector}}$<$ T $>$ $>$ \mbox{\hyperlink{classflatbuffers_1_1FlatBufferBuilderImpl_a64e3cfc6dc557a172f43e3b8f9430ca7}{Create\+Vector\+Scalar\+Cast}} (const U \texorpdfstring{$\ast$}{*}v, size\+\_\+t len)
+\item 
+Offset$<$ const T \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{classflatbuffers_1_1FlatBufferBuilderImpl_a1ed5848bac927ef398b16b4302d34be2}{Create\+Struct}} (const T \&structobj)
+\begin{DoxyCompactList}\small\item\em Write a struct by itself, typically to be part of a union. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classflatbuffers_1_1FlatBufferBuilderImpl_a813b376143a53bd2828d9684713fe03c}{Finish}} (Offset$<$ T $>$ root, const char \texorpdfstring{$\ast$}{*}file\+\_\+identifier=nullptr)
+\begin{DoxyCompactList}\small\item\em Finish serializing a buffer by writing the root offset. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classflatbuffers_1_1FlatBufferBuilderImpl_aaa87fe5c3b85e47bb959e6d1aec96b2c}{Finish\+Size\+Prefixed}} (Offset$<$ T $>$ root, const char \texorpdfstring{$\ast$}{*}file\+\_\+identifier=nullptr)
+\begin{DoxyCompactList}\small\item\em Finish a buffer with a 32 bit size field pre-\/fixed (size of the buffer following the size field). These buffers are NOT compatible with standard buffers created by Finish, i.\+e. you can\textquotesingle{}t call Get\+Root on them, you have to use Get\+Size\+Prefixed\+Root instead. All \texorpdfstring{$>$}{>}32 bit quantities in this buffer will be aligned when the whole size pre-\/fixed buffer is aligned. These kinds of buffers are useful for creating a stream of Flat\+Buffers. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classflatbuffers_1_1FlatBufferBuilderImpl_aff1adebc7a567dde8a1260ae5d71a5d1}{Swap\+Buf\+Allocator}} (\mbox{\hyperlink{classflatbuffers_1_1FlatBufferBuilderImpl}{Flat\+Buffer\+Builder\+Impl}} \&other)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Public Types inherited from \mbox{\hyperlink{classflatbuffers_1_1FlatBufferBuilderImpl}{flatbuffers\+::\+Flat\+Buffer\+Builder\+Impl$<$ false $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+typedef std\+::conditional$<$ Is64\+Aware, uoffset64\+\_\+t, uoffset\+\_\+t $>$\+::type \mbox{\hyperlink{classflatbuffers_1_1FlatBufferBuilderImpl_a6ac617de424af6503ed7b578df0b9fe6}{SizeT}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes inherited from \mbox{\hyperlink{classflatbuffers_1_1FlatBufferBuilderImpl}{flatbuffers\+::\+Flat\+Buffer\+Builder\+Impl$<$ false $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+static const size\+\_\+t \mbox{\hyperlink{classflatbuffers_1_1FlatBufferBuilderImpl_a0882cf6005156e78b8a5365b529ddf0c}{k\+File\+Identifier\+Length}}
+\begin{DoxyCompactList}\small\item\em The length of a Flat\+Buffer file header. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Types inherited from \mbox{\hyperlink{classflatbuffers_1_1FlatBufferBuilderImpl}{flatbuffers\+::\+Flat\+Buffer\+Builder\+Impl$<$ false $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+typedef std\+::set$<$ Offset$<$ \mbox{\hyperlink{structflatbuffers_1_1String}{String}} $>$, String\+Offset\+Compare $>$ \mbox{\hyperlink{classflatbuffers_1_1FlatBufferBuilderImpl_a4d2b5b8efd6d7b3c174244653ffe43b3}{String\+Offset\+Map}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{classflatbuffers_1_1FlatBufferBuilderImpl}{flatbuffers\+::\+Flat\+Buffer\+Builder\+Impl$<$ false $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classflatbuffers_1_1FlatBufferBuilderImpl_a67a059fd307d34c6fe0f84f6f5b09efb}{Flat\+Buffer\+Builder\+Impl}} (const \mbox{\hyperlink{classflatbuffers_1_1FlatBufferBuilderImpl}{Flat\+Buffer\+Builder\+Impl}} \&)
+\item 
+\mbox{\hyperlink{classflatbuffers_1_1FlatBufferBuilderImpl}{Flat\+Buffer\+Builder\+Impl}} \& \mbox{\hyperlink{classflatbuffers_1_1FlatBufferBuilderImpl_afc6c0be223208ae8f08d0b5672f4a007}{operator=}} (const \mbox{\hyperlink{classflatbuffers_1_1FlatBufferBuilderImpl}{Flat\+Buffer\+Builder\+Impl}} \&)
+\item 
+void \mbox{\hyperlink{classflatbuffers_1_1FlatBufferBuilderImpl_a36c3837f5a4d757374855a01600fb9f9}{Finish}} (uoffset\+\_\+t root, const char \texorpdfstring{$\ast$}{*}file\+\_\+identifier, bool size\+\_\+prefix)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classflatbuffers_1_1FlatBufferBuilderImpl}{flatbuffers\+::\+Flat\+Buffer\+Builder\+Impl$<$ false $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classflatbuffers_1_1vector__downward}{vector\+\_\+downward}}$<$ \mbox{\hyperlink{classflatbuffers_1_1FlatBufferBuilderImpl_a6ac617de424af6503ed7b578df0b9fe6}{SizeT}} $>$ \mbox{\hyperlink{classflatbuffers_1_1FlatBufferBuilderImpl_a891071655652f008397848e0aa60f6ea}{buf\+\_\+}}
+\item 
+uoffset\+\_\+t \mbox{\hyperlink{classflatbuffers_1_1FlatBufferBuilderImpl_a3bd25e71b2989479fcc70e1084a94a4c}{num\+\_\+field\+\_\+loc}}
+\item 
+voffset\+\_\+t \mbox{\hyperlink{classflatbuffers_1_1FlatBufferBuilderImpl_af9d1dcd4ab132f7288627883923b04b2}{max\+\_\+voffset\+\_\+}}
+\item 
+size\+\_\+t \mbox{\hyperlink{classflatbuffers_1_1FlatBufferBuilderImpl_a85620056bbca1f0014f93f83ac0e815b}{length\+\_\+of\+\_\+64\+\_\+bit\+\_\+region\+\_\+}}
+\item 
+bool \mbox{\hyperlink{classflatbuffers_1_1FlatBufferBuilderImpl_ad79134fa9f270c89c5a4691540e25881}{nested}}
+\item 
+bool \mbox{\hyperlink{classflatbuffers_1_1FlatBufferBuilderImpl_a2d64647c37ba612692ac9effe6511398}{finished}}
+\item 
+size\+\_\+t \mbox{\hyperlink{classflatbuffers_1_1FlatBufferBuilderImpl_ab0d64c633e57787a0e1967c177f08cd0}{minalign\+\_\+}}
+\item 
+bool \mbox{\hyperlink{classflatbuffers_1_1FlatBufferBuilderImpl_a6022ffc1acc960f431107a8595f7901d}{force\+\_\+defaults\+\_\+}}
+\item 
+bool \mbox{\hyperlink{classflatbuffers_1_1FlatBufferBuilderImpl_ae44a34259f2fd75832da89df7d96b1e9}{dedup\+\_\+vtables\+\_\+}}
+\item 
+\mbox{\hyperlink{classflatbuffers_1_1FlatBufferBuilderImpl_a4d2b5b8efd6d7b3c174244653ffe43b3}{String\+Offset\+Map}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classflatbuffers_1_1FlatBufferBuilderImpl_aab3c3d7de7592d3ca3d8bdf8e13d7844}{string\+\_\+pool}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classTestHeapBuilder_a16f86cb05be425c338eb727efb018aae}\label{classTestHeapBuilder_a16f86cb05be425c338eb727efb018aae} 
+\index{TestHeapBuilder@{TestHeapBuilder}!TestHeapBuilder@{TestHeapBuilder}}
+\index{TestHeapBuilder@{TestHeapBuilder}!TestHeapBuilder@{TestHeapBuilder}}
+\doxysubsubsection{\texorpdfstring{TestHeapBuilder()}{TestHeapBuilder()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Test\+Heap\+Builder\+::\+Test\+Heap\+Builder (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classTestHeapBuilder_a5c287d3d32a4e2fc796fae480928e60e}\label{classTestHeapBuilder_a5c287d3d32a4e2fc796fae480928e60e} 
+\index{TestHeapBuilder@{TestHeapBuilder}!TestHeapBuilder@{TestHeapBuilder}}
+\index{TestHeapBuilder@{TestHeapBuilder}!TestHeapBuilder@{TestHeapBuilder}}
+\doxysubsubsection{\texorpdfstring{TestHeapBuilder()}{TestHeapBuilder()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Test\+Heap\+Builder\+::\+Test\+Heap\+Builder (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classTestHeapBuilder}{Test\+Heap\+Builder}} \&\&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classTestHeapBuilder_a8957b89ff734bcfe0cd6c2fbd7aba83c}\label{classTestHeapBuilder_a8957b89ff734bcfe0cd6c2fbd7aba83c} 
+\index{TestHeapBuilder@{TestHeapBuilder}!operator=@{operator=}}
+\index{operator=@{operator=}!TestHeapBuilder@{TestHeapBuilder}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classTestHeapBuilder}{Test\+Heap\+Builder}} \& Test\+Heap\+Builder\+::operator= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classTestHeapBuilder}{Test\+Heap\+Builder}} \&\&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+flatbuffers/tests/\mbox{\hyperlink{test__builder_8cpp}{test\+\_\+builder.\+cpp}}\end{DoxyCompactItemize}

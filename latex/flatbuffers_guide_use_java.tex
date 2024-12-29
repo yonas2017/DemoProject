@@ -1,0 +1,82 @@
+\chapter{Use in Java}
+\hypertarget{flatbuffers_guide_use_java}{}\label{flatbuffers_guide_use_java}\index{Use in Java@{Use in Java}}
+\doxysection*{Before you get started}
+
+Before diving into the Flat\+Buffers usage in Java, it should be noted that the \doxysectlink{flatbuffers_guide_tutorial}{Tutorial}{0} page has a complete guide to general Flat\+Buffers usage in all of the supported languages (including Java). This page is designed to cover the nuances of Flat\+Buffers usage, specific to Java.
+
+You should also have read the \doxysectlink{flatbuffers_guide_building}{Building}{0} documentation to build {\ttfamily flatc} and should be familiar with \doxysectlink{flatbuffers_guide_using_schema_compiler}{Using the schema compiler}{0} and \doxysectlink{flatbuffers_guide_writing_schema}{Writing a schema}{0}.
+
+\doxysection*{Flat\+Buffers Java code location}
+
+The code for the Flat\+Buffers Java library can be found at {\ttfamily flatbuffers/java/com/google/flatbuffers}. You can browse the library on the \href{https://github.com/google/flatbuffers/tree/master/
+java/com/google/flatbuffers}{\texttt{ Flat\+Buffers Git\+Hub page}}.
+
+\doxysection*{Testing the Flat\+Buffers Java libraries}
+
+The code to test the libraries can be found at {\ttfamily flatbuffers/tests}.
+
+The test code for Java is located in \href{https://github.com/google
+/flatbuffers/blob/master/tests/JavaTest.java}{\texttt{ Java\+Test.\+java}}.
+
+To run the tests, use either \href{https://github.com/google/
+flatbuffers/blob/master/tests/JavaTest.sh}{\texttt{ Java\+Test.\+sh}} or \href{https://github.com/
+google/flatbuffers/blob/master/tests/JavaTest.bat}{\texttt{ Java\+Test.\+bat}}, depending on your operating system.
+
+{\itshape Note\+: These scripts require that \href{https://www.oracle.com/java/index.html}{\texttt{ Java}} is installed.}
+
+\doxysection*{Using the Flat\+Buffers Java library}
+
+{\itshape Note\+: See \doxysectlink{flatbuffers_guide_tutorial}{Tutorial}{0} for a more in-\/depth example of how to use Flat\+Buffers in Java.}
+
+Flat\+Buffers supports reading and writing binary Flat\+Buffers in Java.
+
+To use Flat\+Buffers in your own code, first generate Java classes from your schema with the {\ttfamily -\/-\/java} option to {\ttfamily flatc}. Then you can include both Flat\+Buffers and the generated code to read or write a Flat\+Buffer.
+
+For example, here is how you would read a Flat\+Buffer binary file in Java\+: First, import the library and generated code. Then, you read a Flat\+Buffer binary file into a {\ttfamily byte\mbox{[}\mbox{]}}. You then turn the {\ttfamily byte\mbox{[}\mbox{]}} into a {\ttfamily Byte\+Buffer}, which you pass to the {\ttfamily get\+Root\+As\+My\+Root\+Type} function\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{import}\ \mbox{\hyperlink{namespaceMyGame}{MyGame}}.\mbox{\hyperlink{namespaceMyGame_1_1Example}{Example}}.*;}
+\DoxyCodeLine{\textcolor{keyword}{import}\ \mbox{\hyperlink{namespacecom}{com}}.\mbox{\hyperlink{namespacecom_1_1google}{google}}.\mbox{\hyperlink{namespacecom_1_1google_1_1flatbuffers}{flatbuffers}}.\mbox{\hyperlink{classcom_1_1google_1_1flatbuffers_1_1FlatBufferBuilder}{FlatBufferBuilder}};}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ This\ snippet\ ignores\ exceptions\ for\ brevity.}}
+\DoxyCodeLine{File\ \mbox{\hyperlink{namespacegenerate__code_a4a52b83494b4a06fafe03df1f41ddfbc}{file}}\ =\ \textcolor{keyword}{new}\ File(\textcolor{stringliteral}{"{}monsterdata\_test.mon"{}});}
+\DoxyCodeLine{RandomAccessFile\ f\ =\ \textcolor{keyword}{new}\ RandomAccessFile(file,\ \textcolor{stringliteral}{"{}r"{}});}
+\DoxyCodeLine{\textcolor{keywordtype}{byte}[]\ \mbox{\hyperlink{namespacegenerate__code_aebc120e8b184d051fc85a24ac04dc891}{data}}\ =\ \textcolor{keyword}{new}\ \textcolor{keywordtype}{byte}[(int)f.length()];}
+\DoxyCodeLine{f.readFully(data);}
+\DoxyCodeLine{f.close();}
+\DoxyCodeLine{}
+\DoxyCodeLine{ByteBuffer\ bb\ =\ ByteBuffer.wrap(data);}
+\DoxyCodeLine{\mbox{\hyperlink{namespaceMyGame_1_1Example_ac1ea6e173e6c1b0fb8585ffc416d9b88a243a3afa44aed85d504dbd53fd9804e9}{Monster}}\ monster\ =\ \mbox{\hyperlink{namespaceMyGame_1_1Example_ac1ea6e173e6c1b0fb8585ffc416d9b88a243a3afa44aed85d504dbd53fd9804e9}{Monster}}.getRootAsMonster(bb);}
+
+\end{DoxyCode}
+
+
+Now you can access the data from the {\ttfamily Monster monster}\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{short}\ hp\ =\ monster.hp();}
+\DoxyCodeLine{Vec3\ pos\ =\ monster.pos();}
+
+\end{DoxyCode}
+
+
+\doxysection*{Storing dictionaries in a Flat\+Buffer}
+
+Flat\+Buffers doesn\textquotesingle{}t support dictionaries natively, but there is support to emulate their behavior with vectors and binary search, which means you can have fast lookups directly from a Flat\+Buffer without having to unpack your data into a {\ttfamily Dictionary} or similar.
+
+To use it\+:
+\begin{DoxyItemize}
+\item Designate one of the fields in a table as the "{}key"{} field. You do this by setting the {\ttfamily key} attribute on this field, e.\+g. {\ttfamily name\+:string (key)}. You may only have one key field, and it must be of string or scalar type.
+\item Write out tables of this type as usual, collect their offsets in an array.
+\item Instead of calling standard generated method, e.\+g.\+: {\ttfamily Monster.\+create\+Testarrayoftables\+Vector}, call {\ttfamily create\+Sorted\+Vector\+Of\+Tables} (from the {\ttfamily \doxylink{classFlatBufferBuilder}{Flat\+Buffer\+Builder}} object). which will first sort all offsets such that the tables they refer to are sorted by the key field, then serialize it.
+\item Now when you\textquotesingle{}re accessing the Flat\+Buffer, you can use the {\ttfamily By\+Key} accessor to access elements of the vector, e.\+g.\+: {\ttfamily monster.\+testarrayoftables\+By\+Key("{}\+Frodo"{})}. which returns an object of the corresponding table type, or {\ttfamily null} if not found. {\ttfamily By\+Key} performs a binary search, so should have a similar speed to {\ttfamily Dictionary}, though may be faster because of better caching. {\ttfamily By\+Key} only works if the vector has been sorted, it will likely not find elements if it hasn\textquotesingle{}t been sorted.
+\end{DoxyItemize}
+
+\doxysection*{Text parsing}
+
+There currently is no support for parsing text (Schema\textquotesingle{}s and JSON) directly from Java, though you could use the C++ parser through native call interfaces available to each language. Please see the C++ documentation for more on text parsing.
+
+~\newline
+ 

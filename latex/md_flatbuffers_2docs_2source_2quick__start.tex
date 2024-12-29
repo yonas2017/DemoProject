@@ -1,0 +1,87 @@
+\chapter{Quick Start}
+\hypertarget{md_flatbuffers_2docs_2source_2quick__start}{}\label{md_flatbuffers_2docs_2source_2quick__start}\index{Quick Start@{Quick Start}}
+This will quickly go over the parts of using Flat\+Buffers to serialize some data. See the \doxysectlink{md_flatbuffers_2docs_2source_2tutorial}{Tutorial}{0} for a more in depth guide.
+
+
+\begin{DoxyEnumerate}
+\item \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}\+Build the compiler for Flat\+Buffers (\doxysectlink{md_flatbuffers_2docs_2source_2flatc}{\`{}flatc\`{}}{0})\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{cmake\ -\/G\ "{}Unix\ Makefiles"{}}
+\DoxyCodeLine{make\ -\/j}
+
+\end{DoxyCode}
+
+\item \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}\+Define your Flat\+Buffer \doxysectlink{md_flatbuffers_2docs_2source_2schema}{schema}{0} ({\ttfamily .fbs})\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{title=\textcolor{stringliteral}{"{}monster.fbs"{}}\ linenums=\textcolor{stringliteral}{"{}1"{}}}
+\DoxyCodeLine{\ \ \ table\ \mbox{\hyperlink{namespaceMyGame_1_1Example_ac1ea6e173e6c1b0fb8585ffc416d9b88a243a3afa44aed85d504dbd53fd9804e9}{Monster}}\ \{}
+\DoxyCodeLine{\ \ \ \ \ \mbox{\hyperlink{idl__gen__ts_8cpp_a9b45b3e13bd9167aab02e17e08916231}{name}}:\mbox{\hyperlink{namespacegrpc_a77f15e90a2c3651195f88645e4512267}{string}};}
+\DoxyCodeLine{\ \ \ \ \ health:int;}
+\DoxyCodeLine{\ \ \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ root\_type\ \mbox{\hyperlink{namespaceMyGame_1_1Example_ac1ea6e173e6c1b0fb8585ffc416d9b88a243a3afa44aed85d504dbd53fd9804e9}{Monster}};}
+
+\end{DoxyCode}
+
+
+See \href{https://github.com/google/flatbuffers/blob/master/samples/monster.fbs}{\texttt{ monster.\+fbs}} for an complete example.
+\item {\bfseries{Generate code for your language(s)}}
+
+Use the {\ttfamily flatc} compiler to take your schema and generate language-\/specific code\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{./flatc\ -\/-\/cpp\ -\/-\/rust\ mosnter.fbs}
+
+\end{DoxyCode}
+
+
+Which generates {\ttfamily \doxylink{monster__generated_8h}{monster\+\_\+generated.\+h}} and {\ttfamily monster\+\_\+generated.\+rs} files.
+\item {\bfseries{Serialize data}}
+
+Use the generated code files, as well as the {\ttfamily \doxylink{classFlatBufferBuilder}{Flat\+Buffer\+Builder}} to construct your serialized buffer.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{++\ title=\textcolor{stringliteral}{"{}my\_monster\_factory.cc"{}}\ linenums=\textcolor{stringliteral}{"{}1"{}}}
+\DoxyCodeLine{\textcolor{preprocessor}{\ \ \ \#include\ "{}\mbox{\hyperlink{flatbuffers_8h}{flatbuffers.h}}"{}}}
+\DoxyCodeLine{\textcolor{preprocessor}{\ \ \ \#include\ "{}\mbox{\hyperlink{monster__generated_8h}{monster\_generated.h}}"{}}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{namespacemain}{main}}()\ \{\ }
+\DoxyCodeLine{\ \ \ \ \ \textcolor{comment}{//\ Used\ to\ build\ the\ flatbuffer}}
+\DoxyCodeLine{\ \ \ \ \ \mbox{\hyperlink{classFlatBufferBuilder}{FlatBufferBuilder}}\ \mbox{\hyperlink{namespacebuild_ac88b0ec8265b8fb42c15db20ec716d54}{builder}};}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \ \textcolor{comment}{//\ Auto-\/generated\ function\ emitted\ from\ \`{}flatc`\ and\ the\ input\ }}
+\DoxyCodeLine{\ \ \ \ \ \textcolor{comment}{//\ \`{}monster.fbs`\ schema.}}
+\DoxyCodeLine{\ \ \ \ \ \textcolor{keyword}{auto}\ monster\ =\ \mbox{\hyperlink{namespaceMyGame_1_1Sample_a39e38ec09f35955250991d6b8783f1b1}{CreateMonsterDirect}}(builder,\ \textcolor{stringliteral}{"{}Abominable\ Snowman"{}},\ 100);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \ \textcolor{comment}{//\ Finalize\ the\ buffer.}}
+\DoxyCodeLine{\ \ \ \ \ \mbox{\hyperlink{namespacebuild_ac88b0ec8265b8fb42c15db20ec716d54}{builder}}.Finish(monster);}
+\DoxyCodeLine{\ \ \ \}}
+
+\end{DoxyCode}
+
+
+See complete \href{https://github.com/google/flatbuffers/blob/master/samples/sample_binary.cpp\#L24-L56}{\texttt{ C++ Example}}.
+\item {\bfseries{Transmit/\+Store the serialized Flat\+Buffer}}
+
+Use your serialized buffer however you want. Send it to someone, save if for later, etc...
+
+{\ttfamily c++ title="{}my\+\_\+monster\+\_\+factory.\+cc"{} linenums="{}13"{} // Get a pointer to the flatbuffer. const uint8\+\_\+t\texorpdfstring{$\ast$}{*} flatbuffer = builder.\+Get\+Buffer\+Pointer(); }
+\item {\bfseries{Read the data}}
+
+Use the generated accessors to read the data from the serialized buffer.
+
+It doesn\textquotesingle{}t need to be the same language, or even schema version (see \doxysectlink{md_flatbuffers_2docs_2source_2evolution}{Evolving}{0}), Flat\+Buffers ensures the data is readable across languages and schema versions.
+
+\`{}\`{}\`{}c++ title="{}my\+\_\+monster\+\_\+factory.\+cc"{} linenums="{}15"{} // Get a view of the root monster from the flatbuffer. const Monster snowman = Get\+Monster(flatbuffer);
+
+// Access the monster\textquotesingle{}s fields directly. ASSERT\+\_\+\+EQ(snowman.\+name(), "{}\+Abominable Snowman"{}); ASSERT\+\_\+\+EQ(snowman.\+health(), 100); \`{}\`{}\`{} ~\newline
+
+
+See \href{https://github.com/google/flatbuffers/blob/master/samples/sample_binary.rs\#L92-L106}{\texttt{ {\ttfamily Rust} examples}} for reading the data written by {\ttfamily C++}. 
+\end{DoxyEnumerate}

@@ -1,0 +1,42 @@
+\doxysection{flex\+\_\+flat\+\_\+util.\+h}
+\hypertarget{flex__flat__util_8h_source}{}\label{flex__flat__util_8h_source}\index{flatbuffers/include/flatbuffers/flex\_flat\_util.h@{flatbuffers/include/flatbuffers/flex\_flat\_util.h}}
+\mbox{\hyperlink{flex__flat__util_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ Copyright\ 2022\ Google\ Inc.\ All\ rights\ reserved.}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ Licensed\ under\ the\ Apache\ License,\ Version\ 2.0\ (the\ "{}License"{});}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ you\ may\ not\ use\ this\ file\ except\ in\ compliance\ with\ the\ License.}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *\ You\ may\ obtain\ a\ copy\ of\ the\ License\ at}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ *\ \ \ \ \ http://www.apache.org/licenses/LICENSE-\/2.0}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ *\ Unless\ required\ by\ applicable\ law\ or\ agreed\ to\ in\ writing,\ software}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ *\ distributed\ under\ the\ License\ is\ distributed\ on\ an\ "{}AS\ IS"{}\ BASIS,}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ *\ WITHOUT\ WARRANTIES\ OR\ CONDITIONS\ OF\ ANY\ KIND,\ either\ express\ or\ implied.}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ *\ See\ the\ License\ for\ the\ specific\ language\ governing\ permissions\ and}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ *\ limitations\ under\ the\ License.}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#ifndef\ FLATBUFFERS\_FLEX\_FLAT\_UTIL\_H\_}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#define\ FLATBUFFERS\_FLEX\_FLAT\_UTIL\_H\_}}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{flatbuffers_8h}{flatbuffers/flatbuffers.h}}"{}}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{flexbuffers_8h}{flatbuffers/flexbuffers.h}}"{}}}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceflexbuffers}{flexbuffers}}\ \{}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \textcolor{comment}{//\ Verifies\ the\ \`{}nested`\ flexbuffer\ within\ a\ flatbuffer\ vector\ is\ valid.}}
+\DoxyCodeLine{00026\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{namespaceflexbuffers_a04da2411b07b54a64720e22f35286aaa}{VerifyNestedFlexBuffer}}(}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classflatbuffers_1_1Vector}{flatbuffers::Vector<uint8\_t>}}\ *\textcolor{keyword}{const}\ nested,}
+\DoxyCodeLine{00028\ \ \ \ \ \mbox{\hyperlink{namespaceflatbuffers_a3268477941df91db2eb06442b6e5f922}{flatbuffers::Verifier}}\ \&verifier)\ \{}
+\DoxyCodeLine{00029\ \ \ \textcolor{keywordflow}{if}\ (!nested)\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00030\ \ \ \textcolor{keywordflow}{return}\ verifier.Check(\mbox{\hyperlink{namespaceflexbuffers_a01115a2166486217cea5d3bc0f05f448}{flexbuffers::VerifyBuffer}}(}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ nested-\/>\mbox{\hyperlink{classflatbuffers_1_1Vector_a138405be6fda9f3af1a54ee8725af080}{data}}(),\ nested-\/>\mbox{\hyperlink{classflatbuffers_1_1Vector_a70e1b54b9c82251be5496f1729d60e9a}{size}}(),\ verifier.GetFlexReuseTracker()));}
+\DoxyCodeLine{00032\ \}}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \}\ \ \textcolor{comment}{//\ namespace\ flexbuffers}}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ FLATBUFFERS\_FLEX\_FLAT\_UTIL\_H\_}}
+
+\end{DoxyCode}

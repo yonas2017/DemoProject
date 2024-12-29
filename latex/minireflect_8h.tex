@@ -1,0 +1,37 @@
+\doxysection{flatbuffers/include/flatbuffers/minireflect.h File Reference}
+\hypertarget{minireflect_8h}{}\label{minireflect_8h}\index{flatbuffers/include/flatbuffers/minireflect.h@{flatbuffers/include/flatbuffers/minireflect.h}}
+{\ttfamily \#include "{}flatbuffers/flatbuffers.\+h"{}}\newline
+{\ttfamily \#include "{}flatbuffers/util.\+h"{}}\newline
+Include dependency graph for minireflect.\+h\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structflatbuffers_1_1IterationVisitor}{flatbuffers\+::\+Iteration\+Visitor}}
+\item 
+struct \mbox{\hyperlink{structflatbuffers_1_1ToStringVisitor}{flatbuffers\+::\+To\+String\+Visitor}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespaceflatbuffers}{flatbuffers}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+size\+\_\+t \mbox{\hyperlink{namespaceflatbuffers_adabceb6e262734baf99947aa21759283}{flatbuffers\+::\+Inline\+Size}} (\mbox{\hyperlink{namespaceflatbuffers_a1b3764da68a20489eb19e59529a07554}{Elementary\+Type}} type, const \mbox{\hyperlink{structflatbuffers_1_1TypeTable}{Type\+Table}} \texorpdfstring{$\ast$}{*}type\+\_\+table)
+\item 
+int64\+\_\+t \mbox{\hyperlink{namespaceflatbuffers_a36b7e504125b89e72486acdda6a8084b}{flatbuffers\+::\+Lookup\+Enum}} (int64\+\_\+t enum\+\_\+val, const int64\+\_\+t \texorpdfstring{$\ast$}{*}values, size\+\_\+t num\+\_\+values)
+\item 
+{\footnotesize template$<$typename T $>$ }\\const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{namespaceflatbuffers_abbdd2aec3fd45f966f166557cb6949bc}{flatbuffers\+::\+Enum\+Name}} (T tval, const \mbox{\hyperlink{structflatbuffers_1_1TypeTable}{Type\+Table}} \texorpdfstring{$\ast$}{*}type\+\_\+table)
+\item 
+void \mbox{\hyperlink{namespaceflatbuffers_a75bcc5341dc3f86398035a012c1b1d3c}{flatbuffers\+::\+Iterate\+Object}} (const uint8\+\_\+t \texorpdfstring{$\ast$}{*}obj, const \mbox{\hyperlink{structflatbuffers_1_1TypeTable}{Type\+Table}} \texorpdfstring{$\ast$}{*}type\+\_\+table, \mbox{\hyperlink{structflatbuffers_1_1IterationVisitor}{Iteration\+Visitor}} \texorpdfstring{$\ast$}{*}visitor)
+\item 
+void \mbox{\hyperlink{namespaceflatbuffers_a5ff30e4d445b09f876f7eec34bf9532f}{flatbuffers\+::\+Iterate\+Value}} (\mbox{\hyperlink{namespaceflatbuffers_a1b3764da68a20489eb19e59529a07554}{Elementary\+Type}} type, const uint8\+\_\+t \texorpdfstring{$\ast$}{*}val, const \mbox{\hyperlink{structflatbuffers_1_1TypeTable}{Type\+Table}} \texorpdfstring{$\ast$}{*}type\+\_\+table, const uint8\+\_\+t \texorpdfstring{$\ast$}{*}prev\+\_\+val, soffset\+\_\+t vector\+\_\+index, \mbox{\hyperlink{structflatbuffers_1_1IterationVisitor}{Iteration\+Visitor}} \texorpdfstring{$\ast$}{*}visitor)
+\item 
+void \mbox{\hyperlink{namespaceflatbuffers_ada6fb25d1d328ff76efd7abcf4412a5a}{flatbuffers\+::\+Iterate\+Flat\+Buffer}} (const uint8\+\_\+t \texorpdfstring{$\ast$}{*}buffer, const \mbox{\hyperlink{structflatbuffers_1_1TypeTable}{Type\+Table}} \texorpdfstring{$\ast$}{*}type\+\_\+table, \mbox{\hyperlink{structflatbuffers_1_1IterationVisitor}{Iteration\+Visitor}} \texorpdfstring{$\ast$}{*}callback)
+\item 
+std\+::string \mbox{\hyperlink{namespaceflatbuffers_a55b497408f6d2a6a22750d4152deee9a}{flatbuffers\+::\+Flat\+Buffer\+To\+String}} (const uint8\+\_\+t \texorpdfstring{$\ast$}{*}buffer, const \mbox{\hyperlink{structflatbuffers_1_1TypeTable}{Type\+Table}} \texorpdfstring{$\ast$}{*}type\+\_\+table, bool multi\+\_\+line=false, bool vector\+\_\+delimited=true, const std\+::string \&indent="{}"{}, bool quotes=false)
+\end{DoxyCompactItemize}

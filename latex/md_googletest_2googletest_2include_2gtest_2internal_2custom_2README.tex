@@ -1,0 +1,57 @@
+\chapter{Customization Points}
+\hypertarget{md_googletest_2googletest_2include_2gtest_2internal_2custom_2README}{}\label{md_googletest_2googletest_2include_2gtest_2internal_2custom_2README}\index{Customization Points@{Customization Points}}
+The custom directory is an injection point for custom user configurations.
+
+\doxysection*{Header {\ttfamily gtest.\+h}}
+
+\doxysubsection*{The following macros can be defined\+:}
+
+
+\begin{DoxyItemize}
+\item {\ttfamily GTEST\+\_\+\+OS\+\_\+\+STACK\+\_\+\+TRACE\+\_\+\+GETTER\+\_\+} -\/ The name of an implementation of {\ttfamily Os\+Stack\+Trace\+Getter\+Interface}.
+\item {\ttfamily GTEST\+\_\+\+CUSTOM\+\_\+\+TEMPDIR\+\_\+\+FUNCTION\+\_\+} -\/ An override for {\ttfamily \doxylink{namespacetesting_aae1bbe7c3cc99bf56263d51d3982a52e}{testing\+::\+Temp\+Dir()}}. See {\ttfamily \doxylink{namespacetesting_aae1bbe7c3cc99bf56263d51d3982a52e}{testing\+::\+Temp\+Dir}} for semantics and signature.
+\end{DoxyItemize}
+
+\doxysection*{Header {\ttfamily gtest-\/port.\+h}}
+
+The following macros can be defined\+:
+
+\doxysubsection*{Logging\+:}
+
+
+\begin{DoxyItemize}
+\item {\ttfamily \doxylink{gtest-port_8h_a8ef4cb4c465db8c15464aecc6d9510ef}{GTEST\+\_\+\+LOG\+\_\+(severity)}}
+\item {\ttfamily \doxylink{gtest-port_8h_ab54343f0a36dc4cb0ce8a478dd7847b8}{GTEST\+\_\+\+CHECK\+\_\+(condition)}}
+\item Functions {\ttfamily Log\+To\+Stderr()} and {\ttfamily Flush\+Info\+Log()} have to be provided too.
+\end{DoxyItemize}
+
+\doxysubsection*{Threading\+:}
+
+
+\begin{DoxyItemize}
+\item {\ttfamily GTEST\+\_\+\+HAS\+\_\+\+NOTIFICATION\+\_\+} -\/ Enabled if Notification is already provided.
+\item {\ttfamily GTEST\+\_\+\+HAS\+\_\+\+MUTEX\+\_\+\+AND\+\_\+\+THREAD\+\_\+\+LOCAL\+\_\+} -\/ Enabled if {\ttfamily Mutex} and {\ttfamily Thread\+Local} are already provided. Must also provide {\ttfamily \doxylink{gtest-port_8h_af0970cdea09f16dbb1dbfccdaa693eeb}{GTEST\+\_\+\+DECLARE\+\_\+\+STATIC\+\_\+\+MUTEX\+\_\+(mutex)}} and {\ttfamily \doxylink{gtest-port_8h_a85d5cd679fdbe87383e7dfd1c6651eaa}{GTEST\+\_\+\+DEFINE\+\_\+\+STATIC\+\_\+\+MUTEX\+\_\+(mutex)}}
+\item {\ttfamily \doxylink{gtest-port_8h_a149f693bd59fa1bc937af54c0cdcb32f}{GTEST\+\_\+\+EXCLUSIVE\+\_\+\+LOCK\+\_\+\+REQUIRED\+\_\+(locks)}}
+\item {\ttfamily \doxylink{gtest-port_8h_a69abff5a4efdd07bd5faebe3dd318d06}{GTEST\+\_\+\+LOCK\+\_\+\+EXCLUDED\+\_\+(locks)}}
+\end{DoxyItemize}
+
+\doxysubsection*{Underlying library support features}
+
+
+\begin{DoxyItemize}
+\item {\ttfamily GTEST\+\_\+\+HAS\+\_\+\+CXXABI\+\_\+\+H\+\_\+}
+\end{DoxyItemize}
+
+\doxysubsection*{Exporting API symbols\+:}
+
+
+\begin{DoxyItemize}
+\item {\ttfamily GTEST\+\_\+\+API\+\_\+} -\/ Specifier for exported symbols.
+\end{DoxyItemize}
+
+\doxysection*{Header {\ttfamily gtest-\/printers.\+h}}
+
+
+\begin{DoxyItemize}
+\item See documentation at {\ttfamily \doxylink{gtest-printers_8h}{gtest/gtest-\/printers.\+h}} for details on how to define a custom printer. 
+\end{DoxyItemize}

@@ -1,0 +1,95 @@
+\doxysection{flatbuffers\+::Flat\+Buf\+Printer Class Reference}
+\hypertarget{classflatbuffers_1_1FlatBufPrinter}{}\label{classflatbuffers_1_1FlatBufPrinter}\index{flatbuffers::FlatBufPrinter@{flatbuffers::FlatBufPrinter}}
+
+
+Inheritance diagram for flatbuffers\+::Flat\+Buf\+Printer\+:
+% FIG 0
+
+
+Collaboration diagram for flatbuffers\+::Flat\+Buf\+Printer\+:
+% FIG 1
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classflatbuffers_1_1FlatBufPrinter_a9fcc52ca9f261aac204293e78af2af26}{Flat\+Buf\+Printer}} (std\+::string \texorpdfstring{$\ast$}{*}str, const char indentation\+\_\+type)
+\item 
+void \mbox{\hyperlink{classflatbuffers_1_1FlatBufPrinter_a9243e9d833667daa2f341e8bbe2de8b2}{Print}} (const std\+::map$<$ std\+::string, std\+::string $>$ \&vars, const char \texorpdfstring{$\ast$}{*}string\+\_\+template)
+\item 
+void \mbox{\hyperlink{classflatbuffers_1_1FlatBufPrinter_a95728a6a9f8889a82a45e005da980ec1}{Print}} (const char \texorpdfstring{$\ast$}{*}s)
+\item 
+void \mbox{\hyperlink{classflatbuffers_1_1FlatBufPrinter_ad34bc20e50cfc148f8ed23108c70bcab}{Set\+Indentation\+Size}} (const size\+\_\+t size)
+\item 
+void \mbox{\hyperlink{classflatbuffers_1_1FlatBufPrinter_a4680d41143d9b55635ec91b7f204103f}{Indent}} ()
+\item 
+void \mbox{\hyperlink{classflatbuffers_1_1FlatBufPrinter_a553ee05ec215c2607b79494903af7d8d}{Outdent}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{structgrpc__generator_1_1Printer}{grpc\+\_\+generator\+::\+Printer}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{structgrpc__generator_1_1Printer_a46d567798e83e7876c9dfad29689680b}{\texorpdfstring{$\sim$}{\string~}\+Printer}} ()
+\item 
+virtual void \mbox{\hyperlink{structgrpc__generator_1_1Printer_a286732e160de900b9da68812193dbe29}{Print}} (const std\+::map$<$ \mbox{\hyperlink{namespacegrpc_a77f15e90a2c3651195f88645e4512267}{grpc\+::string}}, \mbox{\hyperlink{namespacegrpc_a77f15e90a2c3651195f88645e4512267}{grpc\+::string}} $>$ \&vars, const char \texorpdfstring{$\ast$}{*}template\+\_\+string)=0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classflatbuffers_1_1FlatBufPrinter_a9fcc52ca9f261aac204293e78af2af26}\label{classflatbuffers_1_1FlatBufPrinter_a9fcc52ca9f261aac204293e78af2af26} 
+\index{flatbuffers::FlatBufPrinter@{flatbuffers::FlatBufPrinter}!FlatBufPrinter@{FlatBufPrinter}}
+\index{FlatBufPrinter@{FlatBufPrinter}!flatbuffers::FlatBufPrinter@{flatbuffers::FlatBufPrinter}}
+\doxysubsubsection{\texorpdfstring{FlatBufPrinter()}{FlatBufPrinter()}}
+{\footnotesize\ttfamily flatbuffers\+::\+Flat\+Buf\+Printer\+::\+Flat\+Buf\+Printer (\begin{DoxyParamCaption}\item[{std\+::string \texorpdfstring{$\ast$}{*}}]{str,  }\item[{const char}]{indentation\+\_\+type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classflatbuffers_1_1FlatBufPrinter_a4680d41143d9b55635ec91b7f204103f}\label{classflatbuffers_1_1FlatBufPrinter_a4680d41143d9b55635ec91b7f204103f} 
+\index{flatbuffers::FlatBufPrinter@{flatbuffers::FlatBufPrinter}!Indent@{Indent}}
+\index{Indent@{Indent}!flatbuffers::FlatBufPrinter@{flatbuffers::FlatBufPrinter}}
+\doxysubsubsection{\texorpdfstring{Indent()}{Indent()}}
+{\footnotesize\ttfamily void flatbuffers\+::\+Flat\+Buf\+Printer\+::\+Indent (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{structgrpc__generator_1_1Printer_a5483a9319b346780047ecb605bc34003}{grpc\+\_\+generator\+::\+Printer}}.
+
+\Hypertarget{classflatbuffers_1_1FlatBufPrinter_a553ee05ec215c2607b79494903af7d8d}\label{classflatbuffers_1_1FlatBufPrinter_a553ee05ec215c2607b79494903af7d8d} 
+\index{flatbuffers::FlatBufPrinter@{flatbuffers::FlatBufPrinter}!Outdent@{Outdent}}
+\index{Outdent@{Outdent}!flatbuffers::FlatBufPrinter@{flatbuffers::FlatBufPrinter}}
+\doxysubsubsection{\texorpdfstring{Outdent()}{Outdent()}}
+{\footnotesize\ttfamily void flatbuffers\+::\+Flat\+Buf\+Printer\+::\+Outdent (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{structgrpc__generator_1_1Printer_abeaa7065f651b0b8f9a606f550777fcc}{grpc\+\_\+generator\+::\+Printer}}.
+
+\Hypertarget{classflatbuffers_1_1FlatBufPrinter_a95728a6a9f8889a82a45e005da980ec1}\label{classflatbuffers_1_1FlatBufPrinter_a95728a6a9f8889a82a45e005da980ec1} 
+\index{flatbuffers::FlatBufPrinter@{flatbuffers::FlatBufPrinter}!Print@{Print}}
+\index{Print@{Print}!flatbuffers::FlatBufPrinter@{flatbuffers::FlatBufPrinter}}
+\doxysubsubsection{\texorpdfstring{Print()}{Print()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void flatbuffers\+::\+Flat\+Buf\+Printer\+::\+Print (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{s }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{structgrpc__generator_1_1Printer_a07afc2a009e1affee291eb82e69fc276}{grpc\+\_\+generator\+::\+Printer}}.
+
+\Hypertarget{classflatbuffers_1_1FlatBufPrinter_a9243e9d833667daa2f341e8bbe2de8b2}\label{classflatbuffers_1_1FlatBufPrinter_a9243e9d833667daa2f341e8bbe2de8b2} 
+\index{flatbuffers::FlatBufPrinter@{flatbuffers::FlatBufPrinter}!Print@{Print}}
+\index{Print@{Print}!flatbuffers::FlatBufPrinter@{flatbuffers::FlatBufPrinter}}
+\doxysubsubsection{\texorpdfstring{Print()}{Print()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void flatbuffers\+::\+Flat\+Buf\+Printer\+::\+Print (\begin{DoxyParamCaption}\item[{const std\+::map$<$ std\+::string, std\+::string $>$ \&}]{vars,  }\item[{const char \texorpdfstring{$\ast$}{*}}]{string\+\_\+template }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflatbuffers_1_1FlatBufPrinter_ad34bc20e50cfc148f8ed23108c70bcab}\label{classflatbuffers_1_1FlatBufPrinter_ad34bc20e50cfc148f8ed23108c70bcab} 
+\index{flatbuffers::FlatBufPrinter@{flatbuffers::FlatBufPrinter}!SetIndentationSize@{SetIndentationSize}}
+\index{SetIndentationSize@{SetIndentationSize}!flatbuffers::FlatBufPrinter@{flatbuffers::FlatBufPrinter}}
+\doxysubsubsection{\texorpdfstring{SetIndentationSize()}{SetIndentationSize()}}
+{\footnotesize\ttfamily void flatbuffers\+::\+Flat\+Buf\+Printer\+::\+Set\+Indentation\+Size (\begin{DoxyParamCaption}\item[{const size\+\_\+t}]{size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{structgrpc__generator_1_1Printer_a801c3961629cf13b2be19f2cf3fefe52}{grpc\+\_\+generator\+::\+Printer}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+flatbuffers/src/\mbox{\hyperlink{idl__gen__grpc_8cpp}{idl\+\_\+gen\+\_\+grpc.\+cpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,82 @@
+\doxysection{Bench Struct Reference}
+\hypertarget{structBench}{}\label{structBench}\index{Bench@{Bench}}
+
+
+{\ttfamily \#include $<$bench.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{structBench_a50148d86e661861235c92d8792beee54}{\texorpdfstring{$\sim$}{\string~}\+Bench}} ()
+\item 
+void \mbox{\hyperlink{structBench_a779338e29b27cc55cd04cd7ae5a7697d}{Add}} (int64\+\_\+t \mbox{\hyperlink{annotated__binary__text__gen_8cpp_a5c33da5929c9f2f9ef8d006d2350e6ec}{value}})
+\item 
+virtual uint8\+\_\+t \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{structBench_ab023ad15afc415cca2bc6071a189466a}{Encode}} (void \texorpdfstring{$\ast$}{*}buf, int64\+\_\+t \&len)=0
+\item 
+virtual void \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{structBench_a7f570b9a9b4e5382595b375fd8cd20ab}{Decode}} (void \texorpdfstring{$\ast$}{*}buf, int64\+\_\+t len)=0
+\item 
+virtual int64\+\_\+t \mbox{\hyperlink{structBench_a9b566d9c8420d2ca23dace76b74d7ba4}{Use}} (void \texorpdfstring{$\ast$}{*}decoded)=0
+\item 
+virtual void \mbox{\hyperlink{structBench_aa75594f64e1f85f8587d6bc8a8712474}{Dealloc}} (void \texorpdfstring{$\ast$}{*}decoded)=0
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int64\+\_\+t \mbox{\hyperlink{structBench_a49b5be35b60d53ea52750b7f12a3ce7f}{sum}} = 0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{structBench_a50148d86e661861235c92d8792beee54}\label{structBench_a50148d86e661861235c92d8792beee54} 
+\index{Bench@{Bench}!````~Bench@{\texorpdfstring{$\sim$}{\string~}Bench}}
+\index{````~Bench@{\texorpdfstring{$\sim$}{\string~}Bench}!Bench@{Bench}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Bench()}{\string~Bench()}}
+{\footnotesize\ttfamily virtual Bench\+::\texorpdfstring{$\sim$}{\string~}\+Bench (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{structBench_a779338e29b27cc55cd04cd7ae5a7697d}\label{structBench_a779338e29b27cc55cd04cd7ae5a7697d} 
+\index{Bench@{Bench}!Add@{Add}}
+\index{Add@{Add}!Bench@{Bench}}
+\doxysubsubsection{\texorpdfstring{Add()}{Add()}}
+{\footnotesize\ttfamily void Bench\+::\+Add (\begin{DoxyParamCaption}\item[{int64\+\_\+t}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{structBench_aa75594f64e1f85f8587d6bc8a8712474}\label{structBench_aa75594f64e1f85f8587d6bc8a8712474} 
+\index{Bench@{Bench}!Dealloc@{Dealloc}}
+\index{Dealloc@{Dealloc}!Bench@{Bench}}
+\doxysubsubsection{\texorpdfstring{Dealloc()}{Dealloc()}}
+{\footnotesize\ttfamily virtual void Bench\+::\+Dealloc (\begin{DoxyParamCaption}\item[{void \texorpdfstring{$\ast$}{*}}]{decoded }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+\Hypertarget{structBench_a7f570b9a9b4e5382595b375fd8cd20ab}\label{structBench_a7f570b9a9b4e5382595b375fd8cd20ab} 
+\index{Bench@{Bench}!Decode@{Decode}}
+\index{Decode@{Decode}!Bench@{Bench}}
+\doxysubsubsection{\texorpdfstring{Decode()}{Decode()}}
+{\footnotesize\ttfamily virtual void \texorpdfstring{$\ast$}{*} Bench\+::\+Decode (\begin{DoxyParamCaption}\item[{void \texorpdfstring{$\ast$}{*}}]{buf,  }\item[{int64\+\_\+t}]{len }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+\Hypertarget{structBench_ab023ad15afc415cca2bc6071a189466a}\label{structBench_ab023ad15afc415cca2bc6071a189466a} 
+\index{Bench@{Bench}!Encode@{Encode}}
+\index{Encode@{Encode}!Bench@{Bench}}
+\doxysubsubsection{\texorpdfstring{Encode()}{Encode()}}
+{\footnotesize\ttfamily virtual uint8\+\_\+t \texorpdfstring{$\ast$}{*} Bench\+::\+Encode (\begin{DoxyParamCaption}\item[{void \texorpdfstring{$\ast$}{*}}]{buf,  }\item[{int64\+\_\+t \&}]{len }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+\Hypertarget{structBench_a9b566d9c8420d2ca23dace76b74d7ba4}\label{structBench_a9b566d9c8420d2ca23dace76b74d7ba4} 
+\index{Bench@{Bench}!Use@{Use}}
+\index{Use@{Use}!Bench@{Bench}}
+\doxysubsubsection{\texorpdfstring{Use()}{Use()}}
+{\footnotesize\ttfamily virtual int64\+\_\+t Bench\+::\+Use (\begin{DoxyParamCaption}\item[{void \texorpdfstring{$\ast$}{*}}]{decoded }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{structBench_a49b5be35b60d53ea52750b7f12a3ce7f}\label{structBench_a49b5be35b60d53ea52750b7f12a3ce7f} 
+\index{Bench@{Bench}!sum@{sum}}
+\index{sum@{sum}!Bench@{Bench}}
+\doxysubsubsection{\texorpdfstring{sum}{sum}}
+{\footnotesize\ttfamily int64\+\_\+t Bench\+::sum = 0}
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+flatbuffers/benchmarks/cpp/\mbox{\hyperlink{bench_8h}{bench.\+h}}\end{DoxyCompactItemize}

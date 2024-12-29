@@ -1,0 +1,137 @@
+\doxysection{flatc.\+h}
+\hypertarget{flatc_8h_source}{}\label{flatc_8h_source}\index{flatbuffers/include/flatbuffers/flatc.h@{flatbuffers/include/flatbuffers/flatc.h}}
+\mbox{\hyperlink{flatc_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ Copyright\ 2017\ Google\ Inc.\ All\ rights\ reserved.}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ Licensed\ under\ the\ Apache\ License,\ Version\ 2.0\ (the\ "{}License"{});}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ you\ may\ not\ use\ this\ file\ except\ in\ compliance\ with\ the\ License.}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *\ You\ may\ obtain\ a\ copy\ of\ the\ License\ at}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ *\ \ \ \ \ http://www.apache.org/licenses/LICENSE-\/2.0}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ *\ Unless\ required\ by\ applicable\ law\ or\ agreed\ to\ in\ writing,\ software}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ *\ distributed\ under\ the\ License\ is\ distributed\ on\ an\ "{}AS\ IS"{}\ BASIS,}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ *\ WITHOUT\ WARRANTIES\ OR\ CONDITIONS\ OF\ ANY\ KIND,\ either\ express\ or\ implied.}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ *\ See\ the\ License\ for\ the\ specific\ language\ governing\ permissions\ and}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ *\ limitations\ under\ the\ License.}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#ifndef\ FLATBUFFERS\_FLATC\_H\_}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#define\ FLATBUFFERS\_FLATC\_H\_}}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ <functional>}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ <limits>}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#include\ <list>}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{code__generator_8h}{flatbuffers/code\_generator.h}}"{}}}
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{flatbuffers_8h}{flatbuffers/flatbuffers.h}}"{}}}
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{idl_8h}{flatbuffers/idl.h}}"{}}}
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{util_8h}{flatbuffers/util.h}}"{}}}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceflatbuffers}{flatbuffers}}\ \{}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceflatbuffers_af2d6ca39de602e952ef0e9340c8ac0bc}{LogCompilerWarn}}(\textcolor{keyword}{const}\ std::string\ \&warn);}
+\DoxyCodeLine{00034\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceflatbuffers_a2ea1bb315ef924eb96614f446a924ffa}{LogCompilerError}}(\textcolor{keyword}{const}\ std::string\ \&err);}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structflatbuffers_1_1FlatCOptions}{FlatCOptions}}\ \{}
+\DoxyCodeLine{00037\ \ \ \mbox{\hyperlink{structflatbuffers_1_1IDLOptions}{IDLOptions}}\ \mbox{\hyperlink{structflatbuffers_1_1FlatCOptions_a5219f5148a8f19cfaa591249a08e5ea9}{opts}};}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \ \ std::string\ \mbox{\hyperlink{structflatbuffers_1_1FlatCOptions_a613898a42b9cdb56d69a62e81b5d7290}{program\_name}};}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \ \ std::string\ \mbox{\hyperlink{structflatbuffers_1_1FlatCOptions_a1aa27dd04c5447b1d3f42aec5b2fa235}{output\_path}};}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \ \ std::vector<std::string>\ \mbox{\hyperlink{structflatbuffers_1_1FlatCOptions_ac5c841b6e276e7c9546d6164148ee4f3}{filenames}};}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \ \ std::list<std::string>\ \mbox{\hyperlink{structflatbuffers_1_1FlatCOptions_ae64339180153647bc6f8729bf1e5bb0f}{include\_directories\_storage}};}
+\DoxyCodeLine{00046\ \ \ std::vector<const\ char\ *>\ \mbox{\hyperlink{structflatbuffers_1_1FlatCOptions_a2cf9cc830e669f06e4110a9cc88e5271}{include\_directories}};}
+\DoxyCodeLine{00047\ \ \ std::vector<const\ char\ *>\ \mbox{\hyperlink{structflatbuffers_1_1FlatCOptions_abbe98c00bcbe97edd676a0f61dd6b748}{conform\_include\_directories}};}
+\DoxyCodeLine{00048\ \ \ std::vector<bool>\ \mbox{\hyperlink{structflatbuffers_1_1FlatCOptions_a09df06cc06852d511db8516785186197}{generator\_enabled}};}
+\DoxyCodeLine{00049\ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{structflatbuffers_1_1FlatCOptions_a4a7b3e1d63c0783a3eeeb76b5a4f0a0a}{binary\_files\_from}}\ =\ std::numeric\_limits<size\_t>::max();}
+\DoxyCodeLine{00050\ \ \ std::string\ \mbox{\hyperlink{structflatbuffers_1_1FlatCOptions_a02d66a1ee89b075847494380a68a7fab}{conform\_to\_schema}};}
+\DoxyCodeLine{00051\ \ \ std::string\ \mbox{\hyperlink{structflatbuffers_1_1FlatCOptions_a24acea7a7b38ff31f431c93a07a59649}{annotate\_schema}};}
+\DoxyCodeLine{00052\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structflatbuffers_1_1FlatCOptions_a08ee6290e0891937cff3d7d0f53c7614}{annotate\_include\_vector\_contents}}\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00053\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structflatbuffers_1_1FlatCOptions_a385af602398605586eb3d507cd8f898e}{any\_generator}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00054\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structflatbuffers_1_1FlatCOptions_a265139f019254c1c9cd1b33cdc0e46a6}{print\_make\_rules}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00055\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structflatbuffers_1_1FlatCOptions_a104efa24a99c91fae645fa08848518c6}{raw\_binary}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00056\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structflatbuffers_1_1FlatCOptions_a5faa950ab532b504318c2d7a0fa00c9c}{schema\_binary}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00057\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structflatbuffers_1_1FlatCOptions_a5eda7c3003a3f471345ca47a02f1607e}{grpc\_enabled}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00058\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structflatbuffers_1_1FlatCOptions_a7a10e58707349626901b5f47e399d618}{requires\_bfbs}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00059\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structflatbuffers_1_1FlatCOptions_aef8095a7eaf250c4764ff4a396119371}{file\_names\_only}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ \ \ std::vector<std::shared\_ptr<CodeGenerator>>\ \mbox{\hyperlink{structflatbuffers_1_1FlatCOptions_a5dca75771e9a4c1e0c6918e234bed6ab}{generators}};}
+\DoxyCodeLine{00062\ \};}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00064\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structflatbuffers_1_1FlatCOption}{FlatCOption}}\ \{}
+\DoxyCodeLine{00065\ \ \ std::string\ \mbox{\hyperlink{structflatbuffers_1_1FlatCOption_a3be743eb53b296ea22065ecebce5f0c0}{short\_opt}};}
+\DoxyCodeLine{00066\ \ \ std::string\ \mbox{\hyperlink{structflatbuffers_1_1FlatCOption_a43754c3d861214a2dcad509e4b7660de}{long\_opt}};}
+\DoxyCodeLine{00067\ \ \ std::string\ \mbox{\hyperlink{structflatbuffers_1_1FlatCOption_aad06e7b4722848b515d456a4dd3bffc3}{parameter}};}
+\DoxyCodeLine{00068\ \ \ std::string\ \mbox{\hyperlink{structflatbuffers_1_1FlatCOption_a3a096e17dfdbcb7f637c8f2e53c3edd9}{description}};}
+\DoxyCodeLine{00069\ \};}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00071\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classflatbuffers_1_1FlatCompiler}{FlatCompiler}}\ \{}
+\DoxyCodeLine{00072\ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00073\ \ \ \textcolor{keyword}{typedef}\ void\ (*\mbox{\hyperlink{classflatbuffers_1_1FlatCompiler_a6eccbef426fd45f425c9af2ab3f722ce}{WarnFn}})(\textcolor{keyword}{const}\ \mbox{\hyperlink{classflatbuffers_1_1FlatCompiler}{FlatCompiler}}\ *flatc,\ \textcolor{keyword}{const}\ std::string\ \&warn,}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ show\_exe\_name);}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00076\ \ \ \textcolor{keyword}{typedef}\ void\ (*\mbox{\hyperlink{classflatbuffers_1_1FlatCompiler_a1e32baf1cdb659996fd415fdc3de9783}{ErrorFn}})(\textcolor{keyword}{const}\ \mbox{\hyperlink{classflatbuffers_1_1FlatCompiler}{FlatCompiler}}\ *flatc,\ \textcolor{keyword}{const}\ std::string\ \&err,}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ usage,\ \textcolor{keywordtype}{bool}\ show\_exe\_name);}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00079\ \ \ \textcolor{comment}{//\ Parameters\ required\ to\ initialize\ the\ FlatCompiler.}}
+\DoxyCodeLine{00080\ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structflatbuffers_1_1FlatCompiler_1_1InitParams}{InitParams}}\ \{}
+\DoxyCodeLine{00081\ \ \ \ \ \mbox{\hyperlink{structflatbuffers_1_1FlatCompiler_1_1InitParams_ab6af77574f47f849c50ac47cf28cc610}{InitParams}}()\ :\ \mbox{\hyperlink{structflatbuffers_1_1FlatCompiler_1_1InitParams_ac8ee38d58650ce90a19e8a281071cb70}{warn\_fn}}(nullptr),\ \mbox{\hyperlink{structflatbuffers_1_1FlatCompiler_1_1InitParams_ae5694694263246d791101d4fa57846b0}{error\_fn}}(nullptr)\ \{\}}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00083\ \ \ \ \ \mbox{\hyperlink{classflatbuffers_1_1FlatCompiler_a6eccbef426fd45f425c9af2ab3f722ce}{WarnFn}}\ \mbox{\hyperlink{structflatbuffers_1_1FlatCompiler_1_1InitParams_ac8ee38d58650ce90a19e8a281071cb70}{warn\_fn}};}
+\DoxyCodeLine{00084\ \ \ \ \ \mbox{\hyperlink{classflatbuffers_1_1FlatCompiler_a1e32baf1cdb659996fd415fdc3de9783}{ErrorFn}}\ \mbox{\hyperlink{structflatbuffers_1_1FlatCompiler_1_1InitParams_ae5694694263246d791101d4fa57846b0}{error\_fn}};}
+\DoxyCodeLine{00085\ \ \ \};}
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00087\ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classflatbuffers_1_1FlatCompiler_a5270fc97f139aa5e5c78e66f39d24140}{FlatCompiler}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{structflatbuffers_1_1FlatCompiler_1_1InitParams}{InitParams}}\ \&params)\ :\ params\_(params)\ \{\}}
+\DoxyCodeLine{00088\ }
+\DoxyCodeLine{00089\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classflatbuffers_1_1FlatCompiler_a31acac48d380b110b504242425573553}{RegisterCodeGenerator}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{structflatbuffers_1_1FlatCOption}{FlatCOption}}\ \&option,}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::shared\_ptr<CodeGenerator>\ code\_generator);}
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00092\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classflatbuffers_1_1FlatCompiler_a51f164bbf2b6f68d1ad908930cd5d749}{Compile}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{structflatbuffers_1_1FlatCOptions}{FlatCOptions}}\ \&options);}
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00094\ \ \ std::string\ \mbox{\hyperlink{classflatbuffers_1_1FlatCompiler_abddc028af453426ccb1e191d6849d63d}{GetShortUsageString}}(\textcolor{keyword}{const}\ std::string\ \&program\_name)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00095\ \ \ std::string\ \mbox{\hyperlink{classflatbuffers_1_1FlatCompiler_af0292afa9dec8191aad44600de890ab7}{GetUsageString}}(\textcolor{keyword}{const}\ std::string\ \&program\_name)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00096\ }
+\DoxyCodeLine{00097\ \ \ \textcolor{comment}{//\ Parse\ the\ FlatC\ options\ from\ command\ line\ arguments.}}
+\DoxyCodeLine{00098\ \ \ \mbox{\hyperlink{structflatbuffers_1_1FlatCOptions}{FlatCOptions}}\ \mbox{\hyperlink{classflatbuffers_1_1FlatCompiler_aa115c7b7ec476a407d877115e3969f64}{ParseFromCommandLineArguments}}(\textcolor{keywordtype}{int}\ argc,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ **argv);}
+\DoxyCodeLine{00099\ }
+\DoxyCodeLine{00100\ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00101\ \ \ \textcolor{keywordtype}{void}\ ParseFile(\mbox{\hyperlink{classflatbuffers_1_1Parser}{flatbuffers::Parser}}\ \&parser,\ \textcolor{keyword}{const}\ std::string\ \&filename,}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\ \&contents,}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::vector<const\ char\ *>\ \&include\_directories)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00104\ }
+\DoxyCodeLine{00105\ \ \ \textcolor{keywordtype}{void}\ LoadBinarySchema(\mbox{\hyperlink{classflatbuffers_1_1Parser}{Parser}}\ \&parser,\ \textcolor{keyword}{const}\ std::string\ \&filename,}
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\ \&contents);}
+\DoxyCodeLine{00107\ }
+\DoxyCodeLine{00108\ \ \ \textcolor{keywordtype}{void}\ Warn(\textcolor{keyword}{const}\ std::string\ \&warn,\ \textcolor{keywordtype}{bool}\ show\_exe\_name\ =\ \textcolor{keyword}{true})\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00109\ }
+\DoxyCodeLine{00110\ \ \ \textcolor{keywordtype}{void}\ Error(\textcolor{keyword}{const}\ std::string\ \&err,\ \textcolor{keywordtype}{bool}\ usage\ =\ \textcolor{keyword}{true},}
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ show\_exe\_name\ =\ \textcolor{keyword}{true})\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00112\ }
+\DoxyCodeLine{00113\ \ \ \textcolor{keywordtype}{void}\ AnnotateBinaries(\textcolor{keyword}{const}\ uint8\_t\ *binary\_schema,}
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint64\_t\ binary\_schema\_size,}
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{structflatbuffers_1_1FlatCOptions}{FlatCOptions}}\ \&options);}
+\DoxyCodeLine{00116\ }
+\DoxyCodeLine{00117\ \ \ \textcolor{keywordtype}{void}\ ValidateOptions(\textcolor{keyword}{const}\ \mbox{\hyperlink{structflatbuffers_1_1FlatCOptions}{FlatCOptions}}\ \&options);}
+\DoxyCodeLine{00118\ }
+\DoxyCodeLine{00119\ \ \ \mbox{\hyperlink{classflatbuffers_1_1Parser}{Parser}}\ GetConformParser(\textcolor{keyword}{const}\ \mbox{\hyperlink{structflatbuffers_1_1FlatCOptions}{FlatCOptions}}\ \&options);}
+\DoxyCodeLine{00120\ }
+\DoxyCodeLine{00121\ \ \ std::unique\_ptr<Parser>\ GenerateCode(\textcolor{keyword}{const}\ \mbox{\hyperlink{structflatbuffers_1_1FlatCOptions}{FlatCOptions}}\ \&options,}
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classflatbuffers_1_1Parser}{Parser}}\ \&conform\_parser);}
+\DoxyCodeLine{00123\ }
+\DoxyCodeLine{00124\ \ \ std::map<std::string,\ std::shared\_ptr<CodeGenerator>>\ code\_generators\_;}
+\DoxyCodeLine{00125\ }
+\DoxyCodeLine{00126\ \ \ InitParams\ params\_;}
+\DoxyCodeLine{00127\ \};}
+\DoxyCodeLine{00128\ }
+\DoxyCodeLine{00129\ \}\ \ \textcolor{comment}{//\ namespace\ flatbuffers}}
+\DoxyCodeLine{00130\ }
+\DoxyCodeLine{00131\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ FLATBUFFERS\_FLATC\_H\_}}
+
+\end{DoxyCode}

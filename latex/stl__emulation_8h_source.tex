@@ -1,0 +1,520 @@
+\doxysection{stl\+\_\+emulation.\+h}
+\hypertarget{stl__emulation_8h_source}{}\label{stl__emulation_8h_source}\index{flatbuffers/include/flatbuffers/stl\_emulation.h@{flatbuffers/include/flatbuffers/stl\_emulation.h}}
+\mbox{\hyperlink{stl__emulation_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ Copyright\ 2017\ Google\ Inc.\ All\ rights\ reserved.}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ Licensed\ under\ the\ Apache\ License,\ Version\ 2.0\ (the\ "{}License"{});}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ you\ may\ not\ use\ this\ file\ except\ in\ compliance\ with\ the\ License.}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *\ You\ may\ obtain\ a\ copy\ of\ the\ License\ at}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ *\ \ \ \ \ http://www.apache.org/licenses/LICENSE-\/2.0}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ *\ Unless\ required\ by\ applicable\ law\ or\ agreed\ to\ in\ writing,\ software}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ *\ distributed\ under\ the\ License\ is\ distributed\ on\ an\ "{}AS\ IS"{}\ BASIS,}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ *\ WITHOUT\ WARRANTIES\ OR\ CONDITIONS\ OF\ ANY\ KIND,\ either\ express\ or\ implied.}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ *\ See\ the\ License\ for\ the\ specific\ language\ governing\ permissions\ and}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ *\ limitations\ under\ the\ License.}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#ifndef\ FLATBUFFERS\_STL\_EMULATION\_H\_}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#define\ FLATBUFFERS\_STL\_EMULATION\_H\_}}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{comment}{//\ clang-\/format\ off}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{base_8h}{flatbuffers/base.h}}"{}}}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#include\ <type\_traits>}}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#include\ <limits>}}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#ifndef\ FLATBUFFERS\_USE\_STD\_OPTIONAL}}
+\DoxyCodeLine{00030\ \ \ \textcolor{comment}{//\ Detect\ C++17\ compatible\ compiler.}}
+\DoxyCodeLine{00031\ \ \ \textcolor{comment}{//\ \_\_cplusplus\ >=\ 201703L\ -\/\ a\ compiler\ has\ support\ of\ 'static\ inline'\ variables.}}
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\ \ \#if\ (defined(\_\_cplusplus)\ \&\&\ \_\_cplusplus\ >=\ 201703L)\ \(\backslash\)}}
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\ \ \ \ \ \ ||\ (defined(\_MSVC\_LANG)\ \&\&\ \_MSVC\_LANG\ >=\ 201703L)}}
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\ \ \ \ \#define\ FLATBUFFERS\_USE\_STD\_OPTIONAL\ 1}}
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\ \ \#else}}
+\DoxyCodeLine{00036\ \textcolor{preprocessor}{\ \ \ \ \#define\ FLATBUFFERS\_USE\_STD\_OPTIONAL\ 0}}
+\DoxyCodeLine{00037\ \textcolor{preprocessor}{\ \ \#endif\ }\textcolor{comment}{//\ (defined(\_\_cplusplus)\ \&\&\ \_\_cplusplus\ >=\ 201703L)\ ...}}
+\DoxyCodeLine{00038\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ FLATBUFFERS\_USE\_STD\_OPTIONAL}}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \textcolor{preprocessor}{\#if\ FLATBUFFERS\_USE\_STD\_OPTIONAL}}
+\DoxyCodeLine{00041\ \textcolor{preprocessor}{\ \ \#include\ <optional>}}
+\DoxyCodeLine{00042\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \textcolor{preprocessor}{\#ifndef\ FLATBUFFERS\_USE\_STD\_SPAN}}
+\DoxyCodeLine{00045\ \ \ \textcolor{comment}{//\ Testing\ \_\_cpp\_lib\_span\ requires\ including\ either\ <version>\ or\ <span>,}}
+\DoxyCodeLine{00046\ \ \ \textcolor{comment}{//\ both\ of\ which\ were\ added\ in\ C++20.}}
+\DoxyCodeLine{00047\ \ \ \textcolor{comment}{//\ See:\ https://en.cppreference.com/w/cpp/utility/feature\_test}}
+\DoxyCodeLine{00048\ \textcolor{preprocessor}{\ \ \#if\ defined(\_\_cplusplus)\ \&\&\ \_\_cplusplus\ >=\ 202002L\ \(\backslash\)}}
+\DoxyCodeLine{00049\ \textcolor{preprocessor}{\ \ \ \ \ \ ||\ (defined(\_MSVC\_LANG)\ \&\&\ \_MSVC\_LANG\ >=\ 202002L)}}
+\DoxyCodeLine{00050\ \textcolor{preprocessor}{\ \ \ \ \#define\ FLATBUFFERS\_USE\_STD\_SPAN\ 1}}
+\DoxyCodeLine{00051\ \textcolor{preprocessor}{\ \ \#endif}}
+\DoxyCodeLine{00052\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ FLATBUFFERS\_USE\_STD\_SPAN}}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ \textcolor{preprocessor}{\#if\ defined(FLATBUFFERS\_USE\_STD\_SPAN)}}
+\DoxyCodeLine{00055\ \textcolor{preprocessor}{\ \ \#include\ <array>}}
+\DoxyCodeLine{00056\ \textcolor{preprocessor}{\ \ \#include\ <span>}}
+\DoxyCodeLine{00057\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00058\ \ \ \textcolor{comment}{//\ Disable\ non-\/trivial\ ctors\ if\ FLATBUFFERS\_SPAN\_MINIMAL\ defined.}}
+\DoxyCodeLine{00059\ \textcolor{preprocessor}{\ \ \#if\ !defined(FLATBUFFERS\_TEMPLATES\_ALIASES)}}
+\DoxyCodeLine{00060\ \textcolor{preprocessor}{\ \ \ \ \#define\ FLATBUFFERS\_SPAN\_MINIMAL}}
+\DoxyCodeLine{00061\ \textcolor{preprocessor}{\ \ \#else}}
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{comment}{//\ Enable\ implicit\ construction\ of\ a\ span<T,N>\ from\ a\ std::array<T,N>.}}
+\DoxyCodeLine{00063\ \textcolor{preprocessor}{\ \ \ \ \#include\ <array>}}
+\DoxyCodeLine{00064\ \textcolor{preprocessor}{\ \ \#endif}}
+\DoxyCodeLine{00065\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ defined(FLATBUFFERS\_USE\_STD\_SPAN)}}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00067\ \textcolor{comment}{//\ This\ header\ provides\ backwards\ compatibility\ for\ older\ versions\ of\ the\ STL.}}
+\DoxyCodeLine{00068\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceflatbuffers}{flatbuffers}}\ \{}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00070\ \textcolor{preprocessor}{\#if\ defined(FLATBUFFERS\_TEMPLATES\_ALIASES)}}
+\DoxyCodeLine{00071\ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00072\ \ \ \textcolor{keyword}{using\ }numeric\_limits\ =\ std::numeric\_limits<T>;}
+\DoxyCodeLine{00073\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00074\ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classflatbuffers_1_1numeric__limits}{numeric\_limits}}\ :}
+\DoxyCodeLine{00075\ \ \ \ \ \textcolor{keyword}{public}\ std::numeric\_limits<T>\ \{\};}
+\DoxyCodeLine{00076\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ defined(FLATBUFFERS\_TEMPLATES\_ALIASES)}}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00078\ \textcolor{preprocessor}{\#if\ defined(FLATBUFFERS\_TEMPLATES\_ALIASES)}}
+\DoxyCodeLine{00079\ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>\ \textcolor{keyword}{using\ }\mbox{\hyperlink{structflatbuffers_1_1is__scalar}{is\_scalar}}\ =\ std::is\_scalar<T>;}
+\DoxyCodeLine{00080\ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T,\ \textcolor{keyword}{typename}\ U>\ \textcolor{keyword}{using\ }\mbox{\hyperlink{structflatbuffers_1_1is__same}{is\_same}}\ =\ std::is\_same<T,U>;}
+\DoxyCodeLine{00081\ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>\ \textcolor{keyword}{using\ }\mbox{\hyperlink{structflatbuffers_1_1is__floating__point}{is\_floating\_point}}\ =\ std::is\_floating\_point<T>;}
+\DoxyCodeLine{00082\ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>\ \textcolor{keyword}{using\ }\mbox{\hyperlink{structflatbuffers_1_1is__unsigned}{is\_unsigned}}\ =\ std::is\_unsigned<T>;}
+\DoxyCodeLine{00083\ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>\ \textcolor{keyword}{using\ }\mbox{\hyperlink{structflatbuffers_1_1is__enum}{is\_enum}}\ =\ std::is\_enum<T>;}
+\DoxyCodeLine{00084\ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>\ \textcolor{keyword}{using\ }\mbox{\hyperlink{structflatbuffers_1_1make__unsigned}{make\_unsigned}}\ =\ std::make\_unsigned<T>;}
+\DoxyCodeLine{00085\ \ \ \textcolor{keyword}{template}<\textcolor{keywordtype}{bool}\ B,\ \textcolor{keyword}{class}\ T,\ \textcolor{keyword}{class}\ F>}
+\DoxyCodeLine{00086\ \ \ \textcolor{keyword}{using\ }\mbox{\hyperlink{structflatbuffers_1_1conditional}{conditional}}\ =\ std::conditional<B,\ T,\ F>;}
+\DoxyCodeLine{00087\ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{class}\ T,\ T\ v>}
+\DoxyCodeLine{00088\ \ \ \textcolor{keyword}{using\ }\mbox{\hyperlink{structflatbuffers_1_1integral__constant}{integral\_constant}}\ =\ std::integral\_constant<T,\ v>;}
+\DoxyCodeLine{00089\ \ \ \textcolor{keyword}{template}\ <\textcolor{keywordtype}{bool}\ B>}
+\DoxyCodeLine{00090\ \ \ \textcolor{keyword}{using\ }\mbox{\hyperlink{structflatbuffers_1_1bool__constant}{bool\_constant}}\ =\ \mbox{\hyperlink{structflatbuffers_1_1integral__constant}{integral\_constant<bool,\ B>}};}
+\DoxyCodeLine{00091\ \ \ \textcolor{keyword}{using\ }\mbox{\hyperlink{structflatbuffers_1_1bool__constant}{true\_type}}\ \ =\ std::true\_type;}
+\DoxyCodeLine{00092\ \ \ \textcolor{keyword}{using\ }\mbox{\hyperlink{structflatbuffers_1_1bool__constant}{false\_type}}\ =\ std::false\_type;}
+\DoxyCodeLine{00093\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00094\ \ \ \textcolor{comment}{//\ MSVC\ 2010\ doesn't\ support\ C++11\ aliases.}}
+\DoxyCodeLine{00095\ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structflatbuffers_1_1is__scalar}{is\_scalar}}\ :\ \textcolor{keyword}{public}\ std::is\_scalar<T>\ \{\};}
+\DoxyCodeLine{00096\ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T,\ \textcolor{keyword}{typename}\ U>\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structflatbuffers_1_1is__same}{is\_same}}\ :\ \textcolor{keyword}{public}\ std::is\_same<T,U>\ \{\};}
+\DoxyCodeLine{00097\ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structflatbuffers_1_1is__floating__point}{is\_floating\_point}}\ :}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ std::is\_floating\_point<T>\ \{\};}
+\DoxyCodeLine{00099\ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structflatbuffers_1_1is__unsigned}{is\_unsigned}}\ :\ \textcolor{keyword}{public}\ std::is\_unsigned<T>\ \{\};}
+\DoxyCodeLine{00100\ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structflatbuffers_1_1is__enum}{is\_enum}}\ :\ \textcolor{keyword}{public}\ std::is\_enum<T>\ \{\};}
+\DoxyCodeLine{00101\ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structflatbuffers_1_1make__unsigned}{make\_unsigned}}\ :\ \textcolor{keyword}{public}\ std::make\_unsigned<T>\ \{\};}
+\DoxyCodeLine{00102\ \ \ \textcolor{keyword}{template}<\textcolor{keywordtype}{bool}\ B,\ \textcolor{keyword}{class}\ T,\ \textcolor{keyword}{class}\ F>}
+\DoxyCodeLine{00103\ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structflatbuffers_1_1conditional}{conditional}}\ :\ \textcolor{keyword}{public}\ std::conditional<B,\ T,\ F>\ \{\};}
+\DoxyCodeLine{00104\ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{class}\ T,\ T\ v>}
+\DoxyCodeLine{00105\ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structflatbuffers_1_1integral__constant}{integral\_constant}}\ :\ \textcolor{keyword}{public}\ std::integral\_constant<T,\ v>\ \{\};}
+\DoxyCodeLine{00106\ \ \ \textcolor{keyword}{template}\ <\textcolor{keywordtype}{bool}\ B>}
+\DoxyCodeLine{00107\ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structflatbuffers_1_1bool__constant}{bool\_constant}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{structflatbuffers_1_1integral__constant}{integral\_constant}}<bool,\ B>\ \{\};}
+\DoxyCodeLine{00108\ \ \ \textcolor{keyword}{typedef}\ \mbox{\hyperlink{structflatbuffers_1_1bool__constant}{bool\_constant<true>}}\ \ \mbox{\hyperlink{namespaceflatbuffers_a3bfefd3cb51dc4bf36265d42d2286264}{true\_type}};}
+\DoxyCodeLine{00109\ \ \ \textcolor{keyword}{typedef}\ \mbox{\hyperlink{structflatbuffers_1_1bool__constant}{bool\_constant<false>}}\ \mbox{\hyperlink{namespaceflatbuffers_a2aebfaf3654eae7e219452a01c4f27db}{false\_type}};}
+\DoxyCodeLine{00110\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ defined(FLATBUFFERS\_TEMPLATES\_ALIASES)}}
+\DoxyCodeLine{00111\ }
+\DoxyCodeLine{00112\ \textcolor{preprocessor}{\#if\ defined(FLATBUFFERS\_TEMPLATES\_ALIASES)}}
+\DoxyCodeLine{00113\ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{class}\ T>\ \textcolor{keyword}{using\ }\mbox{\hyperlink{classflatbuffers_1_1unique__ptr}{unique\_ptr}}\ =\ std::unique\_ptr<T>;}
+\DoxyCodeLine{00114\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00115\ \ \ \textcolor{comment}{//\ MSVC\ 2010\ doesn't\ support\ C++11\ aliases.}}
+\DoxyCodeLine{00116\ \ \ \textcolor{comment}{//\ We're\ manually\ "{}aliasing"{}\ the\ class\ here\ as\ we\ want\ to\ bring\ unique\_ptr}}
+\DoxyCodeLine{00117\ \ \ \textcolor{comment}{//\ into\ the\ flatbuffers\ namespace.\ \ We\ have\ unique\_ptr\ in\ the\ flatbuffers}}
+\DoxyCodeLine{00118\ \ \ \textcolor{comment}{//\ namespace\ we\ have\ a\ completely\ independent\ implementation\ (see\ below)}}
+\DoxyCodeLine{00119\ \ \ \textcolor{comment}{//\ for\ C++98\ STL\ implementations.}}
+\DoxyCodeLine{00120\ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{class}\ T>\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classflatbuffers_1_1unique__ptr}{unique\_ptr}}\ :\ \textcolor{keyword}{public}\ std::unique\_ptr<T>\ \{}
+\DoxyCodeLine{00121\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00122\ \ \ \ \ \mbox{\hyperlink{classflatbuffers_1_1unique__ptr_a9f1884eb51320bfbaa46d2ab4da7a5ea}{unique\_ptr}}()\ \{\}}
+\DoxyCodeLine{00123\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classflatbuffers_1_1unique__ptr_a996bee5db2a7bec74aada86a413f0a84}{unique\_ptr}}(T*\ \mbox{\hyperlink{gmock-matchers-containers__test_8cc_a6bc6b007533335efe02bafff799ec64c}{p}})\ :\ \mbox{\hyperlink{namespacestd}{std}}::\mbox{\hyperlink{classflatbuffers_1_1unique__ptr}{unique\_ptr}}<T>(\mbox{\hyperlink{gmock-matchers-containers__test_8cc_a6bc6b007533335efe02bafff799ec64c}{p}})\ \{\}}
+\DoxyCodeLine{00124\ \ \ \ \ \mbox{\hyperlink{classflatbuffers_1_1unique__ptr_a17e2073c6572f2e18a74a00c671cd95d}{unique\_ptr}}(std::unique\_ptr<T>\&\&\ u)\ \{\ *\textcolor{keyword}{this}\ =\ std::move(u);\ \}}
+\DoxyCodeLine{00125\ \ \ \ \ \mbox{\hyperlink{classflatbuffers_1_1unique__ptr_ab6766c5aa27024063ed1eda1b6c353d4}{unique\_ptr}}(\mbox{\hyperlink{classflatbuffers_1_1unique__ptr}{unique\_ptr}}\&\&\ u)\ \{\ *\textcolor{keyword}{this}\ =\ std::move(u);\ \}}
+\DoxyCodeLine{00126\ \ \ \ \ \mbox{\hyperlink{classflatbuffers_1_1unique__ptr}{unique\_ptr}}\&\ \mbox{\hyperlink{classflatbuffers_1_1unique__ptr_a0e81763a0cdb1acd62027fcf494e71bd}{operator=}}(std::unique\_ptr<T>\&\&\ u)\ \{}
+\DoxyCodeLine{00127\ \ \ \ \ \ \ std::unique\_ptr<T>::reset(u.release());}
+\DoxyCodeLine{00128\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00129\ \ \ \ \ \}}
+\DoxyCodeLine{00130\ \ \ \ \ \mbox{\hyperlink{classflatbuffers_1_1unique__ptr}{unique\_ptr}}\&\ \mbox{\hyperlink{classflatbuffers_1_1unique__ptr_a5e84d7c1350fa422e1184ed38165c4f0}{operator=}}(\mbox{\hyperlink{classflatbuffers_1_1unique__ptr}{unique\_ptr}}\&\&\ u)\ \{}
+\DoxyCodeLine{00131\ \ \ \ \ \ \ std::unique\_ptr<T>::reset(u.release());}
+\DoxyCodeLine{00132\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00133\ \ \ \ \ \}}
+\DoxyCodeLine{00134\ \ \ \ \ \mbox{\hyperlink{classflatbuffers_1_1unique__ptr}{unique\_ptr}}\&\ \mbox{\hyperlink{classflatbuffers_1_1unique__ptr_aff95dd403423543d65f5c9f07969c28a}{operator=}}(T*\ \mbox{\hyperlink{gmock-matchers-containers__test_8cc_a6bc6b007533335efe02bafff799ec64c}{p}})\ \{}
+\DoxyCodeLine{00135\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ std::unique\_ptr<T>::operator=(\mbox{\hyperlink{gmock-matchers-containers__test_8cc_a6bc6b007533335efe02bafff799ec64c}{p}});}
+\DoxyCodeLine{00136\ \ \ \ \ \}}
+\DoxyCodeLine{00137\ \ \ \};}
+\DoxyCodeLine{00138\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ defined(FLATBUFFERS\_TEMPLATES\_ALIASES)}}
+\DoxyCodeLine{00139\ }
+\DoxyCodeLine{00140\ \textcolor{preprocessor}{\#if\ FLATBUFFERS\_USE\_STD\_OPTIONAL}}
+\DoxyCodeLine{00141\ \textcolor{keyword}{template}<\textcolor{keyword}{class}\ T>}
+\DoxyCodeLine{00142\ \textcolor{keyword}{using\ }Optional\ =\ std::optional<T>;}
+\DoxyCodeLine{00143\ \textcolor{keyword}{using\ }nullopt\_t\ =\ std::nullopt\_t;}
+\DoxyCodeLine{00144\ \textcolor{keyword}{inline}\ \textcolor{keyword}{constexpr}\ nullopt\_t\ nullopt\ =\ std::nullopt;}
+\DoxyCodeLine{00145\ }
+\DoxyCodeLine{00146\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00147\ \textcolor{comment}{//\ Limited\ implementation\ of\ Optional<T>\ type\ for\ a\ scalar\ T.}}
+\DoxyCodeLine{00148\ \textcolor{comment}{//\ This\ implementation\ limited\ by\ trivial\ types\ compatible\ with}}
+\DoxyCodeLine{00149\ \textcolor{comment}{//\ std::is\_arithmetic<T>\ or\ std::is\_enum<T>\ type\ traits.}}
+\DoxyCodeLine{00150\ }
+\DoxyCodeLine{00151\ \textcolor{comment}{//\ A\ tag\ to\ indicate\ an\ empty\ flatbuffers::optional<T>.}}
+\DoxyCodeLine{00152\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structflatbuffers_1_1nullopt__t}{nullopt\_t}}\ \{}
+\DoxyCodeLine{00153\ \ \ \textcolor{keyword}{explicit}\ FLATBUFFERS\_CONSTEXPR\_CPP11\ \mbox{\hyperlink{structflatbuffers_1_1nullopt__t_a6fa5db8035c3ce42270490ae89b054c3}{nullopt\_t}}(\textcolor{keywordtype}{int})\ \{\}}
+\DoxyCodeLine{00154\ \};}
+\DoxyCodeLine{00155\ }
+\DoxyCodeLine{00156\ \textcolor{preprocessor}{\#if\ defined(FLATBUFFERS\_CONSTEXPR\_DEFINED)}}
+\DoxyCodeLine{00157\ \ \ \textcolor{keyword}{namespace\ }internal\ \{}
+\DoxyCodeLine{00158\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{class}>\ \textcolor{keyword}{struct\ }nullopt\_holder\ \{}
+\DoxyCodeLine{00159\ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{constexpr}\ nullopt\_t\ \mbox{\hyperlink{structflatbuffers_1_1internal_1_1nullopt__holder_ab03f82135c7b94d69c5b2ab34d43b150}{instance\_}}\ =\ nullopt\_t(0);}
+\DoxyCodeLine{00160\ \ \ \ \ \};}
+\DoxyCodeLine{00161\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{class}\ Dummy>}
+\DoxyCodeLine{00162\ \ \ \ \ \textcolor{keyword}{constexpr}\ nullopt\_t\ \mbox{\hyperlink{structflatbuffers_1_1internal_1_1nullopt__holder_ab03f82135c7b94d69c5b2ab34d43b150}{nullopt\_holder<Dummy>::instance\_}};}
+\DoxyCodeLine{00163\ \ \ \}}
+\DoxyCodeLine{00164\ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{constexpr}\ \textcolor{keyword}{const}\ nullopt\_t\ \&nullopt\ =\ \mbox{\hyperlink{structflatbuffers_1_1internal_1_1nullopt__holder_ab03f82135c7b94d69c5b2ab34d43b150}{internal::nullopt\_holder<void>::instance\_}};}
+\DoxyCodeLine{00165\ }
+\DoxyCodeLine{00166\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00167\ \ \ \textcolor{keyword}{namespace\ }internal\ \{}
+\DoxyCodeLine{00168\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{class}>\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structflatbuffers_1_1internal_1_1nullopt__holder}{nullopt\_holder}}\ \{}
+\DoxyCodeLine{00169\ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \mbox{\hyperlink{structflatbuffers_1_1nullopt__t}{nullopt\_t}}\ \mbox{\hyperlink{structflatbuffers_1_1internal_1_1nullopt__holder_ab03f82135c7b94d69c5b2ab34d43b150}{instance\_}};}
+\DoxyCodeLine{00170\ \ \ \ \ \};}
+\DoxyCodeLine{00171\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{class}\ Dummy>}
+\DoxyCodeLine{00172\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{structflatbuffers_1_1nullopt__t}{nullopt\_t}}\ \mbox{\hyperlink{structflatbuffers_1_1internal_1_1nullopt__holder}{nullopt\_holder<Dummy>::instance\_}}\ \ =\ \mbox{\hyperlink{structflatbuffers_1_1nullopt__t}{nullopt\_t}}(0);}
+\DoxyCodeLine{00173\ \ \ \}}
+\DoxyCodeLine{00174\ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \mbox{\hyperlink{structflatbuffers_1_1nullopt__t}{nullopt\_t}}\ \&nullopt\ =\ \mbox{\hyperlink{structflatbuffers_1_1internal_1_1nullopt__holder}{internal::nullopt\_holder<void>::instance\_}};}
+\DoxyCodeLine{00175\ }
+\DoxyCodeLine{00176\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00177\ }
+\DoxyCodeLine{00178\ \textcolor{keyword}{template}<\textcolor{keyword}{class}\ T>}
+\DoxyCodeLine{00179\ \textcolor{keyword}{class\ }Optional\ \mbox{\hyperlink{classflatbuffers_1_1FLATBUFFERS__FINAL__CLASS}{FLATBUFFERS\_FINAL\_CLASS}}\ \{}
+\DoxyCodeLine{00180\ \ \ \textcolor{comment}{//\ Non-\/scalar\ 'T'\ would\ extremely\ complicated\ Optional<T>.}}
+\DoxyCodeLine{00181\ \ \ \textcolor{comment}{//\ Use\ is\_scalar<T>\ checking\ because\ flatbuffers\ flatbuffers::is\_arithmetic<T>}}
+\DoxyCodeLine{00182\ \ \ \textcolor{comment}{//\ isn't\ implemented.}}
+\DoxyCodeLine{00183\ \ \ \textcolor{keyword}{static\_assert}(\mbox{\hyperlink{structflatbuffers_1_1is__scalar}{flatbuffers::is\_scalar<T>::value}},\ \textcolor{stringliteral}{"{}unexpected\ type\ T"{}});}
+\DoxyCodeLine{00184\ }
+\DoxyCodeLine{00185\ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00186\ \ \ \mbox{\hyperlink{classflatbuffers_1_1FLATBUFFERS__FINAL__CLASS_a64d36ffeeca491a986d8aa7a94a62513}{\string~Optional}}()\ \{\}}
+\DoxyCodeLine{00187\ }
+\DoxyCodeLine{00188\ \ \ FLATBUFFERS\_CONSTEXPR\_CPP11\ \mbox{\hyperlink{classflatbuffers_1_1FLATBUFFERS__FINAL__CLASS_a625a4925939ae26fad00878373619c1f}{Optional}}()\ FLATBUFFERS\_NOEXCEPT}
+\DoxyCodeLine{00189\ \ \ \ \ :\ value\_(),\ has\_value\_(false)\ \{\}}
+\DoxyCodeLine{00190\ }
+\DoxyCodeLine{00191\ \ \ FLATBUFFERS\_CONSTEXPR\_CPP11\ \mbox{\hyperlink{classflatbuffers_1_1FLATBUFFERS__FINAL__CLASS_a49eaace59be7d66d974db10170fbbaee}{Optional}}(\mbox{\hyperlink{structflatbuffers_1_1nullopt__t}{nullopt\_t}})\ FLATBUFFERS\_NOEXCEPT}
+\DoxyCodeLine{00192\ \ \ \ \ :\ value\_(),\ has\_value\_(\textcolor{keyword}{false})\ \{\}}
+\DoxyCodeLine{00193\ }
+\DoxyCodeLine{00194\ \ \ FLATBUFFERS\_CONSTEXPR\_CPP11\ \mbox{\hyperlink{classflatbuffers_1_1FLATBUFFERS__FINAL__CLASS_a2a607550f412738a7ba04d3e1cef6506}{Optional}}(T\ val)\ FLATBUFFERS\_NOEXCEPT}
+\DoxyCodeLine{00195\ \ \ \ \ :\ value\_(val),\ has\_value\_(\textcolor{keyword}{true})\ \{\}}
+\DoxyCodeLine{00196\ }
+\DoxyCodeLine{00197\ \ \ FLATBUFFERS\_CONSTEXPR\_CPP11\ \mbox{\hyperlink{classflatbuffers_1_1FLATBUFFERS__FINAL__CLASS_a25f4fd73346eee1ff0d371252db318b7}{Optional}}(\textcolor{keyword}{const}\ Optional\ \&other)\ FLATBUFFERS\_NOEXCEPT}
+\DoxyCodeLine{00198\ \ \ \ \ :\ value\_(other.value\_),\ has\_value\_(other.has\_value\_)\ \{\}}
+\DoxyCodeLine{00199\ }
+\DoxyCodeLine{00200\ \ \ FLATBUFFERS\_CONSTEXPR\_CPP14\ Optional\ \&\mbox{\hyperlink{classflatbuffers_1_1FLATBUFFERS__FINAL__CLASS_ae44ea59961e1f671a9b10b1cb856622a}{operator=}}(\textcolor{keyword}{const}\ Optional\ \&other)\ FLATBUFFERS\_NOEXCEPT\ \{}
+\DoxyCodeLine{00201\ \ \ \ \ value\_\ =\ other.value\_;}
+\DoxyCodeLine{00202\ \ \ \ \ has\_value\_\ =\ other.has\_value\_;}
+\DoxyCodeLine{00203\ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00204\ \ \ \}}
+\DoxyCodeLine{00205\ }
+\DoxyCodeLine{00206\ \ \ FLATBUFFERS\_CONSTEXPR\_CPP14\ Optional\ \&\mbox{\hyperlink{classflatbuffers_1_1FLATBUFFERS__FINAL__CLASS_aedcc954081c2c725a1a8713e0c09ef09}{operator=}}(\mbox{\hyperlink{structflatbuffers_1_1nullopt__t}{nullopt\_t}})\ FLATBUFFERS\_NOEXCEPT\ \{}
+\DoxyCodeLine{00207\ \ \ \ \ value\_\ =\ T();}
+\DoxyCodeLine{00208\ \ \ \ \ has\_value\_\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00209\ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00210\ \ \ \}}
+\DoxyCodeLine{00211\ }
+\DoxyCodeLine{00212\ \ \ FLATBUFFERS\_CONSTEXPR\_CPP14\ Optional\ \&\mbox{\hyperlink{classflatbuffers_1_1FLATBUFFERS__FINAL__CLASS_a0e1c17c0517ff1e98ac69ee4837af168}{operator=}}(T\ val)\ FLATBUFFERS\_NOEXCEPT\ \{}
+\DoxyCodeLine{00213\ \ \ \ \ value\_\ =\ val;}
+\DoxyCodeLine{00214\ \ \ \ \ has\_value\_\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00215\ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00216\ \ \ \}}
+\DoxyCodeLine{00217\ }
+\DoxyCodeLine{00218\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classflatbuffers_1_1FLATBUFFERS__FINAL__CLASS_a03c72863f8b8f9340d66a974e94affed}{reset}}()\ FLATBUFFERS\_NOEXCEPT\ \{}
+\DoxyCodeLine{00219\ \ \ \ \ *\textcolor{keyword}{this}\ =\ nullopt;}
+\DoxyCodeLine{00220\ \ \ \}}
+\DoxyCodeLine{00221\ }
+\DoxyCodeLine{00222\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classflatbuffers_1_1FLATBUFFERS__FINAL__CLASS_abc608ad3d30ad51ae5f88a9920ac4c54}{swap}}(Optional\ \&other)\ FLATBUFFERS\_NOEXCEPT\ \{}
+\DoxyCodeLine{00223\ \ \ \ \ std::swap(value\_,\ other.value\_);}
+\DoxyCodeLine{00224\ \ \ \ \ std::swap(has\_value\_,\ other.has\_value\_);}
+\DoxyCodeLine{00225\ \ \ \}}
+\DoxyCodeLine{00226\ }
+\DoxyCodeLine{00227\ \ \ FLATBUFFERS\_CONSTEXPR\_CPP11\ FLATBUFFERS\_EXPLICIT\_CPP11\ \textcolor{keyword}{operator}\ bool()\ const\ FLATBUFFERS\_NOEXCEPT\ \{}
+\DoxyCodeLine{00228\ \ \ \ \ \textcolor{keywordflow}{return}\ has\_value\_;}
+\DoxyCodeLine{00229\ \ \ \}}
+\DoxyCodeLine{00230\ }
+\DoxyCodeLine{00231\ \ \ FLATBUFFERS\_CONSTEXPR\_CPP11\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classflatbuffers_1_1FLATBUFFERS__FINAL__CLASS_ab9e4caf7774078af1a3a4a2f71bac72c}{has\_value}}()\ const\ FLATBUFFERS\_NOEXCEPT\ \{}
+\DoxyCodeLine{00232\ \ \ \ \ \textcolor{keywordflow}{return}\ has\_value\_;}
+\DoxyCodeLine{00233\ \ \ \}}
+\DoxyCodeLine{00234\ }
+\DoxyCodeLine{00235\ \ \ FLATBUFFERS\_CONSTEXPR\_CPP11\ \textcolor{keyword}{const}\ T\&\ \mbox{\hyperlink{classflatbuffers_1_1FLATBUFFERS__FINAL__CLASS_abb3d3fd314530239466e1be64115457a}{operator*}}()\ const\ FLATBUFFERS\_NOEXCEPT\ \{}
+\DoxyCodeLine{00236\ \ \ \ \ \textcolor{keywordflow}{return}\ value\_;}
+\DoxyCodeLine{00237\ \ \ \}}
+\DoxyCodeLine{00238\ }
+\DoxyCodeLine{00239\ \ \ \textcolor{keyword}{const}\ T\&\ \mbox{\hyperlink{classflatbuffers_1_1FLATBUFFERS__FINAL__CLASS_a371f125f7f45902d7513a74adf0d9945}{value}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00240\ \ \ \ \ \mbox{\hyperlink{base_8h_ab2116a3957cb3c19761609ea7fd796fe}{FLATBUFFERS\_ASSERT}}(has\_value());}
+\DoxyCodeLine{00241\ \ \ \ \ \textcolor{keywordflow}{return}\ value\_;}
+\DoxyCodeLine{00242\ \ \ \}}
+\DoxyCodeLine{00243\ }
+\DoxyCodeLine{00244\ \ \ T\ \mbox{\hyperlink{classflatbuffers_1_1FLATBUFFERS__FINAL__CLASS_a0d2eed4095b8639b207e8d224409fd52}{value\_or}}(T\ default\_value)\ \textcolor{keyword}{const}\ FLATBUFFERS\_NOEXCEPT\ \{}
+\DoxyCodeLine{00245\ \ \ \ \ \textcolor{keywordflow}{return}\ has\_value()\ ?\ value\_\ :\ default\_value;}
+\DoxyCodeLine{00246\ \ \ \}}
+\DoxyCodeLine{00247\ }
+\DoxyCodeLine{00248\ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00249\ \ \ T\ value\_;}
+\DoxyCodeLine{00250\ \ \ \textcolor{keywordtype}{bool}\ has\_value\_;}
+\DoxyCodeLine{00251\ \};}
+\DoxyCodeLine{00252\ }
+\DoxyCodeLine{00253\ \textcolor{keyword}{template}<\textcolor{keyword}{class}\ T>}
+\DoxyCodeLine{00254\ FLATBUFFERS\_CONSTEXPR\_CPP11\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{namespaceflatbuffers_a631e4acac5593d532a4252ccc5d0851e}{operator==}}(\textcolor{keyword}{const}\ Optional<T>\&\ opt,\ \mbox{\hyperlink{structflatbuffers_1_1nullopt__t}{nullopt\_t}})\ FLATBUFFERS\_NOEXCEPT\ \{}
+\DoxyCodeLine{00255\ \ \ \textcolor{keywordflow}{return}\ !opt;}
+\DoxyCodeLine{00256\ \}}
+\DoxyCodeLine{00257\ \textcolor{keyword}{template}<\textcolor{keyword}{class}\ T>}
+\DoxyCodeLine{00258\ FLATBUFFERS\_CONSTEXPR\_CPP11\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{namespaceflatbuffers_a631e4acac5593d532a4252ccc5d0851e}{operator==}}(\mbox{\hyperlink{structflatbuffers_1_1nullopt__t}{nullopt\_t}},\ \textcolor{keyword}{const}\ Optional<T>\&\ opt)\ FLATBUFFERS\_NOEXCEPT\ \{}
+\DoxyCodeLine{00259\ \ \ \textcolor{keywordflow}{return}\ !opt;}
+\DoxyCodeLine{00260\ \}}
+\DoxyCodeLine{00261\ }
+\DoxyCodeLine{00262\ \textcolor{keyword}{template}<\textcolor{keyword}{class}\ T,\ \textcolor{keyword}{class}\ U>}
+\DoxyCodeLine{00263\ FLATBUFFERS\_CONSTEXPR\_CPP11\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{namespaceflatbuffers_a631e4acac5593d532a4252ccc5d0851e}{operator==}}(\textcolor{keyword}{const}\ Optional<T>\&\ lhs,\ \textcolor{keyword}{const}\ U\&\ rhs)\ FLATBUFFERS\_NOEXCEPT\ \{}
+\DoxyCodeLine{00264\ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{bool}\textcolor{keyword}{>}(lhs)\ \&\&\ (*lhs\ ==\ rhs);}
+\DoxyCodeLine{00265\ \}}
+\DoxyCodeLine{00266\ }
+\DoxyCodeLine{00267\ \textcolor{keyword}{template}<\textcolor{keyword}{class}\ T,\ \textcolor{keyword}{class}\ U>}
+\DoxyCodeLine{00268\ FLATBUFFERS\_CONSTEXPR\_CPP11\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{namespaceflatbuffers_a631e4acac5593d532a4252ccc5d0851e}{operator==}}(\textcolor{keyword}{const}\ T\&\ lhs,\ \textcolor{keyword}{const}\ Optional<U>\&\ rhs)\ FLATBUFFERS\_NOEXCEPT\ \{}
+\DoxyCodeLine{00269\ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{bool}\textcolor{keyword}{>}(rhs)\ \&\&\ (lhs\ ==\ *rhs);}
+\DoxyCodeLine{00270\ \}}
+\DoxyCodeLine{00271\ }
+\DoxyCodeLine{00272\ \textcolor{keyword}{template}<\textcolor{keyword}{class}\ T,\ \textcolor{keyword}{class}\ U>}
+\DoxyCodeLine{00273\ FLATBUFFERS\_CONSTEXPR\_CPP11\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{namespaceflatbuffers_a631e4acac5593d532a4252ccc5d0851e}{operator==}}(\textcolor{keyword}{const}\ Optional<T>\&\ lhs,\ \textcolor{keyword}{const}\ Optional<U>\&\ rhs)\ FLATBUFFERS\_NOEXCEPT\ \{}
+\DoxyCodeLine{00274\ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{bool}\textcolor{keyword}{>}(lhs)\ !=\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{bool}\textcolor{keyword}{>}(rhs)}
+\DoxyCodeLine{00275\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ?\ false}
+\DoxyCodeLine{00276\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ :\ !\textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{bool}\textcolor{keyword}{>}(lhs)\ ?\ \textcolor{keyword}{true}\ :\ (*lhs\ ==\ *rhs);}
+\DoxyCodeLine{00277\ \}}
+\DoxyCodeLine{00278\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ FLATBUFFERS\_USE\_STD\_OPTIONAL}}
+\DoxyCodeLine{00279\ }
+\DoxyCodeLine{00280\ }
+\DoxyCodeLine{00281\ \textcolor{comment}{//\ Very\ limited\ and\ naive\ partial\ implementation\ of\ C++20\ std::span<T,Extent>.}}
+\DoxyCodeLine{00282\ \textcolor{preprocessor}{\#if\ defined(FLATBUFFERS\_USE\_STD\_SPAN)}}
+\DoxyCodeLine{00283\ \ \ \textcolor{keyword}{inline}\ \textcolor{keyword}{constexpr}\ std::size\_t\ \mbox{\hyperlink{namespaceflatbuffers_ad28522f35a1cff59322de20bcd3d03d2}{dynamic\_extent}}\ =\ std::dynamic\_extent;}
+\DoxyCodeLine{00284\ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{class}\ T,\ std::\textcolor{keywordtype}{size\_t}\ Extent\ =\ std::dynamic\_extent>}
+\DoxyCodeLine{00285\ \ \ \textcolor{keyword}{using\ }span\ =\ std::span<T,\ Extent>;}
+\DoxyCodeLine{00286\ }
+\DoxyCodeLine{00287\ \textcolor{preprocessor}{\#else\ }\textcolor{comment}{//\ !defined(FLATBUFFERS\_USE\_STD\_SPAN)}}
+\DoxyCodeLine{00288\ FLATBUFFERS\_CONSTEXPR\ std::size\_t\ \mbox{\hyperlink{namespaceflatbuffers_ad28522f35a1cff59322de20bcd3d03d2}{dynamic\_extent}}\ =\ \textcolor{keyword}{static\_cast<}std::size\_t\textcolor{keyword}{>}(-\/1);}
+\DoxyCodeLine{00289\ }
+\DoxyCodeLine{00290\ \textcolor{comment}{//\ Exclude\ this\ code\ if\ MSVC2010\ or\ non-\/STL\ Android\ is\ active.}}
+\DoxyCodeLine{00291\ \textcolor{comment}{//\ The\ non-\/STL\ Android\ doesn't\ have\ \`{}std::is\_convertible`\ required\ for\ SFINAE.}}
+\DoxyCodeLine{00292\ \textcolor{preprocessor}{\#if\ !defined(FLATBUFFERS\_SPAN\_MINIMAL)}}
+\DoxyCodeLine{00293\ \textcolor{keyword}{namespace\ }internal\ \{}
+\DoxyCodeLine{00294\ \ \ \textcolor{comment}{//\ This\ is\ SFINAE\ helper\ class\ for\ checking\ of\ a\ common\ condition:}}
+\DoxyCodeLine{00295\ \ \ \textcolor{comment}{//\ >\ This\ overload\ only\ participates\ in\ overload\ resolution}}
+\DoxyCodeLine{00296\ \ \ \textcolor{comment}{//\ >\ Check\ whether\ a\ pointer\ to\ an\ array\ of\ From\ can\ be\ converted}}
+\DoxyCodeLine{00297\ \ \ \textcolor{comment}{//\ >\ to\ a\ pointer\ to\ an\ array\ of\ To.}}
+\DoxyCodeLine{00298\ \ \ \textcolor{comment}{//\ This\ helper\ is\ used\ for\ checking\ of\ 'From\ -\/>\ const\ From'.}}
+\DoxyCodeLine{00299\ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{class}\ To,\ std::\textcolor{keywordtype}{size\_t}\ Extent,\ \textcolor{keyword}{class}\ From,\ std::\textcolor{keywordtype}{size\_t}\ N>}
+\DoxyCodeLine{00300\ \ \ \textcolor{keyword}{struct\ }is\_span\_convertible\ \{}
+\DoxyCodeLine{00301\ \ \ \ \ \textcolor{keyword}{using\ }type\ =}
+\DoxyCodeLine{00302\ \ \ \ \ \ \ \textcolor{keyword}{typename}\ std::conditional<std::is\_convertible<From\ (*)[],\ To\ (*)[]>\mbox{\hyperlink{annotated__binary__text__gen_8cpp_a5c33da5929c9f2f9ef8d006d2350e6ec}{::value}}}
+\DoxyCodeLine{00303\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \&\&\ (Extent\ ==\ \mbox{\hyperlink{namespaceflatbuffers_ad28522f35a1cff59322de20bcd3d03d2}{dynamic\_extent}}\ ||\ N\ ==\ Extent),}
+\DoxyCodeLine{00304\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int},\ \textcolor{keywordtype}{void}>::type;}
+\DoxyCodeLine{00305\ \ \ \};}
+\DoxyCodeLine{00306\ }
+\DoxyCodeLine{00307\ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00308\ \ \ \textcolor{keyword}{struct\ }SpanIterator\ \{}
+\DoxyCodeLine{00309\ \ \ \ \ \textcolor{comment}{//\ TODO:\ upgrade\ to\ std::random\_access\_iterator\_tag.}}
+\DoxyCodeLine{00310\ \ \ \ \ \textcolor{keyword}{using\ }iterator\_category\ =\ std::forward\_iterator\_tag;}
+\DoxyCodeLine{00311\ \ \ \ \ \textcolor{keyword}{using\ }difference\_type\ \ =\ std::ptrdiff\_t;}
+\DoxyCodeLine{00312\ \ \ \ \ \textcolor{keyword}{using\ }value\_type\ =\ \textcolor{keyword}{typename}\ std::remove\_cv<T>::type;}
+\DoxyCodeLine{00313\ \ \ \ \ \textcolor{keyword}{using\ }reference\ =\ T\&;}
+\DoxyCodeLine{00314\ \ \ \ \ \textcolor{keyword}{using\ }pointer\ \ \ =\ T*;}
+\DoxyCodeLine{00315\ }
+\DoxyCodeLine{00316\ \ \ \ \ \textcolor{comment}{//\ Convince\ MSVC\ compiler\ that\ this\ iterator\ is\ trusted\ (it\ is\ verified).}}
+\DoxyCodeLine{00317\ \textcolor{preprocessor}{\ \ \ \ \#ifdef\ \_MSC\_VER}}
+\DoxyCodeLine{00318\ \ \ \ \ \ \ \textcolor{keyword}{using\ }\_Unchecked\_type\ =\ pointer;}
+\DoxyCodeLine{00319\ \textcolor{preprocessor}{\ \ \ \ \#endif\ }\textcolor{comment}{//\ \_MSC\_VER}}
+\DoxyCodeLine{00320\ }
+\DoxyCodeLine{00321\ \ \ \ \ SpanIterator(pointer\ ptr)\ :\ ptr\_(ptr)\ \{\}}
+\DoxyCodeLine{00322\ \ \ \ \ reference\ operator*()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ *ptr\_;\ \}}
+\DoxyCodeLine{00323\ \ \ \ \ pointer\ operator-\/>()\ \{\ \textcolor{keywordflow}{return}\ ptr\_;\ \}}
+\DoxyCodeLine{00324\ \ \ \ \ SpanIterator\&\ operator++()\ \{\ ptr\_++;\ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};\ \}\ \ }
+\DoxyCodeLine{00325\ \ \ \ \ SpanIterator\ \ operator++(\textcolor{keywordtype}{int})\ \{\ \textcolor{keyword}{auto}\ tmp\ =\ *\textcolor{keyword}{this};\ ++(*this);\ \textcolor{keywordflow}{return}\ tmp;\ \}}
+\DoxyCodeLine{00326\ }
+\DoxyCodeLine{00327\ \ \ \ \ \textcolor{keyword}{friend}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{test__64bit__generated_8h_a8620dd0a9c12e9652973381941c73bcf}{operator==\ }}(\textcolor{keyword}{const}\ SpanIterator\&\ lhs,\ \textcolor{keyword}{const}\ SpanIterator\&\ rhs)\ \{\ \textcolor{keywordflow}{return}\ lhs.ptr\_\ ==\ rhs.ptr\_;\ \}}
+\DoxyCodeLine{00328\ \ \ \ \ \textcolor{keyword}{friend}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{test__64bit__generated_8h_a67acd55d06ae1e60d0bfdedb89d3d63d}{operator!=\ }}(\textcolor{keyword}{const}\ SpanIterator\&\ lhs,\ \textcolor{keyword}{const}\ SpanIterator\&\ rhs)\ \{\ \textcolor{keywordflow}{return}\ lhs.ptr\_\ !=\ rhs.ptr\_;\ \}}
+\DoxyCodeLine{00329\ }
+\DoxyCodeLine{00330\ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00331\ \ \ \ \ pointer\ ptr\_;}
+\DoxyCodeLine{00332\ \ \ \};}
+\DoxyCodeLine{00333\ \}\ \ \textcolor{comment}{//\ namespace\ internal}}
+\DoxyCodeLine{00334\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ !defined(FLATBUFFERS\_SPAN\_MINIMAL)}}
+\DoxyCodeLine{00335\ }
+\DoxyCodeLine{00336\ \textcolor{comment}{//\ T\ -\/\ element\ type;\ must\ be\ a\ complete\ type\ that\ is\ not\ an\ abstract}}
+\DoxyCodeLine{00337\ \textcolor{comment}{//\ class\ type.}}
+\DoxyCodeLine{00338\ \textcolor{comment}{//\ Extent\ -\/\ the\ number\ of\ elements\ in\ the\ sequence,\ or\ dynamic.}}
+\DoxyCodeLine{00339\ \textcolor{keyword}{template}<\textcolor{keyword}{class}\ T,\ std::\textcolor{keywordtype}{size\_t}\ Extent\ =\ dynamic\_extent>}
+\DoxyCodeLine{00340\ \textcolor{keyword}{class\ }span\ \mbox{\hyperlink{structFLATBUFFERS__FINAL__CLASS}{FLATBUFFERS\_FINAL\_CLASS}}\ \{}
+\DoxyCodeLine{00341\ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00342\ \ \ \textcolor{keyword}{typedef}\ T\ \mbox{\hyperlink{classflatbuffers_1_1FLATBUFFERS__FINAL__CLASS_a5a892505e45d43e8465b17fb8d75d197}{element\_type}};}
+\DoxyCodeLine{00343\ \ \ \textcolor{keyword}{typedef}\ T\&\ \mbox{\hyperlink{classflatbuffers_1_1FLATBUFFERS__FINAL__CLASS_a0d9c40a12ca48c00fd091742c30b5754}{reference}};}
+\DoxyCodeLine{00344\ \ \ \textcolor{keyword}{typedef}\ \textcolor{keyword}{const}\ T\&\ \mbox{\hyperlink{classflatbuffers_1_1FLATBUFFERS__FINAL__CLASS_adc196b77e116b2894d3918220b8d40fd}{const\_reference}};}
+\DoxyCodeLine{00345\ \ \ \textcolor{keyword}{typedef}\ T*\ \mbox{\hyperlink{classflatbuffers_1_1FLATBUFFERS__FINAL__CLASS_a66c1daf08ac6545c662ff856a4d4ea6e}{pointer}};}
+\DoxyCodeLine{00346\ \ \ \textcolor{keyword}{typedef}\ \textcolor{keyword}{const}\ T*\ \mbox{\hyperlink{classflatbuffers_1_1FLATBUFFERS__FINAL__CLASS_ac2238713cfb387a30ecd27767344eeb8}{const\_pointer}};}
+\DoxyCodeLine{00347\ \ \ \textcolor{keyword}{typedef}\ std::size\_t\ \mbox{\hyperlink{classflatbuffers_1_1FLATBUFFERS__FINAL__CLASS_a40025d98ec06e87b62c44f2f88060ea1}{size\_type}};}
+\DoxyCodeLine{00348\ }
+\DoxyCodeLine{00349\ \ \ \textcolor{keyword}{static}\ FLATBUFFERS\_CONSTEXPR\ \mbox{\hyperlink{classflatbuffers_1_1FLATBUFFERS__FINAL__CLASS_a40025d98ec06e87b62c44f2f88060ea1}{size\_type}}\ extent\ =\ Extent;}
+\DoxyCodeLine{00350\ }
+\DoxyCodeLine{00351\ \ \ \textcolor{comment}{//\ Returns\ the\ number\ of\ elements\ in\ the\ span.}}
+\DoxyCodeLine{00352\ \ \ FLATBUFFERS\_CONSTEXPR\_CPP11\ \mbox{\hyperlink{classflatbuffers_1_1FLATBUFFERS__FINAL__CLASS_a40025d98ec06e87b62c44f2f88060ea1}{size\_type}}\ \mbox{\hyperlink{classflatbuffers_1_1FLATBUFFERS__FINAL__CLASS_ac003f5a998a222eb1f8578e832163d9a}{size}}()\ const\ FLATBUFFERS\_NOEXCEPT\ \{}
+\DoxyCodeLine{00353\ \ \ \ \ \textcolor{keywordflow}{return}\ count\_;}
+\DoxyCodeLine{00354\ \ \ \}}
+\DoxyCodeLine{00355\ }
+\DoxyCodeLine{00356\ \ \ \textcolor{comment}{//\ Returns\ the\ size\ of\ the\ sequence\ in\ bytes.}}
+\DoxyCodeLine{00357\ \ \ FLATBUFFERS\_CONSTEXPR\_CPP11}
+\DoxyCodeLine{00358\ \ \ \mbox{\hyperlink{classflatbuffers_1_1FLATBUFFERS__FINAL__CLASS_a40025d98ec06e87b62c44f2f88060ea1}{size\_type}}\ \mbox{\hyperlink{classflatbuffers_1_1FLATBUFFERS__FINAL__CLASS_a9e1db5d0f04973f23e8f1683864fd602}{size\_bytes}}()\ const\ FLATBUFFERS\_NOEXCEPT\ \{}
+\DoxyCodeLine{00359\ \ \ \ \ \textcolor{keywordflow}{return}\ size()\ *\ \textcolor{keyword}{sizeof}(\mbox{\hyperlink{classflatbuffers_1_1FLATBUFFERS__FINAL__CLASS_a5a892505e45d43e8465b17fb8d75d197}{element\_type}});}
+\DoxyCodeLine{00360\ \ \ \}}
+\DoxyCodeLine{00361\ }
+\DoxyCodeLine{00362\ \ \ \textcolor{comment}{//\ Checks\ if\ the\ span\ is\ empty.}}
+\DoxyCodeLine{00363\ \ \ FLATBUFFERS\_CONSTEXPR\_CPP11\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classflatbuffers_1_1FLATBUFFERS__FINAL__CLASS_ae62981a18fca7c1736bb6e45afcfbea2}{empty}}()\ const\ FLATBUFFERS\_NOEXCEPT\ \{}
+\DoxyCodeLine{00364\ \ \ \ \ \textcolor{keywordflow}{return}\ size()\ ==\ 0;}
+\DoxyCodeLine{00365\ \ \ \}}
+\DoxyCodeLine{00366\ }
+\DoxyCodeLine{00367\ \ \ \textcolor{comment}{//\ Returns\ a\ pointer\ to\ the\ beginning\ of\ the\ sequence.}}
+\DoxyCodeLine{00368\ \ \ FLATBUFFERS\_CONSTEXPR\_CPP11\ \mbox{\hyperlink{classflatbuffers_1_1FLATBUFFERS__FINAL__CLASS_a66c1daf08ac6545c662ff856a4d4ea6e}{pointer}}\ \mbox{\hyperlink{classflatbuffers_1_1FLATBUFFERS__FINAL__CLASS_a1a4fcd9e3fccc30a50f6f4eea4eff987}{data}}()\ const\ FLATBUFFERS\_NOEXCEPT\ \{}
+\DoxyCodeLine{00369\ \ \ \ \ \textcolor{keywordflow}{return}\ data\_;}
+\DoxyCodeLine{00370\ \ \ \}}
+\DoxyCodeLine{00371\ }
+\DoxyCodeLine{00372\ \textcolor{preprocessor}{\ \ \#if\ !defined(FLATBUFFERS\_SPAN\_MINIMAL)}}
+\DoxyCodeLine{00373\ \ \ \ \ \textcolor{keyword}{using\ }Iterator\ =\ internal::SpanIterator<T>;}
+\DoxyCodeLine{00374\ }
+\DoxyCodeLine{00375\ \ \ \ \ Iterator\ begin()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ Iterator(data());\ \}}
+\DoxyCodeLine{00376\ \ \ \ \ Iterator\ end()\textcolor{keyword}{\ const\ \ \ }\{\ \textcolor{keywordflow}{return}\ Iterator(data()\ +\ size());\ \}}
+\DoxyCodeLine{00377\ \textcolor{preprocessor}{\ \ \#endif}}
+\DoxyCodeLine{00378\ }
+\DoxyCodeLine{00379\ \ \ \textcolor{comment}{//\ Returns\ a\ reference\ to\ the\ idx-\/th\ element\ of\ the\ sequence.}}
+\DoxyCodeLine{00380\ \ \ \textcolor{comment}{//\ The\ behavior\ is\ undefined\ if\ the\ idx\ is\ greater\ than\ or\ equal\ to\ size().}}
+\DoxyCodeLine{00381\ \ \ FLATBUFFERS\_CONSTEXPR\_CPP11\ \mbox{\hyperlink{classflatbuffers_1_1FLATBUFFERS__FINAL__CLASS_a0d9c40a12ca48c00fd091742c30b5754}{reference}}\ \mbox{\hyperlink{classflatbuffers_1_1FLATBUFFERS__FINAL__CLASS_abb04234107856b68709b4d880f876df5}{operator[]}}(\mbox{\hyperlink{classflatbuffers_1_1FLATBUFFERS__FINAL__CLASS_a40025d98ec06e87b62c44f2f88060ea1}{size\_type}}\ idx)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00382\ \ \ \ \ \textcolor{keywordflow}{return}\ data()[idx];}
+\DoxyCodeLine{00383\ \ \ \}}
+\DoxyCodeLine{00384\ }
+\DoxyCodeLine{00385\ \ \ FLATBUFFERS\_CONSTEXPR\_CPP11\ \mbox{\hyperlink{classflatbuffers_1_1FLATBUFFERS__FINAL__CLASS_a82b5637fb5bc846dbda3c307ae6b6a7a}{span}}(\textcolor{keyword}{const}\ span\ \&other)\ FLATBUFFERS\_NOEXCEPT}
+\DoxyCodeLine{00386\ \ \ \ \ \ \ :\ data\_(other.data\_),\ count\_(other.count\_)\ \{\}}
+\DoxyCodeLine{00387\ }
+\DoxyCodeLine{00388\ \ \ FLATBUFFERS\_CONSTEXPR\_CPP14\ span\ \&\mbox{\hyperlink{classflatbuffers_1_1FLATBUFFERS__FINAL__CLASS_aa7c46bddc33e777351f22fcb9007afcc}{operator=}}(\textcolor{keyword}{const}\ span\ \&other)}
+\DoxyCodeLine{00389\ \ \ \ \ \ \ FLATBUFFERS\_NOEXCEPT\ \{}
+\DoxyCodeLine{00390\ \ \ \ \ data\_\ =\ other.data\_;}
+\DoxyCodeLine{00391\ \ \ \ \ count\_\ =\ other.count\_;}
+\DoxyCodeLine{00392\ \ \ \}}
+\DoxyCodeLine{00393\ }
+\DoxyCodeLine{00394\ \ \ \textcolor{comment}{//\ Limited\ implementation\ of}}
+\DoxyCodeLine{00395\ \ \ \textcolor{comment}{//\ \`{}template\ <class\ It>\ constexpr\ std::span(It\ first,\ size\_type\ count);`.}}
+\DoxyCodeLine{00396\ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{00397\ \ \ \textcolor{comment}{//\ Constructs\ a\ span\ that\ is\ a\ view\ over\ the\ range\ [first,\ first\ +\ count);}}
+\DoxyCodeLine{00398\ \ \ \textcolor{comment}{//\ the\ resulting\ span\ has:\ data()\ ==\ first\ and\ size()\ ==\ count.}}
+\DoxyCodeLine{00399\ \ \ \textcolor{comment}{//\ The\ behavior\ is\ undefined\ if\ [first,\ first\ +\ count)\ is\ not\ a\ valid\ range,}}
+\DoxyCodeLine{00400\ \ \ \textcolor{comment}{//\ or\ if\ (extent\ !=\ flatbuffers::dynamic\_extent\ \&\&\ count\ !=\ extent).}}
+\DoxyCodeLine{00401\ \ \ FLATBUFFERS\_CONSTEXPR\_CPP11}
+\DoxyCodeLine{00402\ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classflatbuffers_1_1FLATBUFFERS__FINAL__CLASS_aec30e341c3397248d3f4deb65934e180}{span}}(\mbox{\hyperlink{classflatbuffers_1_1FLATBUFFERS__FINAL__CLASS_a66c1daf08ac6545c662ff856a4d4ea6e}{pointer}}\ first,\ \mbox{\hyperlink{classflatbuffers_1_1FLATBUFFERS__FINAL__CLASS_a40025d98ec06e87b62c44f2f88060ea1}{size\_type}}\ \mbox{\hyperlink{gmock__stress__test_8cc_afd9db40e3361ae09188795e8cbe19752}{count}})\ FLATBUFFERS\_NOEXCEPT}
+\DoxyCodeLine{00403\ \ \ \ \ :\ data\_\ (Extent\ ==\ dynamic\_extent\ ?\ first\ :\ (Extent\ ==\ \mbox{\hyperlink{gmock__stress__test_8cc_afd9db40e3361ae09188795e8cbe19752}{count}}\ ?\ first\ :\ nullptr)),}
+\DoxyCodeLine{00404\ \ \ \ \ \ \ count\_(Extent\ ==\ \mbox{\hyperlink{namespaceflatbuffers_ad28522f35a1cff59322de20bcd3d03d2}{dynamic\_extent}}\ ?\ \mbox{\hyperlink{gmock__stress__test_8cc_afd9db40e3361ae09188795e8cbe19752}{count}}\ :\ (Extent\ ==\ \mbox{\hyperlink{gmock__stress__test_8cc_afd9db40e3361ae09188795e8cbe19752}{count}}\ ?\ Extent\ :\ 0))\ \{}
+\DoxyCodeLine{00405\ \ \ \ \ \ \ \textcolor{comment}{//\ Make\ span\ empty\ if\ the\ count\ argument\ is\ incompatible\ with\ span<T,N>.}}
+\DoxyCodeLine{00406\ \ \ \}}
+\DoxyCodeLine{00407\ }
+\DoxyCodeLine{00408\ \ \ \textcolor{comment}{//\ Exclude\ this\ code\ if\ MSVC2010\ is\ active.\ The\ MSVC2010\ isn't\ C++11}}
+\DoxyCodeLine{00409\ \ \ \textcolor{comment}{//\ compliant,\ it\ doesn't\ support\ default\ template\ arguments\ for\ functions.}}
+\DoxyCodeLine{00410\ \textcolor{preprocessor}{\ \ \#if\ defined(FLATBUFFERS\_SPAN\_MINIMAL)}}
+\DoxyCodeLine{00411\ \ \ FLATBUFFERS\_CONSTEXPR\_CPP11\ \mbox{\hyperlink{classflatbuffers_1_1FLATBUFFERS__FINAL__CLASS_a56746b24f67697cb59c15ecf13bfb2b3}{span}}()\ FLATBUFFERS\_NOEXCEPT\ :\ data\_(\textcolor{keywordtype}{nullptr}),}
+\DoxyCodeLine{00412\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ count\_(0)\ \{}
+\DoxyCodeLine{00413\ \ \ \ \ \textcolor{keyword}{static\_assert}(extent\ ==\ 0\ ||\ extent\ ==\ \mbox{\hyperlink{namespaceflatbuffers_ad28522f35a1cff59322de20bcd3d03d2}{dynamic\_extent}},\ \textcolor{stringliteral}{"{}invalid\ span"{}});}
+\DoxyCodeLine{00414\ \ \ \}}
+\DoxyCodeLine{00415\ }
+\DoxyCodeLine{00416\ \textcolor{preprocessor}{\ \ \#else}}
+\DoxyCodeLine{00417\ \ \ \textcolor{comment}{//\ Constructs\ an\ empty\ span\ whose\ data()\ ==\ nullptr\ and\ size()\ ==\ 0.}}
+\DoxyCodeLine{00418\ \ \ \textcolor{comment}{//\ This\ overload\ only\ participates\ in\ overload\ resolution\ if}}
+\DoxyCodeLine{00419\ \ \ \textcolor{comment}{//\ extent\ ==\ 0\ ||\ extent\ ==\ flatbuffers::dynamic\_extent.}}
+\DoxyCodeLine{00420\ \ \ \textcolor{comment}{//\ A\ dummy\ template\ argument\ N\ is\ need\ dependency\ for\ SFINAE.}}
+\DoxyCodeLine{00421\ \ \ \textcolor{keyword}{template}<std::size\_t\ N\ =\ 0,}
+\DoxyCodeLine{00422\ \ \ \ \ \textcolor{keyword}{typename}\ internal::is\_span\_convertible<element\_type,\ Extent,\ element\_type,\ (N\ -\/\ N)>::type\ =\ 0>}
+\DoxyCodeLine{00423\ \ \ FLATBUFFERS\_CONSTEXPR\_CPP11\ span()\ FLATBUFFERS\_NOEXCEPT\ :\ data\_(\textcolor{keyword}{nullptr}),}
+\DoxyCodeLine{00424\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ count\_(0)\ \{}
+\DoxyCodeLine{00425\ \ \ \ \ \textcolor{keyword}{static\_assert}(extent\ ==\ 0\ ||\ extent\ ==\ \mbox{\hyperlink{namespaceflatbuffers_ad28522f35a1cff59322de20bcd3d03d2}{dynamic\_extent}},\ \textcolor{stringliteral}{"{}invalid\ span"{}});}
+\DoxyCodeLine{00426\ \ \ \}}
+\DoxyCodeLine{00427\ }
+\DoxyCodeLine{00428\ \ \ \textcolor{comment}{//\ Constructs\ a\ span\ that\ is\ a\ view\ over\ the\ array\ arr;\ the\ resulting\ span}}
+\DoxyCodeLine{00429\ \ \ \textcolor{comment}{//\ has\ size()\ ==\ N\ and\ data()\ ==\ std::data(arr).\ These\ overloads\ only}}
+\DoxyCodeLine{00430\ \ \ \textcolor{comment}{//\ participate\ in\ overload\ resolution\ if}}
+\DoxyCodeLine{00431\ \ \ \textcolor{comment}{//\ extent\ ==\ std::dynamic\_extent\ ||\ N\ ==\ extent\ is\ true\ and}}
+\DoxyCodeLine{00432\ \ \ \textcolor{comment}{//\ std::remove\_pointer\_t<decltype(std::data(arr))>(*)[]}}
+\DoxyCodeLine{00433\ \ \ \textcolor{comment}{//\ is\ convertible\ to\ element\_type\ (*)[].}}
+\DoxyCodeLine{00434\ \ \ \textcolor{keyword}{template}<std::size\_t\ N,}
+\DoxyCodeLine{00435\ \ \ \ \ \textcolor{keyword}{typename}\ internal::is\_span\_convertible<element\_type,\ Extent,\ element\_type,\ N>::type\ =\ 0>}
+\DoxyCodeLine{00436\ \ \ FLATBUFFERS\_CONSTEXPR\_CPP11\ span(element\_type\ (\&arr)[N])\ FLATBUFFERS\_NOEXCEPT}
+\DoxyCodeLine{00437\ \ \ \ \ \ \ :\ data\_(arr),\ count\_(N)\ \{\}}
+\DoxyCodeLine{00438\ }
+\DoxyCodeLine{00439\ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{class\ }\mbox{\hyperlink{namespacepython_1_1flatbuffers_1_1flexbuffers_ab684b8fb80023002487f2afbfd7cddd5}{U}},\ std::size\_t\ N,}
+\DoxyCodeLine{00440\ \ \ \ \ \textcolor{keyword}{typename}\ internal::is\_span\_convertible<element\_type,\ Extent,\ U,\ N>::type\ =\ 0>}
+\DoxyCodeLine{00441\ \ \ FLATBUFFERS\_CONSTEXPR\_CPP11\ span(std::array<U,\ N>\ \&arr)\ FLATBUFFERS\_NOEXCEPT}
+\DoxyCodeLine{00442\ \ \ \ \ \ :\ data\_(arr.data()),\ count\_(N)\ \{\}}
+\DoxyCodeLine{00443\ }
+\DoxyCodeLine{00444\ \ \ \textcolor{comment}{//template<class\ U,\ std::size\_t\ N,}}
+\DoxyCodeLine{00445\ \ \ \textcolor{comment}{//\ \ int\ =\ 0>}}
+\DoxyCodeLine{00446\ \ \ \textcolor{comment}{//FLATBUFFERS\_CONSTEXPR\_CPP11\ span(std::array<U,\ N>\ \&arr)\ FLATBUFFERS\_NOEXCEPT}}
+\DoxyCodeLine{00447\ \ \ \textcolor{comment}{//\ \ \ :\ data\_(arr.data()),\ count\_(N)\ \{\}}}
+\DoxyCodeLine{00448\ }
+\DoxyCodeLine{00449\ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{class\ }\mbox{\hyperlink{namespacepython_1_1flatbuffers_1_1flexbuffers_ab684b8fb80023002487f2afbfd7cddd5}{U}},\ std::size\_t\ N,}
+\DoxyCodeLine{00450\ \ \ \ \ \textcolor{keyword}{typename}\ internal::is\_span\_convertible<element\_type,\ Extent,\ U,\ N>::type\ =\ 0>}
+\DoxyCodeLine{00451\ \ \ FLATBUFFERS\_CONSTEXPR\_CPP11\ span(\textcolor{keyword}{const}\ std::array<U,\ N>\ \&arr)\ FLATBUFFERS\_NOEXCEPT}
+\DoxyCodeLine{00452\ \ \ \ \ :\ data\_(arr.data()),\ count\_(N)\ \{\}}
+\DoxyCodeLine{00453\ }
+\DoxyCodeLine{00454\ \ \ \textcolor{comment}{//\ Converting\ constructor\ from\ another\ span\ s;}}
+\DoxyCodeLine{00455\ \ \ \textcolor{comment}{//\ the\ resulting\ span\ has\ size()\ ==\ s.size()\ and\ data()\ ==\ s.data().}}
+\DoxyCodeLine{00456\ \ \ \textcolor{comment}{//\ This\ overload\ only\ participates\ in\ overload\ resolution}}
+\DoxyCodeLine{00457\ \ \ \textcolor{comment}{//\ if\ extent\ ==\ std::dynamic\_extent\ ||\ N\ ==\ extent\ is\ true\ and\ U\ (*)[]}}
+\DoxyCodeLine{00458\ \ \ \textcolor{comment}{//\ is\ convertible\ to\ element\_type\ (*)[].}}
+\DoxyCodeLine{00459\ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{class\ }\mbox{\hyperlink{namespacepython_1_1flatbuffers_1_1flexbuffers_ab684b8fb80023002487f2afbfd7cddd5}{U}},\ std::size\_t\ N,}
+\DoxyCodeLine{00460\ \ \ \ \ \textcolor{keyword}{typename}\ internal::is\_span\_convertible<element\_type,\ Extent,\ U,\ N>::type\ =\ 0>}
+\DoxyCodeLine{00461\ \ \ FLATBUFFERS\_CONSTEXPR\_CPP11\ span(\textcolor{keyword}{const}\ flatbuffers::span<U,\ N>\ \&s)\ FLATBUFFERS\_NOEXCEPT}
+\DoxyCodeLine{00462\ \ \ \ \ \ \ :\ span(s.data(),\ s.size())\ \{}
+\DoxyCodeLine{00463\ \ \ \}}
+\DoxyCodeLine{00464\ }
+\DoxyCodeLine{00465\ \textcolor{preprocessor}{\ \ \#endif\ \ }\textcolor{comment}{//\ !defined(FLATBUFFERS\_SPAN\_MINIMAL)}}
+\DoxyCodeLine{00466\ }
+\DoxyCodeLine{00467\ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00468\ \ \ \textcolor{comment}{//\ This\ is\ a\ naive\ implementation\ with\ 'count\_'\ member\ even\ if\ (Extent\ !=\ dynamic\_extent).}}
+\DoxyCodeLine{00469\ \ \ pointer\ \textcolor{keyword}{const}\ data\_;}
+\DoxyCodeLine{00470\ \ \ size\_type\ count\_;}
+\DoxyCodeLine{00471\ \};}
+\DoxyCodeLine{00472\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ defined(FLATBUFFERS\_USE\_STD\_SPAN)}}
+\DoxyCodeLine{00473\ }
+\DoxyCodeLine{00474\ \textcolor{preprocessor}{\#if\ !defined(FLATBUFFERS\_SPAN\_MINIMAL)}}
+\DoxyCodeLine{00475\ \textcolor{keyword}{template}<\textcolor{keyword}{class}\ ElementType,\ std::\textcolor{keywordtype}{size\_t}\ Extent>}
+\DoxyCodeLine{00476\ FLATBUFFERS\_CONSTEXPR\_CPP11}
+\DoxyCodeLine{00477\ flatbuffers::span<ElementType,\ Extent>\ \mbox{\hyperlink{namespaceflatbuffers_a43017d11c89159c12e7de86ee9f9396d}{make\_span}}(ElementType(\&arr)[Extent])\ FLATBUFFERS\_NOEXCEPT\ \{}
+\DoxyCodeLine{00478\ \ \ \textcolor{keywordflow}{return}\ span<ElementType,\ Extent>(arr);}
+\DoxyCodeLine{00479\ \}}
+\DoxyCodeLine{00480\ }
+\DoxyCodeLine{00481\ \textcolor{keyword}{template}<\textcolor{keyword}{class}\ ElementType,\ std::\textcolor{keywordtype}{size\_t}\ Extent>}
+\DoxyCodeLine{00482\ FLATBUFFERS\_CONSTEXPR\_CPP11}
+\DoxyCodeLine{00483\ flatbuffers::span<const\ ElementType,\ Extent>\ \mbox{\hyperlink{namespaceflatbuffers_a43017d11c89159c12e7de86ee9f9396d}{make\_span}}(\textcolor{keyword}{const}\ ElementType(\&arr)[Extent])\ FLATBUFFERS\_NOEXCEPT\ \{}
+\DoxyCodeLine{00484\ \ \ \textcolor{keywordflow}{return}\ span<const\ ElementType,\ Extent>(arr);}
+\DoxyCodeLine{00485\ \}}
+\DoxyCodeLine{00486\ }
+\DoxyCodeLine{00487\ \textcolor{keyword}{template}<\textcolor{keyword}{class}\ ElementType,\ std::\textcolor{keywordtype}{size\_t}\ Extent>}
+\DoxyCodeLine{00488\ FLATBUFFERS\_CONSTEXPR\_CPP11}
+\DoxyCodeLine{00489\ flatbuffers::span<ElementType,\ Extent>\ \mbox{\hyperlink{namespaceflatbuffers_a43017d11c89159c12e7de86ee9f9396d}{make\_span}}(std::array<ElementType,\ Extent>\ \&arr)\ FLATBUFFERS\_NOEXCEPT\ \{}
+\DoxyCodeLine{00490\ \ \ \textcolor{keywordflow}{return}\ span<ElementType,\ Extent>(arr);}
+\DoxyCodeLine{00491\ \}}
+\DoxyCodeLine{00492\ }
+\DoxyCodeLine{00493\ \textcolor{keyword}{template}<\textcolor{keyword}{class}\ ElementType,\ std::\textcolor{keywordtype}{size\_t}\ Extent>}
+\DoxyCodeLine{00494\ FLATBUFFERS\_CONSTEXPR\_CPP11}
+\DoxyCodeLine{00495\ flatbuffers::span<const\ ElementType,\ Extent>\ \mbox{\hyperlink{namespaceflatbuffers_a43017d11c89159c12e7de86ee9f9396d}{make\_span}}(\textcolor{keyword}{const}\ std::array<ElementType,\ Extent>\ \&arr)\ FLATBUFFERS\_NOEXCEPT\ \{}
+\DoxyCodeLine{00496\ \ \ \textcolor{keywordflow}{return}\ span<const\ ElementType,\ Extent>(arr);}
+\DoxyCodeLine{00497\ \}}
+\DoxyCodeLine{00498\ }
+\DoxyCodeLine{00499\ \textcolor{keyword}{template}<\textcolor{keyword}{class}\ ElementType,\ std::\textcolor{keywordtype}{size\_t}\ Extent>}
+\DoxyCodeLine{00500\ FLATBUFFERS\_CONSTEXPR\_CPP11}
+\DoxyCodeLine{00501\ flatbuffers::span<ElementType,\ dynamic\_extent>\ \mbox{\hyperlink{namespaceflatbuffers_a43017d11c89159c12e7de86ee9f9396d}{make\_span}}(ElementType\ *first,\ std::size\_t\ \mbox{\hyperlink{gmock__stress__test_8cc_afd9db40e3361ae09188795e8cbe19752}{count}})\ FLATBUFFERS\_NOEXCEPT\ \{}
+\DoxyCodeLine{00502\ \ \ \textcolor{keywordflow}{return}\ span<ElementType,\ dynamic\_extent>(first,\ \mbox{\hyperlink{gmock__stress__test_8cc_afd9db40e3361ae09188795e8cbe19752}{count}});}
+\DoxyCodeLine{00503\ \}}
+\DoxyCodeLine{00504\ }
+\DoxyCodeLine{00505\ \textcolor{keyword}{template}<\textcolor{keyword}{class}\ ElementType,\ std::\textcolor{keywordtype}{size\_t}\ Extent>}
+\DoxyCodeLine{00506\ FLATBUFFERS\_CONSTEXPR\_CPP11}
+\DoxyCodeLine{00507\ flatbuffers::span<const\ ElementType,\ dynamic\_extent>\ \mbox{\hyperlink{namespaceflatbuffers_a43017d11c89159c12e7de86ee9f9396d}{make\_span}}(\textcolor{keyword}{const}\ ElementType\ *first,\ std::size\_t\ \mbox{\hyperlink{gmock__stress__test_8cc_afd9db40e3361ae09188795e8cbe19752}{count}})\ FLATBUFFERS\_NOEXCEPT\ \{}
+\DoxyCodeLine{00508\ \ \ \textcolor{keywordflow}{return}\ span<const\ ElementType,\ dynamic\_extent>(first,\ \mbox{\hyperlink{gmock__stress__test_8cc_afd9db40e3361ae09188795e8cbe19752}{count}});}
+\DoxyCodeLine{00509\ \}}
+\DoxyCodeLine{00510\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ !defined(FLATBUFFERS\_SPAN\_MINIMAL)}}
+\DoxyCodeLine{00511\ }
+\DoxyCodeLine{00512\ \}\ \ \textcolor{comment}{//\ namespace\ flatbuffers}}
+\DoxyCodeLine{00513\ }
+\DoxyCodeLine{00514\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ FLATBUFFERS\_STL\_EMULATION\_H\_}}
+
+\end{DoxyCode}

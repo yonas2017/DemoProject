@@ -1,0 +1,190 @@
+\doxysection{flatbuffers\+::Base\+Bfbs\+Generator Class Reference}
+\hypertarget{classflatbuffers_1_1BaseBfbsGenerator}{}\label{classflatbuffers_1_1BaseBfbsGenerator}\index{flatbuffers::BaseBfbsGenerator@{flatbuffers::BaseBfbsGenerator}}
+
+
+{\ttfamily \#include $<$bfbs\+\_\+gen.\+h$>$}
+
+
+
+Inheritance diagram for flatbuffers\+::Base\+Bfbs\+Generator\+:
+% FIG 0
+
+
+Collaboration diagram for flatbuffers\+::Base\+Bfbs\+Generator\+:
+% FIG 1
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classflatbuffers_1_1BaseBfbsGenerator_aac1cdaac13dfdad747797fbeb3c7ffb3}{\texorpdfstring{$\sim$}{\string~}\+Base\+Bfbs\+Generator}} ()
+\item 
+\mbox{\hyperlink{classflatbuffers_1_1BaseBfbsGenerator_a3d17a69f638d5fc7df4a996475092c88}{Base\+Bfbs\+Generator}} ()
+\item 
+virtual \mbox{\hyperlink{classflatbuffers_1_1CodeGenerator_ace5ed21ca8a1faa20a6cf7da3eda8ffa}{Status}} \mbox{\hyperlink{classflatbuffers_1_1BaseBfbsGenerator_a8acc1b1b309235d2862a91c8c17c4e50}{Generate\+From\+Schema}} (const reflection\+::\+Schema \texorpdfstring{$\ast$}{*}schema, const \mbox{\hyperlink{structflatbuffers_1_1CodeGenOptions}{Code\+Gen\+Options}} \&options)=0
+\item 
+virtual uint64\+\_\+t \mbox{\hyperlink{classflatbuffers_1_1BaseBfbsGenerator_a4a4075ca4af8e4cc89c49509a4b0607a}{Supported\+Advanced\+Features}} () const =0
+\item 
+\mbox{\hyperlink{classflatbuffers_1_1CodeGenerator_ace5ed21ca8a1faa20a6cf7da3eda8ffa}{Status}} \mbox{\hyperlink{classflatbuffers_1_1BaseBfbsGenerator_a0ea2ec2343c6a02fade634029190fc2d}{Generate\+Code}} (const uint8\+\_\+t \texorpdfstring{$\ast$}{*}buffer, int64\+\_\+t length, const \mbox{\hyperlink{structflatbuffers_1_1CodeGenOptions}{Code\+Gen\+Options}} \&options) FLATBUFFERS\+\_\+\+OVERRIDE
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classflatbuffers_1_1CodeGenerator}{flatbuffers\+::\+Code\+Generator}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classflatbuffers_1_1CodeGenerator_a60b65f3a16439dd3660b2a17dc4097eb}{\texorpdfstring{$\sim$}{\string~}\+Code\+Generator}} ()=default
+\item 
+virtual \mbox{\hyperlink{classflatbuffers_1_1CodeGenerator_ace5ed21ca8a1faa20a6cf7da3eda8ffa}{Status}} \mbox{\hyperlink{classflatbuffers_1_1CodeGenerator_a6d2ad14b8b914d6b447f8a2a6d1918c1}{Generate\+Code}} (const \mbox{\hyperlink{classflatbuffers_1_1Parser}{Parser}} \&parser, const std\+::string \&path, const std\+::string \&filename)=0
+\item 
+virtual \mbox{\hyperlink{classflatbuffers_1_1CodeGenerator_ace5ed21ca8a1faa20a6cf7da3eda8ffa}{Status}} \mbox{\hyperlink{classflatbuffers_1_1CodeGenerator_a34bd4e2e21e5a4674941c11a7738e554}{Generate\+Code\+String}} (const \mbox{\hyperlink{classflatbuffers_1_1Parser}{Parser}} \&parser, const std\+::string \&filename, std\+::string \&output)
+\item 
+virtual \mbox{\hyperlink{classflatbuffers_1_1CodeGenerator_ace5ed21ca8a1faa20a6cf7da3eda8ffa}{Status}} \mbox{\hyperlink{classflatbuffers_1_1CodeGenerator_a1d4a52cfffefb2835d9fa30144b32cf4}{Generate\+Make\+Rule}} (const \mbox{\hyperlink{classflatbuffers_1_1Parser}{Parser}} \&parser, const std\+::string \&path, const std\+::string \&filename, std\+::string \&output)=0
+\item 
+virtual \mbox{\hyperlink{classflatbuffers_1_1CodeGenerator_ace5ed21ca8a1faa20a6cf7da3eda8ffa}{Status}} \mbox{\hyperlink{classflatbuffers_1_1CodeGenerator_a6d4c3b8beaa7f76aa2d1ff21c0c97f93}{Generate\+Grpc\+Code}} (const \mbox{\hyperlink{classflatbuffers_1_1Parser}{Parser}} \&parser, const std\+::string \&path, const std\+::string \&filename)=0
+\item 
+virtual \mbox{\hyperlink{classflatbuffers_1_1CodeGenerator_ace5ed21ca8a1faa20a6cf7da3eda8ffa}{Status}} \mbox{\hyperlink{classflatbuffers_1_1CodeGenerator_ac745e2e6785f7049d4641393492d69d5}{Generate\+Root\+File}} (const \mbox{\hyperlink{classflatbuffers_1_1Parser}{Parser}} \&parser, const std\+::string \&path)=0
+\item 
+virtual bool \mbox{\hyperlink{classflatbuffers_1_1CodeGenerator_ab4fd90d8914b467a86413688eb19017f}{Is\+Schema\+Only}} () const =0
+\item 
+virtual bool \mbox{\hyperlink{classflatbuffers_1_1CodeGenerator_a6b4ba4a0b9c54bb3a31ab2ae1541857e}{Supports\+Bfbs\+Generation}} () const =0
+\item 
+virtual bool \mbox{\hyperlink{classflatbuffers_1_1CodeGenerator_a477e9fac99eb370ede8cd97a0a616774}{Supports\+Root\+File\+Generation}} () const =0
+\item 
+virtual \mbox{\hyperlink{structflatbuffers_1_1IDLOptions_a86ee4542187c2b04945f43cf6aebaffc}{IDLOptions\+::\+Language}} \mbox{\hyperlink{classflatbuffers_1_1CodeGenerator_a00a85f44dc29d57ee844b92704a789c8}{Language}} () const =0
+\item 
+virtual std\+::string \mbox{\hyperlink{classflatbuffers_1_1CodeGenerator_a5bc8484b9233632d57596cb9db704569}{Language\+Name}} () const =0
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+const reflection\+::\+Object \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classflatbuffers_1_1BaseBfbsGenerator_a3164b99469fbd59013ea24b0e778e54f}{Get\+Object}} (const reflection\+::\+Type \texorpdfstring{$\ast$}{*}type, bool element\+\_\+type=false) const
+\item 
+const reflection\+::\+Enum \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classflatbuffers_1_1BaseBfbsGenerator_a4f9b5780ac3ac048205af101d7b24f51}{Get\+Enum}} (const reflection\+::\+Type \texorpdfstring{$\ast$}{*}type, bool element\+\_\+type=false) const
+\item 
+const reflection\+::\+Object \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classflatbuffers_1_1BaseBfbsGenerator_a409c341280a4aa24f75b8d8b81f3da8b}{Get\+Object\+By\+Index}} (int32\+\_\+t index) const
+\item 
+const reflection\+::\+Enum \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classflatbuffers_1_1BaseBfbsGenerator_afd9b6f595f300481e1622c574f6f5a42}{Get\+Enum\+By\+Index}} (int32\+\_\+t index) const
+\item 
+void \mbox{\hyperlink{classflatbuffers_1_1BaseBfbsGenerator_a08113ab0c68ecc386dad018dbe6103c2}{For\+All\+Fields}} (const reflection\+::\+Object \texorpdfstring{$\ast$}{*}object, bool reverse, std\+::function$<$ void(const reflection\+::\+Field \texorpdfstring{$\ast$}{*})$>$ func) const
+\item 
+bool \mbox{\hyperlink{classflatbuffers_1_1BaseBfbsGenerator_a42725ec3db636a08c809492f09b5fb05}{Is\+Table}} (const reflection\+::\+Type \texorpdfstring{$\ast$}{*}type, bool use\+\_\+element=false) const
+\item 
+bool \mbox{\hyperlink{classflatbuffers_1_1BaseBfbsGenerator_af77383805ebfa4182e5f2c390881277a}{Is\+Struct}} (const reflection\+::\+Type \texorpdfstring{$\ast$}{*}type, bool use\+\_\+element=false) const
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{classflatbuffers_1_1CodeGenerator}{flatbuffers\+::\+Code\+Generator}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classflatbuffers_1_1CodeGenerator_a6bdc967a1e7eedeb148ea663ca95f9d8}{Code\+Generator}} ()=default
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+const reflection\+::\+Schema \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classflatbuffers_1_1BaseBfbsGenerator_a14c87a04d3a0e98bfb57580cd4bb8f17}{schema\+\_\+}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Public Types inherited from \mbox{\hyperlink{classflatbuffers_1_1CodeGenerator}{flatbuffers\+::\+Code\+Generator}}}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{classflatbuffers_1_1CodeGenerator_ace5ed21ca8a1faa20a6cf7da3eda8ffa}{Status}} \{ \mbox{\hyperlink{classflatbuffers_1_1CodeGenerator_ace5ed21ca8a1faa20a6cf7da3eda8ffaa71dc2f8979fb40fc4be8421d7e0e8a4a}{OK}} = 0
+, \mbox{\hyperlink{classflatbuffers_1_1CodeGenerator_ace5ed21ca8a1faa20a6cf7da3eda8ffaa6b9ad17a70ddba7e7c7f5d73ef4d64df}{ERROR}} = 1
+, \mbox{\hyperlink{classflatbuffers_1_1CodeGenerator_ace5ed21ca8a1faa20a6cf7da3eda8ffaa5d31295f7c19c632ef9e1e0f7d74d173}{FAILED\+\_\+\+VERIFICATION}} = 2
+, \mbox{\hyperlink{classflatbuffers_1_1CodeGenerator_ace5ed21ca8a1faa20a6cf7da3eda8ffaae12ff9b014a92be1dce3fd91e0f05ea0}{NOT\+\_\+\+IMPLEMENTED}} = 3
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes inherited from \mbox{\hyperlink{classflatbuffers_1_1CodeGenerator}{flatbuffers\+::\+Code\+Generator}}}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{classflatbuffers_1_1CodeGenerator_a3031b56b091bb933fc103fa1b11414c8}{status\+\_\+detail}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classflatbuffers_1_1BaseBfbsGenerator_aac1cdaac13dfdad747797fbeb3c7ffb3}\label{classflatbuffers_1_1BaseBfbsGenerator_aac1cdaac13dfdad747797fbeb3c7ffb3} 
+\index{flatbuffers::BaseBfbsGenerator@{flatbuffers::BaseBfbsGenerator}!````~BaseBfbsGenerator@{\texorpdfstring{$\sim$}{\string~}BaseBfbsGenerator}}
+\index{````~BaseBfbsGenerator@{\texorpdfstring{$\sim$}{\string~}BaseBfbsGenerator}!flatbuffers::BaseBfbsGenerator@{flatbuffers::BaseBfbsGenerator}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}BaseBfbsGenerator()}{\string~BaseBfbsGenerator()}}
+{\footnotesize\ttfamily virtual flatbuffers\+::\+Base\+Bfbs\+Generator\+::\texorpdfstring{$\sim$}{\string~}\+Base\+Bfbs\+Generator (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+\Hypertarget{classflatbuffers_1_1BaseBfbsGenerator_a3d17a69f638d5fc7df4a996475092c88}\label{classflatbuffers_1_1BaseBfbsGenerator_a3d17a69f638d5fc7df4a996475092c88} 
+\index{flatbuffers::BaseBfbsGenerator@{flatbuffers::BaseBfbsGenerator}!BaseBfbsGenerator@{BaseBfbsGenerator}}
+\index{BaseBfbsGenerator@{BaseBfbsGenerator}!flatbuffers::BaseBfbsGenerator@{flatbuffers::BaseBfbsGenerator}}
+\doxysubsubsection{\texorpdfstring{BaseBfbsGenerator()}{BaseBfbsGenerator()}}
+{\footnotesize\ttfamily flatbuffers\+::\+Base\+Bfbs\+Generator\+::\+Base\+Bfbs\+Generator (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classflatbuffers_1_1BaseBfbsGenerator_a08113ab0c68ecc386dad018dbe6103c2}\label{classflatbuffers_1_1BaseBfbsGenerator_a08113ab0c68ecc386dad018dbe6103c2} 
+\index{flatbuffers::BaseBfbsGenerator@{flatbuffers::BaseBfbsGenerator}!ForAllFields@{ForAllFields}}
+\index{ForAllFields@{ForAllFields}!flatbuffers::BaseBfbsGenerator@{flatbuffers::BaseBfbsGenerator}}
+\doxysubsubsection{\texorpdfstring{ForAllFields()}{ForAllFields()}}
+{\footnotesize\ttfamily void flatbuffers\+::\+Base\+Bfbs\+Generator\+::\+For\+All\+Fields (\begin{DoxyParamCaption}\item[{const reflection\+::\+Object \texorpdfstring{$\ast$}{*}}]{object,  }\item[{bool}]{reverse,  }\item[{std\+::function$<$ void(const reflection\+::\+Field \texorpdfstring{$\ast$}{*})$>$}]{func }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+\Hypertarget{classflatbuffers_1_1BaseBfbsGenerator_a0ea2ec2343c6a02fade634029190fc2d}\label{classflatbuffers_1_1BaseBfbsGenerator_a0ea2ec2343c6a02fade634029190fc2d} 
+\index{flatbuffers::BaseBfbsGenerator@{flatbuffers::BaseBfbsGenerator}!GenerateCode@{GenerateCode}}
+\index{GenerateCode@{GenerateCode}!flatbuffers::BaseBfbsGenerator@{flatbuffers::BaseBfbsGenerator}}
+\doxysubsubsection{\texorpdfstring{GenerateCode()}{GenerateCode()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classflatbuffers_1_1CodeGenerator_ace5ed21ca8a1faa20a6cf7da3eda8ffa}{Status}} flatbuffers\+::\+Base\+Bfbs\+Generator\+::\+Generate\+Code (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t \texorpdfstring{$\ast$}{*}}]{buffer,  }\item[{int64\+\_\+t}]{length,  }\item[{const \mbox{\hyperlink{structflatbuffers_1_1CodeGenOptions}{Code\+Gen\+Options}} \&}]{options }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classflatbuffers_1_1CodeGenerator_a64feca33047f7ee06f6a6de58dff2267}{flatbuffers\+::\+Code\+Generator}}.
+
+\Hypertarget{classflatbuffers_1_1BaseBfbsGenerator_a8acc1b1b309235d2862a91c8c17c4e50}\label{classflatbuffers_1_1BaseBfbsGenerator_a8acc1b1b309235d2862a91c8c17c4e50} 
+\index{flatbuffers::BaseBfbsGenerator@{flatbuffers::BaseBfbsGenerator}!GenerateFromSchema@{GenerateFromSchema}}
+\index{GenerateFromSchema@{GenerateFromSchema}!flatbuffers::BaseBfbsGenerator@{flatbuffers::BaseBfbsGenerator}}
+\doxysubsubsection{\texorpdfstring{GenerateFromSchema()}{GenerateFromSchema()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{classflatbuffers_1_1CodeGenerator_ace5ed21ca8a1faa20a6cf7da3eda8ffa}{Status}} flatbuffers\+::\+Base\+Bfbs\+Generator\+::\+Generate\+From\+Schema (\begin{DoxyParamCaption}\item[{const reflection\+::\+Schema \texorpdfstring{$\ast$}{*}}]{schema,  }\item[{const \mbox{\hyperlink{structflatbuffers_1_1CodeGenOptions}{Code\+Gen\+Options}} \&}]{options }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+\Hypertarget{classflatbuffers_1_1BaseBfbsGenerator_a4f9b5780ac3ac048205af101d7b24f51}\label{classflatbuffers_1_1BaseBfbsGenerator_a4f9b5780ac3ac048205af101d7b24f51} 
+\index{flatbuffers::BaseBfbsGenerator@{flatbuffers::BaseBfbsGenerator}!GetEnum@{GetEnum}}
+\index{GetEnum@{GetEnum}!flatbuffers::BaseBfbsGenerator@{flatbuffers::BaseBfbsGenerator}}
+\doxysubsubsection{\texorpdfstring{GetEnum()}{GetEnum()}}
+{\footnotesize\ttfamily const reflection\+::\+Enum \texorpdfstring{$\ast$}{*} flatbuffers\+::\+Base\+Bfbs\+Generator\+::\+Get\+Enum (\begin{DoxyParamCaption}\item[{const reflection\+::\+Type \texorpdfstring{$\ast$}{*}}]{type,  }\item[{bool}]{element\+\_\+type = {\ttfamily false} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+\Hypertarget{classflatbuffers_1_1BaseBfbsGenerator_afd9b6f595f300481e1622c574f6f5a42}\label{classflatbuffers_1_1BaseBfbsGenerator_afd9b6f595f300481e1622c574f6f5a42} 
+\index{flatbuffers::BaseBfbsGenerator@{flatbuffers::BaseBfbsGenerator}!GetEnumByIndex@{GetEnumByIndex}}
+\index{GetEnumByIndex@{GetEnumByIndex}!flatbuffers::BaseBfbsGenerator@{flatbuffers::BaseBfbsGenerator}}
+\doxysubsubsection{\texorpdfstring{GetEnumByIndex()}{GetEnumByIndex()}}
+{\footnotesize\ttfamily const reflection\+::\+Enum \texorpdfstring{$\ast$}{*} flatbuffers\+::\+Base\+Bfbs\+Generator\+::\+Get\+Enum\+By\+Index (\begin{DoxyParamCaption}\item[{int32\+\_\+t}]{index }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+\Hypertarget{classflatbuffers_1_1BaseBfbsGenerator_a3164b99469fbd59013ea24b0e778e54f}\label{classflatbuffers_1_1BaseBfbsGenerator_a3164b99469fbd59013ea24b0e778e54f} 
+\index{flatbuffers::BaseBfbsGenerator@{flatbuffers::BaseBfbsGenerator}!GetObject@{GetObject}}
+\index{GetObject@{GetObject}!flatbuffers::BaseBfbsGenerator@{flatbuffers::BaseBfbsGenerator}}
+\doxysubsubsection{\texorpdfstring{GetObject()}{GetObject()}}
+{\footnotesize\ttfamily const reflection\+::\+Object \texorpdfstring{$\ast$}{*} flatbuffers\+::\+Base\+Bfbs\+Generator\+::\+Get\+Object (\begin{DoxyParamCaption}\item[{const reflection\+::\+Type \texorpdfstring{$\ast$}{*}}]{type,  }\item[{bool}]{element\+\_\+type = {\ttfamily false} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+\Hypertarget{classflatbuffers_1_1BaseBfbsGenerator_a409c341280a4aa24f75b8d8b81f3da8b}\label{classflatbuffers_1_1BaseBfbsGenerator_a409c341280a4aa24f75b8d8b81f3da8b} 
+\index{flatbuffers::BaseBfbsGenerator@{flatbuffers::BaseBfbsGenerator}!GetObjectByIndex@{GetObjectByIndex}}
+\index{GetObjectByIndex@{GetObjectByIndex}!flatbuffers::BaseBfbsGenerator@{flatbuffers::BaseBfbsGenerator}}
+\doxysubsubsection{\texorpdfstring{GetObjectByIndex()}{GetObjectByIndex()}}
+{\footnotesize\ttfamily const reflection\+::\+Object \texorpdfstring{$\ast$}{*} flatbuffers\+::\+Base\+Bfbs\+Generator\+::\+Get\+Object\+By\+Index (\begin{DoxyParamCaption}\item[{int32\+\_\+t}]{index }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+\Hypertarget{classflatbuffers_1_1BaseBfbsGenerator_af77383805ebfa4182e5f2c390881277a}\label{classflatbuffers_1_1BaseBfbsGenerator_af77383805ebfa4182e5f2c390881277a} 
+\index{flatbuffers::BaseBfbsGenerator@{flatbuffers::BaseBfbsGenerator}!IsStruct@{IsStruct}}
+\index{IsStruct@{IsStruct}!flatbuffers::BaseBfbsGenerator@{flatbuffers::BaseBfbsGenerator}}
+\doxysubsubsection{\texorpdfstring{IsStruct()}{IsStruct()}}
+{\footnotesize\ttfamily bool flatbuffers\+::\+Base\+Bfbs\+Generator\+::\+Is\+Struct (\begin{DoxyParamCaption}\item[{const reflection\+::\+Type \texorpdfstring{$\ast$}{*}}]{type,  }\item[{bool}]{use\+\_\+element = {\ttfamily false} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+\Hypertarget{classflatbuffers_1_1BaseBfbsGenerator_a42725ec3db636a08c809492f09b5fb05}\label{classflatbuffers_1_1BaseBfbsGenerator_a42725ec3db636a08c809492f09b5fb05} 
+\index{flatbuffers::BaseBfbsGenerator@{flatbuffers::BaseBfbsGenerator}!IsTable@{IsTable}}
+\index{IsTable@{IsTable}!flatbuffers::BaseBfbsGenerator@{flatbuffers::BaseBfbsGenerator}}
+\doxysubsubsection{\texorpdfstring{IsTable()}{IsTable()}}
+{\footnotesize\ttfamily bool flatbuffers\+::\+Base\+Bfbs\+Generator\+::\+Is\+Table (\begin{DoxyParamCaption}\item[{const reflection\+::\+Type \texorpdfstring{$\ast$}{*}}]{type,  }\item[{bool}]{use\+\_\+element = {\ttfamily false} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+\Hypertarget{classflatbuffers_1_1BaseBfbsGenerator_a4a4075ca4af8e4cc89c49509a4b0607a}\label{classflatbuffers_1_1BaseBfbsGenerator_a4a4075ca4af8e4cc89c49509a4b0607a} 
+\index{flatbuffers::BaseBfbsGenerator@{flatbuffers::BaseBfbsGenerator}!SupportedAdvancedFeatures@{SupportedAdvancedFeatures}}
+\index{SupportedAdvancedFeatures@{SupportedAdvancedFeatures}!flatbuffers::BaseBfbsGenerator@{flatbuffers::BaseBfbsGenerator}}
+\doxysubsubsection{\texorpdfstring{SupportedAdvancedFeatures()}{SupportedAdvancedFeatures()}}
+{\footnotesize\ttfamily virtual uint64\+\_\+t flatbuffers\+::\+Base\+Bfbs\+Generator\+::\+Supported\+Advanced\+Features (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classflatbuffers_1_1BaseBfbsGenerator_a14c87a04d3a0e98bfb57580cd4bb8f17}\label{classflatbuffers_1_1BaseBfbsGenerator_a14c87a04d3a0e98bfb57580cd4bb8f17} 
+\index{flatbuffers::BaseBfbsGenerator@{flatbuffers::BaseBfbsGenerator}!schema\_@{schema\_}}
+\index{schema\_@{schema\_}!flatbuffers::BaseBfbsGenerator@{flatbuffers::BaseBfbsGenerator}}
+\doxysubsubsection{\texorpdfstring{schema\_}{schema\_}}
+{\footnotesize\ttfamily const reflection\+::\+Schema\texorpdfstring{$\ast$}{*} flatbuffers\+::\+Base\+Bfbs\+Generator\+::schema\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+flatbuffers/src/\mbox{\hyperlink{bfbs__gen_8h}{bfbs\+\_\+gen.\+h}}\end{DoxyCompactItemize}

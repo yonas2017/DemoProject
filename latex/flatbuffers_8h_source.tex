@@ -1,0 +1,276 @@
+\doxysection{flatbuffers.\+h}
+\hypertarget{flatbuffers_8h_source}{}\label{flatbuffers_8h_source}\index{flatbuffers/include/flatbuffers/flatbuffers.h@{flatbuffers/include/flatbuffers/flatbuffers.h}}
+\mbox{\hyperlink{flatbuffers_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ Copyright\ 2014\ Google\ Inc.\ All\ rights\ reserved.}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ Licensed\ under\ the\ Apache\ License,\ Version\ 2.0\ (the\ "{}License"{});}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ you\ may\ not\ use\ this\ file\ except\ in\ compliance\ with\ the\ License.}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *\ You\ may\ obtain\ a\ copy\ of\ the\ License\ at}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ *\ \ \ \ \ http://www.apache.org/licenses/LICENSE-\/2.0}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ *\ Unless\ required\ by\ applicable\ law\ or\ agreed\ to\ in\ writing,\ software}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ *\ distributed\ under\ the\ License\ is\ distributed\ on\ an\ "{}AS\ IS"{}\ BASIS,}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ *\ WITHOUT\ WARRANTIES\ OR\ CONDITIONS\ OF\ ANY\ KIND,\ either\ express\ or\ implied.}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ *\ See\ the\ License\ for\ the\ specific\ language\ governing\ permissions\ and}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ *\ limitations\ under\ the\ License.}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#ifndef\ FLATBUFFERS\_H\_}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#define\ FLATBUFFERS\_H\_}}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ <algorithm>}}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \textcolor{comment}{//\ TODO:\ These\ includes\ are\ for\ mitigating\ the\ pains\ of\ users\ editing\ their}}
+\DoxyCodeLine{00023\ \textcolor{comment}{//\ source\ because\ they\ relied\ on\ flatbuffers.h\ to\ include\ everything\ for\ them.}}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{array_8h}{flatbuffers/array.h}}"{}}}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{base_8h}{flatbuffers/base.h}}"{}}}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{buffer_8h}{flatbuffers/buffer.h}}"{}}}
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{buffer__ref_8h}{flatbuffers/buffer\_ref.h}}"{}}}
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{detached__buffer_8h}{flatbuffers/detached\_buffer.h}}"{}}}
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{flatbuffer__builder_8h}{flatbuffers/flatbuffer\_builder.h}}"{}}}
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{stl__emulation_8h}{flatbuffers/stl\_emulation.h}}"{}}}
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{string_8h}{flatbuffers/string.h}}"{}}}
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{struct_8h}{flatbuffers/struct.h}}"{}}}
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{table_8h}{flatbuffers/table.h}}"{}}}
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{vector_8h}{flatbuffers/vector.h}}"{}}}
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{vector__downward_8h}{flatbuffers/vector\_downward.h}}"{}}}
+\DoxyCodeLine{00036\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{verifier_8h}{flatbuffers/verifier.h}}"{}}}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceflatbuffers}{flatbuffers}}\ \{}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00044\ \textcolor{keyword}{inline}\ \textcolor{keyword}{const}\ uint8\_t\ *\mbox{\hyperlink{namespaceflatbuffers_a8178523ee655ad5394d02291f4e59c9f}{GetBufferStartFromRootPointer}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{void}\ *root)\ \{}
+\DoxyCodeLine{00045\ \ \ \textcolor{keyword}{auto}\ table\ =\ \textcolor{keyword}{reinterpret\_cast<}\textcolor{keyword}{const\ }\mbox{\hyperlink{classflatbuffers_1_1Table}{Table}}\ *\textcolor{keyword}{>}(root);}
+\DoxyCodeLine{00046\ \ \ \textcolor{keyword}{auto}\ vtable\ =\ table-\/>\mbox{\hyperlink{classflatbuffers_1_1Table_a2d93aae4c45478289cd6b182840c92cb}{GetVTable}}();}
+\DoxyCodeLine{00047\ \ \ \textcolor{comment}{//\ Either\ the\ vtable\ is\ before\ the\ root\ or\ after\ the\ root.}}
+\DoxyCodeLine{00048\ \ \ \textcolor{keyword}{auto}\ start\ =\ (std::min)(vtable,\ \textcolor{keyword}{reinterpret\_cast<}\textcolor{keyword}{const\ }uint8\_t\ *\textcolor{keyword}{>}(root));}
+\DoxyCodeLine{00049\ \ \ \textcolor{comment}{//\ Align\ to\ at\ least\ sizeof(uoffset\_t).}}
+\DoxyCodeLine{00050\ \ \ start\ =\ \textcolor{keyword}{reinterpret\_cast<}\textcolor{keyword}{const\ }uint8\_t\ *\textcolor{keyword}{>}(\textcolor{keyword}{reinterpret\_cast<}uintptr\_t\textcolor{keyword}{>}(start)\ \&}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \string~(\textcolor{keyword}{sizeof}(uoffset\_t)\ -\/\ 1));}
+\DoxyCodeLine{00052\ \ \ \textcolor{comment}{//\ Additionally,\ there\ may\ be\ a\ file\_identifier\ in\ the\ buffer,\ and\ the\ root}}
+\DoxyCodeLine{00053\ \ \ \textcolor{comment}{//\ offset.\ The\ buffer\ may\ have\ been\ aligned\ to\ any\ size\ between}}
+\DoxyCodeLine{00054\ \ \ \textcolor{comment}{//\ sizeof(uoffset\_t)\ and\ FLATBUFFERS\_MAX\_ALIGNMENT\ (see\ "{}force\_align"{}).}}
+\DoxyCodeLine{00055\ \ \ \textcolor{comment}{//\ Sadly,\ the\ exact\ alignment\ is\ only\ known\ when\ constructing\ the\ buffer,}}
+\DoxyCodeLine{00056\ \ \ \textcolor{comment}{//\ since\ it\ depends\ on\ the\ presence\ of\ values\ with\ said\ alignment\ properties.}}
+\DoxyCodeLine{00057\ \ \ \textcolor{comment}{//\ So\ instead,\ we\ simply\ look\ at\ the\ next\ uoffset\_t\ values\ (root,}}
+\DoxyCodeLine{00058\ \ \ \textcolor{comment}{//\ file\_identifier,\ and\ alignment\ padding)\ to\ see\ which\ points\ to\ the\ root.}}
+\DoxyCodeLine{00059\ \ \ \textcolor{comment}{//\ None\ of\ the\ other\ values\ can\ "{}impersonate"{}\ the\ root\ since\ they\ will\ either}}
+\DoxyCodeLine{00060\ \ \ \textcolor{comment}{//\ be\ 0\ or\ four\ ASCII\ characters.}}
+\DoxyCodeLine{00061\ \ \ \textcolor{keyword}{static\_assert}(flatbuffers::kFileIdentifierLength\ ==\ \textcolor{keyword}{sizeof}(uoffset\_t),}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}file\_identifier\ is\ assumed\ to\ be\ the\ same\ size\ as\ uoffset\_t"{}});}
+\DoxyCodeLine{00063\ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ possible\_roots\ =\ FLATBUFFERS\_MAX\_ALIGNMENT\ /\ \textcolor{keyword}{sizeof}(uoffset\_t)\ +\ 1;}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ possible\_roots;\ possible\_roots-\/-\/)\ \{}
+\DoxyCodeLine{00065\ \ \ \ \ start\ -\/=\ \textcolor{keyword}{sizeof}(uoffset\_t);}
+\DoxyCodeLine{00066\ \ \ \ \ \textcolor{keywordflow}{if}\ (ReadScalar<uoffset\_t>(start)\ +\ start\ ==}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \textcolor{keyword}{reinterpret\_cast<}\textcolor{keyword}{const\ }uint8\_t\ *\textcolor{keyword}{>}(root))}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ start;}
+\DoxyCodeLine{00069\ \ \ \}}
+\DoxyCodeLine{00070\ \ \ \textcolor{comment}{//\ We\ didn't\ find\ the\ root,\ either\ the\ "{}root"{}\ passed\ isn't\ really\ a\ root,}}
+\DoxyCodeLine{00071\ \ \ \textcolor{comment}{//\ or\ the\ buffer\ is\ corrupt.}}
+\DoxyCodeLine{00072\ \ \ \textcolor{comment}{//\ Assert,\ because\ calling\ this\ function\ with\ bad\ data\ may\ cause\ reads}}
+\DoxyCodeLine{00073\ \ \ \textcolor{comment}{//\ outside\ of\ buffer\ boundaries.}}
+\DoxyCodeLine{00074\ \ \ \mbox{\hyperlink{base_8h_ab2116a3957cb3c19761609ea7fd796fe}{FLATBUFFERS\_ASSERT}}(\textcolor{keyword}{false});}
+\DoxyCodeLine{00075\ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00076\ \}}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00079\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ SizeT\ =\ uoffset\_t>}
+\DoxyCodeLine{00080\ \textcolor{keyword}{inline}\ SizeT\ \mbox{\hyperlink{namespaceflatbuffers_a7335f2d502ddbc0fa783ab24cf1af437}{GetPrefixedSize}}(\textcolor{keyword}{const}\ uint8\_t\ *buf)\ \{}
+\DoxyCodeLine{00081\ \ \ \textcolor{keywordflow}{return}\ ReadScalar<SizeT>(buf);}
+\DoxyCodeLine{00082\ \}}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00084\ \textcolor{comment}{//\ Gets\ the\ total\ length\ of\ the\ buffer\ given\ a\ sized\ prefixed\ FlatBuffer.}}
+\DoxyCodeLine{00085\ \textcolor{comment}{//}}
+\DoxyCodeLine{00086\ \textcolor{comment}{//\ This\ includes\ the\ size\ of\ the\ prefix\ as\ well\ as\ the\ buffer:}}
+\DoxyCodeLine{00087\ \textcolor{comment}{//}}
+\DoxyCodeLine{00088\ \textcolor{comment}{//\ \ [size\ prefix][flatbuffer]}}
+\DoxyCodeLine{00089\ \textcolor{comment}{//\ \ |-\/-\/-\/-\/-\/-\/-\/-\/-\/length-\/-\/-\/-\/-\/-\/-\/-\/|}}
+\DoxyCodeLine{00090\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ SizeT\ =\ uoffset\_t>}
+\DoxyCodeLine{00091\ \textcolor{keyword}{inline}\ SizeT\ \mbox{\hyperlink{namespaceflatbuffers_ae586a2ba1a01d53327795c6989c6a4ea}{GetSizePrefixedBufferLength}}(\textcolor{keyword}{const}\ uint8\_t\ *\textcolor{keyword}{const}\ buf)\ \{}
+\DoxyCodeLine{00092\ \ \ \textcolor{keywordflow}{return}\ ReadScalar<SizeT>(buf)\ +\ \textcolor{keyword}{sizeof}(SizeT);}
+\DoxyCodeLine{00093\ \}}
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00095\ \textcolor{comment}{//\ Base\ class\ for\ native\ objects\ (FlatBuffer\ data\ de-\/serialized\ into\ native}}
+\DoxyCodeLine{00096\ \textcolor{comment}{//\ C++\ data\ structures).}}
+\DoxyCodeLine{00097\ \textcolor{comment}{//\ Contains\ no\ functionality,\ purely\ documentative.}}
+\DoxyCodeLine{00098\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structflatbuffers_1_1NativeTable}{NativeTable}}\ \{\};}
+\DoxyCodeLine{00099\ }
+\DoxyCodeLine{00108\ \textcolor{keyword}{typedef}\ uint64\_t\ \mbox{\hyperlink{namespaceflatbuffers_a2bdea2ebee948e32359f5598e98a7cd4}{hash\_value\_t}};}
+\DoxyCodeLine{00109\ \textcolor{keyword}{typedef}\ std::function<void(\textcolor{keywordtype}{void}\ **pointer\_adr,\ \mbox{\hyperlink{namespaceflatbuffers_a2bdea2ebee948e32359f5598e98a7cd4}{hash\_value\_t}}\ hash)>}
+\DoxyCodeLine{00110\ \ \ \ \ \mbox{\hyperlink{namespaceflatbuffers_ac7bfda6e698d13cd1b225df198a24a18}{resolver\_function\_t}};}
+\DoxyCodeLine{00111\ \textcolor{keyword}{typedef}\ std::function<\mbox{\hyperlink{namespaceflatbuffers_a2bdea2ebee948e32359f5598e98a7cd4}{hash\_value\_t}}(\textcolor{keywordtype}{void}\ *pointer)>\ \mbox{\hyperlink{namespaceflatbuffers_a1a147f1b586c9e452c48e10c3121ed7a}{rehasher\_function\_t}};}
+\DoxyCodeLine{00112\ }
+\DoxyCodeLine{00113\ \textcolor{comment}{//\ Helper\ function\ to\ test\ if\ a\ field\ is\ present,\ using\ any\ of\ the\ field}}
+\DoxyCodeLine{00114\ \textcolor{comment}{//\ enums\ in\ the\ generated\ code.}}
+\DoxyCodeLine{00115\ \textcolor{comment}{//\ \`{}table`\ must\ be\ a\ generated\ table\ type.\ Since\ this\ is\ a\ template\ parameter,}}
+\DoxyCodeLine{00116\ \textcolor{comment}{//\ this\ is\ not\ typechecked\ to\ be\ a\ subclass\ of\ Table,\ so\ beware!}}
+\DoxyCodeLine{00117\ \textcolor{comment}{//\ Note:\ this\ function\ will\ return\ false\ for\ fields\ equal\ to\ the\ default}}
+\DoxyCodeLine{00118\ \textcolor{comment}{//\ value,\ since\ they're\ not\ stored\ in\ the\ buffer\ (unless\ force\_defaults\ was}}
+\DoxyCodeLine{00119\ \textcolor{comment}{//\ used).}}
+\DoxyCodeLine{00120\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00121\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{namespaceflatbuffers_a51d4045b32b39cb19d7f5b30ee8bae7f}{IsFieldPresent}}(\textcolor{keyword}{const}\ T\ *table,\ \textcolor{keyword}{typename}\ T::FlatBuffersVTableOffset\ field)\ \{}
+\DoxyCodeLine{00122\ \ \ \textcolor{comment}{//\ Cast,\ since\ Table\ is\ a\ private\ baseclass\ of\ any\ table\ types.}}
+\DoxyCodeLine{00123\ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{reinterpret\_cast<}\textcolor{keyword}{const\ }\mbox{\hyperlink{classflatbuffers_1_1Table}{Table}}\ *\textcolor{keyword}{>}(table)-\/>CheckField(}
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \textcolor{keyword}{static\_cast<}voffset\_t\textcolor{keyword}{>}(field));}
+\DoxyCodeLine{00125\ \}}
+\DoxyCodeLine{00126\ }
+\DoxyCodeLine{00127\ \textcolor{comment}{//\ Utility\ function\ for\ reverse\ lookups\ on\ the\ EnumNames*()\ functions}}
+\DoxyCodeLine{00128\ \textcolor{comment}{//\ (in\ the\ generated\ C++\ code)}}
+\DoxyCodeLine{00129\ \textcolor{comment}{//\ names\ must\ be\ NULL\ terminated.}}
+\DoxyCodeLine{00130\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{namespaceflatbuffers_a7f2e8ce32710b4c49b33c25a33780daf}{LookupEnum}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ **names,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *\mbox{\hyperlink{idl__gen__ts_8cpp_a9b45b3e13bd9167aab02e17e08916231}{name}})\ \{}
+\DoxyCodeLine{00131\ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ **\mbox{\hyperlink{gmock-matchers-containers__test_8cc_a6bc6b007533335efe02bafff799ec64c}{p}}\ =\ names;\ *\mbox{\hyperlink{gmock-matchers-containers__test_8cc_a6bc6b007533335efe02bafff799ec64c}{p}};\ \mbox{\hyperlink{gmock-matchers-containers__test_8cc_a6bc6b007533335efe02bafff799ec64c}{p}}++)}
+\DoxyCodeLine{00132\ \ \ \ \ \textcolor{keywordflow}{if}\ (!strcmp(*\mbox{\hyperlink{gmock-matchers-containers__test_8cc_a6bc6b007533335efe02bafff799ec64c}{p}},\ \mbox{\hyperlink{idl__gen__ts_8cpp_a9b45b3e13bd9167aab02e17e08916231}{name}}))\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(\mbox{\hyperlink{gmock-matchers-containers__test_8cc_a6bc6b007533335efe02bafff799ec64c}{p}}\ -\/\ names);}
+\DoxyCodeLine{00133\ \ \ \textcolor{keywordflow}{return}\ -\/1;}
+\DoxyCodeLine{00134\ \}}
+\DoxyCodeLine{00135\ }
+\DoxyCodeLine{00136\ \textcolor{comment}{//\ These\ macros\ allow\ us\ to\ layout\ a\ struct\ with\ a\ guarantee\ that\ they'll\ end}}
+\DoxyCodeLine{00137\ \textcolor{comment}{//\ up\ looking\ the\ same\ on\ different\ compilers\ and\ platforms.}}
+\DoxyCodeLine{00138\ \textcolor{comment}{//\ It\ does\ this\ by\ disallowing\ the\ compiler\ to\ do\ any\ padding,\ and\ then}}
+\DoxyCodeLine{00139\ \textcolor{comment}{//\ does\ padding\ itself\ by\ inserting\ extra\ padding\ fields\ that\ make\ every}}
+\DoxyCodeLine{00140\ \textcolor{comment}{//\ element\ aligned\ to\ its\ own\ size.}}
+\DoxyCodeLine{00141\ \textcolor{comment}{//\ Additionally,\ it\ manually\ sets\ the\ alignment\ of\ the\ struct\ as\ a\ whole,}}
+\DoxyCodeLine{00142\ \textcolor{comment}{//\ which\ is\ typically\ its\ largest\ element,\ or\ a\ custom\ size\ set\ in\ the\ schema}}
+\DoxyCodeLine{00143\ \textcolor{comment}{//\ by\ the\ force\_align\ attribute.}}
+\DoxyCodeLine{00144\ \textcolor{comment}{//\ These\ are\ used\ in\ the\ generated\ code\ only.}}
+\DoxyCodeLine{00145\ }
+\DoxyCodeLine{00146\ \textcolor{comment}{//\ clang-\/format\ off}}
+\DoxyCodeLine{00147\ \textcolor{preprocessor}{\#if\ defined(\_MSC\_VER)}}
+\DoxyCodeLine{00148\ \textcolor{preprocessor}{\ \ \#define\ FLATBUFFERS\_MANUALLY\_ALIGNED\_STRUCT(alignment)\ \(\backslash\)}}
+\DoxyCodeLine{00149\ \textcolor{preprocessor}{\ \ \ \ \_\_pragma(pack(1))\ \(\backslash\)}}
+\DoxyCodeLine{00150\ \textcolor{preprocessor}{\ \ \ \ struct\ \_\_declspec(align(alignment))}}
+\DoxyCodeLine{00151\ \textcolor{preprocessor}{\ \ \#define\ FLATBUFFERS\_STRUCT\_END(name,\ size)\ \(\backslash\)}}
+\DoxyCodeLine{00152\ \textcolor{preprocessor}{\ \ \ \ \_\_pragma(pack())\ \(\backslash\)}}
+\DoxyCodeLine{00153\ \textcolor{preprocessor}{\ \ \ \ static\_assert(sizeof(name)\ ==\ size,\ "{}compiler\ breaks\ packing\ rules"{})}}
+\DoxyCodeLine{00154\ \textcolor{preprocessor}{\#elif\ defined(\_\_GNUC\_\_)\ ||\ defined(\_\_clang\_\_)\ ||\ defined(\_\_ICCARM\_\_)}}
+\DoxyCodeLine{00155\ \textcolor{preprocessor}{\ \ \#define\ FLATBUFFERS\_MANUALLY\_ALIGNED\_STRUCT(alignment)\ \(\backslash\)}}
+\DoxyCodeLine{00156\ \textcolor{preprocessor}{\ \ \ \ \_Pragma("{}pack(1)"{})\ \(\backslash\)}}
+\DoxyCodeLine{00157\ \textcolor{preprocessor}{\ \ \ \ struct\ \_\_attribute\_\_((aligned(alignment)))}}
+\DoxyCodeLine{00158\ \textcolor{preprocessor}{\ \ \#define\ FLATBUFFERS\_STRUCT\_END(name,\ size)\ \(\backslash\)}}
+\DoxyCodeLine{00159\ \textcolor{preprocessor}{\ \ \ \ \_Pragma("{}pack()"{})\ \(\backslash\)}}
+\DoxyCodeLine{00160\ \textcolor{preprocessor}{\ \ \ \ static\_assert(sizeof(name)\ ==\ size,\ "{}compiler\ breaks\ packing\ rules"{})}}
+\DoxyCodeLine{00161\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00162\ \textcolor{preprocessor}{\ \ \#error\ Unknown\ compiler,\ please\ define\ structure\ alignment\ macros}}
+\DoxyCodeLine{00163\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00164\ \textcolor{comment}{//\ clang-\/format\ on}}
+\DoxyCodeLine{00165\ }
+\DoxyCodeLine{00166\ \textcolor{comment}{//\ Minimal\ reflection\ via\ code\ generation.}}
+\DoxyCodeLine{00167\ \textcolor{comment}{//\ Besides\ full-\/fat\ reflection\ (see\ reflection.h)\ and\ parsing/printing\ by}}
+\DoxyCodeLine{00168\ \textcolor{comment}{//\ loading\ schemas\ (see\ idl.h),\ we\ can\ also\ have\ code\ generation\ for\ minimal}}
+\DoxyCodeLine{00169\ \textcolor{comment}{//\ reflection\ data\ which\ allows\ pretty-\/printing\ and\ other\ uses\ without\ needing}}
+\DoxyCodeLine{00170\ \textcolor{comment}{//\ a\ schema\ or\ a\ parser.}}
+\DoxyCodeLine{00171\ \textcolor{comment}{//\ Generate\ code\ with\ -\/-\/reflect-\/types\ (types\ only)\ or\ -\/-\/reflect-\/names\ (names}}
+\DoxyCodeLine{00172\ \textcolor{comment}{//\ also)\ to\ enable.}}
+\DoxyCodeLine{00173\ \textcolor{comment}{//\ See\ minireflect.h\ for\ utilities\ using\ this\ functionality.}}
+\DoxyCodeLine{00174\ }
+\DoxyCodeLine{00175\ \textcolor{comment}{//\ These\ types\ are\ organized\ slightly\ differently\ as\ the\ ones\ in\ idl.h.}}
+\DoxyCodeLine{00176\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{namespaceflatbuffers_a38583f915214f05d7cd1841571d07208}{SequenceType}}\ \{\ \mbox{\hyperlink{namespaceflatbuffers_a38583f915214f05d7cd1841571d07208a8ecc4069f66bbf1d6547f0bd888520c0}{ST\_TABLE}},\ \mbox{\hyperlink{namespaceflatbuffers_a38583f915214f05d7cd1841571d07208aa5545269c0d63b635104bec59da367ff}{ST\_STRUCT}},\ \mbox{\hyperlink{namespaceflatbuffers_a38583f915214f05d7cd1841571d07208a013d91dd9f55f455a21914e2960b1e57}{ST\_UNION}},\ \mbox{\hyperlink{namespaceflatbuffers_a38583f915214f05d7cd1841571d07208a5e57377bd7bf0bfbb9b5032962ec2ccf}{ST\_ENUM}}\ \};}
+\DoxyCodeLine{00177\ }
+\DoxyCodeLine{00178\ \textcolor{comment}{//\ Scalars\ have\ the\ same\ order\ as\ in\ idl.h}}
+\DoxyCodeLine{00179\ \textcolor{comment}{//\ clang-\/format\ off}}
+\DoxyCodeLine{00180\ \textcolor{preprocessor}{\#define\ FLATBUFFERS\_GEN\_ELEMENTARY\_TYPES(ET)\ \(\backslash\)}}
+\DoxyCodeLine{00181\ \textcolor{preprocessor}{\ \ ET(ET\_UTYPE)\ \(\backslash\)}}
+\DoxyCodeLine{00182\ \textcolor{preprocessor}{\ \ ET(ET\_BOOL)\ \(\backslash\)}}
+\DoxyCodeLine{00183\ \textcolor{preprocessor}{\ \ ET(ET\_CHAR)\ \(\backslash\)}}
+\DoxyCodeLine{00184\ \textcolor{preprocessor}{\ \ ET(ET\_UCHAR)\ \(\backslash\)}}
+\DoxyCodeLine{00185\ \textcolor{preprocessor}{\ \ ET(ET\_SHORT)\ \(\backslash\)}}
+\DoxyCodeLine{00186\ \textcolor{preprocessor}{\ \ ET(ET\_USHORT)\ \(\backslash\)}}
+\DoxyCodeLine{00187\ \textcolor{preprocessor}{\ \ ET(ET\_INT)\ \(\backslash\)}}
+\DoxyCodeLine{00188\ \textcolor{preprocessor}{\ \ ET(ET\_UINT)\ \(\backslash\)}}
+\DoxyCodeLine{00189\ \textcolor{preprocessor}{\ \ ET(ET\_LONG)\ \(\backslash\)}}
+\DoxyCodeLine{00190\ \textcolor{preprocessor}{\ \ ET(ET\_ULONG)\ \(\backslash\)}}
+\DoxyCodeLine{00191\ \textcolor{preprocessor}{\ \ ET(ET\_FLOAT)\ \(\backslash\)}}
+\DoxyCodeLine{00192\ \textcolor{preprocessor}{\ \ ET(ET\_DOUBLE)\ \(\backslash\)}}
+\DoxyCodeLine{00193\ \textcolor{preprocessor}{\ \ ET(ET\_STRING)\ \(\backslash\)}}
+\DoxyCodeLine{00194\ \textcolor{preprocessor}{\ \ ET(ET\_SEQUENCE)\ \ }\textcolor{comment}{//\ See\ SequenceType.}}
+\DoxyCodeLine{00195\ }
+\DoxyCodeLine{00196\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{namespaceflatbuffers_a1b3764da68a20489eb19e59529a07554}{ElementaryType}}\ \{}
+\DoxyCodeLine{00197\ \textcolor{preprocessor}{\ \ \#define\ FLATBUFFERS\_ET(E)\ E,}}
+\DoxyCodeLine{00198\ \ \ \ \ \mbox{\hyperlink{flatbuffers_8h_aa830ece0c51bd566ebf24a0a8670afa1}{FLATBUFFERS\_GEN\_ELEMENTARY\_TYPES}}(\mbox{\hyperlink{flatbuffers_8h_af330aa4c50ea4a6c6d859a736a25f612}{FLATBUFFERS\_ET}})}
+\DoxyCodeLine{00199\ \ \ \textcolor{preprocessor}{\#undef\ FLATBUFFERS\_ET}}
+\DoxyCodeLine{00200\ \};}
+\DoxyCodeLine{00201\ }
+\DoxyCodeLine{00202\ \textcolor{keyword}{inline}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *\ \textcolor{keyword}{const}\ *\mbox{\hyperlink{namespaceflatbuffers_a1d3f643f937e489e29910ce35906cc01}{ElementaryTypeNames}}()\ \{}
+\DoxyCodeLine{00203\ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *\ \textcolor{keyword}{const}\ names[]\ =\ \{}
+\DoxyCodeLine{00204\ \textcolor{preprocessor}{\ \ \ \ \#define\ FLATBUFFERS\_ET(E)\ \#E,}}
+\DoxyCodeLine{00205\ \ \ \ \ \ \ \mbox{\hyperlink{flatbuffers_8h_aa830ece0c51bd566ebf24a0a8670afa1}{FLATBUFFERS\_GEN\_ELEMENTARY\_TYPES}}(\mbox{\hyperlink{flatbuffers_8h_af330aa4c50ea4a6c6d859a736a25f612}{FLATBUFFERS\_ET}})}
+\DoxyCodeLine{00206\ \ \ \ \ \textcolor{preprocessor}{\#undef\ FLATBUFFERS\_ET}}
+\DoxyCodeLine{00207\ \ \ \};}
+\DoxyCodeLine{00208\ \ \ \textcolor{keywordflow}{return}\ names;}
+\DoxyCodeLine{00209\ \}}
+\DoxyCodeLine{00210\ \textcolor{comment}{//\ clang-\/format\ on}}
+\DoxyCodeLine{00211\ }
+\DoxyCodeLine{00212\ \textcolor{comment}{//\ Basic\ type\ info\ cost\ just\ 16bits\ per\ field!}}
+\DoxyCodeLine{00213\ \textcolor{comment}{//\ We're\ explicitly\ defining\ the\ signedness\ since\ the\ signedness\ of\ integer}}
+\DoxyCodeLine{00214\ \textcolor{comment}{//\ bitfields\ is\ otherwise\ implementation-\/defined\ and\ causes\ warnings\ on\ older}}
+\DoxyCodeLine{00215\ \textcolor{comment}{//\ GCC\ compilers.}}
+\DoxyCodeLine{00216\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structflatbuffers_1_1TypeCode}{TypeCode}}\ \{}
+\DoxyCodeLine{00217\ \ \ \textcolor{comment}{//\ ElementaryType}}
+\DoxyCodeLine{00218\ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{short}\ \mbox{\hyperlink{structflatbuffers_1_1TypeCode_adc6d9cd33870ec7dbeb2854138a9b942}{base\_type}}\ :\ 4;}
+\DoxyCodeLine{00219\ \ \ \textcolor{comment}{//\ Either\ vector\ (in\ table)\ or\ array\ (in\ struct)}}
+\DoxyCodeLine{00220\ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{short}\ \mbox{\hyperlink{structflatbuffers_1_1TypeCode_a19b30d374455e27f14c5666dd15567f7}{is\_repeating}}\ :\ 1;}
+\DoxyCodeLine{00221\ \ \ \textcolor{comment}{//\ Index\ into\ type\_refs\ below,\ or\ -\/1\ for\ none.}}
+\DoxyCodeLine{00222\ \ \ \textcolor{keywordtype}{signed}\ \textcolor{keywordtype}{short}\ \mbox{\hyperlink{structflatbuffers_1_1TypeCode_a0b7a140af934e73985d9ac7df4435869}{sequence\_ref}}\ :\ 11;}
+\DoxyCodeLine{00223\ \};}
+\DoxyCodeLine{00224\ }
+\DoxyCodeLine{00225\ \textcolor{keyword}{static\_assert}(\textcolor{keyword}{sizeof}(\mbox{\hyperlink{structflatbuffers_1_1TypeCode}{TypeCode}})\ ==\ 2,\ \textcolor{stringliteral}{"{}TypeCode"{}});}
+\DoxyCodeLine{00226\ }
+\DoxyCodeLine{00227\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structflatbuffers_1_1TypeTable}{TypeTable}};}
+\DoxyCodeLine{00228\ }
+\DoxyCodeLine{00229\ \textcolor{comment}{//\ Signature\ of\ the\ static\ method\ present\ in\ each\ type.}}
+\DoxyCodeLine{00230\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{const}\ \mbox{\hyperlink{structflatbuffers_1_1TypeTable}{TypeTable}}\ *(*TypeFunction)();}
+\DoxyCodeLine{00231\ }
+\DoxyCodeLine{00232\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structflatbuffers_1_1TypeTable}{TypeTable}}\ \{}
+\DoxyCodeLine{00233\ \ \ \mbox{\hyperlink{namespaceflatbuffers_a38583f915214f05d7cd1841571d07208}{SequenceType}}\ \mbox{\hyperlink{structflatbuffers_1_1TypeTable_ad6932f8e9868896c68eab533ddb35882}{st}};}
+\DoxyCodeLine{00234\ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{structflatbuffers_1_1TypeTable_adfde9864ef37166ca20a068b54ff22cb}{num\_elems}};\ \ \textcolor{comment}{//\ of\ type\_codes,\ values,\ names\ (but\ not\ type\_refs).}}
+\DoxyCodeLine{00235\ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{structflatbuffers_1_1TypeCode}{TypeCode}}\ *\mbox{\hyperlink{structflatbuffers_1_1TypeTable_adca8c7c3e06767a7c1ebb2b258476168}{type\_codes}};\ \ \ \ \ \textcolor{comment}{//\ num\_elems\ count}}
+\DoxyCodeLine{00236\ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{namespaceflatbuffers_a50386ab9743418b31e3d288dfe7c1e95}{TypeFunction}}\ *\mbox{\hyperlink{structflatbuffers_1_1TypeTable_ac54c702a8e80173e500219d7eeb32c86}{type\_refs}};\ \ \textcolor{comment}{//\ less\ than\ num\_elems\ entries\ (see\ TypeCode).}}
+\DoxyCodeLine{00237\ \ \ \textcolor{keyword}{const}\ int16\_t\ *\mbox{\hyperlink{structflatbuffers_1_1TypeTable_a606d5a13b765ea5822b75cd67b87c55c}{array\_sizes}};\ \ \ \ \ \textcolor{comment}{//\ less\ than\ num\_elems\ entries\ (see\ TypeCode).}}
+\DoxyCodeLine{00238\ \ \ \textcolor{keyword}{const}\ int64\_t\ *\mbox{\hyperlink{structflatbuffers_1_1TypeTable_ac50bdb43aee6a3bb91b51ed3adacbd36}{values}};\ \ \textcolor{comment}{//\ Only\ set\ for\ non-\/consecutive\ enum/union\ or\ structs.}}
+\DoxyCodeLine{00239\ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *\textcolor{keyword}{const}\ *\mbox{\hyperlink{structflatbuffers_1_1TypeTable_a3d42c31238fa55f42f3b46de78b7556b}{names}};\ \ \textcolor{comment}{//\ Only\ set\ if\ compiled\ with\ -\/-\/reflect-\/names.}}
+\DoxyCodeLine{00240\ \};}
+\DoxyCodeLine{00241\ }
+\DoxyCodeLine{00242\ \textcolor{comment}{//\ String\ which\ identifies\ the\ current\ version\ of\ FlatBuffers.}}
+\DoxyCodeLine{00243\ \textcolor{keyword}{inline}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *\mbox{\hyperlink{namespaceflatbuffers_ab0bacb3ea6ea4b375722819c14f05a09}{flatbuffers\_version\_string}}()\ \{}
+\DoxyCodeLine{00244\ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}FlatBuffers\ "{}}\ FLATBUFFERS\_STRING(FLATBUFFERS\_VERSION\_MAJOR)\ \textcolor{stringliteral}{"{}."{}}}
+\DoxyCodeLine{00245\ \ \ \ \ \ \ FLATBUFFERS\_STRING(FLATBUFFERS\_VERSION\_MINOR)\ \textcolor{stringliteral}{"{}."{}}}
+\DoxyCodeLine{00246\ \ \ \ \ \ \ FLATBUFFERS\_STRING(FLATBUFFERS\_VERSION\_REVISION);}
+\DoxyCodeLine{00247\ \}}
+\DoxyCodeLine{00248\ }
+\DoxyCodeLine{00249\ \textcolor{comment}{//\ clang-\/format\ off}}
+\DoxyCodeLine{00250\ \textcolor{preprocessor}{\#define\ FLATBUFFERS\_DEFINE\_BITMASK\_OPERATORS(E,\ T)\(\backslash\)}}
+\DoxyCodeLine{00251\ \textcolor{preprocessor}{\ \ \ \ inline\ FLATBUFFERS\_CONSTEXPR\_CPP11\ E\ operator\ |\ (E\ lhs,\ E\ rhs)\{\(\backslash\)}}
+\DoxyCodeLine{00252\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ return\ E(T(lhs)\ |\ T(rhs));\(\backslash\)}}
+\DoxyCodeLine{00253\ \textcolor{preprocessor}{\ \ \ \ \}\(\backslash\)}}
+\DoxyCodeLine{00254\ \textcolor{preprocessor}{\ \ \ \ inline\ FLATBUFFERS\_CONSTEXPR\_CPP11\ E\ operator\ \&\ (E\ lhs,\ E\ rhs)\{\(\backslash\)}}
+\DoxyCodeLine{00255\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ return\ E(T(lhs)\ \&\ T(rhs));\(\backslash\)}}
+\DoxyCodeLine{00256\ \textcolor{preprocessor}{\ \ \ \ \}\(\backslash\)}}
+\DoxyCodeLine{00257\ \textcolor{preprocessor}{\ \ \ \ inline\ FLATBUFFERS\_CONSTEXPR\_CPP11\ E\ operator\ \string^\ (E\ lhs,\ E\ rhs)\{\(\backslash\)}}
+\DoxyCodeLine{00258\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ return\ E(T(lhs)\ \string^\ T(rhs));\(\backslash\)}}
+\DoxyCodeLine{00259\ \textcolor{preprocessor}{\ \ \ \ \}\(\backslash\)}}
+\DoxyCodeLine{00260\ \textcolor{preprocessor}{\ \ \ \ inline\ FLATBUFFERS\_CONSTEXPR\_CPP11\ E\ operator\ \string~\ (E\ lhs)\{\(\backslash\)}}
+\DoxyCodeLine{00261\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ return\ E(\string~T(lhs));\(\backslash\)}}
+\DoxyCodeLine{00262\ \textcolor{preprocessor}{\ \ \ \ \}\(\backslash\)}}
+\DoxyCodeLine{00263\ \textcolor{preprocessor}{\ \ \ \ inline\ FLATBUFFERS\_CONSTEXPR\_CPP11\ E\ operator\ |=\ (E\ \&lhs,\ E\ rhs)\{\(\backslash\)}}
+\DoxyCodeLine{00264\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ lhs\ =\ lhs\ |\ rhs;\(\backslash\)}}
+\DoxyCodeLine{00265\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ return\ lhs;\(\backslash\)}}
+\DoxyCodeLine{00266\ \textcolor{preprocessor}{\ \ \ \ \}\(\backslash\)}}
+\DoxyCodeLine{00267\ \textcolor{preprocessor}{\ \ \ \ inline\ FLATBUFFERS\_CONSTEXPR\_CPP11\ E\ operator\ \&=\ (E\ \&lhs,\ E\ rhs)\{\(\backslash\)}}
+\DoxyCodeLine{00268\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ lhs\ =\ lhs\ \&\ rhs;\(\backslash\)}}
+\DoxyCodeLine{00269\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ return\ lhs;\(\backslash\)}}
+\DoxyCodeLine{00270\ \textcolor{preprocessor}{\ \ \ \ \}\(\backslash\)}}
+\DoxyCodeLine{00271\ \textcolor{preprocessor}{\ \ \ \ inline\ FLATBUFFERS\_CONSTEXPR\_CPP11\ E\ operator\ \string^=\ (E\ \&lhs,\ E\ rhs)\{\(\backslash\)}}
+\DoxyCodeLine{00272\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ lhs\ =\ lhs\ \string^\ rhs;\(\backslash\)}}
+\DoxyCodeLine{00273\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ return\ lhs;\(\backslash\)}}
+\DoxyCodeLine{00274\ \textcolor{preprocessor}{\ \ \ \ \}\(\backslash\)}}
+\DoxyCodeLine{00275\ \textcolor{preprocessor}{\ \ \ \ inline\ FLATBUFFERS\_CONSTEXPR\_CPP11\ bool\ operator\ !(E\ rhs)\ \(\backslash\)}}
+\DoxyCodeLine{00276\ \textcolor{preprocessor}{\ \ \ \ \{\(\backslash\)}}
+\DoxyCodeLine{00277\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ return\ !bool(T(rhs));\ \(\backslash\)}}
+\DoxyCodeLine{00278\ \textcolor{preprocessor}{\ \ \ \ \}}}
+\DoxyCodeLine{00280\ \}\ \ \textcolor{comment}{//\ namespace\ flatbuffers}}
+\DoxyCodeLine{00281\ }
+\DoxyCodeLine{00282\ \textcolor{comment}{//\ clang-\/format\ on}}
+\DoxyCodeLine{00283\ }
+\DoxyCodeLine{00284\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ FLATBUFFERS\_H\_}}
+
+\end{DoxyCode}

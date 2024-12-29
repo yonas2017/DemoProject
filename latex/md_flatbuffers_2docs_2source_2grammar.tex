@@ -1,0 +1,76 @@
+\chapter{EBNF}
+\hypertarget{md_flatbuffers_2docs_2source_2grammar}{}\label{md_flatbuffers_2docs_2source_2grammar}\index{EBNF@{EBNF}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{schema\ =\ include*\ (\ namespace\_decl\ |\ type\_decl\ |\ enum\_decl\ |\ root\_decl\ |}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ file\_extension\_decl\ |\ file\_identifier\_decl\ |}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ attribute\_decl\ |\ rpc\_decl\ |\ object\ )*}
+\DoxyCodeLine{}
+\DoxyCodeLine{include\ =\ \`{}include`\ string\_constant\ \`{};`}
+\DoxyCodeLine{}
+\DoxyCodeLine{namespace\_decl\ =\ \`{}namespace`\ ident\ (\ \`{}.`\ ident\ )*\ \`{};`}
+\DoxyCodeLine{}
+\DoxyCodeLine{attribute\_decl\ =\ \`{}attribute`\ ident\ |\ \`{}"{}`\ ident\ \`{}"{}`\ \`{};`}
+\DoxyCodeLine{}
+\DoxyCodeLine{type\_decl\ =\ (\ \`{}table`\ |\ \`{}struct`\ )\ ident\ metadata\ \`{}\{`\ field\_decl+\ \`{}\}`}
+\DoxyCodeLine{}
+\DoxyCodeLine{enum\_decl\ =\ (\ \`{}enum`\ ident\ \`{}:`\ type\ |\ \`{}union`\ ident\ )\ \ metadata\ \`{}\{`}
+\DoxyCodeLine{commasep(\ enumval\_decl\ )\ \`{}\}`}
+\DoxyCodeLine{}
+\DoxyCodeLine{root\_decl\ =\ \`{}root\_type`\ ident\ \`{};`}
+\DoxyCodeLine{}
+\DoxyCodeLine{field\_decl\ =\ ident\ \`{}:`\ type\ [\ \`{}=`\ scalar\ ]\ metadata\ \`{};`}
+\DoxyCodeLine{}
+\DoxyCodeLine{rpc\_decl\ =\ \`{}rpc\_service`\ ident\ \`{}\{`\ rpc\_method+\ \`{}\}`}
+\DoxyCodeLine{}
+\DoxyCodeLine{rpc\_method\ =\ ident\ \`{}(`\ ident\ \`{})`\ \`{}:`\ ident\ metadata\ \`{};`}
+\DoxyCodeLine{}
+\DoxyCodeLine{type\ =\ \`{}bool`\ |\ \`{}byte`\ |\ \`{}ubyte`\ |\ \`{}short`\ |\ \`{}ushort`\ |\ \`{}int`\ |\ \`{}uint`\ |}
+\DoxyCodeLine{\ \ \ \ \ \ \ \`{}float`\ |\ \`{}long`\ |\ \`{}ulong`\ |\ \`{}double`\ |\ \`{}int8`\ |\ \`{}uint8`\ |\ \`{}int16`\ |}
+\DoxyCodeLine{\ \ \ \ \ \ \ \`{}uint16`\ |\ \`{}int32`\ |\ \`{}uint32`|\ \`{}int64`\ |\ \`{}uint64`\ |\ \`{}float32`\ |}
+\DoxyCodeLine{\ \ \ \ \ \ \ \`{}float64`\ |\ \`{}string`\ |\ \`{}[`\ type\ \`{}]`\ |\ ident}
+\DoxyCodeLine{}
+\DoxyCodeLine{enumval\_decl\ =\ ident\ [\ \`{}=`\ integer\_constant\ ]\ metadata}
+\DoxyCodeLine{}
+\DoxyCodeLine{metadata\ =\ [\ \`{}(`\ commasep(\ ident\ [\ \`{}:`\ single\_value\ ]\ )\ \`{})`\ ]}
+\DoxyCodeLine{}
+\DoxyCodeLine{scalar\ =\ boolean\_constant\ |\ integer\_constant\ |\ float\_constant}
+\DoxyCodeLine{}
+\DoxyCodeLine{object\ =\ \`{}\{`\ commasep(\ ident\ \`{}:`\ value\ )\ \`{}\}`}
+\DoxyCodeLine{}
+\DoxyCodeLine{single\_value\ =\ scalar\ |\ string\_constant}
+\DoxyCodeLine{}
+\DoxyCodeLine{value\ =\ single\_value\ |\ object\ |\ \`{}[`\ commasep(\ value\ )\ \`{}]`}
+\DoxyCodeLine{}
+\DoxyCodeLine{commasep(x)\ =\ [\ x\ (\ \`{},`\ x\ )\(\backslash\)*\ ]}
+\DoxyCodeLine{}
+\DoxyCodeLine{file\_extension\_decl\ =\ \`{}file\_extension`\ string\_constant\ \`{};`}
+\DoxyCodeLine{}
+\DoxyCodeLine{file\_identifier\_decl\ =\ \`{}file\_identifier`\ string\_constant\ \`{};`}
+\DoxyCodeLine{}
+\DoxyCodeLine{string\_constant\ =\ \`{}\(\backslash\)"{}.*?\(\backslash\)"{}`}
+\DoxyCodeLine{}
+\DoxyCodeLine{ident\ =\ \`{}[a-\/zA-\/Z\_][a-\/zA-\/Z0-\/9\_]*`}
+\DoxyCodeLine{}
+\DoxyCodeLine{\`{}[:digit:]`\ =\ \`{}[0-\/9]`}
+\DoxyCodeLine{}
+\DoxyCodeLine{\`{}[:xdigit:]`\ =\ \`{}[0-\/9a-\/fA-\/F]`}
+\DoxyCodeLine{}
+\DoxyCodeLine{dec\_integer\_constant\ =\ \`{}[-\/+]?[:digit:]+`}
+\DoxyCodeLine{}
+\DoxyCodeLine{hex\_integer\_constant\ =\ \`{}[-\/+]?0[xX][:xdigit:]+`}
+\DoxyCodeLine{}
+\DoxyCodeLine{integer\_constant\ =\ dec\_integer\_constant\ |\ hex\_integer\_constant}
+\DoxyCodeLine{}
+\DoxyCodeLine{dec\_float\_constant\ =\ \`{}[-\/+]?(([.][:digit:]+)|([:digit:]+[.][:digit:]*)|([:digit:]+))([eE][-\/+]?[:digit:]+)?`}
+\DoxyCodeLine{}
+\DoxyCodeLine{hex\_float\_constant\ =\ \`{}[-\/+]?0[xX](([.][:xdigit:]+)|([:xdigit:]+[.][:xdigit:]*)|([:xdigit:]+))([pP][-\/+]?[:digit:]+)`}
+\DoxyCodeLine{}
+\DoxyCodeLine{special\_float\_constant\ =\ \`{}[-\/+]?(nan|inf|infinity)`}
+\DoxyCodeLine{}
+\DoxyCodeLine{float\_constant\ =\ dec\_float\_constant\ |\ hex\_float\_constant\ |\ special\_float\_constant}
+\DoxyCodeLine{}
+\DoxyCodeLine{boolean\_constant\ =\ \`{}true`\ |\ \`{}false`}
+
+\end{DoxyCode}
+ 

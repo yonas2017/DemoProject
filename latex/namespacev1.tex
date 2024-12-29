@@ -1,0 +1,145 @@
+\doxysection{v1 Namespace Reference}
+\hypertarget{namespacev1}{}\label{namespacev1}\index{v1@{v1}}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structv1_1_1FLATBUFFERS__FINAL__CLASS}{FLATBUFFERS\+\_\+\+FINAL\+\_\+\+CLASS}}
+\item 
+struct \mbox{\hyperlink{structv1_1_1RootTableBuilder}{Root\+Table\+Builder}}
+\item 
+struct \mbox{\hyperlink{structv1_1_1RootTableT}{Root\+TableT}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{namespacev1_a7c2fcbd6d5d1a52f8f1224d84d49c89e}{operator==}} (const \mbox{\hyperlink{structv1_1_1RootTableT}{Root\+TableT}} \&lhs, const \mbox{\hyperlink{structv1_1_1RootTableT}{Root\+TableT}} \&rhs)
+\item 
+bool \mbox{\hyperlink{namespacev1_aa83907116cdfd7e8949f8472856d8f74}{operator!=}} (const \mbox{\hyperlink{structv1_1_1RootTableT}{Root\+TableT}} \&lhs, const \mbox{\hyperlink{structv1_1_1RootTableT}{Root\+TableT}} \&rhs)
+\item 
+const \mbox{\hyperlink{structflatbuffers_1_1TypeTable}{\+::flatbuffers\+::\+Type\+Table}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{namespacev1_a69a5f20fd9347717823a59d981384f0a}{Root\+Table\+Type\+Table}} ()
+\item 
+inline \+::flatbuffers\+::\+Offset$<$ Root\+Table $>$ \mbox{\hyperlink{namespacev1_af73ae78cd7da0f1d5d123f4faa3bedb1}{Create\+Root\+Table}} (\mbox{\hyperlink{namespaceflatbuffers_a41ac7b1c8f5f4a869e8f649b6c171ce7}{\+::flatbuffers\+::\+Flat\+Buffer\+Builder}} \&\+\_\+fbb, float a=0.\+0f, \+::flatbuffers\+::\+Offset$<$\mbox{\hyperlink{classflatbuffers_1_1Vector}{\+::flatbuffers\+::\+Vector}}$<$ uint8\+\_\+t $>$ $>$ b=0)
+\item 
+inline \+::flatbuffers\+::\+Offset$<$ Root\+Table $>$ \mbox{\hyperlink{namespacev1_a5ad85a523d4e690ad7da4728460f8390}{Create\+Root\+Table\+Direct}} (\mbox{\hyperlink{namespaceflatbuffers_a41ac7b1c8f5f4a869e8f649b6c171ce7}{\+::flatbuffers\+::\+Flat\+Buffer\+Builder}} \&\+\_\+fbb, float a=0.\+0f, const std\+::vector$<$ uint8\+\_\+t $>$ \texorpdfstring{$\ast$}{*}b=nullptr)
+\item 
+\+::flatbuffers\+::\+Offset$<$ Root\+Table $>$ \mbox{\hyperlink{namespacev1_ac20463ff27795753445b826bdd96f54f}{Create\+Root\+Table}} (\mbox{\hyperlink{namespaceflatbuffers_a41ac7b1c8f5f4a869e8f649b6c171ce7}{\+::flatbuffers\+::\+Flat\+Buffer\+Builder}} \&\+\_\+fbb, const \mbox{\hyperlink{structv1_1_1RootTableT}{Root\+TableT}} \texorpdfstring{$\ast$}{*}\+\_\+o, const \mbox{\hyperlink{namespaceflatbuffers_a1a147f1b586c9e452c48e10c3121ed7a}{\+::flatbuffers\+::rehasher\+\_\+function\+\_\+t}} \texorpdfstring{$\ast$}{*}\+\_\+rehasher=nullptr)
+\item 
+const v1\+::\+Root\+Table \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{namespacev1_aecc8d8a9e2591dbb172a49e96874e222}{Get\+Root\+Table}} (const void \texorpdfstring{$\ast$}{*}buf)
+\item 
+const v1\+::\+Root\+Table \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{namespacev1_af5d05fbe13980c443989c085323cb80b}{Get\+Size\+Prefixed\+Root\+Table}} (const void \texorpdfstring{$\ast$}{*}buf)
+\item 
+Root\+Table \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{namespacev1_a2065e25ba297beef3fb849f8ce7b7322}{Get\+Mutable\+Root\+Table}} (void \texorpdfstring{$\ast$}{*}buf)
+\item 
+v1\+::\+Root\+Table \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{namespacev1_a1be94162931d9e57dfc0727c0fe56585}{Get\+Mutable\+Size\+Prefixed\+Root\+Table}} (void \texorpdfstring{$\ast$}{*}buf)
+\item 
+bool \mbox{\hyperlink{namespacev1_a543e00121d1db5db20cac4886e6a19c6}{Verify\+Root\+Table\+Buffer}} (\mbox{\hyperlink{namespaceflatbuffers_a3268477941df91db2eb06442b6e5f922}{\+::flatbuffers\+::\+Verifier}} \&verifier)
+\item 
+bool \mbox{\hyperlink{namespacev1_a5f94b894afab3512d3b2dd8eea5662c9}{Verify\+Size\+Prefixed\+Root\+Table\+Buffer}} (\mbox{\hyperlink{namespaceflatbuffers_a3268477941df91db2eb06442b6e5f922}{\+::flatbuffers\+::\+Verifier}} \&verifier)
+\item 
+void \mbox{\hyperlink{namespacev1_ae749dec08109e6f89cb01444ba7a2376}{Finish\+Root\+Table\+Buffer}} (\mbox{\hyperlink{namespaceflatbuffers_a41ac7b1c8f5f4a869e8f649b6c171ce7}{\+::flatbuffers\+::\+Flat\+Buffer\+Builder}} \&fbb, \+::flatbuffers\+::\+Offset$<$ v1\+::\+Root\+Table $>$ root)
+\item 
+void \mbox{\hyperlink{namespacev1_afa8e08c75e67b50960a8bd2a345f438e}{Finish\+Size\+Prefixed\+Root\+Table\+Buffer}} (\mbox{\hyperlink{namespaceflatbuffers_a41ac7b1c8f5f4a869e8f649b6c171ce7}{\+::flatbuffers\+::\+Flat\+Buffer\+Builder}} \&fbb, \+::flatbuffers\+::\+Offset$<$ v1\+::\+Root\+Table $>$ root)
+\item 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{structv1_1_1RootTableT}{v1\+::\+Root\+TableT}} $>$ \mbox{\hyperlink{namespacev1_a97418c78b5b8621cb16bbf8266b4c491}{Un\+Pack\+Root\+Table}} (const void \texorpdfstring{$\ast$}{*}buf, const \mbox{\hyperlink{namespaceflatbuffers_ac7bfda6e698d13cd1b225df198a24a18}{\+::flatbuffers\+::resolver\+\_\+function\+\_\+t}} \texorpdfstring{$\ast$}{*}res=nullptr)
+\item 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{structv1_1_1RootTableT}{v1\+::\+Root\+TableT}} $>$ \mbox{\hyperlink{namespacev1_a6eea568b341cbeaa83f7fe7beef1dee9}{Un\+Pack\+Size\+Prefixed\+Root\+Table}} (const void \texorpdfstring{$\ast$}{*}buf, const \mbox{\hyperlink{namespaceflatbuffers_ac7bfda6e698d13cd1b225df198a24a18}{\+::flatbuffers\+::resolver\+\_\+function\+\_\+t}} \texorpdfstring{$\ast$}{*}res=nullptr)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{namespacev1_ac20463ff27795753445b826bdd96f54f}\label{namespacev1_ac20463ff27795753445b826bdd96f54f} 
+\index{v1@{v1}!CreateRootTable@{CreateRootTable}}
+\index{CreateRootTable@{CreateRootTable}!v1@{v1}}
+\doxysubsubsection{\texorpdfstring{CreateRootTable()}{CreateRootTable()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily flatbuffers\+::\+Offset$<$ Root\+Table $>$ v1\+::\+Create\+Root\+Table (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceflatbuffers_a41ac7b1c8f5f4a869e8f649b6c171ce7}{\+::flatbuffers\+::\+Flat\+Buffer\+Builder}} \&}]{\+\_\+fbb,  }\item[{const \mbox{\hyperlink{structv1_1_1RootTableT}{Root\+TableT}} \texorpdfstring{$\ast$}{*}}]{\+\_\+o,  }\item[{const \mbox{\hyperlink{namespaceflatbuffers_a1a147f1b586c9e452c48e10c3121ed7a}{\+::flatbuffers\+::rehasher\+\_\+function\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{\+\_\+rehasher = {\ttfamily nullptr} }\end{DoxyParamCaption})}
+
+\Hypertarget{namespacev1_af73ae78cd7da0f1d5d123f4faa3bedb1}\label{namespacev1_af73ae78cd7da0f1d5d123f4faa3bedb1} 
+\index{v1@{v1}!CreateRootTable@{CreateRootTable}}
+\index{CreateRootTable@{CreateRootTable}!v1@{v1}}
+\doxysubsubsection{\texorpdfstring{CreateRootTable()}{CreateRootTable()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily inline \+::flatbuffers\+::\+Offset$<$ Root\+Table $>$ v1\+::\+Create\+Root\+Table (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceflatbuffers_a41ac7b1c8f5f4a869e8f649b6c171ce7}{\+::flatbuffers\+::\+Flat\+Buffer\+Builder}} \&}]{\+\_\+fbb,  }\item[{float}]{a = {\ttfamily 0.0f},  }\item[{\+::flatbuffers\+::\+Offset$<$\mbox{\hyperlink{classflatbuffers_1_1Vector}{\+::flatbuffers\+::\+Vector}}$<$ uint8\+\_\+t $>$ $>$}]{b = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+\Hypertarget{namespacev1_a5ad85a523d4e690ad7da4728460f8390}\label{namespacev1_a5ad85a523d4e690ad7da4728460f8390} 
+\index{v1@{v1}!CreateRootTableDirect@{CreateRootTableDirect}}
+\index{CreateRootTableDirect@{CreateRootTableDirect}!v1@{v1}}
+\doxysubsubsection{\texorpdfstring{CreateRootTableDirect()}{CreateRootTableDirect()}}
+{\footnotesize\ttfamily inline \+::flatbuffers\+::\+Offset$<$ Root\+Table $>$ v1\+::\+Create\+Root\+Table\+Direct (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceflatbuffers_a41ac7b1c8f5f4a869e8f649b6c171ce7}{\+::flatbuffers\+::\+Flat\+Buffer\+Builder}} \&}]{\+\_\+fbb,  }\item[{float}]{a = {\ttfamily 0.0f},  }\item[{const std\+::vector$<$ uint8\+\_\+t $>$ \texorpdfstring{$\ast$}{*}}]{b = {\ttfamily nullptr} }\end{DoxyParamCaption})}
+
+\Hypertarget{namespacev1_ae749dec08109e6f89cb01444ba7a2376}\label{namespacev1_ae749dec08109e6f89cb01444ba7a2376} 
+\index{v1@{v1}!FinishRootTableBuffer@{FinishRootTableBuffer}}
+\index{FinishRootTableBuffer@{FinishRootTableBuffer}!v1@{v1}}
+\doxysubsubsection{\texorpdfstring{FinishRootTableBuffer()}{FinishRootTableBuffer()}}
+{\footnotesize\ttfamily void v1\+::\+Finish\+Root\+Table\+Buffer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceflatbuffers_a41ac7b1c8f5f4a869e8f649b6c171ce7}{\+::flatbuffers\+::\+Flat\+Buffer\+Builder}} \&}]{fbb,  }\item[{\+::flatbuffers\+::\+Offset$<$ v1\+::\+Root\+Table $>$}]{root }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{namespacev1_afa8e08c75e67b50960a8bd2a345f438e}\label{namespacev1_afa8e08c75e67b50960a8bd2a345f438e} 
+\index{v1@{v1}!FinishSizePrefixedRootTableBuffer@{FinishSizePrefixedRootTableBuffer}}
+\index{FinishSizePrefixedRootTableBuffer@{FinishSizePrefixedRootTableBuffer}!v1@{v1}}
+\doxysubsubsection{\texorpdfstring{FinishSizePrefixedRootTableBuffer()}{FinishSizePrefixedRootTableBuffer()}}
+{\footnotesize\ttfamily void v1\+::\+Finish\+Size\+Prefixed\+Root\+Table\+Buffer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceflatbuffers_a41ac7b1c8f5f4a869e8f649b6c171ce7}{\+::flatbuffers\+::\+Flat\+Buffer\+Builder}} \&}]{fbb,  }\item[{\+::flatbuffers\+::\+Offset$<$ v1\+::\+Root\+Table $>$}]{root }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{namespacev1_a2065e25ba297beef3fb849f8ce7b7322}\label{namespacev1_a2065e25ba297beef3fb849f8ce7b7322} 
+\index{v1@{v1}!GetMutableRootTable@{GetMutableRootTable}}
+\index{GetMutableRootTable@{GetMutableRootTable}!v1@{v1}}
+\doxysubsubsection{\texorpdfstring{GetMutableRootTable()}{GetMutableRootTable()}}
+{\footnotesize\ttfamily Root\+Table \texorpdfstring{$\ast$}{*} v1\+::\+Get\+Mutable\+Root\+Table (\begin{DoxyParamCaption}\item[{void \texorpdfstring{$\ast$}{*}}]{buf }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{namespacev1_a1be94162931d9e57dfc0727c0fe56585}\label{namespacev1_a1be94162931d9e57dfc0727c0fe56585} 
+\index{v1@{v1}!GetMutableSizePrefixedRootTable@{GetMutableSizePrefixedRootTable}}
+\index{GetMutableSizePrefixedRootTable@{GetMutableSizePrefixedRootTable}!v1@{v1}}
+\doxysubsubsection{\texorpdfstring{GetMutableSizePrefixedRootTable()}{GetMutableSizePrefixedRootTable()}}
+{\footnotesize\ttfamily v1\+::\+Root\+Table \texorpdfstring{$\ast$}{*} v1\+::\+Get\+Mutable\+Size\+Prefixed\+Root\+Table (\begin{DoxyParamCaption}\item[{void \texorpdfstring{$\ast$}{*}}]{buf }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{namespacev1_aecc8d8a9e2591dbb172a49e96874e222}\label{namespacev1_aecc8d8a9e2591dbb172a49e96874e222} 
+\index{v1@{v1}!GetRootTable@{GetRootTable}}
+\index{GetRootTable@{GetRootTable}!v1@{v1}}
+\doxysubsubsection{\texorpdfstring{GetRootTable()}{GetRootTable()}}
+{\footnotesize\ttfamily const v1\+::\+Root\+Table \texorpdfstring{$\ast$}{*} v1\+::\+Get\+Root\+Table (\begin{DoxyParamCaption}\item[{const void \texorpdfstring{$\ast$}{*}}]{buf }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{namespacev1_af5d05fbe13980c443989c085323cb80b}\label{namespacev1_af5d05fbe13980c443989c085323cb80b} 
+\index{v1@{v1}!GetSizePrefixedRootTable@{GetSizePrefixedRootTable}}
+\index{GetSizePrefixedRootTable@{GetSizePrefixedRootTable}!v1@{v1}}
+\doxysubsubsection{\texorpdfstring{GetSizePrefixedRootTable()}{GetSizePrefixedRootTable()}}
+{\footnotesize\ttfamily const v1\+::\+Root\+Table \texorpdfstring{$\ast$}{*} v1\+::\+Get\+Size\+Prefixed\+Root\+Table (\begin{DoxyParamCaption}\item[{const void \texorpdfstring{$\ast$}{*}}]{buf }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{namespacev1_aa83907116cdfd7e8949f8472856d8f74}\label{namespacev1_aa83907116cdfd7e8949f8472856d8f74} 
+\index{v1@{v1}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!v1@{v1}}
+\doxysubsubsection{\texorpdfstring{operator"!=()}{operator!=()}}
+{\footnotesize\ttfamily bool v1\+::operator!= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structv1_1_1RootTableT}{Root\+TableT}} \&}]{lhs,  }\item[{const \mbox{\hyperlink{structv1_1_1RootTableT}{Root\+TableT}} \&}]{rhs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{namespacev1_a7c2fcbd6d5d1a52f8f1224d84d49c89e}\label{namespacev1_a7c2fcbd6d5d1a52f8f1224d84d49c89e} 
+\index{v1@{v1}!operator==@{operator==}}
+\index{operator==@{operator==}!v1@{v1}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily bool v1\+::operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structv1_1_1RootTableT}{Root\+TableT}} \&}]{lhs,  }\item[{const \mbox{\hyperlink{structv1_1_1RootTableT}{Root\+TableT}} \&}]{rhs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{namespacev1_a69a5f20fd9347717823a59d981384f0a}\label{namespacev1_a69a5f20fd9347717823a59d981384f0a} 
+\index{v1@{v1}!RootTableTypeTable@{RootTableTypeTable}}
+\index{RootTableTypeTable@{RootTableTypeTable}!v1@{v1}}
+\doxysubsubsection{\texorpdfstring{RootTableTypeTable()}{RootTableTypeTable()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{structflatbuffers_1_1TypeTable}{\+::flatbuffers\+::\+Type\+Table}} \texorpdfstring{$\ast$}{*} v1\+::\+Root\+Table\+Type\+Table (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{namespacev1_a97418c78b5b8621cb16bbf8266b4c491}\label{namespacev1_a97418c78b5b8621cb16bbf8266b4c491} 
+\index{v1@{v1}!UnPackRootTable@{UnPackRootTable}}
+\index{UnPackRootTable@{UnPackRootTable}!v1@{v1}}
+\doxysubsubsection{\texorpdfstring{UnPackRootTable()}{UnPackRootTable()}}
+{\footnotesize\ttfamily std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{structv1_1_1RootTableT}{v1\+::\+Root\+TableT}} $>$ v1\+::\+Un\+Pack\+Root\+Table (\begin{DoxyParamCaption}\item[{const void \texorpdfstring{$\ast$}{*}}]{buf,  }\item[{const \mbox{\hyperlink{namespaceflatbuffers_ac7bfda6e698d13cd1b225df198a24a18}{\+::flatbuffers\+::resolver\+\_\+function\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{res = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{namespacev1_a6eea568b341cbeaa83f7fe7beef1dee9}\label{namespacev1_a6eea568b341cbeaa83f7fe7beef1dee9} 
+\index{v1@{v1}!UnPackSizePrefixedRootTable@{UnPackSizePrefixedRootTable}}
+\index{UnPackSizePrefixedRootTable@{UnPackSizePrefixedRootTable}!v1@{v1}}
+\doxysubsubsection{\texorpdfstring{UnPackSizePrefixedRootTable()}{UnPackSizePrefixedRootTable()}}
+{\footnotesize\ttfamily std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{structv1_1_1RootTableT}{v1\+::\+Root\+TableT}} $>$ v1\+::\+Un\+Pack\+Size\+Prefixed\+Root\+Table (\begin{DoxyParamCaption}\item[{const void \texorpdfstring{$\ast$}{*}}]{buf,  }\item[{const \mbox{\hyperlink{namespaceflatbuffers_ac7bfda6e698d13cd1b225df198a24a18}{\+::flatbuffers\+::resolver\+\_\+function\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{res = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{namespacev1_a543e00121d1db5db20cac4886e6a19c6}\label{namespacev1_a543e00121d1db5db20cac4886e6a19c6} 
+\index{v1@{v1}!VerifyRootTableBuffer@{VerifyRootTableBuffer}}
+\index{VerifyRootTableBuffer@{VerifyRootTableBuffer}!v1@{v1}}
+\doxysubsubsection{\texorpdfstring{VerifyRootTableBuffer()}{VerifyRootTableBuffer()}}
+{\footnotesize\ttfamily bool v1\+::\+Verify\+Root\+Table\+Buffer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceflatbuffers_a3268477941df91db2eb06442b6e5f922}{\+::flatbuffers\+::\+Verifier}} \&}]{verifier }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{namespacev1_a5f94b894afab3512d3b2dd8eea5662c9}\label{namespacev1_a5f94b894afab3512d3b2dd8eea5662c9} 
+\index{v1@{v1}!VerifySizePrefixedRootTableBuffer@{VerifySizePrefixedRootTableBuffer}}
+\index{VerifySizePrefixedRootTableBuffer@{VerifySizePrefixedRootTableBuffer}!v1@{v1}}
+\doxysubsubsection{\texorpdfstring{VerifySizePrefixedRootTableBuffer()}{VerifySizePrefixedRootTableBuffer()}}
+{\footnotesize\ttfamily bool v1\+::\+Verify\+Size\+Prefixed\+Root\+Table\+Buffer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceflatbuffers_a3268477941df91db2eb06442b6e5f922}{\+::flatbuffers\+::\+Verifier}} \&}]{verifier }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+

@@ -1,0 +1,18 @@
+\chapter{Flexbuffers}
+\hypertarget{md_flatbuffers_2rust_2flexbuffers_2README}{}\label{md_flatbuffers_2rust_2flexbuffers_2README}\index{Flexbuffers@{Flexbuffers}}
+\href{https://google.github.io/flatbuffers/flexbuffers.html}{\texttt{ Flexbuffers}} is a schema-\/less binary format developed at \doxylink{namespaceGoogle}{Google}. Flex\+Buffers can be accessed without parsing, copying, or allocation. This is a huge win for efficiency, memory friendly-\/ness, and allows for unique use cases such as mmap-\/ing large amounts of free-\/form data.
+
+Flex\+Buffers\textquotesingle{} design and implementation allows for a very compact encoding, with automatic sizing of containers to their smallest possible representation (8/16/32/64 bits). Many values and offsets can be encoded in just 8 bits.
+
+Flex\+Buffers supports \href{https://serde.rs/}{\texttt{ Serde}} for automatically serializing Rust data structures into its binary format.
+
+\doxysection*{See Examples for Usage\+:}
+
+
+\begin{DoxyItemize}
+\item \href{https://github.com/google/flatbuffers/blob/master/samples/sample_flexbuffers.rs}{\texttt{ Example}}
+\item \href{https://github.com/google/flatbuffers/blob/master/samples/sample_flexbuffers_serde.rs}{\texttt{ Serde Example}}
+\item \href{https://docs.rs/flexbuffers}{\texttt{ Documentation}}
+\end{DoxyItemize}
+
+Flexbuffers is the schema-\/less cousin of \href{https://google.github.io/flatbuffers/}{\texttt{ Flatbuffers}}. 

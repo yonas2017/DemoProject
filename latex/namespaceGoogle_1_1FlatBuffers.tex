@@ -1,0 +1,68 @@
+\doxysection{Google.\+Flat\+Buffers Namespace Reference}
+\hypertarget{namespaceGoogle_1_1FlatBuffers}{}\label{namespaceGoogle_1_1FlatBuffers}\index{Google.FlatBuffers@{Google.FlatBuffers}}
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespaceGoogle_1_1FlatBuffers_1_1Benchmarks}{Benchmarks}}
+\item 
+namespace \mbox{\hyperlink{namespaceGoogle_1_1FlatBuffers_1_1Test}{Test}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classGoogle_1_1FlatBuffers_1_1ByteArrayAllocator}{Byte\+Array\+Allocator}}
+\item 
+class \mbox{\hyperlink{classGoogle_1_1FlatBuffers_1_1ByteBuffer}{Byte\+Buffer}}
+\begin{DoxyCompactList}\small\item\em Class to mimic Java\textquotesingle{}s Byte\+Buffer which is used heavily in Flatbuffers. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classGoogle_1_1FlatBuffers_1_1ByteBufferAllocator}{Byte\+Buffer\+Allocator}}
+\item 
+class \mbox{\hyperlink{classGoogle_1_1FlatBuffers_1_1ByteBufferUtil}{Byte\+Buffer\+Util}}
+\begin{DoxyCompactList}\small\item\em Class that collects utility functions around {\ttfamily Byte\+Buffer}. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structGoogle_1_1FlatBuffers_1_1checkElementStruct}{check\+Element\+Struct}}
+\item 
+class \mbox{\hyperlink{classGoogle_1_1FlatBuffers_1_1Constants}{Constants}}
+\item 
+class \mbox{\hyperlink{classGoogle_1_1FlatBuffers_1_1FlatbufferBuilder}{Flatbuffer\+Builder}}
+\item 
+class \mbox{\hyperlink{classGoogle_1_1FlatBuffers_1_1FlatBufferBuilder}{Flat\+Buffer\+Builder}}
+\begin{DoxyCompactList}\small\item\em Responsible for building up and accessing a Flat\+Buffer formatted byte array (via Byte\+Buffer). \end{DoxyCompactList}\item 
+class {\bfseries Flat\+Buffer\+Constants}
+\item 
+interface \mbox{\hyperlink{interfaceGoogle_1_1FlatBuffers_1_1IFlatbufferObject}{IFlatbuffer\+Object}}
+\begin{DoxyCompactList}\small\item\em This is the base for both structs and tables. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structGoogle_1_1FlatBuffers_1_1Offset}{Offset}}
+\begin{DoxyCompactList}\small\item\em Offset class for typesafe assignments. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classGoogle_1_1FlatBuffers_1_1Options}{Options}}
+\begin{DoxyCompactList}\small\item\em The Class of the Verifier Options. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structGoogle_1_1FlatBuffers_1_1StringOffset}{String\+Offset}}
+\item 
+class \mbox{\hyperlink{structGoogle_1_1FlatBuffers_1_1Struct}{Struct}}
+\begin{DoxyCompactList}\small\item\em All structs in the generated code derive from this class, and add their own accessors. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{structGoogle_1_1FlatBuffers_1_1Table}{Table}}
+\begin{DoxyCompactList}\small\item\em All tables in the generated code derive from this struct, and add their own accessors. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structGoogle_1_1FlatBuffers_1_1VectorOffset}{Vector\+Offset}}
+\item 
+class \mbox{\hyperlink{classGoogle_1_1FlatBuffers_1_1Verifier}{Verifier}}
+\begin{DoxyCompactList}\small\item\em The Main Class of the Flat\+Buffer Verifier. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+delegate bool \mbox{\hyperlink{namespaceGoogle_1_1FlatBuffers_a9f5d4a8d41586d0f13f628f62fb86423}{Verify\+Table\+Action}} (\mbox{\hyperlink{classGoogle_1_1FlatBuffers_1_1Verifier}{Verifier}} verifier, uint table\+Pos)
+\item 
+delegate bool \mbox{\hyperlink{namespaceGoogle_1_1FlatBuffers_a2f8f0d2769bbbb5f25b9aef7b62cdedf}{Verify\+Union\+Action}} (\mbox{\hyperlink{classGoogle_1_1FlatBuffers_1_1Verifier}{Verifier}} verifier, byte type\+Id, uint table\+Pos)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{namespaceGoogle_1_1FlatBuffers_a9f5d4a8d41586d0f13f628f62fb86423}\label{namespaceGoogle_1_1FlatBuffers_a9f5d4a8d41586d0f13f628f62fb86423} 
+\index{Google.FlatBuffers@{Google.FlatBuffers}!VerifyTableAction@{VerifyTableAction}}
+\index{VerifyTableAction@{VerifyTableAction}!Google.FlatBuffers@{Google.FlatBuffers}}
+\doxysubsubsection{\texorpdfstring{VerifyTableAction()}{VerifyTableAction()}}
+{\footnotesize\ttfamily delegate bool Google.\+Flat\+Buffers.\+Verify\+Table\+Action (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classGoogle_1_1FlatBuffers_1_1Verifier}{Verifier}}}]{verifier,  }\item[{uint}]{table\+Pos }\end{DoxyParamCaption})}
+
+\Hypertarget{namespaceGoogle_1_1FlatBuffers_a2f8f0d2769bbbb5f25b9aef7b62cdedf}\label{namespaceGoogle_1_1FlatBuffers_a2f8f0d2769bbbb5f25b9aef7b62cdedf} 
+\index{Google.FlatBuffers@{Google.FlatBuffers}!VerifyUnionAction@{VerifyUnionAction}}
+\index{VerifyUnionAction@{VerifyUnionAction}!Google.FlatBuffers@{Google.FlatBuffers}}
+\doxysubsubsection{\texorpdfstring{VerifyUnionAction()}{VerifyUnionAction()}}
+{\footnotesize\ttfamily delegate bool Google.\+Flat\+Buffers.\+Verify\+Union\+Action (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classGoogle_1_1FlatBuffers_1_1Verifier}{Verifier}}}]{verifier,  }\item[{byte}]{type\+Id,  }\item[{uint}]{table\+Pos }\end{DoxyParamCaption})}
+

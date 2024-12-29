@@ -1,0 +1,215 @@
+\doxysection{grpc\+\_\+generator\+::Method Struct Reference}
+\hypertarget{structgrpc__generator_1_1Method}{}\label{structgrpc__generator_1_1Method}\index{grpc\_generator::Method@{grpc\_generator::Method}}
+
+
+{\ttfamily \#include $<$schema\+\_\+interface.\+h$>$}
+
+
+
+Inheritance diagram for grpc\+\_\+generator\+::Method\+:
+% FIG 0
+
+
+Collaboration diagram for grpc\+\_\+generator\+::Method\+:
+% FIG 1
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{structgrpc__generator_1_1Method_a7016e4b30cbb60c6186d8ebc25ff7a5e}{\texorpdfstring{$\sim$}{\string~}\+Method}} ()
+\item 
+virtual \mbox{\hyperlink{namespacegrpc_a77f15e90a2c3651195f88645e4512267}{grpc\+::string}} \mbox{\hyperlink{structgrpc__generator_1_1Method_a278d7fdce244943d63843399b0dbb60a}{name}} () const =0
+\item 
+virtual \mbox{\hyperlink{namespacegrpc_a77f15e90a2c3651195f88645e4512267}{grpc\+::string}} \mbox{\hyperlink{structgrpc__generator_1_1Method_a900bc3fedd7cfe3e6011d4112cf03da4}{input\+\_\+type\+\_\+name}} () const =0
+\item 
+virtual \mbox{\hyperlink{namespacegrpc_a77f15e90a2c3651195f88645e4512267}{grpc\+::string}} \mbox{\hyperlink{structgrpc__generator_1_1Method_aa8f2d1046bf45084333047032750f18a}{output\+\_\+type\+\_\+name}} () const =0
+\item 
+virtual bool \mbox{\hyperlink{structgrpc__generator_1_1Method_aac6ddef10173dbbc9a9bfccc93c3c578}{get\+\_\+module\+\_\+and\+\_\+message\+\_\+path\+\_\+input}} (\mbox{\hyperlink{namespacegrpc_a77f15e90a2c3651195f88645e4512267}{grpc\+::string}} \texorpdfstring{$\ast$}{*}str, \mbox{\hyperlink{namespacegrpc_a77f15e90a2c3651195f88645e4512267}{grpc\+::string}} generator\+\_\+file\+\_\+name, bool generate\+\_\+in\+\_\+pb2\+\_\+grpc, \mbox{\hyperlink{namespacegrpc_a77f15e90a2c3651195f88645e4512267}{grpc\+::string}} import\+\_\+prefix) const =0
+\item 
+virtual bool \mbox{\hyperlink{structgrpc__generator_1_1Method_a58d09b36557915538b869a4ded0a927a}{get\+\_\+module\+\_\+and\+\_\+message\+\_\+path\+\_\+output}} (\mbox{\hyperlink{namespacegrpc_a77f15e90a2c3651195f88645e4512267}{grpc\+::string}} \texorpdfstring{$\ast$}{*}str, \mbox{\hyperlink{namespacegrpc_a77f15e90a2c3651195f88645e4512267}{grpc\+::string}} generator\+\_\+file\+\_\+name, bool generate\+\_\+in\+\_\+pb2\+\_\+grpc, \mbox{\hyperlink{namespacegrpc_a77f15e90a2c3651195f88645e4512267}{grpc\+::string}} import\+\_\+prefix) const =0
+\item 
+virtual std\+::vector$<$ \mbox{\hyperlink{namespacegrpc_a77f15e90a2c3651195f88645e4512267}{grpc\+::string}} $>$ \mbox{\hyperlink{structgrpc__generator_1_1Method_afd18361e28c85b7f93b0b1133426ee3a}{get\+\_\+input\+\_\+namespace\+\_\+parts}} () const =0
+\item 
+virtual \mbox{\hyperlink{namespacegrpc_a77f15e90a2c3651195f88645e4512267}{grpc\+::string}} \mbox{\hyperlink{structgrpc__generator_1_1Method_abf131fe3210482e326be559240f5fe3b}{get\+\_\+input\+\_\+type\+\_\+name}} () const =0
+\item 
+virtual std\+::vector$<$ \mbox{\hyperlink{namespacegrpc_a77f15e90a2c3651195f88645e4512267}{grpc\+::string}} $>$ \mbox{\hyperlink{structgrpc__generator_1_1Method_a625473ec346f0caccb41a4a5e10708bb}{get\+\_\+output\+\_\+namespace\+\_\+parts}} () const =0
+\item 
+virtual \mbox{\hyperlink{namespacegrpc_a77f15e90a2c3651195f88645e4512267}{grpc\+::string}} \mbox{\hyperlink{structgrpc__generator_1_1Method_a0105710b877f40c5bbd378cf384ade07}{get\+\_\+output\+\_\+type\+\_\+name}} () const =0
+\item 
+virtual \mbox{\hyperlink{namespacegrpc_a77f15e90a2c3651195f88645e4512267}{grpc\+::string}} \mbox{\hyperlink{structgrpc__generator_1_1Method_abc7625facdfeac115dfddf7b2f6aaf3f}{get\+\_\+fb\+\_\+builder}} () const =0
+\item 
+virtual bool \mbox{\hyperlink{structgrpc__generator_1_1Method_afb30e7e95992173d37c64b60afbe609d}{No\+Streaming}} () const =0
+\item 
+virtual bool \mbox{\hyperlink{structgrpc__generator_1_1Method_a1ddbbb76cbd56789c1ceaa5235c4a62c}{Client\+Streaming}} () const =0
+\item 
+virtual bool \mbox{\hyperlink{structgrpc__generator_1_1Method_a58ad12f7d48f66e564d4bb2bdfda0f68}{Server\+Streaming}} () const =0
+\item 
+virtual bool \mbox{\hyperlink{structgrpc__generator_1_1Method_ab0beb85038784ff8c793621e9f13bff9}{Bidi\+Streaming}} () const =0
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{structgrpc__generator_1_1CommentHolder}{grpc\+\_\+generator\+::\+Comment\+Holder}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{structgrpc__generator_1_1CommentHolder_a6e517ec1311b1452816b343037640752}{\texorpdfstring{$\sim$}{\string~}\+Comment\+Holder}} ()
+\item 
+virtual \mbox{\hyperlink{namespacegrpc_a77f15e90a2c3651195f88645e4512267}{grpc\+::string}} \mbox{\hyperlink{structgrpc__generator_1_1CommentHolder_a3975709afbea2352888d9de6c1542f44}{Get\+Leading\+Comments}} (const \mbox{\hyperlink{namespacegrpc_a77f15e90a2c3651195f88645e4512267}{grpc\+::string}} prefix) const =0
+\item 
+virtual \mbox{\hyperlink{namespacegrpc_a77f15e90a2c3651195f88645e4512267}{grpc\+::string}} \mbox{\hyperlink{structgrpc__generator_1_1CommentHolder_a7384d43fe69a661729f2b136ecab419f}{Get\+Trailing\+Comments}} (const \mbox{\hyperlink{namespacegrpc_a77f15e90a2c3651195f88645e4512267}{grpc\+::string}} prefix) const =0
+\item 
+virtual std\+::vector$<$ \mbox{\hyperlink{namespacegrpc_a77f15e90a2c3651195f88645e4512267}{grpc\+::string}} $>$ \mbox{\hyperlink{structgrpc__generator_1_1CommentHolder_a716a95b8025b11b4a91aebc80e50834d}{Get\+All\+Comments}} () const =0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{structgrpc__generator_1_1Method_a7016e4b30cbb60c6186d8ebc25ff7a5e}\label{structgrpc__generator_1_1Method_a7016e4b30cbb60c6186d8ebc25ff7a5e} 
+\index{grpc\_generator::Method@{grpc\_generator::Method}!````~Method@{\texorpdfstring{$\sim$}{\string~}Method}}
+\index{````~Method@{\texorpdfstring{$\sim$}{\string~}Method}!grpc\_generator::Method@{grpc\_generator::Method}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Method()}{\string~Method()}}
+{\footnotesize\ttfamily virtual grpc\+\_\+generator\+::\+Method\+::\texorpdfstring{$\sim$}{\string~}\+Method (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{structgrpc__generator_1_1Method_ab0beb85038784ff8c793621e9f13bff9}\label{structgrpc__generator_1_1Method_ab0beb85038784ff8c793621e9f13bff9} 
+\index{grpc\_generator::Method@{grpc\_generator::Method}!BidiStreaming@{BidiStreaming}}
+\index{BidiStreaming@{BidiStreaming}!grpc\_generator::Method@{grpc\_generator::Method}}
+\doxysubsubsection{\texorpdfstring{BidiStreaming()}{BidiStreaming()}}
+{\footnotesize\ttfamily virtual bool grpc\+\_\+generator\+::\+Method\+::\+Bidi\+Streaming (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{classflatbuffers_1_1FlatBufMethod_a11558d31d8f694c50fe8515f46b64b89}{flatbuffers\+::\+Flat\+Buf\+Method}}.
+
+\Hypertarget{structgrpc__generator_1_1Method_a1ddbbb76cbd56789c1ceaa5235c4a62c}\label{structgrpc__generator_1_1Method_a1ddbbb76cbd56789c1ceaa5235c4a62c} 
+\index{grpc\_generator::Method@{grpc\_generator::Method}!ClientStreaming@{ClientStreaming}}
+\index{ClientStreaming@{ClientStreaming}!grpc\_generator::Method@{grpc\_generator::Method}}
+\doxysubsubsection{\texorpdfstring{ClientStreaming()}{ClientStreaming()}}
+{\footnotesize\ttfamily virtual bool grpc\+\_\+generator\+::\+Method\+::\+Client\+Streaming (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{classflatbuffers_1_1FlatBufMethod_ab7b039299647d3f114471f6f245c2d36}{flatbuffers\+::\+Flat\+Buf\+Method}}.
+
+\Hypertarget{structgrpc__generator_1_1Method_abc7625facdfeac115dfddf7b2f6aaf3f}\label{structgrpc__generator_1_1Method_abc7625facdfeac115dfddf7b2f6aaf3f} 
+\index{grpc\_generator::Method@{grpc\_generator::Method}!get\_fb\_builder@{get\_fb\_builder}}
+\index{get\_fb\_builder@{get\_fb\_builder}!grpc\_generator::Method@{grpc\_generator::Method}}
+\doxysubsubsection{\texorpdfstring{get\_fb\_builder()}{get\_fb\_builder()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{namespacegrpc_a77f15e90a2c3651195f88645e4512267}{grpc\+::string}} grpc\+\_\+generator\+::\+Method\+::get\+\_\+fb\+\_\+builder (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{classflatbuffers_1_1FlatBufMethod_a48ecafcdd8619db598a8286f04cd417c}{flatbuffers\+::\+Flat\+Buf\+Method}}.
+
+\Hypertarget{structgrpc__generator_1_1Method_afd18361e28c85b7f93b0b1133426ee3a}\label{structgrpc__generator_1_1Method_afd18361e28c85b7f93b0b1133426ee3a} 
+\index{grpc\_generator::Method@{grpc\_generator::Method}!get\_input\_namespace\_parts@{get\_input\_namespace\_parts}}
+\index{get\_input\_namespace\_parts@{get\_input\_namespace\_parts}!grpc\_generator::Method@{grpc\_generator::Method}}
+\doxysubsubsection{\texorpdfstring{get\_input\_namespace\_parts()}{get\_input\_namespace\_parts()}}
+{\footnotesize\ttfamily virtual std\+::vector$<$ \mbox{\hyperlink{namespacegrpc_a77f15e90a2c3651195f88645e4512267}{grpc\+::string}} $>$ grpc\+\_\+generator\+::\+Method\+::get\+\_\+input\+\_\+namespace\+\_\+parts (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{classflatbuffers_1_1FlatBufMethod_a9c608f1a14883807b69082a8a682beed}{flatbuffers\+::\+Flat\+Buf\+Method}}.
+
+\Hypertarget{structgrpc__generator_1_1Method_abf131fe3210482e326be559240f5fe3b}\label{structgrpc__generator_1_1Method_abf131fe3210482e326be559240f5fe3b} 
+\index{grpc\_generator::Method@{grpc\_generator::Method}!get\_input\_type\_name@{get\_input\_type\_name}}
+\index{get\_input\_type\_name@{get\_input\_type\_name}!grpc\_generator::Method@{grpc\_generator::Method}}
+\doxysubsubsection{\texorpdfstring{get\_input\_type\_name()}{get\_input\_type\_name()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{namespacegrpc_a77f15e90a2c3651195f88645e4512267}{grpc\+::string}} grpc\+\_\+generator\+::\+Method\+::get\+\_\+input\+\_\+type\+\_\+name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{classflatbuffers_1_1FlatBufMethod_a1058c1c159337f64ca0a8abdfb7b66b8}{flatbuffers\+::\+Flat\+Buf\+Method}}.
+
+\Hypertarget{structgrpc__generator_1_1Method_aac6ddef10173dbbc9a9bfccc93c3c578}\label{structgrpc__generator_1_1Method_aac6ddef10173dbbc9a9bfccc93c3c578} 
+\index{grpc\_generator::Method@{grpc\_generator::Method}!get\_module\_and\_message\_path\_input@{get\_module\_and\_message\_path\_input}}
+\index{get\_module\_and\_message\_path\_input@{get\_module\_and\_message\_path\_input}!grpc\_generator::Method@{grpc\_generator::Method}}
+\doxysubsubsection{\texorpdfstring{get\_module\_and\_message\_path\_input()}{get\_module\_and\_message\_path\_input()}}
+{\footnotesize\ttfamily virtual bool grpc\+\_\+generator\+::\+Method\+::get\+\_\+module\+\_\+and\+\_\+message\+\_\+path\+\_\+input (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacegrpc_a77f15e90a2c3651195f88645e4512267}{grpc\+::string}} \texorpdfstring{$\ast$}{*}}]{str,  }\item[{\mbox{\hyperlink{namespacegrpc_a77f15e90a2c3651195f88645e4512267}{grpc\+::string}}}]{generator\+\_\+file\+\_\+name,  }\item[{bool}]{generate\+\_\+in\+\_\+pb2\+\_\+grpc,  }\item[{\mbox{\hyperlink{namespacegrpc_a77f15e90a2c3651195f88645e4512267}{grpc\+::string}}}]{import\+\_\+prefix }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{classflatbuffers_1_1FlatBufMethod_a670f5ef4614f81b46eb9f086200c92f4}{flatbuffers\+::\+Flat\+Buf\+Method}}.
+
+\Hypertarget{structgrpc__generator_1_1Method_a58d09b36557915538b869a4ded0a927a}\label{structgrpc__generator_1_1Method_a58d09b36557915538b869a4ded0a927a} 
+\index{grpc\_generator::Method@{grpc\_generator::Method}!get\_module\_and\_message\_path\_output@{get\_module\_and\_message\_path\_output}}
+\index{get\_module\_and\_message\_path\_output@{get\_module\_and\_message\_path\_output}!grpc\_generator::Method@{grpc\_generator::Method}}
+\doxysubsubsection{\texorpdfstring{get\_module\_and\_message\_path\_output()}{get\_module\_and\_message\_path\_output()}}
+{\footnotesize\ttfamily virtual bool grpc\+\_\+generator\+::\+Method\+::get\+\_\+module\+\_\+and\+\_\+message\+\_\+path\+\_\+output (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacegrpc_a77f15e90a2c3651195f88645e4512267}{grpc\+::string}} \texorpdfstring{$\ast$}{*}}]{str,  }\item[{\mbox{\hyperlink{namespacegrpc_a77f15e90a2c3651195f88645e4512267}{grpc\+::string}}}]{generator\+\_\+file\+\_\+name,  }\item[{bool}]{generate\+\_\+in\+\_\+pb2\+\_\+grpc,  }\item[{\mbox{\hyperlink{namespacegrpc_a77f15e90a2c3651195f88645e4512267}{grpc\+::string}}}]{import\+\_\+prefix }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{classflatbuffers_1_1FlatBufMethod_aa2adb9972e8bef586319dbb395d81426}{flatbuffers\+::\+Flat\+Buf\+Method}}.
+
+\Hypertarget{structgrpc__generator_1_1Method_a625473ec346f0caccb41a4a5e10708bb}\label{structgrpc__generator_1_1Method_a625473ec346f0caccb41a4a5e10708bb} 
+\index{grpc\_generator::Method@{grpc\_generator::Method}!get\_output\_namespace\_parts@{get\_output\_namespace\_parts}}
+\index{get\_output\_namespace\_parts@{get\_output\_namespace\_parts}!grpc\_generator::Method@{grpc\_generator::Method}}
+\doxysubsubsection{\texorpdfstring{get\_output\_namespace\_parts()}{get\_output\_namespace\_parts()}}
+{\footnotesize\ttfamily virtual std\+::vector$<$ \mbox{\hyperlink{namespacegrpc_a77f15e90a2c3651195f88645e4512267}{grpc\+::string}} $>$ grpc\+\_\+generator\+::\+Method\+::get\+\_\+output\+\_\+namespace\+\_\+parts (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{classflatbuffers_1_1FlatBufMethod_aa7c83ed9d6d287f96718d6ce52276a75}{flatbuffers\+::\+Flat\+Buf\+Method}}.
+
+\Hypertarget{structgrpc__generator_1_1Method_a0105710b877f40c5bbd378cf384ade07}\label{structgrpc__generator_1_1Method_a0105710b877f40c5bbd378cf384ade07} 
+\index{grpc\_generator::Method@{grpc\_generator::Method}!get\_output\_type\_name@{get\_output\_type\_name}}
+\index{get\_output\_type\_name@{get\_output\_type\_name}!grpc\_generator::Method@{grpc\_generator::Method}}
+\doxysubsubsection{\texorpdfstring{get\_output\_type\_name()}{get\_output\_type\_name()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{namespacegrpc_a77f15e90a2c3651195f88645e4512267}{grpc\+::string}} grpc\+\_\+generator\+::\+Method\+::get\+\_\+output\+\_\+type\+\_\+name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{classflatbuffers_1_1FlatBufMethod_a49b34c84b360f5817d39713e3193dc3a}{flatbuffers\+::\+Flat\+Buf\+Method}}.
+
+\Hypertarget{structgrpc__generator_1_1Method_a900bc3fedd7cfe3e6011d4112cf03da4}\label{structgrpc__generator_1_1Method_a900bc3fedd7cfe3e6011d4112cf03da4} 
+\index{grpc\_generator::Method@{grpc\_generator::Method}!input\_type\_name@{input\_type\_name}}
+\index{input\_type\_name@{input\_type\_name}!grpc\_generator::Method@{grpc\_generator::Method}}
+\doxysubsubsection{\texorpdfstring{input\_type\_name()}{input\_type\_name()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{namespacegrpc_a77f15e90a2c3651195f88645e4512267}{grpc\+::string}} grpc\+\_\+generator\+::\+Method\+::input\+\_\+type\+\_\+name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{classflatbuffers_1_1FlatBufMethod_a71de2eac1991a70e27a91eb0d948526d}{flatbuffers\+::\+Flat\+Buf\+Method}}.
+
+\Hypertarget{structgrpc__generator_1_1Method_a278d7fdce244943d63843399b0dbb60a}\label{structgrpc__generator_1_1Method_a278d7fdce244943d63843399b0dbb60a} 
+\index{grpc\_generator::Method@{grpc\_generator::Method}!name@{name}}
+\index{name@{name}!grpc\_generator::Method@{grpc\_generator::Method}}
+\doxysubsubsection{\texorpdfstring{name()}{name()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{namespacegrpc_a77f15e90a2c3651195f88645e4512267}{grpc\+::string}} grpc\+\_\+generator\+::\+Method\+::name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{classflatbuffers_1_1FlatBufMethod_a900bff2d7bd5a48372aeefae8ffb2281}{flatbuffers\+::\+Flat\+Buf\+Method}}.
+
+\Hypertarget{structgrpc__generator_1_1Method_afb30e7e95992173d37c64b60afbe609d}\label{structgrpc__generator_1_1Method_afb30e7e95992173d37c64b60afbe609d} 
+\index{grpc\_generator::Method@{grpc\_generator::Method}!NoStreaming@{NoStreaming}}
+\index{NoStreaming@{NoStreaming}!grpc\_generator::Method@{grpc\_generator::Method}}
+\doxysubsubsection{\texorpdfstring{NoStreaming()}{NoStreaming()}}
+{\footnotesize\ttfamily virtual bool grpc\+\_\+generator\+::\+Method\+::\+No\+Streaming (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{classflatbuffers_1_1FlatBufMethod_ae89bac84ab07ab21adde51b06c807016}{flatbuffers\+::\+Flat\+Buf\+Method}}.
+
+\Hypertarget{structgrpc__generator_1_1Method_aa8f2d1046bf45084333047032750f18a}\label{structgrpc__generator_1_1Method_aa8f2d1046bf45084333047032750f18a} 
+\index{grpc\_generator::Method@{grpc\_generator::Method}!output\_type\_name@{output\_type\_name}}
+\index{output\_type\_name@{output\_type\_name}!grpc\_generator::Method@{grpc\_generator::Method}}
+\doxysubsubsection{\texorpdfstring{output\_type\_name()}{output\_type\_name()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{namespacegrpc_a77f15e90a2c3651195f88645e4512267}{grpc\+::string}} grpc\+\_\+generator\+::\+Method\+::output\+\_\+type\+\_\+name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{classflatbuffers_1_1FlatBufMethod_a179cdb2ddb390a5298ff30ee37f71aae}{flatbuffers\+::\+Flat\+Buf\+Method}}.
+
+\Hypertarget{structgrpc__generator_1_1Method_a58ad12f7d48f66e564d4bb2bdfda0f68}\label{structgrpc__generator_1_1Method_a58ad12f7d48f66e564d4bb2bdfda0f68} 
+\index{grpc\_generator::Method@{grpc\_generator::Method}!ServerStreaming@{ServerStreaming}}
+\index{ServerStreaming@{ServerStreaming}!grpc\_generator::Method@{grpc\_generator::Method}}
+\doxysubsubsection{\texorpdfstring{ServerStreaming()}{ServerStreaming()}}
+{\footnotesize\ttfamily virtual bool grpc\+\_\+generator\+::\+Method\+::\+Server\+Streaming (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{classflatbuffers_1_1FlatBufMethod_a0f5b271381b1f9b7239749138595d647}{flatbuffers\+::\+Flat\+Buf\+Method}}.
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+flatbuffers/grpc/src/compiler/\mbox{\hyperlink{schema__interface_8h}{schema\+\_\+interface.\+h}}\end{DoxyCompactItemize}

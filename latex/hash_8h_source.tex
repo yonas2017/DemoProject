@@ -1,0 +1,133 @@
+\doxysection{hash.\+h}
+\hypertarget{hash_8h_source}{}\label{hash_8h_source}\index{flatbuffers/include/flatbuffers/hash.h@{flatbuffers/include/flatbuffers/hash.h}}
+\mbox{\hyperlink{hash_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ Copyright\ 2015\ Google\ Inc.\ All\ rights\ reserved.}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ Licensed\ under\ the\ Apache\ License,\ Version\ 2.0\ (the\ "{}License"{});}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ you\ may\ not\ use\ this\ file\ except\ in\ compliance\ with\ the\ License.}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *\ You\ may\ obtain\ a\ copy\ of\ the\ License\ at}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ *\ \ \ \ \ http://www.apache.org/licenses/LICENSE-\/2.0}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ *\ Unless\ required\ by\ applicable\ law\ or\ agreed\ to\ in\ writing,\ software}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ *\ distributed\ under\ the\ License\ is\ distributed\ on\ an\ "{}AS\ IS"{}\ BASIS,}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ *\ WITHOUT\ WARRANTIES\ OR\ CONDITIONS\ OF\ ANY\ KIND,\ either\ express\ or\ implied.}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ *\ See\ the\ License\ for\ the\ specific\ language\ governing\ permissions\ and}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ *\ limitations\ under\ the\ License.}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#ifndef\ FLATBUFFERS\_HASH\_H\_}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#define\ FLATBUFFERS\_HASH\_H\_}}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ <cstdint>}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ <cstring>}}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{flatbuffers_8h}{flatbuffers/flatbuffers.h}}"{}}}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceflatbuffers}{flatbuffers}}\ \{}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structflatbuffers_1_1FnvTraits}{FnvTraits}}\ \{}
+\DoxyCodeLine{00028\ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ T\ \mbox{\hyperlink{structflatbuffers_1_1FnvTraits_a7fe680d0b14f3192430ffa2c559184df}{kFnvPrime}};}
+\DoxyCodeLine{00029\ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ T\ \mbox{\hyperlink{structflatbuffers_1_1FnvTraits_acc9f29af17c738162f2ffbe1194be830}{kOffsetBasis}};}
+\DoxyCodeLine{00030\ \};}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \textcolor{keyword}{template}<>\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structflatbuffers_1_1FnvTraits}{FnvTraits}}<uint32\_t>\ \{}
+\DoxyCodeLine{00033\ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ uint32\_t\ \mbox{\hyperlink{structflatbuffers_1_1FnvTraits_a7fe680d0b14f3192430ffa2c559184df}{kFnvPrime}}\ =\ 0x01000193;}
+\DoxyCodeLine{00034\ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ uint32\_t\ \mbox{\hyperlink{structflatbuffers_1_1FnvTraits_acc9f29af17c738162f2ffbe1194be830}{kOffsetBasis}}\ =\ 0x811C9DC5;}
+\DoxyCodeLine{00035\ \};}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \textcolor{keyword}{template}<>\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structflatbuffers_1_1FnvTraits}{FnvTraits}}<uint64\_t>\ \{}
+\DoxyCodeLine{00038\ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ uint64\_t\ \mbox{\hyperlink{structflatbuffers_1_1FnvTraits_a7fe680d0b14f3192430ffa2c559184df}{kFnvPrime}}\ =\ 0x00000100000001b3ULL;}
+\DoxyCodeLine{00039\ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ uint64\_t\ \mbox{\hyperlink{structflatbuffers_1_1FnvTraits_acc9f29af17c738162f2ffbe1194be830}{kOffsetBasis}}\ =\ 0xcbf29ce484222645ULL;}
+\DoxyCodeLine{00040\ \};}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>\ T\ \mbox{\hyperlink{namespaceflatbuffers_aa793ace894422ec3306900e0f38fbefb}{HashFnv1}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *input)\ \{}
+\DoxyCodeLine{00043\ \ \ T\ hash\ =\ \mbox{\hyperlink{structflatbuffers_1_1FnvTraits}{FnvTraits<T>::kOffsetBasis}};}
+\DoxyCodeLine{00044\ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *c\ =\ input;\ *c;\ ++c)\ \{}
+\DoxyCodeLine{00045\ \ \ \ \ hash\ *=\ \mbox{\hyperlink{structflatbuffers_1_1FnvTraits}{FnvTraits<T>::kFnvPrime}};}
+\DoxyCodeLine{00046\ \ \ \ \ hash\ \string^=\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\textcolor{keyword}{>}(*c);}
+\DoxyCodeLine{00047\ \ \ \}}
+\DoxyCodeLine{00048\ \ \ \textcolor{keywordflow}{return}\ hash;}
+\DoxyCodeLine{00049\ \}}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>\ T\ \mbox{\hyperlink{namespaceflatbuffers_a2238eaa643a5a4c70f9ae24fa466ec50}{HashFnv1a}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *input)\ \{}
+\DoxyCodeLine{00052\ \ \ T\ hash\ =\ \mbox{\hyperlink{structflatbuffers_1_1FnvTraits}{FnvTraits<T>::kOffsetBasis}};}
+\DoxyCodeLine{00053\ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *c\ =\ input;\ *c;\ ++c)\ \{}
+\DoxyCodeLine{00054\ \ \ \ \ hash\ \string^=\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\textcolor{keyword}{>}(*c);}
+\DoxyCodeLine{00055\ \ \ \ \ hash\ *=\ \mbox{\hyperlink{structflatbuffers_1_1FnvTraits}{FnvTraits<T>::kFnvPrime}};}
+\DoxyCodeLine{00056\ \ \ \}}
+\DoxyCodeLine{00057\ \ \ \textcolor{keywordflow}{return}\ hash;}
+\DoxyCodeLine{00058\ \}}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ \textcolor{keyword}{template}<>\ \textcolor{keyword}{inline}\ uint16\_t\ \mbox{\hyperlink{namespaceflatbuffers_a9033163eb7ec1463fd465d0cda05a9d6}{HashFnv1<uint16\_t>}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *input)\ \{}
+\DoxyCodeLine{00061\ \ \ uint32\_t\ hash\ =\ HashFnv1<uint32\_t>(input);}
+\DoxyCodeLine{00062\ \ \ \textcolor{keywordflow}{return}\ (hash\ >>\ 16)\ \string^\ (hash\ \&\ 0xffff);}
+\DoxyCodeLine{00063\ \}}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ \textcolor{keyword}{template}<>\ \textcolor{keyword}{inline}\ uint16\_t\ \mbox{\hyperlink{namespaceflatbuffers_ae58f6231c2487abc474c548af2d21b98}{HashFnv1a<uint16\_t>}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *input)\ \{}
+\DoxyCodeLine{00066\ \ \ uint32\_t\ hash\ =\ HashFnv1a<uint32\_t>(input);}
+\DoxyCodeLine{00067\ \ \ \textcolor{keywordflow}{return}\ (hash\ >>\ 16)\ \string^\ (hash\ \&\ 0xffff);}
+\DoxyCodeLine{00068\ \}}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00070\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structflatbuffers_1_1NamedHashFunction}{NamedHashFunction}}\ \{}
+\DoxyCodeLine{00071\ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *\mbox{\hyperlink{structflatbuffers_1_1NamedHashFunction_ae6f2702b19c6d5e6cae052a168c76417}{name}};}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00073\ \ \ \textcolor{keyword}{typedef}\ T\ (*\mbox{\hyperlink{structflatbuffers_1_1NamedHashFunction_ae03e6525f9303e7eb9764cc82922c963}{HashFunction}})(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *);}
+\DoxyCodeLine{00074\ \ \ \mbox{\hyperlink{structflatbuffers_1_1NamedHashFunction_ae03e6525f9303e7eb9764cc82922c963}{HashFunction}}\ \mbox{\hyperlink{structflatbuffers_1_1NamedHashFunction_a945d921fe598a388563ca87555101455}{function}};}
+\DoxyCodeLine{00075\ \};}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00077\ \textcolor{keyword}{const}\ \mbox{\hyperlink{structflatbuffers_1_1NamedHashFunction}{NamedHashFunction<uint16\_t>}}\ \mbox{\hyperlink{namespaceflatbuffers_a70d52d9595dcd7b7383e3e177256930a}{kHashFunctions16}}[]\ =\ \{}
+\DoxyCodeLine{00078\ \ \ \{\ \textcolor{stringliteral}{"{}fnv1\_16"{}},\ \mbox{\hyperlink{namespaceflatbuffers_a9033163eb7ec1463fd465d0cda05a9d6}{HashFnv1<uint16\_t>}}\ \},}
+\DoxyCodeLine{00079\ \ \ \{\ \textcolor{stringliteral}{"{}fnv1a\_16"{}},\ \mbox{\hyperlink{namespaceflatbuffers_ae58f6231c2487abc474c548af2d21b98}{HashFnv1a<uint16\_t>}}\ \},}
+\DoxyCodeLine{00080\ \};}
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00082\ \textcolor{keyword}{const}\ \mbox{\hyperlink{structflatbuffers_1_1NamedHashFunction}{NamedHashFunction<uint32\_t>}}\ \mbox{\hyperlink{namespaceflatbuffers_a6f30a5eadd69272e952fbd3e899e7b28}{kHashFunctions32}}[]\ =\ \{}
+\DoxyCodeLine{00083\ \ \ \{\ \textcolor{stringliteral}{"{}fnv1\_32"{}},\ HashFnv1<uint32\_t>\ \},}
+\DoxyCodeLine{00084\ \ \ \{\ \textcolor{stringliteral}{"{}fnv1a\_32"{}},\ HashFnv1a<uint32\_t>\ \},}
+\DoxyCodeLine{00085\ \};}
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00087\ \textcolor{keyword}{const}\ \mbox{\hyperlink{structflatbuffers_1_1NamedHashFunction}{NamedHashFunction<uint64\_t>}}\ \mbox{\hyperlink{namespaceflatbuffers_aec472676f9a29313d2bbae0163afab3a}{kHashFunctions64}}[]\ =\ \{}
+\DoxyCodeLine{00088\ \ \ \{\ \textcolor{stringliteral}{"{}fnv1\_64"{}},\ HashFnv1<uint64\_t>\ \},}
+\DoxyCodeLine{00089\ \ \ \{\ \textcolor{stringliteral}{"{}fnv1a\_64"{}},\ HashFnv1a<uint64\_t>\ \},}
+\DoxyCodeLine{00090\ \};}
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00092\ \textcolor{keyword}{inline}\ \mbox{\hyperlink{structflatbuffers_1_1NamedHashFunction}{NamedHashFunction<uint16\_t>::HashFunction}}\ \mbox{\hyperlink{namespaceflatbuffers_aac695e4e16515afcb62fda0051b8eabe}{FindHashFunction16}}(}
+\DoxyCodeLine{00093\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *\mbox{\hyperlink{idl__gen__ts_8cpp_a9b45b3e13bd9167aab02e17e08916231}{name}})\ \{}
+\DoxyCodeLine{00094\ \ \ std::size\_t\ size\ =\ \textcolor{keyword}{sizeof}(\mbox{\hyperlink{namespaceflatbuffers_a70d52d9595dcd7b7383e3e177256930a}{kHashFunctions16}})\ /\ \textcolor{keyword}{sizeof}(\mbox{\hyperlink{namespaceflatbuffers_a70d52d9595dcd7b7383e3e177256930a}{kHashFunctions16}}[0]);}
+\DoxyCodeLine{00095\ \ \ \textcolor{keywordflow}{for}\ (std::size\_t\ \mbox{\hyperlink{gmock-matchers-comparisons__test_8cc_acb559820d9ca11295b4500f179ef6392}{i}}\ =\ 0;\ \mbox{\hyperlink{gmock-matchers-comparisons__test_8cc_acb559820d9ca11295b4500f179ef6392}{i}}\ <\ size;\ ++\mbox{\hyperlink{gmock-matchers-comparisons__test_8cc_acb559820d9ca11295b4500f179ef6392}{i}})\ \{}
+\DoxyCodeLine{00096\ \ \ \ \ \textcolor{keywordflow}{if}\ (std::strcmp(\mbox{\hyperlink{idl__gen__ts_8cpp_a9b45b3e13bd9167aab02e17e08916231}{name}},\ \mbox{\hyperlink{namespaceflatbuffers_a70d52d9595dcd7b7383e3e177256930a}{kHashFunctions16}}[\mbox{\hyperlink{gmock-matchers-comparisons__test_8cc_acb559820d9ca11295b4500f179ef6392}{i}}].\mbox{\hyperlink{idl__gen__ts_8cpp_a9b45b3e13bd9167aab02e17e08916231}{name}})\ ==\ 0)\ \{}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{namespaceflatbuffers_a70d52d9595dcd7b7383e3e177256930a}{kHashFunctions16}}[\mbox{\hyperlink{gmock-matchers-comparisons__test_8cc_acb559820d9ca11295b4500f179ef6392}{i}}].\mbox{\hyperlink{structflatbuffers_1_1NamedHashFunction_a945d921fe598a388563ca87555101455}{function}};}
+\DoxyCodeLine{00098\ \ \ \ \ \}}
+\DoxyCodeLine{00099\ \ \ \}}
+\DoxyCodeLine{00100\ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00101\ \}}
+\DoxyCodeLine{00102\ }
+\DoxyCodeLine{00103\ \textcolor{keyword}{inline}\ \mbox{\hyperlink{structflatbuffers_1_1NamedHashFunction}{NamedHashFunction<uint32\_t>::HashFunction}}\ \mbox{\hyperlink{namespaceflatbuffers_a7279ba817195b05fae1ab53f175b2414}{FindHashFunction32}}(}
+\DoxyCodeLine{00104\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *\mbox{\hyperlink{idl__gen__ts_8cpp_a9b45b3e13bd9167aab02e17e08916231}{name}})\ \{}
+\DoxyCodeLine{00105\ \ \ std::size\_t\ size\ =\ \textcolor{keyword}{sizeof}(\mbox{\hyperlink{namespaceflatbuffers_a6f30a5eadd69272e952fbd3e899e7b28}{kHashFunctions32}})\ /\ \textcolor{keyword}{sizeof}(\mbox{\hyperlink{namespaceflatbuffers_a6f30a5eadd69272e952fbd3e899e7b28}{kHashFunctions32}}[0]);}
+\DoxyCodeLine{00106\ \ \ \textcolor{keywordflow}{for}\ (std::size\_t\ \mbox{\hyperlink{gmock-matchers-comparisons__test_8cc_acb559820d9ca11295b4500f179ef6392}{i}}\ =\ 0;\ \mbox{\hyperlink{gmock-matchers-comparisons__test_8cc_acb559820d9ca11295b4500f179ef6392}{i}}\ <\ size;\ ++\mbox{\hyperlink{gmock-matchers-comparisons__test_8cc_acb559820d9ca11295b4500f179ef6392}{i}})\ \{}
+\DoxyCodeLine{00107\ \ \ \ \ \textcolor{keywordflow}{if}\ (std::strcmp(\mbox{\hyperlink{idl__gen__ts_8cpp_a9b45b3e13bd9167aab02e17e08916231}{name}},\ \mbox{\hyperlink{namespaceflatbuffers_a6f30a5eadd69272e952fbd3e899e7b28}{kHashFunctions32}}[\mbox{\hyperlink{gmock-matchers-comparisons__test_8cc_acb559820d9ca11295b4500f179ef6392}{i}}].\mbox{\hyperlink{idl__gen__ts_8cpp_a9b45b3e13bd9167aab02e17e08916231}{name}})\ ==\ 0)\ \{}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{namespaceflatbuffers_a6f30a5eadd69272e952fbd3e899e7b28}{kHashFunctions32}}[\mbox{\hyperlink{gmock-matchers-comparisons__test_8cc_acb559820d9ca11295b4500f179ef6392}{i}}].\mbox{\hyperlink{structflatbuffers_1_1NamedHashFunction_a945d921fe598a388563ca87555101455}{function}};}
+\DoxyCodeLine{00109\ \ \ \ \ \}}
+\DoxyCodeLine{00110\ \ \ \}}
+\DoxyCodeLine{00111\ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00112\ \}}
+\DoxyCodeLine{00113\ }
+\DoxyCodeLine{00114\ \textcolor{keyword}{inline}\ \mbox{\hyperlink{structflatbuffers_1_1NamedHashFunction}{NamedHashFunction<uint64\_t>::HashFunction}}\ \mbox{\hyperlink{namespaceflatbuffers_a1204c8219f7aad4ba53991d73d0dcb87}{FindHashFunction64}}(}
+\DoxyCodeLine{00115\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *\mbox{\hyperlink{idl__gen__ts_8cpp_a9b45b3e13bd9167aab02e17e08916231}{name}})\ \{}
+\DoxyCodeLine{00116\ \ \ std::size\_t\ size\ =\ \textcolor{keyword}{sizeof}(\mbox{\hyperlink{namespaceflatbuffers_aec472676f9a29313d2bbae0163afab3a}{kHashFunctions64}})\ /\ \textcolor{keyword}{sizeof}(\mbox{\hyperlink{namespaceflatbuffers_aec472676f9a29313d2bbae0163afab3a}{kHashFunctions64}}[0]);}
+\DoxyCodeLine{00117\ \ \ \textcolor{keywordflow}{for}\ (std::size\_t\ \mbox{\hyperlink{gmock-matchers-comparisons__test_8cc_acb559820d9ca11295b4500f179ef6392}{i}}\ =\ 0;\ \mbox{\hyperlink{gmock-matchers-comparisons__test_8cc_acb559820d9ca11295b4500f179ef6392}{i}}\ <\ size;\ ++\mbox{\hyperlink{gmock-matchers-comparisons__test_8cc_acb559820d9ca11295b4500f179ef6392}{i}})\ \{}
+\DoxyCodeLine{00118\ \ \ \ \ \textcolor{keywordflow}{if}\ (std::strcmp(\mbox{\hyperlink{idl__gen__ts_8cpp_a9b45b3e13bd9167aab02e17e08916231}{name}},\ \mbox{\hyperlink{namespaceflatbuffers_aec472676f9a29313d2bbae0163afab3a}{kHashFunctions64}}[\mbox{\hyperlink{gmock-matchers-comparisons__test_8cc_acb559820d9ca11295b4500f179ef6392}{i}}].\mbox{\hyperlink{idl__gen__ts_8cpp_a9b45b3e13bd9167aab02e17e08916231}{name}})\ ==\ 0)\ \{}
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{namespaceflatbuffers_aec472676f9a29313d2bbae0163afab3a}{kHashFunctions64}}[\mbox{\hyperlink{gmock-matchers-comparisons__test_8cc_acb559820d9ca11295b4500f179ef6392}{i}}].\mbox{\hyperlink{structflatbuffers_1_1NamedHashFunction_a945d921fe598a388563ca87555101455}{function}};}
+\DoxyCodeLine{00120\ \ \ \ \ \}}
+\DoxyCodeLine{00121\ \ \ \}}
+\DoxyCodeLine{00122\ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00123\ \}}
+\DoxyCodeLine{00124\ }
+\DoxyCodeLine{00125\ \}\ \ \textcolor{comment}{//\ namespace\ flatbuffers}}
+\DoxyCodeLine{00126\ }
+\DoxyCodeLine{00127\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ FLATBUFFERS\_HASH\_H\_}}
+
+\end{DoxyCode}

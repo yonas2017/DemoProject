@@ -1,0 +1,64 @@
+\doxysection{Regex\+Matcher Class Reference}
+\hypertarget{classRegexMatcher}{}\label{classRegexMatcher}\index{RegexMatcher@{RegexMatcher}}
+
+
+Inheritance diagram for Regex\+Matcher\+:
+% FIG 0
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structRegexMatcher_1_1MatchResult}{Match\+Result}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classRegexMatcher_a647faf823db019f8cd251f8a79c02cfa}{\texorpdfstring{$\sim$}{\string~}\+Regex\+Matcher}} ()=default
+\item 
+\mbox{\hyperlink{structRegexMatcher_1_1MatchResult}{Match\+Result}} \mbox{\hyperlink{classRegexMatcher_a4a5f44609ef4fdb2b20b36a20f6dbe95}{Match}} (const std\+::string \&input) const
+\item 
+bool \mbox{\hyperlink{classRegexMatcher_a619fad08d76bb1903f54e8aee319afe6}{Match\+Regex\+List}} (const std\+::string \&input, const std\+::vector$<$ std\+::regex $>$ \&re\+\_\+list) const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual bool \mbox{\hyperlink{classRegexMatcher_ae5448ed3d920be054a382cf70ca36737}{Match\+Number}} (const std\+::string \&input) const =0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classRegexMatcher_a647faf823db019f8cd251f8a79c02cfa}\label{classRegexMatcher_a647faf823db019f8cd251f8a79c02cfa} 
+\index{RegexMatcher@{RegexMatcher}!````~RegexMatcher@{\texorpdfstring{$\sim$}{\string~}RegexMatcher}}
+\index{````~RegexMatcher@{\texorpdfstring{$\sim$}{\string~}RegexMatcher}!RegexMatcher@{RegexMatcher}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}RegexMatcher()}{\string~RegexMatcher()}}
+{\footnotesize\ttfamily virtual Regex\+Matcher\+::\texorpdfstring{$\sim$}{\string~}\+Regex\+Matcher (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classRegexMatcher_a4a5f44609ef4fdb2b20b36a20f6dbe95}\label{classRegexMatcher_a4a5f44609ef4fdb2b20b36a20f6dbe95} 
+\index{RegexMatcher@{RegexMatcher}!Match@{Match}}
+\index{Match@{Match}!RegexMatcher@{RegexMatcher}}
+\doxysubsubsection{\texorpdfstring{Match()}{Match()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structRegexMatcher_1_1MatchResult}{Match\+Result}} Regex\+Matcher\+::\+Match (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{input }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classRegexMatcher_ae5448ed3d920be054a382cf70ca36737}\label{classRegexMatcher_ae5448ed3d920be054a382cf70ca36737} 
+\index{RegexMatcher@{RegexMatcher}!MatchNumber@{MatchNumber}}
+\index{MatchNumber@{MatchNumber}!RegexMatcher@{RegexMatcher}}
+\doxysubsubsection{\texorpdfstring{MatchNumber()}{MatchNumber()}}
+{\footnotesize\ttfamily virtual bool Regex\+Matcher\+::\+Match\+Number (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{input }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{classIntegerRegex_a22fe3978f2f1c73269519a295f78ae4f}{Integer\+Regex}}, \mbox{\hyperlink{classUIntegerRegex_af149d4df2f0ec452a748e932aff102bd}{UInteger\+Regex}}, \mbox{\hyperlink{classBooleanRegex_a583b8c3d014b3932d6bdc1b85a0e886e}{Boolean\+Regex}}, and \mbox{\hyperlink{classFloatRegex_a1b09d0018a44c5de658610d09a0c87c3}{Float\+Regex}}.
+
+\Hypertarget{classRegexMatcher_a619fad08d76bb1903f54e8aee319afe6}\label{classRegexMatcher_a619fad08d76bb1903f54e8aee319afe6} 
+\index{RegexMatcher@{RegexMatcher}!MatchRegexList@{MatchRegexList}}
+\index{MatchRegexList@{MatchRegexList}!RegexMatcher@{RegexMatcher}}
+\doxysubsubsection{\texorpdfstring{MatchRegexList()}{MatchRegexList()}}
+{\footnotesize\ttfamily bool Regex\+Matcher\+::\+Match\+Regex\+List (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{input,  }\item[{const std\+::vector$<$ std\+::regex $>$ \&}]{re\+\_\+list }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+flatbuffers/tests/fuzzer/\mbox{\hyperlink{flatbuffers__scalar__fuzzer_8cc}{flatbuffers\+\_\+scalar\+\_\+fuzzer.\+cc}}\end{DoxyCompactItemize}

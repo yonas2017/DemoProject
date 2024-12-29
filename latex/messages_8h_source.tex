@@ -1,0 +1,42 @@
+\doxysection{messages.\+h}
+\hypertarget{messages_8h_source}{}\label{messages_8h_source}\index{inc/messages.h@{inc/messages.h}}
+\mbox{\hyperlink{messages_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ MESSAGES\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ MESSAGES\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <stdint.h>}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#pragma\ pack(1)\ \ }\textcolor{comment}{//\ Set\ 1-\/byte\ alignment}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{client__message__generated_8h_abcaf815fb7b793ff81f55346c08c3396}{ClientMessageType}}}
+\DoxyCodeLine{00009\ \{}
+\DoxyCodeLine{00010\ \ \ \ \ \mbox{\hyperlink{messages_8h_abcaf815fb7b793ff81f55346c08c3396ac1c50e0504ec21583b7ba451a87b7d1e}{GET\_JOB}}\ =\ 0,}
+\DoxyCodeLine{00011\ \ \ \ \ \mbox{\hyperlink{messages_8h_abcaf815fb7b793ff81f55346c08c3396ae990ca423d4f138a5e5023f6ca19d574}{NORMAL\_TERMINATOIN}},}
+\DoxyCodeLine{00012\ \ \ \ \ \mbox{\hyperlink{messages_8h_abcaf815fb7b793ff81f55346c08c3396a8a1adfd5e3c7e2b12cac1d7abe3982e1}{FAIL\_TERMINATION}},}
+\DoxyCodeLine{00013\ \ \ \ \ \mbox{\hyperlink{messages_8h_abcaf815fb7b793ff81f55346c08c3396a8409965ae2573c6cf11db5215bec7774}{QUIT\_PROGRAM}}}
+\DoxyCodeLine{00014\ \};}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ *\ Used\ for\ sending\ a\ message\ from\ Client\ to\ Server\ using\ tcp\ socket.}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00019\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct}}
+\DoxyCodeLine{00020\ \{}
+\DoxyCodeLine{00021\ \ \ \ \ uint8\_t\ \ \mbox{\hyperlink{structclient__message__t_a780c0055a51dbc3664cec3f449222fc3}{msg\_type}};}
+\DoxyCodeLine{00022\ \ \ \ \ uint8\_t\ \ \mbox{\hyperlink{structclient__message__t_a320a08f0ac689a9b0dd2da321796bd94}{all\_jobs}};}
+\DoxyCodeLine{00023\ \ \ \ \ uint16\_t\ \mbox{\hyperlink{structclient__message__t_a7d476c8b432b6923757bd46d351997d7}{num\_jobs}};}
+\DoxyCodeLine{00024\ \}\ \mbox{\hyperlink{structclient__message__t}{client\_message\_t}};}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00027\ \textcolor{comment}{\ *\ Used\ for\ sending\ a\ message\ from\ Server\ to\ Client\ using\ tcp\ socket}}
+\DoxyCodeLine{00028\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00029\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct}}
+\DoxyCodeLine{00030\ \{}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{structserver__message__t_a5aa8081be785a8dfa8e5a56334d226e0}{job\_info}};}
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \ \mbox{\hyperlink{structserver__message__t_a4c2d81e67c7012bde5494fc94b454ad1}{job\_text\_length}};}
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keywordtype}{char}\ \ \ \ \ \ \ \ \ \ job\_tekst[4096];}
+\DoxyCodeLine{00034\ \}\ \mbox{\hyperlink{structserver__message__t}{server\_message\_t}};}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

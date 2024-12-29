@@ -1,0 +1,440 @@
+\chapter{Schema}
+\hypertarget{md_flatbuffers_2docs_2source_2schema}{}\label{md_flatbuffers_2docs_2source_2schema}\index{Schema@{Schema}}
+The syntax of the schema language (aka IDL, \href{https://en.wikipedia.org/wiki/Interface_description_language}{\texttt{ Interface Definition Language}}) should look quite familiar to users of any of the C family of languages, and also to users of other IDLs. Let\textquotesingle{}s look at an example first\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ title=\textcolor{stringliteral}{"{}monster.fbs"{}}\ linenums=\textcolor{stringliteral}{"{}1"{}}}
+\DoxyCodeLine{\textcolor{comment}{//\ example\ IDL\ file}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceMyGame}{MyGame}};}
+\DoxyCodeLine{}
+\DoxyCodeLine{attribute\ \textcolor{stringliteral}{"{}priority"{}};}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keyword}{enum}\ \mbox{\hyperlink{enums__generated_8h_a738b1b8abd03ae11a7632283c3a13ae3}{Color}}\ :\ \textcolor{keywordtype}{byte}\ \{\ \mbox{\hyperlink{namespaceMyGame_1_1Example_a81381536b82036755d7887c398f14676aee38e4d5dd68c4e440825018d549cb47}{Red}}\ =\ 1,\ \mbox{\hyperlink{namespaceMyGame_1_1Example_a81381536b82036755d7887c398f14676ad382816a3cbeed082c9e216e7392eed1}{Green}},\ \mbox{\hyperlink{namespaceMyGame_1_1Example_a81381536b82036755d7887c398f14676a9594eec95be70e7b1710f730fdda33d9}{Blue}}\ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keyword}{union\ }\mbox{\hyperlink{namespaceMyGame_1_1Example_ac1ea6e173e6c1b0fb8585ffc416d9b88}{Any}}\ \{\ \mbox{\hyperlink{namespaceMyGame_1_1Example_ac1ea6e173e6c1b0fb8585ffc416d9b88a243a3afa44aed85d504dbd53fd9804e9}{Monster}},\ Weapon,\ Pickup\ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keyword}{struct\ }Vec3\ \{}
+\DoxyCodeLine{\ \ \mbox{\hyperlink{gmock-matchers-containers__test_8cc_a6150e0515f7202e2fb518f7206ed97dc}{x}}:float;}
+\DoxyCodeLine{\ \ \mbox{\hyperlink{gmock-matchers-containers__test_8cc_a39cb44155237f0205e0feb931d5acbed}{y}}:float;}
+\DoxyCodeLine{\ \ \mbox{\hyperlink{gmock-matchers-containers__test_8cc_a196ff6a287f53f758b1506f21269fc77}{z}}:float;}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{}
+\DoxyCodeLine{table\ \mbox{\hyperlink{namespaceMyGame_1_1Example_ac1ea6e173e6c1b0fb8585ffc416d9b88a243a3afa44aed85d504dbd53fd9804e9}{Monster}}\ \{}
+\DoxyCodeLine{\ \ pos:Vec3;}
+\DoxyCodeLine{\ \ mana:\textcolor{keywordtype}{short}\ =\ 150;}
+\DoxyCodeLine{\ \ hp:\textcolor{keywordtype}{short}\ =\ 100;}
+\DoxyCodeLine{\ \ \mbox{\hyperlink{idl__gen__ts_8cpp_a9b45b3e13bd9167aab02e17e08916231}{name}}:\mbox{\hyperlink{namespacegrpc_a77f15e90a2c3651195f88645e4512267}{string}};}
+\DoxyCodeLine{\ \ friendly:\textcolor{keywordtype}{bool}\ =\ \textcolor{keyword}{false}\ (deprecated,\ priority:\ 1);}
+\DoxyCodeLine{\ \ inventory:[ubyte];}
+\DoxyCodeLine{\ \ color:\mbox{\hyperlink{enums__generated_8h_a738b1b8abd03ae11a7632283c3a13ae3}{Color}}\ =\ \mbox{\hyperlink{namespaceMyGame_1_1Example_a81381536b82036755d7887c398f14676a9594eec95be70e7b1710f730fdda33d9}{Blue}};}
+\DoxyCodeLine{\ \ test:\mbox{\hyperlink{namespaceMyGame_1_1Example_ac1ea6e173e6c1b0fb8585ffc416d9b88}{Any}};}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{}
+\DoxyCodeLine{table\ Weapon\ \{\}}
+\DoxyCodeLine{table\ Pickup\ \{\}}
+\DoxyCodeLine{}
+\DoxyCodeLine{root\_type\ \mbox{\hyperlink{namespaceMyGame_1_1Example_ac1ea6e173e6c1b0fb8585ffc416d9b88a243a3afa44aed85d504dbd53fd9804e9}{Monster}};}
+
+\end{DoxyCode}
+
+
+\doxysection*{Tables}
+
+Tables are the main way of defining objects in Flat\+Buffers.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ title=\textcolor{stringliteral}{"{}monster.fbs\ -\/\ Example\ Table"{}}\ linenums=\textcolor{stringliteral}{"{}17"{}}}
+\DoxyCodeLine{table\ \mbox{\hyperlink{namespaceMyGame_1_1Example_ac1ea6e173e6c1b0fb8585ffc416d9b88a243a3afa44aed85d504dbd53fd9804e9}{Monster}}\ \{}
+\DoxyCodeLine{\ \ pos:Vec3;}
+\DoxyCodeLine{\ \ mana:\textcolor{keywordtype}{short}\ =\ 150;}
+\DoxyCodeLine{\ \ hp:\textcolor{keywordtype}{short}\ =\ 100;}
+\DoxyCodeLine{\ \ \mbox{\hyperlink{idl__gen__ts_8cpp_a9b45b3e13bd9167aab02e17e08916231}{name}}:\mbox{\hyperlink{namespacegrpc_a77f15e90a2c3651195f88645e4512267}{string}};}
+\DoxyCodeLine{\ \ friendly:\textcolor{keywordtype}{bool}\ =\ \textcolor{keyword}{false}\ (deprecated,\ priority:\ 1);}
+\DoxyCodeLine{\ \ inventory:[ubyte];}
+\DoxyCodeLine{\ \ color:\mbox{\hyperlink{enums__generated_8h_a738b1b8abd03ae11a7632283c3a13ae3}{Color}}\ =\ \mbox{\hyperlink{namespaceMyGame_1_1Example_a81381536b82036755d7887c398f14676a9594eec95be70e7b1710f730fdda33d9}{Blue}};}
+\DoxyCodeLine{\ \ test:\mbox{\hyperlink{namespaceMyGame_1_1Example_ac1ea6e173e6c1b0fb8585ffc416d9b88}{Any}};}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+They consist of a name (here {\ttfamily Monster}) and a list of fields. This field list can be appended to (and deprecated from) while still maintaining compatibility.
+
+\doxysubsection*{Fields}
+
+Table fields have a name identifier, a type, optional default value, optional attributes and ends with a {\ttfamily ;}. See the \doxysectlink{md_flatbuffers_2docs_2source_2grammar}{grammar}{0} for full details.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{field\_decl\ =\ ident\ \`{}:`\ type\ [\ \`{}=`\ scalar\ ]\ metadata\ \`{};`}
+
+\end{DoxyCode}
+
+
+Fields do not have to appear in the wire representation, and you can choose to omit fields when constructing an object. You have the flexibility to add fields without fear of bloating your data. This design is also Flat\+Buffer\textquotesingle{}s mechanism for forward and backwards compatibility.
+
+There are three, mutually exclusive, reactions to the non-\/presence of a table\textquotesingle{}s field in the binary data.
+
+\doxysubsubsection*{1. Default}
+
+Default value fields with return the default value as defined in the schema. If the default value is not specified in the schema, it will be {\ttfamily 0} for scalar types, or {\ttfamily null} for other types.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ ++}
+\DoxyCodeLine{mana:\textcolor{keywordtype}{short}\ =\ 150;}
+\DoxyCodeLine{hp:short;}
+\DoxyCodeLine{inventory:[ubyte];}
+
+\end{DoxyCode}
+
+
+Here {\ttfamily mana} would default to the value {\ttfamily 150}, {\ttfamily hp} to value {\ttfamily 0}, and {\ttfamily inventory} to {\ttfamily null}, if those fields are not set.
+
+Only scalar values can have explicit defaults, non-\/scalar fields (strings, vectors, tables) are {\ttfamily null} when not present.
+
+This is the normal mode that fields will take.
+
+??? danger "{}\+Don\textquotesingle{}t change Default values"{} \begin{DoxyVerb}You generally do not want to change default values after they're initially
+defined. Fields that have the default value are not actually stored in the
+serialized data (see also Gotchas below). Values explicitly written by code
+generated by the old schema old version, if they happen to be the default, will
+be read as a different value by code generated with the new schema. This is
+slightly less bad when converting an optional scalar into a default valued
+scalar since non-presence would not be overloaded with a previous default value.
+There are situations, however, where this may be desirable, especially if you
+can ensure a simultaneous rebuild of all code.
+\end{DoxyVerb}
+ \doxysubsubsection*{2. Optional}
+
+Optional value fields will return some form of {\ttfamily null} in the language generated.
+
+=== "{}\+C++"{} \begin{DoxyVerb}```c++
+std::optional<T> field;
+```
+\end{DoxyVerb}
+ For optional scalars, just set the field default value to {\ttfamily null}. If the producer of the buffer does not explicitly set that field, it will be marked {\ttfamily null}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{++}
+\DoxyCodeLine{\ hp:\textcolor{keywordtype}{short}\ =\ null;}
+
+\end{DoxyCode}
+
+
+!!! note \begin{DoxyVerb}Not every languages support scalar defaults yet
+\end{DoxyVerb}
+ \doxysubsubsection*{3. Required}
+
+Required valued fields will cause an error if they are not set. The Flat\+Buffers verifier would consider the whole buffer invalid.
+
+This is enabled by the \`{}required\`{} attribute on the field.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{hp:short\ (required)}
+
+\end{DoxyCode}
+
+
+You cannot have {\ttfamily required} set with an explicit default value, it will result in a compiler error.
+
+\doxysection*{Structs}
+
+Similar to a table, {\ttfamily structs} consist of fields are required (so no defaults either), and fields may not be added or be deprecated.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ title=\textcolor{stringliteral}{"{}monster.fbs\ -\/\ Example\ Struct"{}}\ linenums=\textcolor{stringliteral}{"{}11"{}}}
+\DoxyCodeLine{\textcolor{keyword}{struct\ }Vec3\ \{}
+\DoxyCodeLine{\ \ \mbox{\hyperlink{gmock-matchers-containers__test_8cc_a6150e0515f7202e2fb518f7206ed97dc}{x}}:float;}
+\DoxyCodeLine{\ \ \mbox{\hyperlink{gmock-matchers-containers__test_8cc_a39cb44155237f0205e0feb931d5acbed}{y}}:float;}
+\DoxyCodeLine{\ \ \mbox{\hyperlink{gmock-matchers-containers__test_8cc_a196ff6a287f53f758b1506f21269fc77}{z}}:float;}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+Structs may only contain scalars or other structs. Use this for simple objects where you are very sure no changes will ever be made (as quite clear in the example {\ttfamily Vec3}). Structs use less memory than tables and are even faster to access (they are always stored in-\/line in their parent object, and use no virtual table).
+
+\doxysubsection*{Arrays}
+
+Arrays are a convenience short-\/hand for a fixed-\/length collection of elements. Arrays allow the following syntax, while maintaining binary equivalency.
+
+
+
+
+\begin{DoxyItemize}
+\item {\bfseries{Normal Syntax}}
+\end{DoxyItemize}
+
+\DoxyHorRuler{0}
+
+
+ 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{++}
+\DoxyCodeLine{\ \textcolor{keyword}{struct\ }Vec3\ \{}
+\DoxyCodeLine{\ \ \ \mbox{\hyperlink{gmock-matchers-containers__test_8cc_a6150e0515f7202e2fb518f7206ed97dc}{x}}:float;}
+\DoxyCodeLine{\ \ \ \mbox{\hyperlink{gmock-matchers-containers__test_8cc_a39cb44155237f0205e0feb931d5acbed}{y}}:float;}
+\DoxyCodeLine{\ \ \ \mbox{\hyperlink{gmock-matchers-containers__test_8cc_a196ff6a287f53f758b1506f21269fc77}{z}}:float;}
+\DoxyCodeLine{\ \}}
+
+\end{DoxyCode}
+
+
+
+\begin{DoxyItemize}
+\item {\bfseries{Array Syntax}}
+\end{DoxyItemize}
+
+\DoxyHorRuler{0}
+
+
+ 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{++}
+\DoxyCodeLine{\ \textcolor{keyword}{struct\ }Vec3\ \{}
+\DoxyCodeLine{\ \ \ v:[float:3];}
+\DoxyCodeLine{\ \}}
+
+\end{DoxyCode}
+
+
+
+
+Arrays are currently only supported in a {\ttfamily struct}.
+
+\doxysubsection*{Types}
+
+The following are the built-\/in types that can be used in Flat\+Buffers.
+
+\doxysubsubsection*{Scalars}
+
+The standard assortment of fixed sized scalars are available. There are no variable sized integers (e.\+g., {\ttfamily varints}).
+
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{4}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Size   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Signed   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Unsigned   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Floating Point    }\\\cline{1-4}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Size   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Signed   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Unsigned   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Floating Point    }\\\cline{1-4}
+\endhead
+8-\/bit   &{\ttfamily byte}, {\ttfamily bool}   &{\ttfamily ubyte}   &\\\cline{1-4}
+\end{longtabu}
+\texorpdfstring{$\vert$}{|} 16-\/bit \texorpdfstring{$\vert$}{|} {\ttfamily short} ({\ttfamily int16}) \texorpdfstring{$\vert$}{|} {\ttfamily ushort} ({\ttfamily uint16}) \texorpdfstring{$\vert$}{|} \texorpdfstring{$\vert$}{|} 32-\/bit \texorpdfstring{$\vert$}{|} {\ttfamily int} ({\ttfamily int32}) \texorpdfstring{$\vert$}{|} {\ttfamily uint} ({\ttfamily uint32}) \texorpdfstring{$\vert$}{|} {\ttfamily float} ({\ttfamily float32}) \texorpdfstring{$\vert$}{|} \texorpdfstring{$\vert$}{|} 64-\/bit \texorpdfstring{$\vert$}{|} {\ttfamily long} ({\ttfamily int64}) \texorpdfstring{$\vert$}{|} {\ttfamily ulong} ({\ttfamily uint64}) \texorpdfstring{$\vert$}{|} {\ttfamily double} ({\ttfamily float64}) \texorpdfstring{$\vert$}{|}
+
+!!! note "{}\+Alias Types"{} \begin{DoxyVerb}The type names in parentheses are alias names such that for example `uint8`
+can be used in place of `ubyte`, and `int32` can be used in place of `int`
+without affecting code generation.
+\end{DoxyVerb}
+ \doxysubsubsection*{Non-\/scalars}
+
+\doxyparagraph*{Vectors}
+
+Vector of any other type (denoted with {\ttfamily \mbox{[}type\mbox{]}}).
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ ++}
+\DoxyCodeLine{inventory:[ubyte];}
+
+\end{DoxyCode}
+
+
+!!! note "{}\+Nesting vectors"{} \begin{DoxyVerb}Nesting vectors is not supported, instead you can wrap the inner vector with
+a table.
+
+```
+table nest{
+   a:[ubyte]
+}
+
+table monster {
+ a:[nest]
+}
+```
+\end{DoxyVerb}
+ \doxyparagraph*{Strings}
+
+Strings (indicated by {\ttfamily string}) are zero-\/terminated strings, prefixed by their length. Strings may only hold UTF-\/8 or 7-\/bit ASCII. For other text encodings or general binary data use vectors ({\ttfamily \mbox{[}byte\mbox{]}} or {\ttfamily \mbox{[}ubyte\mbox{]}}) instead.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ ++}
+\DoxyCodeLine{\mbox{\hyperlink{idl__gen__ts_8cpp_a9b45b3e13bd9167aab02e17e08916231}{name}}:\mbox{\hyperlink{namespacegrpc_a77f15e90a2c3651195f88645e4512267}{string}};}
+
+\end{DoxyCode}
+
+
+\doxysubsection*{Enums}
+
+Define a sequence of named constants, each with a given value, or increasing by one from the previous one. The default first value is {\ttfamily 0}. As you can see in the enum declaration, you specify the underlying integral type of the enum with {\ttfamily \+:} (in this case {\ttfamily byte}), which then determines the type of any fields declared with this enum type.
+
+Only integer types are allowed, i.\+e. {\ttfamily byte}, {\ttfamily ubyte}, {\ttfamily short} {\ttfamily ushort}, {\ttfamily int}, {\ttfamily uint}, {\ttfamily long} and {\ttfamily ulong}.
+
+Typically, enum values should only ever be added, never removed (there is no deprecation for enums). This requires code to handle forwards compatibility itself, by handling unknown enum values.
+
+\doxysubsection*{Unions}
+
+Unions share a lot of properties with enums, but instead of new names for constants, you use names of tables. You can then declare a union field, which can hold a reference to any of those types, and additionally a field with the suffix {\ttfamily \+\_\+type} is generated that holds the corresponding enum value, allowing you to know which type to cast to at runtime.
+
+It\textquotesingle{}s possible to give an alias name to a type union. This way a type can even be used to mean different things depending on the name used\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{table\ PointPosition\ \{\ \mbox{\hyperlink{gmock-matchers-containers__test_8cc_a6150e0515f7202e2fb518f7206ed97dc}{x}}:uint;\ \mbox{\hyperlink{gmock-matchers-containers__test_8cc_a39cb44155237f0205e0feb931d5acbed}{y}}:uint;\ \}}
+\DoxyCodeLine{table\ MarkerPosition\ \{\}}
+\DoxyCodeLine{\textcolor{keyword}{union\ }Position\ \{}
+\DoxyCodeLine{\ \ \mbox{\hyperlink{namespacepy_1_1flatbuffers_1_1goldens_1_1Galaxy_a05de59308a5c36741bcebfbc24ca0f59}{Start}}:MarkerPosition,}
+\DoxyCodeLine{\ \ Point:PointPosition,}
+\DoxyCodeLine{\ \ Finish:MarkerPosition}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+Unions contain a special {\ttfamily NONE} marker to denote that no value is stored so that name cannot be used as an alias.
+
+Unions are a good way to be able to send multiple message types as a Flat\+Buffer. Note that because a union field is really two fields, it must always be part of a table, it cannot be the root of a Flat\+Buffer by itself.
+
+If you have a need to distinguish between different Flat\+Buffers in a more open-\/ended way, for example for use as files, see the file identification feature below.
+
+There is an experimental support only in C++ for a vector of unions (and types). In the example IDL file above, use \mbox{[}Any\mbox{]} to add a vector of Any to Monster table. There is also experimental support for other types besides tables in unions, in particular structs and strings. There\textquotesingle{}s no direct support for scalars in unions, but they can be wrapped in a struct at no space cost.
+
+\doxysubsection*{Namespaces}
+
+These will generate the corresponding namespace in C++ for all helper code, and packages in Java. You can use {\ttfamily .} to specify nested namespaces / packages.
+
+\doxysubsection*{Includes}
+
+You can include other schemas files in your current one, e.\+g.\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{namespacegenerate__code_a2ecbf37d9f01d389591ff1d4eef83645}{include}}\ \textcolor{stringliteral}{"{}mydefinitions.fbs"{}};}
+
+\end{DoxyCode}
+
+
+This makes it easier to refer to types defined elsewhere. {\ttfamily include} automatically ensures each file is parsed just once, even when referred to more than once.
+
+When using the {\ttfamily flatc} compiler to generate code for schema definitions, only definitions in the current file will be generated, not those from the included files (those you still generate separately).
+
+\doxysubsection*{Root type}
+
+This declares what you consider to be the root table of the serialized data. This is particularly important for parsing JSON data, which doesn\textquotesingle{}t include object type information.
+
+\doxysubsection*{File identification and extension}
+
+Typically, a Flat\+Buffer binary buffer is not self-\/describing, i.\+e. it needs you to know its schema to parse it correctly. But if you want to use a Flat\+Buffer as a file format, it would be convenient to be able to have a "{}magic number"{} in there, like most file formats have, to be able to do a sanity check to see if you\textquotesingle{}re reading the kind of file you\textquotesingle{}re expecting.
+
+Now, you can always prefix a Flat\+Buffer with your own file header, but Flat\+Buffers has a built-\/in way to add an identifier to a Flat\+Buffer that takes up minimal space, and keeps the buffer compatible with buffers that don\textquotesingle{}t have such an identifier.
+
+You can specify in a schema, similar to {\ttfamily root\+\_\+type}, that you intend for this type of Flat\+Buffer to be used as a file format\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{file\_identifier\ \textcolor{stringliteral}{"{}MYFI"{}};}
+
+\end{DoxyCode}
+
+
+Identifiers must always be exactly 4 characters long. These 4 characters will end up as bytes at offsets 4-\/7 (inclusive) in the buffer.
+
+For any schema that has such an identifier, {\ttfamily flatc} will automatically add the identifier to any binaries it generates (with {\ttfamily -\/b}), and generated calls like {\ttfamily Finish\+Monster\+Buffer} also add the identifier. If you have specified an identifier and wish to generate a buffer without one, you can always still do so by calling {\ttfamily Flat\+Buffer\+Builder\+::\+Finish} explicitly.
+
+After loading a buffer, you can use a call like {\ttfamily Monster\+Buffer\+Has\+Identifier} to check if the identifier is present.
+
+Note that this is best for open-\/ended uses such as files. If you simply wanted to send one of a set of possible messages over a network for example, you\textquotesingle{}d be better off with a union.
+
+Additionally, by default {\ttfamily flatc} will output binary files as {\ttfamily .bin}. This declaration in the schema will change that to whatever you want\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{file\_extension\ \textcolor{stringliteral}{"{}ext"{}};}
+
+\end{DoxyCode}
+
+
+\doxysubsection*{RPC interface declarations}
+
+You can declare RPC calls in a schema, that define a set of functions that take a Flat\+Buffer as an argument (the request) and return a Flat\+Buffer as the response (both of which must be table types)\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{rpc\_service\ MonsterStorage\ \{}
+\DoxyCodeLine{\ \ \ \ Store(Monster):StoreResponse;}
+\DoxyCodeLine{\ \ \ \ Retrieve(MonsterId):\mbox{\hyperlink{namespaceMyGame_1_1Example_ac1ea6e173e6c1b0fb8585ffc416d9b88a243a3afa44aed85d504dbd53fd9804e9}{Monster}};}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+What code this produces and how it is used depends on language and RPC system used, there is preliminary support for GRPC through the {\ttfamily -\/-\/grpc} code generator, see {\ttfamily grpc/tests} for an example.
+
+\doxysubsection*{Comments \& documentation}
+
+May be written as in most C-\/based languages. Additionally, a triple comment ({\ttfamily ///}) on a line by itself signals that a comment is documentation for whatever is declared on the line after it (table/struct/field/enum/union/element), and the comment is output in the corresponding C++ code. Multiple such lines per item are allowed.
+
+\doxysubsection*{Attributes}
+
+Attributes may be attached to a declaration, behind a field/enum value, or after the name of a table/struct/enum/union. These may either have a value or not. Some attributes like {\ttfamily deprecated} are understood by the compiler; user defined ones need to be declared with the attribute declaration (like {\ttfamily priority} in the example above), and are available to query if you parse the schema at runtime. This is useful if you write your own code generators/editors etc., and you wish to add additional information specific to your tool (such as a help text).
+
+Current understood attributes\+:
+
+
+\begin{DoxyItemize}
+\item {\ttfamily id\+: n} (on a table field)\+: manually set the field identifier to {\ttfamily n}. If you use this attribute, you must use it on ALL fields of this table, and the numbers must be a contiguous range from 0 onwards. Additionally, since a union type effectively adds two fields, its id must be that of the second field (the first field is the type field and not explicitly declared in the schema). For example, if the last field before the union field had id 6, the union field should have id 8, and the unions type field will implicitly be 7. IDs allow the fields to be placed in any order in the schema. When a new field is added to the schema it must use the next available ID.
+\item {\ttfamily deprecated} (on a field)\+: do not generate accessors for this field anymore, code should stop using this data. Old data may still contain this field, but it won\textquotesingle{}t be accessible anymore by newer code. Note that if you deprecate a field that was previous required, old code may fail to validate new data (when using the optional verifier).
+\end{DoxyItemize}
+
+\doxysubsubsection*{{\ttfamily required}}
+
+
+\begin{DoxyItemize}
+\item {\ttfamily required} (on a non-\/scalar table field)\+: this field must always be set. By default, fields do not need to be present in the binary. This is desirable, as it helps with forwards/backwards compatibility, and flexibility of data structures. By specifying this attribute, you make non-\/ presence in an error for both reader and writer. The reading code may access the field directly, without checking for null. If the constructing code does not initialize this field, they will get an assert, and also the verifier will fail on buffers that have missing required fields. Both adding and removing this attribute may be forwards/backwards incompatible as readers will be unable read old or new data, respectively, unless the data happens to always have the field set.
+\item {\ttfamily force\+\_\+align\+: size} (on a struct)\+: force the alignment of this struct to be something higher than what it is naturally aligned to. Causes these structs to be aligned to that amount inside a buffer, IF that buffer is allocated with that alignment (which is not necessarily the case for buffers accessed directly inside a {\ttfamily \doxylink{classFlatBufferBuilder}{Flat\+Buffer\+Builder}}). Note\+: currently not guaranteed to have an effect when used with {\ttfamily -\/-\/object-\/api}, since that may allocate objects at alignments less than what you specify with {\ttfamily force\+\_\+align}.
+\item {\ttfamily force\+\_\+align\+: size} (on a vector)\+: force the alignment of this vector to be something different than what the element size would normally dictate. Note\+: Now only work for generated C++ code.
+\item {\ttfamily bit\+\_\+flags} (on an unsigned enum)\+: the values of this field indicate bits, meaning that any unsigned value N specified in the schema will end up representing 1\texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<}N, or if you don\textquotesingle{}t specify values at all, you\textquotesingle{}ll get the sequence 1, 2, 4, 8, ...
+\item {\ttfamily nested\+\_\+flatbuffer\+: "{}table\+\_\+name"{}} (on a field)\+: this indicates that the field (which must be a vector of ubyte) contains flatbuffer data, for which the root type is given by {\ttfamily table\+\_\+name}. The generated code will then produce a convenient accessor for the nested Flat\+Buffer.
+\item {\ttfamily flexbuffer} (on a field)\+: this indicates that the field (which must be a vector of ubyte) contains flexbuffer data. The generated code will then produce a convenient accessor for the Flex\+Buffer root.
+\item {\ttfamily key} (on a field)\+: this field is meant to be used as a key when sorting a vector of the type of table it sits in. Can be used for in-\/place binary search.
+\item {\ttfamily hash} (on a field). This is an (un)signed 32/64 bit integer field, whose value during JSON parsing is allowed to be a string, which will then be stored as its hash. The value of attribute is the hashing algorithm to use, one of {\ttfamily fnv1\+\_\+32} {\ttfamily fnv1\+\_\+64} {\ttfamily fnv1a\+\_\+32} {\ttfamily fnv1a\+\_\+64}.
+\item {\ttfamily original\+\_\+order} (on a table)\+: since elements in a table do not need to be stored in any particular order, they are often optimized for space by sorting them to size. This attribute stops that from happening. There should generally not be any reason to use this flag.
+\item \textquotesingle{}native\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}\textquotesingle{}. Several attributes have been added to support the C++ object Based API. All such attributes are prefixed with the term "{}native\texorpdfstring{$\ast$}{*}"{}.
+\end{DoxyItemize}
+
+\doxysubsection*{JSON Parsing}
+
+The same parser that parses the schema declarations above is also able to parse JSON objects that conform to this schema. So, unlike other JSON parsers, this parser is strongly typed, and parses directly into a Flat\+Buffer (see the compiler documentation on how to do this from the command line, or the C++ documentation on how to do this at runtime).
+
+Besides needing a schema, there are a few other changes to how it parses JSON\+:
+
+
+\begin{DoxyItemize}
+\item It accepts field names with and without quotes, like many JSON parsers already do. It outputs them without quotes as well, though can be made to output them using the {\ttfamily strict\+\_\+json} flag.
+\item If a field has an enum type, the parser will recognize symbolic enum values (with or without quotes) instead of numbers, e.\+g. {\ttfamily field\+: Enum\+Val}. If a field is of integral type, you can still use symbolic names, but values need to be prefixed with their type and need to be quoted, e.\+g. {\ttfamily field\+: "{}\+Enum.\+Enum\+Val"{}}. For enums representing flags, you may place multiple inside a string separated by spaces to OR them, e.\+g. {\ttfamily field\+: "{}\+Enum\+Val1 Enum\+Val2"{}} or {\ttfamily field\+: "{}\+Enum.\+Enum\+Val1 Enum.\+Enum\+Val2"{}}.
+\item Similarly, for unions, these need to specified with two fields much like you do when serializing from code. E.\+g. for a field {\ttfamily foo}, you must add a field {\ttfamily foo\+\_\+type\+: Foo\+One} right before the {\ttfamily foo} field, where {\ttfamily Foo\+One} would be the table out of the union you want to use.
+\item A field that has the value {\ttfamily null} (e.\+g. {\ttfamily field\+: null}) is intended to have the default value for that field (thus has the same effect as if that field wasn\textquotesingle{}t specified at all).
+\item It has some built in conversion functions, so you can write for example {\ttfamily rad(180)} where ever you\textquotesingle{}d normally write {\ttfamily 3.\+14159}. Currently supports the following functions\+: {\ttfamily rad}, {\ttfamily deg}, {\ttfamily cos}, {\ttfamily sin}, {\ttfamily tan}, {\ttfamily acos}, {\ttfamily asin}, {\ttfamily atan}.
+\end{DoxyItemize}
+
+When parsing JSON, it recognizes the following escape codes in strings\+:
+
+
+\begin{DoxyItemize}
+\item {\ttfamily \textbackslash{}n} -\/ linefeed.
+\item {\ttfamily \textbackslash{}t} -\/ tab.
+\item {\ttfamily \textbackslash{}r} -\/ carriage return.
+\item {\ttfamily \textbackslash{}b} -\/ backspace.
+\item {\ttfamily \textbackslash{}f} -\/ form feed.
+\item {\ttfamily \textbackslash{}"{}$<$/tt$>$ -\/ double quote. -\/ $<$tt$>$\textbackslash{}\textbackslash{}\textbackslash{}\textbackslash{}$<$/tt$>$ -\/ backslash. -\/ $<$tt$>$\textbackslash{}\textbackslash{}/$<$/tt$>$ -\/ forward slash. -\/ $<$tt$>$\textbackslash{}\textbackslash{}u\+XXXX$<$/tt$>$ -\/ 16-\/bit unicode code point, converted to the equivalent UTF-\/8   representation. -\/ $<$tt$>$\textbackslash{}\textbackslash{}x\+XX$<$/tt$>$ -\/ 8-\/bit binary hexadecimal number XX. This is the only one that is not   in the JSON spec (see http\+://json.\+org/), but is needed to be able to encode   arbitrary binary in strings to text and back without losing information (e.\+g.   the byte 0x\+FF can\textquotesingle{}t be represented in standard JSON).  \+It also generates these escape codes back again when generating JSON from a binary representation.  \+When parsing numbers, the parser is more flexible than JSON. A format of numeric literals is more close to the C/\+C++. According to the @ref "{}/home/runner/work/\+INF1060/\+INF1060/flatbuffers/docs/source/grammar.md"{} "{}grammar"{}, it accepts the following numerical literals\+:  -\/ An integer literal can have any number of leading zero $<$tt$>$0$<$/tt$>$ digits. Unlike   C/\+C++, the parser ignores a leading zero, not interpreting it as the beginning   of the octal number. The numbers $<$tt$>$\mbox{[}081, -\/00094\mbox{]}$<$/tt$>$ are equal to $<$tt$>$\mbox{[}81, -\/94\mbox{]}$<$/tt$>$   decimal integers. -\/ The parser accepts unsigned and signed hexadecimal integer numbers. For   example\+: $<$tt$>$\mbox{[}0x123, +0x45, -\/0x67\mbox{]}$<$/tt$>$ are equal to $<$tt$>$\mbox{[}291, 69, -\/103\mbox{]}$<$/tt$>$ decimals. -\/ The format of float-\/point numbers is fully compatible with C/\+C++ format. If a   modern C++ compiler is used the parser accepts hexadecimal and special   floating-\/point literals as well\+:   $<$tt$>$\mbox{[}-\/1.\+0, 2., .\+3e0, 3.\+e4, 0x21.\+34p-\/5, -\/inf, nan\mbox{]}$<$/tt$>$.    The following conventions for floating-\/point numbers are used\+:    -\/ The exponent suffix of hexadecimal floating-\/point number is mandatory.   -\/ Parsed $<$tt$>$\+Na\+N$<$/tt$>$ converted to unsigned IEEE-\/754 $<$tt$>$quiet-\/\+Na\+N$<$/tt$>$ value.    Extended floating-\/point support was tested with\+:    -\/ x64 Windows\+: $<$tt$>$\+MSVC2015$<$/tt$>$ and higher.   -\/ x64 Linux\+: $<$tt$>$\+LLVM 6.\+0$<$/tt$>$, $<$tt$>$\+GCC 4.\+9$<$/tt$>$ and higher.  -\/ For compatibility with a JSON lint tool all numeric literals of scalar fields   can be wrapped to quoted string\+:   $<$tt$>$"{}1"{}, "{}2.\+0"{}, "{}0x48A"{}, "{}0x0\+C.\+0\+Ep-\/1"{}, "{}-\/inf"{}, "{}true"{}$<$/tt$>$.  $<$h2$>$\+Guidelines$<$/h2$>$  $<$h3$>$\+Efficiency$<$/h3$>$  \+Flat\+Buffers is all about efficiency, but to realize that efficiency you require an efficient schema. There are usually multiple choices on how to represent data that have vastly different size characteristics.  \+It is very common nowadays to represent any kind of data as dictionaries (as in e.\+g. JSON), because of its flexibility and extensibility. While it is possible to emulate this in Flat\+Buffers (as a vector of tables with key and value(s)), this is a bad match for a strongly typed system like Flat\+Buffers, leading to relatively large binaries. Flat\+Buffer tables are more flexible than classes/structs in most systems, since having a large number of fields only few of which are actually used is still efficient. You should thus try to organize your data as much as possible such that you can use tables where you might be tempted to use a dictionary.  \+Similarly, strings as values should only be used when they are truly open-\/ended. \+If you can, always use an enum instead.  \+Flat\+Buffers doesn\textquotesingle{}t have inheritance, so the way to represent a set of related data structures is a union. Unions do have a cost however, so an alternative to a union is to have a single table that has all the fields of all the data structures you are trying to represent, if they are relatively similar / share many fields. Again, this is efficient because non-\/present fields are cheap.  \+Flat\+Buffers supports the full range of integer sizes, so try to pick the smallest size needed, rather than defaulting to int/long.  \+Remember that you can share data (refer to the same string/table within a buffer), so factoring out repeating data into its own data structure may be worth it.  $<$h3$>$\+Style guide$<$/h3$>$  \+Identifiers in a schema are meant to translate to many different programming languages, so using the style of your "{}main"{} language is generally a bad idea.  \+For this reason, below is a suggested style guide to adhere to, to keep schemas consistent for interoperation regardless of the target language.  \+Where possible, the code generators for specific languages will generate identifiers that adhere to the language style, based on the schema identifiers.  -\/ Table, struct, enum and rpc names (types)\+: Upper\+Camel\+Case. -\/ Table and struct field names\+: snake\+\_\+case. This is translated to lower\+Camel\+Case   automatically for some languages, e.\+g. Java. -\/ Enum values\+: Upper\+Camel\+Case. -\/ namespaces\+: Upper\+Camel\+Case.  \+Formatting (this is less important, but still worth adhering to)\+:  -\/ Opening brace\+: on the same line as the start of the declaration. -\/ Spacing\+: Indent by 2 spaces. None around $<$tt$>$\+:$<$/tt$>$ for types, on both sides for $<$tt$>$=$<$/tt$>$.  \+For an example, see the schema at the top of this file.  $<$h2$>$\+Gotchas$<$/h2$>$    $<$h3$>$\+Testing whether a field is present in a table$<$/h3$>$  \+Most serialization formats (e.\+g. JSON or Protocol Buffers) make it very explicit in the format whether a field is present in an object or not, allowing you to use this as "{}extra"{} information.  \+Flat\+Buffers will not write fields that are equal to their default value, sometimes resulting in significant space savings. However, this also means we cannot disambiguate the meaning of non-\/presence as "{}written default value"{} or "{}not written at all"{}. This only applies to scalar fields since only they support default values. Unless otherwise specified, their default is 0.  \+If you care about the presence of scalars, most languages support "{}optional scalars."{} You can set $<$tt$>$null$<$/tt$>$ as the default value in the schema. $<$tt$>$null$<$/tt$>$ is a value that\textquotesingle{}s outside of all types, so we will always write if $<$tt$>$add\+\_\+field$<$/tt$>$ is called. The generated field accessor should use the local language\textquotesingle{}s canonical optional type.  \+Some $<$tt$>$\+Flat\+Buffer\+Builder$<$/tt$>$ implementations have an option called $<$tt$>$force\+\_\+defaults$<$/tt$>$ that circumvents this "{}not writing defaults"{} behavior you can then use {\ttfamily Is\+Field\+Present} to query presence. / Another option that works in all languages is to wrap a scalar field in a struct. This way it will return null if it is not present. This will be slightly less ergonomic but structs don\textquotesingle{}t take up any more space than the scalar they represent. }
+\end{DoxyItemize}

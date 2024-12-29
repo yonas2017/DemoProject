@@ -1,0 +1,170 @@
+\chapter{Flatbuffers Change Log}
+\hypertarget{md_flatbuffers_2CHANGELOG}{}\label{md_flatbuffers_2CHANGELOG}\index{Flatbuffers Change Log@{Flatbuffers Change Log}}
+All major or breaking changes will be documented in this file, as well as any new features that should be highlighted. Minor fixes or improvements are not necessarily listed.
+
+\doxysection*{\mbox{[}24.\+3.\+25\mbox{]} (March 25 2024)(\href{https://github.com/google/flatbuffers/releases/tag/v24.3.25}{\texttt{ https\+://github.\+com/google/flatbuffers/releases/tag/v24.\+3.\+25}})}
+
+
+\begin{DoxyItemize}
+\item Fixed license metadata parsing (\#8253)
+\item \mbox{[}C++\mbox{]} Allow string\+\_\+view in {\ttfamily Look\+Up\+By\+Key} in addition to null-\/terminated c-\/style strings (\#8203)
+\end{DoxyItemize}
+
+\doxysection*{\mbox{[}24.\+3.\+7\mbox{]} (March 7 2024)(\href{https://github.com/google/flatbuffers/releases/tag/v24.3.7}{\texttt{ https\+://github.\+com/google/flatbuffers/releases/tag/v24.\+3.\+7}})}
+
+
+\begin{DoxyItemize}
+\item Just to fix some of the CI build issues from the 24.\+3.\+6 release.
+\end{DoxyItemize}
+
+\doxysection*{\mbox{[}24.\+3.\+6\mbox{]} (March 6 2024)(\href{https://github.com/google/flatbuffers/releases/tag/v24.3.6}{\texttt{ https\+://github.\+com/google/flatbuffers/releases/tag/v24.\+3.\+6}})}
+
+
+\begin{DoxyItemize}
+\item Fix typescript object API to allow 0 values for null-\/default scalars (\#7864)
+\end{DoxyItemize}
+
+\doxysection*{\href{https://github.com/google/flatbuffers/releases/tag/v23.5.26}{\texttt{ 23.\+5.\+26 (May 26 2023)}}}
+
+
+\begin{DoxyItemize}
+\item Mostly bug fixing for 64-\/bit support
+\item Adds support for specifying underling type of unions in C++ and TS/\+JS (\#7954)
+\end{DoxyItemize}
+
+\doxysection*{\href{https://github.com/google/flatbuffers/releases/tag/v23.5.9}{\texttt{ 23.\+5.\+9 (May 9 2023)}}}
+
+
+\begin{DoxyItemize}
+\item 64-\/bit support for C++ (\#7935)
+\end{DoxyItemize}
+
+\doxysection*{\href{https://github.com/google/flatbuffers/releases/tag/v23.5.8}{\texttt{ 23.\+5.\+8 (May 8 2023)}}}
+
+
+\begin{DoxyItemize}
+\item add key\+\_\+field to compiled tests
+\item Add golden language directory
+\item Rework cmake flatc codegeneration (\#7938)
+\item remove defining generated files in test srcs
+\item Add binary schema reflection (\#7932)
+\item Migrate from rules\+\_\+nodejs to rules\+\_\+js/rules\+\_\+ts (take 2) (\#7928)
+\item {\ttfamily flat\+\_\+buffers.\+dart}\+: mark const variable finals for internal Dart linters
+\item fixed some windows warnings (\#7929)
+\item inject no long for FBS generation to remove logs in flattests (\#7926)
+\item Revert "{}\+Migrate from rules\+\_\+nodejs to rules\+\_\+js/rules\+\_\+ts (\#7923)"{} (\#7927)
+\item Migrate from rules\+\_\+nodejs to rules\+\_\+js/rules\+\_\+ts (\#7923)
+\item Only generate @kotlin.Experimental\+Unsigned annotation on create\texorpdfstring{$\ast$}{*}\+Vector methods having an unsigned array type parameter. (\#7881)
+\item additional check for absl\+::string\+\_\+view availability (\#7897)
+\item Optionally generate Python type annotations (\#7858)
+\item Replace deprecated command with environment file (\#7921)
+\item drop glibc from runtime dependencies (\#7906)
+\item Make JSON supporting advanced union features (\#7869)
+\item Allow to use functions from {\ttfamily Build\+Flat\+Buffers.\+cmake} from a flatbuffers installation installed with CMake. (\#7912)
+\item TS/\+JS\+: Use Type\+Error instead of Error when appropriate (\#7910)
+\item Go\+: make generated code more compliant to "{}go fmt"{} (\#7907)
+\item Support file\+\_\+identifier in Go (\#7904)
+\item Optionally generate type prefixes and suffixes for python code (\#7857)
+\item Go\+: add test for Finish\+With\+File\+Identifier (\#7905)
+\item Fix go\+\_\+sample.\+sh (\#7903)
+\item \mbox{[}TS/\+JS\mbox{]} Upgrade dependencies (\#7889)
+\item Add a File\+Writer interface (\#7821)
+\item TS/\+JS\+: Use minvalue from enum if not found (\#7888)
+\item \mbox{[}CS\mbox{]} Verifier (\#7850)
+\item README.\+md\+: Py\+PI case typo (\#7880)
+\item Update go documentation link to point to root module (\#7879)
+\item use \doxylink{structBool}{Bool} for flatbuffers bool instead of Byte (\#7876)
+\item fix using null string in vector (\#7872)
+\item Add {\ttfamily flatbuffers-\/64} branch to CI for pushes
+\item made changes to the rust docs so they would compile. new\+\_\+with\+\_\+capacity is deprecated should use with\+\_\+capacity, get\+\_\+root\+\_\+as\+\_\+monster should be root\+\_\+as\+\_\+monster (\#7871)
+\item Adding comment for code clarification (\#7856)
+\item To\+Camel\+Case() when k\+Lower\+Camel now converts first char to lower. (\#7838)
+\item Fix help output for --java-\/checkerframework (\#7854)
+\item Update filename to README.\+md and improve formatting (\#7855)
+\item Update stale.\+yml
+\item Updated remaining usages of LICENSE.\+txt
+\end{DoxyItemize}
+
+\doxysection*{\href{https://github.com/google/flatbuffers/releases/tag/v23.3.3}{\texttt{ 23.\+3.\+3 (Mar 3 2023)}}}
+
+
+\begin{DoxyItemize}
+\item Refactoring of {\ttfamily flatc} generators to use an interface (\#7797).
+\item Removed legacy cmake support and set min to 3.\+8 (\#7801).
+\end{DoxyItemize}
+
+\doxysection*{\href{https://github.com/google/flatbuffers/releases/tag/v23.1.20}{\texttt{ 23.\+1.\+21 (Jan 21 2023)}}}
+
+
+\begin{DoxyItemize}
+\item Reworked entry points for Typescript/\+Javascript and compatibility for single file build (\#7510)
+\end{DoxyItemize}
+
+\doxysection*{\href{https://github.com/google/flatbuffers/releases/tag/v23.1.20}{\texttt{ 23.\+1.\+20 (Jan 20 2023)}}}
+
+
+\begin{DoxyItemize}
+\item Removed go.\+mod files after some versioning issues were being report (\#7780).
+\end{DoxyItemize}
+
+\doxysection*{\href{https://github.com/google/flatbuffers/releases/tag/v23.1.4}{\texttt{ 23.\+1.\+4 (Jan 4 2023)}}}
+
+
+\begin{DoxyItemize}
+\item Major release! Just kidding, we are continuing the \href{https://github.com/google/flatbuffers/wiki/Versioning}{\texttt{ versioning scheme}} of using a date to signify releases. This results in the first release of the new year to bump the tradition major version field.
+\item Go minimum version is now 1.\+19 (\#7720) with the addition of Go modules.
+\item Added CI support for Big Endian regression testing (\#7707).
+\item Fixed {\ttfamily get\+Fully\+Qualified\+Name} in typescript to return name delimited by \textquotesingle{}.\textquotesingle{} instead of \textquotesingle{}\+\_\+\textquotesingle{} (\#7730).
+\item Fixed the versioning scheme to not include leading zeros which are not consistently handled by every package manager. Only the last release (12.\+12.\+06) should have suffered from this.
+\end{DoxyItemize}
+
+\doxysection*{\href{https://github.com/google/flatbuffers/releases/tag/v22.12.06}{\texttt{ 22.\+12.\+06 (Dec 06 2022)}}}
+
+
+\begin{DoxyItemize}
+\item Bug fixing release, no major changes.
+\end{DoxyItemize}
+
+\doxysection*{\href{https://github.com/google/flatbuffers/releases/tag/v22.10.25}{\texttt{ 22.\+10.\+25 (Oct 25 2022)}}}
+
+
+\begin{DoxyItemize}
+\item Added Nim language support with generator and runtime libraries (\#7534).
+\end{DoxyItemize}
+
+\doxysection*{\href{https://github.com/google/flatbuffers/releases/tag/v22.9.29}{\texttt{ 22.\+9.\+29 (Sept 29 2022)}}}
+
+
+\begin{DoxyItemize}
+\item Rust soundness fixes to avoid the crate from bing labelled unsafe (\#7518).
+\end{DoxyItemize}
+
+\doxysection*{\href{https://github.com/google/flatbuffers/releases/tag/v22.9.24}{\texttt{ 22.\+9.\+24 (Sept 24 2022)}}}
+
+
+\begin{DoxyItemize}
+\item 20 Major releases in a row? Nope, we switched to a new \href{https://github.com/google/flatbuffers/wiki/Versioning}{\texttt{ versioning scheme}} that is based on date.
+\item Python supports fixed size arrays now (\#7529).
+\item Behavior change in how C++ object API uses {\ttfamily Un\+Pack\+To}. The original intent of this was to reduce allocations by reusing an existing object to pack data into. At some point, this logic started to merge the states of the two objects instead of clearing the state of the packee. This change goes back to the original intention, the packed object is cleared when getting data packed into it (\#7527).
+\item Fixed a bug in C++ alignment that was using {\ttfamily sizeof()} instead of the intended {\ttfamily Align\+Of()} for structs (\#7520).
+\item C\# has an \href{https://www.nuget.org/packages/Google.FlatBuffers}{\texttt{ official Nuget package}} now (\#7496).
+\end{DoxyItemize}
+
+\doxysection*{2.\+0.\+8 (Aug 29 2022)}
+
+
+\begin{DoxyItemize}
+\item Fix for {\ttfamily -\/-\/keep-\/prefix} the was generating the wrong include statements for C++ (\#7469). The bug was introduced in 2.\+0.\+7.
+\item Added the {\ttfamily Verifier\+::\+Options} option struct to allow specifying runtime configuration settings for the verifier (\#7489). This allows to skip verifying nested flatbuffers, a on-\/by-\/default change that was introduced in 2.\+0.\+7. This deprecates the existing {\ttfamily Verifier} constructor, which may be removed in a future version.
+\item Refactor of {\ttfamily \doxylink{test_8cpp}{tests/test.\+cpp}} that lead to \texorpdfstring{$\sim$}{\string~}10\% speedup in compilation of the entire project (\#7487).
+\end{DoxyItemize}
+
+\doxysection*{2.\+0.\+7 (Aug 22 2022)}
+
+
+\begin{DoxyItemize}
+\item This is the first version with an explicit change log, so all the previous features will not be listed.
+\item Verifier now checks that buffers are at least the minimum size required to be a flatbuffers (12 bytes). This includes nested flatbuffers, which previously could be declared valid at size 0.
+\item Annotated binaries. Given a flatbuffer binary and a schema (or binary schema) one can generate an annotated flatbuffer (.afb) to describe each byte in the binary with schema metadata and value.
+\item First binary schema generator (Lua) to generate Lua code via a .bfbs file. This is mostly an implementation detail of flatc internals, but will be slowly applied to the other language generators. 
+\end{DoxyItemize}

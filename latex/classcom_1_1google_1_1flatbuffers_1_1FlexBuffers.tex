@@ -1,0 +1,238 @@
+\doxysection{com.\+google.\+flatbuffers.\+Flex\+Buffers Class Reference}
+\hypertarget{classcom_1_1google_1_1flatbuffers_1_1FlexBuffers}{}\label{classcom_1_1google_1_1flatbuffers_1_1FlexBuffers}\index{com.google.flatbuffers.FlexBuffers@{com.google.flatbuffers.FlexBuffers}}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class {\bfseries Blob}
+\item 
+class {\bfseries Flex\+Buffer\+Exception}
+\item 
+class {\bfseries Key}
+\item 
+class {\bfseries Key\+Vector}
+\item 
+class {\bfseries Map}
+\item 
+class {\bfseries Reference}
+\item 
+class {\bfseries Typed\+Vector}
+\item 
+class {\bfseries Unsigned}
+\item 
+class {\bfseries Vector}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static Reference \mbox{\hyperlink{classcom_1_1google_1_1flatbuffers_1_1FlexBuffers_ac3d867e6a043cd40599fbde8a1c73fba}{get\+Root}} (Byte\+Buffer buffer)
+\item 
+static Reference \mbox{\hyperlink{classcom_1_1google_1_1flatbuffers_1_1FlexBuffers_a7b73a07379888266571b8bd36146fe4b}{get\+Root}} (\mbox{\hyperlink{interfacecom_1_1google_1_1flatbuffers_1_1ReadBuf}{Read\+Buf}} buffer)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static final int \mbox{\hyperlink{classcom_1_1google_1_1flatbuffers_1_1FlexBuffers_a0c45ed48bda273f19e4c9331ebff406b}{FBT\+\_\+\+NULL}} = 0
+\item 
+static final int \mbox{\hyperlink{classcom_1_1google_1_1flatbuffers_1_1FlexBuffers_ab16cab81c424b4764615fd332c0a4679}{FBT\+\_\+\+INT}} = 1
+\item 
+static final int \mbox{\hyperlink{classcom_1_1google_1_1flatbuffers_1_1FlexBuffers_a628bb074c8d38549a063fea2a1c731b7}{FBT\+\_\+\+UINT}} = 2
+\item 
+static final int \mbox{\hyperlink{classcom_1_1google_1_1flatbuffers_1_1FlexBuffers_ac5dead8e071fc3c0b37dba362853df55}{FBT\+\_\+\+FLOAT}} = 3
+\item 
+static final int \mbox{\hyperlink{classcom_1_1google_1_1flatbuffers_1_1FlexBuffers_ad15fa9d320fea9b968c67186f914ba89}{FBT\+\_\+\+KEY}} = 4
+\item 
+static final int \mbox{\hyperlink{classcom_1_1google_1_1flatbuffers_1_1FlexBuffers_a7d20ef9f694e611327a9c3c3d2c31896}{FBT\+\_\+\+STRING}} = 5
+\item 
+static final int \mbox{\hyperlink{classcom_1_1google_1_1flatbuffers_1_1FlexBuffers_a82bc85f7f547bb6b6d420534a397025d}{FBT\+\_\+\+INDIRECT\+\_\+\+INT}} = 6
+\item 
+static final int \mbox{\hyperlink{classcom_1_1google_1_1flatbuffers_1_1FlexBuffers_a0e8a5bd51e8a2ae31612ef547775d57f}{FBT\+\_\+\+INDIRECT\+\_\+\+UINT}} = 7
+\item 
+static final int \mbox{\hyperlink{classcom_1_1google_1_1flatbuffers_1_1FlexBuffers_a587bfd84b5b60db61c2f7719fde4ecec}{FBT\+\_\+\+INDIRECT\+\_\+\+FLOAT}} = 8
+\item 
+static final int \mbox{\hyperlink{classcom_1_1google_1_1flatbuffers_1_1FlexBuffers_aece73877a26a663821b7dd7eff059ce2}{FBT\+\_\+\+MAP}} = 9
+\item 
+static final int \mbox{\hyperlink{classcom_1_1google_1_1flatbuffers_1_1FlexBuffers_a644fc5eeceb778992b98ac15dcb1daef}{FBT\+\_\+\+VECTOR}} = 10
+\item 
+static final int \mbox{\hyperlink{classcom_1_1google_1_1flatbuffers_1_1FlexBuffers_a1de5b76aa91313b4287f34e3895101d4}{FBT\+\_\+\+VECTOR\+\_\+\+INT}} = 11
+\item 
+static final int \mbox{\hyperlink{classcom_1_1google_1_1flatbuffers_1_1FlexBuffers_a0f70c972445971c99594a12695710596}{FBT\+\_\+\+VECTOR\+\_\+\+UINT}} = 12
+\item 
+static final int \mbox{\hyperlink{classcom_1_1google_1_1flatbuffers_1_1FlexBuffers_a1530bb637b2bf6fda28e3dfcaccfa6a2}{FBT\+\_\+\+VECTOR\+\_\+\+FLOAT}} = 13
+\item 
+static final int \mbox{\hyperlink{classcom_1_1google_1_1flatbuffers_1_1FlexBuffers_abcec5540a79019b5fce9735ae764e07c}{FBT\+\_\+\+VECTOR\+\_\+\+KEY}} = 14
+\item 
+static final int \mbox{\hyperlink{classcom_1_1google_1_1flatbuffers_1_1FlexBuffers_a8da77b88a61d0e3cb00590de03b8b10d}{FBT\+\_\+\+VECTOR\+\_\+\+STRING\+\_\+\+DEPRECATED}} = 15
+\item 
+FLATBUFFERS\+\_\+\+INTERNAL static final int \mbox{\hyperlink{classcom_1_1google_1_1flatbuffers_1_1FlexBuffers_ac7b7520f7be64bc9fc9d9aa13f32aa6a}{FBT\+\_\+\+BLOB}} = 25
+\item 
+static final int \mbox{\hyperlink{classcom_1_1google_1_1flatbuffers_1_1FlexBuffers_ac92d110c6748284a8afc883dded973a3}{FBT\+\_\+\+BOOL}} = 26
+\item 
+static final int \mbox{\hyperlink{classcom_1_1google_1_1flatbuffers_1_1FlexBuffers_a6c77f2dc2941ec9a9ccd84840d5ebdb1}{FBT\+\_\+\+VECTOR\+\_\+\+BOOL}} = 36
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This class can be used to parse Flex\+Buffer messages. 
+
+For generating Flex\+Buffer messages, use {\ttfamily \doxylink{}{Flex\+Buffers\+Builder}}. 
+
+Example of usage\+: 
+\begin{DoxyPre}
+ReadBuf bb = ... // load message from file or network
+FlexBuffers.Reference r = FlexBuffers.getRoot(bb); // Reads the root element
+FlexBuffers.Map map = r.asMap(); // We assumed root object is a map
+System.out.println(map.get("{}name"{}).asString()); // prints element with key "{}name"{}
+\end{DoxyPre}
+ 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classcom_1_1google_1_1flatbuffers_1_1FlexBuffers_ac3d867e6a043cd40599fbde8a1c73fba}\label{classcom_1_1google_1_1flatbuffers_1_1FlexBuffers_ac3d867e6a043cd40599fbde8a1c73fba} 
+\index{com.google.flatbuffers.FlexBuffers@{com.google.flatbuffers.FlexBuffers}!getRoot@{getRoot}}
+\index{getRoot@{getRoot}!com.google.flatbuffers.FlexBuffers@{com.google.flatbuffers.FlexBuffers}}
+\doxysubsubsection{\texorpdfstring{getRoot()}{getRoot()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily static Reference com.\+google.\+flatbuffers.\+Flex\+Buffers.\+get\+Root (\begin{DoxyParamCaption}\item[{Byte\+Buffer}]{buffer }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+Reads a Flex\+Buffer message in Read\+Buf and returns {\ttfamily \doxylink{}{Reference}} to the root element. 
+\begin{DoxyParams}{Parameters}
+{\em buffer} & Read\+Buf containing Flex\+Buffer message \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\ttfamily \doxylink{}{Reference}} to the root object 
+\end{DoxyReturn}
+\Hypertarget{classcom_1_1google_1_1flatbuffers_1_1FlexBuffers_a7b73a07379888266571b8bd36146fe4b}\label{classcom_1_1google_1_1flatbuffers_1_1FlexBuffers_a7b73a07379888266571b8bd36146fe4b} 
+\index{com.google.flatbuffers.FlexBuffers@{com.google.flatbuffers.FlexBuffers}!getRoot@{getRoot}}
+\index{getRoot@{getRoot}!com.google.flatbuffers.FlexBuffers@{com.google.flatbuffers.FlexBuffers}}
+\doxysubsubsection{\texorpdfstring{getRoot()}{getRoot()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily static Reference com.\+google.\+flatbuffers.\+Flex\+Buffers.\+get\+Root (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{interfacecom_1_1google_1_1flatbuffers_1_1ReadBuf}{Read\+Buf}}}]{buffer }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+Reads a Flex\+Buffer message in Read\+Buf and returns {\ttfamily \doxylink{}{Reference}} to the root element. 
+\begin{DoxyParams}{Parameters}
+{\em buffer} & Read\+Buf containing Flex\+Buffer message \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\ttfamily \doxylink{}{Reference}} to the root object 
+\end{DoxyReturn}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classcom_1_1google_1_1flatbuffers_1_1FlexBuffers_ac7b7520f7be64bc9fc9d9aa13f32aa6a}\label{classcom_1_1google_1_1flatbuffers_1_1FlexBuffers_ac7b7520f7be64bc9fc9d9aa13f32aa6a} 
+\index{com.google.flatbuffers.FlexBuffers@{com.google.flatbuffers.FlexBuffers}!FBT\_BLOB@{FBT\_BLOB}}
+\index{FBT\_BLOB@{FBT\_BLOB}!com.google.flatbuffers.FlexBuffers@{com.google.flatbuffers.FlexBuffers}}
+\doxysubsubsection{\texorpdfstring{FBT\_BLOB}{FBT\_BLOB}}
+{\footnotesize\ttfamily FLATBUFFERS\+\_\+\+INTERNAL static final int com.\+google.\+flatbuffers.\+Flex\+Buffers.\+FBT\+\_\+\+BLOB = 25\hspace{0.3cm}{\ttfamily [static]}}
+
+Represent a blob type \Hypertarget{classcom_1_1google_1_1flatbuffers_1_1FlexBuffers_ac92d110c6748284a8afc883dded973a3}\label{classcom_1_1google_1_1flatbuffers_1_1FlexBuffers_ac92d110c6748284a8afc883dded973a3} 
+\index{com.google.flatbuffers.FlexBuffers@{com.google.flatbuffers.FlexBuffers}!FBT\_BOOL@{FBT\_BOOL}}
+\index{FBT\_BOOL@{FBT\_BOOL}!com.google.flatbuffers.FlexBuffers@{com.google.flatbuffers.FlexBuffers}}
+\doxysubsubsection{\texorpdfstring{FBT\_BOOL}{FBT\_BOOL}}
+{\footnotesize\ttfamily final int com.\+google.\+flatbuffers.\+Flex\+Buffers.\+FBT\+\_\+\+BOOL = 26\hspace{0.3cm}{\ttfamily [static]}}
+
+Represent a boolean type \Hypertarget{classcom_1_1google_1_1flatbuffers_1_1FlexBuffers_ac5dead8e071fc3c0b37dba362853df55}\label{classcom_1_1google_1_1flatbuffers_1_1FlexBuffers_ac5dead8e071fc3c0b37dba362853df55} 
+\index{com.google.flatbuffers.FlexBuffers@{com.google.flatbuffers.FlexBuffers}!FBT\_FLOAT@{FBT\_FLOAT}}
+\index{FBT\_FLOAT@{FBT\_FLOAT}!com.google.flatbuffers.FlexBuffers@{com.google.flatbuffers.FlexBuffers}}
+\doxysubsubsection{\texorpdfstring{FBT\_FLOAT}{FBT\_FLOAT}}
+{\footnotesize\ttfamily final int com.\+google.\+flatbuffers.\+Flex\+Buffers.\+FBT\+\_\+\+FLOAT = 3\hspace{0.3cm}{\ttfamily [static]}}
+
+Represent a float type \Hypertarget{classcom_1_1google_1_1flatbuffers_1_1FlexBuffers_a587bfd84b5b60db61c2f7719fde4ecec}\label{classcom_1_1google_1_1flatbuffers_1_1FlexBuffers_a587bfd84b5b60db61c2f7719fde4ecec} 
+\index{com.google.flatbuffers.FlexBuffers@{com.google.flatbuffers.FlexBuffers}!FBT\_INDIRECT\_FLOAT@{FBT\_INDIRECT\_FLOAT}}
+\index{FBT\_INDIRECT\_FLOAT@{FBT\_INDIRECT\_FLOAT}!com.google.flatbuffers.FlexBuffers@{com.google.flatbuffers.FlexBuffers}}
+\doxysubsubsection{\texorpdfstring{FBT\_INDIRECT\_FLOAT}{FBT\_INDIRECT\_FLOAT}}
+{\footnotesize\ttfamily final int com.\+google.\+flatbuffers.\+Flex\+Buffers.\+FBT\+\_\+\+INDIRECT\+\_\+\+FLOAT = 8\hspace{0.3cm}{\ttfamily [static]}}
+
+Represent a indirect float type \Hypertarget{classcom_1_1google_1_1flatbuffers_1_1FlexBuffers_a82bc85f7f547bb6b6d420534a397025d}\label{classcom_1_1google_1_1flatbuffers_1_1FlexBuffers_a82bc85f7f547bb6b6d420534a397025d} 
+\index{com.google.flatbuffers.FlexBuffers@{com.google.flatbuffers.FlexBuffers}!FBT\_INDIRECT\_INT@{FBT\_INDIRECT\_INT}}
+\index{FBT\_INDIRECT\_INT@{FBT\_INDIRECT\_INT}!com.google.flatbuffers.FlexBuffers@{com.google.flatbuffers.FlexBuffers}}
+\doxysubsubsection{\texorpdfstring{FBT\_INDIRECT\_INT}{FBT\_INDIRECT\_INT}}
+{\footnotesize\ttfamily final int com.\+google.\+flatbuffers.\+Flex\+Buffers.\+FBT\+\_\+\+INDIRECT\+\_\+\+INT = 6\hspace{0.3cm}{\ttfamily [static]}}
+
+Represent a indirect signed integer type \Hypertarget{classcom_1_1google_1_1flatbuffers_1_1FlexBuffers_a0e8a5bd51e8a2ae31612ef547775d57f}\label{classcom_1_1google_1_1flatbuffers_1_1FlexBuffers_a0e8a5bd51e8a2ae31612ef547775d57f} 
+\index{com.google.flatbuffers.FlexBuffers@{com.google.flatbuffers.FlexBuffers}!FBT\_INDIRECT\_UINT@{FBT\_INDIRECT\_UINT}}
+\index{FBT\_INDIRECT\_UINT@{FBT\_INDIRECT\_UINT}!com.google.flatbuffers.FlexBuffers@{com.google.flatbuffers.FlexBuffers}}
+\doxysubsubsection{\texorpdfstring{FBT\_INDIRECT\_UINT}{FBT\_INDIRECT\_UINT}}
+{\footnotesize\ttfamily final int com.\+google.\+flatbuffers.\+Flex\+Buffers.\+FBT\+\_\+\+INDIRECT\+\_\+\+UINT = 7\hspace{0.3cm}{\ttfamily [static]}}
+
+Represent a indirect unsigned integer type \Hypertarget{classcom_1_1google_1_1flatbuffers_1_1FlexBuffers_ab16cab81c424b4764615fd332c0a4679}\label{classcom_1_1google_1_1flatbuffers_1_1FlexBuffers_ab16cab81c424b4764615fd332c0a4679} 
+\index{com.google.flatbuffers.FlexBuffers@{com.google.flatbuffers.FlexBuffers}!FBT\_INT@{FBT\_INT}}
+\index{FBT\_INT@{FBT\_INT}!com.google.flatbuffers.FlexBuffers@{com.google.flatbuffers.FlexBuffers}}
+\doxysubsubsection{\texorpdfstring{FBT\_INT}{FBT\_INT}}
+{\footnotesize\ttfamily final int com.\+google.\+flatbuffers.\+Flex\+Buffers.\+FBT\+\_\+\+INT = 1\hspace{0.3cm}{\ttfamily [static]}}
+
+Represent a signed integer type \Hypertarget{classcom_1_1google_1_1flatbuffers_1_1FlexBuffers_ad15fa9d320fea9b968c67186f914ba89}\label{classcom_1_1google_1_1flatbuffers_1_1FlexBuffers_ad15fa9d320fea9b968c67186f914ba89} 
+\index{com.google.flatbuffers.FlexBuffers@{com.google.flatbuffers.FlexBuffers}!FBT\_KEY@{FBT\_KEY}}
+\index{FBT\_KEY@{FBT\_KEY}!com.google.flatbuffers.FlexBuffers@{com.google.flatbuffers.FlexBuffers}}
+\doxysubsubsection{\texorpdfstring{FBT\_KEY}{FBT\_KEY}}
+{\footnotesize\ttfamily final int com.\+google.\+flatbuffers.\+Flex\+Buffers.\+FBT\+\_\+\+KEY = 4\hspace{0.3cm}{\ttfamily [static]}}
+
+Represent a key to a map type \Hypertarget{classcom_1_1google_1_1flatbuffers_1_1FlexBuffers_aece73877a26a663821b7dd7eff059ce2}\label{classcom_1_1google_1_1flatbuffers_1_1FlexBuffers_aece73877a26a663821b7dd7eff059ce2} 
+\index{com.google.flatbuffers.FlexBuffers@{com.google.flatbuffers.FlexBuffers}!FBT\_MAP@{FBT\_MAP}}
+\index{FBT\_MAP@{FBT\_MAP}!com.google.flatbuffers.FlexBuffers@{com.google.flatbuffers.FlexBuffers}}
+\doxysubsubsection{\texorpdfstring{FBT\_MAP}{FBT\_MAP}}
+{\footnotesize\ttfamily final int com.\+google.\+flatbuffers.\+Flex\+Buffers.\+FBT\+\_\+\+MAP = 9\hspace{0.3cm}{\ttfamily [static]}}
+
+Represent a map type \Hypertarget{classcom_1_1google_1_1flatbuffers_1_1FlexBuffers_a0c45ed48bda273f19e4c9331ebff406b}\label{classcom_1_1google_1_1flatbuffers_1_1FlexBuffers_a0c45ed48bda273f19e4c9331ebff406b} 
+\index{com.google.flatbuffers.FlexBuffers@{com.google.flatbuffers.FlexBuffers}!FBT\_NULL@{FBT\_NULL}}
+\index{FBT\_NULL@{FBT\_NULL}!com.google.flatbuffers.FlexBuffers@{com.google.flatbuffers.FlexBuffers}}
+\doxysubsubsection{\texorpdfstring{FBT\_NULL}{FBT\_NULL}}
+{\footnotesize\ttfamily final int com.\+google.\+flatbuffers.\+Flex\+Buffers.\+FBT\+\_\+\+NULL = 0\hspace{0.3cm}{\ttfamily [static]}}
+
+Represent a null type \Hypertarget{classcom_1_1google_1_1flatbuffers_1_1FlexBuffers_a7d20ef9f694e611327a9c3c3d2c31896}\label{classcom_1_1google_1_1flatbuffers_1_1FlexBuffers_a7d20ef9f694e611327a9c3c3d2c31896} 
+\index{com.google.flatbuffers.FlexBuffers@{com.google.flatbuffers.FlexBuffers}!FBT\_STRING@{FBT\_STRING}}
+\index{FBT\_STRING@{FBT\_STRING}!com.google.flatbuffers.FlexBuffers@{com.google.flatbuffers.FlexBuffers}}
+\doxysubsubsection{\texorpdfstring{FBT\_STRING}{FBT\_STRING}}
+{\footnotesize\ttfamily final int com.\+google.\+flatbuffers.\+Flex\+Buffers.\+FBT\+\_\+\+STRING = 5\hspace{0.3cm}{\ttfamily [static]}}
+
+Represent a string type \Hypertarget{classcom_1_1google_1_1flatbuffers_1_1FlexBuffers_a628bb074c8d38549a063fea2a1c731b7}\label{classcom_1_1google_1_1flatbuffers_1_1FlexBuffers_a628bb074c8d38549a063fea2a1c731b7} 
+\index{com.google.flatbuffers.FlexBuffers@{com.google.flatbuffers.FlexBuffers}!FBT\_UINT@{FBT\_UINT}}
+\index{FBT\_UINT@{FBT\_UINT}!com.google.flatbuffers.FlexBuffers@{com.google.flatbuffers.FlexBuffers}}
+\doxysubsubsection{\texorpdfstring{FBT\_UINT}{FBT\_UINT}}
+{\footnotesize\ttfamily final int com.\+google.\+flatbuffers.\+Flex\+Buffers.\+FBT\+\_\+\+UINT = 2\hspace{0.3cm}{\ttfamily [static]}}
+
+Represent a unsigned type \Hypertarget{classcom_1_1google_1_1flatbuffers_1_1FlexBuffers_a644fc5eeceb778992b98ac15dcb1daef}\label{classcom_1_1google_1_1flatbuffers_1_1FlexBuffers_a644fc5eeceb778992b98ac15dcb1daef} 
+\index{com.google.flatbuffers.FlexBuffers@{com.google.flatbuffers.FlexBuffers}!FBT\_VECTOR@{FBT\_VECTOR}}
+\index{FBT\_VECTOR@{FBT\_VECTOR}!com.google.flatbuffers.FlexBuffers@{com.google.flatbuffers.FlexBuffers}}
+\doxysubsubsection{\texorpdfstring{FBT\_VECTOR}{FBT\_VECTOR}}
+{\footnotesize\ttfamily final int com.\+google.\+flatbuffers.\+Flex\+Buffers.\+FBT\+\_\+\+VECTOR = 10\hspace{0.3cm}{\ttfamily [static]}}
+
+Represent a vector type \Hypertarget{classcom_1_1google_1_1flatbuffers_1_1FlexBuffers_a6c77f2dc2941ec9a9ccd84840d5ebdb1}\label{classcom_1_1google_1_1flatbuffers_1_1FlexBuffers_a6c77f2dc2941ec9a9ccd84840d5ebdb1} 
+\index{com.google.flatbuffers.FlexBuffers@{com.google.flatbuffers.FlexBuffers}!FBT\_VECTOR\_BOOL@{FBT\_VECTOR\_BOOL}}
+\index{FBT\_VECTOR\_BOOL@{FBT\_VECTOR\_BOOL}!com.google.flatbuffers.FlexBuffers@{com.google.flatbuffers.FlexBuffers}}
+\doxysubsubsection{\texorpdfstring{FBT\_VECTOR\_BOOL}{FBT\_VECTOR\_BOOL}}
+{\footnotesize\ttfamily final int com.\+google.\+flatbuffers.\+Flex\+Buffers.\+FBT\+\_\+\+VECTOR\+\_\+\+BOOL = 36\hspace{0.3cm}{\ttfamily [static]}}
+
+Represent a vector of booleans type \Hypertarget{classcom_1_1google_1_1flatbuffers_1_1FlexBuffers_a1530bb637b2bf6fda28e3dfcaccfa6a2}\label{classcom_1_1google_1_1flatbuffers_1_1FlexBuffers_a1530bb637b2bf6fda28e3dfcaccfa6a2} 
+\index{com.google.flatbuffers.FlexBuffers@{com.google.flatbuffers.FlexBuffers}!FBT\_VECTOR\_FLOAT@{FBT\_VECTOR\_FLOAT}}
+\index{FBT\_VECTOR\_FLOAT@{FBT\_VECTOR\_FLOAT}!com.google.flatbuffers.FlexBuffers@{com.google.flatbuffers.FlexBuffers}}
+\doxysubsubsection{\texorpdfstring{FBT\_VECTOR\_FLOAT}{FBT\_VECTOR\_FLOAT}}
+{\footnotesize\ttfamily final int com.\+google.\+flatbuffers.\+Flex\+Buffers.\+FBT\+\_\+\+VECTOR\+\_\+\+FLOAT = 13\hspace{0.3cm}{\ttfamily [static]}}
+
+Represent a vector of floats type \Hypertarget{classcom_1_1google_1_1flatbuffers_1_1FlexBuffers_a1de5b76aa91313b4287f34e3895101d4}\label{classcom_1_1google_1_1flatbuffers_1_1FlexBuffers_a1de5b76aa91313b4287f34e3895101d4} 
+\index{com.google.flatbuffers.FlexBuffers@{com.google.flatbuffers.FlexBuffers}!FBT\_VECTOR\_INT@{FBT\_VECTOR\_INT}}
+\index{FBT\_VECTOR\_INT@{FBT\_VECTOR\_INT}!com.google.flatbuffers.FlexBuffers@{com.google.flatbuffers.FlexBuffers}}
+\doxysubsubsection{\texorpdfstring{FBT\_VECTOR\_INT}{FBT\_VECTOR\_INT}}
+{\footnotesize\ttfamily final int com.\+google.\+flatbuffers.\+Flex\+Buffers.\+FBT\+\_\+\+VECTOR\+\_\+\+INT = 11\hspace{0.3cm}{\ttfamily [static]}}
+
+Represent a vector of signed integers type \Hypertarget{classcom_1_1google_1_1flatbuffers_1_1FlexBuffers_abcec5540a79019b5fce9735ae764e07c}\label{classcom_1_1google_1_1flatbuffers_1_1FlexBuffers_abcec5540a79019b5fce9735ae764e07c} 
+\index{com.google.flatbuffers.FlexBuffers@{com.google.flatbuffers.FlexBuffers}!FBT\_VECTOR\_KEY@{FBT\_VECTOR\_KEY}}
+\index{FBT\_VECTOR\_KEY@{FBT\_VECTOR\_KEY}!com.google.flatbuffers.FlexBuffers@{com.google.flatbuffers.FlexBuffers}}
+\doxysubsubsection{\texorpdfstring{FBT\_VECTOR\_KEY}{FBT\_VECTOR\_KEY}}
+{\footnotesize\ttfamily final int com.\+google.\+flatbuffers.\+Flex\+Buffers.\+FBT\+\_\+\+VECTOR\+\_\+\+KEY = 14\hspace{0.3cm}{\ttfamily [static]}}
+
+Represent a vector of keys type \Hypertarget{classcom_1_1google_1_1flatbuffers_1_1FlexBuffers_a8da77b88a61d0e3cb00590de03b8b10d}\label{classcom_1_1google_1_1flatbuffers_1_1FlexBuffers_a8da77b88a61d0e3cb00590de03b8b10d} 
+\index{com.google.flatbuffers.FlexBuffers@{com.google.flatbuffers.FlexBuffers}!FBT\_VECTOR\_STRING\_DEPRECATED@{FBT\_VECTOR\_STRING\_DEPRECATED}}
+\index{FBT\_VECTOR\_STRING\_DEPRECATED@{FBT\_VECTOR\_STRING\_DEPRECATED}!com.google.flatbuffers.FlexBuffers@{com.google.flatbuffers.FlexBuffers}}
+\doxysubsubsection{\texorpdfstring{FBT\_VECTOR\_STRING\_DEPRECATED}{FBT\_VECTOR\_STRING\_DEPRECATED}}
+{\footnotesize\ttfamily final int com.\+google.\+flatbuffers.\+Flex\+Buffers.\+FBT\+\_\+\+VECTOR\+\_\+\+STRING\+\_\+\+DEPRECATED = 15\hspace{0.3cm}{\ttfamily [static]}}
+
+Represent a vector of strings type \Hypertarget{classcom_1_1google_1_1flatbuffers_1_1FlexBuffers_a0f70c972445971c99594a12695710596}\label{classcom_1_1google_1_1flatbuffers_1_1FlexBuffers_a0f70c972445971c99594a12695710596} 
+\index{com.google.flatbuffers.FlexBuffers@{com.google.flatbuffers.FlexBuffers}!FBT\_VECTOR\_UINT@{FBT\_VECTOR\_UINT}}
+\index{FBT\_VECTOR\_UINT@{FBT\_VECTOR\_UINT}!com.google.flatbuffers.FlexBuffers@{com.google.flatbuffers.FlexBuffers}}
+\doxysubsubsection{\texorpdfstring{FBT\_VECTOR\_UINT}{FBT\_VECTOR\_UINT}}
+{\footnotesize\ttfamily final int com.\+google.\+flatbuffers.\+Flex\+Buffers.\+FBT\+\_\+\+VECTOR\+\_\+\+UINT = 12\hspace{0.3cm}{\ttfamily [static]}}
+
+Represent a vector of unsigned integers type 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+flatbuffers/java/src/main/java/com/google/flatbuffers/\mbox{\hyperlink{FlexBuffers_8java}{Flex\+Buffers.\+java}}\end{DoxyCompactItemize}

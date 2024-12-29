@@ -1,0 +1,268 @@
+\doxysection{flatbuffers\+::Iteration\+Visitor Struct Reference}
+\hypertarget{structflatbuffers_1_1IterationVisitor}{}\label{structflatbuffers_1_1IterationVisitor}\index{flatbuffers::IterationVisitor@{flatbuffers::IterationVisitor}}
+
+
+{\ttfamily \#include $<$minireflect.\+h$>$}
+
+
+
+Inheritance diagram for flatbuffers\+::Iteration\+Visitor\+:
+% FIG 0
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{structflatbuffers_1_1IterationVisitor_a5e9b9cb4ed1b1f805c9e620baccd6a9e}{Start\+Sequence}} ()
+\item 
+virtual void \mbox{\hyperlink{structflatbuffers_1_1IterationVisitor_abcf0ec94bded113e869c6661ba822e4c}{End\+Sequence}} ()
+\item 
+virtual void \mbox{\hyperlink{structflatbuffers_1_1IterationVisitor_a36a897a70c4f802670f8fcb49acd3187}{Field}} (size\+\_\+t, size\+\_\+t, \mbox{\hyperlink{namespaceflatbuffers_a1b3764da68a20489eb19e59529a07554}{Elementary\+Type}}, bool, const \mbox{\hyperlink{structflatbuffers_1_1TypeTable}{Type\+Table}} \texorpdfstring{$\ast$}{*}, const char \texorpdfstring{$\ast$}{*}, const uint8\+\_\+t \texorpdfstring{$\ast$}{*})
+\item 
+virtual void \mbox{\hyperlink{structflatbuffers_1_1IterationVisitor_a270f2134ebb59febcff4a29d6f51eba1}{UType}} (uint8\+\_\+t, const char \texorpdfstring{$\ast$}{*})
+\item 
+virtual void \mbox{\hyperlink{structflatbuffers_1_1IterationVisitor_a752c66c1a8580cbcb32ce851e5ed1eef}{Bool}} (bool)
+\item 
+virtual void \mbox{\hyperlink{structflatbuffers_1_1IterationVisitor_a22e627e508f2f3b51ea7e825144ae3ca}{Char}} (int8\+\_\+t, const char \texorpdfstring{$\ast$}{*})
+\item 
+virtual void \mbox{\hyperlink{structflatbuffers_1_1IterationVisitor_afb701dc4ca40e90d8826a08fbe9dc63b}{UChar}} (uint8\+\_\+t, const char \texorpdfstring{$\ast$}{*})
+\item 
+virtual void \mbox{\hyperlink{structflatbuffers_1_1IterationVisitor_aed2c253a5a58f67bd66add85fb77cbb9}{Short}} (int16\+\_\+t, const char \texorpdfstring{$\ast$}{*})
+\item 
+virtual void \mbox{\hyperlink{structflatbuffers_1_1IterationVisitor_a2cf594e78c2fc1ddcd500a83025079df}{UShort}} (uint16\+\_\+t, const char \texorpdfstring{$\ast$}{*})
+\item 
+virtual void \mbox{\hyperlink{structflatbuffers_1_1IterationVisitor_a21abf694061601efcae99f08a45c8f98}{Int}} (int32\+\_\+t, const char \texorpdfstring{$\ast$}{*})
+\item 
+virtual void \mbox{\hyperlink{structflatbuffers_1_1IterationVisitor_a621a18088a0f546ee3c15cd87c5e5fef}{UInt}} (uint32\+\_\+t, const char \texorpdfstring{$\ast$}{*})
+\item 
+virtual void \mbox{\hyperlink{structflatbuffers_1_1IterationVisitor_a1c791730820371968b7e2a08705bd312}{Long}} (int64\+\_\+t)
+\item 
+virtual void \mbox{\hyperlink{structflatbuffers_1_1IterationVisitor_a9826a825ece94ffc1cd219094069c95a}{ULong}} (uint64\+\_\+t)
+\item 
+virtual void \mbox{\hyperlink{structflatbuffers_1_1IterationVisitor_a387322b1a8da3e8a000bdf156bca3102}{Float}} (float)
+\item 
+virtual void \mbox{\hyperlink{structflatbuffers_1_1IterationVisitor_a7937308d4c96aa0438ae8d326fb2f343}{Double}} (double)
+\item 
+virtual void \mbox{\hyperlink{structflatbuffers_1_1IterationVisitor_ac0d7305b00288f89b327a69453ca4e5e}{String}} (const \mbox{\hyperlink{structflatbuffers_1_1String}{String}} \texorpdfstring{$\ast$}{*})
+\item 
+virtual void \mbox{\hyperlink{structflatbuffers_1_1IterationVisitor_aa2c90d49f5fd60fb9c8d657584476564}{Unknown}} (const uint8\+\_\+t \texorpdfstring{$\ast$}{*})
+\item 
+virtual void \mbox{\hyperlink{structflatbuffers_1_1IterationVisitor_ac525e32f479234857d1d156b15fffe6f}{Start\+Vector}} ()
+\item 
+virtual void \mbox{\hyperlink{structflatbuffers_1_1IterationVisitor_a35a849b83ffe8bdbb18d1e2ab1c364c2}{End\+Vector}} ()
+\item 
+virtual void \mbox{\hyperlink{structflatbuffers_1_1IterationVisitor_a5500baf1700b0447af75d4c17727192d}{Element}} (size\+\_\+t, \mbox{\hyperlink{namespaceflatbuffers_a1b3764da68a20489eb19e59529a07554}{Elementary\+Type}}, const \mbox{\hyperlink{structflatbuffers_1_1TypeTable}{Type\+Table}} \texorpdfstring{$\ast$}{*}, const uint8\+\_\+t \texorpdfstring{$\ast$}{*})
+\item 
+virtual \mbox{\hyperlink{structflatbuffers_1_1IterationVisitor_a211cea7017980be235b6f3fc7c1c0351}{\texorpdfstring{$\sim$}{\string~}\+Iteration\+Visitor}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{structflatbuffers_1_1IterationVisitor_a211cea7017980be235b6f3fc7c1c0351}\label{structflatbuffers_1_1IterationVisitor_a211cea7017980be235b6f3fc7c1c0351} 
+\index{flatbuffers::IterationVisitor@{flatbuffers::IterationVisitor}!````~IterationVisitor@{\texorpdfstring{$\sim$}{\string~}IterationVisitor}}
+\index{````~IterationVisitor@{\texorpdfstring{$\sim$}{\string~}IterationVisitor}!flatbuffers::IterationVisitor@{flatbuffers::IterationVisitor}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}IterationVisitor()}{\string~IterationVisitor()}}
+{\footnotesize\ttfamily virtual flatbuffers\+::\+Iteration\+Visitor\+::\texorpdfstring{$\sim$}{\string~}\+Iteration\+Visitor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{structflatbuffers_1_1IterationVisitor_a752c66c1a8580cbcb32ce851e5ed1eef}\label{structflatbuffers_1_1IterationVisitor_a752c66c1a8580cbcb32ce851e5ed1eef} 
+\index{flatbuffers::IterationVisitor@{flatbuffers::IterationVisitor}!Bool@{Bool}}
+\index{Bool@{Bool}!flatbuffers::IterationVisitor@{flatbuffers::IterationVisitor}}
+\doxysubsubsection{\texorpdfstring{Bool()}{Bool()}}
+{\footnotesize\ttfamily virtual void flatbuffers\+::\+Iteration\+Visitor\+::\+Bool (\begin{DoxyParamCaption}\item[{bool}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented in \mbox{\hyperlink{structflatbuffers_1_1ToStringVisitor_ac23f6a6f5dc319e001f9e4ee7d9abcaf}{flatbuffers\+::\+To\+String\+Visitor}}.
+
+\Hypertarget{structflatbuffers_1_1IterationVisitor_a22e627e508f2f3b51ea7e825144ae3ca}\label{structflatbuffers_1_1IterationVisitor_a22e627e508f2f3b51ea7e825144ae3ca} 
+\index{flatbuffers::IterationVisitor@{flatbuffers::IterationVisitor}!Char@{Char}}
+\index{Char@{Char}!flatbuffers::IterationVisitor@{flatbuffers::IterationVisitor}}
+\doxysubsubsection{\texorpdfstring{Char()}{Char()}}
+{\footnotesize\ttfamily virtual void flatbuffers\+::\+Iteration\+Visitor\+::\+Char (\begin{DoxyParamCaption}\item[{int8\+\_\+t}]{,  }\item[{const char \texorpdfstring{$\ast$}{*}}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented in \mbox{\hyperlink{structflatbuffers_1_1ToStringVisitor_a04349181fbebbcceb90a1cbbb3315d7b}{flatbuffers\+::\+To\+String\+Visitor}}.
+
+\Hypertarget{structflatbuffers_1_1IterationVisitor_a7937308d4c96aa0438ae8d326fb2f343}\label{structflatbuffers_1_1IterationVisitor_a7937308d4c96aa0438ae8d326fb2f343} 
+\index{flatbuffers::IterationVisitor@{flatbuffers::IterationVisitor}!Double@{Double}}
+\index{Double@{Double}!flatbuffers::IterationVisitor@{flatbuffers::IterationVisitor}}
+\doxysubsubsection{\texorpdfstring{Double()}{Double()}}
+{\footnotesize\ttfamily virtual void flatbuffers\+::\+Iteration\+Visitor\+::\+Double (\begin{DoxyParamCaption}\item[{double}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented in \mbox{\hyperlink{structflatbuffers_1_1ToStringVisitor_a82c78a7b799ca0ea0098e976f00ad19c}{flatbuffers\+::\+To\+String\+Visitor}}.
+
+\Hypertarget{structflatbuffers_1_1IterationVisitor_a5500baf1700b0447af75d4c17727192d}\label{structflatbuffers_1_1IterationVisitor_a5500baf1700b0447af75d4c17727192d} 
+\index{flatbuffers::IterationVisitor@{flatbuffers::IterationVisitor}!Element@{Element}}
+\index{Element@{Element}!flatbuffers::IterationVisitor@{flatbuffers::IterationVisitor}}
+\doxysubsubsection{\texorpdfstring{Element()}{Element()}}
+{\footnotesize\ttfamily virtual void flatbuffers\+::\+Iteration\+Visitor\+::\+Element (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{,  }\item[{\mbox{\hyperlink{namespaceflatbuffers_a1b3764da68a20489eb19e59529a07554}{Elementary\+Type}}}]{,  }\item[{const \mbox{\hyperlink{structflatbuffers_1_1TypeTable}{Type\+Table}} \texorpdfstring{$\ast$}{*}}]{,  }\item[{const uint8\+\_\+t \texorpdfstring{$\ast$}{*}}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented in \mbox{\hyperlink{structflatbuffers_1_1ToStringVisitor_acc38b837b4567e4e66c4ca315c50cfe4}{flatbuffers\+::\+To\+String\+Visitor}}.
+
+\Hypertarget{structflatbuffers_1_1IterationVisitor_abcf0ec94bded113e869c6661ba822e4c}\label{structflatbuffers_1_1IterationVisitor_abcf0ec94bded113e869c6661ba822e4c} 
+\index{flatbuffers::IterationVisitor@{flatbuffers::IterationVisitor}!EndSequence@{EndSequence}}
+\index{EndSequence@{EndSequence}!flatbuffers::IterationVisitor@{flatbuffers::IterationVisitor}}
+\doxysubsubsection{\texorpdfstring{EndSequence()}{EndSequence()}}
+{\footnotesize\ttfamily virtual void flatbuffers\+::\+Iteration\+Visitor\+::\+End\+Sequence (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented in \mbox{\hyperlink{structflatbuffers_1_1ToStringVisitor_aa40fafbb43f0fac13cd0c6640b27b2d9}{flatbuffers\+::\+To\+String\+Visitor}}.
+
+\Hypertarget{structflatbuffers_1_1IterationVisitor_a35a849b83ffe8bdbb18d1e2ab1c364c2}\label{structflatbuffers_1_1IterationVisitor_a35a849b83ffe8bdbb18d1e2ab1c364c2} 
+\index{flatbuffers::IterationVisitor@{flatbuffers::IterationVisitor}!EndVector@{EndVector}}
+\index{EndVector@{EndVector}!flatbuffers::IterationVisitor@{flatbuffers::IterationVisitor}}
+\doxysubsubsection{\texorpdfstring{EndVector()}{EndVector()}}
+{\footnotesize\ttfamily virtual void flatbuffers\+::\+Iteration\+Visitor\+::\+End\+Vector (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented in \mbox{\hyperlink{structflatbuffers_1_1ToStringVisitor_a1e80f45257150ed2cb6dd75aa9897922}{flatbuffers\+::\+To\+String\+Visitor}}.
+
+\Hypertarget{structflatbuffers_1_1IterationVisitor_a36a897a70c4f802670f8fcb49acd3187}\label{structflatbuffers_1_1IterationVisitor_a36a897a70c4f802670f8fcb49acd3187} 
+\index{flatbuffers::IterationVisitor@{flatbuffers::IterationVisitor}!Field@{Field}}
+\index{Field@{Field}!flatbuffers::IterationVisitor@{flatbuffers::IterationVisitor}}
+\doxysubsubsection{\texorpdfstring{Field()}{Field()}}
+{\footnotesize\ttfamily virtual void flatbuffers\+::\+Iteration\+Visitor\+::\+Field (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{,  }\item[{size\+\_\+t}]{,  }\item[{\mbox{\hyperlink{namespaceflatbuffers_a1b3764da68a20489eb19e59529a07554}{Elementary\+Type}}}]{,  }\item[{bool}]{,  }\item[{const \mbox{\hyperlink{structflatbuffers_1_1TypeTable}{Type\+Table}} \texorpdfstring{$\ast$}{*}}]{,  }\item[{const char \texorpdfstring{$\ast$}{*}}]{,  }\item[{const uint8\+\_\+t \texorpdfstring{$\ast$}{*}}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented in \mbox{\hyperlink{structflatbuffers_1_1ToStringVisitor_ad9bff1a0688e5cdab8fd5caadd44f523}{flatbuffers\+::\+To\+String\+Visitor}}.
+
+\Hypertarget{structflatbuffers_1_1IterationVisitor_a387322b1a8da3e8a000bdf156bca3102}\label{structflatbuffers_1_1IterationVisitor_a387322b1a8da3e8a000bdf156bca3102} 
+\index{flatbuffers::IterationVisitor@{flatbuffers::IterationVisitor}!Float@{Float}}
+\index{Float@{Float}!flatbuffers::IterationVisitor@{flatbuffers::IterationVisitor}}
+\doxysubsubsection{\texorpdfstring{Float()}{Float()}}
+{\footnotesize\ttfamily virtual void flatbuffers\+::\+Iteration\+Visitor\+::\+Float (\begin{DoxyParamCaption}\item[{float}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented in \mbox{\hyperlink{structflatbuffers_1_1ToStringVisitor_a63dac3b878844227c5257cfd4dddfdec}{flatbuffers\+::\+To\+String\+Visitor}}.
+
+\Hypertarget{structflatbuffers_1_1IterationVisitor_a21abf694061601efcae99f08a45c8f98}\label{structflatbuffers_1_1IterationVisitor_a21abf694061601efcae99f08a45c8f98} 
+\index{flatbuffers::IterationVisitor@{flatbuffers::IterationVisitor}!Int@{Int}}
+\index{Int@{Int}!flatbuffers::IterationVisitor@{flatbuffers::IterationVisitor}}
+\doxysubsubsection{\texorpdfstring{Int()}{Int()}}
+{\footnotesize\ttfamily virtual void flatbuffers\+::\+Iteration\+Visitor\+::\+Int (\begin{DoxyParamCaption}\item[{int32\+\_\+t}]{,  }\item[{const char \texorpdfstring{$\ast$}{*}}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented in \mbox{\hyperlink{structflatbuffers_1_1ToStringVisitor_ad5f7cc2707c21ddc7bd42a8df890fcf3}{flatbuffers\+::\+To\+String\+Visitor}}.
+
+\Hypertarget{structflatbuffers_1_1IterationVisitor_a1c791730820371968b7e2a08705bd312}\label{structflatbuffers_1_1IterationVisitor_a1c791730820371968b7e2a08705bd312} 
+\index{flatbuffers::IterationVisitor@{flatbuffers::IterationVisitor}!Long@{Long}}
+\index{Long@{Long}!flatbuffers::IterationVisitor@{flatbuffers::IterationVisitor}}
+\doxysubsubsection{\texorpdfstring{Long()}{Long()}}
+{\footnotesize\ttfamily virtual void flatbuffers\+::\+Iteration\+Visitor\+::\+Long (\begin{DoxyParamCaption}\item[{int64\+\_\+t}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented in \mbox{\hyperlink{structflatbuffers_1_1ToStringVisitor_a8640d8ff89020aa744c44583f13374d7}{flatbuffers\+::\+To\+String\+Visitor}}.
+
+\Hypertarget{structflatbuffers_1_1IterationVisitor_aed2c253a5a58f67bd66add85fb77cbb9}\label{structflatbuffers_1_1IterationVisitor_aed2c253a5a58f67bd66add85fb77cbb9} 
+\index{flatbuffers::IterationVisitor@{flatbuffers::IterationVisitor}!Short@{Short}}
+\index{Short@{Short}!flatbuffers::IterationVisitor@{flatbuffers::IterationVisitor}}
+\doxysubsubsection{\texorpdfstring{Short()}{Short()}}
+{\footnotesize\ttfamily virtual void flatbuffers\+::\+Iteration\+Visitor\+::\+Short (\begin{DoxyParamCaption}\item[{int16\+\_\+t}]{,  }\item[{const char \texorpdfstring{$\ast$}{*}}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented in \mbox{\hyperlink{structflatbuffers_1_1ToStringVisitor_aae112a228e66976b11a3929121ea7be0}{flatbuffers\+::\+To\+String\+Visitor}}.
+
+\Hypertarget{structflatbuffers_1_1IterationVisitor_a5e9b9cb4ed1b1f805c9e620baccd6a9e}\label{structflatbuffers_1_1IterationVisitor_a5e9b9cb4ed1b1f805c9e620baccd6a9e} 
+\index{flatbuffers::IterationVisitor@{flatbuffers::IterationVisitor}!StartSequence@{StartSequence}}
+\index{StartSequence@{StartSequence}!flatbuffers::IterationVisitor@{flatbuffers::IterationVisitor}}
+\doxysubsubsection{\texorpdfstring{StartSequence()}{StartSequence()}}
+{\footnotesize\ttfamily virtual void flatbuffers\+::\+Iteration\+Visitor\+::\+Start\+Sequence (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented in \mbox{\hyperlink{structflatbuffers_1_1ToStringVisitor_a0d3667a583190e47fde2bc61db4131c4}{flatbuffers\+::\+To\+String\+Visitor}}.
+
+\Hypertarget{structflatbuffers_1_1IterationVisitor_ac525e32f479234857d1d156b15fffe6f}\label{structflatbuffers_1_1IterationVisitor_ac525e32f479234857d1d156b15fffe6f} 
+\index{flatbuffers::IterationVisitor@{flatbuffers::IterationVisitor}!StartVector@{StartVector}}
+\index{StartVector@{StartVector}!flatbuffers::IterationVisitor@{flatbuffers::IterationVisitor}}
+\doxysubsubsection{\texorpdfstring{StartVector()}{StartVector()}}
+{\footnotesize\ttfamily virtual void flatbuffers\+::\+Iteration\+Visitor\+::\+Start\+Vector (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented in \mbox{\hyperlink{structflatbuffers_1_1ToStringVisitor_a2467f1aad4b859e47863b5118877768e}{flatbuffers\+::\+To\+String\+Visitor}}.
+
+\Hypertarget{structflatbuffers_1_1IterationVisitor_ac0d7305b00288f89b327a69453ca4e5e}\label{structflatbuffers_1_1IterationVisitor_ac0d7305b00288f89b327a69453ca4e5e} 
+\index{flatbuffers::IterationVisitor@{flatbuffers::IterationVisitor}!String@{String}}
+\index{String@{String}!flatbuffers::IterationVisitor@{flatbuffers::IterationVisitor}}
+\doxysubsubsection{\texorpdfstring{String()}{String()}}
+{\footnotesize\ttfamily virtual void flatbuffers\+::\+Iteration\+Visitor\+::\+String (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structflatbuffers_1_1String}{String}} \texorpdfstring{$\ast$}{*}}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+\Hypertarget{structflatbuffers_1_1IterationVisitor_afb701dc4ca40e90d8826a08fbe9dc63b}\label{structflatbuffers_1_1IterationVisitor_afb701dc4ca40e90d8826a08fbe9dc63b} 
+\index{flatbuffers::IterationVisitor@{flatbuffers::IterationVisitor}!UChar@{UChar}}
+\index{UChar@{UChar}!flatbuffers::IterationVisitor@{flatbuffers::IterationVisitor}}
+\doxysubsubsection{\texorpdfstring{UChar()}{UChar()}}
+{\footnotesize\ttfamily virtual void flatbuffers\+::\+Iteration\+Visitor\+::\+UChar (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{,  }\item[{const char \texorpdfstring{$\ast$}{*}}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented in \mbox{\hyperlink{structflatbuffers_1_1ToStringVisitor_a774b55a9ad29ed2eec409720ed380f4e}{flatbuffers\+::\+To\+String\+Visitor}}.
+
+\Hypertarget{structflatbuffers_1_1IterationVisitor_a621a18088a0f546ee3c15cd87c5e5fef}\label{structflatbuffers_1_1IterationVisitor_a621a18088a0f546ee3c15cd87c5e5fef} 
+\index{flatbuffers::IterationVisitor@{flatbuffers::IterationVisitor}!UInt@{UInt}}
+\index{UInt@{UInt}!flatbuffers::IterationVisitor@{flatbuffers::IterationVisitor}}
+\doxysubsubsection{\texorpdfstring{UInt()}{UInt()}}
+{\footnotesize\ttfamily virtual void flatbuffers\+::\+Iteration\+Visitor\+::\+UInt (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{,  }\item[{const char \texorpdfstring{$\ast$}{*}}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented in \mbox{\hyperlink{structflatbuffers_1_1ToStringVisitor_a6436b2cb7f5b675f9eb880faf35da6c5}{flatbuffers\+::\+To\+String\+Visitor}}.
+
+\Hypertarget{structflatbuffers_1_1IterationVisitor_a9826a825ece94ffc1cd219094069c95a}\label{structflatbuffers_1_1IterationVisitor_a9826a825ece94ffc1cd219094069c95a} 
+\index{flatbuffers::IterationVisitor@{flatbuffers::IterationVisitor}!ULong@{ULong}}
+\index{ULong@{ULong}!flatbuffers::IterationVisitor@{flatbuffers::IterationVisitor}}
+\doxysubsubsection{\texorpdfstring{ULong()}{ULong()}}
+{\footnotesize\ttfamily virtual void flatbuffers\+::\+Iteration\+Visitor\+::\+ULong (\begin{DoxyParamCaption}\item[{uint64\+\_\+t}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented in \mbox{\hyperlink{structflatbuffers_1_1ToStringVisitor_aea8e42afb599b3fb699289ec1cd60c7b}{flatbuffers\+::\+To\+String\+Visitor}}.
+
+\Hypertarget{structflatbuffers_1_1IterationVisitor_aa2c90d49f5fd60fb9c8d657584476564}\label{structflatbuffers_1_1IterationVisitor_aa2c90d49f5fd60fb9c8d657584476564} 
+\index{flatbuffers::IterationVisitor@{flatbuffers::IterationVisitor}!Unknown@{Unknown}}
+\index{Unknown@{Unknown}!flatbuffers::IterationVisitor@{flatbuffers::IterationVisitor}}
+\doxysubsubsection{\texorpdfstring{Unknown()}{Unknown()}}
+{\footnotesize\ttfamily virtual void flatbuffers\+::\+Iteration\+Visitor\+::\+Unknown (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t \texorpdfstring{$\ast$}{*}}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented in \mbox{\hyperlink{structflatbuffers_1_1ToStringVisitor_a6203e0c6cbd9cf5aca23cfeded165180}{flatbuffers\+::\+To\+String\+Visitor}}.
+
+\Hypertarget{structflatbuffers_1_1IterationVisitor_a2cf594e78c2fc1ddcd500a83025079df}\label{structflatbuffers_1_1IterationVisitor_a2cf594e78c2fc1ddcd500a83025079df} 
+\index{flatbuffers::IterationVisitor@{flatbuffers::IterationVisitor}!UShort@{UShort}}
+\index{UShort@{UShort}!flatbuffers::IterationVisitor@{flatbuffers::IterationVisitor}}
+\doxysubsubsection{\texorpdfstring{UShort()}{UShort()}}
+{\footnotesize\ttfamily virtual void flatbuffers\+::\+Iteration\+Visitor\+::\+UShort (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{,  }\item[{const char \texorpdfstring{$\ast$}{*}}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented in \mbox{\hyperlink{structflatbuffers_1_1ToStringVisitor_a603a24927b10bc245527125983055883}{flatbuffers\+::\+To\+String\+Visitor}}.
+
+\Hypertarget{structflatbuffers_1_1IterationVisitor_a270f2134ebb59febcff4a29d6f51eba1}\label{structflatbuffers_1_1IterationVisitor_a270f2134ebb59febcff4a29d6f51eba1} 
+\index{flatbuffers::IterationVisitor@{flatbuffers::IterationVisitor}!UType@{UType}}
+\index{UType@{UType}!flatbuffers::IterationVisitor@{flatbuffers::IterationVisitor}}
+\doxysubsubsection{\texorpdfstring{UType()}{UType()}}
+{\footnotesize\ttfamily virtual void flatbuffers\+::\+Iteration\+Visitor\+::\+UType (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{,  }\item[{const char \texorpdfstring{$\ast$}{*}}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented in \mbox{\hyperlink{structflatbuffers_1_1ToStringVisitor_a0470ed017444d72c008b1fb90d75ed79}{flatbuffers\+::\+To\+String\+Visitor}}.
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+flatbuffers/include/flatbuffers/\mbox{\hyperlink{minireflect_8h}{minireflect.\+h}}\end{DoxyCompactItemize}

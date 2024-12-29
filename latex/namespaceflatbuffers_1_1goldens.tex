@@ -1,0 +1,97 @@
+\doxysection{flatbuffers\+::goldens Namespace Reference}
+\hypertarget{namespaceflatbuffers_1_1goldens}{}\label{namespaceflatbuffers_1_1goldens}\index{flatbuffers::goldens@{flatbuffers::goldens}}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structflatbuffers_1_1goldens_1_1FLATBUFFERS__FINAL__CLASS}{FLATBUFFERS\+\_\+\+FINAL\+\_\+\+CLASS}}
+\item 
+class \mbox{\hyperlink{structflatbuffers_1_1goldens_1_1Galaxy}{Galaxy}}
+\item 
+struct \mbox{\hyperlink{structflatbuffers_1_1goldens_1_1GalaxyBuilder}{Galaxy\+Builder}}
+\item 
+class {\bfseries Galaxy\+Verify}
+\item 
+class \mbox{\hyperlink{structflatbuffers_1_1goldens_1_1Universe}{Universe}}
+\item 
+struct \mbox{\hyperlink{structflatbuffers_1_1goldens_1_1UniverseBuilder}{Universe\+Builder}}
+\item 
+class {\bfseries Universe\+Verify}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+inline \+::flatbuffers\+::\+Offset$<$ \mbox{\hyperlink{structflatbuffers_1_1goldens_1_1Galaxy}{Galaxy}} $>$ \mbox{\hyperlink{namespaceflatbuffers_1_1goldens_a5dd6790436ba5d5b2335e3303dcd23fc}{Create\+Galaxy}} (\mbox{\hyperlink{namespaceflatbuffers_a41ac7b1c8f5f4a869e8f649b6c171ce7}{\+::flatbuffers\+::\+Flat\+Buffer\+Builder}} \&\+\_\+fbb, int64\+\_\+t num\+\_\+stars=0)
+\item 
+inline \+::flatbuffers\+::\+Offset$<$ \mbox{\hyperlink{structflatbuffers_1_1goldens_1_1Universe}{Universe}} $>$ \mbox{\hyperlink{namespaceflatbuffers_1_1goldens_aa11cffd0d23f0d8e3bb2f686f6c8298b}{Create\+Universe}} (\mbox{\hyperlink{namespaceflatbuffers_a41ac7b1c8f5f4a869e8f649b6c171ce7}{\+::flatbuffers\+::\+Flat\+Buffer\+Builder}} \&\+\_\+fbb, double age=0.\+0, \+::flatbuffers\+::\+Offset$<$\mbox{\hyperlink{classflatbuffers_1_1Vector}{\+::flatbuffers\+::\+Vector}}$<$\+::flatbuffers\+::\+Offset$<$ \mbox{\hyperlink{structflatbuffers_1_1goldens_1_1Galaxy}{flatbuffers\+::goldens\+::\+Galaxy}} $>$ $>$ $>$ galaxies=0)
+\item 
+inline \+::flatbuffers\+::\+Offset$<$ \mbox{\hyperlink{structflatbuffers_1_1goldens_1_1Universe}{Universe}} $>$ \mbox{\hyperlink{namespaceflatbuffers_1_1goldens_a58322a104f93b13cc61d7cddded6a785}{Create\+Universe\+Direct}} (\mbox{\hyperlink{namespaceflatbuffers_a41ac7b1c8f5f4a869e8f649b6c171ce7}{\+::flatbuffers\+::\+Flat\+Buffer\+Builder}} \&\+\_\+fbb, double age=0.\+0, const std\+::vector$<$\+::flatbuffers\+::\+Offset$<$ \mbox{\hyperlink{structflatbuffers_1_1goldens_1_1Galaxy}{flatbuffers\+::goldens\+::\+Galaxy}} $>$ $>$ \texorpdfstring{$\ast$}{*}galaxies=nullptr)
+\item 
+const \mbox{\hyperlink{structflatbuffers_1_1goldens_1_1Universe}{flatbuffers\+::goldens\+::\+Universe}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{namespaceflatbuffers_1_1goldens_a12fc5fc30c525bfe41c24f276cdcca22}{Get\+Universe}} (const void \texorpdfstring{$\ast$}{*}buf)
+\item 
+const \mbox{\hyperlink{structflatbuffers_1_1goldens_1_1Universe}{flatbuffers\+::goldens\+::\+Universe}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{namespaceflatbuffers_1_1goldens_a801d1672b0bd8c4212d181d3ec41d10e}{Get\+Size\+Prefixed\+Universe}} (const void \texorpdfstring{$\ast$}{*}buf)
+\item 
+bool \mbox{\hyperlink{namespaceflatbuffers_1_1goldens_a55a58b5b4964aeecbd50577cb516def1}{Verify\+Universe\+Buffer}} (\mbox{\hyperlink{namespaceflatbuffers_a3268477941df91db2eb06442b6e5f922}{\+::flatbuffers\+::\+Verifier}} \&verifier)
+\item 
+bool \mbox{\hyperlink{namespaceflatbuffers_1_1goldens_a69b96430a1434ffed1c4bca02eed3661}{Verify\+Size\+Prefixed\+Universe\+Buffer}} (\mbox{\hyperlink{namespaceflatbuffers_a3268477941df91db2eb06442b6e5f922}{\+::flatbuffers\+::\+Verifier}} \&verifier)
+\item 
+void \mbox{\hyperlink{namespaceflatbuffers_1_1goldens_a1abdf6a030d3863cc249a1636c410ca0}{Finish\+Universe\+Buffer}} (\mbox{\hyperlink{namespaceflatbuffers_a41ac7b1c8f5f4a869e8f649b6c171ce7}{\+::flatbuffers\+::\+Flat\+Buffer\+Builder}} \&fbb, \+::flatbuffers\+::\+Offset$<$ \mbox{\hyperlink{structflatbuffers_1_1goldens_1_1Universe}{flatbuffers\+::goldens\+::\+Universe}} $>$ root)
+\item 
+void \mbox{\hyperlink{namespaceflatbuffers_1_1goldens_a414a60ca7dafc38d9a8d16f79136d02b}{Finish\+Size\+Prefixed\+Universe\+Buffer}} (\mbox{\hyperlink{namespaceflatbuffers_a41ac7b1c8f5f4a869e8f649b6c171ce7}{\+::flatbuffers\+::\+Flat\+Buffer\+Builder}} \&fbb, \+::flatbuffers\+::\+Offset$<$ \mbox{\hyperlink{structflatbuffers_1_1goldens_1_1Universe}{flatbuffers\+::goldens\+::\+Universe}} $>$ root)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{namespaceflatbuffers_1_1goldens_a5dd6790436ba5d5b2335e3303dcd23fc}\label{namespaceflatbuffers_1_1goldens_a5dd6790436ba5d5b2335e3303dcd23fc} 
+\index{flatbuffers::goldens@{flatbuffers::goldens}!CreateGalaxy@{CreateGalaxy}}
+\index{CreateGalaxy@{CreateGalaxy}!flatbuffers::goldens@{flatbuffers::goldens}}
+\doxysubsubsection{\texorpdfstring{CreateGalaxy()}{CreateGalaxy()}}
+{\footnotesize\ttfamily inline \+::flatbuffers\+::\+Offset$<$ \mbox{\hyperlink{structflatbuffers_1_1goldens_1_1Galaxy}{Galaxy}} $>$ flatbuffers\+::goldens\+::\+Create\+Galaxy (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceflatbuffers_a41ac7b1c8f5f4a869e8f649b6c171ce7}{\+::flatbuffers\+::\+Flat\+Buffer\+Builder}} \&}]{\+\_\+fbb,  }\item[{int64\+\_\+t}]{num\+\_\+stars = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+\Hypertarget{namespaceflatbuffers_1_1goldens_aa11cffd0d23f0d8e3bb2f686f6c8298b}\label{namespaceflatbuffers_1_1goldens_aa11cffd0d23f0d8e3bb2f686f6c8298b} 
+\index{flatbuffers::goldens@{flatbuffers::goldens}!CreateUniverse@{CreateUniverse}}
+\index{CreateUniverse@{CreateUniverse}!flatbuffers::goldens@{flatbuffers::goldens}}
+\doxysubsubsection{\texorpdfstring{CreateUniverse()}{CreateUniverse()}}
+{\footnotesize\ttfamily inline \+::flatbuffers\+::\+Offset$<$ \mbox{\hyperlink{structflatbuffers_1_1goldens_1_1Universe}{Universe}} $>$ flatbuffers\+::goldens\+::\+Create\+Universe (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceflatbuffers_a41ac7b1c8f5f4a869e8f649b6c171ce7}{\+::flatbuffers\+::\+Flat\+Buffer\+Builder}} \&}]{\+\_\+fbb,  }\item[{double}]{age = {\ttfamily 0.0},  }\item[{\+::flatbuffers\+::\+Offset$<$\mbox{\hyperlink{classflatbuffers_1_1Vector}{\+::flatbuffers\+::\+Vector}}$<$\+::flatbuffers\+::\+Offset$<$ \mbox{\hyperlink{structflatbuffers_1_1goldens_1_1Galaxy}{flatbuffers\+::goldens\+::\+Galaxy}} $>$ $>$ $>$}]{galaxies = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+\Hypertarget{namespaceflatbuffers_1_1goldens_a58322a104f93b13cc61d7cddded6a785}\label{namespaceflatbuffers_1_1goldens_a58322a104f93b13cc61d7cddded6a785} 
+\index{flatbuffers::goldens@{flatbuffers::goldens}!CreateUniverseDirect@{CreateUniverseDirect}}
+\index{CreateUniverseDirect@{CreateUniverseDirect}!flatbuffers::goldens@{flatbuffers::goldens}}
+\doxysubsubsection{\texorpdfstring{CreateUniverseDirect()}{CreateUniverseDirect()}}
+{\footnotesize\ttfamily inline \+::flatbuffers\+::\+Offset$<$ \mbox{\hyperlink{structflatbuffers_1_1goldens_1_1Universe}{Universe}} $>$ flatbuffers\+::goldens\+::\+Create\+Universe\+Direct (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceflatbuffers_a41ac7b1c8f5f4a869e8f649b6c171ce7}{\+::flatbuffers\+::\+Flat\+Buffer\+Builder}} \&}]{\+\_\+fbb,  }\item[{double}]{age = {\ttfamily 0.0},  }\item[{const std\+::vector$<$\+::flatbuffers\+::\+Offset$<$ \mbox{\hyperlink{structflatbuffers_1_1goldens_1_1Galaxy}{flatbuffers\+::goldens\+::\+Galaxy}} $>$ $>$ \texorpdfstring{$\ast$}{*}}]{galaxies = {\ttfamily nullptr} }\end{DoxyParamCaption})}
+
+\Hypertarget{namespaceflatbuffers_1_1goldens_a414a60ca7dafc38d9a8d16f79136d02b}\label{namespaceflatbuffers_1_1goldens_a414a60ca7dafc38d9a8d16f79136d02b} 
+\index{flatbuffers::goldens@{flatbuffers::goldens}!FinishSizePrefixedUniverseBuffer@{FinishSizePrefixedUniverseBuffer}}
+\index{FinishSizePrefixedUniverseBuffer@{FinishSizePrefixedUniverseBuffer}!flatbuffers::goldens@{flatbuffers::goldens}}
+\doxysubsubsection{\texorpdfstring{FinishSizePrefixedUniverseBuffer()}{FinishSizePrefixedUniverseBuffer()}}
+{\footnotesize\ttfamily void flatbuffers\+::goldens\+::\+Finish\+Size\+Prefixed\+Universe\+Buffer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceflatbuffers_a41ac7b1c8f5f4a869e8f649b6c171ce7}{\+::flatbuffers\+::\+Flat\+Buffer\+Builder}} \&}]{fbb,  }\item[{\+::flatbuffers\+::\+Offset$<$ \mbox{\hyperlink{structflatbuffers_1_1goldens_1_1Universe}{flatbuffers\+::goldens\+::\+Universe}} $>$}]{root }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{namespaceflatbuffers_1_1goldens_a1abdf6a030d3863cc249a1636c410ca0}\label{namespaceflatbuffers_1_1goldens_a1abdf6a030d3863cc249a1636c410ca0} 
+\index{flatbuffers::goldens@{flatbuffers::goldens}!FinishUniverseBuffer@{FinishUniverseBuffer}}
+\index{FinishUniverseBuffer@{FinishUniverseBuffer}!flatbuffers::goldens@{flatbuffers::goldens}}
+\doxysubsubsection{\texorpdfstring{FinishUniverseBuffer()}{FinishUniverseBuffer()}}
+{\footnotesize\ttfamily void flatbuffers\+::goldens\+::\+Finish\+Universe\+Buffer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceflatbuffers_a41ac7b1c8f5f4a869e8f649b6c171ce7}{\+::flatbuffers\+::\+Flat\+Buffer\+Builder}} \&}]{fbb,  }\item[{\+::flatbuffers\+::\+Offset$<$ \mbox{\hyperlink{structflatbuffers_1_1goldens_1_1Universe}{flatbuffers\+::goldens\+::\+Universe}} $>$}]{root }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{namespaceflatbuffers_1_1goldens_a801d1672b0bd8c4212d181d3ec41d10e}\label{namespaceflatbuffers_1_1goldens_a801d1672b0bd8c4212d181d3ec41d10e} 
+\index{flatbuffers::goldens@{flatbuffers::goldens}!GetSizePrefixedUniverse@{GetSizePrefixedUniverse}}
+\index{GetSizePrefixedUniverse@{GetSizePrefixedUniverse}!flatbuffers::goldens@{flatbuffers::goldens}}
+\doxysubsubsection{\texorpdfstring{GetSizePrefixedUniverse()}{GetSizePrefixedUniverse()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{structflatbuffers_1_1goldens_1_1Universe}{flatbuffers\+::goldens\+::\+Universe}} \texorpdfstring{$\ast$}{*} flatbuffers\+::goldens\+::\+Get\+Size\+Prefixed\+Universe (\begin{DoxyParamCaption}\item[{const void \texorpdfstring{$\ast$}{*}}]{buf }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{namespaceflatbuffers_1_1goldens_a12fc5fc30c525bfe41c24f276cdcca22}\label{namespaceflatbuffers_1_1goldens_a12fc5fc30c525bfe41c24f276cdcca22} 
+\index{flatbuffers::goldens@{flatbuffers::goldens}!GetUniverse@{GetUniverse}}
+\index{GetUniverse@{GetUniverse}!flatbuffers::goldens@{flatbuffers::goldens}}
+\doxysubsubsection{\texorpdfstring{GetUniverse()}{GetUniverse()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{structflatbuffers_1_1goldens_1_1Universe}{flatbuffers\+::goldens\+::\+Universe}} \texorpdfstring{$\ast$}{*} flatbuffers\+::goldens\+::\+Get\+Universe (\begin{DoxyParamCaption}\item[{const void \texorpdfstring{$\ast$}{*}}]{buf }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{namespaceflatbuffers_1_1goldens_a69b96430a1434ffed1c4bca02eed3661}\label{namespaceflatbuffers_1_1goldens_a69b96430a1434ffed1c4bca02eed3661} 
+\index{flatbuffers::goldens@{flatbuffers::goldens}!VerifySizePrefixedUniverseBuffer@{VerifySizePrefixedUniverseBuffer}}
+\index{VerifySizePrefixedUniverseBuffer@{VerifySizePrefixedUniverseBuffer}!flatbuffers::goldens@{flatbuffers::goldens}}
+\doxysubsubsection{\texorpdfstring{VerifySizePrefixedUniverseBuffer()}{VerifySizePrefixedUniverseBuffer()}}
+{\footnotesize\ttfamily bool flatbuffers\+::goldens\+::\+Verify\+Size\+Prefixed\+Universe\+Buffer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceflatbuffers_a3268477941df91db2eb06442b6e5f922}{\+::flatbuffers\+::\+Verifier}} \&}]{verifier }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{namespaceflatbuffers_1_1goldens_a55a58b5b4964aeecbd50577cb516def1}\label{namespaceflatbuffers_1_1goldens_a55a58b5b4964aeecbd50577cb516def1} 
+\index{flatbuffers::goldens@{flatbuffers::goldens}!VerifyUniverseBuffer@{VerifyUniverseBuffer}}
+\index{VerifyUniverseBuffer@{VerifyUniverseBuffer}!flatbuffers::goldens@{flatbuffers::goldens}}
+\doxysubsubsection{\texorpdfstring{VerifyUniverseBuffer()}{VerifyUniverseBuffer()}}
+{\footnotesize\ttfamily bool flatbuffers\+::goldens\+::\+Verify\+Universe\+Buffer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceflatbuffers_a3268477941df91db2eb06442b6e5f922}{\+::flatbuffers\+::\+Verifier}} \&}]{verifier }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+

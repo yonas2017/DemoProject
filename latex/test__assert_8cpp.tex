@@ -1,0 +1,58 @@
+\doxysection{flatbuffers/tests/test\+\_\+assert.cpp File Reference}
+\hypertarget{test__assert_8cpp}{}\label{test__assert_8cpp}\index{flatbuffers/tests/test\_assert.cpp@{flatbuffers/tests/test\_assert.cpp}}
+{\ttfamily \#include "{}test\+\_\+assert.\+h"{}}\newline
+{\ttfamily \#include $<$assert.\+h$>$}\newline
+Include dependency graph for test\+\_\+assert.\+cpp\+:
+% FIG 0
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{test__assert_8cpp_a89b645bb5ae987b1de34fa76e1578728}{Test\+Fail}} (const char \texorpdfstring{$\ast$}{*}expval, const char \texorpdfstring{$\ast$}{*}val, const char \texorpdfstring{$\ast$}{*}exp, const char \texorpdfstring{$\ast$}{*}file, int line, const char \texorpdfstring{$\ast$}{*}func)
+\item 
+void \mbox{\hyperlink{test__assert_8cpp_a574de4c74eb62a876f1ad0b6c1b4d02f}{Test\+Eq\+Str}} (const char \texorpdfstring{$\ast$}{*}expval, const char \texorpdfstring{$\ast$}{*}val, const char \texorpdfstring{$\ast$}{*}exp, const char \texorpdfstring{$\ast$}{*}file, int line, const char \texorpdfstring{$\ast$}{*}func)
+\item 
+void \mbox{\hyperlink{test__assert_8cpp_a0cc3f2f875601ac528c9d5daa6c222f5}{Init\+Test\+Engine}} (\mbox{\hyperlink{test__assert_8h_a5dca4b5af0ff870caa2768e213e2dae6}{Test\+Fail\+Event\+Listener}} listener)
+\item 
+int \mbox{\hyperlink{test__assert_8cpp_a6d6f63b756251fb630322b3f8818ea33}{Close\+Test\+Engine}} (bool force\+\_\+report)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{test__assert_8cpp_aff98d101e0ffacc92dfc217b6dd415f1}{testing\+\_\+fails}} = 0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{test__assert_8cpp_a6d6f63b756251fb630322b3f8818ea33}\label{test__assert_8cpp_a6d6f63b756251fb630322b3f8818ea33} 
+\index{test\_assert.cpp@{test\_assert.cpp}!CloseTestEngine@{CloseTestEngine}}
+\index{CloseTestEngine@{CloseTestEngine}!test\_assert.cpp@{test\_assert.cpp}}
+\doxysubsubsection{\texorpdfstring{CloseTestEngine()}{CloseTestEngine()}}
+{\footnotesize\ttfamily int Close\+Test\+Engine (\begin{DoxyParamCaption}\item[{bool}]{force\+\_\+report }\end{DoxyParamCaption})}
+
+\Hypertarget{test__assert_8cpp_a0cc3f2f875601ac528c9d5daa6c222f5}\label{test__assert_8cpp_a0cc3f2f875601ac528c9d5daa6c222f5} 
+\index{test\_assert.cpp@{test\_assert.cpp}!InitTestEngine@{InitTestEngine}}
+\index{InitTestEngine@{InitTestEngine}!test\_assert.cpp@{test\_assert.cpp}}
+\doxysubsubsection{\texorpdfstring{InitTestEngine()}{InitTestEngine()}}
+{\footnotesize\ttfamily void Init\+Test\+Engine (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{test__assert_8h_a5dca4b5af0ff870caa2768e213e2dae6}{Test\+Fail\+Event\+Listener}}}]{listener }\end{DoxyParamCaption})}
+
+\Hypertarget{test__assert_8cpp_a574de4c74eb62a876f1ad0b6c1b4d02f}\label{test__assert_8cpp_a574de4c74eb62a876f1ad0b6c1b4d02f} 
+\index{test\_assert.cpp@{test\_assert.cpp}!TestEqStr@{TestEqStr}}
+\index{TestEqStr@{TestEqStr}!test\_assert.cpp@{test\_assert.cpp}}
+\doxysubsubsection{\texorpdfstring{TestEqStr()}{TestEqStr()}}
+{\footnotesize\ttfamily void Test\+Eq\+Str (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{expval,  }\item[{const char \texorpdfstring{$\ast$}{*}}]{val,  }\item[{const char \texorpdfstring{$\ast$}{*}}]{exp,  }\item[{const char \texorpdfstring{$\ast$}{*}}]{file,  }\item[{int}]{line,  }\item[{const char \texorpdfstring{$\ast$}{*}}]{func }\end{DoxyParamCaption})}
+
+\Hypertarget{test__assert_8cpp_a89b645bb5ae987b1de34fa76e1578728}\label{test__assert_8cpp_a89b645bb5ae987b1de34fa76e1578728} 
+\index{test\_assert.cpp@{test\_assert.cpp}!TestFail@{TestFail}}
+\index{TestFail@{TestFail}!test\_assert.cpp@{test\_assert.cpp}}
+\doxysubsubsection{\texorpdfstring{TestFail()}{TestFail()}}
+{\footnotesize\ttfamily void Test\+Fail (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{expval,  }\item[{const char \texorpdfstring{$\ast$}{*}}]{val,  }\item[{const char \texorpdfstring{$\ast$}{*}}]{exp,  }\item[{const char \texorpdfstring{$\ast$}{*}}]{file,  }\item[{int}]{line,  }\item[{const char \texorpdfstring{$\ast$}{*}}]{func }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{test__assert_8cpp_aff98d101e0ffacc92dfc217b6dd415f1}\label{test__assert_8cpp_aff98d101e0ffacc92dfc217b6dd415f1} 
+\index{test\_assert.cpp@{test\_assert.cpp}!testing\_fails@{testing\_fails}}
+\index{testing\_fails@{testing\_fails}!test\_assert.cpp@{test\_assert.cpp}}
+\doxysubsubsection{\texorpdfstring{testing\_fails}{testing\_fails}}
+{\footnotesize\ttfamily int testing\+\_\+fails = 0}
+

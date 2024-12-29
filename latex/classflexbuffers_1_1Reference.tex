@@ -1,0 +1,588 @@
+\doxysection{flexbuffers\+::Reference Class Reference}
+\hypertarget{classflexbuffers_1_1Reference}{}\label{classflexbuffers_1_1Reference}\index{flexbuffers::Reference@{flexbuffers::Reference}}
+
+
+{\ttfamily \#include $<$flexbuffers.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classflexbuffers_1_1Reference_a89b937daf8bb5f708d1ed2cb7d9412a4}{Reference}} ()
+\item 
+\mbox{\hyperlink{classflexbuffers_1_1Reference_a64dc1beb90ceaffcba1adc06a1c1c9d6}{Reference}} (const uint8\+\_\+t \texorpdfstring{$\ast$}{*}data, uint8\+\_\+t parent\+\_\+width, uint8\+\_\+t byte\+\_\+width, \mbox{\hyperlink{namespaceflexbuffers_aa0b4995478c086629fff32c3d10c3872}{Type}} type)
+\item 
+\mbox{\hyperlink{classflexbuffers_1_1Reference_ae03b9e92b739d399f93f11d4ab8af841}{Reference}} (const uint8\+\_\+t \texorpdfstring{$\ast$}{*}data, uint8\+\_\+t parent\+\_\+width, uint8\+\_\+t packed\+\_\+type)
+\item 
+\mbox{\hyperlink{namespaceflexbuffers_aa0b4995478c086629fff32c3d10c3872}{Type}} \mbox{\hyperlink{classflexbuffers_1_1Reference_a012769016507e04323e2ef8c73941554}{Get\+Type}} () const
+\item 
+bool \mbox{\hyperlink{classflexbuffers_1_1Reference_a75d86deb238ed24734c2a440df67eeba}{Is\+Null}} () const
+\item 
+bool \mbox{\hyperlink{classflexbuffers_1_1Reference_a8daf8abc42b37d61e8be641d71ae29a3}{Is\+Bool}} () const
+\item 
+bool \mbox{\hyperlink{classflexbuffers_1_1Reference_a13cb6131e618a8360e15b17bce0de565}{Is\+Int}} () const
+\item 
+bool \mbox{\hyperlink{classflexbuffers_1_1Reference_af3df8cd1ede00876fbe12adcbc2cdd26}{Is\+UInt}} () const
+\item 
+bool \mbox{\hyperlink{classflexbuffers_1_1Reference_aa7524697a90568f3db7770d9a2e13550}{Is\+Int\+Or\+Uint}} () const
+\item 
+bool \mbox{\hyperlink{classflexbuffers_1_1Reference_ab480d5e7c2a35a497060031a1d845d0e}{Is\+Float}} () const
+\item 
+bool \mbox{\hyperlink{classflexbuffers_1_1Reference_aeae56cf8524bf027fe8e6872b021c7e4}{Is\+Numeric}} () const
+\item 
+bool \mbox{\hyperlink{classflexbuffers_1_1Reference_a8bba7f0d2f421502d7f8b1f462f1bf3f}{Is\+String}} () const
+\item 
+bool \mbox{\hyperlink{classflexbuffers_1_1Reference_a2152b9fed22ef72184bec99dcac938cb}{Is\+Key}} () const
+\item 
+bool \mbox{\hyperlink{classflexbuffers_1_1Reference_a94ddc06a6159f2c3db0825673005a997}{Is\+Vector}} () const
+\item 
+bool \mbox{\hyperlink{classflexbuffers_1_1Reference_af9cf866dff7cbe8b49b6200c80ace2da}{Is\+Untyped\+Vector}} () const
+\item 
+bool \mbox{\hyperlink{classflexbuffers_1_1Reference_adeee19040c09a7bb3d4f6f603c4f3ae4}{Is\+Typed\+Vector}} () const
+\item 
+bool \mbox{\hyperlink{classflexbuffers_1_1Reference_a8fc6105263a0c8769aaf996919383536}{Is\+Fixed\+Typed\+Vector}} () const
+\item 
+bool \mbox{\hyperlink{classflexbuffers_1_1Reference_a99d7ce70e856ab08df3454fbf73f5ef3}{Is\+Any\+Vector}} () const
+\item 
+bool \mbox{\hyperlink{classflexbuffers_1_1Reference_a9c4e19bf4f9b0434ccfb1cb56f052e37}{Is\+Map}} () const
+\item 
+bool \mbox{\hyperlink{classflexbuffers_1_1Reference_a050f852039bc30c60c7d695c94861893}{Is\+Blob}} () const
+\item 
+bool \mbox{\hyperlink{classflexbuffers_1_1Reference_a2a018a2d1627a9e7fb01ca9934e3673c}{As\+Bool}} () const
+\item 
+int64\+\_\+t \mbox{\hyperlink{classflexbuffers_1_1Reference_a0253083875af91b1d7ac53db74c269f5}{As\+Int64}} () const
+\item 
+int32\+\_\+t \mbox{\hyperlink{classflexbuffers_1_1Reference_a90b7ee1398f496c0d97b896d7444abf6}{As\+Int32}} () const
+\item 
+int16\+\_\+t \mbox{\hyperlink{classflexbuffers_1_1Reference_ab8ff86df821703e20a369fab222c7209}{As\+Int16}} () const
+\item 
+int8\+\_\+t \mbox{\hyperlink{classflexbuffers_1_1Reference_a5499aa8b344d5a84db72b59d7966f955}{As\+Int8}} () const
+\item 
+uint64\+\_\+t \mbox{\hyperlink{classflexbuffers_1_1Reference_a9ff751b5cffda6b57f927bc75b10a33e}{As\+UInt64}} () const
+\item 
+uint32\+\_\+t \mbox{\hyperlink{classflexbuffers_1_1Reference_a7f976ed667ff9bd183d12be106fdbd6d}{As\+UInt32}} () const
+\item 
+uint16\+\_\+t \mbox{\hyperlink{classflexbuffers_1_1Reference_a90371769fb0bfee03b9b21833e2c1899}{As\+UInt16}} () const
+\item 
+uint8\+\_\+t \mbox{\hyperlink{classflexbuffers_1_1Reference_a226c37ff2119d886c5b7b845302d412e}{As\+UInt8}} () const
+\item 
+double \mbox{\hyperlink{classflexbuffers_1_1Reference_a3be10948b47921f74079766b41a409b7}{As\+Double}} () const
+\item 
+float \mbox{\hyperlink{classflexbuffers_1_1Reference_a060b426679729771e7b6660ce7333573}{As\+Float}} () const
+\item 
+const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classflexbuffers_1_1Reference_a88f2242c5af5e6b4c054cb7e1306260e}{As\+Key}} () const
+\item 
+\mbox{\hyperlink{classflexbuffers_1_1String}{String}} \mbox{\hyperlink{classflexbuffers_1_1Reference_a0b492da8cf7190048b6c1e195ccee0bc}{As\+String}} () const
+\item 
+std\+::string \mbox{\hyperlink{classflexbuffers_1_1Reference_a256963057834c81f2fe8749925b9f63d}{To\+String}} () const
+\item 
+void \mbox{\hyperlink{classflexbuffers_1_1Reference_a75eeb020eb8e3c788cf8b1b2523e7ccc}{To\+String}} (bool strings\+\_\+quoted, bool keys\+\_\+quoted, std\+::string \&s) const
+\item 
+void \mbox{\hyperlink{classflexbuffers_1_1Reference_af707a10c99b1a489827e1f0db62a56e2}{To\+String}} (bool strings\+\_\+quoted, bool keys\+\_\+quoted, std\+::string \&s, bool indented, int cur\+\_\+indent, const char \texorpdfstring{$\ast$}{*}indent\+\_\+string, bool natural\+\_\+utf8=false) const
+\item 
+\mbox{\hyperlink{classflexbuffers_1_1Blob}{Blob}} \mbox{\hyperlink{classflexbuffers_1_1Reference_a473dd253c617318ad48e6f54454fc69d}{As\+Blob}} () const
+\item 
+\mbox{\hyperlink{classflexbuffers_1_1Vector}{Vector}} \mbox{\hyperlink{classflexbuffers_1_1Reference_a6e83fbdce8befa4fad208de7b75d9d5d}{As\+Vector}} () const
+\item 
+\mbox{\hyperlink{classflexbuffers_1_1TypedVector}{Typed\+Vector}} \mbox{\hyperlink{classflexbuffers_1_1Reference_a671cb8a284c69a096d3a1738f53abd1e}{As\+Typed\+Vector}} () const
+\item 
+\mbox{\hyperlink{classflexbuffers_1_1FixedTypedVector}{Fixed\+Typed\+Vector}} \mbox{\hyperlink{classflexbuffers_1_1Reference_a945f94200b85e5424fdd13c713ec0a9d}{As\+Fixed\+Typed\+Vector}} () const
+\item 
+\mbox{\hyperlink{classflexbuffers_1_1Map}{Map}} \mbox{\hyperlink{classflexbuffers_1_1Reference_ab5b812bf56af8f6eab0e97c2089d2347}{As\+Map}} () const
+\item 
+{\footnotesize template$<$typename T $>$ }\\T \mbox{\hyperlink{classflexbuffers_1_1Reference_a98309a183b83493371297cd7fcb4caa3}{As}} () const
+\item 
+bool \mbox{\hyperlink{classflexbuffers_1_1Reference_aaa7ffaf91beb1808417388baed35414c}{Mutate\+Int}} (int64\+\_\+t \mbox{\hyperlink{gmock-matchers-comparisons__test_8cc_acb559820d9ca11295b4500f179ef6392}{i}})
+\item 
+bool \mbox{\hyperlink{classflexbuffers_1_1Reference_ab03e47cbb0e04227ef33048daaddd424}{Mutate\+Bool}} (bool b)
+\item 
+bool \mbox{\hyperlink{classflexbuffers_1_1Reference_a84fe7eb3458c6eeb9db13d4fdc81142d}{Mutate\+UInt}} (uint64\+\_\+t u)
+\item 
+bool \mbox{\hyperlink{classflexbuffers_1_1Reference_a449b37aa6be7b07e9c774b9bb2da4141}{Mutate\+Float}} (float f)
+\item 
+bool \mbox{\hyperlink{classflexbuffers_1_1Reference_a4b90c7c83f0a2d96ac20c24209b3ea5b}{Mutate\+Float}} (double d)
+\item 
+bool \mbox{\hyperlink{classflexbuffers_1_1Reference_a0a254a75f210b0a0b4e7050115ed9f82}{Mutate\+String}} (const char \texorpdfstring{$\ast$}{*}str, size\+\_\+t len)
+\item 
+bool \mbox{\hyperlink{classflexbuffers_1_1Reference_adeffe0b5b6a03813f65a1a5e55f010c6}{Mutate\+String}} (const char \texorpdfstring{$\ast$}{*}str)
+\item 
+bool \mbox{\hyperlink{classflexbuffers_1_1Reference_a186ce2db36ff13276b90e70bddf91894}{Mutate\+String}} (const std\+::string \&str)
+\item 
+template$<$$>$ bool \mbox{\hyperlink{classflexbuffers_1_1Reference_a50ce1a83a79c0b7a72153a818103a615}{As}} () const
+\item 
+template$<$$>$ int8\+\_\+t \mbox{\hyperlink{classflexbuffers_1_1Reference_a79fc120a96908f57cfc50c711a551269}{As}} () const
+\item 
+template$<$$>$ int16\+\_\+t \mbox{\hyperlink{classflexbuffers_1_1Reference_a2694170855a5fc2fbf678fe36bdd82fe}{As}} () const
+\item 
+template$<$$>$ int32\+\_\+t \mbox{\hyperlink{classflexbuffers_1_1Reference_a1e1c5f42fe022c1f6498c1c4c4339825}{As}} () const
+\item 
+template$<$$>$ int64\+\_\+t \mbox{\hyperlink{classflexbuffers_1_1Reference_a1d3d144bf415e05c12f753b3316a390b}{As}} () const
+\item 
+template$<$$>$ uint8\+\_\+t \mbox{\hyperlink{classflexbuffers_1_1Reference_a39a15a1e404d2ba45d07eb9a939d481c}{As}} () const
+\item 
+template$<$$>$ uint16\+\_\+t \mbox{\hyperlink{classflexbuffers_1_1Reference_a562d74bb146a9ac7c6d936d709f9b19e}{As}} () const
+\item 
+template$<$$>$ uint32\+\_\+t \mbox{\hyperlink{classflexbuffers_1_1Reference_af660f39813801444a96e6e1b9f4394d9}{As}} () const
+\item 
+template$<$$>$ uint64\+\_\+t \mbox{\hyperlink{classflexbuffers_1_1Reference_a10a04c5cbd7c59da4e7b5e116d85d964}{As}} () const
+\item 
+template$<$$>$ double \mbox{\hyperlink{classflexbuffers_1_1Reference_a665eef5c3cdc6c48275139ef8450153d}{As}} () const
+\item 
+template$<$$>$ float \mbox{\hyperlink{classflexbuffers_1_1Reference_aab402a646c3c50027e14eb393e4c3df0}{As}} () const
+\item 
+template$<$$>$ \mbox{\hyperlink{classflexbuffers_1_1String}{String}} \mbox{\hyperlink{classflexbuffers_1_1Reference_aabb858478b5a90436184bbf56e1778a7}{As}} () const
+\item 
+template$<$$>$ \mbox{\hyperlink{classflexbuffers_1_1Blob}{Blob}} \mbox{\hyperlink{classflexbuffers_1_1Reference_ab9067d88ec735a53a826702d33e5f493}{As}} () const
+\item 
+template$<$$>$ \mbox{\hyperlink{classflexbuffers_1_1Vector}{Vector}} \mbox{\hyperlink{classflexbuffers_1_1Reference_ac06cc568e6a56ebe1d876b5d27995470}{As}} () const
+\item 
+template$<$$>$ \mbox{\hyperlink{classflexbuffers_1_1TypedVector}{Typed\+Vector}} \mbox{\hyperlink{classflexbuffers_1_1Reference_a543b449d37898ec632a8419160419130}{As}} () const
+\item 
+template$<$$>$ \mbox{\hyperlink{classflexbuffers_1_1FixedTypedVector}{Fixed\+Typed\+Vector}} \mbox{\hyperlink{classflexbuffers_1_1Reference_a51f2dac15bd3487b29a2ddbaad16b937}{As}} () const
+\item 
+template$<$$>$ \mbox{\hyperlink{classflexbuffers_1_1Map}{Map}} \mbox{\hyperlink{classflexbuffers_1_1Reference_a8ed555053b606a585c48a33a2fc1bb34}{As}} () const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classflexbuffers_1_1Reference_a871285414448937aa5f297649dc8242a}{Verifier}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classflexbuffers_1_1Reference_a89b937daf8bb5f708d1ed2cb7d9412a4}\label{classflexbuffers_1_1Reference_a89b937daf8bb5f708d1ed2cb7d9412a4} 
+\index{flexbuffers::Reference@{flexbuffers::Reference}!Reference@{Reference}}
+\index{Reference@{Reference}!flexbuffers::Reference@{flexbuffers::Reference}}
+\doxysubsubsection{\texorpdfstring{Reference()}{Reference()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily flexbuffers\+::\+Reference\+::\+Reference (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflexbuffers_1_1Reference_a64dc1beb90ceaffcba1adc06a1c1c9d6}\label{classflexbuffers_1_1Reference_a64dc1beb90ceaffcba1adc06a1c1c9d6} 
+\index{flexbuffers::Reference@{flexbuffers::Reference}!Reference@{Reference}}
+\index{Reference@{Reference}!flexbuffers::Reference@{flexbuffers::Reference}}
+\doxysubsubsection{\texorpdfstring{Reference()}{Reference()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily flexbuffers\+::\+Reference\+::\+Reference (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t \texorpdfstring{$\ast$}{*}}]{data,  }\item[{uint8\+\_\+t}]{parent\+\_\+width,  }\item[{uint8\+\_\+t}]{byte\+\_\+width,  }\item[{\mbox{\hyperlink{namespaceflexbuffers_aa0b4995478c086629fff32c3d10c3872}{Type}}}]{type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflexbuffers_1_1Reference_ae03b9e92b739d399f93f11d4ab8af841}\label{classflexbuffers_1_1Reference_ae03b9e92b739d399f93f11d4ab8af841} 
+\index{flexbuffers::Reference@{flexbuffers::Reference}!Reference@{Reference}}
+\index{Reference@{Reference}!flexbuffers::Reference@{flexbuffers::Reference}}
+\doxysubsubsection{\texorpdfstring{Reference()}{Reference()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily flexbuffers\+::\+Reference\+::\+Reference (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t \texorpdfstring{$\ast$}{*}}]{data,  }\item[{uint8\+\_\+t}]{parent\+\_\+width,  }\item[{uint8\+\_\+t}]{packed\+\_\+type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classflexbuffers_1_1Reference_a98309a183b83493371297cd7fcb4caa3}\label{classflexbuffers_1_1Reference_a98309a183b83493371297cd7fcb4caa3} 
+\index{flexbuffers::Reference@{flexbuffers::Reference}!As@{As}}
+\index{As@{As}!flexbuffers::Reference@{flexbuffers::Reference}}
+\doxysubsubsection{\texorpdfstring{As()}{As()}\hspace{0.1cm}{\footnotesize\ttfamily [1/18]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+T flexbuffers\+::\+Reference\+::\+As (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\Hypertarget{classflexbuffers_1_1Reference_a50ce1a83a79c0b7a72153a818103a615}\label{classflexbuffers_1_1Reference_a50ce1a83a79c0b7a72153a818103a615} 
+\index{flexbuffers::Reference@{flexbuffers::Reference}!As@{As}}
+\index{As@{As}!flexbuffers::Reference@{flexbuffers::Reference}}
+\doxysubsubsection{\texorpdfstring{As()}{As()}\hspace{0.1cm}{\footnotesize\ttfamily [2/18]}}
+{\footnotesize\ttfamily template$<$$>$ \\
+bool flexbuffers\+::\+Reference\+::\+As (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflexbuffers_1_1Reference_a79fc120a96908f57cfc50c711a551269}\label{classflexbuffers_1_1Reference_a79fc120a96908f57cfc50c711a551269} 
+\index{flexbuffers::Reference@{flexbuffers::Reference}!As@{As}}
+\index{As@{As}!flexbuffers::Reference@{flexbuffers::Reference}}
+\doxysubsubsection{\texorpdfstring{As()}{As()}\hspace{0.1cm}{\footnotesize\ttfamily [3/18]}}
+{\footnotesize\ttfamily template$<$$>$ \\
+int8\+\_\+t flexbuffers\+::\+Reference\+::\+As (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflexbuffers_1_1Reference_a2694170855a5fc2fbf678fe36bdd82fe}\label{classflexbuffers_1_1Reference_a2694170855a5fc2fbf678fe36bdd82fe} 
+\index{flexbuffers::Reference@{flexbuffers::Reference}!As@{As}}
+\index{As@{As}!flexbuffers::Reference@{flexbuffers::Reference}}
+\doxysubsubsection{\texorpdfstring{As()}{As()}\hspace{0.1cm}{\footnotesize\ttfamily [4/18]}}
+{\footnotesize\ttfamily template$<$$>$ \\
+int16\+\_\+t flexbuffers\+::\+Reference\+::\+As (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflexbuffers_1_1Reference_a1e1c5f42fe022c1f6498c1c4c4339825}\label{classflexbuffers_1_1Reference_a1e1c5f42fe022c1f6498c1c4c4339825} 
+\index{flexbuffers::Reference@{flexbuffers::Reference}!As@{As}}
+\index{As@{As}!flexbuffers::Reference@{flexbuffers::Reference}}
+\doxysubsubsection{\texorpdfstring{As()}{As()}\hspace{0.1cm}{\footnotesize\ttfamily [5/18]}}
+{\footnotesize\ttfamily template$<$$>$ \\
+int32\+\_\+t flexbuffers\+::\+Reference\+::\+As (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflexbuffers_1_1Reference_a1d3d144bf415e05c12f753b3316a390b}\label{classflexbuffers_1_1Reference_a1d3d144bf415e05c12f753b3316a390b} 
+\index{flexbuffers::Reference@{flexbuffers::Reference}!As@{As}}
+\index{As@{As}!flexbuffers::Reference@{flexbuffers::Reference}}
+\doxysubsubsection{\texorpdfstring{As()}{As()}\hspace{0.1cm}{\footnotesize\ttfamily [6/18]}}
+{\footnotesize\ttfamily template$<$$>$ \\
+int64\+\_\+t flexbuffers\+::\+Reference\+::\+As (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflexbuffers_1_1Reference_a39a15a1e404d2ba45d07eb9a939d481c}\label{classflexbuffers_1_1Reference_a39a15a1e404d2ba45d07eb9a939d481c} 
+\index{flexbuffers::Reference@{flexbuffers::Reference}!As@{As}}
+\index{As@{As}!flexbuffers::Reference@{flexbuffers::Reference}}
+\doxysubsubsection{\texorpdfstring{As()}{As()}\hspace{0.1cm}{\footnotesize\ttfamily [7/18]}}
+{\footnotesize\ttfamily template$<$$>$ \\
+uint8\+\_\+t flexbuffers\+::\+Reference\+::\+As (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflexbuffers_1_1Reference_a562d74bb146a9ac7c6d936d709f9b19e}\label{classflexbuffers_1_1Reference_a562d74bb146a9ac7c6d936d709f9b19e} 
+\index{flexbuffers::Reference@{flexbuffers::Reference}!As@{As}}
+\index{As@{As}!flexbuffers::Reference@{flexbuffers::Reference}}
+\doxysubsubsection{\texorpdfstring{As()}{As()}\hspace{0.1cm}{\footnotesize\ttfamily [8/18]}}
+{\footnotesize\ttfamily template$<$$>$ \\
+uint16\+\_\+t flexbuffers\+::\+Reference\+::\+As (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflexbuffers_1_1Reference_af660f39813801444a96e6e1b9f4394d9}\label{classflexbuffers_1_1Reference_af660f39813801444a96e6e1b9f4394d9} 
+\index{flexbuffers::Reference@{flexbuffers::Reference}!As@{As}}
+\index{As@{As}!flexbuffers::Reference@{flexbuffers::Reference}}
+\doxysubsubsection{\texorpdfstring{As()}{As()}\hspace{0.1cm}{\footnotesize\ttfamily [9/18]}}
+{\footnotesize\ttfamily template$<$$>$ \\
+uint32\+\_\+t flexbuffers\+::\+Reference\+::\+As (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflexbuffers_1_1Reference_a10a04c5cbd7c59da4e7b5e116d85d964}\label{classflexbuffers_1_1Reference_a10a04c5cbd7c59da4e7b5e116d85d964} 
+\index{flexbuffers::Reference@{flexbuffers::Reference}!As@{As}}
+\index{As@{As}!flexbuffers::Reference@{flexbuffers::Reference}}
+\doxysubsubsection{\texorpdfstring{As()}{As()}\hspace{0.1cm}{\footnotesize\ttfamily [10/18]}}
+{\footnotesize\ttfamily template$<$$>$ \\
+uint64\+\_\+t flexbuffers\+::\+Reference\+::\+As (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflexbuffers_1_1Reference_a665eef5c3cdc6c48275139ef8450153d}\label{classflexbuffers_1_1Reference_a665eef5c3cdc6c48275139ef8450153d} 
+\index{flexbuffers::Reference@{flexbuffers::Reference}!As@{As}}
+\index{As@{As}!flexbuffers::Reference@{flexbuffers::Reference}}
+\doxysubsubsection{\texorpdfstring{As()}{As()}\hspace{0.1cm}{\footnotesize\ttfamily [11/18]}}
+{\footnotesize\ttfamily template$<$$>$ \\
+double flexbuffers\+::\+Reference\+::\+As (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflexbuffers_1_1Reference_aab402a646c3c50027e14eb393e4c3df0}\label{classflexbuffers_1_1Reference_aab402a646c3c50027e14eb393e4c3df0} 
+\index{flexbuffers::Reference@{flexbuffers::Reference}!As@{As}}
+\index{As@{As}!flexbuffers::Reference@{flexbuffers::Reference}}
+\doxysubsubsection{\texorpdfstring{As()}{As()}\hspace{0.1cm}{\footnotesize\ttfamily [12/18]}}
+{\footnotesize\ttfamily template$<$$>$ \\
+float flexbuffers\+::\+Reference\+::\+As (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflexbuffers_1_1Reference_aabb858478b5a90436184bbf56e1778a7}\label{classflexbuffers_1_1Reference_aabb858478b5a90436184bbf56e1778a7} 
+\index{flexbuffers::Reference@{flexbuffers::Reference}!As@{As}}
+\index{As@{As}!flexbuffers::Reference@{flexbuffers::Reference}}
+\doxysubsubsection{\texorpdfstring{As()}{As()}\hspace{0.1cm}{\footnotesize\ttfamily [13/18]}}
+{\footnotesize\ttfamily template$<$$>$ \\
+\mbox{\hyperlink{classflexbuffers_1_1String}{String}} flexbuffers\+::\+Reference\+::\+As (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflexbuffers_1_1Reference_ab9067d88ec735a53a826702d33e5f493}\label{classflexbuffers_1_1Reference_ab9067d88ec735a53a826702d33e5f493} 
+\index{flexbuffers::Reference@{flexbuffers::Reference}!As@{As}}
+\index{As@{As}!flexbuffers::Reference@{flexbuffers::Reference}}
+\doxysubsubsection{\texorpdfstring{As()}{As()}\hspace{0.1cm}{\footnotesize\ttfamily [14/18]}}
+{\footnotesize\ttfamily template$<$$>$ \\
+\mbox{\hyperlink{classflexbuffers_1_1Blob}{Blob}} flexbuffers\+::\+Reference\+::\+As (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflexbuffers_1_1Reference_ac06cc568e6a56ebe1d876b5d27995470}\label{classflexbuffers_1_1Reference_ac06cc568e6a56ebe1d876b5d27995470} 
+\index{flexbuffers::Reference@{flexbuffers::Reference}!As@{As}}
+\index{As@{As}!flexbuffers::Reference@{flexbuffers::Reference}}
+\doxysubsubsection{\texorpdfstring{As()}{As()}\hspace{0.1cm}{\footnotesize\ttfamily [15/18]}}
+{\footnotesize\ttfamily template$<$$>$ \\
+\mbox{\hyperlink{classflexbuffers_1_1Vector}{Vector}} flexbuffers\+::\+Reference\+::\+As (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflexbuffers_1_1Reference_a543b449d37898ec632a8419160419130}\label{classflexbuffers_1_1Reference_a543b449d37898ec632a8419160419130} 
+\index{flexbuffers::Reference@{flexbuffers::Reference}!As@{As}}
+\index{As@{As}!flexbuffers::Reference@{flexbuffers::Reference}}
+\doxysubsubsection{\texorpdfstring{As()}{As()}\hspace{0.1cm}{\footnotesize\ttfamily [16/18]}}
+{\footnotesize\ttfamily template$<$$>$ \\
+\mbox{\hyperlink{classflexbuffers_1_1TypedVector}{Typed\+Vector}} flexbuffers\+::\+Reference\+::\+As (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflexbuffers_1_1Reference_a51f2dac15bd3487b29a2ddbaad16b937}\label{classflexbuffers_1_1Reference_a51f2dac15bd3487b29a2ddbaad16b937} 
+\index{flexbuffers::Reference@{flexbuffers::Reference}!As@{As}}
+\index{As@{As}!flexbuffers::Reference@{flexbuffers::Reference}}
+\doxysubsubsection{\texorpdfstring{As()}{As()}\hspace{0.1cm}{\footnotesize\ttfamily [17/18]}}
+{\footnotesize\ttfamily template$<$$>$ \\
+\mbox{\hyperlink{classflexbuffers_1_1FixedTypedVector}{Fixed\+Typed\+Vector}} flexbuffers\+::\+Reference\+::\+As (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflexbuffers_1_1Reference_a8ed555053b606a585c48a33a2fc1bb34}\label{classflexbuffers_1_1Reference_a8ed555053b606a585c48a33a2fc1bb34} 
+\index{flexbuffers::Reference@{flexbuffers::Reference}!As@{As}}
+\index{As@{As}!flexbuffers::Reference@{flexbuffers::Reference}}
+\doxysubsubsection{\texorpdfstring{As()}{As()}\hspace{0.1cm}{\footnotesize\ttfamily [18/18]}}
+{\footnotesize\ttfamily template$<$$>$ \\
+\mbox{\hyperlink{classflexbuffers_1_1Map}{Map}} flexbuffers\+::\+Reference\+::\+As (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflexbuffers_1_1Reference_a473dd253c617318ad48e6f54454fc69d}\label{classflexbuffers_1_1Reference_a473dd253c617318ad48e6f54454fc69d} 
+\index{flexbuffers::Reference@{flexbuffers::Reference}!AsBlob@{AsBlob}}
+\index{AsBlob@{AsBlob}!flexbuffers::Reference@{flexbuffers::Reference}}
+\doxysubsubsection{\texorpdfstring{AsBlob()}{AsBlob()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classflexbuffers_1_1Blob}{Blob}} flexbuffers\+::\+Reference\+::\+As\+Blob (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflexbuffers_1_1Reference_a2a018a2d1627a9e7fb01ca9934e3673c}\label{classflexbuffers_1_1Reference_a2a018a2d1627a9e7fb01ca9934e3673c} 
+\index{flexbuffers::Reference@{flexbuffers::Reference}!AsBool@{AsBool}}
+\index{AsBool@{AsBool}!flexbuffers::Reference@{flexbuffers::Reference}}
+\doxysubsubsection{\texorpdfstring{AsBool()}{AsBool()}}
+{\footnotesize\ttfamily bool flexbuffers\+::\+Reference\+::\+As\+Bool (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflexbuffers_1_1Reference_a3be10948b47921f74079766b41a409b7}\label{classflexbuffers_1_1Reference_a3be10948b47921f74079766b41a409b7} 
+\index{flexbuffers::Reference@{flexbuffers::Reference}!AsDouble@{AsDouble}}
+\index{AsDouble@{AsDouble}!flexbuffers::Reference@{flexbuffers::Reference}}
+\doxysubsubsection{\texorpdfstring{AsDouble()}{AsDouble()}}
+{\footnotesize\ttfamily double flexbuffers\+::\+Reference\+::\+As\+Double (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflexbuffers_1_1Reference_a945f94200b85e5424fdd13c713ec0a9d}\label{classflexbuffers_1_1Reference_a945f94200b85e5424fdd13c713ec0a9d} 
+\index{flexbuffers::Reference@{flexbuffers::Reference}!AsFixedTypedVector@{AsFixedTypedVector}}
+\index{AsFixedTypedVector@{AsFixedTypedVector}!flexbuffers::Reference@{flexbuffers::Reference}}
+\doxysubsubsection{\texorpdfstring{AsFixedTypedVector()}{AsFixedTypedVector()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classflexbuffers_1_1FixedTypedVector}{Fixed\+Typed\+Vector}} flexbuffers\+::\+Reference\+::\+As\+Fixed\+Typed\+Vector (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflexbuffers_1_1Reference_a060b426679729771e7b6660ce7333573}\label{classflexbuffers_1_1Reference_a060b426679729771e7b6660ce7333573} 
+\index{flexbuffers::Reference@{flexbuffers::Reference}!AsFloat@{AsFloat}}
+\index{AsFloat@{AsFloat}!flexbuffers::Reference@{flexbuffers::Reference}}
+\doxysubsubsection{\texorpdfstring{AsFloat()}{AsFloat()}}
+{\footnotesize\ttfamily float flexbuffers\+::\+Reference\+::\+As\+Float (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflexbuffers_1_1Reference_ab8ff86df821703e20a369fab222c7209}\label{classflexbuffers_1_1Reference_ab8ff86df821703e20a369fab222c7209} 
+\index{flexbuffers::Reference@{flexbuffers::Reference}!AsInt16@{AsInt16}}
+\index{AsInt16@{AsInt16}!flexbuffers::Reference@{flexbuffers::Reference}}
+\doxysubsubsection{\texorpdfstring{AsInt16()}{AsInt16()}}
+{\footnotesize\ttfamily int16\+\_\+t flexbuffers\+::\+Reference\+::\+As\+Int16 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflexbuffers_1_1Reference_a90b7ee1398f496c0d97b896d7444abf6}\label{classflexbuffers_1_1Reference_a90b7ee1398f496c0d97b896d7444abf6} 
+\index{flexbuffers::Reference@{flexbuffers::Reference}!AsInt32@{AsInt32}}
+\index{AsInt32@{AsInt32}!flexbuffers::Reference@{flexbuffers::Reference}}
+\doxysubsubsection{\texorpdfstring{AsInt32()}{AsInt32()}}
+{\footnotesize\ttfamily int32\+\_\+t flexbuffers\+::\+Reference\+::\+As\+Int32 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflexbuffers_1_1Reference_a0253083875af91b1d7ac53db74c269f5}\label{classflexbuffers_1_1Reference_a0253083875af91b1d7ac53db74c269f5} 
+\index{flexbuffers::Reference@{flexbuffers::Reference}!AsInt64@{AsInt64}}
+\index{AsInt64@{AsInt64}!flexbuffers::Reference@{flexbuffers::Reference}}
+\doxysubsubsection{\texorpdfstring{AsInt64()}{AsInt64()}}
+{\footnotesize\ttfamily int64\+\_\+t flexbuffers\+::\+Reference\+::\+As\+Int64 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflexbuffers_1_1Reference_a5499aa8b344d5a84db72b59d7966f955}\label{classflexbuffers_1_1Reference_a5499aa8b344d5a84db72b59d7966f955} 
+\index{flexbuffers::Reference@{flexbuffers::Reference}!AsInt8@{AsInt8}}
+\index{AsInt8@{AsInt8}!flexbuffers::Reference@{flexbuffers::Reference}}
+\doxysubsubsection{\texorpdfstring{AsInt8()}{AsInt8()}}
+{\footnotesize\ttfamily int8\+\_\+t flexbuffers\+::\+Reference\+::\+As\+Int8 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflexbuffers_1_1Reference_a88f2242c5af5e6b4c054cb7e1306260e}\label{classflexbuffers_1_1Reference_a88f2242c5af5e6b4c054cb7e1306260e} 
+\index{flexbuffers::Reference@{flexbuffers::Reference}!AsKey@{AsKey}}
+\index{AsKey@{AsKey}!flexbuffers::Reference@{flexbuffers::Reference}}
+\doxysubsubsection{\texorpdfstring{AsKey()}{AsKey()}}
+{\footnotesize\ttfamily const char \texorpdfstring{$\ast$}{*} flexbuffers\+::\+Reference\+::\+As\+Key (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflexbuffers_1_1Reference_ab5b812bf56af8f6eab0e97c2089d2347}\label{classflexbuffers_1_1Reference_ab5b812bf56af8f6eab0e97c2089d2347} 
+\index{flexbuffers::Reference@{flexbuffers::Reference}!AsMap@{AsMap}}
+\index{AsMap@{AsMap}!flexbuffers::Reference@{flexbuffers::Reference}}
+\doxysubsubsection{\texorpdfstring{AsMap()}{AsMap()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classflexbuffers_1_1Map}{Map}} flexbuffers\+::\+Reference\+::\+As\+Map (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflexbuffers_1_1Reference_a0b492da8cf7190048b6c1e195ccee0bc}\label{classflexbuffers_1_1Reference_a0b492da8cf7190048b6c1e195ccee0bc} 
+\index{flexbuffers::Reference@{flexbuffers::Reference}!AsString@{AsString}}
+\index{AsString@{AsString}!flexbuffers::Reference@{flexbuffers::Reference}}
+\doxysubsubsection{\texorpdfstring{AsString()}{AsString()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classflexbuffers_1_1String}{String}} flexbuffers\+::\+Reference\+::\+As\+String (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflexbuffers_1_1Reference_a671cb8a284c69a096d3a1738f53abd1e}\label{classflexbuffers_1_1Reference_a671cb8a284c69a096d3a1738f53abd1e} 
+\index{flexbuffers::Reference@{flexbuffers::Reference}!AsTypedVector@{AsTypedVector}}
+\index{AsTypedVector@{AsTypedVector}!flexbuffers::Reference@{flexbuffers::Reference}}
+\doxysubsubsection{\texorpdfstring{AsTypedVector()}{AsTypedVector()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classflexbuffers_1_1TypedVector}{Typed\+Vector}} flexbuffers\+::\+Reference\+::\+As\+Typed\+Vector (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflexbuffers_1_1Reference_a90371769fb0bfee03b9b21833e2c1899}\label{classflexbuffers_1_1Reference_a90371769fb0bfee03b9b21833e2c1899} 
+\index{flexbuffers::Reference@{flexbuffers::Reference}!AsUInt16@{AsUInt16}}
+\index{AsUInt16@{AsUInt16}!flexbuffers::Reference@{flexbuffers::Reference}}
+\doxysubsubsection{\texorpdfstring{AsUInt16()}{AsUInt16()}}
+{\footnotesize\ttfamily uint16\+\_\+t flexbuffers\+::\+Reference\+::\+As\+UInt16 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflexbuffers_1_1Reference_a7f976ed667ff9bd183d12be106fdbd6d}\label{classflexbuffers_1_1Reference_a7f976ed667ff9bd183d12be106fdbd6d} 
+\index{flexbuffers::Reference@{flexbuffers::Reference}!AsUInt32@{AsUInt32}}
+\index{AsUInt32@{AsUInt32}!flexbuffers::Reference@{flexbuffers::Reference}}
+\doxysubsubsection{\texorpdfstring{AsUInt32()}{AsUInt32()}}
+{\footnotesize\ttfamily uint32\+\_\+t flexbuffers\+::\+Reference\+::\+As\+UInt32 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflexbuffers_1_1Reference_a9ff751b5cffda6b57f927bc75b10a33e}\label{classflexbuffers_1_1Reference_a9ff751b5cffda6b57f927bc75b10a33e} 
+\index{flexbuffers::Reference@{flexbuffers::Reference}!AsUInt64@{AsUInt64}}
+\index{AsUInt64@{AsUInt64}!flexbuffers::Reference@{flexbuffers::Reference}}
+\doxysubsubsection{\texorpdfstring{AsUInt64()}{AsUInt64()}}
+{\footnotesize\ttfamily uint64\+\_\+t flexbuffers\+::\+Reference\+::\+As\+UInt64 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflexbuffers_1_1Reference_a226c37ff2119d886c5b7b845302d412e}\label{classflexbuffers_1_1Reference_a226c37ff2119d886c5b7b845302d412e} 
+\index{flexbuffers::Reference@{flexbuffers::Reference}!AsUInt8@{AsUInt8}}
+\index{AsUInt8@{AsUInt8}!flexbuffers::Reference@{flexbuffers::Reference}}
+\doxysubsubsection{\texorpdfstring{AsUInt8()}{AsUInt8()}}
+{\footnotesize\ttfamily uint8\+\_\+t flexbuffers\+::\+Reference\+::\+As\+UInt8 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflexbuffers_1_1Reference_a6e83fbdce8befa4fad208de7b75d9d5d}\label{classflexbuffers_1_1Reference_a6e83fbdce8befa4fad208de7b75d9d5d} 
+\index{flexbuffers::Reference@{flexbuffers::Reference}!AsVector@{AsVector}}
+\index{AsVector@{AsVector}!flexbuffers::Reference@{flexbuffers::Reference}}
+\doxysubsubsection{\texorpdfstring{AsVector()}{AsVector()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classflexbuffers_1_1Vector}{Vector}} flexbuffers\+::\+Reference\+::\+As\+Vector (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflexbuffers_1_1Reference_a012769016507e04323e2ef8c73941554}\label{classflexbuffers_1_1Reference_a012769016507e04323e2ef8c73941554} 
+\index{flexbuffers::Reference@{flexbuffers::Reference}!GetType@{GetType}}
+\index{GetType@{GetType}!flexbuffers::Reference@{flexbuffers::Reference}}
+\doxysubsubsection{\texorpdfstring{GetType()}{GetType()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespaceflexbuffers_aa0b4995478c086629fff32c3d10c3872}{Type}} flexbuffers\+::\+Reference\+::\+Get\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflexbuffers_1_1Reference_a99d7ce70e856ab08df3454fbf73f5ef3}\label{classflexbuffers_1_1Reference_a99d7ce70e856ab08df3454fbf73f5ef3} 
+\index{flexbuffers::Reference@{flexbuffers::Reference}!IsAnyVector@{IsAnyVector}}
+\index{IsAnyVector@{IsAnyVector}!flexbuffers::Reference@{flexbuffers::Reference}}
+\doxysubsubsection{\texorpdfstring{IsAnyVector()}{IsAnyVector()}}
+{\footnotesize\ttfamily bool flexbuffers\+::\+Reference\+::\+Is\+Any\+Vector (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflexbuffers_1_1Reference_a050f852039bc30c60c7d695c94861893}\label{classflexbuffers_1_1Reference_a050f852039bc30c60c7d695c94861893} 
+\index{flexbuffers::Reference@{flexbuffers::Reference}!IsBlob@{IsBlob}}
+\index{IsBlob@{IsBlob}!flexbuffers::Reference@{flexbuffers::Reference}}
+\doxysubsubsection{\texorpdfstring{IsBlob()}{IsBlob()}}
+{\footnotesize\ttfamily bool flexbuffers\+::\+Reference\+::\+Is\+Blob (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflexbuffers_1_1Reference_a8daf8abc42b37d61e8be641d71ae29a3}\label{classflexbuffers_1_1Reference_a8daf8abc42b37d61e8be641d71ae29a3} 
+\index{flexbuffers::Reference@{flexbuffers::Reference}!IsBool@{IsBool}}
+\index{IsBool@{IsBool}!flexbuffers::Reference@{flexbuffers::Reference}}
+\doxysubsubsection{\texorpdfstring{IsBool()}{IsBool()}}
+{\footnotesize\ttfamily bool flexbuffers\+::\+Reference\+::\+Is\+Bool (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflexbuffers_1_1Reference_a8fc6105263a0c8769aaf996919383536}\label{classflexbuffers_1_1Reference_a8fc6105263a0c8769aaf996919383536} 
+\index{flexbuffers::Reference@{flexbuffers::Reference}!IsFixedTypedVector@{IsFixedTypedVector}}
+\index{IsFixedTypedVector@{IsFixedTypedVector}!flexbuffers::Reference@{flexbuffers::Reference}}
+\doxysubsubsection{\texorpdfstring{IsFixedTypedVector()}{IsFixedTypedVector()}}
+{\footnotesize\ttfamily bool flexbuffers\+::\+Reference\+::\+Is\+Fixed\+Typed\+Vector (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflexbuffers_1_1Reference_ab480d5e7c2a35a497060031a1d845d0e}\label{classflexbuffers_1_1Reference_ab480d5e7c2a35a497060031a1d845d0e} 
+\index{flexbuffers::Reference@{flexbuffers::Reference}!IsFloat@{IsFloat}}
+\index{IsFloat@{IsFloat}!flexbuffers::Reference@{flexbuffers::Reference}}
+\doxysubsubsection{\texorpdfstring{IsFloat()}{IsFloat()}}
+{\footnotesize\ttfamily bool flexbuffers\+::\+Reference\+::\+Is\+Float (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflexbuffers_1_1Reference_a13cb6131e618a8360e15b17bce0de565}\label{classflexbuffers_1_1Reference_a13cb6131e618a8360e15b17bce0de565} 
+\index{flexbuffers::Reference@{flexbuffers::Reference}!IsInt@{IsInt}}
+\index{IsInt@{IsInt}!flexbuffers::Reference@{flexbuffers::Reference}}
+\doxysubsubsection{\texorpdfstring{IsInt()}{IsInt()}}
+{\footnotesize\ttfamily bool flexbuffers\+::\+Reference\+::\+Is\+Int (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflexbuffers_1_1Reference_aa7524697a90568f3db7770d9a2e13550}\label{classflexbuffers_1_1Reference_aa7524697a90568f3db7770d9a2e13550} 
+\index{flexbuffers::Reference@{flexbuffers::Reference}!IsIntOrUint@{IsIntOrUint}}
+\index{IsIntOrUint@{IsIntOrUint}!flexbuffers::Reference@{flexbuffers::Reference}}
+\doxysubsubsection{\texorpdfstring{IsIntOrUint()}{IsIntOrUint()}}
+{\footnotesize\ttfamily bool flexbuffers\+::\+Reference\+::\+Is\+Int\+Or\+Uint (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflexbuffers_1_1Reference_a2152b9fed22ef72184bec99dcac938cb}\label{classflexbuffers_1_1Reference_a2152b9fed22ef72184bec99dcac938cb} 
+\index{flexbuffers::Reference@{flexbuffers::Reference}!IsKey@{IsKey}}
+\index{IsKey@{IsKey}!flexbuffers::Reference@{flexbuffers::Reference}}
+\doxysubsubsection{\texorpdfstring{IsKey()}{IsKey()}}
+{\footnotesize\ttfamily bool flexbuffers\+::\+Reference\+::\+Is\+Key (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflexbuffers_1_1Reference_a9c4e19bf4f9b0434ccfb1cb56f052e37}\label{classflexbuffers_1_1Reference_a9c4e19bf4f9b0434ccfb1cb56f052e37} 
+\index{flexbuffers::Reference@{flexbuffers::Reference}!IsMap@{IsMap}}
+\index{IsMap@{IsMap}!flexbuffers::Reference@{flexbuffers::Reference}}
+\doxysubsubsection{\texorpdfstring{IsMap()}{IsMap()}}
+{\footnotesize\ttfamily bool flexbuffers\+::\+Reference\+::\+Is\+Map (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflexbuffers_1_1Reference_a75d86deb238ed24734c2a440df67eeba}\label{classflexbuffers_1_1Reference_a75d86deb238ed24734c2a440df67eeba} 
+\index{flexbuffers::Reference@{flexbuffers::Reference}!IsNull@{IsNull}}
+\index{IsNull@{IsNull}!flexbuffers::Reference@{flexbuffers::Reference}}
+\doxysubsubsection{\texorpdfstring{IsNull()}{IsNull()}}
+{\footnotesize\ttfamily bool flexbuffers\+::\+Reference\+::\+Is\+Null (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflexbuffers_1_1Reference_aeae56cf8524bf027fe8e6872b021c7e4}\label{classflexbuffers_1_1Reference_aeae56cf8524bf027fe8e6872b021c7e4} 
+\index{flexbuffers::Reference@{flexbuffers::Reference}!IsNumeric@{IsNumeric}}
+\index{IsNumeric@{IsNumeric}!flexbuffers::Reference@{flexbuffers::Reference}}
+\doxysubsubsection{\texorpdfstring{IsNumeric()}{IsNumeric()}}
+{\footnotesize\ttfamily bool flexbuffers\+::\+Reference\+::\+Is\+Numeric (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflexbuffers_1_1Reference_a8bba7f0d2f421502d7f8b1f462f1bf3f}\label{classflexbuffers_1_1Reference_a8bba7f0d2f421502d7f8b1f462f1bf3f} 
+\index{flexbuffers::Reference@{flexbuffers::Reference}!IsString@{IsString}}
+\index{IsString@{IsString}!flexbuffers::Reference@{flexbuffers::Reference}}
+\doxysubsubsection{\texorpdfstring{IsString()}{IsString()}}
+{\footnotesize\ttfamily bool flexbuffers\+::\+Reference\+::\+Is\+String (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflexbuffers_1_1Reference_adeee19040c09a7bb3d4f6f603c4f3ae4}\label{classflexbuffers_1_1Reference_adeee19040c09a7bb3d4f6f603c4f3ae4} 
+\index{flexbuffers::Reference@{flexbuffers::Reference}!IsTypedVector@{IsTypedVector}}
+\index{IsTypedVector@{IsTypedVector}!flexbuffers::Reference@{flexbuffers::Reference}}
+\doxysubsubsection{\texorpdfstring{IsTypedVector()}{IsTypedVector()}}
+{\footnotesize\ttfamily bool flexbuffers\+::\+Reference\+::\+Is\+Typed\+Vector (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflexbuffers_1_1Reference_af3df8cd1ede00876fbe12adcbc2cdd26}\label{classflexbuffers_1_1Reference_af3df8cd1ede00876fbe12adcbc2cdd26} 
+\index{flexbuffers::Reference@{flexbuffers::Reference}!IsUInt@{IsUInt}}
+\index{IsUInt@{IsUInt}!flexbuffers::Reference@{flexbuffers::Reference}}
+\doxysubsubsection{\texorpdfstring{IsUInt()}{IsUInt()}}
+{\footnotesize\ttfamily bool flexbuffers\+::\+Reference\+::\+Is\+UInt (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflexbuffers_1_1Reference_af9cf866dff7cbe8b49b6200c80ace2da}\label{classflexbuffers_1_1Reference_af9cf866dff7cbe8b49b6200c80ace2da} 
+\index{flexbuffers::Reference@{flexbuffers::Reference}!IsUntypedVector@{IsUntypedVector}}
+\index{IsUntypedVector@{IsUntypedVector}!flexbuffers::Reference@{flexbuffers::Reference}}
+\doxysubsubsection{\texorpdfstring{IsUntypedVector()}{IsUntypedVector()}}
+{\footnotesize\ttfamily bool flexbuffers\+::\+Reference\+::\+Is\+Untyped\+Vector (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflexbuffers_1_1Reference_a94ddc06a6159f2c3db0825673005a997}\label{classflexbuffers_1_1Reference_a94ddc06a6159f2c3db0825673005a997} 
+\index{flexbuffers::Reference@{flexbuffers::Reference}!IsVector@{IsVector}}
+\index{IsVector@{IsVector}!flexbuffers::Reference@{flexbuffers::Reference}}
+\doxysubsubsection{\texorpdfstring{IsVector()}{IsVector()}}
+{\footnotesize\ttfamily bool flexbuffers\+::\+Reference\+::\+Is\+Vector (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflexbuffers_1_1Reference_ab03e47cbb0e04227ef33048daaddd424}\label{classflexbuffers_1_1Reference_ab03e47cbb0e04227ef33048daaddd424} 
+\index{flexbuffers::Reference@{flexbuffers::Reference}!MutateBool@{MutateBool}}
+\index{MutateBool@{MutateBool}!flexbuffers::Reference@{flexbuffers::Reference}}
+\doxysubsubsection{\texorpdfstring{MutateBool()}{MutateBool()}}
+{\footnotesize\ttfamily bool flexbuffers\+::\+Reference\+::\+Mutate\+Bool (\begin{DoxyParamCaption}\item[{bool}]{b }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflexbuffers_1_1Reference_a4b90c7c83f0a2d96ac20c24209b3ea5b}\label{classflexbuffers_1_1Reference_a4b90c7c83f0a2d96ac20c24209b3ea5b} 
+\index{flexbuffers::Reference@{flexbuffers::Reference}!MutateFloat@{MutateFloat}}
+\index{MutateFloat@{MutateFloat}!flexbuffers::Reference@{flexbuffers::Reference}}
+\doxysubsubsection{\texorpdfstring{MutateFloat()}{MutateFloat()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool flexbuffers\+::\+Reference\+::\+Mutate\+Float (\begin{DoxyParamCaption}\item[{double}]{d }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflexbuffers_1_1Reference_a449b37aa6be7b07e9c774b9bb2da4141}\label{classflexbuffers_1_1Reference_a449b37aa6be7b07e9c774b9bb2da4141} 
+\index{flexbuffers::Reference@{flexbuffers::Reference}!MutateFloat@{MutateFloat}}
+\index{MutateFloat@{MutateFloat}!flexbuffers::Reference@{flexbuffers::Reference}}
+\doxysubsubsection{\texorpdfstring{MutateFloat()}{MutateFloat()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool flexbuffers\+::\+Reference\+::\+Mutate\+Float (\begin{DoxyParamCaption}\item[{float}]{f }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflexbuffers_1_1Reference_aaa7ffaf91beb1808417388baed35414c}\label{classflexbuffers_1_1Reference_aaa7ffaf91beb1808417388baed35414c} 
+\index{flexbuffers::Reference@{flexbuffers::Reference}!MutateInt@{MutateInt}}
+\index{MutateInt@{MutateInt}!flexbuffers::Reference@{flexbuffers::Reference}}
+\doxysubsubsection{\texorpdfstring{MutateInt()}{MutateInt()}}
+{\footnotesize\ttfamily bool flexbuffers\+::\+Reference\+::\+Mutate\+Int (\begin{DoxyParamCaption}\item[{int64\+\_\+t}]{i }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflexbuffers_1_1Reference_adeffe0b5b6a03813f65a1a5e55f010c6}\label{classflexbuffers_1_1Reference_adeffe0b5b6a03813f65a1a5e55f010c6} 
+\index{flexbuffers::Reference@{flexbuffers::Reference}!MutateString@{MutateString}}
+\index{MutateString@{MutateString}!flexbuffers::Reference@{flexbuffers::Reference}}
+\doxysubsubsection{\texorpdfstring{MutateString()}{MutateString()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily bool flexbuffers\+::\+Reference\+::\+Mutate\+String (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{str }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflexbuffers_1_1Reference_a0a254a75f210b0a0b4e7050115ed9f82}\label{classflexbuffers_1_1Reference_a0a254a75f210b0a0b4e7050115ed9f82} 
+\index{flexbuffers::Reference@{flexbuffers::Reference}!MutateString@{MutateString}}
+\index{MutateString@{MutateString}!flexbuffers::Reference@{flexbuffers::Reference}}
+\doxysubsubsection{\texorpdfstring{MutateString()}{MutateString()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily bool flexbuffers\+::\+Reference\+::\+Mutate\+String (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{str,  }\item[{size\+\_\+t}]{len }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflexbuffers_1_1Reference_a186ce2db36ff13276b90e70bddf91894}\label{classflexbuffers_1_1Reference_a186ce2db36ff13276b90e70bddf91894} 
+\index{flexbuffers::Reference@{flexbuffers::Reference}!MutateString@{MutateString}}
+\index{MutateString@{MutateString}!flexbuffers::Reference@{flexbuffers::Reference}}
+\doxysubsubsection{\texorpdfstring{MutateString()}{MutateString()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily bool flexbuffers\+::\+Reference\+::\+Mutate\+String (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{str }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflexbuffers_1_1Reference_a84fe7eb3458c6eeb9db13d4fdc81142d}\label{classflexbuffers_1_1Reference_a84fe7eb3458c6eeb9db13d4fdc81142d} 
+\index{flexbuffers::Reference@{flexbuffers::Reference}!MutateUInt@{MutateUInt}}
+\index{MutateUInt@{MutateUInt}!flexbuffers::Reference@{flexbuffers::Reference}}
+\doxysubsubsection{\texorpdfstring{MutateUInt()}{MutateUInt()}}
+{\footnotesize\ttfamily bool flexbuffers\+::\+Reference\+::\+Mutate\+UInt (\begin{DoxyParamCaption}\item[{uint64\+\_\+t}]{u }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflexbuffers_1_1Reference_a256963057834c81f2fe8749925b9f63d}\label{classflexbuffers_1_1Reference_a256963057834c81f2fe8749925b9f63d} 
+\index{flexbuffers::Reference@{flexbuffers::Reference}!ToString@{ToString}}
+\index{ToString@{ToString}!flexbuffers::Reference@{flexbuffers::Reference}}
+\doxysubsubsection{\texorpdfstring{ToString()}{ToString()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily std\+::string flexbuffers\+::\+Reference\+::\+To\+String (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflexbuffers_1_1Reference_a75eeb020eb8e3c788cf8b1b2523e7ccc}\label{classflexbuffers_1_1Reference_a75eeb020eb8e3c788cf8b1b2523e7ccc} 
+\index{flexbuffers::Reference@{flexbuffers::Reference}!ToString@{ToString}}
+\index{ToString@{ToString}!flexbuffers::Reference@{flexbuffers::Reference}}
+\doxysubsubsection{\texorpdfstring{ToString()}{ToString()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily void flexbuffers\+::\+Reference\+::\+To\+String (\begin{DoxyParamCaption}\item[{bool}]{strings\+\_\+quoted,  }\item[{bool}]{keys\+\_\+quoted,  }\item[{std\+::string \&}]{s }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflexbuffers_1_1Reference_af707a10c99b1a489827e1f0db62a56e2}\label{classflexbuffers_1_1Reference_af707a10c99b1a489827e1f0db62a56e2} 
+\index{flexbuffers::Reference@{flexbuffers::Reference}!ToString@{ToString}}
+\index{ToString@{ToString}!flexbuffers::Reference@{flexbuffers::Reference}}
+\doxysubsubsection{\texorpdfstring{ToString()}{ToString()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily void flexbuffers\+::\+Reference\+::\+To\+String (\begin{DoxyParamCaption}\item[{bool}]{strings\+\_\+quoted,  }\item[{bool}]{keys\+\_\+quoted,  }\item[{std\+::string \&}]{s,  }\item[{bool}]{indented,  }\item[{int}]{cur\+\_\+indent,  }\item[{const char \texorpdfstring{$\ast$}{*}}]{indent\+\_\+string,  }\item[{bool}]{natural\+\_\+utf8 = {\ttfamily false} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Friends And Related Symbol Documentation}
+\Hypertarget{classflexbuffers_1_1Reference_a871285414448937aa5f297649dc8242a}\label{classflexbuffers_1_1Reference_a871285414448937aa5f297649dc8242a} 
+\index{flexbuffers::Reference@{flexbuffers::Reference}!Verifier@{Verifier}}
+\index{Verifier@{Verifier}!flexbuffers::Reference@{flexbuffers::Reference}}
+\doxysubsubsection{\texorpdfstring{Verifier}{Verifier}}
+{\footnotesize\ttfamily friend class Verifier\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+flatbuffers/include/flatbuffers/\mbox{\hyperlink{flexbuffers_8h}{flexbuffers.\+h}}\end{DoxyCompactItemize}

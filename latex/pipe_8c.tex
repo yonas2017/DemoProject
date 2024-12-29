@@ -1,0 +1,59 @@
+\doxysection{src/client/pipe.c File Reference}
+\hypertarget{pipe_8c}{}\label{pipe_8c}\index{src/client/pipe.c@{src/client/pipe.c}}
+{\ttfamily \#include "{}pipe.\+h"{}}\newline
+{\ttfamily \#include $<$fcntl.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$sys/wait.\+h$>$}\newline
+{\ttfamily \#include $<$unistd.\+h$>$}\newline
+{\ttfamily \#include "{}client.\+h"{}}\newline
+{\ttfamily \#include "{}tcp\+\_\+client.\+h"{}}\newline
+Include dependency graph for pipe.\+c\+:
+% FIG 0
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{pipe_8c_abc029c38d8ebda9706a926d8e64810f1}{create\+\_\+pipe}} (int \texorpdfstring{$\ast$}{*}pipeA, int \texorpdfstring{$\ast$}{*}pipeB)
+\item 
+void \mbox{\hyperlink{pipe_8c_a3c8419236142047d349efb64a77220d9}{child\+\_\+process}} (int \texorpdfstring{$\ast$}{*}pipe\+Fd, int \texorpdfstring{$\ast$}{*}pipe\+Term\+Fd, int fd\+Out)
+\item 
+void \mbox{\hyperlink{pipe_8c_a1b937e37c39824bb86201105cbc16df6}{wait\+\_\+child}} ()
+\item 
+void \mbox{\hyperlink{pipe_8c_acdf8411b1bd4382b7868105628325a59}{write\+\_\+to\+\_\+pipe}} (int \texorpdfstring{$\ast$}{*}pipe\+Fd, char job\+Type, \mbox{\hyperlink{structserver__message__t}{server\+\_\+message\+\_\+t}} \texorpdfstring{$\ast$}{*}msg)
+\item 
+void \mbox{\hyperlink{pipe_8c_a9c8c58f61f71f7d19021b703f694d13c}{parent\+\_\+process}} (\mbox{\hyperlink{structclient__t}{client\+\_\+t}} \texorpdfstring{$\ast$}{*}client, int \texorpdfstring{$\ast$}{*}pipe\+ChildA, int \texorpdfstring{$\ast$}{*}pipe\+ChildB, int \texorpdfstring{$\ast$}{*}pipe\+Term\+ChildA, int \texorpdfstring{$\ast$}{*}pipe\+Term\+ChildB)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{pipe_8c_a3c8419236142047d349efb64a77220d9}\label{pipe_8c_a3c8419236142047d349efb64a77220d9} 
+\index{pipe.c@{pipe.c}!child\_process@{child\_process}}
+\index{child\_process@{child\_process}!pipe.c@{pipe.c}}
+\doxysubsubsection{\texorpdfstring{child\_process()}{child\_process()}}
+{\footnotesize\ttfamily void child\+\_\+process (\begin{DoxyParamCaption}\item[{int \texorpdfstring{$\ast$}{*}}]{pipe\+Fd,  }\item[{int \texorpdfstring{$\ast$}{*}}]{pipe\+Term\+Fd,  }\item[{int}]{fd\+Out }\end{DoxyParamCaption})}
+
+\Hypertarget{pipe_8c_abc029c38d8ebda9706a926d8e64810f1}\label{pipe_8c_abc029c38d8ebda9706a926d8e64810f1} 
+\index{pipe.c@{pipe.c}!create\_pipe@{create\_pipe}}
+\index{create\_pipe@{create\_pipe}!pipe.c@{pipe.c}}
+\doxysubsubsection{\texorpdfstring{create\_pipe()}{create\_pipe()}}
+{\footnotesize\ttfamily void create\+\_\+pipe (\begin{DoxyParamCaption}\item[{int \texorpdfstring{$\ast$}{*}}]{pipeA,  }\item[{int \texorpdfstring{$\ast$}{*}}]{pipeB }\end{DoxyParamCaption})}
+
+\Hypertarget{pipe_8c_a9c8c58f61f71f7d19021b703f694d13c}\label{pipe_8c_a9c8c58f61f71f7d19021b703f694d13c} 
+\index{pipe.c@{pipe.c}!parent\_process@{parent\_process}}
+\index{parent\_process@{parent\_process}!pipe.c@{pipe.c}}
+\doxysubsubsection{\texorpdfstring{parent\_process()}{parent\_process()}}
+{\footnotesize\ttfamily void parent\+\_\+process (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structclient__t}{client\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{client,  }\item[{int \texorpdfstring{$\ast$}{*}}]{pipe\+ChildA,  }\item[{int \texorpdfstring{$\ast$}{*}}]{pipe\+ChildB,  }\item[{int \texorpdfstring{$\ast$}{*}}]{pipe\+Term\+ChildA,  }\item[{int \texorpdfstring{$\ast$}{*}}]{pipe\+Term\+ChildB }\end{DoxyParamCaption})}
+
+\Hypertarget{pipe_8c_a1b937e37c39824bb86201105cbc16df6}\label{pipe_8c_a1b937e37c39824bb86201105cbc16df6} 
+\index{pipe.c@{pipe.c}!wait\_child@{wait\_child}}
+\index{wait\_child@{wait\_child}!pipe.c@{pipe.c}}
+\doxysubsubsection{\texorpdfstring{wait\_child()}{wait\_child()}}
+{\footnotesize\ttfamily void wait\+\_\+child (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{pipe_8c_acdf8411b1bd4382b7868105628325a59}\label{pipe_8c_acdf8411b1bd4382b7868105628325a59} 
+\index{pipe.c@{pipe.c}!write\_to\_pipe@{write\_to\_pipe}}
+\index{write\_to\_pipe@{write\_to\_pipe}!pipe.c@{pipe.c}}
+\doxysubsubsection{\texorpdfstring{write\_to\_pipe()}{write\_to\_pipe()}}
+{\footnotesize\ttfamily void write\+\_\+to\+\_\+pipe (\begin{DoxyParamCaption}\item[{int \texorpdfstring{$\ast$}{*}}]{pipe\+Fd,  }\item[{char}]{job\+Type,  }\item[{\mbox{\hyperlink{structserver__message__t}{server\+\_\+message\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{msg }\end{DoxyParamCaption})}
+

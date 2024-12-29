@@ -1,0 +1,139 @@
+\doxysection{flatbuffers\+::Definition Struct Reference}
+\hypertarget{structflatbuffers_1_1Definition}{}\label{structflatbuffers_1_1Definition}\index{flatbuffers::Definition@{flatbuffers::Definition}}
+
+
+{\ttfamily \#include $<$idl.\+h$>$}
+
+
+
+Inheritance diagram for flatbuffers\+::Definition\+:
+% FIG 0
+
+
+Collaboration diagram for flatbuffers\+::Definition\+:
+% FIG 1
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structflatbuffers_1_1Definition_a7e633c9126b84a0b845d070bbae3338f}{Definition}} ()
+\item 
+flatbuffers\+::\+Offset$<$ \mbox{\hyperlink{classflatbuffers_1_1Vector}{flatbuffers\+::\+Vector}}$<$ flatbuffers\+::\+Offset$<$ reflection\+::\+Key\+Value $>$ $>$ $>$ \mbox{\hyperlink{structflatbuffers_1_1Definition_a9b20c2ab44f0863559248617c75ddaa1}{Serialize\+Attributes}} (\mbox{\hyperlink{namespaceflatbuffers_a41ac7b1c8f5f4a869e8f649b6c171ce7}{Flat\+Buffer\+Builder}} \texorpdfstring{$\ast$}{*}builder, const \mbox{\hyperlink{classflatbuffers_1_1Parser}{Parser}} \&parser) const
+\item 
+bool \mbox{\hyperlink{structflatbuffers_1_1Definition_a8afde69564c8f2ea5c98ec2f539b44ed}{Deserialize\+Attributes}} (\mbox{\hyperlink{classflatbuffers_1_1Parser}{Parser}} \&parser, const \mbox{\hyperlink{classflatbuffers_1_1Vector}{Vector}}$<$ Offset$<$ reflection\+::\+Key\+Value $>$ $>$ \texorpdfstring{$\ast$}{*}attrs)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{structflatbuffers_1_1Definition_a7723ad279d193fec1d5a4bbb6b020ae0}{name}}
+\item 
+std\+::string \mbox{\hyperlink{structflatbuffers_1_1Definition_a9a87130ef6c6e72eaf31d4367aefedb0}{file}}
+\item 
+std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{structflatbuffers_1_1Definition_a7a00be4e1d3bab9ca4c7db2013f599a7}{doc\+\_\+comment}}
+\item 
+\mbox{\hyperlink{classflatbuffers_1_1SymbolTable}{Symbol\+Table}}$<$ \mbox{\hyperlink{structflatbuffers_1_1Value}{Value}} $>$ \mbox{\hyperlink{structflatbuffers_1_1Definition_a2c6f4161077a904725041c3d874efef2}{attributes}}
+\item 
+bool \mbox{\hyperlink{structflatbuffers_1_1Definition_a7d4ba4a89c437c2d5bd8b09f17179d05}{generated}}
+\item 
+\mbox{\hyperlink{structflatbuffers_1_1Namespace}{Namespace}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{structflatbuffers_1_1Definition_af8f075b5e5c3b1b1c38dae30331c4f2d}{defined\+\_\+namespace}}
+\item 
+uoffset\+\_\+t \mbox{\hyperlink{structflatbuffers_1_1Definition_ae72ef95e71baad65833404844c2a68ea}{serialized\+\_\+location}}
+\item 
+int \mbox{\hyperlink{structflatbuffers_1_1Definition_a815113af32b6e520729400e49c13e824}{index}}
+\item 
+int \mbox{\hyperlink{structflatbuffers_1_1Definition_a5cd946cbd99418223542fc54abae6b53}{refcount}}
+\item 
+const std\+::string \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{structflatbuffers_1_1Definition_a6fd02f96000214d9f7f9304b7bb09393}{declaration\+\_\+file}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{structflatbuffers_1_1Definition_a7e633c9126b84a0b845d070bbae3338f}\label{structflatbuffers_1_1Definition_a7e633c9126b84a0b845d070bbae3338f} 
+\index{flatbuffers::Definition@{flatbuffers::Definition}!Definition@{Definition}}
+\index{Definition@{Definition}!flatbuffers::Definition@{flatbuffers::Definition}}
+\doxysubsubsection{\texorpdfstring{Definition()}{Definition()}}
+{\footnotesize\ttfamily flatbuffers\+::\+Definition\+::\+Definition (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{structflatbuffers_1_1Definition_a8afde69564c8f2ea5c98ec2f539b44ed}\label{structflatbuffers_1_1Definition_a8afde69564c8f2ea5c98ec2f539b44ed} 
+\index{flatbuffers::Definition@{flatbuffers::Definition}!DeserializeAttributes@{DeserializeAttributes}}
+\index{DeserializeAttributes@{DeserializeAttributes}!flatbuffers::Definition@{flatbuffers::Definition}}
+\doxysubsubsection{\texorpdfstring{DeserializeAttributes()}{DeserializeAttributes()}}
+{\footnotesize\ttfamily bool flatbuffers\+::\+Definition\+::\+Deserialize\+Attributes (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classflatbuffers_1_1Parser}{Parser}} \&}]{parser,  }\item[{const \mbox{\hyperlink{classflatbuffers_1_1Vector}{Vector}}$<$ Offset$<$ reflection\+::\+Key\+Value $>$ $>$ \texorpdfstring{$\ast$}{*}}]{attrs }\end{DoxyParamCaption})}
+
+\Hypertarget{structflatbuffers_1_1Definition_a9b20c2ab44f0863559248617c75ddaa1}\label{structflatbuffers_1_1Definition_a9b20c2ab44f0863559248617c75ddaa1} 
+\index{flatbuffers::Definition@{flatbuffers::Definition}!SerializeAttributes@{SerializeAttributes}}
+\index{SerializeAttributes@{SerializeAttributes}!flatbuffers::Definition@{flatbuffers::Definition}}
+\doxysubsubsection{\texorpdfstring{SerializeAttributes()}{SerializeAttributes()}}
+{\footnotesize\ttfamily flatbuffers\+::\+Offset$<$ \mbox{\hyperlink{classflatbuffers_1_1Vector}{flatbuffers\+::\+Vector}}$<$ flatbuffers\+::\+Offset$<$ reflection\+::\+Key\+Value $>$ $>$ $>$ flatbuffers\+::\+Definition\+::\+Serialize\+Attributes (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceflatbuffers_a41ac7b1c8f5f4a869e8f649b6c171ce7}{Flat\+Buffer\+Builder}} \texorpdfstring{$\ast$}{*}}]{builder,  }\item[{const \mbox{\hyperlink{classflatbuffers_1_1Parser}{Parser}} \&}]{parser }\end{DoxyParamCaption}) const}
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{structflatbuffers_1_1Definition_a2c6f4161077a904725041c3d874efef2}\label{structflatbuffers_1_1Definition_a2c6f4161077a904725041c3d874efef2} 
+\index{flatbuffers::Definition@{flatbuffers::Definition}!attributes@{attributes}}
+\index{attributes@{attributes}!flatbuffers::Definition@{flatbuffers::Definition}}
+\doxysubsubsection{\texorpdfstring{attributes}{attributes}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classflatbuffers_1_1SymbolTable}{Symbol\+Table}}$<$\mbox{\hyperlink{structflatbuffers_1_1Value}{Value}}$>$ flatbuffers\+::\+Definition\+::attributes}
+
+\Hypertarget{structflatbuffers_1_1Definition_a6fd02f96000214d9f7f9304b7bb09393}\label{structflatbuffers_1_1Definition_a6fd02f96000214d9f7f9304b7bb09393} 
+\index{flatbuffers::Definition@{flatbuffers::Definition}!declaration\_file@{declaration\_file}}
+\index{declaration\_file@{declaration\_file}!flatbuffers::Definition@{flatbuffers::Definition}}
+\doxysubsubsection{\texorpdfstring{declaration\_file}{declaration\_file}}
+{\footnotesize\ttfamily const std\+::string\texorpdfstring{$\ast$}{*} flatbuffers\+::\+Definition\+::declaration\+\_\+file}
+
+\Hypertarget{structflatbuffers_1_1Definition_af8f075b5e5c3b1b1c38dae30331c4f2d}\label{structflatbuffers_1_1Definition_af8f075b5e5c3b1b1c38dae30331c4f2d} 
+\index{flatbuffers::Definition@{flatbuffers::Definition}!defined\_namespace@{defined\_namespace}}
+\index{defined\_namespace@{defined\_namespace}!flatbuffers::Definition@{flatbuffers::Definition}}
+\doxysubsubsection{\texorpdfstring{defined\_namespace}{defined\_namespace}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structflatbuffers_1_1Namespace}{Namespace}}\texorpdfstring{$\ast$}{*} flatbuffers\+::\+Definition\+::defined\+\_\+namespace}
+
+\Hypertarget{structflatbuffers_1_1Definition_a7a00be4e1d3bab9ca4c7db2013f599a7}\label{structflatbuffers_1_1Definition_a7a00be4e1d3bab9ca4c7db2013f599a7} 
+\index{flatbuffers::Definition@{flatbuffers::Definition}!doc\_comment@{doc\_comment}}
+\index{doc\_comment@{doc\_comment}!flatbuffers::Definition@{flatbuffers::Definition}}
+\doxysubsubsection{\texorpdfstring{doc\_comment}{doc\_comment}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::string$>$ flatbuffers\+::\+Definition\+::doc\+\_\+comment}
+
+\Hypertarget{structflatbuffers_1_1Definition_a9a87130ef6c6e72eaf31d4367aefedb0}\label{structflatbuffers_1_1Definition_a9a87130ef6c6e72eaf31d4367aefedb0} 
+\index{flatbuffers::Definition@{flatbuffers::Definition}!file@{file}}
+\index{file@{file}!flatbuffers::Definition@{flatbuffers::Definition}}
+\doxysubsubsection{\texorpdfstring{file}{file}}
+{\footnotesize\ttfamily std\+::string flatbuffers\+::\+Definition\+::file}
+
+\Hypertarget{structflatbuffers_1_1Definition_a7d4ba4a89c437c2d5bd8b09f17179d05}\label{structflatbuffers_1_1Definition_a7d4ba4a89c437c2d5bd8b09f17179d05} 
+\index{flatbuffers::Definition@{flatbuffers::Definition}!generated@{generated}}
+\index{generated@{generated}!flatbuffers::Definition@{flatbuffers::Definition}}
+\doxysubsubsection{\texorpdfstring{generated}{generated}}
+{\footnotesize\ttfamily bool flatbuffers\+::\+Definition\+::generated}
+
+\Hypertarget{structflatbuffers_1_1Definition_a815113af32b6e520729400e49c13e824}\label{structflatbuffers_1_1Definition_a815113af32b6e520729400e49c13e824} 
+\index{flatbuffers::Definition@{flatbuffers::Definition}!index@{index}}
+\index{index@{index}!flatbuffers::Definition@{flatbuffers::Definition}}
+\doxysubsubsection{\texorpdfstring{index}{index}}
+{\footnotesize\ttfamily int flatbuffers\+::\+Definition\+::index}
+
+\Hypertarget{structflatbuffers_1_1Definition_a7723ad279d193fec1d5a4bbb6b020ae0}\label{structflatbuffers_1_1Definition_a7723ad279d193fec1d5a4bbb6b020ae0} 
+\index{flatbuffers::Definition@{flatbuffers::Definition}!name@{name}}
+\index{name@{name}!flatbuffers::Definition@{flatbuffers::Definition}}
+\doxysubsubsection{\texorpdfstring{name}{name}}
+{\footnotesize\ttfamily std\+::string flatbuffers\+::\+Definition\+::name}
+
+\Hypertarget{structflatbuffers_1_1Definition_a5cd946cbd99418223542fc54abae6b53}\label{structflatbuffers_1_1Definition_a5cd946cbd99418223542fc54abae6b53} 
+\index{flatbuffers::Definition@{flatbuffers::Definition}!refcount@{refcount}}
+\index{refcount@{refcount}!flatbuffers::Definition@{flatbuffers::Definition}}
+\doxysubsubsection{\texorpdfstring{refcount}{refcount}}
+{\footnotesize\ttfamily int flatbuffers\+::\+Definition\+::refcount}
+
+\Hypertarget{structflatbuffers_1_1Definition_ae72ef95e71baad65833404844c2a68ea}\label{structflatbuffers_1_1Definition_ae72ef95e71baad65833404844c2a68ea} 
+\index{flatbuffers::Definition@{flatbuffers::Definition}!serialized\_location@{serialized\_location}}
+\index{serialized\_location@{serialized\_location}!flatbuffers::Definition@{flatbuffers::Definition}}
+\doxysubsubsection{\texorpdfstring{serialized\_location}{serialized\_location}}
+{\footnotesize\ttfamily uoffset\+\_\+t flatbuffers\+::\+Definition\+::serialized\+\_\+location}
+
+
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+flatbuffers/include/flatbuffers/\mbox{\hyperlink{idl_8h}{idl.\+h}}\item 
+flatbuffers/src/\mbox{\hyperlink{idl__parser_8cpp}{idl\+\_\+parser.\+cpp}}\end{DoxyCompactItemize}

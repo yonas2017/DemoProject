@@ -1,0 +1,344 @@
+\doxysection{native\+\_\+type\+\_\+test\+\_\+generated.\+h}
+\hypertarget{native__type__test__generated_8h_source}{}\label{native__type__test__generated_8h_source}\index{flatbuffers/tests/native\_type\_test\_generated.h@{flatbuffers/tests/native\_type\_test\_generated.h}}
+\mbox{\hyperlink{native__type__test__generated_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//\ automatically\ generated\ by\ the\ FlatBuffers\ compiler,\ do\ not\ modify}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#ifndef\ FLATBUFFERS\_GENERATED\_NATIVETYPETEST\_GEOMETRY\_H\_}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#define\ FLATBUFFERS\_GENERATED\_NATIVETYPETEST\_GEOMETRY\_H\_}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{flatbuffers_8h}{flatbuffers/flatbuffers.h}}"{}}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{comment}{//\ Ensure\ the\ included\ flatbuffers.h\ is\ the\ same\ version\ as\ when\ this\ file\ was}}
+\DoxyCodeLine{00010\ \textcolor{comment}{//\ generated,\ otherwise\ it\ may\ not\ be\ compatible.}}
+\DoxyCodeLine{00011\ \textcolor{keyword}{static\_assert}(FLATBUFFERS\_VERSION\_MAJOR\ ==\ 24\ \&\&}
+\DoxyCodeLine{00012\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ FLATBUFFERS\_VERSION\_MINOR\ ==\ 12\ \&\&}
+\DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ FLATBUFFERS\_VERSION\_REVISION\ ==\ 23,}
+\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}Non-\/compatible\ flatbuffers\ version\ included"{}});}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{native__type__test__impl_8h}{native\_type\_test\_impl.h}}"{}}}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceGeometry}{Geometry}}\ \{}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{keyword}{struct\ }Vector3D;}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \textcolor{keyword}{struct\ }Vector3DAlt;}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \textcolor{keyword}{struct\ }ApplicationData;}
+\DoxyCodeLine{00025\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structGeometry_1_1ApplicationDataBuilder}{ApplicationDataBuilder}};}
+\DoxyCodeLine{00026\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structGeometry_1_1ApplicationDataT}{ApplicationDataT}};}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \textcolor{keyword}{inline}\ const\ ::flatbuffers::TypeTable\ *\mbox{\hyperlink{namespaceGeometry_ad224dbca20b1bb9089a44dbdd4add730}{Vector3DTypeTable}}();}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \textcolor{keyword}{inline}\ const\ ::flatbuffers::TypeTable\ *\mbox{\hyperlink{namespaceGeometry_a1ff892524ce9ca19d40bcec9252e0cbe}{Vector3DAltTypeTable}}();}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \textcolor{keyword}{inline}\ const\ ::flatbuffers::TypeTable\ *\mbox{\hyperlink{namespaceGeometry_a645cacac2f3ec7195f956b6c7250c152}{ApplicationDataTypeTable}}();}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \mbox{\hyperlink{namespaceGeometry_ad340178c6e15a88352907702399e29fa}{FLATBUFFERS\_MANUALLY\_ALIGNED\_STRUCT}}(4)\ Vector3D\ \mbox{\hyperlink{structGeometry_1_1FLATBUFFERS__FINAL__CLASS}{FLATBUFFERS\_FINAL\_CLASS}}\ \{}
+\DoxyCodeLine{00035\ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00036\ \ \ \textcolor{keywordtype}{float}\ x\_;}
+\DoxyCodeLine{00037\ \ \ \textcolor{keywordtype}{float}\ y\_;}
+\DoxyCodeLine{00038\ \ \ \textcolor{keywordtype}{float}\ z\_;}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00041\ \ \ \textcolor{keyword}{static}\ const\ ::flatbuffers::TypeTable\ *MiniReflectTypeTable()\ \{}
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{namespaceGeometry_ad224dbca20b1bb9089a44dbdd4add730}{Vector3DTypeTable}}();}
+\DoxyCodeLine{00043\ \ \ \}}
+\DoxyCodeLine{00044\ \ \ Vector3D()}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ :\ x\_(0),}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ y\_(0),}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ z\_(0)\ \{}
+\DoxyCodeLine{00048\ \ \ \}}
+\DoxyCodeLine{00049\ \ \ Vector3D(\textcolor{keywordtype}{float}\ \_x,\ \textcolor{keywordtype}{float}\ \_y,\ \textcolor{keywordtype}{float}\ \_z)}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ :\ x\_(::flatbuffers::EndianScalar(\_x)),}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ y\_(::flatbuffers::EndianScalar(\_y)),}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ z\_(::flatbuffers::EndianScalar(\_z))\ \{}
+\DoxyCodeLine{00053\ \ \ \}}
+\DoxyCodeLine{00054\ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{gmock-matchers-containers__test_8cc_a6150e0515f7202e2fb518f7206ed97dc}{x}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00055\ \ \ \ \ return\ ::flatbuffers::EndianScalar(x\_);}
+\DoxyCodeLine{00056\ \ \ \}}
+\DoxyCodeLine{00057\ \ \ \textcolor{keywordtype}{void}\ mutate\_x(\textcolor{keywordtype}{float}\ \_x)\ \{}
+\DoxyCodeLine{00058\ \ \ \ \ ::flatbuffers::WriteScalar(\&x\_,\ \_x);}
+\DoxyCodeLine{00059\ \ \ \}}
+\DoxyCodeLine{00060\ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{gmock-matchers-containers__test_8cc_a39cb44155237f0205e0feb931d5acbed}{y}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00061\ \ \ \ \ return\ ::flatbuffers::EndianScalar(y\_);}
+\DoxyCodeLine{00062\ \ \ \}}
+\DoxyCodeLine{00063\ \ \ \textcolor{keywordtype}{void}\ mutate\_y(\textcolor{keywordtype}{float}\ \_y)\ \{}
+\DoxyCodeLine{00064\ \ \ \ \ ::flatbuffers::WriteScalar(\&y\_,\ \_y);}
+\DoxyCodeLine{00065\ \ \ \}}
+\DoxyCodeLine{00066\ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{gmock-matchers-containers__test_8cc_a196ff6a287f53f758b1506f21269fc77}{z}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00067\ \ \ \ \ return\ ::flatbuffers::EndianScalar(z\_);}
+\DoxyCodeLine{00068\ \ \ \}}
+\DoxyCodeLine{00069\ \ \ \textcolor{keywordtype}{void}\ mutate\_z(\textcolor{keywordtype}{float}\ \_z)\ \{}
+\DoxyCodeLine{00070\ \ \ \ \ ::flatbuffers::WriteScalar(\&z\_,\ \_z);}
+\DoxyCodeLine{00071\ \ \ \}}
+\DoxyCodeLine{00072\ \};}
+\DoxyCodeLine{00073\ \mbox{\hyperlink{namespaceGeometry_abcf1978cf567edf9e48e3ee512f05ac9}{FLATBUFFERS\_STRUCT\_END}}(Vector3D,\ 12);}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00075\ \mbox{\hyperlink{namespaceGeometry_ad340178c6e15a88352907702399e29fa}{FLATBUFFERS\_MANUALLY\_ALIGNED\_STRUCT}}(4)\ Vector3DAlt\ \mbox{\hyperlink{structGeometry_1_1FLATBUFFERS__FINAL__CLASS}{FLATBUFFERS\_FINAL\_CLASS}}\ \{}
+\DoxyCodeLine{00076\ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00077\ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{gmock-spec-builders__test_8cc_aab83c63e96e715d4096c97348457fb14}{a\_}};}
+\DoxyCodeLine{00078\ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{gmock-spec-builders__test_8cc_a7450f74c57def233a5a817abe4a16811}{b\_}};}
+\DoxyCodeLine{00079\ \ \ \textcolor{keywordtype}{float}\ c\_;}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00081\ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00082\ \ \ \textcolor{keyword}{static}\ const\ ::flatbuffers::TypeTable\ *MiniReflectTypeTable()\ \{}
+\DoxyCodeLine{00083\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{namespaceGeometry_a1ff892524ce9ca19d40bcec9252e0cbe}{Vector3DAltTypeTable}}();}
+\DoxyCodeLine{00084\ \ \ \}}
+\DoxyCodeLine{00085\ \ \ Vector3DAlt()}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ :\ \mbox{\hyperlink{gmock-spec-builders__test_8cc_aab83c63e96e715d4096c97348457fb14}{a\_}}(0),}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gmock-spec-builders__test_8cc_a7450f74c57def233a5a817abe4a16811}{b\_}}(0),}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ c\_(0)\ \{}
+\DoxyCodeLine{00089\ \ \ \}}
+\DoxyCodeLine{00090\ \ \ Vector3DAlt(\textcolor{keywordtype}{float}\ \_a,\ \textcolor{keywordtype}{float}\ \_b,\ \textcolor{keywordtype}{float}\ \_c)}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ :\ \mbox{\hyperlink{gmock-spec-builders__test_8cc_aab83c63e96e715d4096c97348457fb14}{a\_}}(::\mbox{\hyperlink{namespaceflatbuffers}{flatbuffers}}::EndianScalar(\_a)),}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gmock-spec-builders__test_8cc_a7450f74c57def233a5a817abe4a16811}{b\_}}(::\mbox{\hyperlink{namespaceflatbuffers}{flatbuffers}}::EndianScalar(\_b)),}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ c\_(::\mbox{\hyperlink{namespaceflatbuffers}{flatbuffers}}::EndianScalar(\_c))\ \{}
+\DoxyCodeLine{00094\ \ \ \}}
+\DoxyCodeLine{00095\ \ \ \textcolor{keywordtype}{float}\ a()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00096\ \ \ \ \ return\ ::flatbuffers::EndianScalar(\mbox{\hyperlink{gmock-spec-builders__test_8cc_aab83c63e96e715d4096c97348457fb14}{a\_}});}
+\DoxyCodeLine{00097\ \ \ \}}
+\DoxyCodeLine{00098\ \ \ \textcolor{keywordtype}{void}\ mutate\_a(\textcolor{keywordtype}{float}\ \_a)\ \{}
+\DoxyCodeLine{00099\ \ \ \ \ ::flatbuffers::WriteScalar(\&\mbox{\hyperlink{gmock-spec-builders__test_8cc_aab83c63e96e715d4096c97348457fb14}{a\_}},\ \_a);}
+\DoxyCodeLine{00100\ \ \ \}}
+\DoxyCodeLine{00101\ \ \ \textcolor{keywordtype}{float}\ b()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00102\ \ \ \ \ return\ ::flatbuffers::EndianScalar(\mbox{\hyperlink{gmock-spec-builders__test_8cc_a7450f74c57def233a5a817abe4a16811}{b\_}});}
+\DoxyCodeLine{00103\ \ \ \}}
+\DoxyCodeLine{00104\ \ \ \textcolor{keywordtype}{void}\ mutate\_b(\textcolor{keywordtype}{float}\ \_b)\ \{}
+\DoxyCodeLine{00105\ \ \ \ \ ::flatbuffers::WriteScalar(\&\mbox{\hyperlink{gmock-spec-builders__test_8cc_a7450f74c57def233a5a817abe4a16811}{b\_}},\ \_b);}
+\DoxyCodeLine{00106\ \ \ \}}
+\DoxyCodeLine{00107\ \ \ \textcolor{keywordtype}{float}\ c()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00108\ \ \ \ \ return\ ::flatbuffers::EndianScalar(c\_);}
+\DoxyCodeLine{00109\ \ \ \}}
+\DoxyCodeLine{00110\ \ \ \textcolor{keywordtype}{void}\ mutate\_c(\textcolor{keywordtype}{float}\ \_c)\ \{}
+\DoxyCodeLine{00111\ \ \ \ \ ::flatbuffers::WriteScalar(\&c\_,\ \_c);}
+\DoxyCodeLine{00112\ \ \ \}}
+\DoxyCodeLine{00113\ \};}
+\DoxyCodeLine{00114\ \mbox{\hyperlink{namespaceGeometry_abcf1978cf567edf9e48e3ee512f05ac9}{FLATBUFFERS\_STRUCT\_END}}(Vector3DAlt,\ 12);}
+\DoxyCodeLine{00115\ }
+\DoxyCodeLine{00116\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structGeometry_1_1ApplicationDataT}{ApplicationDataT}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{structflatbuffers_1_1NativeTable}{::flatbuffers::NativeTable}}\ \{}
+\DoxyCodeLine{00117\ \ \ \textcolor{keyword}{typedef}\ ApplicationData\ \mbox{\hyperlink{structGeometry_1_1ApplicationDataT_aef29e31748741a028da0ab1471d54a3f}{TableType}};}
+\DoxyCodeLine{00118\ \ \ std::vector<Native::Vector3D>\ \mbox{\hyperlink{structGeometry_1_1ApplicationDataT_ab90c7a7d0a34dd7cc59b3e9fce2b419d}{vectors}}\{\};}
+\DoxyCodeLine{00119\ \ \ std::vector<Native::Vector3D>\ \mbox{\hyperlink{structGeometry_1_1ApplicationDataT_aec3cf6667bbad09bc4a5963ca3f712e9}{vectors\_alt}}\{\};}
+\DoxyCodeLine{00120\ \};}
+\DoxyCodeLine{00121\ }
+\DoxyCodeLine{00122\ \textcolor{keyword}{struct\ }ApplicationData\ \mbox{\hyperlink{structGeometry_1_1FLATBUFFERS__FINAL__CLASS}{FLATBUFFERS\_FINAL\_CLASS}}\ :\ \textcolor{keyword}{private}\ \mbox{\hyperlink{classflatbuffers_1_1Table}{::flatbuffers::Table}}\ \{}
+\DoxyCodeLine{00123\ \ \ \textcolor{keyword}{typedef}\ \mbox{\hyperlink{structGeometry_1_1ApplicationDataT}{ApplicationDataT}}\ \mbox{\hyperlink{structGeometry_1_1FLATBUFFERS__FINAL__CLASS_a997ff33436cb1bd8dcc262aa6f7a3cee}{NativeTableType}};}
+\DoxyCodeLine{00124\ \ \ \textcolor{keyword}{typedef}\ \mbox{\hyperlink{structGeometry_1_1ApplicationDataBuilder}{ApplicationDataBuilder}}\ \mbox{\hyperlink{structGeometry_1_1FLATBUFFERS__FINAL__CLASS_a902eeef966cb4d007a0c16c35b10307a}{Builder}};}
+\DoxyCodeLine{00125\ \ \ \textcolor{keyword}{static}\ const\ ::flatbuffers::TypeTable\ *\mbox{\hyperlink{structGeometry_1_1FLATBUFFERS__FINAL__CLASS_a656850aa413d7ba0c024bbcddd172b27}{MiniReflectTypeTable}}()\ \{}
+\DoxyCodeLine{00126\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{namespaceGeometry_a645cacac2f3ec7195f956b6c7250c152}{ApplicationDataTypeTable}}();}
+\DoxyCodeLine{00127\ \ \ \}}
+\DoxyCodeLine{00128\ \ \ \textcolor{keyword}{enum}\ FlatBuffersVTableOffset\ FLATBUFFERS\_VTABLE\_UNDERLYING\_TYPE\ \{}
+\DoxyCodeLine{00129\ \ \ \ \ \mbox{\hyperlink{native__type__test__generated_8h_a9e56c40e507933475d3bc0cb619b0928}{VT\_VECTORS}}\ =\ 4,}
+\DoxyCodeLine{00130\ \ \ \ \ VT\_VECTORS\_ALT\ =\ 6}
+\DoxyCodeLine{00131\ \ \ \};}
+\DoxyCodeLine{00132\ \ \ const\ ::flatbuffers::Vector<const\ Geometry::Vector3D\ *>\ *\mbox{\hyperlink{structGeometry_1_1FLATBUFFERS__FINAL__CLASS_af9d686b6276f55f7f85036dbe5d45cff}{vectors}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00133\ \ \ \ \ \textcolor{keywordflow}{return}\ GetPointer<const\ ::flatbuffers::Vector<const\ Geometry::Vector3D\ *>\ *>(\mbox{\hyperlink{native__type__test__generated_8h_a9e56c40e507933475d3bc0cb619b0928}{VT\_VECTORS}});}
+\DoxyCodeLine{00134\ \ \ \}}
+\DoxyCodeLine{00135\ \ \ \mbox{\hyperlink{classflatbuffers_1_1Vector}{::flatbuffers::Vector<const\ Geometry::Vector3D\ *>}}\ *\mbox{\hyperlink{structGeometry_1_1FLATBUFFERS__FINAL__CLASS_abbb1ce52be3028b27096e9094ef9060b}{mutable\_vectors}}()\ \{}
+\DoxyCodeLine{00136\ \ \ \ \ \textcolor{keywordflow}{return}\ GetPointer<::flatbuffers::Vector<const\ Geometry::Vector3D\ *>\ *>(\mbox{\hyperlink{native__type__test__generated_8h_a9e56c40e507933475d3bc0cb619b0928}{VT\_VECTORS}});}
+\DoxyCodeLine{00137\ \ \ \}}
+\DoxyCodeLine{00138\ \ \ const\ ::flatbuffers::Vector<const\ Geometry::Vector3DAlt\ *>\ *\mbox{\hyperlink{structGeometry_1_1FLATBUFFERS__FINAL__CLASS_afc2eb5a836292a91f50e4428760e4215}{vectors\_alt}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00139\ \ \ \ \ \textcolor{keywordflow}{return}\ GetPointer<const\ ::flatbuffers::Vector<const\ Geometry::Vector3DAlt\ *>\ *>(VT\_VECTORS\_ALT);}
+\DoxyCodeLine{00140\ \ \ \}}
+\DoxyCodeLine{00141\ \ \ \mbox{\hyperlink{classflatbuffers_1_1Vector}{::flatbuffers::Vector<const\ Geometry::Vector3DAlt\ *>}}\ *\mbox{\hyperlink{structGeometry_1_1FLATBUFFERS__FINAL__CLASS_a45026eb8901f67d5539127a8fa09383e}{mutable\_vectors\_alt}}()\ \{}
+\DoxyCodeLine{00142\ \ \ \ \ \textcolor{keywordflow}{return}\ GetPointer<::flatbuffers::Vector<const\ Geometry::Vector3DAlt\ *>\ *>(VT\_VECTORS\_ALT);}
+\DoxyCodeLine{00143\ \ \ \}}
+\DoxyCodeLine{00144\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structGeometry_1_1FLATBUFFERS__FINAL__CLASS_a0135c1c2f4fd2d6f3febbad9d38d005f}{Verify}}(\mbox{\hyperlink{namespaceflatbuffers_a3268477941df91db2eb06442b6e5f922}{::flatbuffers::Verifier}}\ \&verifier)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00145\ \ \ \ \ \textcolor{keywordflow}{return}\ VerifyTableStart(verifier)\ \&\&}
+\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ \ \ \ VerifyOffset(verifier,\ \mbox{\hyperlink{native__type__test__generated_8h_a9e56c40e507933475d3bc0cb619b0928}{VT\_VECTORS}})\ \&\&}
+\DoxyCodeLine{00147\ \ \ \ \ \ \ \ \ \ \ \ verifier.VerifyVector(vectors())\ \&\&}
+\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ \ \ \ VerifyOffset(verifier,\ VT\_VECTORS\_ALT)\ \&\&}
+\DoxyCodeLine{00149\ \ \ \ \ \ \ \ \ \ \ \ verifier.VerifyVector(vectors\_alt())\ \&\&}
+\DoxyCodeLine{00150\ \ \ \ \ \ \ \ \ \ \ \ verifier.EndTable();}
+\DoxyCodeLine{00151\ \ \ \}}
+\DoxyCodeLine{00152\ \ \ \mbox{\hyperlink{structGeometry_1_1ApplicationDataT}{ApplicationDataT}}\ *\mbox{\hyperlink{structGeometry_1_1FLATBUFFERS__FINAL__CLASS_a197462dc31c62193280c583f3615a551}{UnPack}}(const\ ::flatbuffers::resolver\_function\_t\ *\_resolver\ =\ \textcolor{keyword}{nullptr})\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00153\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{structGeometry_1_1FLATBUFFERS__FINAL__CLASS_a80c2741efc67936b1239205d32aebb01}{UnPackTo}}(\mbox{\hyperlink{structGeometry_1_1ApplicationDataT}{ApplicationDataT}}\ *\_o,\ const\ ::flatbuffers::resolver\_function\_t\ *\_resolver\ =\ \textcolor{keyword}{nullptr})\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00154\ \ \ static\ ::flatbuffers::Offset<ApplicationData>\ \mbox{\hyperlink{structGeometry_1_1FLATBUFFERS__FINAL__CLASS_a04f3ac2bf6c3013e0a0cd22e12beb4ea}{Pack}}(\mbox{\hyperlink{classflatbuffers_1_1FlatBufferBuilderImpl}{::flatbuffers::FlatBufferBuilder}}\ \&\_fbb,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{structGeometry_1_1ApplicationDataT}{ApplicationDataT}}*\ \_o,\ const\ ::flatbuffers::rehasher\_function\_t\ *\_rehasher\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00155\ \};}
+\DoxyCodeLine{00156\ }
+\DoxyCodeLine{00157\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structGeometry_1_1ApplicationDataBuilder}{ApplicationDataBuilder}}\ \{}
+\DoxyCodeLine{00158\ \ \ \textcolor{keyword}{typedef}\ ApplicationData\ \mbox{\hyperlink{structGeometry_1_1ApplicationDataBuilder_af4f8c2e117895a77bd047521e37d79b2}{Table}};}
+\DoxyCodeLine{00159\ \ \ \mbox{\hyperlink{classflatbuffers_1_1FlatBufferBuilderImpl}{::flatbuffers::FlatBufferBuilder}}\ \&\mbox{\hyperlink{structGeometry_1_1ApplicationDataBuilder_ae67316cf73ee07bb71bc34cc3406efdb}{fbb\_}};}
+\DoxyCodeLine{00160\ \ \ ::flatbuffers::uoffset\_t\ \mbox{\hyperlink{structGeometry_1_1ApplicationDataBuilder_a74b9750725cf0e7ce68d0902e21e3f42}{start\_}};}
+\DoxyCodeLine{00161\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{structGeometry_1_1ApplicationDataBuilder_a9ea0dc5517b99edb01e4299e698a539b}{add\_vectors}}(::flatbuffers::Offset<\mbox{\hyperlink{classflatbuffers_1_1Vector}{::flatbuffers::Vector<const\ Geometry::Vector3D\ *>}}>\ vectors)\ \{}
+\DoxyCodeLine{00162\ \ \ \ \ \mbox{\hyperlink{structGeometry_1_1ApplicationDataBuilder_ae67316cf73ee07bb71bc34cc3406efdb}{fbb\_}}.AddOffset(ApplicationData::VT\_VECTORS,\ vectors);}
+\DoxyCodeLine{00163\ \ \ \}}
+\DoxyCodeLine{00164\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{structGeometry_1_1ApplicationDataBuilder_a03c6045a3651cbf0876092c22f820250}{add\_vectors\_alt}}(::flatbuffers::Offset<\mbox{\hyperlink{classflatbuffers_1_1Vector}{::flatbuffers::Vector<const\ Geometry::Vector3DAlt\ *>}}>\ vectors\_alt)\ \{}
+\DoxyCodeLine{00165\ \ \ \ \ \mbox{\hyperlink{structGeometry_1_1ApplicationDataBuilder_ae67316cf73ee07bb71bc34cc3406efdb}{fbb\_}}.AddOffset(ApplicationData::VT\_VECTORS\_ALT,\ vectors\_alt);}
+\DoxyCodeLine{00166\ \ \ \}}
+\DoxyCodeLine{00167\ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{structGeometry_1_1ApplicationDataBuilder_abfaf5666d6ae39763e0d3b626c7dc341}{ApplicationDataBuilder}}(\mbox{\hyperlink{classflatbuffers_1_1FlatBufferBuilderImpl}{::flatbuffers::FlatBufferBuilder}}\ \&\_fbb)}
+\DoxyCodeLine{00168\ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{structGeometry_1_1ApplicationDataBuilder_ae67316cf73ee07bb71bc34cc3406efdb}{fbb\_}}(\_fbb)\ \{}
+\DoxyCodeLine{00169\ \ \ \ \ \mbox{\hyperlink{structGeometry_1_1ApplicationDataBuilder_a74b9750725cf0e7ce68d0902e21e3f42}{start\_}}\ =\ \mbox{\hyperlink{structGeometry_1_1ApplicationDataBuilder_ae67316cf73ee07bb71bc34cc3406efdb}{fbb\_}}.StartTable();}
+\DoxyCodeLine{00170\ \ \ \}}
+\DoxyCodeLine{00171\ \ \ ::flatbuffers::Offset<ApplicationData>\ \mbox{\hyperlink{structGeometry_1_1ApplicationDataBuilder_a1f40fa8435e94e6c394ab962621ea89d}{Finish}}()\ \{}
+\DoxyCodeLine{00172\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{auto}\ end\ =\ \mbox{\hyperlink{structGeometry_1_1ApplicationDataBuilder_ae67316cf73ee07bb71bc34cc3406efdb}{fbb\_}}.EndTable(\mbox{\hyperlink{structGeometry_1_1ApplicationDataBuilder_a74b9750725cf0e7ce68d0902e21e3f42}{start\_}});}
+\DoxyCodeLine{00173\ \ \ \ \ \textcolor{keyword}{auto}\ o\ =\ ::flatbuffers::Offset<ApplicationData>(end);}
+\DoxyCodeLine{00174\ \ \ \ \ \textcolor{keywordflow}{return}\ o;}
+\DoxyCodeLine{00175\ \ \ \}}
+\DoxyCodeLine{00176\ \};}
+\DoxyCodeLine{00177\ }
+\DoxyCodeLine{00178\ inline\ ::flatbuffers::Offset<ApplicationData>\ \mbox{\hyperlink{namespaceGeometry_a80568c51dc5d2dcbc5e442b4a82271f9}{CreateApplicationData}}(}
+\DoxyCodeLine{00179\ \ \ \ \ \mbox{\hyperlink{classflatbuffers_1_1FlatBufferBuilderImpl}{::flatbuffers::FlatBufferBuilder}}\ \&\_fbb,}
+\DoxyCodeLine{00180\ \ \ \ \ ::flatbuffers::Offset<\mbox{\hyperlink{classflatbuffers_1_1Vector}{::flatbuffers::Vector<const\ Geometry::Vector3D\ *>}}>\ vectors\ =\ 0,}
+\DoxyCodeLine{00181\ \ \ \ \ ::flatbuffers::Offset<\mbox{\hyperlink{classflatbuffers_1_1Vector}{::flatbuffers::Vector<const\ Geometry::Vector3DAlt\ *>}}>\ vectors\_alt\ =\ 0)\ \{}
+\DoxyCodeLine{00182\ \ \ \mbox{\hyperlink{structGeometry_1_1ApplicationDataBuilder}{ApplicationDataBuilder}}\ builder\_(\_fbb);}
+\DoxyCodeLine{00183\ \ \ builder\_.\mbox{\hyperlink{structGeometry_1_1ApplicationDataBuilder_a03c6045a3651cbf0876092c22f820250}{add\_vectors\_alt}}(vectors\_alt);}
+\DoxyCodeLine{00184\ \ \ builder\_.\mbox{\hyperlink{structGeometry_1_1ApplicationDataBuilder_a9ea0dc5517b99edb01e4299e698a539b}{add\_vectors}}(vectors);}
+\DoxyCodeLine{00185\ \ \ \textcolor{keywordflow}{return}\ builder\_.\mbox{\hyperlink{structGeometry_1_1ApplicationDataBuilder_a1f40fa8435e94e6c394ab962621ea89d}{Finish}}();}
+\DoxyCodeLine{00186\ \}}
+\DoxyCodeLine{00187\ }
+\DoxyCodeLine{00188\ inline\ ::flatbuffers::Offset<ApplicationData>\ \mbox{\hyperlink{namespaceGeometry_ae8d1f3f4657b73491efaf7fe90e47940}{CreateApplicationDataDirect}}(}
+\DoxyCodeLine{00189\ \ \ \ \ \mbox{\hyperlink{classflatbuffers_1_1FlatBufferBuilderImpl}{::flatbuffers::FlatBufferBuilder}}\ \&\_fbb,}
+\DoxyCodeLine{00190\ \ \ \ \ \textcolor{keyword}{const}\ std::vector<Geometry::Vector3D>\ *vectors\ =\ \textcolor{keyword}{nullptr},}
+\DoxyCodeLine{00191\ \ \ \ \ \textcolor{keyword}{const}\ std::vector<Geometry::Vector3DAlt>\ *vectors\_alt\ =\ \textcolor{keyword}{nullptr})\ \{}
+\DoxyCodeLine{00192\ \ \ \textcolor{keyword}{auto}\ vectors\_\_\ =\ vectors\ ?\ \_fbb.\mbox{\hyperlink{classflatbuffers_1_1FlatBufferBuilderImpl_afe0f3eb9a693cb8913948eb45dc5442f}{CreateVectorOfStructs}}<Geometry::Vector3D>(*vectors)\ :\ 0;}
+\DoxyCodeLine{00193\ \ \ \textcolor{keyword}{auto}\ vectors\_alt\_\_\ =\ vectors\_alt\ ?\ \_fbb.\mbox{\hyperlink{classflatbuffers_1_1FlatBufferBuilderImpl_afe0f3eb9a693cb8913948eb45dc5442f}{CreateVectorOfStructs}}<Geometry::Vector3DAlt>(*vectors\_alt)\ :\ 0;}
+\DoxyCodeLine{00194\ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{namespaceGeometry_a80568c51dc5d2dcbc5e442b4a82271f9}{Geometry::CreateApplicationData}}(}
+\DoxyCodeLine{00195\ \ \ \ \ \ \ \_fbb,}
+\DoxyCodeLine{00196\ \ \ \ \ \ \ vectors\_\_,}
+\DoxyCodeLine{00197\ \ \ \ \ \ \ vectors\_alt\_\_);}
+\DoxyCodeLine{00198\ \}}
+\DoxyCodeLine{00199\ }
+\DoxyCodeLine{00200\ ::flatbuffers::Offset<ApplicationData>\ \mbox{\hyperlink{namespaceGeometry_a80568c51dc5d2dcbc5e442b4a82271f9}{CreateApplicationData}}(\mbox{\hyperlink{classflatbuffers_1_1FlatBufferBuilderImpl}{::flatbuffers::FlatBufferBuilder}}\ \&\_fbb,\ \textcolor{keyword}{const}\ ApplicationDataT\ *\_o,\ const\ ::flatbuffers::rehasher\_function\_t\ *\_rehasher\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00201\ }
+\DoxyCodeLine{00202\ \textcolor{keyword}{inline}\ ApplicationDataT\ *ApplicationData::UnPack(const\ ::flatbuffers::resolver\_function\_t\ *\_resolver)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00203\ \ \ \textcolor{keyword}{auto}\ \_o\ =\ std::unique\_ptr<ApplicationDataT>(\textcolor{keyword}{new}\ ApplicationDataT());}
+\DoxyCodeLine{00204\ \ \ UnPackTo(\_o.get(),\ \_resolver);}
+\DoxyCodeLine{00205\ \ \ \textcolor{keywordflow}{return}\ \_o.release();}
+\DoxyCodeLine{00206\ \}}
+\DoxyCodeLine{00207\ }
+\DoxyCodeLine{00208\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ ApplicationData::UnPackTo(ApplicationDataT\ *\_o,\ const\ ::flatbuffers::resolver\_function\_t\ *\_resolver)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00209\ \ \ (\mbox{\hyperlink{namespaceKeywordTest_ac9113d43992ca4eb6d9c5fba0e88fd6eacab8111fd0b710a336c898e539090e34}{void}})\_o;}
+\DoxyCodeLine{00210\ \ \ (\mbox{\hyperlink{namespaceKeywordTest_ac9113d43992ca4eb6d9c5fba0e88fd6eacab8111fd0b710a336c898e539090e34}{void}})\_resolver;}
+\DoxyCodeLine{00211\ \ \ \{\ \textcolor{keyword}{auto}\ \_e\ =\ vectors();\ \textcolor{keywordflow}{if}\ (\_e)\ \{\ \_o-\/>vectors.resize(\_e-\/>size());\ \textcolor{keywordflow}{for}\ (::flatbuffers::uoffset\_t\ \_i\ =\ 0;\ \_i\ <\ \_e-\/>size();\ \_i++)\ \{\ \_o-\/>vectors[\_i]\ =\ \mbox{\hyperlink{namespaceflatbuffers_a5fea507e495ecad734b697b029cef510}{::flatbuffers::UnPack}}(*\_e-\/>Get(\_i));\ \}\ \}\ \textcolor{keywordflow}{else}\ \{\ \_o-\/>vectors.resize(0);\ \}\ \}}
+\DoxyCodeLine{00212\ \ \ \{\ \textcolor{keyword}{auto}\ \_e\ =\ vectors\_alt();\ \textcolor{keywordflow}{if}\ (\_e)\ \{\ \_o-\/>vectors\_alt.resize(\_e-\/>size());\ \textcolor{keywordflow}{for}\ (::flatbuffers::uoffset\_t\ \_i\ =\ 0;\ \_i\ <\ \_e-\/>size();\ \_i++)\ \{\ \_o-\/>vectors\_alt[\_i]\ =\ \mbox{\hyperlink{namespaceflatbuffers_a9f41f133dd13e04df9eb47aaa160dac0}{::flatbuffers::UnPackVector3DAlt}}(*\_e-\/>Get(\_i));\ \}\ \}\ \textcolor{keywordflow}{else}\ \{\ \_o-\/>vectors\_alt.resize(0);\ \}\ \}}
+\DoxyCodeLine{00213\ \}}
+\DoxyCodeLine{00214\ }
+\DoxyCodeLine{00215\ inline\ ::flatbuffers::Offset<ApplicationData>\ ApplicationData::Pack(\mbox{\hyperlink{classflatbuffers_1_1FlatBufferBuilderImpl}{::flatbuffers::FlatBufferBuilder}}\ \&\_fbb,\ \textcolor{keyword}{const}\ ApplicationDataT*\ \_o,\ const\ ::flatbuffers::rehasher\_function\_t\ *\_rehasher)\ \{}
+\DoxyCodeLine{00216\ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{namespaceGeometry_a80568c51dc5d2dcbc5e442b4a82271f9}{CreateApplicationData}}(\_fbb,\ \_o,\ \_rehasher);}
+\DoxyCodeLine{00217\ \}}
+\DoxyCodeLine{00218\ }
+\DoxyCodeLine{00219\ inline\ ::flatbuffers::Offset<ApplicationData>\ \mbox{\hyperlink{namespaceGeometry_a80568c51dc5d2dcbc5e442b4a82271f9}{CreateApplicationData}}(\mbox{\hyperlink{classflatbuffers_1_1FlatBufferBuilderImpl}{::flatbuffers::FlatBufferBuilder}}\ \&\_fbb,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{structGeometry_1_1ApplicationDataT}{ApplicationDataT}}\ *\_o,\ const\ ::flatbuffers::rehasher\_function\_t\ *\_rehasher)\ \{}
+\DoxyCodeLine{00220\ \ \ (void)\_rehasher;}
+\DoxyCodeLine{00221\ \ \ (void)\_o;}
+\DoxyCodeLine{00222\ \ \ \textcolor{keyword}{struct\ }\_VectorArgs\ \{\ \mbox{\hyperlink{classflatbuffers_1_1FlatBufferBuilderImpl}{::flatbuffers::FlatBufferBuilder}}\ *\_\_fbb;\ \textcolor{keyword}{const}\ \mbox{\hyperlink{structGeometry_1_1ApplicationDataT}{ApplicationDataT}}*\ \_\_o;\ const\ ::flatbuffers::rehasher\_function\_t\ *\_\_rehasher;\ \}\ \_va\ =\ \{\ \&\_fbb,\ \_o,\ \_rehasher\};\ (void)\_va;}
+\DoxyCodeLine{00223\ \ \ \textcolor{keyword}{auto}\ \_vectors\ =\ \_o-\/>\mbox{\hyperlink{structGeometry_1_1ApplicationDataT_ab90c7a7d0a34dd7cc59b3e9fce2b419d}{vectors}}.size()\ ?\ \_fbb.\mbox{\hyperlink{classflatbuffers_1_1FlatBufferBuilderImpl_adb80a52ed6acb0dad9fb2d2743c35b32}{CreateVectorOfNativeStructs}}<Geometry::Vector3D,\ \mbox{\hyperlink{structNative_1_1Vector3D}{Native::Vector3D}}>(\_o-\/>\mbox{\hyperlink{structGeometry_1_1ApplicationDataT_ab90c7a7d0a34dd7cc59b3e9fce2b419d}{vectors}})\ :\ 0;}
+\DoxyCodeLine{00224\ \ \ \textcolor{keyword}{auto}\ \_vectors\_alt\ =\ \_o-\/>\mbox{\hyperlink{structGeometry_1_1ApplicationDataT_aec3cf6667bbad09bc4a5963ca3f712e9}{vectors\_alt}}.size()\ ?\ \_fbb.\mbox{\hyperlink{classflatbuffers_1_1FlatBufferBuilderImpl_adb80a52ed6acb0dad9fb2d2743c35b32}{CreateVectorOfNativeStructs}}<Geometry::Vector3DAlt,\ \mbox{\hyperlink{structNative_1_1Vector3D}{Native::Vector3D}}>(\_o-\/>\mbox{\hyperlink{structGeometry_1_1ApplicationDataT_aec3cf6667bbad09bc4a5963ca3f712e9}{vectors\_alt}},\ \mbox{\hyperlink{namespaceflatbuffers_a8d58666860c9b0e0d00519f79c901e74}{::flatbuffers::PackVector3DAlt}})\ :\ 0;}
+\DoxyCodeLine{00225\ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{namespaceGeometry_a80568c51dc5d2dcbc5e442b4a82271f9}{Geometry::CreateApplicationData}}(}
+\DoxyCodeLine{00226\ \ \ \ \ \ \ \_fbb,}
+\DoxyCodeLine{00227\ \ \ \ \ \ \ \_vectors,}
+\DoxyCodeLine{00228\ \ \ \ \ \ \ \_vectors\_alt);}
+\DoxyCodeLine{00229\ \}}
+\DoxyCodeLine{00230\ }
+\DoxyCodeLine{00231\ \textcolor{keyword}{inline}\ const\ ::flatbuffers::TypeTable\ *\mbox{\hyperlink{namespaceGeometry_ad224dbca20b1bb9089a44dbdd4add730}{Vector3DTypeTable}}()\ \{}
+\DoxyCodeLine{00232\ \ \ \textcolor{keyword}{static}\ const\ ::flatbuffers::TypeCode\ type\_codes[]\ =\ \{}
+\DoxyCodeLine{00233\ \ \ \ \ \{\ ::flatbuffers::ET\_FLOAT,\ 0,\ -\/1\ \},}
+\DoxyCodeLine{00234\ \ \ \ \ \{\ ::flatbuffers::ET\_FLOAT,\ 0,\ -\/1\ \},}
+\DoxyCodeLine{00235\ \ \ \ \ \{\ ::flatbuffers::ET\_FLOAT,\ 0,\ -\/1\ \}}
+\DoxyCodeLine{00236\ \ \ \};}
+\DoxyCodeLine{00237\ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ int64\_t\ values[]\ =\ \{\ 0,\ 4,\ 8,\ 12\ \};}
+\DoxyCodeLine{00238\ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *\ \textcolor{keyword}{const}\ names[]\ =\ \{}
+\DoxyCodeLine{00239\ \ \ \ \ \textcolor{stringliteral}{"{}x"{}},}
+\DoxyCodeLine{00240\ \ \ \ \ \textcolor{stringliteral}{"{}y"{}},}
+\DoxyCodeLine{00241\ \ \ \ \ \textcolor{stringliteral}{"{}z"{}}}
+\DoxyCodeLine{00242\ \ \ \};}
+\DoxyCodeLine{00243\ \ \ \textcolor{keyword}{static}\ const\ ::flatbuffers::TypeTable\ tt\ =\ \{}
+\DoxyCodeLine{00244\ \ \ \ \ \mbox{\hyperlink{namespaceflatbuffers_a38583f915214f05d7cd1841571d07208aa5545269c0d63b635104bec59da367ff}{::flatbuffers::ST\_STRUCT}},\ 3,\ type\_codes,\ \textcolor{keyword}{nullptr},\ \textcolor{keyword}{nullptr},\ values,\ names}
+\DoxyCodeLine{00245\ \ \ \};}
+\DoxyCodeLine{00246\ \ \ \textcolor{keywordflow}{return}\ \&tt;}
+\DoxyCodeLine{00247\ \}}
+\DoxyCodeLine{00248\ }
+\DoxyCodeLine{00249\ \textcolor{keyword}{inline}\ const\ ::flatbuffers::TypeTable\ *\mbox{\hyperlink{namespaceGeometry_a1ff892524ce9ca19d40bcec9252e0cbe}{Vector3DAltTypeTable}}()\ \{}
+\DoxyCodeLine{00250\ \ \ \textcolor{keyword}{static}\ const\ ::flatbuffers::TypeCode\ type\_codes[]\ =\ \{}
+\DoxyCodeLine{00251\ \ \ \ \ \{\ ::flatbuffers::ET\_FLOAT,\ 0,\ -\/1\ \},}
+\DoxyCodeLine{00252\ \ \ \ \ \{\ ::flatbuffers::ET\_FLOAT,\ 0,\ -\/1\ \},}
+\DoxyCodeLine{00253\ \ \ \ \ \{\ ::flatbuffers::ET\_FLOAT,\ 0,\ -\/1\ \}}
+\DoxyCodeLine{00254\ \ \ \};}
+\DoxyCodeLine{00255\ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ int64\_t\ values[]\ =\ \{\ 0,\ 4,\ 8,\ 12\ \};}
+\DoxyCodeLine{00256\ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *\ \textcolor{keyword}{const}\ names[]\ =\ \{}
+\DoxyCodeLine{00257\ \ \ \ \ \textcolor{stringliteral}{"{}a"{}},}
+\DoxyCodeLine{00258\ \ \ \ \ \textcolor{stringliteral}{"{}b"{}},}
+\DoxyCodeLine{00259\ \ \ \ \ \textcolor{stringliteral}{"{}c"{}}}
+\DoxyCodeLine{00260\ \ \ \};}
+\DoxyCodeLine{00261\ \ \ \textcolor{keyword}{static}\ const\ ::flatbuffers::TypeTable\ tt\ =\ \{}
+\DoxyCodeLine{00262\ \ \ \ \ \mbox{\hyperlink{namespaceflatbuffers_a38583f915214f05d7cd1841571d07208aa5545269c0d63b635104bec59da367ff}{::flatbuffers::ST\_STRUCT}},\ 3,\ type\_codes,\ \textcolor{keyword}{nullptr},\ \textcolor{keyword}{nullptr},\ values,\ names}
+\DoxyCodeLine{00263\ \ \ \};}
+\DoxyCodeLine{00264\ \ \ \textcolor{keywordflow}{return}\ \&tt;}
+\DoxyCodeLine{00265\ \}}
+\DoxyCodeLine{00266\ }
+\DoxyCodeLine{00267\ \textcolor{keyword}{inline}\ const\ ::flatbuffers::TypeTable\ *\mbox{\hyperlink{namespaceGeometry_a645cacac2f3ec7195f956b6c7250c152}{ApplicationDataTypeTable}}()\ \{}
+\DoxyCodeLine{00268\ \ \ \textcolor{keyword}{static}\ const\ ::flatbuffers::TypeCode\ type\_codes[]\ =\ \{}
+\DoxyCodeLine{00269\ \ \ \ \ \{\ ::flatbuffers::ET\_SEQUENCE,\ 1,\ 0\ \},}
+\DoxyCodeLine{00270\ \ \ \ \ \{\ ::flatbuffers::ET\_SEQUENCE,\ 1,\ 1\ \}}
+\DoxyCodeLine{00271\ \ \ \};}
+\DoxyCodeLine{00272\ \ \ \textcolor{keyword}{static}\ const\ ::flatbuffers::TypeFunction\ type\_refs[]\ =\ \{}
+\DoxyCodeLine{00273\ \ \ \ \ \mbox{\hyperlink{namespaceGeometry_ad224dbca20b1bb9089a44dbdd4add730}{Geometry::Vector3DTypeTable}},}
+\DoxyCodeLine{00274\ \ \ \ \ \mbox{\hyperlink{namespaceGeometry_a1ff892524ce9ca19d40bcec9252e0cbe}{Geometry::Vector3DAltTypeTable}}}
+\DoxyCodeLine{00275\ \ \ \};}
+\DoxyCodeLine{00276\ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *\ \textcolor{keyword}{const}\ names[]\ =\ \{}
+\DoxyCodeLine{00277\ \ \ \ \ \textcolor{stringliteral}{"{}vectors"{}},}
+\DoxyCodeLine{00278\ \ \ \ \ \textcolor{stringliteral}{"{}vectors\_alt"{}}}
+\DoxyCodeLine{00279\ \ \ \};}
+\DoxyCodeLine{00280\ \ \ \textcolor{keyword}{static}\ const\ ::flatbuffers::TypeTable\ tt\ =\ \{}
+\DoxyCodeLine{00281\ \ \ \ \ \mbox{\hyperlink{namespaceflatbuffers_a38583f915214f05d7cd1841571d07208a8ecc4069f66bbf1d6547f0bd888520c0}{::flatbuffers::ST\_TABLE}},\ 2,\ type\_codes,\ type\_refs,\ \textcolor{keyword}{nullptr},\ \textcolor{keyword}{nullptr},\ names}
+\DoxyCodeLine{00282\ \ \ \};}
+\DoxyCodeLine{00283\ \ \ \textcolor{keywordflow}{return}\ \&tt;}
+\DoxyCodeLine{00284\ \}}
+\DoxyCodeLine{00285\ }
+\DoxyCodeLine{00286\ \textcolor{keyword}{inline}\ \textcolor{keyword}{const}\ Geometry::ApplicationData\ *\mbox{\hyperlink{namespaceGeometry_a914fa86bc5eb8223f3dda260c03b9dbc}{GetApplicationData}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{void}\ *buf)\ \{}
+\DoxyCodeLine{00287\ \ \ return\ ::flatbuffers::GetRoot<Geometry::ApplicationData>(buf);}
+\DoxyCodeLine{00288\ \}}
+\DoxyCodeLine{00289\ }
+\DoxyCodeLine{00290\ \textcolor{keyword}{inline}\ \textcolor{keyword}{const}\ Geometry::ApplicationData\ *\mbox{\hyperlink{namespaceGeometry_a4a5c723e69491ef690b71fed9aca41c0}{GetSizePrefixedApplicationData}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{void}\ *buf)\ \{}
+\DoxyCodeLine{00291\ \ \ return\ ::flatbuffers::GetSizePrefixedRoot<Geometry::ApplicationData>(buf);}
+\DoxyCodeLine{00292\ \}}
+\DoxyCodeLine{00293\ }
+\DoxyCodeLine{00294\ \textcolor{keyword}{inline}\ ApplicationData\ *\mbox{\hyperlink{namespaceGeometry_a60f1e18696d0ecc2fa1e78e414080c19}{GetMutableApplicationData}}(\textcolor{keywordtype}{void}\ *buf)\ \{}
+\DoxyCodeLine{00295\ \ \ return\ ::flatbuffers::GetMutableRoot<ApplicationData>(buf);}
+\DoxyCodeLine{00296\ \}}
+\DoxyCodeLine{00297\ }
+\DoxyCodeLine{00298\ \textcolor{keyword}{inline}\ Geometry::ApplicationData\ *\mbox{\hyperlink{namespaceGeometry_afc89bfeb5b195375fe756a5aaff1ff5d}{GetMutableSizePrefixedApplicationData}}(\textcolor{keywordtype}{void}\ *buf)\ \{}
+\DoxyCodeLine{00299\ \ \ return\ ::flatbuffers::GetMutableSizePrefixedRoot<Geometry::ApplicationData>(buf);}
+\DoxyCodeLine{00300\ \}}
+\DoxyCodeLine{00301\ }
+\DoxyCodeLine{00302\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{namespaceGeometry_ac5950555c448b3a02692ea27e888acad}{VerifyApplicationDataBuffer}}(}
+\DoxyCodeLine{00303\ \ \ \ \ \mbox{\hyperlink{namespaceflatbuffers_a3268477941df91db2eb06442b6e5f922}{::flatbuffers::Verifier}}\ \&verifier)\ \{}
+\DoxyCodeLine{00304\ \ \ \textcolor{keywordflow}{return}\ verifier.VerifyBuffer<Geometry::ApplicationData>(\textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00305\ \}}
+\DoxyCodeLine{00306\ }
+\DoxyCodeLine{00307\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{namespaceGeometry_ab27a4eef67a5c78378a9d2de65884cfb}{VerifySizePrefixedApplicationDataBuffer}}(}
+\DoxyCodeLine{00308\ \ \ \ \ \mbox{\hyperlink{namespaceflatbuffers_a3268477941df91db2eb06442b6e5f922}{::flatbuffers::Verifier}}\ \&verifier)\ \{}
+\DoxyCodeLine{00309\ \ \ \textcolor{keywordflow}{return}\ verifier.VerifySizePrefixedBuffer<Geometry::ApplicationData>(\textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00310\ \}}
+\DoxyCodeLine{00311\ }
+\DoxyCodeLine{00312\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceGeometry_a977098bb957b7304bc14078b58124ecd}{FinishApplicationDataBuffer}}(}
+\DoxyCodeLine{00313\ \ \ \ \ \mbox{\hyperlink{classflatbuffers_1_1FlatBufferBuilderImpl}{::flatbuffers::FlatBufferBuilder}}\ \&fbb,}
+\DoxyCodeLine{00314\ \ \ \ \ ::flatbuffers::Offset<Geometry::ApplicationData>\ root)\ \{}
+\DoxyCodeLine{00315\ \ \ fbb.\mbox{\hyperlink{classflatbuffers_1_1FlatBufferBuilderImpl_a813b376143a53bd2828d9684713fe03c}{Finish}}(root);}
+\DoxyCodeLine{00316\ \}}
+\DoxyCodeLine{00317\ }
+\DoxyCodeLine{00318\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceGeometry_ad569b71fba5168e9b9794d40631793fe}{FinishSizePrefixedApplicationDataBuffer}}(}
+\DoxyCodeLine{00319\ \ \ \ \ \mbox{\hyperlink{classflatbuffers_1_1FlatBufferBuilderImpl}{::flatbuffers::FlatBufferBuilder}}\ \&fbb,}
+\DoxyCodeLine{00320\ \ \ \ \ ::flatbuffers::Offset<Geometry::ApplicationData>\ root)\ \{}
+\DoxyCodeLine{00321\ \ \ fbb.\mbox{\hyperlink{classflatbuffers_1_1FlatBufferBuilderImpl_aaa87fe5c3b85e47bb959e6d1aec96b2c}{FinishSizePrefixed}}(root);}
+\DoxyCodeLine{00322\ \}}
+\DoxyCodeLine{00323\ }
+\DoxyCodeLine{00324\ \textcolor{keyword}{inline}\ std::unique\_ptr<Geometry::ApplicationDataT>\ \mbox{\hyperlink{namespaceGeometry_a1d73bb66048083c1cd6daa792d3c8e8e}{UnPackApplicationData}}(}
+\DoxyCodeLine{00325\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{void}\ *buf,}
+\DoxyCodeLine{00326\ \ \ \ \ const\ ::flatbuffers::resolver\_function\_t\ *res\ =\ \textcolor{keyword}{nullptr})\ \{}
+\DoxyCodeLine{00327\ \ \ \textcolor{keywordflow}{return}\ std::unique\_ptr<Geometry::ApplicationDataT>(\mbox{\hyperlink{namespaceGeometry_a914fa86bc5eb8223f3dda260c03b9dbc}{GetApplicationData}}(buf)-\/>UnPack(res));}
+\DoxyCodeLine{00328\ \}}
+\DoxyCodeLine{00329\ }
+\DoxyCodeLine{00330\ \textcolor{keyword}{inline}\ std::unique\_ptr<Geometry::ApplicationDataT>\ \mbox{\hyperlink{namespaceGeometry_a8853382dc8c11a7e6d991bf8c966695b}{UnPackSizePrefixedApplicationData}}(}
+\DoxyCodeLine{00331\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{void}\ *buf,}
+\DoxyCodeLine{00332\ \ \ \ \ const\ ::flatbuffers::resolver\_function\_t\ *res\ =\ \textcolor{keyword}{nullptr})\ \{}
+\DoxyCodeLine{00333\ \ \ \textcolor{keywordflow}{return}\ std::unique\_ptr<Geometry::ApplicationDataT>(\mbox{\hyperlink{namespaceGeometry_a4a5c723e69491ef690b71fed9aca41c0}{GetSizePrefixedApplicationData}}(buf)-\/>UnPack(res));}
+\DoxyCodeLine{00334\ \}}
+\DoxyCodeLine{00335\ }
+\DoxyCodeLine{00336\ \}\ \ \textcolor{comment}{//\ namespace\ Geometry}}
+\DoxyCodeLine{00337\ }
+\DoxyCodeLine{00338\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ FLATBUFFERS\_GENERATED\_NATIVETYPETEST\_GEOMETRY\_H\_}}
+
+\end{DoxyCode}

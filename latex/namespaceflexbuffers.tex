@@ -1,0 +1,516 @@
+\doxysection{flexbuffers Namespace Reference}
+\hypertarget{namespaceflexbuffers}{}\label{namespaceflexbuffers}\index{flexbuffers@{flexbuffers}}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classflexbuffers_1_1Blob}{Blob}}
+\item 
+class \mbox{\hyperlink{classflexbuffers_1_1FixedTypedVector}{Fixed\+Typed\+Vector}}
+\item 
+class \mbox{\hyperlink{classflexbuffers_1_1FLATBUFFERS__FINAL__CLASS}{FLATBUFFERS\+\_\+\+FINAL\+\_\+\+CLASS}}
+\item 
+class \mbox{\hyperlink{classflexbuffers_1_1Map}{Map}}
+\item 
+class \mbox{\hyperlink{classflexbuffers_1_1Object}{Object}}
+\item 
+class \mbox{\hyperlink{classflexbuffers_1_1Reference}{Reference}}
+\item 
+class \mbox{\hyperlink{classflexbuffers_1_1Sized}{Sized}}
+\item 
+class \mbox{\hyperlink{classflexbuffers_1_1String}{String}}
+\item 
+class \mbox{\hyperlink{classflexbuffers_1_1TypedVector}{Typed\+Vector}}
+\item 
+class \mbox{\hyperlink{classflexbuffers_1_1Vector}{Vector}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef int16\+\_\+t \mbox{\hyperlink{namespaceflexbuffers_a3d6fa6c20c8061ff688afd47ab114c38}{half}}
+\item 
+typedef int8\+\_\+t \mbox{\hyperlink{namespaceflexbuffers_a272b6b983cc717a37528babd793e04cb}{quarter}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{namespaceflexbuffers_a76cc4a8eb404468982af5bd160912e8b}{Bit\+Width}} \{ \mbox{\hyperlink{namespaceflexbuffers_a76cc4a8eb404468982af5bd160912e8bade28525748185d07d8ad6b3ff6bb7a71}{BIT\+\_\+\+WIDTH\+\_\+8}} = 0
+, \mbox{\hyperlink{namespaceflexbuffers_a76cc4a8eb404468982af5bd160912e8bad12e079be4e66fe464df86b2a8a7416b}{BIT\+\_\+\+WIDTH\+\_\+16}} = 1
+, \mbox{\hyperlink{namespaceflexbuffers_a76cc4a8eb404468982af5bd160912e8ba2201ddae8d75cdbc09b9b61a6cdfbed1}{BIT\+\_\+\+WIDTH\+\_\+32}} = 2
+, \mbox{\hyperlink{namespaceflexbuffers_a76cc4a8eb404468982af5bd160912e8ba12e4a741fb6a9cbec606f7a5c5b9d729}{BIT\+\_\+\+WIDTH\+\_\+64}} = 3
+ \}
+\item 
+enum \mbox{\hyperlink{namespaceflexbuffers_aa0b4995478c086629fff32c3d10c3872}{Type}} \{ \newline
+\mbox{\hyperlink{namespaceflexbuffers_aa0b4995478c086629fff32c3d10c3872a9bac55eee9a20ce095257cde7908aa93}{FBT\+\_\+\+NULL}} = 0
+, \mbox{\hyperlink{namespaceflexbuffers_aa0b4995478c086629fff32c3d10c3872a88fb1a1b1d949c0e8438bfcc1d296cda}{FBT\+\_\+\+INT}} = 1
+, \mbox{\hyperlink{namespaceflexbuffers_aa0b4995478c086629fff32c3d10c3872a67a610c00b02bd42cd175be6ac0fc1b3}{FBT\+\_\+\+UINT}} = 2
+, \mbox{\hyperlink{namespaceflexbuffers_aa0b4995478c086629fff32c3d10c3872ad01de95b3c532cfe9e8194029052ef24}{FBT\+\_\+\+FLOAT}} = 3
+, \newline
+\mbox{\hyperlink{namespaceflexbuffers_aa0b4995478c086629fff32c3d10c3872ac2469bbf89701c2dc7e3b844aa46c425}{FBT\+\_\+\+KEY}} = 4
+, \mbox{\hyperlink{namespaceflexbuffers_aa0b4995478c086629fff32c3d10c3872a9ba45c56db68b462cd279ad0c9f25d4e}{FBT\+\_\+\+STRING}} = 5
+, \mbox{\hyperlink{namespaceflexbuffers_aa0b4995478c086629fff32c3d10c3872a81f7c7c62e9de6d60401f627d6d69fba}{FBT\+\_\+\+INDIRECT\+\_\+\+INT}} = 6
+, \mbox{\hyperlink{namespaceflexbuffers_aa0b4995478c086629fff32c3d10c3872adcc73a2c491afce39e4416901f2da7a3}{FBT\+\_\+\+INDIRECT\+\_\+\+UINT}} = 7
+, \newline
+\mbox{\hyperlink{namespaceflexbuffers_aa0b4995478c086629fff32c3d10c3872a711b74a1c9499e12f2547d8471c9f47a}{FBT\+\_\+\+INDIRECT\+\_\+\+FLOAT}} = 8
+, \mbox{\hyperlink{namespaceflexbuffers_aa0b4995478c086629fff32c3d10c3872a2b27ed89a27dce656eb0371eb9801f6a}{FBT\+\_\+\+MAP}} = 9
+, \mbox{\hyperlink{namespaceflexbuffers_aa0b4995478c086629fff32c3d10c3872af433e3f5456b915cc7814070c27a45c0}{FBT\+\_\+\+VECTOR}} = 10
+, \mbox{\hyperlink{namespaceflexbuffers_aa0b4995478c086629fff32c3d10c3872a7a1fa825a2e2b3bdea0a9a78f0da2eed}{FBT\+\_\+\+VECTOR\+\_\+\+INT}} = 11
+, \newline
+\mbox{\hyperlink{namespaceflexbuffers_aa0b4995478c086629fff32c3d10c3872a89fd338fc72652cfe0506bd6551fe80c}{FBT\+\_\+\+VECTOR\+\_\+\+UINT}} = 12
+, \mbox{\hyperlink{namespaceflexbuffers_aa0b4995478c086629fff32c3d10c3872a4514ae16e1e118996f98a68ff8a9eeba}{FBT\+\_\+\+VECTOR\+\_\+\+FLOAT}} = 13
+, \mbox{\hyperlink{namespaceflexbuffers_aa0b4995478c086629fff32c3d10c3872a0637bed2800e0fc9250986c99b05334a}{FBT\+\_\+\+VECTOR\+\_\+\+KEY}} = 14
+, \mbox{\hyperlink{namespaceflexbuffers_aa0b4995478c086629fff32c3d10c3872ab9ee896762e6c7cd74b0e133eed085d0}{FBT\+\_\+\+VECTOR\+\_\+\+STRING\+\_\+\+DEPRECATED}} = 15
+, \newline
+\mbox{\hyperlink{namespaceflexbuffers_aa0b4995478c086629fff32c3d10c3872abd4a72791196667824395f0e26b59385}{FBT\+\_\+\+VECTOR\+\_\+\+INT2}} = 16
+, \mbox{\hyperlink{namespaceflexbuffers_aa0b4995478c086629fff32c3d10c3872ac257bb0d93f5e7ec8175b54972ba6210}{FBT\+\_\+\+VECTOR\+\_\+\+UINT2}} = 17
+, \mbox{\hyperlink{namespaceflexbuffers_aa0b4995478c086629fff32c3d10c3872a473f7cd58c07cffaf27091c8af7a9c59}{FBT\+\_\+\+VECTOR\+\_\+\+FLOAT2}} = 18
+, \mbox{\hyperlink{namespaceflexbuffers_aa0b4995478c086629fff32c3d10c3872ac609eb18ad2c35135f72084698693473}{FBT\+\_\+\+VECTOR\+\_\+\+INT3}} = 19
+, \newline
+\mbox{\hyperlink{namespaceflexbuffers_aa0b4995478c086629fff32c3d10c3872afba8e85ae7fc2c8f02aadcd4c917272d}{FBT\+\_\+\+VECTOR\+\_\+\+UINT3}} = 20
+, \mbox{\hyperlink{namespaceflexbuffers_aa0b4995478c086629fff32c3d10c3872a39056ac6cba1491c8ccc36fae628309c}{FBT\+\_\+\+VECTOR\+\_\+\+FLOAT3}} = 21
+, \mbox{\hyperlink{namespaceflexbuffers_aa0b4995478c086629fff32c3d10c3872acf1d3474024083b8e774f3950029a01e}{FBT\+\_\+\+VECTOR\+\_\+\+INT4}} = 22
+, \mbox{\hyperlink{namespaceflexbuffers_aa0b4995478c086629fff32c3d10c3872a87fe8930f233a8ed943efe9a9a80b499}{FBT\+\_\+\+VECTOR\+\_\+\+UINT4}} = 23
+, \newline
+\mbox{\hyperlink{namespaceflexbuffers_aa0b4995478c086629fff32c3d10c3872ade7af31eb6e56bf008ba6aabc626351e}{FBT\+\_\+\+VECTOR\+\_\+\+FLOAT4}} = 24
+, \mbox{\hyperlink{namespaceflexbuffers_aa0b4995478c086629fff32c3d10c3872a61d442f38cb775643f12e0924a9be803}{FBT\+\_\+\+BLOB}} = 25
+, \mbox{\hyperlink{namespaceflexbuffers_aa0b4995478c086629fff32c3d10c3872ae04a92faea341843a14cda9a5a600af5}{FBT\+\_\+\+BOOL}} = 26
+, \mbox{\hyperlink{namespaceflexbuffers_aa0b4995478c086629fff32c3d10c3872acf6c49c2abd3f2b2508c9b4fe48fec05}{FBT\+\_\+\+VECTOR\+\_\+\+BOOL}}
+, \newline
+\mbox{\hyperlink{namespaceflexbuffers_aa0b4995478c086629fff32c3d10c3872ab2446b045d04489031d625625086a0cd}{FBT\+\_\+\+MAX\+\_\+\+TYPE}} = 37
+ \}
+\item 
+enum \mbox{\hyperlink{namespaceflexbuffers_a1d799e72faa9a9fe98270bb33a6864af}{Builder\+Flag}} \{ \newline
+\mbox{\hyperlink{namespaceflexbuffers_a1d799e72faa9a9fe98270bb33a6864afa05f284a8bb600a4264b0d7212ba4b731}{BUILDER\+\_\+\+FLAG\+\_\+\+NONE}} = 0
+, \mbox{\hyperlink{namespaceflexbuffers_a1d799e72faa9a9fe98270bb33a6864afa70f65074918dfb3b4d122f7faee872e1}{BUILDER\+\_\+\+FLAG\+\_\+\+SHARE\+\_\+\+KEYS}} = 1
+, \mbox{\hyperlink{namespaceflexbuffers_a1d799e72faa9a9fe98270bb33a6864afaa988c5ca51fdfe7f9d904f340f5fec5d}{BUILDER\+\_\+\+FLAG\+\_\+\+SHARE\+\_\+\+STRINGS}} = 2
+, \mbox{\hyperlink{namespaceflexbuffers_a1d799e72faa9a9fe98270bb33a6864afa5f4b507d3589953446076d0548139c93}{BUILDER\+\_\+\+FLAG\+\_\+\+SHARE\+\_\+\+KEYS\+\_\+\+AND\+\_\+\+STRINGS}} = 3
+, \newline
+\mbox{\hyperlink{namespaceflexbuffers_a1d799e72faa9a9fe98270bb33a6864afa35702f2c9dc90b3a8797b26a08fd2a4f}{BUILDER\+\_\+\+FLAG\+\_\+\+SHARE\+\_\+\+KEY\+\_\+\+VECTORS}} = 4
+, \mbox{\hyperlink{namespaceflexbuffers_a1d799e72faa9a9fe98270bb33a6864afaa5582b6efe81a0c84e995a494aeed94b}{BUILDER\+\_\+\+FLAG\+\_\+\+SHARE\+\_\+\+ALL}} = 7
+ \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{namespaceflexbuffers_a04da2411b07b54a64720e22f35286aaa}{Verify\+Nested\+Flex\+Buffer}} (const \mbox{\hyperlink{classflatbuffers_1_1Vector}{flatbuffers\+::\+Vector}}$<$ uint8\+\_\+t $>$ \texorpdfstring{$\ast$}{*}const nested, \mbox{\hyperlink{namespaceflatbuffers_a3268477941df91db2eb06442b6e5f922}{flatbuffers\+::\+Verifier}} \&verifier)
+\item 
+bool \mbox{\hyperlink{namespaceflexbuffers_ac01d64cc50810a1624ef5b931663f302}{Is\+Inline}} (\mbox{\hyperlink{namespaceflexbuffers_aa0b4995478c086629fff32c3d10c3872}{Type}} t)
+\item 
+bool \mbox{\hyperlink{namespaceflexbuffers_a5ff1d990cb63b0edaa0d841c77933889}{Is\+Typed\+Vector\+Element\+Type}} (\mbox{\hyperlink{namespaceflexbuffers_aa0b4995478c086629fff32c3d10c3872}{Type}} t)
+\item 
+bool \mbox{\hyperlink{namespaceflexbuffers_a8b57cb0d573b98c4e32a0c464af4e3dc}{Is\+Typed\+Vector}} (\mbox{\hyperlink{namespaceflexbuffers_aa0b4995478c086629fff32c3d10c3872}{Type}} t)
+\item 
+bool \mbox{\hyperlink{namespaceflexbuffers_ae9e961022beed24c2de986d04f5886df}{Is\+Fixed\+Typed\+Vector}} (\mbox{\hyperlink{namespaceflexbuffers_aa0b4995478c086629fff32c3d10c3872}{Type}} t)
+\item 
+\mbox{\hyperlink{namespaceflexbuffers_aa0b4995478c086629fff32c3d10c3872}{Type}} \mbox{\hyperlink{namespaceflexbuffers_a52f924f091996491d562b398e8f880b5}{To\+Typed\+Vector}} (\mbox{\hyperlink{namespaceflexbuffers_aa0b4995478c086629fff32c3d10c3872}{Type}} t, size\+\_\+t fixed\+\_\+len=0)
+\item 
+\mbox{\hyperlink{namespaceflexbuffers_aa0b4995478c086629fff32c3d10c3872}{Type}} \mbox{\hyperlink{namespaceflexbuffers_a70b57d31302be584191fbf4ee70daa44}{To\+Typed\+Vector\+Element\+Type}} (\mbox{\hyperlink{namespaceflexbuffers_aa0b4995478c086629fff32c3d10c3872}{Type}} t)
+\item 
+\mbox{\hyperlink{namespaceflexbuffers_aa0b4995478c086629fff32c3d10c3872}{Type}} \mbox{\hyperlink{namespaceflexbuffers_a6e6c489d7884670609fb8c423d1f7b76}{To\+Fixed\+Typed\+Vector\+Element\+Type}} (\mbox{\hyperlink{namespaceflexbuffers_aa0b4995478c086629fff32c3d10c3872}{Type}} t, uint8\+\_\+t \texorpdfstring{$\ast$}{*}len)
+\item 
+{\footnotesize template$<$typename R , typename T1 , typename T2 , typename T4 , typename T8 $>$ }\\R \mbox{\hyperlink{namespaceflexbuffers_aea3aec4aa4748cb40f9e6aee53481d12}{Read\+Sized\+Scalar}} (const uint8\+\_\+t \texorpdfstring{$\ast$}{*}data, uint8\+\_\+t byte\+\_\+width)
+\item 
+int64\+\_\+t \mbox{\hyperlink{namespaceflexbuffers_aa77b4df9d5a9d3f7cc2243bc47efe9e9}{Read\+Int64}} (const uint8\+\_\+t \texorpdfstring{$\ast$}{*}data, uint8\+\_\+t byte\+\_\+width)
+\item 
+uint64\+\_\+t \mbox{\hyperlink{namespaceflexbuffers_a7e2fe5b607a41dadaf1fb9b05b6ca2c6}{Read\+UInt64}} (const uint8\+\_\+t \texorpdfstring{$\ast$}{*}data, uint8\+\_\+t byte\+\_\+width)
+\item 
+double \mbox{\hyperlink{namespaceflexbuffers_a2d389bb97dda338a40b9823de43b76ca}{Read\+Double}} (const uint8\+\_\+t \texorpdfstring{$\ast$}{*}data, uint8\+\_\+t byte\+\_\+width)
+\item 
+const uint8\+\_\+t \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{namespaceflexbuffers_af918b181314762b8634a72831b0e7905}{Indirect}} (const uint8\+\_\+t \texorpdfstring{$\ast$}{*}offset, uint8\+\_\+t byte\+\_\+width)
+\item 
+{\footnotesize template$<$typename T $>$ }\\const uint8\+\_\+t \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{namespaceflexbuffers_aa96b2bb8f009b14282dd06ef728c72cb}{Indirect}} (const uint8\+\_\+t \texorpdfstring{$\ast$}{*}offset)
+\item 
+\mbox{\hyperlink{namespaceflexbuffers_a76cc4a8eb404468982af5bd160912e8b}{Bit\+Width}} \mbox{\hyperlink{namespaceflexbuffers_aff7bc29030435a3586a9cea1f617fda8}{WidthU}} (uint64\+\_\+t u)
+\item 
+\mbox{\hyperlink{namespaceflexbuffers_a76cc4a8eb404468982af5bd160912e8b}{Bit\+Width}} \mbox{\hyperlink{namespaceflexbuffers_a1be50d5b811ad7380bd0629867245128}{WidthI}} (int64\+\_\+t \mbox{\hyperlink{gmock-matchers-comparisons__test_8cc_acb559820d9ca11295b4500f179ef6392}{i}})
+\item 
+\mbox{\hyperlink{namespaceflexbuffers_a76cc4a8eb404468982af5bd160912e8b}{Bit\+Width}} \mbox{\hyperlink{namespaceflexbuffers_a50919e1bf9664e027eac4c6342d3ff60}{WidthF}} (double f)
+\item 
+void \mbox{\hyperlink{namespaceflexbuffers_aea9df6b1c56481711269a37b37788d06}{Indent\+String}} (std\+::string \&s, int indent, const char \texorpdfstring{$\ast$}{*}indent\+\_\+string)
+\item 
+{\footnotesize template$<$typename T $>$ }\\void \mbox{\hyperlink{namespaceflexbuffers_a3663a45240329d2f1e60772a4bb52d77}{Append\+To\+String}} (std\+::string \&s, T \&\&v, bool keys\+\_\+quoted, bool indented, int cur\+\_\+indent, const char \texorpdfstring{$\ast$}{*}indent\+\_\+string, bool natural\+\_\+utf8)
+\item 
+{\footnotesize template$<$typename T $>$ }\\void \mbox{\hyperlink{namespaceflexbuffers_af7de9f41e3986d43c76c6d283b71b2a3}{Append\+To\+String}} (std\+::string \&s, T \&\&v, bool keys\+\_\+quoted)
+\item 
+template$<$$>$ std\+::string \mbox{\hyperlink{namespaceflexbuffers_a2e144d28e44d491f2bd40f3130acb1f8}{Reference\+::\+As$<$ std\+::string $>$}} () const
+\item 
+uint8\+\_\+t \mbox{\hyperlink{namespaceflexbuffers_af841495d819152416a8fa139acf3f119}{Packed\+Type}} (\mbox{\hyperlink{namespaceflexbuffers_a76cc4a8eb404468982af5bd160912e8b}{Bit\+Width}} bit\+\_\+width, \mbox{\hyperlink{namespaceflexbuffers_aa0b4995478c086629fff32c3d10c3872}{Type}} type)
+\item 
+uint8\+\_\+t \mbox{\hyperlink{namespaceflexbuffers_a18bed26be195b406bd9932c0877546e0}{Null\+Packed\+Type}} ()
+\item 
+{\footnotesize template$<$typename T $>$ }\\int \mbox{\hyperlink{namespaceflexbuffers_a4216a60a35e1a999cd5d0131c28cd2ed}{Key\+Compare}} (const void \texorpdfstring{$\ast$}{*}key, const void \texorpdfstring{$\ast$}{*}elem)
+\item 
+\mbox{\hyperlink{classflexbuffers_1_1Reference}{Reference}} \mbox{\hyperlink{namespaceflexbuffers_a1f08dbb0395262a8153e0791567b5f38}{Get\+Root}} (const uint8\+\_\+t \texorpdfstring{$\ast$}{*}buffer, size\+\_\+t size)
+\item 
+\mbox{\hyperlink{classflexbuffers_1_1Reference}{Reference}} \mbox{\hyperlink{namespaceflexbuffers_ab071dac32ac28ab1131d407871231358}{Get\+Root}} (const std\+::vector$<$ uint8\+\_\+t $>$ \&buffer)
+\item 
+bool \mbox{\hyperlink{namespaceflexbuffers_a01115a2166486217cea5d3bc0f05f448}{Verify\+Buffer}} (const uint8\+\_\+t \texorpdfstring{$\ast$}{*}buf, size\+\_\+t buf\+\_\+len, std\+::vector$<$ uint8\+\_\+t $>$ \texorpdfstring{$\ast$}{*}reuse\+\_\+tracker=nullptr)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Typedef Documentation}
+\Hypertarget{namespaceflexbuffers_a3d6fa6c20c8061ff688afd47ab114c38}\label{namespaceflexbuffers_a3d6fa6c20c8061ff688afd47ab114c38} 
+\index{flexbuffers@{flexbuffers}!half@{half}}
+\index{half@{half}!flexbuffers@{flexbuffers}}
+\doxysubsubsection{\texorpdfstring{half}{half}}
+{\footnotesize\ttfamily typedef int16\+\_\+t \mbox{\hyperlink{namespaceflexbuffers_a3d6fa6c20c8061ff688afd47ab114c38}{flexbuffers\+::half}}}
+
+\Hypertarget{namespaceflexbuffers_a272b6b983cc717a37528babd793e04cb}\label{namespaceflexbuffers_a272b6b983cc717a37528babd793e04cb} 
+\index{flexbuffers@{flexbuffers}!quarter@{quarter}}
+\index{quarter@{quarter}!flexbuffers@{flexbuffers}}
+\doxysubsubsection{\texorpdfstring{quarter}{quarter}}
+{\footnotesize\ttfamily typedef int8\+\_\+t \mbox{\hyperlink{namespaceflexbuffers_a272b6b983cc717a37528babd793e04cb}{flexbuffers\+::quarter}}}
+
+
+
+\doxysubsection{Enumeration Type Documentation}
+\Hypertarget{namespaceflexbuffers_a76cc4a8eb404468982af5bd160912e8b}\label{namespaceflexbuffers_a76cc4a8eb404468982af5bd160912e8b} 
+\index{flexbuffers@{flexbuffers}!BitWidth@{BitWidth}}
+\index{BitWidth@{BitWidth}!flexbuffers@{flexbuffers}}
+\doxysubsubsection{\texorpdfstring{BitWidth}{BitWidth}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{namespaceflexbuffers_a76cc4a8eb404468982af5bd160912e8b}{flexbuffers\+::\+Bit\+Width}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BIT\_WIDTH\_8@{BIT\_WIDTH\_8}!flexbuffers@{flexbuffers}}\index{flexbuffers@{flexbuffers}!BIT\_WIDTH\_8@{BIT\_WIDTH\_8}}}\Hypertarget{namespaceflexbuffers_a76cc4a8eb404468982af5bd160912e8bade28525748185d07d8ad6b3ff6bb7a71}\label{namespaceflexbuffers_a76cc4a8eb404468982af5bd160912e8bade28525748185d07d8ad6b3ff6bb7a71} 
+BIT\+\_\+\+WIDTH\+\_\+8&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BIT\_WIDTH\_16@{BIT\_WIDTH\_16}!flexbuffers@{flexbuffers}}\index{flexbuffers@{flexbuffers}!BIT\_WIDTH\_16@{BIT\_WIDTH\_16}}}\Hypertarget{namespaceflexbuffers_a76cc4a8eb404468982af5bd160912e8bad12e079be4e66fe464df86b2a8a7416b}\label{namespaceflexbuffers_a76cc4a8eb404468982af5bd160912e8bad12e079be4e66fe464df86b2a8a7416b} 
+BIT\+\_\+\+WIDTH\+\_\+16&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BIT\_WIDTH\_32@{BIT\_WIDTH\_32}!flexbuffers@{flexbuffers}}\index{flexbuffers@{flexbuffers}!BIT\_WIDTH\_32@{BIT\_WIDTH\_32}}}\Hypertarget{namespaceflexbuffers_a76cc4a8eb404468982af5bd160912e8ba2201ddae8d75cdbc09b9b61a6cdfbed1}\label{namespaceflexbuffers_a76cc4a8eb404468982af5bd160912e8ba2201ddae8d75cdbc09b9b61a6cdfbed1} 
+BIT\+\_\+\+WIDTH\+\_\+32&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BIT\_WIDTH\_64@{BIT\_WIDTH\_64}!flexbuffers@{flexbuffers}}\index{flexbuffers@{flexbuffers}!BIT\_WIDTH\_64@{BIT\_WIDTH\_64}}}\Hypertarget{namespaceflexbuffers_a76cc4a8eb404468982af5bd160912e8ba12e4a741fb6a9cbec606f7a5c5b9d729}\label{namespaceflexbuffers_a76cc4a8eb404468982af5bd160912e8ba12e4a741fb6a9cbec606f7a5c5b9d729} 
+BIT\+\_\+\+WIDTH\+\_\+64&\\
+\hline
+
+\end{DoxyEnumFields}
+\Hypertarget{namespaceflexbuffers_a1d799e72faa9a9fe98270bb33a6864af}\label{namespaceflexbuffers_a1d799e72faa9a9fe98270bb33a6864af} 
+\index{flexbuffers@{flexbuffers}!BuilderFlag@{BuilderFlag}}
+\index{BuilderFlag@{BuilderFlag}!flexbuffers@{flexbuffers}}
+\doxysubsubsection{\texorpdfstring{BuilderFlag}{BuilderFlag}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{namespaceflexbuffers_a1d799e72faa9a9fe98270bb33a6864af}{flexbuffers\+::\+Builder\+Flag}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BUILDER\_FLAG\_NONE@{BUILDER\_FLAG\_NONE}!flexbuffers@{flexbuffers}}\index{flexbuffers@{flexbuffers}!BUILDER\_FLAG\_NONE@{BUILDER\_FLAG\_NONE}}}\Hypertarget{namespaceflexbuffers_a1d799e72faa9a9fe98270bb33a6864afa05f284a8bb600a4264b0d7212ba4b731}\label{namespaceflexbuffers_a1d799e72faa9a9fe98270bb33a6864afa05f284a8bb600a4264b0d7212ba4b731} 
+BUILDER\+\_\+\+FLAG\+\_\+\+NONE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BUILDER\_FLAG\_SHARE\_KEYS@{BUILDER\_FLAG\_SHARE\_KEYS}!flexbuffers@{flexbuffers}}\index{flexbuffers@{flexbuffers}!BUILDER\_FLAG\_SHARE\_KEYS@{BUILDER\_FLAG\_SHARE\_KEYS}}}\Hypertarget{namespaceflexbuffers_a1d799e72faa9a9fe98270bb33a6864afa70f65074918dfb3b4d122f7faee872e1}\label{namespaceflexbuffers_a1d799e72faa9a9fe98270bb33a6864afa70f65074918dfb3b4d122f7faee872e1} 
+BUILDER\+\_\+\+FLAG\+\_\+\+SHARE\+\_\+\+KEYS&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BUILDER\_FLAG\_SHARE\_STRINGS@{BUILDER\_FLAG\_SHARE\_STRINGS}!flexbuffers@{flexbuffers}}\index{flexbuffers@{flexbuffers}!BUILDER\_FLAG\_SHARE\_STRINGS@{BUILDER\_FLAG\_SHARE\_STRINGS}}}\Hypertarget{namespaceflexbuffers_a1d799e72faa9a9fe98270bb33a6864afaa988c5ca51fdfe7f9d904f340f5fec5d}\label{namespaceflexbuffers_a1d799e72faa9a9fe98270bb33a6864afaa988c5ca51fdfe7f9d904f340f5fec5d} 
+BUILDER\+\_\+\+FLAG\+\_\+\+SHARE\+\_\+\+STRINGS&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BUILDER\_FLAG\_SHARE\_KEYS\_AND\_STRINGS@{BUILDER\_FLAG\_SHARE\_KEYS\_AND\_STRINGS}!flexbuffers@{flexbuffers}}\index{flexbuffers@{flexbuffers}!BUILDER\_FLAG\_SHARE\_KEYS\_AND\_STRINGS@{BUILDER\_FLAG\_SHARE\_KEYS\_AND\_STRINGS}}}\Hypertarget{namespaceflexbuffers_a1d799e72faa9a9fe98270bb33a6864afa5f4b507d3589953446076d0548139c93}\label{namespaceflexbuffers_a1d799e72faa9a9fe98270bb33a6864afa5f4b507d3589953446076d0548139c93} 
+BUILDER\+\_\+\+FLAG\+\_\+\+SHARE\+\_\+\+KEYS\+\_\+\+AND\+\_\+\+STRINGS&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BUILDER\_FLAG\_SHARE\_KEY\_VECTORS@{BUILDER\_FLAG\_SHARE\_KEY\_VECTORS}!flexbuffers@{flexbuffers}}\index{flexbuffers@{flexbuffers}!BUILDER\_FLAG\_SHARE\_KEY\_VECTORS@{BUILDER\_FLAG\_SHARE\_KEY\_VECTORS}}}\Hypertarget{namespaceflexbuffers_a1d799e72faa9a9fe98270bb33a6864afa35702f2c9dc90b3a8797b26a08fd2a4f}\label{namespaceflexbuffers_a1d799e72faa9a9fe98270bb33a6864afa35702f2c9dc90b3a8797b26a08fd2a4f} 
+BUILDER\+\_\+\+FLAG\+\_\+\+SHARE\+\_\+\+KEY\+\_\+\+VECTORS&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BUILDER\_FLAG\_SHARE\_ALL@{BUILDER\_FLAG\_SHARE\_ALL}!flexbuffers@{flexbuffers}}\index{flexbuffers@{flexbuffers}!BUILDER\_FLAG\_SHARE\_ALL@{BUILDER\_FLAG\_SHARE\_ALL}}}\Hypertarget{namespaceflexbuffers_a1d799e72faa9a9fe98270bb33a6864afaa5582b6efe81a0c84e995a494aeed94b}\label{namespaceflexbuffers_a1d799e72faa9a9fe98270bb33a6864afaa5582b6efe81a0c84e995a494aeed94b} 
+BUILDER\+\_\+\+FLAG\+\_\+\+SHARE\+\_\+\+ALL&\\
+\hline
+
+\end{DoxyEnumFields}
+\Hypertarget{namespaceflexbuffers_aa0b4995478c086629fff32c3d10c3872}\label{namespaceflexbuffers_aa0b4995478c086629fff32c3d10c3872} 
+\index{flexbuffers@{flexbuffers}!Type@{Type}}
+\index{Type@{Type}!flexbuffers@{flexbuffers}}
+\doxysubsubsection{\texorpdfstring{Type}{Type}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{namespaceflexbuffers_aa0b4995478c086629fff32c3d10c3872}{flexbuffers\+::\+Type}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{FBT\_NULL@{FBT\_NULL}!flexbuffers@{flexbuffers}}\index{flexbuffers@{flexbuffers}!FBT\_NULL@{FBT\_NULL}}}\Hypertarget{namespaceflexbuffers_aa0b4995478c086629fff32c3d10c3872a9bac55eee9a20ce095257cde7908aa93}\label{namespaceflexbuffers_aa0b4995478c086629fff32c3d10c3872a9bac55eee9a20ce095257cde7908aa93} 
+FBT\+\_\+\+NULL&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{FBT\_INT@{FBT\_INT}!flexbuffers@{flexbuffers}}\index{flexbuffers@{flexbuffers}!FBT\_INT@{FBT\_INT}}}\Hypertarget{namespaceflexbuffers_aa0b4995478c086629fff32c3d10c3872a88fb1a1b1d949c0e8438bfcc1d296cda}\label{namespaceflexbuffers_aa0b4995478c086629fff32c3d10c3872a88fb1a1b1d949c0e8438bfcc1d296cda} 
+FBT\+\_\+\+INT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{FBT\_UINT@{FBT\_UINT}!flexbuffers@{flexbuffers}}\index{flexbuffers@{flexbuffers}!FBT\_UINT@{FBT\_UINT}}}\Hypertarget{namespaceflexbuffers_aa0b4995478c086629fff32c3d10c3872a67a610c00b02bd42cd175be6ac0fc1b3}\label{namespaceflexbuffers_aa0b4995478c086629fff32c3d10c3872a67a610c00b02bd42cd175be6ac0fc1b3} 
+FBT\+\_\+\+UINT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{FBT\_FLOAT@{FBT\_FLOAT}!flexbuffers@{flexbuffers}}\index{flexbuffers@{flexbuffers}!FBT\_FLOAT@{FBT\_FLOAT}}}\Hypertarget{namespaceflexbuffers_aa0b4995478c086629fff32c3d10c3872ad01de95b3c532cfe9e8194029052ef24}\label{namespaceflexbuffers_aa0b4995478c086629fff32c3d10c3872ad01de95b3c532cfe9e8194029052ef24} 
+FBT\+\_\+\+FLOAT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{FBT\_KEY@{FBT\_KEY}!flexbuffers@{flexbuffers}}\index{flexbuffers@{flexbuffers}!FBT\_KEY@{FBT\_KEY}}}\Hypertarget{namespaceflexbuffers_aa0b4995478c086629fff32c3d10c3872ac2469bbf89701c2dc7e3b844aa46c425}\label{namespaceflexbuffers_aa0b4995478c086629fff32c3d10c3872ac2469bbf89701c2dc7e3b844aa46c425} 
+FBT\+\_\+\+KEY&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{FBT\_STRING@{FBT\_STRING}!flexbuffers@{flexbuffers}}\index{flexbuffers@{flexbuffers}!FBT\_STRING@{FBT\_STRING}}}\Hypertarget{namespaceflexbuffers_aa0b4995478c086629fff32c3d10c3872a9ba45c56db68b462cd279ad0c9f25d4e}\label{namespaceflexbuffers_aa0b4995478c086629fff32c3d10c3872a9ba45c56db68b462cd279ad0c9f25d4e} 
+FBT\+\_\+\+STRING&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{FBT\_INDIRECT\_INT@{FBT\_INDIRECT\_INT}!flexbuffers@{flexbuffers}}\index{flexbuffers@{flexbuffers}!FBT\_INDIRECT\_INT@{FBT\_INDIRECT\_INT}}}\Hypertarget{namespaceflexbuffers_aa0b4995478c086629fff32c3d10c3872a81f7c7c62e9de6d60401f627d6d69fba}\label{namespaceflexbuffers_aa0b4995478c086629fff32c3d10c3872a81f7c7c62e9de6d60401f627d6d69fba} 
+FBT\+\_\+\+INDIRECT\+\_\+\+INT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{FBT\_INDIRECT\_UINT@{FBT\_INDIRECT\_UINT}!flexbuffers@{flexbuffers}}\index{flexbuffers@{flexbuffers}!FBT\_INDIRECT\_UINT@{FBT\_INDIRECT\_UINT}}}\Hypertarget{namespaceflexbuffers_aa0b4995478c086629fff32c3d10c3872adcc73a2c491afce39e4416901f2da7a3}\label{namespaceflexbuffers_aa0b4995478c086629fff32c3d10c3872adcc73a2c491afce39e4416901f2da7a3} 
+FBT\+\_\+\+INDIRECT\+\_\+\+UINT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{FBT\_INDIRECT\_FLOAT@{FBT\_INDIRECT\_FLOAT}!flexbuffers@{flexbuffers}}\index{flexbuffers@{flexbuffers}!FBT\_INDIRECT\_FLOAT@{FBT\_INDIRECT\_FLOAT}}}\Hypertarget{namespaceflexbuffers_aa0b4995478c086629fff32c3d10c3872a711b74a1c9499e12f2547d8471c9f47a}\label{namespaceflexbuffers_aa0b4995478c086629fff32c3d10c3872a711b74a1c9499e12f2547d8471c9f47a} 
+FBT\+\_\+\+INDIRECT\+\_\+\+FLOAT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{FBT\_MAP@{FBT\_MAP}!flexbuffers@{flexbuffers}}\index{flexbuffers@{flexbuffers}!FBT\_MAP@{FBT\_MAP}}}\Hypertarget{namespaceflexbuffers_aa0b4995478c086629fff32c3d10c3872a2b27ed89a27dce656eb0371eb9801f6a}\label{namespaceflexbuffers_aa0b4995478c086629fff32c3d10c3872a2b27ed89a27dce656eb0371eb9801f6a} 
+FBT\+\_\+\+MAP&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{FBT\_VECTOR@{FBT\_VECTOR}!flexbuffers@{flexbuffers}}\index{flexbuffers@{flexbuffers}!FBT\_VECTOR@{FBT\_VECTOR}}}\Hypertarget{namespaceflexbuffers_aa0b4995478c086629fff32c3d10c3872af433e3f5456b915cc7814070c27a45c0}\label{namespaceflexbuffers_aa0b4995478c086629fff32c3d10c3872af433e3f5456b915cc7814070c27a45c0} 
+FBT\+\_\+\+VECTOR&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{FBT\_VECTOR\_INT@{FBT\_VECTOR\_INT}!flexbuffers@{flexbuffers}}\index{flexbuffers@{flexbuffers}!FBT\_VECTOR\_INT@{FBT\_VECTOR\_INT}}}\Hypertarget{namespaceflexbuffers_aa0b4995478c086629fff32c3d10c3872a7a1fa825a2e2b3bdea0a9a78f0da2eed}\label{namespaceflexbuffers_aa0b4995478c086629fff32c3d10c3872a7a1fa825a2e2b3bdea0a9a78f0da2eed} 
+FBT\+\_\+\+VECTOR\+\_\+\+INT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{FBT\_VECTOR\_UINT@{FBT\_VECTOR\_UINT}!flexbuffers@{flexbuffers}}\index{flexbuffers@{flexbuffers}!FBT\_VECTOR\_UINT@{FBT\_VECTOR\_UINT}}}\Hypertarget{namespaceflexbuffers_aa0b4995478c086629fff32c3d10c3872a89fd338fc72652cfe0506bd6551fe80c}\label{namespaceflexbuffers_aa0b4995478c086629fff32c3d10c3872a89fd338fc72652cfe0506bd6551fe80c} 
+FBT\+\_\+\+VECTOR\+\_\+\+UINT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{FBT\_VECTOR\_FLOAT@{FBT\_VECTOR\_FLOAT}!flexbuffers@{flexbuffers}}\index{flexbuffers@{flexbuffers}!FBT\_VECTOR\_FLOAT@{FBT\_VECTOR\_FLOAT}}}\Hypertarget{namespaceflexbuffers_aa0b4995478c086629fff32c3d10c3872a4514ae16e1e118996f98a68ff8a9eeba}\label{namespaceflexbuffers_aa0b4995478c086629fff32c3d10c3872a4514ae16e1e118996f98a68ff8a9eeba} 
+FBT\+\_\+\+VECTOR\+\_\+\+FLOAT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{FBT\_VECTOR\_KEY@{FBT\_VECTOR\_KEY}!flexbuffers@{flexbuffers}}\index{flexbuffers@{flexbuffers}!FBT\_VECTOR\_KEY@{FBT\_VECTOR\_KEY}}}\Hypertarget{namespaceflexbuffers_aa0b4995478c086629fff32c3d10c3872a0637bed2800e0fc9250986c99b05334a}\label{namespaceflexbuffers_aa0b4995478c086629fff32c3d10c3872a0637bed2800e0fc9250986c99b05334a} 
+FBT\+\_\+\+VECTOR\+\_\+\+KEY&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{FBT\_VECTOR\_STRING\_DEPRECATED@{FBT\_VECTOR\_STRING\_DEPRECATED}!flexbuffers@{flexbuffers}}\index{flexbuffers@{flexbuffers}!FBT\_VECTOR\_STRING\_DEPRECATED@{FBT\_VECTOR\_STRING\_DEPRECATED}}}\Hypertarget{namespaceflexbuffers_aa0b4995478c086629fff32c3d10c3872ab9ee896762e6c7cd74b0e133eed085d0}\label{namespaceflexbuffers_aa0b4995478c086629fff32c3d10c3872ab9ee896762e6c7cd74b0e133eed085d0} 
+FBT\+\_\+\+VECTOR\+\_\+\+STRING\+\_\+\+DEPRECATED&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{FBT\_VECTOR\_INT2@{FBT\_VECTOR\_INT2}!flexbuffers@{flexbuffers}}\index{flexbuffers@{flexbuffers}!FBT\_VECTOR\_INT2@{FBT\_VECTOR\_INT2}}}\Hypertarget{namespaceflexbuffers_aa0b4995478c086629fff32c3d10c3872abd4a72791196667824395f0e26b59385}\label{namespaceflexbuffers_aa0b4995478c086629fff32c3d10c3872abd4a72791196667824395f0e26b59385} 
+FBT\+\_\+\+VECTOR\+\_\+\+INT2&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{FBT\_VECTOR\_UINT2@{FBT\_VECTOR\_UINT2}!flexbuffers@{flexbuffers}}\index{flexbuffers@{flexbuffers}!FBT\_VECTOR\_UINT2@{FBT\_VECTOR\_UINT2}}}\Hypertarget{namespaceflexbuffers_aa0b4995478c086629fff32c3d10c3872ac257bb0d93f5e7ec8175b54972ba6210}\label{namespaceflexbuffers_aa0b4995478c086629fff32c3d10c3872ac257bb0d93f5e7ec8175b54972ba6210} 
+FBT\+\_\+\+VECTOR\+\_\+\+UINT2&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{FBT\_VECTOR\_FLOAT2@{FBT\_VECTOR\_FLOAT2}!flexbuffers@{flexbuffers}}\index{flexbuffers@{flexbuffers}!FBT\_VECTOR\_FLOAT2@{FBT\_VECTOR\_FLOAT2}}}\Hypertarget{namespaceflexbuffers_aa0b4995478c086629fff32c3d10c3872a473f7cd58c07cffaf27091c8af7a9c59}\label{namespaceflexbuffers_aa0b4995478c086629fff32c3d10c3872a473f7cd58c07cffaf27091c8af7a9c59} 
+FBT\+\_\+\+VECTOR\+\_\+\+FLOAT2&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{FBT\_VECTOR\_INT3@{FBT\_VECTOR\_INT3}!flexbuffers@{flexbuffers}}\index{flexbuffers@{flexbuffers}!FBT\_VECTOR\_INT3@{FBT\_VECTOR\_INT3}}}\Hypertarget{namespaceflexbuffers_aa0b4995478c086629fff32c3d10c3872ac609eb18ad2c35135f72084698693473}\label{namespaceflexbuffers_aa0b4995478c086629fff32c3d10c3872ac609eb18ad2c35135f72084698693473} 
+FBT\+\_\+\+VECTOR\+\_\+\+INT3&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{FBT\_VECTOR\_UINT3@{FBT\_VECTOR\_UINT3}!flexbuffers@{flexbuffers}}\index{flexbuffers@{flexbuffers}!FBT\_VECTOR\_UINT3@{FBT\_VECTOR\_UINT3}}}\Hypertarget{namespaceflexbuffers_aa0b4995478c086629fff32c3d10c3872afba8e85ae7fc2c8f02aadcd4c917272d}\label{namespaceflexbuffers_aa0b4995478c086629fff32c3d10c3872afba8e85ae7fc2c8f02aadcd4c917272d} 
+FBT\+\_\+\+VECTOR\+\_\+\+UINT3&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{FBT\_VECTOR\_FLOAT3@{FBT\_VECTOR\_FLOAT3}!flexbuffers@{flexbuffers}}\index{flexbuffers@{flexbuffers}!FBT\_VECTOR\_FLOAT3@{FBT\_VECTOR\_FLOAT3}}}\Hypertarget{namespaceflexbuffers_aa0b4995478c086629fff32c3d10c3872a39056ac6cba1491c8ccc36fae628309c}\label{namespaceflexbuffers_aa0b4995478c086629fff32c3d10c3872a39056ac6cba1491c8ccc36fae628309c} 
+FBT\+\_\+\+VECTOR\+\_\+\+FLOAT3&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{FBT\_VECTOR\_INT4@{FBT\_VECTOR\_INT4}!flexbuffers@{flexbuffers}}\index{flexbuffers@{flexbuffers}!FBT\_VECTOR\_INT4@{FBT\_VECTOR\_INT4}}}\Hypertarget{namespaceflexbuffers_aa0b4995478c086629fff32c3d10c3872acf1d3474024083b8e774f3950029a01e}\label{namespaceflexbuffers_aa0b4995478c086629fff32c3d10c3872acf1d3474024083b8e774f3950029a01e} 
+FBT\+\_\+\+VECTOR\+\_\+\+INT4&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{FBT\_VECTOR\_UINT4@{FBT\_VECTOR\_UINT4}!flexbuffers@{flexbuffers}}\index{flexbuffers@{flexbuffers}!FBT\_VECTOR\_UINT4@{FBT\_VECTOR\_UINT4}}}\Hypertarget{namespaceflexbuffers_aa0b4995478c086629fff32c3d10c3872a87fe8930f233a8ed943efe9a9a80b499}\label{namespaceflexbuffers_aa0b4995478c086629fff32c3d10c3872a87fe8930f233a8ed943efe9a9a80b499} 
+FBT\+\_\+\+VECTOR\+\_\+\+UINT4&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{FBT\_VECTOR\_FLOAT4@{FBT\_VECTOR\_FLOAT4}!flexbuffers@{flexbuffers}}\index{flexbuffers@{flexbuffers}!FBT\_VECTOR\_FLOAT4@{FBT\_VECTOR\_FLOAT4}}}\Hypertarget{namespaceflexbuffers_aa0b4995478c086629fff32c3d10c3872ade7af31eb6e56bf008ba6aabc626351e}\label{namespaceflexbuffers_aa0b4995478c086629fff32c3d10c3872ade7af31eb6e56bf008ba6aabc626351e} 
+FBT\+\_\+\+VECTOR\+\_\+\+FLOAT4&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{FBT\_BLOB@{FBT\_BLOB}!flexbuffers@{flexbuffers}}\index{flexbuffers@{flexbuffers}!FBT\_BLOB@{FBT\_BLOB}}}\Hypertarget{namespaceflexbuffers_aa0b4995478c086629fff32c3d10c3872a61d442f38cb775643f12e0924a9be803}\label{namespaceflexbuffers_aa0b4995478c086629fff32c3d10c3872a61d442f38cb775643f12e0924a9be803} 
+FBT\+\_\+\+BLOB&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{FBT\_BOOL@{FBT\_BOOL}!flexbuffers@{flexbuffers}}\index{flexbuffers@{flexbuffers}!FBT\_BOOL@{FBT\_BOOL}}}\Hypertarget{namespaceflexbuffers_aa0b4995478c086629fff32c3d10c3872ae04a92faea341843a14cda9a5a600af5}\label{namespaceflexbuffers_aa0b4995478c086629fff32c3d10c3872ae04a92faea341843a14cda9a5a600af5} 
+FBT\+\_\+\+BOOL&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{FBT\_VECTOR\_BOOL@{FBT\_VECTOR\_BOOL}!flexbuffers@{flexbuffers}}\index{flexbuffers@{flexbuffers}!FBT\_VECTOR\_BOOL@{FBT\_VECTOR\_BOOL}}}\Hypertarget{namespaceflexbuffers_aa0b4995478c086629fff32c3d10c3872acf6c49c2abd3f2b2508c9b4fe48fec05}\label{namespaceflexbuffers_aa0b4995478c086629fff32c3d10c3872acf6c49c2abd3f2b2508c9b4fe48fec05} 
+FBT\+\_\+\+VECTOR\+\_\+\+BOOL&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{FBT\_MAX\_TYPE@{FBT\_MAX\_TYPE}!flexbuffers@{flexbuffers}}\index{flexbuffers@{flexbuffers}!FBT\_MAX\_TYPE@{FBT\_MAX\_TYPE}}}\Hypertarget{namespaceflexbuffers_aa0b4995478c086629fff32c3d10c3872ab2446b045d04489031d625625086a0cd}\label{namespaceflexbuffers_aa0b4995478c086629fff32c3d10c3872ab2446b045d04489031d625625086a0cd} 
+FBT\+\_\+\+MAX\+\_\+\+TYPE&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{namespaceflexbuffers_af7de9f41e3986d43c76c6d283b71b2a3}\label{namespaceflexbuffers_af7de9f41e3986d43c76c6d283b71b2a3} 
+\index{flexbuffers@{flexbuffers}!AppendToString@{AppendToString}}
+\index{AppendToString@{AppendToString}!flexbuffers@{flexbuffers}}
+\doxysubsubsection{\texorpdfstring{AppendToString()}{AppendToString()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void flexbuffers\+::\+Append\+To\+String (\begin{DoxyParamCaption}\item[{std\+::string \&}]{s,  }\item[{T \&\&}]{v,  }\item[{bool}]{keys\+\_\+quoted }\end{DoxyParamCaption})}
+
+\Hypertarget{namespaceflexbuffers_a3663a45240329d2f1e60772a4bb52d77}\label{namespaceflexbuffers_a3663a45240329d2f1e60772a4bb52d77} 
+\index{flexbuffers@{flexbuffers}!AppendToString@{AppendToString}}
+\index{AppendToString@{AppendToString}!flexbuffers@{flexbuffers}}
+\doxysubsubsection{\texorpdfstring{AppendToString()}{AppendToString()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void flexbuffers\+::\+Append\+To\+String (\begin{DoxyParamCaption}\item[{std\+::string \&}]{s,  }\item[{T \&\&}]{v,  }\item[{bool}]{keys\+\_\+quoted,  }\item[{bool}]{indented,  }\item[{int}]{cur\+\_\+indent,  }\item[{const char \texorpdfstring{$\ast$}{*}}]{indent\+\_\+string,  }\item[{bool}]{natural\+\_\+utf8 }\end{DoxyParamCaption})}
+
+\Hypertarget{namespaceflexbuffers_ab071dac32ac28ab1131d407871231358}\label{namespaceflexbuffers_ab071dac32ac28ab1131d407871231358} 
+\index{flexbuffers@{flexbuffers}!GetRoot@{GetRoot}}
+\index{GetRoot@{GetRoot}!flexbuffers@{flexbuffers}}
+\doxysubsubsection{\texorpdfstring{GetRoot()}{GetRoot()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classflexbuffers_1_1Reference}{Reference}} flexbuffers\+::\+Get\+Root (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ uint8\+\_\+t $>$ \&}]{buffer }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{namespaceflexbuffers_a1f08dbb0395262a8153e0791567b5f38}\label{namespaceflexbuffers_a1f08dbb0395262a8153e0791567b5f38} 
+\index{flexbuffers@{flexbuffers}!GetRoot@{GetRoot}}
+\index{GetRoot@{GetRoot}!flexbuffers@{flexbuffers}}
+\doxysubsubsection{\texorpdfstring{GetRoot()}{GetRoot()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classflexbuffers_1_1Reference}{Reference}} flexbuffers\+::\+Get\+Root (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t \texorpdfstring{$\ast$}{*}}]{buffer,  }\item[{size\+\_\+t}]{size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{namespaceflexbuffers_aea9df6b1c56481711269a37b37788d06}\label{namespaceflexbuffers_aea9df6b1c56481711269a37b37788d06} 
+\index{flexbuffers@{flexbuffers}!IndentString@{IndentString}}
+\index{IndentString@{IndentString}!flexbuffers@{flexbuffers}}
+\doxysubsubsection{\texorpdfstring{IndentString()}{IndentString()}}
+{\footnotesize\ttfamily void flexbuffers\+::\+Indent\+String (\begin{DoxyParamCaption}\item[{std\+::string \&}]{s,  }\item[{int}]{indent,  }\item[{const char \texorpdfstring{$\ast$}{*}}]{indent\+\_\+string }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{namespaceflexbuffers_aa96b2bb8f009b14282dd06ef728c72cb}\label{namespaceflexbuffers_aa96b2bb8f009b14282dd06ef728c72cb} 
+\index{flexbuffers@{flexbuffers}!Indirect@{Indirect}}
+\index{Indirect@{Indirect}!flexbuffers@{flexbuffers}}
+\doxysubsubsection{\texorpdfstring{Indirect()}{Indirect()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+const uint8\+\_\+t \texorpdfstring{$\ast$}{*} flexbuffers\+::\+Indirect (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t \texorpdfstring{$\ast$}{*}}]{offset }\end{DoxyParamCaption})}
+
+\Hypertarget{namespaceflexbuffers_af918b181314762b8634a72831b0e7905}\label{namespaceflexbuffers_af918b181314762b8634a72831b0e7905} 
+\index{flexbuffers@{flexbuffers}!Indirect@{Indirect}}
+\index{Indirect@{Indirect}!flexbuffers@{flexbuffers}}
+\doxysubsubsection{\texorpdfstring{Indirect()}{Indirect()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const uint8\+\_\+t \texorpdfstring{$\ast$}{*} flexbuffers\+::\+Indirect (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t \texorpdfstring{$\ast$}{*}}]{offset,  }\item[{uint8\+\_\+t}]{byte\+\_\+width }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{namespaceflexbuffers_ae9e961022beed24c2de986d04f5886df}\label{namespaceflexbuffers_ae9e961022beed24c2de986d04f5886df} 
+\index{flexbuffers@{flexbuffers}!IsFixedTypedVector@{IsFixedTypedVector}}
+\index{IsFixedTypedVector@{IsFixedTypedVector}!flexbuffers@{flexbuffers}}
+\doxysubsubsection{\texorpdfstring{IsFixedTypedVector()}{IsFixedTypedVector()}}
+{\footnotesize\ttfamily bool flexbuffers\+::\+Is\+Fixed\+Typed\+Vector (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceflexbuffers_aa0b4995478c086629fff32c3d10c3872}{Type}}}]{t }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{namespaceflexbuffers_ac01d64cc50810a1624ef5b931663f302}\label{namespaceflexbuffers_ac01d64cc50810a1624ef5b931663f302} 
+\index{flexbuffers@{flexbuffers}!IsInline@{IsInline}}
+\index{IsInline@{IsInline}!flexbuffers@{flexbuffers}}
+\doxysubsubsection{\texorpdfstring{IsInline()}{IsInline()}}
+{\footnotesize\ttfamily bool flexbuffers\+::\+Is\+Inline (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceflexbuffers_aa0b4995478c086629fff32c3d10c3872}{Type}}}]{t }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{namespaceflexbuffers_a8b57cb0d573b98c4e32a0c464af4e3dc}\label{namespaceflexbuffers_a8b57cb0d573b98c4e32a0c464af4e3dc} 
+\index{flexbuffers@{flexbuffers}!IsTypedVector@{IsTypedVector}}
+\index{IsTypedVector@{IsTypedVector}!flexbuffers@{flexbuffers}}
+\doxysubsubsection{\texorpdfstring{IsTypedVector()}{IsTypedVector()}}
+{\footnotesize\ttfamily bool flexbuffers\+::\+Is\+Typed\+Vector (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceflexbuffers_aa0b4995478c086629fff32c3d10c3872}{Type}}}]{t }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{namespaceflexbuffers_a5ff1d990cb63b0edaa0d841c77933889}\label{namespaceflexbuffers_a5ff1d990cb63b0edaa0d841c77933889} 
+\index{flexbuffers@{flexbuffers}!IsTypedVectorElementType@{IsTypedVectorElementType}}
+\index{IsTypedVectorElementType@{IsTypedVectorElementType}!flexbuffers@{flexbuffers}}
+\doxysubsubsection{\texorpdfstring{IsTypedVectorElementType()}{IsTypedVectorElementType()}}
+{\footnotesize\ttfamily bool flexbuffers\+::\+Is\+Typed\+Vector\+Element\+Type (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceflexbuffers_aa0b4995478c086629fff32c3d10c3872}{Type}}}]{t }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{namespaceflexbuffers_a4216a60a35e1a999cd5d0131c28cd2ed}\label{namespaceflexbuffers_a4216a60a35e1a999cd5d0131c28cd2ed} 
+\index{flexbuffers@{flexbuffers}!KeyCompare@{KeyCompare}}
+\index{KeyCompare@{KeyCompare}!flexbuffers@{flexbuffers}}
+\doxysubsubsection{\texorpdfstring{KeyCompare()}{KeyCompare()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+int flexbuffers\+::\+Key\+Compare (\begin{DoxyParamCaption}\item[{const void \texorpdfstring{$\ast$}{*}}]{key,  }\item[{const void \texorpdfstring{$\ast$}{*}}]{elem }\end{DoxyParamCaption})}
+
+\Hypertarget{namespaceflexbuffers_a18bed26be195b406bd9932c0877546e0}\label{namespaceflexbuffers_a18bed26be195b406bd9932c0877546e0} 
+\index{flexbuffers@{flexbuffers}!NullPackedType@{NullPackedType}}
+\index{NullPackedType@{NullPackedType}!flexbuffers@{flexbuffers}}
+\doxysubsubsection{\texorpdfstring{NullPackedType()}{NullPackedType()}}
+{\footnotesize\ttfamily uint8\+\_\+t flexbuffers\+::\+Null\+Packed\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{namespaceflexbuffers_af841495d819152416a8fa139acf3f119}\label{namespaceflexbuffers_af841495d819152416a8fa139acf3f119} 
+\index{flexbuffers@{flexbuffers}!PackedType@{PackedType}}
+\index{PackedType@{PackedType}!flexbuffers@{flexbuffers}}
+\doxysubsubsection{\texorpdfstring{PackedType()}{PackedType()}}
+{\footnotesize\ttfamily uint8\+\_\+t flexbuffers\+::\+Packed\+Type (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceflexbuffers_a76cc4a8eb404468982af5bd160912e8b}{Bit\+Width}}}]{bit\+\_\+width,  }\item[{\mbox{\hyperlink{namespaceflexbuffers_aa0b4995478c086629fff32c3d10c3872}{Type}}}]{type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{namespaceflexbuffers_a2d389bb97dda338a40b9823de43b76ca}\label{namespaceflexbuffers_a2d389bb97dda338a40b9823de43b76ca} 
+\index{flexbuffers@{flexbuffers}!ReadDouble@{ReadDouble}}
+\index{ReadDouble@{ReadDouble}!flexbuffers@{flexbuffers}}
+\doxysubsubsection{\texorpdfstring{ReadDouble()}{ReadDouble()}}
+{\footnotesize\ttfamily double flexbuffers\+::\+Read\+Double (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t \texorpdfstring{$\ast$}{*}}]{data,  }\item[{uint8\+\_\+t}]{byte\+\_\+width }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{namespaceflexbuffers_aa77b4df9d5a9d3f7cc2243bc47efe9e9}\label{namespaceflexbuffers_aa77b4df9d5a9d3f7cc2243bc47efe9e9} 
+\index{flexbuffers@{flexbuffers}!ReadInt64@{ReadInt64}}
+\index{ReadInt64@{ReadInt64}!flexbuffers@{flexbuffers}}
+\doxysubsubsection{\texorpdfstring{ReadInt64()}{ReadInt64()}}
+{\footnotesize\ttfamily int64\+\_\+t flexbuffers\+::\+Read\+Int64 (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t \texorpdfstring{$\ast$}{*}}]{data,  }\item[{uint8\+\_\+t}]{byte\+\_\+width }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{namespaceflexbuffers_aea3aec4aa4748cb40f9e6aee53481d12}\label{namespaceflexbuffers_aea3aec4aa4748cb40f9e6aee53481d12} 
+\index{flexbuffers@{flexbuffers}!ReadSizedScalar@{ReadSizedScalar}}
+\index{ReadSizedScalar@{ReadSizedScalar}!flexbuffers@{flexbuffers}}
+\doxysubsubsection{\texorpdfstring{ReadSizedScalar()}{ReadSizedScalar()}}
+{\footnotesize\ttfamily template$<$typename R , typename T1 , typename T2 , typename T4 , typename T8 $>$ \\
+R flexbuffers\+::\+Read\+Sized\+Scalar (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t \texorpdfstring{$\ast$}{*}}]{data,  }\item[{uint8\+\_\+t}]{byte\+\_\+width }\end{DoxyParamCaption})}
+
+\Hypertarget{namespaceflexbuffers_a7e2fe5b607a41dadaf1fb9b05b6ca2c6}\label{namespaceflexbuffers_a7e2fe5b607a41dadaf1fb9b05b6ca2c6} 
+\index{flexbuffers@{flexbuffers}!ReadUInt64@{ReadUInt64}}
+\index{ReadUInt64@{ReadUInt64}!flexbuffers@{flexbuffers}}
+\doxysubsubsection{\texorpdfstring{ReadUInt64()}{ReadUInt64()}}
+{\footnotesize\ttfamily uint64\+\_\+t flexbuffers\+::\+Read\+UInt64 (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t \texorpdfstring{$\ast$}{*}}]{data,  }\item[{uint8\+\_\+t}]{byte\+\_\+width }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{namespaceflexbuffers_a2e144d28e44d491f2bd40f3130acb1f8}\label{namespaceflexbuffers_a2e144d28e44d491f2bd40f3130acb1f8} 
+\index{flexbuffers@{flexbuffers}!Reference::As$<$ std::string $>$@{Reference::As$<$ std::string $>$}}
+\index{Reference::As$<$ std::string $>$@{Reference::As$<$ std::string $>$}!flexbuffers@{flexbuffers}}
+\doxysubsubsection{\texorpdfstring{Reference::As$<$ std::string $>$()}{Reference::As< std::string >()}}
+{\footnotesize\ttfamily template$<$$>$ \\
+std\+::string \mbox{\hyperlink{classflexbuffers_1_1Reference_a98309a183b83493371297cd7fcb4caa3}{flexbuffers\+::\+Reference\+::\+As}}$<$ std\+::string $>$ (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{namespaceflexbuffers_a6e6c489d7884670609fb8c423d1f7b76}\label{namespaceflexbuffers_a6e6c489d7884670609fb8c423d1f7b76} 
+\index{flexbuffers@{flexbuffers}!ToFixedTypedVectorElementType@{ToFixedTypedVectorElementType}}
+\index{ToFixedTypedVectorElementType@{ToFixedTypedVectorElementType}!flexbuffers@{flexbuffers}}
+\doxysubsubsection{\texorpdfstring{ToFixedTypedVectorElementType()}{ToFixedTypedVectorElementType()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespaceflexbuffers_aa0b4995478c086629fff32c3d10c3872}{Type}} flexbuffers\+::\+To\+Fixed\+Typed\+Vector\+Element\+Type (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceflexbuffers_aa0b4995478c086629fff32c3d10c3872}{Type}}}]{t,  }\item[{uint8\+\_\+t \texorpdfstring{$\ast$}{*}}]{len }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{namespaceflexbuffers_a52f924f091996491d562b398e8f880b5}\label{namespaceflexbuffers_a52f924f091996491d562b398e8f880b5} 
+\index{flexbuffers@{flexbuffers}!ToTypedVector@{ToTypedVector}}
+\index{ToTypedVector@{ToTypedVector}!flexbuffers@{flexbuffers}}
+\doxysubsubsection{\texorpdfstring{ToTypedVector()}{ToTypedVector()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespaceflexbuffers_aa0b4995478c086629fff32c3d10c3872}{Type}} flexbuffers\+::\+To\+Typed\+Vector (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceflexbuffers_aa0b4995478c086629fff32c3d10c3872}{Type}}}]{t,  }\item[{size\+\_\+t}]{fixed\+\_\+len = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{namespaceflexbuffers_a70b57d31302be584191fbf4ee70daa44}\label{namespaceflexbuffers_a70b57d31302be584191fbf4ee70daa44} 
+\index{flexbuffers@{flexbuffers}!ToTypedVectorElementType@{ToTypedVectorElementType}}
+\index{ToTypedVectorElementType@{ToTypedVectorElementType}!flexbuffers@{flexbuffers}}
+\doxysubsubsection{\texorpdfstring{ToTypedVectorElementType()}{ToTypedVectorElementType()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespaceflexbuffers_aa0b4995478c086629fff32c3d10c3872}{Type}} flexbuffers\+::\+To\+Typed\+Vector\+Element\+Type (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceflexbuffers_aa0b4995478c086629fff32c3d10c3872}{Type}}}]{t }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{namespaceflexbuffers_a01115a2166486217cea5d3bc0f05f448}\label{namespaceflexbuffers_a01115a2166486217cea5d3bc0f05f448} 
+\index{flexbuffers@{flexbuffers}!VerifyBuffer@{VerifyBuffer}}
+\index{VerifyBuffer@{VerifyBuffer}!flexbuffers@{flexbuffers}}
+\doxysubsubsection{\texorpdfstring{VerifyBuffer()}{VerifyBuffer()}}
+{\footnotesize\ttfamily bool flexbuffers\+::\+Verify\+Buffer (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t \texorpdfstring{$\ast$}{*}}]{buf,  }\item[{size\+\_\+t}]{buf\+\_\+len,  }\item[{std\+::vector$<$ uint8\+\_\+t $>$ \texorpdfstring{$\ast$}{*}}]{reuse\+\_\+tracker = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{namespaceflexbuffers_a04da2411b07b54a64720e22f35286aaa}\label{namespaceflexbuffers_a04da2411b07b54a64720e22f35286aaa} 
+\index{flexbuffers@{flexbuffers}!VerifyNestedFlexBuffer@{VerifyNestedFlexBuffer}}
+\index{VerifyNestedFlexBuffer@{VerifyNestedFlexBuffer}!flexbuffers@{flexbuffers}}
+\doxysubsubsection{\texorpdfstring{VerifyNestedFlexBuffer()}{VerifyNestedFlexBuffer()}}
+{\footnotesize\ttfamily bool flexbuffers\+::\+Verify\+Nested\+Flex\+Buffer (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classflatbuffers_1_1Vector}{flatbuffers\+::\+Vector}}$<$ uint8\+\_\+t $>$ \texorpdfstring{$\ast$}{*}const}]{nested,  }\item[{\mbox{\hyperlink{namespaceflatbuffers_a3268477941df91db2eb06442b6e5f922}{flatbuffers\+::\+Verifier}} \&}]{verifier }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{namespaceflexbuffers_a50919e1bf9664e027eac4c6342d3ff60}\label{namespaceflexbuffers_a50919e1bf9664e027eac4c6342d3ff60} 
+\index{flexbuffers@{flexbuffers}!WidthF@{WidthF}}
+\index{WidthF@{WidthF}!flexbuffers@{flexbuffers}}
+\doxysubsubsection{\texorpdfstring{WidthF()}{WidthF()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespaceflexbuffers_a76cc4a8eb404468982af5bd160912e8b}{Bit\+Width}} flexbuffers\+::\+WidthF (\begin{DoxyParamCaption}\item[{double}]{f }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{namespaceflexbuffers_a1be50d5b811ad7380bd0629867245128}\label{namespaceflexbuffers_a1be50d5b811ad7380bd0629867245128} 
+\index{flexbuffers@{flexbuffers}!WidthI@{WidthI}}
+\index{WidthI@{WidthI}!flexbuffers@{flexbuffers}}
+\doxysubsubsection{\texorpdfstring{WidthI()}{WidthI()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespaceflexbuffers_a76cc4a8eb404468982af5bd160912e8b}{Bit\+Width}} flexbuffers\+::\+WidthI (\begin{DoxyParamCaption}\item[{int64\+\_\+t}]{i }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{namespaceflexbuffers_aff7bc29030435a3586a9cea1f617fda8}\label{namespaceflexbuffers_aff7bc29030435a3586a9cea1f617fda8} 
+\index{flexbuffers@{flexbuffers}!WidthU@{WidthU}}
+\index{WidthU@{WidthU}!flexbuffers@{flexbuffers}}
+\doxysubsubsection{\texorpdfstring{WidthU()}{WidthU()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespaceflexbuffers_a76cc4a8eb404468982af5bd160912e8b}{Bit\+Width}} flexbuffers\+::\+WidthU (\begin{DoxyParamCaption}\item[{uint64\+\_\+t}]{u }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+

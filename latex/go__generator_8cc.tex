@@ -1,0 +1,46 @@
+\doxysection{flatbuffers/grpc/src/compiler/go\+\_\+generator.cc File Reference}
+\hypertarget{go__generator_8cc}{}\label{go__generator_8cc}\index{flatbuffers/grpc/src/compiler/go\_generator.cc@{flatbuffers/grpc/src/compiler/go\_generator.cc}}
+{\ttfamily \#include "{}src/compiler/go\+\_\+generator.\+h"{}}\newline
+{\ttfamily \#include $<$cctype$>$}\newline
+{\ttfamily \#include $<$map$>$}\newline
+{\ttfamily \#include $<$sstream$>$}\newline
+Include dependency graph for go\+\_\+generator.\+cc\+:
+% FIG 0
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespacegrpc__go__generator}{grpc\+\_\+go\+\_\+generator}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$class T $>$ }\\\mbox{\hyperlink{namespacegrpc_a77f15e90a2c3651195f88645e4512267}{grpc\+::string}} \mbox{\hyperlink{go__generator_8cc_a989ac102d3e7df654f6c36dbb5384640}{as\+\_\+string}} (T \mbox{\hyperlink{gmock-matchers-containers__test_8cc_a6150e0515f7202e2fb518f7206ed97dc}{x}})
+\item 
+bool \mbox{\hyperlink{go__generator_8cc_a76279701bca758f656f5729eff53d751}{Client\+Only\+Streaming}} (const \mbox{\hyperlink{structgrpc__generator_1_1Method}{grpc\+\_\+generator\+::\+Method}} \texorpdfstring{$\ast$}{*}method)
+\item 
+bool \mbox{\hyperlink{go__generator_8cc_a7936a6ae5f2abdcd5ce07dd35c165c28}{Server\+Only\+Streaming}} (const \mbox{\hyperlink{structgrpc__generator_1_1Method}{grpc\+\_\+generator\+::\+Method}} \texorpdfstring{$\ast$}{*}method)
+\item 
+\mbox{\hyperlink{namespacegrpc_a77f15e90a2c3651195f88645e4512267}{grpc\+::string}} \mbox{\hyperlink{namespacegrpc__go__generator_a70445e7cf7002c775c99dc9c7d30358c}{grpc\+\_\+go\+\_\+generator\+::\+Generate\+Service\+Source}} (\mbox{\hyperlink{structgrpc__generator_1_1File}{grpc\+\_\+generator\+::\+File}} \texorpdfstring{$\ast$}{*}file, const \mbox{\hyperlink{structgrpc__generator_1_1Service}{grpc\+\_\+generator\+::\+Service}} \texorpdfstring{$\ast$}{*}service, \mbox{\hyperlink{structgrpc__go__generator_1_1Parameters}{grpc\+\_\+go\+\_\+generator\+::\+Parameters}} \texorpdfstring{$\ast$}{*}parameters)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{go__generator_8cc_a989ac102d3e7df654f6c36dbb5384640}\label{go__generator_8cc_a989ac102d3e7df654f6c36dbb5384640} 
+\index{go\_generator.cc@{go\_generator.cc}!as\_string@{as\_string}}
+\index{as\_string@{as\_string}!go\_generator.cc@{go\_generator.cc}}
+\doxysubsubsection{\texorpdfstring{as\_string()}{as\_string()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+\mbox{\hyperlink{namespacegrpc_a77f15e90a2c3651195f88645e4512267}{grpc\+::string}} as\+\_\+string (\begin{DoxyParamCaption}\item[{T}]{x }\end{DoxyParamCaption})}
+
+\Hypertarget{go__generator_8cc_a76279701bca758f656f5729eff53d751}\label{go__generator_8cc_a76279701bca758f656f5729eff53d751} 
+\index{go\_generator.cc@{go\_generator.cc}!ClientOnlyStreaming@{ClientOnlyStreaming}}
+\index{ClientOnlyStreaming@{ClientOnlyStreaming}!go\_generator.cc@{go\_generator.cc}}
+\doxysubsubsection{\texorpdfstring{ClientOnlyStreaming()}{ClientOnlyStreaming()}}
+{\footnotesize\ttfamily bool Client\+Only\+Streaming (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structgrpc__generator_1_1Method}{grpc\+\_\+generator\+::\+Method}} \texorpdfstring{$\ast$}{*}}]{method }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{go__generator_8cc_a7936a6ae5f2abdcd5ce07dd35c165c28}\label{go__generator_8cc_a7936a6ae5f2abdcd5ce07dd35c165c28} 
+\index{go\_generator.cc@{go\_generator.cc}!ServerOnlyStreaming@{ServerOnlyStreaming}}
+\index{ServerOnlyStreaming@{ServerOnlyStreaming}!go\_generator.cc@{go\_generator.cc}}
+\doxysubsubsection{\texorpdfstring{ServerOnlyStreaming()}{ServerOnlyStreaming()}}
+{\footnotesize\ttfamily bool Server\+Only\+Streaming (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structgrpc__generator_1_1Method}{grpc\+\_\+generator\+::\+Method}} \texorpdfstring{$\ast$}{*}}]{method }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+

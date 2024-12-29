@@ -1,0 +1,125 @@
+\doxysection{detached\+\_\+buffer.\+h}
+\hypertarget{detached__buffer_8h_source}{}\label{detached__buffer_8h_source}\index{flatbuffers/include/flatbuffers/detached\_buffer.h@{flatbuffers/include/flatbuffers/detached\_buffer.h}}
+\mbox{\hyperlink{detached__buffer_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ Copyright\ 2021\ Google\ Inc.\ All\ rights\ reserved.}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ Licensed\ under\ the\ Apache\ License,\ Version\ 2.0\ (the\ "{}License"{});}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ you\ may\ not\ use\ this\ file\ except\ in\ compliance\ with\ the\ License.}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *\ You\ may\ obtain\ a\ copy\ of\ the\ License\ at}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ *\ \ \ \ \ http://www.apache.org/licenses/LICENSE-\/2.0}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ *\ Unless\ required\ by\ applicable\ law\ or\ agreed\ to\ in\ writing,\ software}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ *\ distributed\ under\ the\ License\ is\ distributed\ on\ an\ "{}AS\ IS"{}\ BASIS,}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ *\ WITHOUT\ WARRANTIES\ OR\ CONDITIONS\ OF\ ANY\ KIND,\ either\ express\ or\ implied.}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ *\ See\ the\ License\ for\ the\ specific\ language\ governing\ permissions\ and}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ *\ limitations\ under\ the\ License.}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#ifndef\ FLATBUFFERS\_DETACHED\_BUFFER\_H\_}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#define\ FLATBUFFERS\_DETACHED\_BUFFER\_H\_}}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{allocator_8h}{flatbuffers/allocator.h}}"{}}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{base_8h}{flatbuffers/base.h}}"{}}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{default__allocator_8h}{flatbuffers/default\_allocator.h}}"{}}}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceflatbuffers}{flatbuffers}}\ \{}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \textcolor{comment}{//\ DetachedBuffer\ is\ a\ finished\ flatbuffer\ memory\ region,\ detached\ from\ its}}
+\DoxyCodeLine{00027\ \textcolor{comment}{//\ builder.\ The\ original\ memory\ region\ and\ allocator\ are\ also\ stored\ so\ that}}
+\DoxyCodeLine{00028\ \textcolor{comment}{//\ the\ DetachedBuffer\ can\ manage\ the\ memory\ lifetime.}}
+\DoxyCodeLine{00029\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classflatbuffers_1_1DetachedBuffer}{DetachedBuffer}}\ \{}
+\DoxyCodeLine{00030\ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00031\ \ \ \mbox{\hyperlink{classflatbuffers_1_1DetachedBuffer_a587b562bcee4d600272ae25845e9f197}{DetachedBuffer}}()}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ :\ \mbox{\hyperlink{classflatbuffers_1_1DetachedBuffer_a4bfb45c03f3e9f0722a1adbfe8bc4729}{allocator\_}}(nullptr),}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classflatbuffers_1_1DetachedBuffer_ab3fb53f0c57d06cd5848cfb59fd656f2}{own\_allocator\_}}(false),}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classflatbuffers_1_1DetachedBuffer_a7e6327751066fe086a18b881ec3a07ce}{buf\_}}(nullptr),}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classflatbuffers_1_1DetachedBuffer_aeabe28bec13ac0fe7465142969d467d7}{reserved\_}}(0),}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classflatbuffers_1_1DetachedBuffer_a63229682fea7e65b8ecd0678d5d1996b}{cur\_}}(nullptr),}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classflatbuffers_1_1DetachedBuffer_a0f138004d6acacc5aab3ce69bf5a8ebd}{size\_}}(0)\ \{\}}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \ \ \mbox{\hyperlink{classflatbuffers_1_1DetachedBuffer_abae2caaa17d721325235755e6a4feea0}{DetachedBuffer}}(\mbox{\hyperlink{classflatbuffers_1_1Allocator}{Allocator}}\ *allocator,\ \textcolor{keywordtype}{bool}\ own\_allocator,\ uint8\_t\ *buf,}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ reserved,\ uint8\_t\ *cur,\ \textcolor{keywordtype}{size\_t}\ sz)}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ :\ \mbox{\hyperlink{classflatbuffers_1_1DetachedBuffer_a4bfb45c03f3e9f0722a1adbfe8bc4729}{allocator\_}}(allocator),}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classflatbuffers_1_1DetachedBuffer_ab3fb53f0c57d06cd5848cfb59fd656f2}{own\_allocator\_}}(own\_allocator),}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classflatbuffers_1_1DetachedBuffer_a7e6327751066fe086a18b881ec3a07ce}{buf\_}}(buf),}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classflatbuffers_1_1DetachedBuffer_aeabe28bec13ac0fe7465142969d467d7}{reserved\_}}(reserved),}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classflatbuffers_1_1DetachedBuffer_a63229682fea7e65b8ecd0678d5d1996b}{cur\_}}(cur),}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classflatbuffers_1_1DetachedBuffer_a0f138004d6acacc5aab3ce69bf5a8ebd}{size\_}}(sz)\ \{\}}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \ \ \mbox{\hyperlink{classflatbuffers_1_1DetachedBuffer_add4d6fa9985b9641e3fba63cdb040046}{DetachedBuffer}}(\mbox{\hyperlink{classflatbuffers_1_1DetachedBuffer}{DetachedBuffer}}\ \&\&other)\ noexcept}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ :\ \mbox{\hyperlink{classflatbuffers_1_1DetachedBuffer_a4bfb45c03f3e9f0722a1adbfe8bc4729}{allocator\_}}(other.allocator\_),}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classflatbuffers_1_1DetachedBuffer_ab3fb53f0c57d06cd5848cfb59fd656f2}{own\_allocator\_}}(other.own\_allocator\_),}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classflatbuffers_1_1DetachedBuffer_a7e6327751066fe086a18b881ec3a07ce}{buf\_}}(other.buf\_),}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classflatbuffers_1_1DetachedBuffer_aeabe28bec13ac0fe7465142969d467d7}{reserved\_}}(other.reserved\_),}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classflatbuffers_1_1DetachedBuffer_a63229682fea7e65b8ecd0678d5d1996b}{cur\_}}(other.cur\_),}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classflatbuffers_1_1DetachedBuffer_a0f138004d6acacc5aab3ce69bf5a8ebd}{size\_}}(other.size\_)\ \{}
+\DoxyCodeLine{00055\ \ \ \ \ other.reset();}
+\DoxyCodeLine{00056\ \ \ \}}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ \ \ \mbox{\hyperlink{classflatbuffers_1_1DetachedBuffer}{DetachedBuffer}}\ \&\mbox{\hyperlink{classflatbuffers_1_1DetachedBuffer_adba4a9407aa1348bb82e97f1b674ef50}{operator=}}(\mbox{\hyperlink{classflatbuffers_1_1DetachedBuffer}{DetachedBuffer}}\ \&\&other)\ \textcolor{keyword}{noexcept}\ \{}
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{keywordflow}{if}\ (\textcolor{keyword}{this}\ ==\ \&other)\ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ \ \ \ \ \mbox{\hyperlink{classflatbuffers_1_1DetachedBuffer_a3a4bb3269ce95d77a8765f43fefe44ab}{destroy}}();}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00063\ \ \ \ \ \mbox{\hyperlink{classflatbuffers_1_1DetachedBuffer_a4bfb45c03f3e9f0722a1adbfe8bc4729}{allocator\_}}\ =\ other.allocator\_;}
+\DoxyCodeLine{00064\ \ \ \ \ \mbox{\hyperlink{classflatbuffers_1_1DetachedBuffer_ab3fb53f0c57d06cd5848cfb59fd656f2}{own\_allocator\_}}\ =\ other.own\_allocator\_;}
+\DoxyCodeLine{00065\ \ \ \ \ \mbox{\hyperlink{classflatbuffers_1_1DetachedBuffer_a7e6327751066fe086a18b881ec3a07ce}{buf\_}}\ =\ other.buf\_;}
+\DoxyCodeLine{00066\ \ \ \ \ \mbox{\hyperlink{classflatbuffers_1_1DetachedBuffer_aeabe28bec13ac0fe7465142969d467d7}{reserved\_}}\ =\ other.reserved\_;}
+\DoxyCodeLine{00067\ \ \ \ \ \mbox{\hyperlink{classflatbuffers_1_1DetachedBuffer_a63229682fea7e65b8ecd0678d5d1996b}{cur\_}}\ =\ other.cur\_;}
+\DoxyCodeLine{00068\ \ \ \ \ \mbox{\hyperlink{classflatbuffers_1_1DetachedBuffer_a0f138004d6acacc5aab3ce69bf5a8ebd}{size\_}}\ =\ other.size\_;}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00070\ \ \ \ \ other.reset();}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00072\ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00073\ \ \ \}}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00075\ \ \ \mbox{\hyperlink{classflatbuffers_1_1DetachedBuffer_a9979d17b00f354dce4c7d9a6dca43d4d}{\string~DetachedBuffer}}()\ \{\ \mbox{\hyperlink{classflatbuffers_1_1DetachedBuffer_a3a4bb3269ce95d77a8765f43fefe44ab}{destroy}}();\ \}}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00077\ \ \ \textcolor{keyword}{const}\ uint8\_t\ *\mbox{\hyperlink{classflatbuffers_1_1DetachedBuffer_a09672dd42e9cd8717f281fb4aff5d3c3}{data}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classflatbuffers_1_1DetachedBuffer_a63229682fea7e65b8ecd0678d5d1996b}{cur\_}};\ \}}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00079\ \ \ uint8\_t\ *\mbox{\hyperlink{classflatbuffers_1_1DetachedBuffer_a2b86f4474a46fa138154228980027752}{data}}()\ \{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classflatbuffers_1_1DetachedBuffer_a63229682fea7e65b8ecd0678d5d1996b}{cur\_}};\ \}}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00081\ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{classflatbuffers_1_1DetachedBuffer_a2d645442b005d309191812714ffd6e3f}{size}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classflatbuffers_1_1DetachedBuffer_a0f138004d6acacc5aab3ce69bf5a8ebd}{size\_}};\ \}}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00083\ \ \ uint8\_t\ *\mbox{\hyperlink{classflatbuffers_1_1DetachedBuffer_a415f1a6b31a017f48b424322b720511a}{begin}}()\ \{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classflatbuffers_1_1DetachedBuffer_a09672dd42e9cd8717f281fb4aff5d3c3}{data}}();\ \}}
+\DoxyCodeLine{00084\ \ \ \textcolor{keyword}{const}\ uint8\_t\ *\mbox{\hyperlink{classflatbuffers_1_1DetachedBuffer_a657ea2d388d23065d27ab8bca083a0aa}{begin}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classflatbuffers_1_1DetachedBuffer_a09672dd42e9cd8717f281fb4aff5d3c3}{data}}();\ \}}
+\DoxyCodeLine{00085\ \ \ uint8\_t\ *\mbox{\hyperlink{classflatbuffers_1_1DetachedBuffer_a4160e569fedca170116570e85e388a0f}{end}}()\ \{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classflatbuffers_1_1DetachedBuffer_a09672dd42e9cd8717f281fb4aff5d3c3}{data}}()\ +\ \mbox{\hyperlink{classflatbuffers_1_1DetachedBuffer_a2d645442b005d309191812714ffd6e3f}{size}}();\ \}}
+\DoxyCodeLine{00086\ \ \ \textcolor{keyword}{const}\ uint8\_t\ *\mbox{\hyperlink{classflatbuffers_1_1DetachedBuffer_ab27d81659f6ce4f78d8ec20105fd2364}{end}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classflatbuffers_1_1DetachedBuffer_a09672dd42e9cd8717f281fb4aff5d3c3}{data}}()\ +\ \mbox{\hyperlink{classflatbuffers_1_1DetachedBuffer_a2d645442b005d309191812714ffd6e3f}{size}}();\ \}}
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00088\ \ \ \textcolor{comment}{//\ These\ may\ change\ access\ mode,\ leave\ these\ at\ end\ of\ public\ section}}
+\DoxyCodeLine{00089\ \ \ \mbox{\hyperlink{classflatbuffers_1_1DetachedBuffer_afe902a2eecf82a994e4c9b5d238a390e}{FLATBUFFERS\_DELETE\_FUNC}}(\mbox{\hyperlink{classflatbuffers_1_1DetachedBuffer_a587b562bcee4d600272ae25845e9f197}{DetachedBuffer}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classflatbuffers_1_1DetachedBuffer}{DetachedBuffer}}\ \&other));}
+\DoxyCodeLine{00090\ \ \ \mbox{\hyperlink{classflatbuffers_1_1DetachedBuffer_a28fc182204f028fab35601c21d0e26c2}{FLATBUFFERS\_DELETE\_FUNC}}(}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \mbox{\hyperlink{classflatbuffers_1_1DetachedBuffer}{DetachedBuffer}}\ \&\textcolor{keyword}{operator}=(\textcolor{keyword}{const}\ \mbox{\hyperlink{classflatbuffers_1_1DetachedBuffer}{DetachedBuffer}}\ \&other));}
+\DoxyCodeLine{00092\ }
+\DoxyCodeLine{00093\ \ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00094\ \ \ \mbox{\hyperlink{classflatbuffers_1_1Allocator}{Allocator}}\ *\mbox{\hyperlink{classflatbuffers_1_1DetachedBuffer_a4bfb45c03f3e9f0722a1adbfe8bc4729}{allocator\_}};}
+\DoxyCodeLine{00095\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classflatbuffers_1_1DetachedBuffer_ab3fb53f0c57d06cd5848cfb59fd656f2}{own\_allocator\_}};}
+\DoxyCodeLine{00096\ \ \ uint8\_t\ *\mbox{\hyperlink{classflatbuffers_1_1DetachedBuffer_a7e6327751066fe086a18b881ec3a07ce}{buf\_}};}
+\DoxyCodeLine{00097\ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{classflatbuffers_1_1DetachedBuffer_aeabe28bec13ac0fe7465142969d467d7}{reserved\_}};}
+\DoxyCodeLine{00098\ \ \ uint8\_t\ *\mbox{\hyperlink{classflatbuffers_1_1DetachedBuffer_a63229682fea7e65b8ecd0678d5d1996b}{cur\_}};}
+\DoxyCodeLine{00099\ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{classflatbuffers_1_1DetachedBuffer_a0f138004d6acacc5aab3ce69bf5a8ebd}{size\_}};}
+\DoxyCodeLine{00100\ }
+\DoxyCodeLine{00101\ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classflatbuffers_1_1DetachedBuffer_a3a4bb3269ce95d77a8765f43fefe44ab}{destroy}}()\ \{}
+\DoxyCodeLine{00102\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classflatbuffers_1_1DetachedBuffer_a7e6327751066fe086a18b881ec3a07ce}{buf\_}})\ \mbox{\hyperlink{namespaceflatbuffers_ab4e316cb50b04b9c80411c528bf815e4}{Deallocate}}(\mbox{\hyperlink{classflatbuffers_1_1DetachedBuffer_a4bfb45c03f3e9f0722a1adbfe8bc4729}{allocator\_}},\ \mbox{\hyperlink{classflatbuffers_1_1DetachedBuffer_a7e6327751066fe086a18b881ec3a07ce}{buf\_}},\ \mbox{\hyperlink{classflatbuffers_1_1DetachedBuffer_aeabe28bec13ac0fe7465142969d467d7}{reserved\_}});}
+\DoxyCodeLine{00103\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classflatbuffers_1_1DetachedBuffer_ab3fb53f0c57d06cd5848cfb59fd656f2}{own\_allocator\_}}\ \&\&\ \mbox{\hyperlink{classflatbuffers_1_1DetachedBuffer_a4bfb45c03f3e9f0722a1adbfe8bc4729}{allocator\_}})\ \{\ \textcolor{keyword}{delete}\ \mbox{\hyperlink{classflatbuffers_1_1DetachedBuffer_a4bfb45c03f3e9f0722a1adbfe8bc4729}{allocator\_}};\ \}}
+\DoxyCodeLine{00104\ \ \ \ \ \mbox{\hyperlink{classflatbuffers_1_1DetachedBuffer_a1fadd8be4586d8a6a0df5e26e90f3f79}{reset}}();}
+\DoxyCodeLine{00105\ \ \ \}}
+\DoxyCodeLine{00106\ }
+\DoxyCodeLine{00107\ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classflatbuffers_1_1DetachedBuffer_a1fadd8be4586d8a6a0df5e26e90f3f79}{reset}}()\ \{}
+\DoxyCodeLine{00108\ \ \ \ \ \mbox{\hyperlink{classflatbuffers_1_1DetachedBuffer_a4bfb45c03f3e9f0722a1adbfe8bc4729}{allocator\_}}\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00109\ \ \ \ \ \mbox{\hyperlink{classflatbuffers_1_1DetachedBuffer_ab3fb53f0c57d06cd5848cfb59fd656f2}{own\_allocator\_}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00110\ \ \ \ \ \mbox{\hyperlink{classflatbuffers_1_1DetachedBuffer_a7e6327751066fe086a18b881ec3a07ce}{buf\_}}\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00111\ \ \ \ \ \mbox{\hyperlink{classflatbuffers_1_1DetachedBuffer_aeabe28bec13ac0fe7465142969d467d7}{reserved\_}}\ =\ 0;}
+\DoxyCodeLine{00112\ \ \ \ \ \mbox{\hyperlink{classflatbuffers_1_1DetachedBuffer_a63229682fea7e65b8ecd0678d5d1996b}{cur\_}}\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00113\ \ \ \ \ \mbox{\hyperlink{classflatbuffers_1_1DetachedBuffer_a0f138004d6acacc5aab3ce69bf5a8ebd}{size\_}}\ =\ 0;}
+\DoxyCodeLine{00114\ \ \ \}}
+\DoxyCodeLine{00115\ \};}
+\DoxyCodeLine{00116\ }
+\DoxyCodeLine{00117\ \}\ \ \textcolor{comment}{//\ namespace\ flatbuffers}}
+\DoxyCodeLine{00118\ }
+\DoxyCodeLine{00119\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ FLATBUFFERS\_DETACHED\_BUFFER\_H\_}}
+
+\end{DoxyCode}

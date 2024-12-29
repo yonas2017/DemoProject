@@ -1,0 +1,52 @@
+\doxysection{com.\+google.\+flatbuffers.\+Byte\+Buffer\+Util Class Reference}
+\hypertarget{classcom_1_1google_1_1flatbuffers_1_1ByteBufferUtil}{}\label{classcom_1_1google_1_1flatbuffers_1_1ByteBufferUtil}\index{com.google.flatbuffers.ByteBufferUtil@{com.google.flatbuffers.ByteBufferUtil}}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static int \mbox{\hyperlink{classcom_1_1google_1_1flatbuffers_1_1ByteBufferUtil_a4c87c63fa8d31e039b344bbaef00a3be}{get\+Size\+Prefix}} (Byte\+Buffer bb)
+\item 
+static Byte\+Buffer \mbox{\hyperlink{classcom_1_1google_1_1flatbuffers_1_1ByteBufferUtil_a58d6c39c53a0c981a2f72a5eca7d992c}{remove\+Size\+Prefix}} (Byte\+Buffer bb)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class that collects utility functions around {\ttfamily Byte\+Buffer}. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classcom_1_1google_1_1flatbuffers_1_1ByteBufferUtil_a4c87c63fa8d31e039b344bbaef00a3be}\label{classcom_1_1google_1_1flatbuffers_1_1ByteBufferUtil_a4c87c63fa8d31e039b344bbaef00a3be} 
+\index{com.google.flatbuffers.ByteBufferUtil@{com.google.flatbuffers.ByteBufferUtil}!getSizePrefix@{getSizePrefix}}
+\index{getSizePrefix@{getSizePrefix}!com.google.flatbuffers.ByteBufferUtil@{com.google.flatbuffers.ByteBufferUtil}}
+\doxysubsubsection{\texorpdfstring{getSizePrefix()}{getSizePrefix()}}
+{\footnotesize\ttfamily static int com.\+google.\+flatbuffers.\+Byte\+Buffer\+Util.\+get\+Size\+Prefix (\begin{DoxyParamCaption}\item[{Byte\+Buffer}]{bb }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+Extract the size prefix from a {\ttfamily Byte\+Buffer}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em bb} & a size-\/prefixed buffer \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the size prefix 
+\end{DoxyReturn}
+\Hypertarget{classcom_1_1google_1_1flatbuffers_1_1ByteBufferUtil_a58d6c39c53a0c981a2f72a5eca7d992c}\label{classcom_1_1google_1_1flatbuffers_1_1ByteBufferUtil_a58d6c39c53a0c981a2f72a5eca7d992c} 
+\index{com.google.flatbuffers.ByteBufferUtil@{com.google.flatbuffers.ByteBufferUtil}!removeSizePrefix@{removeSizePrefix}}
+\index{removeSizePrefix@{removeSizePrefix}!com.google.flatbuffers.ByteBufferUtil@{com.google.flatbuffers.ByteBufferUtil}}
+\doxysubsubsection{\texorpdfstring{removeSizePrefix()}{removeSizePrefix()}}
+{\footnotesize\ttfamily static Byte\+Buffer com.\+google.\+flatbuffers.\+Byte\+Buffer\+Util.\+remove\+Size\+Prefix (\begin{DoxyParamCaption}\item[{Byte\+Buffer}]{bb }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+Create a duplicate of a size-\/prefixed {\ttfamily Byte\+Buffer} that has its position advanced just past the size prefix.
+
+
+\begin{DoxyParams}{Parameters}
+{\em bb} & a size-\/prefixed buffer \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a new buffer on the same underlying data that has skipped the size prefix 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+flatbuffers/java/src/main/java/com/google/flatbuffers/\mbox{\hyperlink{ByteBufferUtil_8java}{Byte\+Buffer\+Util.\+java}}\end{DoxyCompactItemize}

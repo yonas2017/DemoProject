@@ -1,0 +1,27 @@
+\chapter{Go Greeter example}
+\hypertarget{md_flatbuffers_2grpc_2examples_2go_2greeter_2README}{}\label{md_flatbuffers_2grpc_2examples_2go_2greeter_2README}\index{Go Greeter example@{Go Greeter example}}
+\doxysection*{Project Structure}
+
+\begin{DoxyVerb}.
+├── server                   # Server module
+├── client                   # Client module
+├── models                   # Flatbuffers models & main grpc code.
+└── README.md
+\end{DoxyVerb}
+ \doxysection*{How to run Server\+:}
+
+
+\begin{DoxyItemize}
+\item {\ttfamily cd server}
+\item {\ttfamily go clean}
+\item {\ttfamily go run main.\+go}
+\end{DoxyItemize}
+
+\doxysection*{How to run Client\+:}
+
+
+\begin{DoxyItemize}
+\item {\ttfamily cd client}
+\item {\ttfamily go clean}
+\item {\ttfamily go run main.\+go -\/-\/name NAME} 
+\end{DoxyItemize}

@@ -1,0 +1,476 @@
+\doxysection{flatbuffers\+::java\+::Java\+Generator Class Reference}
+\hypertarget{classflatbuffers_1_1java_1_1JavaGenerator}{}\label{classflatbuffers_1_1java_1_1JavaGenerator}\index{flatbuffers::java::JavaGenerator@{flatbuffers::java::JavaGenerator}}
+
+
+Inheritance diagram for flatbuffers\+::java\+::Java\+Generator\+:
+% FIG 0
+
+
+Collaboration diagram for flatbuffers\+::java\+::Java\+Generator\+:
+% FIG 1
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classflatbuffers_1_1java_1_1JavaGenerator_a0d5269c3426f883b8550b78c4785a0f4}{Java\+Generator}} (const \mbox{\hyperlink{classflatbuffers_1_1Parser}{Parser}} \&parser, const std\+::string \&path, const std\+::string \&file\+\_\+name, const std\+::string \&package\+\_\+prefix)
+\item 
+\mbox{\hyperlink{classflatbuffers_1_1java_1_1JavaGenerator}{Java\+Generator}} \& \mbox{\hyperlink{classflatbuffers_1_1java_1_1JavaGenerator_acba68fedf871d251780dcf7234153549}{operator=}} (const \mbox{\hyperlink{classflatbuffers_1_1java_1_1JavaGenerator}{Java\+Generator}} \&)
+\item 
+bool \mbox{\hyperlink{classflatbuffers_1_1java_1_1JavaGenerator_a90ac9a7d1b68bb2f8f04e13677ec4c4c}{generate}} ()
+\item 
+bool \mbox{\hyperlink{classflatbuffers_1_1java_1_1JavaGenerator_aeaa709db979fda3509b2effcc8c16d11}{Save\+Type}} (const std\+::string \&defname, const \mbox{\hyperlink{structflatbuffers_1_1Namespace}{Namespace}} \&\mbox{\hyperlink{idl__gen__ts_8cpp_a97618fe2e31e62d92ace9b30478febba}{ns}}, const std\+::string \&classcode, bool needs\+\_\+includes) const
+\item 
+const \mbox{\hyperlink{structflatbuffers_1_1Namespace}{Namespace}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classflatbuffers_1_1java_1_1JavaGenerator_aa22148b6c35ac8cdf79748b8fb79c1f2}{Current\+Name\+Space}} () const
+\item 
+std\+::string \mbox{\hyperlink{classflatbuffers_1_1java_1_1JavaGenerator_a40e12482b7e658598acaf1c2ae7756a5}{Gen\+Nullable\+Annotation}} (const \mbox{\hyperlink{structflatbuffers_1_1Type}{Type}} \&t) const
+\item 
+std\+::string \mbox{\hyperlink{classflatbuffers_1_1java_1_1JavaGenerator_ac0b28f20d8cc7764d2cb99ea6d78d372}{Gen\+Pure\+Annotation}} (const \mbox{\hyperlink{structflatbuffers_1_1Type}{Type}} \&t) const
+\item 
+std\+::string \mbox{\hyperlink{classflatbuffers_1_1java_1_1JavaGenerator_a6265c4c99b168e147cc13ac61b5d889d}{Gen\+Type\+Basic}} (const \mbox{\hyperlink{structflatbuffers_1_1Type}{Type}} \&type) const
+\item 
+std\+::string \mbox{\hyperlink{classflatbuffers_1_1java_1_1JavaGenerator_a0ac081f53917a39138a01c704561f192}{Gen\+Type\+Pointer}} (const \mbox{\hyperlink{structflatbuffers_1_1Type}{Type}} \&type) const
+\item 
+std\+::string \mbox{\hyperlink{classflatbuffers_1_1java_1_1JavaGenerator_ac15ae57776b8306bed4b3696868503b7}{Gen\+Type\+Get}} (const \mbox{\hyperlink{structflatbuffers_1_1Type}{Type}} \&type) const
+\item 
+\mbox{\hyperlink{structflatbuffers_1_1Type}{Type}} \mbox{\hyperlink{classflatbuffers_1_1java_1_1JavaGenerator_adb37cda6fa70e1e7fab8d7df30a17706}{Destination\+Type}} (const \mbox{\hyperlink{structflatbuffers_1_1Type}{Type}} \&type, bool vectorelem) const
+\item 
+std\+::string \mbox{\hyperlink{classflatbuffers_1_1java_1_1JavaGenerator_a9921cac50813cf5e282aece6baee65aa}{Gen\+Offset\+Type}} () const
+\item 
+std\+::string \mbox{\hyperlink{classflatbuffers_1_1java_1_1JavaGenerator_a44ff780716a87f8d24ed20f3357dbfcf}{Gen\+Offset\+Construct}} (const std\+::string \&variable\+\_\+name) const
+\item 
+std\+::string \mbox{\hyperlink{classflatbuffers_1_1java_1_1JavaGenerator_a4cbffb0d59ab62c5119a1a9bb0444974}{Gen\+Vector\+Offset\+Type}} () const
+\item 
+std\+::string \mbox{\hyperlink{classflatbuffers_1_1java_1_1JavaGenerator_a41b62094e81b9a6be4c61db5f4076418}{Gen\+Type\+Name\+Dest}} (const \mbox{\hyperlink{structflatbuffers_1_1Type}{Type}} \&type) const
+\item 
+std\+::string \mbox{\hyperlink{classflatbuffers_1_1java_1_1JavaGenerator_a8b3d586addc86e6c3380ae15ff5d2f6d}{Destination\+Mask}} (const \mbox{\hyperlink{structflatbuffers_1_1Type}{Type}} \&type, bool vectorelem) const
+\item 
+std\+::string \mbox{\hyperlink{classflatbuffers_1_1java_1_1JavaGenerator_a06008bc2a379a6d23fa0fe6ea21ffc3a}{Destination\+Cast}} (const \mbox{\hyperlink{structflatbuffers_1_1Type}{Type}} \&type) const
+\item 
+std\+::string \mbox{\hyperlink{classflatbuffers_1_1java_1_1JavaGenerator_ad7a18d93b74c03b996e7d77ddd55df4c}{Source\+Cast}} (const \mbox{\hyperlink{structflatbuffers_1_1Type}{Type}} \&type, bool cast\+From\+Dest) const
+\item 
+std\+::string \mbox{\hyperlink{classflatbuffers_1_1java_1_1JavaGenerator_a61c09f08f7b5d86088180337fe1ee80f}{Source\+Cast}} (const \mbox{\hyperlink{structflatbuffers_1_1Type}{Type}} \&type) const
+\item 
+std\+::string \mbox{\hyperlink{classflatbuffers_1_1java_1_1JavaGenerator_a725bbf6f3ccd38acb714ea76099e33dc}{Source\+Cast\+Basic}} (const \mbox{\hyperlink{structflatbuffers_1_1Type}{Type}} \&type, bool cast\+From\+Dest) const
+\item 
+std\+::string \mbox{\hyperlink{classflatbuffers_1_1java_1_1JavaGenerator_a773640e99170de917fc9c6804bf9d44f}{Source\+Cast\+Basic}} (const \mbox{\hyperlink{structflatbuffers_1_1Type}{Type}} \&type) const
+\item 
+std\+::string \mbox{\hyperlink{classflatbuffers_1_1java_1_1JavaGenerator_aaae38dfc4317d439b94df1066c1daa1b}{Gen\+Enum\+Default\+Value}} (const \mbox{\hyperlink{structflatbuffers_1_1FieldDef}{Field\+Def}} \&field) const
+\item 
+std\+::string \mbox{\hyperlink{classflatbuffers_1_1java_1_1JavaGenerator_a44224f969794d6e6b295254c87cd5b2e}{Gen\+Default\+Value}} (const \mbox{\hyperlink{structflatbuffers_1_1FieldDef}{Field\+Def}} \&field) const
+\item 
+std\+::string \mbox{\hyperlink{classflatbuffers_1_1java_1_1JavaGenerator_ab8cb1be4ebe19120b9945a2448cdb266}{Gen\+Default\+Value\+Basic}} (const \mbox{\hyperlink{structflatbuffers_1_1FieldDef}{Field\+Def}} \&field) const
+\item 
+void \mbox{\hyperlink{classflatbuffers_1_1java_1_1JavaGenerator_aeef9f3ae0b1895c0adc7453b40f602de}{Gen\+Enum}} (\mbox{\hyperlink{structflatbuffers_1_1EnumDef}{Enum\+Def}} \&enum\+\_\+def, std\+::string \&code) const
+\item 
+std\+::string \mbox{\hyperlink{classflatbuffers_1_1java_1_1JavaGenerator_af196ce15eafd3c499e67a18cb6a83b61}{Gen\+Getter}} (const \mbox{\hyperlink{structflatbuffers_1_1Type}{Type}} \&type) const
+\item 
+std\+::string \mbox{\hyperlink{classflatbuffers_1_1java_1_1JavaGenerator_a0ed7769585ff2a16eb0775b2587e62ee}{Gen\+Getter\+For\+Lookup\+By\+Key}} (\mbox{\hyperlink{structflatbuffers_1_1FieldDef}{flatbuffers\+::\+Field\+Def}} \texorpdfstring{$\ast$}{*}key\+\_\+field, const std\+::string \&data\+\_\+buffer, const char \texorpdfstring{$\ast$}{*}num=nullptr) const
+\item 
+std\+::string \mbox{\hyperlink{classflatbuffers_1_1java_1_1JavaGenerator_a7c8cd03199b1829f1cceccb61c4f907f}{Gen\+Setter}} (const \mbox{\hyperlink{structflatbuffers_1_1Type}{Type}} \&type) const
+\item 
+std\+::string \mbox{\hyperlink{classflatbuffers_1_1java_1_1JavaGenerator_a749e2199a3a1bf1fc63f43c33ca85eed}{Gen\+Method}} (const \mbox{\hyperlink{structflatbuffers_1_1Type}{Type}} \&type) const
+\item 
+void \mbox{\hyperlink{classflatbuffers_1_1java_1_1JavaGenerator_ad839bf68288148009a279080d188bbe6}{Gen\+Struct\+Args}} (const \mbox{\hyperlink{structflatbuffers_1_1StructDef}{Struct\+Def}} \&struct\+\_\+def, std\+::string \&code, const char \texorpdfstring{$\ast$}{*}nameprefix, size\+\_\+t array\+\_\+count=0) const
+\item 
+void \mbox{\hyperlink{classflatbuffers_1_1java_1_1JavaGenerator_a35f7d2f62f566bd1d7f1495bc4ed257d}{Gen\+Struct\+Body}} (const \mbox{\hyperlink{structflatbuffers_1_1StructDef}{Struct\+Def}} \&struct\+\_\+def, std\+::string \&code, const char \texorpdfstring{$\ast$}{*}nameprefix, size\+\_\+t index=0, bool in\+\_\+array=false) const
+\item 
+std\+::string \mbox{\hyperlink{classflatbuffers_1_1java_1_1JavaGenerator_a5f4ea48aafefd001c26334a38c580de2}{Gen\+Offset\+Getter}} (\mbox{\hyperlink{structflatbuffers_1_1FieldDef}{flatbuffers\+::\+Field\+Def}} \texorpdfstring{$\ast$}{*}key\+\_\+field, const char \texorpdfstring{$\ast$}{*}num=nullptr) const
+\item 
+std\+::string \mbox{\hyperlink{classflatbuffers_1_1java_1_1JavaGenerator_a50a901bc54dbf67784f5d2ec3cfe5445}{Gen\+Lookup\+Key\+Getter}} (\mbox{\hyperlink{structflatbuffers_1_1FieldDef}{flatbuffers\+::\+Field\+Def}} \texorpdfstring{$\ast$}{*}key\+\_\+field) const
+\item 
+std\+::string \mbox{\hyperlink{classflatbuffers_1_1java_1_1JavaGenerator_a376811b80f85e9c3839184de3f526cc0}{Gen\+Key\+Getter}} (\mbox{\hyperlink{structflatbuffers_1_1FieldDef}{flatbuffers\+::\+Field\+Def}} \texorpdfstring{$\ast$}{*}key\+\_\+field) const
+\item 
+void \mbox{\hyperlink{classflatbuffers_1_1java_1_1JavaGenerator_ab3b38cac5274444bd43c6348f77f3557}{Gen\+Struct}} (\mbox{\hyperlink{structflatbuffers_1_1StructDef}{Struct\+Def}} \&struct\+\_\+def, std\+::string \&code, const \mbox{\hyperlink{structflatbuffers_1_1IDLOptions}{IDLOptions}} \&opts) const
+\item 
+std\+::string \mbox{\hyperlink{classflatbuffers_1_1java_1_1JavaGenerator_a7868cf971c7827513e3b06e0f7df4cd8}{Gen\+Optional\+Scalar\+Check}} (\mbox{\hyperlink{structflatbuffers_1_1FieldDef}{Field\+Def}} \&field) const
+\item 
+void \mbox{\hyperlink{classflatbuffers_1_1java_1_1JavaGenerator_a1f0b913a69b5d49b6f600a01c55aeca7}{Gen\+Vector\+Access\+Object}} (\mbox{\hyperlink{structflatbuffers_1_1StructDef}{Struct\+Def}} \&struct\+\_\+def, std\+::string \&code) const
+\item 
+void \mbox{\hyperlink{classflatbuffers_1_1java_1_1JavaGenerator_af687b8afc5329deb3a792cd9fe9f6082}{Gen\+Enum\+\_\+\+Object\+API}} (\mbox{\hyperlink{structflatbuffers_1_1EnumDef}{Enum\+Def}} \&enum\+\_\+def, std\+::string \&code) const
+\item 
+void \mbox{\hyperlink{classflatbuffers_1_1java_1_1JavaGenerator_ac7f3d88acd80aa30cc6ec4bdc62897b7}{Gen\+Union\+Un\+Pack\+\_\+\+Object\+API}} (const \mbox{\hyperlink{structflatbuffers_1_1EnumDef}{Enum\+Def}} \&enum\+\_\+def, std\+::string \&code, const std\+::string \&type\+\_\+name, const std\+::string \&field\+\_\+name, bool is\+\_\+vector) const
+\item 
+void \mbox{\hyperlink{classflatbuffers_1_1java_1_1JavaGenerator_acab573b581f0f2d278b9d6ae5c686c5d}{Gen\+Pack\+Un\+Pack\+\_\+\+Object\+API}} (\mbox{\hyperlink{structflatbuffers_1_1StructDef}{Struct\+Def}} \&struct\+\_\+def, std\+::string \&code, const \mbox{\hyperlink{structflatbuffers_1_1IDLOptions}{IDLOptions}} \&opts, bool struct\+\_\+has\+\_\+create, const std\+::set$<$ \mbox{\hyperlink{structflatbuffers_1_1FieldDef}{Field\+Def}} \texorpdfstring{$\ast$}{*} $>$ \&field\+\_\+has\+\_\+create) const
+\item 
+void \mbox{\hyperlink{classflatbuffers_1_1java_1_1JavaGenerator_ad6b3a059068bbf488bbb77d167b09044}{Gen\+Struct\+Pack\+Decl\+\_\+\+Object\+API}} (const \mbox{\hyperlink{structflatbuffers_1_1StructDef}{Struct\+Def}} \&struct\+\_\+def, std\+::vector$<$ Field\+Array\+Length $>$ \&array\+\_\+lengths, std\+::string \&code) const
+\item 
+void \mbox{\hyperlink{classflatbuffers_1_1java_1_1JavaGenerator_a4c9435ae7e902ea0468e18d0c336073c}{Gen\+Struct\+Pack\+Call\+\_\+\+Object\+API}} (const \mbox{\hyperlink{structflatbuffers_1_1StructDef}{Struct\+Def}} \&struct\+\_\+def, std\+::string \&code, std\+::string prefix) const
+\item 
+std\+::string \mbox{\hyperlink{classflatbuffers_1_1java_1_1JavaGenerator_a7b98575fcd02f1fb9b9c0876d261e36c}{Convert\+Primitive\+Type\+To\+Object\+Wrapper\+\_\+\+Object\+API}} (const std\+::string \&type\+\_\+name) const
+\item 
+std\+::string \mbox{\hyperlink{classflatbuffers_1_1java_1_1JavaGenerator_abb70e28d1dbb070ad8fa1aaf4d1dce47}{Gen\+Type\+Get\+\_\+\+Object\+API}} (const \mbox{\hyperlink{structflatbuffers_1_1Type}{flatbuffers\+::\+Type}} \&type, bool vectorelem, bool wrap\+\_\+in\+\_\+namespace) const
+\item 
+std\+::string \mbox{\hyperlink{classflatbuffers_1_1java_1_1JavaGenerator_a4d2e1e1742685e5d54074df380306f59}{Gen\+Concrete\+Type\+Get\+\_\+\+Object\+API}} (const \mbox{\hyperlink{structflatbuffers_1_1Type}{flatbuffers\+::\+Type}} \&type) const
+\item 
+void \mbox{\hyperlink{classflatbuffers_1_1java_1_1JavaGenerator_a5d69838cf40d92f727b6e624e20518a9}{Gen\+Struct\+\_\+\+Object\+API}} (const \mbox{\hyperlink{structflatbuffers_1_1StructDef}{Struct\+Def}} \&struct\+\_\+def, std\+::string \&code) const
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classflatbuffers_1_1BaseGenerator}{flatbuffers\+::\+Base\+Generator}}}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{classflatbuffers_1_1BaseGenerator_a8559bf41626bdecd53736bfc9153d4b5}{Generated\+File\+Name}} (const std\+::string \&path, const std\+::string \&file\+\_\+name, const \mbox{\hyperlink{structflatbuffers_1_1IDLOptions}{IDLOptions}} \&options) const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+const \mbox{\hyperlink{structflatbuffers_1_1Namespace}{Namespace}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classflatbuffers_1_1java_1_1JavaGenerator_a8c733fcea64817f9c5f374c0bab046f5}{cur\+\_\+name\+\_\+space\+\_\+}}
+\item 
+const \mbox{\hyperlink{classflatbuffers_1_1IdlNamer}{Idl\+Namer}} \mbox{\hyperlink{classflatbuffers_1_1java_1_1JavaGenerator_a12671462fe9431c5ca1b7de7b326acf0}{namer\+\_\+}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Static Public Member Functions inherited from \mbox{\hyperlink{classflatbuffers_1_1BaseGenerator}{flatbuffers\+::\+Base\+Generator}}}
+\begin{DoxyCompactItemize}
+\item 
+static std\+::string \mbox{\hyperlink{classflatbuffers_1_1BaseGenerator_ab7fdb905d7dd8d1177a470eef2da089e}{Namespace\+Dir}} (const \mbox{\hyperlink{classflatbuffers_1_1Parser}{Parser}} \&parser, const std\+::string \&path, const \mbox{\hyperlink{structflatbuffers_1_1Namespace}{Namespace}} \&\mbox{\hyperlink{idl__gen__ts_8cpp_a97618fe2e31e62d92ace9b30478febba}{ns}}, const bool dasherize=false)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{classflatbuffers_1_1BaseGenerator}{flatbuffers\+::\+Base\+Generator}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classflatbuffers_1_1BaseGenerator_aa1607736e698a0105f44e2c167963343}{Base\+Generator}} (const \mbox{\hyperlink{classflatbuffers_1_1Parser}{Parser}} \&parser, const std\+::string \&path, const std\+::string \&file\+\_\+name, std\+::string qualifying\+\_\+start, std\+::string qualifying\+\_\+separator, std\+::string default\+\_\+extension)
+\item 
+virtual \mbox{\hyperlink{classflatbuffers_1_1BaseGenerator_aeab72f6ee75c6753054c84ef9d8a7f04}{\texorpdfstring{$\sim$}{\string~}\+Base\+Generator}} ()
+\item 
+\mbox{\hyperlink{classflatbuffers_1_1BaseGenerator}{Base\+Generator}} \& \mbox{\hyperlink{classflatbuffers_1_1BaseGenerator_a10696c81aa5d52cb15c4365238ba27ed}{operator=}} (const \mbox{\hyperlink{classflatbuffers_1_1BaseGenerator}{Base\+Generator}} \&)
+\item 
+\mbox{\hyperlink{classflatbuffers_1_1BaseGenerator_a6769aab327d5dcb931f9f8c8c1797525}{Base\+Generator}} (const \mbox{\hyperlink{classflatbuffers_1_1BaseGenerator}{Base\+Generator}} \&)
+\item 
+std\+::string \mbox{\hyperlink{classflatbuffers_1_1BaseGenerator_a99f2098106976757252afd99c05bf0ff}{Namespace\+Dir}} (const \mbox{\hyperlink{structflatbuffers_1_1Namespace}{Namespace}} \&\mbox{\hyperlink{idl__gen__ts_8cpp_a97618fe2e31e62d92ace9b30478febba}{ns}}, const bool dasherize=false) const
+\item 
+std\+::string \mbox{\hyperlink{classflatbuffers_1_1BaseGenerator_a4ceefb68a9f65fe861458e82b87c3944}{Wrap\+In\+Name\+Space}} (const \mbox{\hyperlink{structflatbuffers_1_1Namespace}{Namespace}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{idl__gen__ts_8cpp_a97618fe2e31e62d92ace9b30478febba}{ns}}, const std\+::string \&\mbox{\hyperlink{idl__gen__ts_8cpp_a9b45b3e13bd9167aab02e17e08916231}{name}}) const
+\item 
+std\+::string \mbox{\hyperlink{classflatbuffers_1_1BaseGenerator_a1a39f31f1d50c515c1943989765b2330}{Wrap\+In\+Name\+Space}} (const \mbox{\hyperlink{structflatbuffers_1_1Definition}{Definition}} \&def, const std\+::string \&suffix="{}"{}) const
+\item 
+std\+::string \mbox{\hyperlink{classflatbuffers_1_1BaseGenerator_a6b6bbd8e0606f051018d90994bb73e4c}{Get\+Name\+Space}} (const \mbox{\hyperlink{structflatbuffers_1_1Definition}{Definition}} \&def) const
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Protected Member Functions inherited from \mbox{\hyperlink{classflatbuffers_1_1BaseGenerator}{flatbuffers\+::\+Base\+Generator}}}
+\begin{DoxyCompactItemize}
+\item 
+static const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classflatbuffers_1_1BaseGenerator_a04ffaceb3b3c37e9eb8296ddf72ff0f3}{Flat\+Buffers\+Generated\+Warning}} ()
+\item 
+static std\+::string \mbox{\hyperlink{classflatbuffers_1_1BaseGenerator_aa6d96041a6635ba2edc088834fb57ed6}{Full\+Namespace}} (const char \texorpdfstring{$\ast$}{*}separator, const \mbox{\hyperlink{structflatbuffers_1_1Namespace}{Namespace}} \&\mbox{\hyperlink{idl__gen__ts_8cpp_a97618fe2e31e62d92ace9b30478febba}{ns}})
+\item 
+static std\+::string \mbox{\hyperlink{classflatbuffers_1_1BaseGenerator_a8ce0d595629188ca5de97c3b37d556f5}{Last\+Namespace\+Part}} (const \mbox{\hyperlink{structflatbuffers_1_1Namespace}{Namespace}} \&\mbox{\hyperlink{idl__gen__ts_8cpp_a97618fe2e31e62d92ace9b30478febba}{ns}})
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classflatbuffers_1_1BaseGenerator}{flatbuffers\+::\+Base\+Generator}}}
+\begin{DoxyCompactItemize}
+\item 
+const \mbox{\hyperlink{classflatbuffers_1_1Parser}{Parser}} \& \mbox{\hyperlink{classflatbuffers_1_1BaseGenerator_a0cc4eb04a1d94766c92684135b89c245}{parser\+\_\+}}
+\item 
+const std\+::string \& \mbox{\hyperlink{classflatbuffers_1_1BaseGenerator_ad50fb4f2324ac78a5bc86bb6eb97858c}{path\+\_\+}}
+\item 
+const std\+::string \& \mbox{\hyperlink{classflatbuffers_1_1BaseGenerator_af25bcc46e0d71cfc0f23377c30f426c5}{file\+\_\+name\+\_\+}}
+\item 
+const std\+::string \mbox{\hyperlink{classflatbuffers_1_1BaseGenerator_ab3f483b39345cbc52bc266ebcd0643db}{qualifying\+\_\+start\+\_\+}}
+\item 
+const std\+::string \mbox{\hyperlink{classflatbuffers_1_1BaseGenerator_a95353c1506706274d696a79bb4214215}{qualifying\+\_\+separator\+\_\+}}
+\item 
+const std\+::string \mbox{\hyperlink{classflatbuffers_1_1BaseGenerator_a37d8a4da67a4e0272aed29f28f212762}{default\+\_\+extension\+\_\+}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classflatbuffers_1_1java_1_1JavaGenerator_a0d5269c3426f883b8550b78c4785a0f4}\label{classflatbuffers_1_1java_1_1JavaGenerator_a0d5269c3426f883b8550b78c4785a0f4} 
+\index{flatbuffers::java::JavaGenerator@{flatbuffers::java::JavaGenerator}!JavaGenerator@{JavaGenerator}}
+\index{JavaGenerator@{JavaGenerator}!flatbuffers::java::JavaGenerator@{flatbuffers::java::JavaGenerator}}
+\doxysubsubsection{\texorpdfstring{JavaGenerator()}{JavaGenerator()}}
+{\footnotesize\ttfamily flatbuffers\+::java\+::\+Java\+Generator\+::\+Java\+Generator (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classflatbuffers_1_1Parser}{Parser}} \&}]{parser,  }\item[{const std\+::string \&}]{path,  }\item[{const std\+::string \&}]{file\+\_\+name,  }\item[{const std\+::string \&}]{package\+\_\+prefix }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classflatbuffers_1_1java_1_1JavaGenerator_a7b98575fcd02f1fb9b9c0876d261e36c}\label{classflatbuffers_1_1java_1_1JavaGenerator_a7b98575fcd02f1fb9b9c0876d261e36c} 
+\index{flatbuffers::java::JavaGenerator@{flatbuffers::java::JavaGenerator}!ConvertPrimitiveTypeToObjectWrapper\_ObjectAPI@{ConvertPrimitiveTypeToObjectWrapper\_ObjectAPI}}
+\index{ConvertPrimitiveTypeToObjectWrapper\_ObjectAPI@{ConvertPrimitiveTypeToObjectWrapper\_ObjectAPI}!flatbuffers::java::JavaGenerator@{flatbuffers::java::JavaGenerator}}
+\doxysubsubsection{\texorpdfstring{ConvertPrimitiveTypeToObjectWrapper\_ObjectAPI()}{ConvertPrimitiveTypeToObjectWrapper\_ObjectAPI()}}
+{\footnotesize\ttfamily std\+::string flatbuffers\+::java\+::\+Java\+Generator\+::\+Convert\+Primitive\+Type\+To\+Object\+Wrapper\+\_\+\+Object\+API (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{type\+\_\+name }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflatbuffers_1_1java_1_1JavaGenerator_aa22148b6c35ac8cdf79748b8fb79c1f2}\label{classflatbuffers_1_1java_1_1JavaGenerator_aa22148b6c35ac8cdf79748b8fb79c1f2} 
+\index{flatbuffers::java::JavaGenerator@{flatbuffers::java::JavaGenerator}!CurrentNameSpace@{CurrentNameSpace}}
+\index{CurrentNameSpace@{CurrentNameSpace}!flatbuffers::java::JavaGenerator@{flatbuffers::java::JavaGenerator}}
+\doxysubsubsection{\texorpdfstring{CurrentNameSpace()}{CurrentNameSpace()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{structflatbuffers_1_1Namespace}{Namespace}} \texorpdfstring{$\ast$}{*} flatbuffers\+::java\+::\+Java\+Generator\+::\+Current\+Name\+Space (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classflatbuffers_1_1BaseGenerator_ae9894dabc9bac7eff32a810067a9a221}{flatbuffers\+::\+Base\+Generator}}.
+
+\Hypertarget{classflatbuffers_1_1java_1_1JavaGenerator_a06008bc2a379a6d23fa0fe6ea21ffc3a}\label{classflatbuffers_1_1java_1_1JavaGenerator_a06008bc2a379a6d23fa0fe6ea21ffc3a} 
+\index{flatbuffers::java::JavaGenerator@{flatbuffers::java::JavaGenerator}!DestinationCast@{DestinationCast}}
+\index{DestinationCast@{DestinationCast}!flatbuffers::java::JavaGenerator@{flatbuffers::java::JavaGenerator}}
+\doxysubsubsection{\texorpdfstring{DestinationCast()}{DestinationCast()}}
+{\footnotesize\ttfamily std\+::string flatbuffers\+::java\+::\+Java\+Generator\+::\+Destination\+Cast (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structflatbuffers_1_1Type}{Type}} \&}]{type }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflatbuffers_1_1java_1_1JavaGenerator_a8b3d586addc86e6c3380ae15ff5d2f6d}\label{classflatbuffers_1_1java_1_1JavaGenerator_a8b3d586addc86e6c3380ae15ff5d2f6d} 
+\index{flatbuffers::java::JavaGenerator@{flatbuffers::java::JavaGenerator}!DestinationMask@{DestinationMask}}
+\index{DestinationMask@{DestinationMask}!flatbuffers::java::JavaGenerator@{flatbuffers::java::JavaGenerator}}
+\doxysubsubsection{\texorpdfstring{DestinationMask()}{DestinationMask()}}
+{\footnotesize\ttfamily std\+::string flatbuffers\+::java\+::\+Java\+Generator\+::\+Destination\+Mask (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structflatbuffers_1_1Type}{Type}} \&}]{type,  }\item[{bool}]{vectorelem }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflatbuffers_1_1java_1_1JavaGenerator_adb37cda6fa70e1e7fab8d7df30a17706}\label{classflatbuffers_1_1java_1_1JavaGenerator_adb37cda6fa70e1e7fab8d7df30a17706} 
+\index{flatbuffers::java::JavaGenerator@{flatbuffers::java::JavaGenerator}!DestinationType@{DestinationType}}
+\index{DestinationType@{DestinationType}!flatbuffers::java::JavaGenerator@{flatbuffers::java::JavaGenerator}}
+\doxysubsubsection{\texorpdfstring{DestinationType()}{DestinationType()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structflatbuffers_1_1Type}{Type}} flatbuffers\+::java\+::\+Java\+Generator\+::\+Destination\+Type (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structflatbuffers_1_1Type}{Type}} \&}]{type,  }\item[{bool}]{vectorelem }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflatbuffers_1_1java_1_1JavaGenerator_a4d2e1e1742685e5d54074df380306f59}\label{classflatbuffers_1_1java_1_1JavaGenerator_a4d2e1e1742685e5d54074df380306f59} 
+\index{flatbuffers::java::JavaGenerator@{flatbuffers::java::JavaGenerator}!GenConcreteTypeGet\_ObjectAPI@{GenConcreteTypeGet\_ObjectAPI}}
+\index{GenConcreteTypeGet\_ObjectAPI@{GenConcreteTypeGet\_ObjectAPI}!flatbuffers::java::JavaGenerator@{flatbuffers::java::JavaGenerator}}
+\doxysubsubsection{\texorpdfstring{GenConcreteTypeGet\_ObjectAPI()}{GenConcreteTypeGet\_ObjectAPI()}}
+{\footnotesize\ttfamily std\+::string flatbuffers\+::java\+::\+Java\+Generator\+::\+Gen\+Concrete\+Type\+Get\+\_\+\+Object\+API (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structflatbuffers_1_1Type}{flatbuffers\+::\+Type}} \&}]{type }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflatbuffers_1_1java_1_1JavaGenerator_a44224f969794d6e6b295254c87cd5b2e}\label{classflatbuffers_1_1java_1_1JavaGenerator_a44224f969794d6e6b295254c87cd5b2e} 
+\index{flatbuffers::java::JavaGenerator@{flatbuffers::java::JavaGenerator}!GenDefaultValue@{GenDefaultValue}}
+\index{GenDefaultValue@{GenDefaultValue}!flatbuffers::java::JavaGenerator@{flatbuffers::java::JavaGenerator}}
+\doxysubsubsection{\texorpdfstring{GenDefaultValue()}{GenDefaultValue()}}
+{\footnotesize\ttfamily std\+::string flatbuffers\+::java\+::\+Java\+Generator\+::\+Gen\+Default\+Value (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structflatbuffers_1_1FieldDef}{Field\+Def}} \&}]{field }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflatbuffers_1_1java_1_1JavaGenerator_ab8cb1be4ebe19120b9945a2448cdb266}\label{classflatbuffers_1_1java_1_1JavaGenerator_ab8cb1be4ebe19120b9945a2448cdb266} 
+\index{flatbuffers::java::JavaGenerator@{flatbuffers::java::JavaGenerator}!GenDefaultValueBasic@{GenDefaultValueBasic}}
+\index{GenDefaultValueBasic@{GenDefaultValueBasic}!flatbuffers::java::JavaGenerator@{flatbuffers::java::JavaGenerator}}
+\doxysubsubsection{\texorpdfstring{GenDefaultValueBasic()}{GenDefaultValueBasic()}}
+{\footnotesize\ttfamily std\+::string flatbuffers\+::java\+::\+Java\+Generator\+::\+Gen\+Default\+Value\+Basic (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structflatbuffers_1_1FieldDef}{Field\+Def}} \&}]{field }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflatbuffers_1_1java_1_1JavaGenerator_aeef9f3ae0b1895c0adc7453b40f602de}\label{classflatbuffers_1_1java_1_1JavaGenerator_aeef9f3ae0b1895c0adc7453b40f602de} 
+\index{flatbuffers::java::JavaGenerator@{flatbuffers::java::JavaGenerator}!GenEnum@{GenEnum}}
+\index{GenEnum@{GenEnum}!flatbuffers::java::JavaGenerator@{flatbuffers::java::JavaGenerator}}
+\doxysubsubsection{\texorpdfstring{GenEnum()}{GenEnum()}}
+{\footnotesize\ttfamily void flatbuffers\+::java\+::\+Java\+Generator\+::\+Gen\+Enum (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structflatbuffers_1_1EnumDef}{Enum\+Def}} \&}]{enum\+\_\+def,  }\item[{std\+::string \&}]{code }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflatbuffers_1_1java_1_1JavaGenerator_af687b8afc5329deb3a792cd9fe9f6082}\label{classflatbuffers_1_1java_1_1JavaGenerator_af687b8afc5329deb3a792cd9fe9f6082} 
+\index{flatbuffers::java::JavaGenerator@{flatbuffers::java::JavaGenerator}!GenEnum\_ObjectAPI@{GenEnum\_ObjectAPI}}
+\index{GenEnum\_ObjectAPI@{GenEnum\_ObjectAPI}!flatbuffers::java::JavaGenerator@{flatbuffers::java::JavaGenerator}}
+\doxysubsubsection{\texorpdfstring{GenEnum\_ObjectAPI()}{GenEnum\_ObjectAPI()}}
+{\footnotesize\ttfamily void flatbuffers\+::java\+::\+Java\+Generator\+::\+Gen\+Enum\+\_\+\+Object\+API (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structflatbuffers_1_1EnumDef}{Enum\+Def}} \&}]{enum\+\_\+def,  }\item[{std\+::string \&}]{code }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflatbuffers_1_1java_1_1JavaGenerator_aaae38dfc4317d439b94df1066c1daa1b}\label{classflatbuffers_1_1java_1_1JavaGenerator_aaae38dfc4317d439b94df1066c1daa1b} 
+\index{flatbuffers::java::JavaGenerator@{flatbuffers::java::JavaGenerator}!GenEnumDefaultValue@{GenEnumDefaultValue}}
+\index{GenEnumDefaultValue@{GenEnumDefaultValue}!flatbuffers::java::JavaGenerator@{flatbuffers::java::JavaGenerator}}
+\doxysubsubsection{\texorpdfstring{GenEnumDefaultValue()}{GenEnumDefaultValue()}}
+{\footnotesize\ttfamily std\+::string flatbuffers\+::java\+::\+Java\+Generator\+::\+Gen\+Enum\+Default\+Value (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structflatbuffers_1_1FieldDef}{Field\+Def}} \&}]{field }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflatbuffers_1_1java_1_1JavaGenerator_a90ac9a7d1b68bb2f8f04e13677ec4c4c}\label{classflatbuffers_1_1java_1_1JavaGenerator_a90ac9a7d1b68bb2f8f04e13677ec4c4c} 
+\index{flatbuffers::java::JavaGenerator@{flatbuffers::java::JavaGenerator}!generate@{generate}}
+\index{generate@{generate}!flatbuffers::java::JavaGenerator@{flatbuffers::java::JavaGenerator}}
+\doxysubsubsection{\texorpdfstring{generate()}{generate()}}
+{\footnotesize\ttfamily bool flatbuffers\+::java\+::\+Java\+Generator\+::generate (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classflatbuffers_1_1BaseGenerator_a32156e35f9273398435ce55386874187}{flatbuffers\+::\+Base\+Generator}}.
+
+\Hypertarget{classflatbuffers_1_1java_1_1JavaGenerator_af196ce15eafd3c499e67a18cb6a83b61}\label{classflatbuffers_1_1java_1_1JavaGenerator_af196ce15eafd3c499e67a18cb6a83b61} 
+\index{flatbuffers::java::JavaGenerator@{flatbuffers::java::JavaGenerator}!GenGetter@{GenGetter}}
+\index{GenGetter@{GenGetter}!flatbuffers::java::JavaGenerator@{flatbuffers::java::JavaGenerator}}
+\doxysubsubsection{\texorpdfstring{GenGetter()}{GenGetter()}}
+{\footnotesize\ttfamily std\+::string flatbuffers\+::java\+::\+Java\+Generator\+::\+Gen\+Getter (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structflatbuffers_1_1Type}{Type}} \&}]{type }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflatbuffers_1_1java_1_1JavaGenerator_a0ed7769585ff2a16eb0775b2587e62ee}\label{classflatbuffers_1_1java_1_1JavaGenerator_a0ed7769585ff2a16eb0775b2587e62ee} 
+\index{flatbuffers::java::JavaGenerator@{flatbuffers::java::JavaGenerator}!GenGetterForLookupByKey@{GenGetterForLookupByKey}}
+\index{GenGetterForLookupByKey@{GenGetterForLookupByKey}!flatbuffers::java::JavaGenerator@{flatbuffers::java::JavaGenerator}}
+\doxysubsubsection{\texorpdfstring{GenGetterForLookupByKey()}{GenGetterForLookupByKey()}}
+{\footnotesize\ttfamily std\+::string flatbuffers\+::java\+::\+Java\+Generator\+::\+Gen\+Getter\+For\+Lookup\+By\+Key (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structflatbuffers_1_1FieldDef}{flatbuffers\+::\+Field\+Def}} \texorpdfstring{$\ast$}{*}}]{key\+\_\+field,  }\item[{const std\+::string \&}]{data\+\_\+buffer,  }\item[{const char \texorpdfstring{$\ast$}{*}}]{num = {\ttfamily nullptr} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflatbuffers_1_1java_1_1JavaGenerator_a376811b80f85e9c3839184de3f526cc0}\label{classflatbuffers_1_1java_1_1JavaGenerator_a376811b80f85e9c3839184de3f526cc0} 
+\index{flatbuffers::java::JavaGenerator@{flatbuffers::java::JavaGenerator}!GenKeyGetter@{GenKeyGetter}}
+\index{GenKeyGetter@{GenKeyGetter}!flatbuffers::java::JavaGenerator@{flatbuffers::java::JavaGenerator}}
+\doxysubsubsection{\texorpdfstring{GenKeyGetter()}{GenKeyGetter()}}
+{\footnotesize\ttfamily std\+::string flatbuffers\+::java\+::\+Java\+Generator\+::\+Gen\+Key\+Getter (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structflatbuffers_1_1FieldDef}{flatbuffers\+::\+Field\+Def}} \texorpdfstring{$\ast$}{*}}]{key\+\_\+field }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflatbuffers_1_1java_1_1JavaGenerator_a50a901bc54dbf67784f5d2ec3cfe5445}\label{classflatbuffers_1_1java_1_1JavaGenerator_a50a901bc54dbf67784f5d2ec3cfe5445} 
+\index{flatbuffers::java::JavaGenerator@{flatbuffers::java::JavaGenerator}!GenLookupKeyGetter@{GenLookupKeyGetter}}
+\index{GenLookupKeyGetter@{GenLookupKeyGetter}!flatbuffers::java::JavaGenerator@{flatbuffers::java::JavaGenerator}}
+\doxysubsubsection{\texorpdfstring{GenLookupKeyGetter()}{GenLookupKeyGetter()}}
+{\footnotesize\ttfamily std\+::string flatbuffers\+::java\+::\+Java\+Generator\+::\+Gen\+Lookup\+Key\+Getter (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structflatbuffers_1_1FieldDef}{flatbuffers\+::\+Field\+Def}} \texorpdfstring{$\ast$}{*}}]{key\+\_\+field }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflatbuffers_1_1java_1_1JavaGenerator_a749e2199a3a1bf1fc63f43c33ca85eed}\label{classflatbuffers_1_1java_1_1JavaGenerator_a749e2199a3a1bf1fc63f43c33ca85eed} 
+\index{flatbuffers::java::JavaGenerator@{flatbuffers::java::JavaGenerator}!GenMethod@{GenMethod}}
+\index{GenMethod@{GenMethod}!flatbuffers::java::JavaGenerator@{flatbuffers::java::JavaGenerator}}
+\doxysubsubsection{\texorpdfstring{GenMethod()}{GenMethod()}}
+{\footnotesize\ttfamily std\+::string flatbuffers\+::java\+::\+Java\+Generator\+::\+Gen\+Method (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structflatbuffers_1_1Type}{Type}} \&}]{type }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflatbuffers_1_1java_1_1JavaGenerator_a40e12482b7e658598acaf1c2ae7756a5}\label{classflatbuffers_1_1java_1_1JavaGenerator_a40e12482b7e658598acaf1c2ae7756a5} 
+\index{flatbuffers::java::JavaGenerator@{flatbuffers::java::JavaGenerator}!GenNullableAnnotation@{GenNullableAnnotation}}
+\index{GenNullableAnnotation@{GenNullableAnnotation}!flatbuffers::java::JavaGenerator@{flatbuffers::java::JavaGenerator}}
+\doxysubsubsection{\texorpdfstring{GenNullableAnnotation()}{GenNullableAnnotation()}}
+{\footnotesize\ttfamily std\+::string flatbuffers\+::java\+::\+Java\+Generator\+::\+Gen\+Nullable\+Annotation (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structflatbuffers_1_1Type}{Type}} \&}]{t }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflatbuffers_1_1java_1_1JavaGenerator_a44ff780716a87f8d24ed20f3357dbfcf}\label{classflatbuffers_1_1java_1_1JavaGenerator_a44ff780716a87f8d24ed20f3357dbfcf} 
+\index{flatbuffers::java::JavaGenerator@{flatbuffers::java::JavaGenerator}!GenOffsetConstruct@{GenOffsetConstruct}}
+\index{GenOffsetConstruct@{GenOffsetConstruct}!flatbuffers::java::JavaGenerator@{flatbuffers::java::JavaGenerator}}
+\doxysubsubsection{\texorpdfstring{GenOffsetConstruct()}{GenOffsetConstruct()}}
+{\footnotesize\ttfamily std\+::string flatbuffers\+::java\+::\+Java\+Generator\+::\+Gen\+Offset\+Construct (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{variable\+\_\+name }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflatbuffers_1_1java_1_1JavaGenerator_a5f4ea48aafefd001c26334a38c580de2}\label{classflatbuffers_1_1java_1_1JavaGenerator_a5f4ea48aafefd001c26334a38c580de2} 
+\index{flatbuffers::java::JavaGenerator@{flatbuffers::java::JavaGenerator}!GenOffsetGetter@{GenOffsetGetter}}
+\index{GenOffsetGetter@{GenOffsetGetter}!flatbuffers::java::JavaGenerator@{flatbuffers::java::JavaGenerator}}
+\doxysubsubsection{\texorpdfstring{GenOffsetGetter()}{GenOffsetGetter()}}
+{\footnotesize\ttfamily std\+::string flatbuffers\+::java\+::\+Java\+Generator\+::\+Gen\+Offset\+Getter (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structflatbuffers_1_1FieldDef}{flatbuffers\+::\+Field\+Def}} \texorpdfstring{$\ast$}{*}}]{key\+\_\+field,  }\item[{const char \texorpdfstring{$\ast$}{*}}]{num = {\ttfamily nullptr} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflatbuffers_1_1java_1_1JavaGenerator_a9921cac50813cf5e282aece6baee65aa}\label{classflatbuffers_1_1java_1_1JavaGenerator_a9921cac50813cf5e282aece6baee65aa} 
+\index{flatbuffers::java::JavaGenerator@{flatbuffers::java::JavaGenerator}!GenOffsetType@{GenOffsetType}}
+\index{GenOffsetType@{GenOffsetType}!flatbuffers::java::JavaGenerator@{flatbuffers::java::JavaGenerator}}
+\doxysubsubsection{\texorpdfstring{GenOffsetType()}{GenOffsetType()}}
+{\footnotesize\ttfamily std\+::string flatbuffers\+::java\+::\+Java\+Generator\+::\+Gen\+Offset\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflatbuffers_1_1java_1_1JavaGenerator_a7868cf971c7827513e3b06e0f7df4cd8}\label{classflatbuffers_1_1java_1_1JavaGenerator_a7868cf971c7827513e3b06e0f7df4cd8} 
+\index{flatbuffers::java::JavaGenerator@{flatbuffers::java::JavaGenerator}!GenOptionalScalarCheck@{GenOptionalScalarCheck}}
+\index{GenOptionalScalarCheck@{GenOptionalScalarCheck}!flatbuffers::java::JavaGenerator@{flatbuffers::java::JavaGenerator}}
+\doxysubsubsection{\texorpdfstring{GenOptionalScalarCheck()}{GenOptionalScalarCheck()}}
+{\footnotesize\ttfamily std\+::string flatbuffers\+::java\+::\+Java\+Generator\+::\+Gen\+Optional\+Scalar\+Check (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structflatbuffers_1_1FieldDef}{Field\+Def}} \&}]{field }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflatbuffers_1_1java_1_1JavaGenerator_acab573b581f0f2d278b9d6ae5c686c5d}\label{classflatbuffers_1_1java_1_1JavaGenerator_acab573b581f0f2d278b9d6ae5c686c5d} 
+\index{flatbuffers::java::JavaGenerator@{flatbuffers::java::JavaGenerator}!GenPackUnPack\_ObjectAPI@{GenPackUnPack\_ObjectAPI}}
+\index{GenPackUnPack\_ObjectAPI@{GenPackUnPack\_ObjectAPI}!flatbuffers::java::JavaGenerator@{flatbuffers::java::JavaGenerator}}
+\doxysubsubsection{\texorpdfstring{GenPackUnPack\_ObjectAPI()}{GenPackUnPack\_ObjectAPI()}}
+{\footnotesize\ttfamily void flatbuffers\+::java\+::\+Java\+Generator\+::\+Gen\+Pack\+Un\+Pack\+\_\+\+Object\+API (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structflatbuffers_1_1StructDef}{Struct\+Def}} \&}]{struct\+\_\+def,  }\item[{std\+::string \&}]{code,  }\item[{const \mbox{\hyperlink{structflatbuffers_1_1IDLOptions}{IDLOptions}} \&}]{opts,  }\item[{bool}]{struct\+\_\+has\+\_\+create,  }\item[{const std\+::set$<$ \mbox{\hyperlink{structflatbuffers_1_1FieldDef}{Field\+Def}} \texorpdfstring{$\ast$}{*} $>$ \&}]{field\+\_\+has\+\_\+create }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflatbuffers_1_1java_1_1JavaGenerator_ac0b28f20d8cc7764d2cb99ea6d78d372}\label{classflatbuffers_1_1java_1_1JavaGenerator_ac0b28f20d8cc7764d2cb99ea6d78d372} 
+\index{flatbuffers::java::JavaGenerator@{flatbuffers::java::JavaGenerator}!GenPureAnnotation@{GenPureAnnotation}}
+\index{GenPureAnnotation@{GenPureAnnotation}!flatbuffers::java::JavaGenerator@{flatbuffers::java::JavaGenerator}}
+\doxysubsubsection{\texorpdfstring{GenPureAnnotation()}{GenPureAnnotation()}}
+{\footnotesize\ttfamily std\+::string flatbuffers\+::java\+::\+Java\+Generator\+::\+Gen\+Pure\+Annotation (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structflatbuffers_1_1Type}{Type}} \&}]{t }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflatbuffers_1_1java_1_1JavaGenerator_a7c8cd03199b1829f1cceccb61c4f907f}\label{classflatbuffers_1_1java_1_1JavaGenerator_a7c8cd03199b1829f1cceccb61c4f907f} 
+\index{flatbuffers::java::JavaGenerator@{flatbuffers::java::JavaGenerator}!GenSetter@{GenSetter}}
+\index{GenSetter@{GenSetter}!flatbuffers::java::JavaGenerator@{flatbuffers::java::JavaGenerator}}
+\doxysubsubsection{\texorpdfstring{GenSetter()}{GenSetter()}}
+{\footnotesize\ttfamily std\+::string flatbuffers\+::java\+::\+Java\+Generator\+::\+Gen\+Setter (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structflatbuffers_1_1Type}{Type}} \&}]{type }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflatbuffers_1_1java_1_1JavaGenerator_ab3b38cac5274444bd43c6348f77f3557}\label{classflatbuffers_1_1java_1_1JavaGenerator_ab3b38cac5274444bd43c6348f77f3557} 
+\index{flatbuffers::java::JavaGenerator@{flatbuffers::java::JavaGenerator}!GenStruct@{GenStruct}}
+\index{GenStruct@{GenStruct}!flatbuffers::java::JavaGenerator@{flatbuffers::java::JavaGenerator}}
+\doxysubsubsection{\texorpdfstring{GenStruct()}{GenStruct()}}
+{\footnotesize\ttfamily void flatbuffers\+::java\+::\+Java\+Generator\+::\+Gen\+Struct (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structflatbuffers_1_1StructDef}{Struct\+Def}} \&}]{struct\+\_\+def,  }\item[{std\+::string \&}]{code,  }\item[{const \mbox{\hyperlink{structflatbuffers_1_1IDLOptions}{IDLOptions}} \&}]{opts }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflatbuffers_1_1java_1_1JavaGenerator_a5d69838cf40d92f727b6e624e20518a9}\label{classflatbuffers_1_1java_1_1JavaGenerator_a5d69838cf40d92f727b6e624e20518a9} 
+\index{flatbuffers::java::JavaGenerator@{flatbuffers::java::JavaGenerator}!GenStruct\_ObjectAPI@{GenStruct\_ObjectAPI}}
+\index{GenStruct\_ObjectAPI@{GenStruct\_ObjectAPI}!flatbuffers::java::JavaGenerator@{flatbuffers::java::JavaGenerator}}
+\doxysubsubsection{\texorpdfstring{GenStruct\_ObjectAPI()}{GenStruct\_ObjectAPI()}}
+{\footnotesize\ttfamily void flatbuffers\+::java\+::\+Java\+Generator\+::\+Gen\+Struct\+\_\+\+Object\+API (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structflatbuffers_1_1StructDef}{Struct\+Def}} \&}]{struct\+\_\+def,  }\item[{std\+::string \&}]{code }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflatbuffers_1_1java_1_1JavaGenerator_ad839bf68288148009a279080d188bbe6}\label{classflatbuffers_1_1java_1_1JavaGenerator_ad839bf68288148009a279080d188bbe6} 
+\index{flatbuffers::java::JavaGenerator@{flatbuffers::java::JavaGenerator}!GenStructArgs@{GenStructArgs}}
+\index{GenStructArgs@{GenStructArgs}!flatbuffers::java::JavaGenerator@{flatbuffers::java::JavaGenerator}}
+\doxysubsubsection{\texorpdfstring{GenStructArgs()}{GenStructArgs()}}
+{\footnotesize\ttfamily void flatbuffers\+::java\+::\+Java\+Generator\+::\+Gen\+Struct\+Args (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structflatbuffers_1_1StructDef}{Struct\+Def}} \&}]{struct\+\_\+def,  }\item[{std\+::string \&}]{code,  }\item[{const char \texorpdfstring{$\ast$}{*}}]{nameprefix,  }\item[{size\+\_\+t}]{array\+\_\+count = {\ttfamily 0} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflatbuffers_1_1java_1_1JavaGenerator_a35f7d2f62f566bd1d7f1495bc4ed257d}\label{classflatbuffers_1_1java_1_1JavaGenerator_a35f7d2f62f566bd1d7f1495bc4ed257d} 
+\index{flatbuffers::java::JavaGenerator@{flatbuffers::java::JavaGenerator}!GenStructBody@{GenStructBody}}
+\index{GenStructBody@{GenStructBody}!flatbuffers::java::JavaGenerator@{flatbuffers::java::JavaGenerator}}
+\doxysubsubsection{\texorpdfstring{GenStructBody()}{GenStructBody()}}
+{\footnotesize\ttfamily void flatbuffers\+::java\+::\+Java\+Generator\+::\+Gen\+Struct\+Body (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structflatbuffers_1_1StructDef}{Struct\+Def}} \&}]{struct\+\_\+def,  }\item[{std\+::string \&}]{code,  }\item[{const char \texorpdfstring{$\ast$}{*}}]{nameprefix,  }\item[{size\+\_\+t}]{index = {\ttfamily 0},  }\item[{bool}]{in\+\_\+array = {\ttfamily false} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflatbuffers_1_1java_1_1JavaGenerator_a4c9435ae7e902ea0468e18d0c336073c}\label{classflatbuffers_1_1java_1_1JavaGenerator_a4c9435ae7e902ea0468e18d0c336073c} 
+\index{flatbuffers::java::JavaGenerator@{flatbuffers::java::JavaGenerator}!GenStructPackCall\_ObjectAPI@{GenStructPackCall\_ObjectAPI}}
+\index{GenStructPackCall\_ObjectAPI@{GenStructPackCall\_ObjectAPI}!flatbuffers::java::JavaGenerator@{flatbuffers::java::JavaGenerator}}
+\doxysubsubsection{\texorpdfstring{GenStructPackCall\_ObjectAPI()}{GenStructPackCall\_ObjectAPI()}}
+{\footnotesize\ttfamily void flatbuffers\+::java\+::\+Java\+Generator\+::\+Gen\+Struct\+Pack\+Call\+\_\+\+Object\+API (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structflatbuffers_1_1StructDef}{Struct\+Def}} \&}]{struct\+\_\+def,  }\item[{std\+::string \&}]{code,  }\item[{std\+::string}]{prefix }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflatbuffers_1_1java_1_1JavaGenerator_ad6b3a059068bbf488bbb77d167b09044}\label{classflatbuffers_1_1java_1_1JavaGenerator_ad6b3a059068bbf488bbb77d167b09044} 
+\index{flatbuffers::java::JavaGenerator@{flatbuffers::java::JavaGenerator}!GenStructPackDecl\_ObjectAPI@{GenStructPackDecl\_ObjectAPI}}
+\index{GenStructPackDecl\_ObjectAPI@{GenStructPackDecl\_ObjectAPI}!flatbuffers::java::JavaGenerator@{flatbuffers::java::JavaGenerator}}
+\doxysubsubsection{\texorpdfstring{GenStructPackDecl\_ObjectAPI()}{GenStructPackDecl\_ObjectAPI()}}
+{\footnotesize\ttfamily void flatbuffers\+::java\+::\+Java\+Generator\+::\+Gen\+Struct\+Pack\+Decl\+\_\+\+Object\+API (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structflatbuffers_1_1StructDef}{Struct\+Def}} \&}]{struct\+\_\+def,  }\item[{std\+::vector$<$ Field\+Array\+Length $>$ \&}]{array\+\_\+lengths,  }\item[{std\+::string \&}]{code }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflatbuffers_1_1java_1_1JavaGenerator_a6265c4c99b168e147cc13ac61b5d889d}\label{classflatbuffers_1_1java_1_1JavaGenerator_a6265c4c99b168e147cc13ac61b5d889d} 
+\index{flatbuffers::java::JavaGenerator@{flatbuffers::java::JavaGenerator}!GenTypeBasic@{GenTypeBasic}}
+\index{GenTypeBasic@{GenTypeBasic}!flatbuffers::java::JavaGenerator@{flatbuffers::java::JavaGenerator}}
+\doxysubsubsection{\texorpdfstring{GenTypeBasic()}{GenTypeBasic()}}
+{\footnotesize\ttfamily std\+::string flatbuffers\+::java\+::\+Java\+Generator\+::\+Gen\+Type\+Basic (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structflatbuffers_1_1Type}{Type}} \&}]{type }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflatbuffers_1_1java_1_1JavaGenerator_ac15ae57776b8306bed4b3696868503b7}\label{classflatbuffers_1_1java_1_1JavaGenerator_ac15ae57776b8306bed4b3696868503b7} 
+\index{flatbuffers::java::JavaGenerator@{flatbuffers::java::JavaGenerator}!GenTypeGet@{GenTypeGet}}
+\index{GenTypeGet@{GenTypeGet}!flatbuffers::java::JavaGenerator@{flatbuffers::java::JavaGenerator}}
+\doxysubsubsection{\texorpdfstring{GenTypeGet()}{GenTypeGet()}}
+{\footnotesize\ttfamily std\+::string flatbuffers\+::java\+::\+Java\+Generator\+::\+Gen\+Type\+Get (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structflatbuffers_1_1Type}{Type}} \&}]{type }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflatbuffers_1_1java_1_1JavaGenerator_abb70e28d1dbb070ad8fa1aaf4d1dce47}\label{classflatbuffers_1_1java_1_1JavaGenerator_abb70e28d1dbb070ad8fa1aaf4d1dce47} 
+\index{flatbuffers::java::JavaGenerator@{flatbuffers::java::JavaGenerator}!GenTypeGet\_ObjectAPI@{GenTypeGet\_ObjectAPI}}
+\index{GenTypeGet\_ObjectAPI@{GenTypeGet\_ObjectAPI}!flatbuffers::java::JavaGenerator@{flatbuffers::java::JavaGenerator}}
+\doxysubsubsection{\texorpdfstring{GenTypeGet\_ObjectAPI()}{GenTypeGet\_ObjectAPI()}}
+{\footnotesize\ttfamily std\+::string flatbuffers\+::java\+::\+Java\+Generator\+::\+Gen\+Type\+Get\+\_\+\+Object\+API (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structflatbuffers_1_1Type}{flatbuffers\+::\+Type}} \&}]{type,  }\item[{bool}]{vectorelem,  }\item[{bool}]{wrap\+\_\+in\+\_\+namespace }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflatbuffers_1_1java_1_1JavaGenerator_a41b62094e81b9a6be4c61db5f4076418}\label{classflatbuffers_1_1java_1_1JavaGenerator_a41b62094e81b9a6be4c61db5f4076418} 
+\index{flatbuffers::java::JavaGenerator@{flatbuffers::java::JavaGenerator}!GenTypeNameDest@{GenTypeNameDest}}
+\index{GenTypeNameDest@{GenTypeNameDest}!flatbuffers::java::JavaGenerator@{flatbuffers::java::JavaGenerator}}
+\doxysubsubsection{\texorpdfstring{GenTypeNameDest()}{GenTypeNameDest()}}
+{\footnotesize\ttfamily std\+::string flatbuffers\+::java\+::\+Java\+Generator\+::\+Gen\+Type\+Name\+Dest (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structflatbuffers_1_1Type}{Type}} \&}]{type }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflatbuffers_1_1java_1_1JavaGenerator_a0ac081f53917a39138a01c704561f192}\label{classflatbuffers_1_1java_1_1JavaGenerator_a0ac081f53917a39138a01c704561f192} 
+\index{flatbuffers::java::JavaGenerator@{flatbuffers::java::JavaGenerator}!GenTypePointer@{GenTypePointer}}
+\index{GenTypePointer@{GenTypePointer}!flatbuffers::java::JavaGenerator@{flatbuffers::java::JavaGenerator}}
+\doxysubsubsection{\texorpdfstring{GenTypePointer()}{GenTypePointer()}}
+{\footnotesize\ttfamily std\+::string flatbuffers\+::java\+::\+Java\+Generator\+::\+Gen\+Type\+Pointer (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structflatbuffers_1_1Type}{Type}} \&}]{type }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflatbuffers_1_1java_1_1JavaGenerator_ac7f3d88acd80aa30cc6ec4bdc62897b7}\label{classflatbuffers_1_1java_1_1JavaGenerator_ac7f3d88acd80aa30cc6ec4bdc62897b7} 
+\index{flatbuffers::java::JavaGenerator@{flatbuffers::java::JavaGenerator}!GenUnionUnPack\_ObjectAPI@{GenUnionUnPack\_ObjectAPI}}
+\index{GenUnionUnPack\_ObjectAPI@{GenUnionUnPack\_ObjectAPI}!flatbuffers::java::JavaGenerator@{flatbuffers::java::JavaGenerator}}
+\doxysubsubsection{\texorpdfstring{GenUnionUnPack\_ObjectAPI()}{GenUnionUnPack\_ObjectAPI()}}
+{\footnotesize\ttfamily void flatbuffers\+::java\+::\+Java\+Generator\+::\+Gen\+Union\+Un\+Pack\+\_\+\+Object\+API (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structflatbuffers_1_1EnumDef}{Enum\+Def}} \&}]{enum\+\_\+def,  }\item[{std\+::string \&}]{code,  }\item[{const std\+::string \&}]{type\+\_\+name,  }\item[{const std\+::string \&}]{field\+\_\+name,  }\item[{bool}]{is\+\_\+vector }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflatbuffers_1_1java_1_1JavaGenerator_a1f0b913a69b5d49b6f600a01c55aeca7}\label{classflatbuffers_1_1java_1_1JavaGenerator_a1f0b913a69b5d49b6f600a01c55aeca7} 
+\index{flatbuffers::java::JavaGenerator@{flatbuffers::java::JavaGenerator}!GenVectorAccessObject@{GenVectorAccessObject}}
+\index{GenVectorAccessObject@{GenVectorAccessObject}!flatbuffers::java::JavaGenerator@{flatbuffers::java::JavaGenerator}}
+\doxysubsubsection{\texorpdfstring{GenVectorAccessObject()}{GenVectorAccessObject()}}
+{\footnotesize\ttfamily void flatbuffers\+::java\+::\+Java\+Generator\+::\+Gen\+Vector\+Access\+Object (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structflatbuffers_1_1StructDef}{Struct\+Def}} \&}]{struct\+\_\+def,  }\item[{std\+::string \&}]{code }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflatbuffers_1_1java_1_1JavaGenerator_a4cbffb0d59ab62c5119a1a9bb0444974}\label{classflatbuffers_1_1java_1_1JavaGenerator_a4cbffb0d59ab62c5119a1a9bb0444974} 
+\index{flatbuffers::java::JavaGenerator@{flatbuffers::java::JavaGenerator}!GenVectorOffsetType@{GenVectorOffsetType}}
+\index{GenVectorOffsetType@{GenVectorOffsetType}!flatbuffers::java::JavaGenerator@{flatbuffers::java::JavaGenerator}}
+\doxysubsubsection{\texorpdfstring{GenVectorOffsetType()}{GenVectorOffsetType()}}
+{\footnotesize\ttfamily std\+::string flatbuffers\+::java\+::\+Java\+Generator\+::\+Gen\+Vector\+Offset\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflatbuffers_1_1java_1_1JavaGenerator_acba68fedf871d251780dcf7234153549}\label{classflatbuffers_1_1java_1_1JavaGenerator_acba68fedf871d251780dcf7234153549} 
+\index{flatbuffers::java::JavaGenerator@{flatbuffers::java::JavaGenerator}!operator=@{operator=}}
+\index{operator=@{operator=}!flatbuffers::java::JavaGenerator@{flatbuffers::java::JavaGenerator}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classflatbuffers_1_1java_1_1JavaGenerator}{Java\+Generator}} \& flatbuffers\+::java\+::\+Java\+Generator\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classflatbuffers_1_1java_1_1JavaGenerator}{Java\+Generator}} \&}]{ }\end{DoxyParamCaption})}
+
+\Hypertarget{classflatbuffers_1_1java_1_1JavaGenerator_aeaa709db979fda3509b2effcc8c16d11}\label{classflatbuffers_1_1java_1_1JavaGenerator_aeaa709db979fda3509b2effcc8c16d11} 
+\index{flatbuffers::java::JavaGenerator@{flatbuffers::java::JavaGenerator}!SaveType@{SaveType}}
+\index{SaveType@{SaveType}!flatbuffers::java::JavaGenerator@{flatbuffers::java::JavaGenerator}}
+\doxysubsubsection{\texorpdfstring{SaveType()}{SaveType()}}
+{\footnotesize\ttfamily bool flatbuffers\+::java\+::\+Java\+Generator\+::\+Save\+Type (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{defname,  }\item[{const \mbox{\hyperlink{structflatbuffers_1_1Namespace}{Namespace}} \&}]{ns,  }\item[{const std\+::string \&}]{classcode,  }\item[{bool}]{needs\+\_\+includes }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflatbuffers_1_1java_1_1JavaGenerator_a61c09f08f7b5d86088180337fe1ee80f}\label{classflatbuffers_1_1java_1_1JavaGenerator_a61c09f08f7b5d86088180337fe1ee80f} 
+\index{flatbuffers::java::JavaGenerator@{flatbuffers::java::JavaGenerator}!SourceCast@{SourceCast}}
+\index{SourceCast@{SourceCast}!flatbuffers::java::JavaGenerator@{flatbuffers::java::JavaGenerator}}
+\doxysubsubsection{\texorpdfstring{SourceCast()}{SourceCast()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily std\+::string flatbuffers\+::java\+::\+Java\+Generator\+::\+Source\+Cast (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structflatbuffers_1_1Type}{Type}} \&}]{type }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflatbuffers_1_1java_1_1JavaGenerator_ad7a18d93b74c03b996e7d77ddd55df4c}\label{classflatbuffers_1_1java_1_1JavaGenerator_ad7a18d93b74c03b996e7d77ddd55df4c} 
+\index{flatbuffers::java::JavaGenerator@{flatbuffers::java::JavaGenerator}!SourceCast@{SourceCast}}
+\index{SourceCast@{SourceCast}!flatbuffers::java::JavaGenerator@{flatbuffers::java::JavaGenerator}}
+\doxysubsubsection{\texorpdfstring{SourceCast()}{SourceCast()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily std\+::string flatbuffers\+::java\+::\+Java\+Generator\+::\+Source\+Cast (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structflatbuffers_1_1Type}{Type}} \&}]{type,  }\item[{bool}]{cast\+From\+Dest }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflatbuffers_1_1java_1_1JavaGenerator_a773640e99170de917fc9c6804bf9d44f}\label{classflatbuffers_1_1java_1_1JavaGenerator_a773640e99170de917fc9c6804bf9d44f} 
+\index{flatbuffers::java::JavaGenerator@{flatbuffers::java::JavaGenerator}!SourceCastBasic@{SourceCastBasic}}
+\index{SourceCastBasic@{SourceCastBasic}!flatbuffers::java::JavaGenerator@{flatbuffers::java::JavaGenerator}}
+\doxysubsubsection{\texorpdfstring{SourceCastBasic()}{SourceCastBasic()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily std\+::string flatbuffers\+::java\+::\+Java\+Generator\+::\+Source\+Cast\+Basic (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structflatbuffers_1_1Type}{Type}} \&}]{type }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflatbuffers_1_1java_1_1JavaGenerator_a725bbf6f3ccd38acb714ea76099e33dc}\label{classflatbuffers_1_1java_1_1JavaGenerator_a725bbf6f3ccd38acb714ea76099e33dc} 
+\index{flatbuffers::java::JavaGenerator@{flatbuffers::java::JavaGenerator}!SourceCastBasic@{SourceCastBasic}}
+\index{SourceCastBasic@{SourceCastBasic}!flatbuffers::java::JavaGenerator@{flatbuffers::java::JavaGenerator}}
+\doxysubsubsection{\texorpdfstring{SourceCastBasic()}{SourceCastBasic()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily std\+::string flatbuffers\+::java\+::\+Java\+Generator\+::\+Source\+Cast\+Basic (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structflatbuffers_1_1Type}{Type}} \&}]{type,  }\item[{bool}]{cast\+From\+Dest }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classflatbuffers_1_1java_1_1JavaGenerator_a8c733fcea64817f9c5f374c0bab046f5}\label{classflatbuffers_1_1java_1_1JavaGenerator_a8c733fcea64817f9c5f374c0bab046f5} 
+\index{flatbuffers::java::JavaGenerator@{flatbuffers::java::JavaGenerator}!cur\_name\_space\_@{cur\_name\_space\_}}
+\index{cur\_name\_space\_@{cur\_name\_space\_}!flatbuffers::java::JavaGenerator@{flatbuffers::java::JavaGenerator}}
+\doxysubsubsection{\texorpdfstring{cur\_name\_space\_}{cur\_name\_space\_}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{structflatbuffers_1_1Namespace}{Namespace}}\texorpdfstring{$\ast$}{*} flatbuffers\+::java\+::\+Java\+Generator\+::cur\+\_\+name\+\_\+space\+\_\+}
+
+\Hypertarget{classflatbuffers_1_1java_1_1JavaGenerator_a12671462fe9431c5ca1b7de7b326acf0}\label{classflatbuffers_1_1java_1_1JavaGenerator_a12671462fe9431c5ca1b7de7b326acf0} 
+\index{flatbuffers::java::JavaGenerator@{flatbuffers::java::JavaGenerator}!namer\_@{namer\_}}
+\index{namer\_@{namer\_}!flatbuffers::java::JavaGenerator@{flatbuffers::java::JavaGenerator}}
+\doxysubsubsection{\texorpdfstring{namer\_}{namer\_}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{classflatbuffers_1_1IdlNamer}{Idl\+Namer}} flatbuffers\+::java\+::\+Java\+Generator\+::namer\+\_\+}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+flatbuffers/src/\mbox{\hyperlink{idl__gen__java_8cpp}{idl\+\_\+gen\+\_\+java.\+cpp}}\end{DoxyCompactItemize}

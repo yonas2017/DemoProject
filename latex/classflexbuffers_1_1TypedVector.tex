@@ -1,0 +1,114 @@
+\doxysection{flexbuffers\+::Typed\+Vector Class Reference}
+\hypertarget{classflexbuffers_1_1TypedVector}{}\label{classflexbuffers_1_1TypedVector}\index{flexbuffers::TypedVector@{flexbuffers::TypedVector}}
+
+
+{\ttfamily \#include $<$flexbuffers.\+h$>$}
+
+
+
+Inheritance diagram for flexbuffers\+::Typed\+Vector\+:
+% FIG 0
+
+
+Collaboration diagram for flexbuffers\+::Typed\+Vector\+:
+% FIG 1
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classflexbuffers_1_1TypedVector_aaba53f295b21000d683cfcd06f79725e}{Typed\+Vector}} (const uint8\+\_\+t \texorpdfstring{$\ast$}{*}data, uint8\+\_\+t byte\+\_\+width, \mbox{\hyperlink{namespaceflexbuffers_aa0b4995478c086629fff32c3d10c3872}{Type}} element\+\_\+type)
+\item 
+\mbox{\hyperlink{classflexbuffers_1_1Reference}{Reference}} \mbox{\hyperlink{classflexbuffers_1_1TypedVector_a109cfea27be800ce8b725411dbd23003}{operator\mbox{[}$\,$\mbox{]}}} (size\+\_\+t \mbox{\hyperlink{gmock-matchers-comparisons__test_8cc_acb559820d9ca11295b4500f179ef6392}{i}}) const
+\item 
+bool \mbox{\hyperlink{classflexbuffers_1_1TypedVector_a7f145e06d8cebea35749d0ac054a63df}{Is\+The\+Empty\+Vector}} () const
+\item 
+\mbox{\hyperlink{namespaceflexbuffers_aa0b4995478c086629fff32c3d10c3872}{Type}} \mbox{\hyperlink{classflexbuffers_1_1TypedVector_ae7bd520acac2bb62459b3d45db115b8d}{Element\+Type}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classflexbuffers_1_1Sized}{flexbuffers\+::\+Sized}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classflexbuffers_1_1Sized_a0348b6de83e5ebcf2d8faea80b77f44d}{Sized}} (const uint8\+\_\+t \texorpdfstring{$\ast$}{*}data, uint8\+\_\+t byte\+\_\+width)
+\item 
+\mbox{\hyperlink{classflexbuffers_1_1Sized_a55503a7034463dd05b85c8cb1476eeb5}{Sized}} (const uint8\+\_\+t \texorpdfstring{$\ast$}{*}data, uint8\+\_\+t byte\+\_\+width, size\+\_\+t sz)
+\item 
+size\+\_\+t \mbox{\hyperlink{classflexbuffers_1_1Sized_a886c94ebc26b6e00a7223b180967e59d}{size}} () const
+\item 
+size\+\_\+t \mbox{\hyperlink{classflexbuffers_1_1Sized_a59b6fba1533ffd06d85ba1a8051ec908}{read\+\_\+size}} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classflexbuffers_1_1Object}{flexbuffers\+::\+Object}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classflexbuffers_1_1Object_a6ca4d944e0fbaf3f58352a2b5cd54a32}{Object}} (const uint8\+\_\+t \texorpdfstring{$\ast$}{*}data, uint8\+\_\+t byte\+\_\+width)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{classflexbuffers_1_1TypedVector}{Typed\+Vector}} \mbox{\hyperlink{classflexbuffers_1_1TypedVector_a134ba13ea57c712fd9a9e3b9d43166b8}{Empty\+Typed\+Vector}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+friend \mbox{\hyperlink{classflexbuffers_1_1TypedVector_ade8c6c90a135bd70a188ff45df2b06bc}{Reference}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classflexbuffers_1_1Sized}{flexbuffers\+::\+Sized}}}
+\begin{DoxyCompactItemize}
+\item 
+size\+\_\+t \mbox{\hyperlink{classflexbuffers_1_1Sized_a3c6f9201cbccd98a898e7a6491cf52e6}{size\+\_\+}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classflexbuffers_1_1Object}{flexbuffers\+::\+Object}}}
+\begin{DoxyCompactItemize}
+\item 
+const uint8\+\_\+t \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classflexbuffers_1_1Object_a6720a3c4da34c8756254709cfd005fbf}{data\+\_\+}}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{classflexbuffers_1_1Object_aa73cf57f904fe4d10c5e4cfa6584e43a}{byte\+\_\+width\+\_\+}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classflexbuffers_1_1TypedVector_aaba53f295b21000d683cfcd06f79725e}\label{classflexbuffers_1_1TypedVector_aaba53f295b21000d683cfcd06f79725e} 
+\index{flexbuffers::TypedVector@{flexbuffers::TypedVector}!TypedVector@{TypedVector}}
+\index{TypedVector@{TypedVector}!flexbuffers::TypedVector@{flexbuffers::TypedVector}}
+\doxysubsubsection{\texorpdfstring{TypedVector()}{TypedVector()}}
+{\footnotesize\ttfamily flexbuffers\+::\+Typed\+Vector\+::\+Typed\+Vector (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t \texorpdfstring{$\ast$}{*}}]{data,  }\item[{uint8\+\_\+t}]{byte\+\_\+width,  }\item[{\mbox{\hyperlink{namespaceflexbuffers_aa0b4995478c086629fff32c3d10c3872}{Type}}}]{element\+\_\+type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classflexbuffers_1_1TypedVector_ae7bd520acac2bb62459b3d45db115b8d}\label{classflexbuffers_1_1TypedVector_ae7bd520acac2bb62459b3d45db115b8d} 
+\index{flexbuffers::TypedVector@{flexbuffers::TypedVector}!ElementType@{ElementType}}
+\index{ElementType@{ElementType}!flexbuffers::TypedVector@{flexbuffers::TypedVector}}
+\doxysubsubsection{\texorpdfstring{ElementType()}{ElementType()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespaceflexbuffers_aa0b4995478c086629fff32c3d10c3872}{Type}} flexbuffers\+::\+Typed\+Vector\+::\+Element\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflexbuffers_1_1TypedVector_a134ba13ea57c712fd9a9e3b9d43166b8}\label{classflexbuffers_1_1TypedVector_a134ba13ea57c712fd9a9e3b9d43166b8} 
+\index{flexbuffers::TypedVector@{flexbuffers::TypedVector}!EmptyTypedVector@{EmptyTypedVector}}
+\index{EmptyTypedVector@{EmptyTypedVector}!flexbuffers::TypedVector@{flexbuffers::TypedVector}}
+\doxysubsubsection{\texorpdfstring{EmptyTypedVector()}{EmptyTypedVector()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{classflexbuffers_1_1TypedVector}{Typed\+Vector}} flexbuffers\+::\+Typed\+Vector\+::\+Empty\+Typed\+Vector (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+\Hypertarget{classflexbuffers_1_1TypedVector_a7f145e06d8cebea35749d0ac054a63df}\label{classflexbuffers_1_1TypedVector_a7f145e06d8cebea35749d0ac054a63df} 
+\index{flexbuffers::TypedVector@{flexbuffers::TypedVector}!IsTheEmptyVector@{IsTheEmptyVector}}
+\index{IsTheEmptyVector@{IsTheEmptyVector}!flexbuffers::TypedVector@{flexbuffers::TypedVector}}
+\doxysubsubsection{\texorpdfstring{IsTheEmptyVector()}{IsTheEmptyVector()}}
+{\footnotesize\ttfamily bool flexbuffers\+::\+Typed\+Vector\+::\+Is\+The\+Empty\+Vector (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflexbuffers_1_1TypedVector_a109cfea27be800ce8b725411dbd23003}\label{classflexbuffers_1_1TypedVector_a109cfea27be800ce8b725411dbd23003} 
+\index{flexbuffers::TypedVector@{flexbuffers::TypedVector}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!flexbuffers::TypedVector@{flexbuffers::TypedVector}}
+\doxysubsubsection{\texorpdfstring{operator[]()}{operator[]()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classflexbuffers_1_1Reference}{Reference}} flexbuffers\+::\+Typed\+Vector\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{i }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classflexbuffers_1_1TypedVector_ade8c6c90a135bd70a188ff45df2b06bc}\label{classflexbuffers_1_1TypedVector_ade8c6c90a135bd70a188ff45df2b06bc} 
+\index{flexbuffers::TypedVector@{flexbuffers::TypedVector}!Reference@{Reference}}
+\index{Reference@{Reference}!flexbuffers::TypedVector@{flexbuffers::TypedVector}}
+\doxysubsubsection{\texorpdfstring{Reference}{Reference}}
+{\footnotesize\ttfamily friend flexbuffers\+::\+Typed\+Vector\+::\+Reference}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+flatbuffers/include/flatbuffers/\mbox{\hyperlink{flexbuffers_8h}{flexbuffers.\+h}}\end{DoxyCompactItemize}

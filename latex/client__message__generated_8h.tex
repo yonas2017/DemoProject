@@ -1,0 +1,172 @@
+\doxysection{inc/client\+\_\+message\+\_\+generated.h File Reference}
+\hypertarget{client__message__generated_8h}{}\label{client__message__generated_8h}\index{inc/client\_message\_generated.h@{inc/client\_message\_generated.h}}
+{\ttfamily \#include "{}flatbuffers/flatbuffers.\+h"{}}\newline
+Include dependency graph for client\+\_\+message\+\_\+generated.\+h\+:
+% FIG 0
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structFLATBUFFERS__FINAL__CLASS}{FLATBUFFERS\+\_\+\+FINAL\+\_\+\+CLASS}}
+\item 
+struct \mbox{\hyperlink{structclient__message__tBuilder}{client\+\_\+message\+\_\+t\+Builder}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{client__message__generated_8h_abcaf815fb7b793ff81f55346c08c3396}{Client\+Message\+Type}} \{ \mbox{\hyperlink{client__message__generated_8h_abcaf815fb7b793ff81f55346c08c3396ac1c50e0504ec21583b7ba451a87b7d1e}{GET\+\_\+\+JOB}} = 0
+, \mbox{\hyperlink{client__message__generated_8h_abcaf815fb7b793ff81f55346c08c3396ae990ca423d4f138a5e5023f6ca19d574}{NORMAL\+\_\+\+TERMINATOIN}} = 1
+, \mbox{\hyperlink{client__message__generated_8h_abcaf815fb7b793ff81f55346c08c3396a8a1adfd5e3c7e2b12cac1d7abe3982e1}{FAIL\+\_\+\+TERMINATION}} = 2
+, \mbox{\hyperlink{client__message__generated_8h_abcaf815fb7b793ff81f55346c08c3396a8409965ae2573c6cf11db5215bec7774}{QUIT\+\_\+\+PROGRAM}} = 3
+ \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+const \mbox{\hyperlink{client__message__generated_8h_abcaf815fb7b793ff81f55346c08c3396}{Client\+Message\+Type}}(\& \mbox{\hyperlink{client__message__generated_8h_a7f26b7c54d02facbd8d13899d962aead}{Enum\+Values\+Client\+Message\+Type}} ())\mbox{[}4\mbox{]}
+\item 
+const char \texorpdfstring{$\ast$}{*}const \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{client__message__generated_8h_a62a937046aeaae8c60464cd22a1e6e44}{Enum\+Names\+Client\+Message\+Type}} ()
+\item 
+const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{client__message__generated_8h_a4a6349c4d144d69b03c304e9cf57a7ea}{Enum\+Name\+Client\+Message\+Type}} (\mbox{\hyperlink{client__message__generated_8h_abcaf815fb7b793ff81f55346c08c3396}{Client\+Message\+Type}} e)
+\item 
+inline \+::flatbuffers\+::\+Offset$<$ \mbox{\hyperlink{structclient__message__t}{client\+\_\+message\+\_\+t}} $>$ \mbox{\hyperlink{client__message__generated_8h_a48e63e7553dccc585881028f55ec3ca1}{Createclient\+\_\+message\+\_\+t}} (\mbox{\hyperlink{namespaceflatbuffers_a41ac7b1c8f5f4a869e8f649b6c171ce7}{\+::flatbuffers\+::\+Flat\+Buffer\+Builder}} \&\+\_\+fbb, \mbox{\hyperlink{client__message__generated_8h_abcaf815fb7b793ff81f55346c08c3396}{Client\+Message\+Type}} msg\+\_\+type=\mbox{\hyperlink{client__message__generated_8h_abcaf815fb7b793ff81f55346c08c3396ac1c50e0504ec21583b7ba451a87b7d1e}{GET\+\_\+\+JOB}}, bool all\+\_\+jobs=false, uint16\+\_\+t num\+\_\+jobs=0)
+\item 
+const \mbox{\hyperlink{structclient__message__t}{client\+\_\+message\+\_\+t}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{client__message__generated_8h_ac5fe97b30786cad2df66f7d7e46bdf6a}{Getclient\+\_\+message\+\_\+t}} (const void \texorpdfstring{$\ast$}{*}buf)
+\item 
+const \mbox{\hyperlink{structclient__message__t}{client\+\_\+message\+\_\+t}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{client__message__generated_8h_a74834d373c256dbdf0b3b415356ea8f7}{Get\+Size\+Prefixedclient\+\_\+message\+\_\+t}} (const void \texorpdfstring{$\ast$}{*}buf)
+\item 
+\mbox{\hyperlink{structclient__message__t}{client\+\_\+message\+\_\+t}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{client__message__generated_8h_a3f9dd6c23ec430a32e54ccba9217c0bc}{Get\+Mutableclient\+\_\+message\+\_\+t}} (void \texorpdfstring{$\ast$}{*}buf)
+\item 
+\mbox{\hyperlink{structclient__message__t}{client\+\_\+message\+\_\+t}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{client__message__generated_8h_aa92b8155eefac7933809c2d24d1c3078}{Get\+Mutable\+Size\+Prefixedclient\+\_\+message\+\_\+t}} (void \texorpdfstring{$\ast$}{*}buf)
+\item 
+bool \mbox{\hyperlink{client__message__generated_8h_a10a6ef1bca21e8c0c2091990767d994e}{Verifyclient\+\_\+message\+\_\+t\+Buffer}} (\mbox{\hyperlink{namespaceflatbuffers_a3268477941df91db2eb06442b6e5f922}{\+::flatbuffers\+::\+Verifier}} \&verifier)
+\item 
+bool \mbox{\hyperlink{client__message__generated_8h_ae3023695b125dc87a3d63cdfcdac20ee}{Verify\+Size\+Prefixedclient\+\_\+message\+\_\+t\+Buffer}} (\mbox{\hyperlink{namespaceflatbuffers_a3268477941df91db2eb06442b6e5f922}{\+::flatbuffers\+::\+Verifier}} \&verifier)
+\item 
+void \mbox{\hyperlink{client__message__generated_8h_a04edc17b49711e94022599f0d916d223}{Finishclient\+\_\+message\+\_\+t\+Buffer}} (\mbox{\hyperlink{namespaceflatbuffers_a41ac7b1c8f5f4a869e8f649b6c171ce7}{\+::flatbuffers\+::\+Flat\+Buffer\+Builder}} \&fbb, \+::flatbuffers\+::\+Offset$<$ \mbox{\hyperlink{structclient__message__t}{client\+\_\+message\+\_\+t}} $>$ root)
+\item 
+void \mbox{\hyperlink{client__message__generated_8h_a647d36b82534fd2c1335c0e28f5e4c66}{Finish\+Size\+Prefixedclient\+\_\+message\+\_\+t\+Buffer}} (\mbox{\hyperlink{namespaceflatbuffers_a41ac7b1c8f5f4a869e8f649b6c171ce7}{\+::flatbuffers\+::\+Flat\+Buffer\+Builder}} \&fbb, \+::flatbuffers\+::\+Offset$<$ \mbox{\hyperlink{structclient__message__t}{client\+\_\+message\+\_\+t}} $>$ root)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{client__message__generated_8h_a5c3ae3aa9b1ea1a1495ff0aa28090e86}{VT\+\_\+\+MSG\+\_\+\+TYPE}} = 4
+\item 
+\mbox{\hyperlink{client__message__generated_8h_af96c5d5674fc0f8105e04089d952f6ab}{VT\+\_\+\+ALL\+\_\+\+JOBS}} = 6
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Enumeration Type Documentation}
+\Hypertarget{client__message__generated_8h_abcaf815fb7b793ff81f55346c08c3396}\label{client__message__generated_8h_abcaf815fb7b793ff81f55346c08c3396} 
+\index{client\_message\_generated.h@{client\_message\_generated.h}!ClientMessageType@{ClientMessageType}}
+\index{ClientMessageType@{ClientMessageType}!client\_message\_generated.h@{client\_message\_generated.h}}
+\doxysubsubsection{\texorpdfstring{ClientMessageType}{ClientMessageType}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{client__message__generated_8h_abcaf815fb7b793ff81f55346c08c3396}{Client\+Message\+Type}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GET\_JOB@{GET\_JOB}!client\_message\_generated.h@{client\_message\_generated.h}}\index{client\_message\_generated.h@{client\_message\_generated.h}!GET\_JOB@{GET\_JOB}}}\Hypertarget{client__message__generated_8h_abcaf815fb7b793ff81f55346c08c3396ac1c50e0504ec21583b7ba451a87b7d1e}\label{client__message__generated_8h_abcaf815fb7b793ff81f55346c08c3396ac1c50e0504ec21583b7ba451a87b7d1e} 
+GET\+\_\+\+JOB&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NORMAL\_TERMINATOIN@{NORMAL\_TERMINATOIN}!client\_message\_generated.h@{client\_message\_generated.h}}\index{client\_message\_generated.h@{client\_message\_generated.h}!NORMAL\_TERMINATOIN@{NORMAL\_TERMINATOIN}}}\Hypertarget{client__message__generated_8h_abcaf815fb7b793ff81f55346c08c3396ae990ca423d4f138a5e5023f6ca19d574}\label{client__message__generated_8h_abcaf815fb7b793ff81f55346c08c3396ae990ca423d4f138a5e5023f6ca19d574} 
+NORMAL\+\_\+\+TERMINATOIN&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{FAIL\_TERMINATION@{FAIL\_TERMINATION}!client\_message\_generated.h@{client\_message\_generated.h}}\index{client\_message\_generated.h@{client\_message\_generated.h}!FAIL\_TERMINATION@{FAIL\_TERMINATION}}}\Hypertarget{client__message__generated_8h_abcaf815fb7b793ff81f55346c08c3396a8a1adfd5e3c7e2b12cac1d7abe3982e1}\label{client__message__generated_8h_abcaf815fb7b793ff81f55346c08c3396a8a1adfd5e3c7e2b12cac1d7abe3982e1} 
+FAIL\+\_\+\+TERMINATION&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{QUIT\_PROGRAM@{QUIT\_PROGRAM}!client\_message\_generated.h@{client\_message\_generated.h}}\index{client\_message\_generated.h@{client\_message\_generated.h}!QUIT\_PROGRAM@{QUIT\_PROGRAM}}}\Hypertarget{client__message__generated_8h_abcaf815fb7b793ff81f55346c08c3396a8409965ae2573c6cf11db5215bec7774}\label{client__message__generated_8h_abcaf815fb7b793ff81f55346c08c3396a8409965ae2573c6cf11db5215bec7774} 
+QUIT\+\_\+\+PROGRAM&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{client__message__generated_8h_a48e63e7553dccc585881028f55ec3ca1}\label{client__message__generated_8h_a48e63e7553dccc585881028f55ec3ca1} 
+\index{client\_message\_generated.h@{client\_message\_generated.h}!Createclient\_message\_t@{Createclient\_message\_t}}
+\index{Createclient\_message\_t@{Createclient\_message\_t}!client\_message\_generated.h@{client\_message\_generated.h}}
+\doxysubsubsection{\texorpdfstring{Createclient\_message\_t()}{Createclient\_message\_t()}}
+{\footnotesize\ttfamily inline \+::flatbuffers\+::\+Offset$<$ \mbox{\hyperlink{structclient__message__t}{client\+\_\+message\+\_\+t}} $>$ Createclient\+\_\+message\+\_\+t (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceflatbuffers_a41ac7b1c8f5f4a869e8f649b6c171ce7}{\+::flatbuffers\+::\+Flat\+Buffer\+Builder}} \&}]{\+\_\+fbb,  }\item[{\mbox{\hyperlink{client__message__generated_8h_abcaf815fb7b793ff81f55346c08c3396}{Client\+Message\+Type}}}]{msg\+\_\+type = {\ttfamily \mbox{\hyperlink{client__message__generated_8h_abcaf815fb7b793ff81f55346c08c3396ac1c50e0504ec21583b7ba451a87b7d1e}{GET\+\_\+\+JOB}}},  }\item[{bool}]{all\+\_\+jobs = {\ttfamily false},  }\item[{uint16\+\_\+t}]{num\+\_\+jobs = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+\Hypertarget{client__message__generated_8h_a4a6349c4d144d69b03c304e9cf57a7ea}\label{client__message__generated_8h_a4a6349c4d144d69b03c304e9cf57a7ea} 
+\index{client\_message\_generated.h@{client\_message\_generated.h}!EnumNameClientMessageType@{EnumNameClientMessageType}}
+\index{EnumNameClientMessageType@{EnumNameClientMessageType}!client\_message\_generated.h@{client\_message\_generated.h}}
+\doxysubsubsection{\texorpdfstring{EnumNameClientMessageType()}{EnumNameClientMessageType()}}
+{\footnotesize\ttfamily const char \texorpdfstring{$\ast$}{*} Enum\+Name\+Client\+Message\+Type (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{client__message__generated_8h_abcaf815fb7b793ff81f55346c08c3396}{Client\+Message\+Type}}}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{client__message__generated_8h_a62a937046aeaae8c60464cd22a1e6e44}\label{client__message__generated_8h_a62a937046aeaae8c60464cd22a1e6e44} 
+\index{client\_message\_generated.h@{client\_message\_generated.h}!EnumNamesClientMessageType@{EnumNamesClientMessageType}}
+\index{EnumNamesClientMessageType@{EnumNamesClientMessageType}!client\_message\_generated.h@{client\_message\_generated.h}}
+\doxysubsubsection{\texorpdfstring{EnumNamesClientMessageType()}{EnumNamesClientMessageType()}}
+{\footnotesize\ttfamily const char \texorpdfstring{$\ast$}{*}const  \texorpdfstring{$\ast$}{*} Enum\+Names\+Client\+Message\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{client__message__generated_8h_a7f26b7c54d02facbd8d13899d962aead}\label{client__message__generated_8h_a7f26b7c54d02facbd8d13899d962aead} 
+\index{client\_message\_generated.h@{client\_message\_generated.h}!EnumValuesClientMessageType@{EnumValuesClientMessageType}}
+\index{EnumValuesClientMessageType@{EnumValuesClientMessageType}!client\_message\_generated.h@{client\_message\_generated.h}}
+\doxysubsubsection{\texorpdfstring{EnumValuesClientMessageType()}{EnumValuesClientMessageType()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{client__message__generated_8h_abcaf815fb7b793ff81f55346c08c3396}{Client\+Message\+Type}}(\& Enum\+Values\+Client\+Message\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}))\mbox{[}4\mbox{]}\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{client__message__generated_8h_a04edc17b49711e94022599f0d916d223}\label{client__message__generated_8h_a04edc17b49711e94022599f0d916d223} 
+\index{client\_message\_generated.h@{client\_message\_generated.h}!Finishclient\_message\_tBuffer@{Finishclient\_message\_tBuffer}}
+\index{Finishclient\_message\_tBuffer@{Finishclient\_message\_tBuffer}!client\_message\_generated.h@{client\_message\_generated.h}}
+\doxysubsubsection{\texorpdfstring{Finishclient\_message\_tBuffer()}{Finishclient\_message\_tBuffer()}}
+{\footnotesize\ttfamily void Finishclient\+\_\+message\+\_\+t\+Buffer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceflatbuffers_a41ac7b1c8f5f4a869e8f649b6c171ce7}{\+::flatbuffers\+::\+Flat\+Buffer\+Builder}} \&}]{fbb,  }\item[{\+::flatbuffers\+::\+Offset$<$ \mbox{\hyperlink{structclient__message__t}{client\+\_\+message\+\_\+t}} $>$}]{root }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{client__message__generated_8h_a647d36b82534fd2c1335c0e28f5e4c66}\label{client__message__generated_8h_a647d36b82534fd2c1335c0e28f5e4c66} 
+\index{client\_message\_generated.h@{client\_message\_generated.h}!FinishSizePrefixedclient\_message\_tBuffer@{FinishSizePrefixedclient\_message\_tBuffer}}
+\index{FinishSizePrefixedclient\_message\_tBuffer@{FinishSizePrefixedclient\_message\_tBuffer}!client\_message\_generated.h@{client\_message\_generated.h}}
+\doxysubsubsection{\texorpdfstring{FinishSizePrefixedclient\_message\_tBuffer()}{FinishSizePrefixedclient\_message\_tBuffer()}}
+{\footnotesize\ttfamily void Finish\+Size\+Prefixedclient\+\_\+message\+\_\+t\+Buffer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceflatbuffers_a41ac7b1c8f5f4a869e8f649b6c171ce7}{\+::flatbuffers\+::\+Flat\+Buffer\+Builder}} \&}]{fbb,  }\item[{\+::flatbuffers\+::\+Offset$<$ \mbox{\hyperlink{structclient__message__t}{client\+\_\+message\+\_\+t}} $>$}]{root }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{client__message__generated_8h_ac5fe97b30786cad2df66f7d7e46bdf6a}\label{client__message__generated_8h_ac5fe97b30786cad2df66f7d7e46bdf6a} 
+\index{client\_message\_generated.h@{client\_message\_generated.h}!Getclient\_message\_t@{Getclient\_message\_t}}
+\index{Getclient\_message\_t@{Getclient\_message\_t}!client\_message\_generated.h@{client\_message\_generated.h}}
+\doxysubsubsection{\texorpdfstring{Getclient\_message\_t()}{Getclient\_message\_t()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{structclient__message__t}{client\+\_\+message\+\_\+t}} \texorpdfstring{$\ast$}{*} Getclient\+\_\+message\+\_\+t (\begin{DoxyParamCaption}\item[{const void \texorpdfstring{$\ast$}{*}}]{buf }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{client__message__generated_8h_a3f9dd6c23ec430a32e54ccba9217c0bc}\label{client__message__generated_8h_a3f9dd6c23ec430a32e54ccba9217c0bc} 
+\index{client\_message\_generated.h@{client\_message\_generated.h}!GetMutableclient\_message\_t@{GetMutableclient\_message\_t}}
+\index{GetMutableclient\_message\_t@{GetMutableclient\_message\_t}!client\_message\_generated.h@{client\_message\_generated.h}}
+\doxysubsubsection{\texorpdfstring{GetMutableclient\_message\_t()}{GetMutableclient\_message\_t()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structclient__message__t}{client\+\_\+message\+\_\+t}} \texorpdfstring{$\ast$}{*} Get\+Mutableclient\+\_\+message\+\_\+t (\begin{DoxyParamCaption}\item[{void \texorpdfstring{$\ast$}{*}}]{buf }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{client__message__generated_8h_aa92b8155eefac7933809c2d24d1c3078}\label{client__message__generated_8h_aa92b8155eefac7933809c2d24d1c3078} 
+\index{client\_message\_generated.h@{client\_message\_generated.h}!GetMutableSizePrefixedclient\_message\_t@{GetMutableSizePrefixedclient\_message\_t}}
+\index{GetMutableSizePrefixedclient\_message\_t@{GetMutableSizePrefixedclient\_message\_t}!client\_message\_generated.h@{client\_message\_generated.h}}
+\doxysubsubsection{\texorpdfstring{GetMutableSizePrefixedclient\_message\_t()}{GetMutableSizePrefixedclient\_message\_t()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structclient__message__t}{client\+\_\+message\+\_\+t}} \texorpdfstring{$\ast$}{*} Get\+Mutable\+Size\+Prefixedclient\+\_\+message\+\_\+t (\begin{DoxyParamCaption}\item[{void \texorpdfstring{$\ast$}{*}}]{buf }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{client__message__generated_8h_a74834d373c256dbdf0b3b415356ea8f7}\label{client__message__generated_8h_a74834d373c256dbdf0b3b415356ea8f7} 
+\index{client\_message\_generated.h@{client\_message\_generated.h}!GetSizePrefixedclient\_message\_t@{GetSizePrefixedclient\_message\_t}}
+\index{GetSizePrefixedclient\_message\_t@{GetSizePrefixedclient\_message\_t}!client\_message\_generated.h@{client\_message\_generated.h}}
+\doxysubsubsection{\texorpdfstring{GetSizePrefixedclient\_message\_t()}{GetSizePrefixedclient\_message\_t()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{structclient__message__t}{client\+\_\+message\+\_\+t}} \texorpdfstring{$\ast$}{*} Get\+Size\+Prefixedclient\+\_\+message\+\_\+t (\begin{DoxyParamCaption}\item[{const void \texorpdfstring{$\ast$}{*}}]{buf }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{client__message__generated_8h_a10a6ef1bca21e8c0c2091990767d994e}\label{client__message__generated_8h_a10a6ef1bca21e8c0c2091990767d994e} 
+\index{client\_message\_generated.h@{client\_message\_generated.h}!Verifyclient\_message\_tBuffer@{Verifyclient\_message\_tBuffer}}
+\index{Verifyclient\_message\_tBuffer@{Verifyclient\_message\_tBuffer}!client\_message\_generated.h@{client\_message\_generated.h}}
+\doxysubsubsection{\texorpdfstring{Verifyclient\_message\_tBuffer()}{Verifyclient\_message\_tBuffer()}}
+{\footnotesize\ttfamily bool Verifyclient\+\_\+message\+\_\+t\+Buffer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceflatbuffers_a3268477941df91db2eb06442b6e5f922}{\+::flatbuffers\+::\+Verifier}} \&}]{verifier }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{client__message__generated_8h_ae3023695b125dc87a3d63cdfcdac20ee}\label{client__message__generated_8h_ae3023695b125dc87a3d63cdfcdac20ee} 
+\index{client\_message\_generated.h@{client\_message\_generated.h}!VerifySizePrefixedclient\_message\_tBuffer@{VerifySizePrefixedclient\_message\_tBuffer}}
+\index{VerifySizePrefixedclient\_message\_tBuffer@{VerifySizePrefixedclient\_message\_tBuffer}!client\_message\_generated.h@{client\_message\_generated.h}}
+\doxysubsubsection{\texorpdfstring{VerifySizePrefixedclient\_message\_tBuffer()}{VerifySizePrefixedclient\_message\_tBuffer()}}
+{\footnotesize\ttfamily bool Verify\+Size\+Prefixedclient\+\_\+message\+\_\+t\+Buffer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceflatbuffers_a3268477941df91db2eb06442b6e5f922}{\+::flatbuffers\+::\+Verifier}} \&}]{verifier }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{client__message__generated_8h_af96c5d5674fc0f8105e04089d952f6ab}\label{client__message__generated_8h_af96c5d5674fc0f8105e04089d952f6ab} 
+\index{client\_message\_generated.h@{client\_message\_generated.h}!VT\_ALL\_JOBS@{VT\_ALL\_JOBS}}
+\index{VT\_ALL\_JOBS@{VT\_ALL\_JOBS}!client\_message\_generated.h@{client\_message\_generated.h}}
+\doxysubsubsection{\texorpdfstring{VT\_ALL\_JOBS}{VT\_ALL\_JOBS}}
+{\footnotesize\ttfamily VT\+\_\+\+ALL\+\_\+\+JOBS = 6}
+
+\Hypertarget{client__message__generated_8h_a5c3ae3aa9b1ea1a1495ff0aa28090e86}\label{client__message__generated_8h_a5c3ae3aa9b1ea1a1495ff0aa28090e86} 
+\index{client\_message\_generated.h@{client\_message\_generated.h}!VT\_MSG\_TYPE@{VT\_MSG\_TYPE}}
+\index{VT\_MSG\_TYPE@{VT\_MSG\_TYPE}!client\_message\_generated.h@{client\_message\_generated.h}}
+\doxysubsubsection{\texorpdfstring{VT\_MSG\_TYPE}{VT\_MSG\_TYPE}}
+{\footnotesize\ttfamily VT\+\_\+\+MSG\+\_\+\+TYPE = 4}
+

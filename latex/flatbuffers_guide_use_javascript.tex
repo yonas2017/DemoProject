@@ -1,0 +1,93 @@
+\chapter{Use in Java\+Script}
+\hypertarget{flatbuffers_guide_use_javascript}{}\label{flatbuffers_guide_use_javascript}\index{Use in JavaScript@{Use in JavaScript}}
+\doxysection*{Before you get started}
+
+Before diving into the Flat\+Buffers usage in Java\+Script, it should be noted that the \doxysectlink{flatbuffers_guide_tutorial}{Tutorial}{0} page has a complete guide to general Flat\+Buffers usage in all of the supported languages (including Java\+Script). This page is specifically designed to cover the nuances of Flat\+Buffers usage in Java\+Script.
+
+You should also have read the \doxysectlink{flatbuffers_guide_building}{Building}{0} documentation to build {\ttfamily flatc} and should be familiar with \doxysectlink{flatbuffers_guide_using_schema_compiler}{Using the schema compiler}{0} and \doxysectlink{flatbuffers_guide_writing_schema}{Writing a schema}{0}.
+
+\doxysection*{Flat\+Buffers Java\+Script library code location}
+
+The generated code for the Flat\+Buffers Java\+Script library can be found at \href{https://www.npmjs.com/package/flatbuffers}{\texttt{ https\+://www.\+npmjs.\+com/package/flatbuffers}}. To use it from sources\+:
+
+
+\begin{DoxyEnumerate}
+\item Run {\ttfamily npm run compile} from the main folder to generate JS files from TS.
+\end{DoxyEnumerate}
+\begin{DoxyEnumerate}
+\item In your project, install it as a normal dependency, using the flatbuffers folder as the source.
+\end{DoxyEnumerate}
+
+\doxysection*{Using the Flat\+Buffers Java\+Script library}
+
+{\itshape Note\+: See \doxysectlink{flatbuffers_guide_tutorial}{Tutorial}{0} for a more in-\/depth example of how to use Flat\+Buffers.}
+
+Due to the complexity related with large amounts of JS flavors and module types, native JS support has been replaced in 2.\+0 by transpilation from Type\+Script.
+
+Please look at \doxysectlink{flatbuffers_guide_use_typescript}{Type\+Script usage}{0} and transpile your sources to desired JS flavor. The minimal steps to get up and running with JS are\+:
+
+
+\begin{DoxyEnumerate}
+\item Generate TS files from {\ttfamily \texorpdfstring{$\ast$}{*}.fbs} by using the {\ttfamily -\/-\/ts} option.
+\end{DoxyEnumerate}
+\begin{DoxyEnumerate}
+\item Transpile resulting TS files to desired JS flavor using {\ttfamily tsc} (see \href{https://www.typescriptlang.org/download}{\texttt{ https\+://www.\+typescriptlang.\+org/download}} for installation instructions).
+\end{DoxyEnumerate}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{//\ Note:\ These\ require\ functions\ are\ an\ example\ -\/\ use\ your\ desired\ module\ flavor.}
+\DoxyCodeLine{var\ fs\ =\ require('fs');}
+\DoxyCodeLine{}
+\DoxyCodeLine{var\ flatbuffers\ =\ require('../flatbuffers').flatbuffers;}
+\DoxyCodeLine{var\ MyGame\ =\ require('./monster\_generated').MyGame;}
+\DoxyCodeLine{}
+\DoxyCodeLine{var\ data\ =\ new\ Uint8Array(fs.readFileSync('monster.dat'));}
+\DoxyCodeLine{var\ buf\ =\ new\ flatbuffers.ByteBuffer(data);}
+\DoxyCodeLine{}
+\DoxyCodeLine{var\ monster\ =\ MyGame.Example.Monster.getRootAsMonster(buf);}
+\DoxyCodeLine{}
+\DoxyCodeLine{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\///}
+\DoxyCodeLine{}
+\DoxyCodeLine{//\ Note:\ This\ code\ is\ an\ example\ of\ browser-\/based\ HTML/JavaScript.\ See\ above}
+\DoxyCodeLine{//\ \ \ \ \ \ \ for\ the\ code\ using\ JavaScript\ module\ loaders\ (e.g.\ Node.js).}
+\DoxyCodeLine{<script\ src="{}../js/flatbuffers.js"{}></script>}
+\DoxyCodeLine{<script\ src="{}monster\_generated.js"{}></script>}
+\DoxyCodeLine{<script>}
+\DoxyCodeLine{\ \ function\ readFile()\ \{}
+\DoxyCodeLine{\ \ \ \ var\ reader\ =\ new\ FileReader();\ //\ This\ example\ uses\ the\ HTML5\ FileReader.}
+\DoxyCodeLine{\ \ \ \ var\ file\ =\ document.getElementById(}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ 'file\_input').files[0];\ //\ "{}monster.dat"{}\ from\ the\ HTML\ <input>\ field.}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ reader.onload\ =\ function()\ \{\ //\ Executes\ after\ the\ file\ is\ read.}
+\DoxyCodeLine{\ \ \ \ \ \ var\ data\ =\ new\ Uint8Array(reader.result);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \ \ var\ buf\ =\ new\ flatbuffers.ByteBuffer(data);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \ \ var\ monster\ =\ MyGame.Example.Monster.getRootAsMonster(buf);}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ reader.readAsArrayBuffer(file);}
+\DoxyCodeLine{\ \ \}}
+\DoxyCodeLine{</script>}
+\DoxyCodeLine{}
+\DoxyCodeLine{//\ Open\ the\ HTML\ file\ in\ a\ browser\ and\ select\ "{}monster.dat"{}\ from\ with\ the}
+\DoxyCodeLine{//\ <input>\ field.}
+\DoxyCodeLine{<input\ type="{}file"{}\ id="{}file\_input"{}\ onchange="{}readFile();"{}>}
+
+\end{DoxyCode}
+
+
+Now you can access values like this\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{var\ hp\ =\ monster.hp();}
+\DoxyCodeLine{var\ pos\ =\ monster.pos();}
+
+\end{DoxyCode}
+
+
+\doxysection*{Text parsing Flat\+Buffers in Java\+Script}
+
+There currently is no support for parsing text (Schema\textquotesingle{}s and JSON) directly from Java\+Script. 

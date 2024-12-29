@@ -1,0 +1,175 @@
+\chapter{Use in C}
+\hypertarget{flatbuffers_guide_use_c}{}\label{flatbuffers_guide_use_c}\index{Use in C@{Use in C}}
+The C language binding exists in a separate project named \href{https://github.com/dvidelabs/flatcc}{\texttt{ Flat\+CC}}.
+
+The {\ttfamily flatcc} C schema compiler can generate code offline as well as online via a C library. It can also generate buffer verifiers and fast JSON parsers, printers.
+
+Great care has been taken to ensure compatibility with the main {\ttfamily flatc} project.
+
+\doxysection*{General Documention}
+
+
+\begin{DoxyItemize}
+\item \doxysectlink{flatbuffers_guide_tutorial}{Tutorial}{0} -\/ select C as language when scrolling down
+\item \href{https://github.com/dvidelabs/flatcc\#flatcc-flatbuffers-in-c-for-c}{\texttt{ Flat\+CC Guide}}
+\item \href{https://github.com/dvidelabs/flatcc/blob/master/doc/builder.md\#the-builder-interface}{\texttt{ The C Builder Interface}}
+\item \href{https://github.com/dvidelabs/flatcc/blob/master/samples/monster/monster.c}{\texttt{ The Monster Sample in C}}
+\item \href{https://github.com/dvidelabs/flatcc}{\texttt{ Git\+Hub}}
+\end{DoxyItemize}
+
+\doxysection*{Supported Platforms}
+
+
+\begin{DoxyItemize}
+\item Ubuntu (clang / gcc, ninja / gnu make)
+\item OS-\/X (clang / gcc, ninja / gnu make)
+\item Windows MSVC 2010, 2013, 2015
+\end{DoxyItemize}
+
+CI builds recent versions of gcc, clang and MSVC on OS-\/X, Ubuntu, and Windows, and occasionally older compiler versions. See main project \href{https://github.com/dvidelabs/flatcc\#status}{\texttt{ Status}}.
+
+Other platforms may well work, including Centos, but are not tested regularly.
+
+The monster sample project was specifically written for C99 in order to follow the C++ version and for that reason it will not work with MSVC 2010.
+
+\doxysection*{Modular Object Creation}
+
+In the tutorial we used the call {\ttfamily Monster\+\_\+create\+\_\+as\+\_\+root} to create the root buffer object since this is easier in simple use cases. Sometimes we need more modularity so we can reuse a function to create nested tables and root tables the same way. For this we need the {\ttfamily flatcc\+\_\+builder\+\_\+buffer\+\_\+create\+\_\+call}. It is best to keep {\ttfamily flatcc\+\_\+builder} calls isolated at the top driver level, so we get\+:
+
+ 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{idl__gen__ts_8cpp_a97618fe2e31e62d92ace9b30478febba}{ns}}(Monster\_ref\_t)\ create\_orc(flatcc\_builder\_t\ *B)}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ \textcolor{comment}{//\ ...\ same\ as\ in\ the\ tutorial.}}
+\DoxyCodeLine{\ \ \textcolor{keywordflow}{return}\ s(Monster\_create(B,\ ...));}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{void}\ create\_monster\_buffer()}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ \ \ uint8\_t\ *buf;}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordtype}{size\_t}\ size;}
+\DoxyCodeLine{\ \ \ \ flatcc\_builder\_t\ \mbox{\hyperlink{namespacebuild_ac88b0ec8265b8fb42c15db20ec716d54}{builder}},\ *\mbox{\hyperlink{namespaceMyGame_1_1Example_ae1991218ee8cc642c45550d117f89dc8a9d5ed678fe57bcca610140957afab571}{B}};}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ Initialize\ the\ builder\ object.}}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{namespaceMyGame_1_1Example_ae1991218ee8cc642c45550d117f89dc8a9d5ed678fe57bcca610140957afab571}{B}}\ =\ \&\mbox{\hyperlink{namespacebuild_ac88b0ec8265b8fb42c15db20ec716d54}{builder}};}
+\DoxyCodeLine{\ \ \ \ flatcc\_builder\_init(B);}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ Only\ use\ \`{}buffer\_create`\ without\ \`{}create/start/end\_as\_root`.}}
+\DoxyCodeLine{\ \ \ \ flatcc\_builder\_buffer\_create(create\_orc(B));}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ Allocate\ and\ copy\ buffer\ to\ user\ memory.}}
+\DoxyCodeLine{\ \ \ \ buf\ =\ flatcc\_builder\_finalize\_buffer(B,\ \&size);}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ ...\ write\ the\ buffer\ to\ disk\ or\ network,\ or\ something.}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ free(buf);}
+\DoxyCodeLine{\ \ \ \ flatcc\_builder\_clear(B);}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ 
+
+The same principle applies with {\ttfamily start/end} vs {\ttfamily start/end\+\_\+as\+\_\+root} in the top-\/down approach.
+
+\doxysection*{Top Down Example}
+
+The tutorial uses a bottom up approach. In C it is also possible to use a top-\/down approach by starting and ending objects nested within each other. In the tutorial there is no deep nesting, so the difference is limited, but it shows the idea\+:
+
+ ~\newline
+ 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{uint8\_t\ treasure[]\ =\ \{0,\ 1,\ 2,\ 3,\ 4,\ 5,\ 6,\ 7,\ 8,\ 9\};}
+\DoxyCodeLine{\textcolor{keywordtype}{size\_t}\ treasure\_count\ =\ c\_vec\_len(treasure);}
+\DoxyCodeLine{\mbox{\hyperlink{idl__gen__ts_8cpp_a97618fe2e31e62d92ace9b30478febba}{ns}}(Weapon\_ref\_t)\ axe;}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ NOTE:\ if\ we\ use\ end\_as\_root,\ we\ MUST\ also\ start\ as\ root.}}
+\DoxyCodeLine{\mbox{\hyperlink{idl__gen__ts_8cpp_a97618fe2e31e62d92ace9b30478febba}{ns}}(Monster\_start\_as\_root(B));}
+\DoxyCodeLine{\mbox{\hyperlink{idl__gen__ts_8cpp_a97618fe2e31e62d92ace9b30478febba}{ns}}(Monster\_pos\_create(B,\ 1.0f,\ 2.0f,\ 3.0f));}
+\DoxyCodeLine{\mbox{\hyperlink{idl__gen__ts_8cpp_a97618fe2e31e62d92ace9b30478febba}{ns}}(Monster\_hp\_add(B,\ 300));}
+\DoxyCodeLine{\mbox{\hyperlink{idl__gen__ts_8cpp_a97618fe2e31e62d92ace9b30478febba}{ns}}(Monster\_mana\_add(B,\ 150));}
+\DoxyCodeLine{\textcolor{comment}{//\ We\ use\ create\_str\ instead\ of\ add\ because\ we\ have\ no\ existing\ string\ reference.}}
+\DoxyCodeLine{\mbox{\hyperlink{idl__gen__ts_8cpp_a97618fe2e31e62d92ace9b30478febba}{ns}}(Monster\_name\_create\_str(B,\ \textcolor{stringliteral}{"{}Orc"{}}));}
+\DoxyCodeLine{\textcolor{comment}{//\ Again\ we\ use\ create\ because\ we\ no\ existing\ vector\ object,\ only\ a\ C-\/array.}}
+\DoxyCodeLine{\mbox{\hyperlink{idl__gen__ts_8cpp_a97618fe2e31e62d92ace9b30478febba}{ns}}(Monster\_inventory\_create(B,\ treasure,\ treasure\_count));}
+\DoxyCodeLine{\mbox{\hyperlink{idl__gen__ts_8cpp_a97618fe2e31e62d92ace9b30478febba}{ns}}(Monster\_color\_add(B,\ \mbox{\hyperlink{idl__gen__ts_8cpp_a97618fe2e31e62d92ace9b30478febba}{ns}}(\mbox{\hyperlink{enums__generated_8h_a738b1b8abd03ae11a7632283c3a13ae3a03e71bffe64b5a7e9d60d7e51a43a669}{Color\_Red}})));}
+\DoxyCodeLine{\textcolor{keywordflow}{if}\ (1)\ \{}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{idl__gen__ts_8cpp_a97618fe2e31e62d92ace9b30478febba}{ns}}(Monster\_weapons\_start(B));}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{idl__gen__ts_8cpp_a97618fe2e31e62d92ace9b30478febba}{ns}}(Monster\_weapons\_push\_create(B,\ flatbuffers\_string\_create\_str(B,\ \textcolor{stringliteral}{"{}Sword"{}}),\ 3));}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ We\ reuse\ the\ axe\ object\ later.\ Note\ that\ we\ dereference\ a\ pointer}}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ because\ push\ always\ returns\ a\ short-\/term\ pointer\ to\ the\ stored\ element.}}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ We\ could\ also\ have\ created\ the\ axe\ object\ first\ and\ simply\ pushed\ it.}}
+\DoxyCodeLine{\ \ \ \ axe\ =\ *\mbox{\hyperlink{idl__gen__ts_8cpp_a97618fe2e31e62d92ace9b30478febba}{ns}}(Monster\_weapons\_push\_create(B,\ flatbuffers\_string\_create\_str(B,\ \textcolor{stringliteral}{"{}Axe"{}}),\ 5));}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{idl__gen__ts_8cpp_a97618fe2e31e62d92ace9b30478febba}{ns}}(Monster\_weapons\_end(B));}
+\DoxyCodeLine{\}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ We\ can\ have\ more\ control\ with\ the\ table\ elements\ added\ to\ a\ vector:}}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{idl__gen__ts_8cpp_a97618fe2e31e62d92ace9b30478febba}{ns}}(Monster\_weapons\_start(B));}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{idl__gen__ts_8cpp_a97618fe2e31e62d92ace9b30478febba}{ns}}(Monster\_weapons\_push\_start(B));}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{idl__gen__ts_8cpp_a97618fe2e31e62d92ace9b30478febba}{ns}}(Weapon\_name\_create\_str(B,\ \textcolor{stringliteral}{"{}Sword"{}}));}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{idl__gen__ts_8cpp_a97618fe2e31e62d92ace9b30478febba}{ns}}(Weapon\_damage\_add(B,\ 3));}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{idl__gen__ts_8cpp_a97618fe2e31e62d92ace9b30478febba}{ns}}(Monster\_weapons\_push\_end(B));}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{idl__gen__ts_8cpp_a97618fe2e31e62d92ace9b30478febba}{ns}}(Monster\_weapons\_push\_start(B));}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{idl__gen__ts_8cpp_a97618fe2e31e62d92ace9b30478febba}{ns}}(Monster\_weapons\_push\_start(B));}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{idl__gen__ts_8cpp_a97618fe2e31e62d92ace9b30478febba}{ns}}(Weapon\_name\_create\_str(B,\ \textcolor{stringliteral}{"{}Axe"{}}));}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{idl__gen__ts_8cpp_a97618fe2e31e62d92ace9b30478febba}{ns}}(Weapon\_damage\_add(B,\ 5));}
+\DoxyCodeLine{\ \ \ \ axe\ =\ *\mbox{\hyperlink{idl__gen__ts_8cpp_a97618fe2e31e62d92ace9b30478febba}{ns}}(Monster\_weapons\_push\_end(B));}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{idl__gen__ts_8cpp_a97618fe2e31e62d92ace9b30478febba}{ns}}(Monster\_weapons\_end(B));}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{\textcolor{comment}{//\ Unions\ can\ get\ their\ type\ by\ using\ a\ type-\/specific\ add/create/start\ method.}}
+\DoxyCodeLine{\mbox{\hyperlink{idl__gen__ts_8cpp_a97618fe2e31e62d92ace9b30478febba}{ns}}(Monster\_equipped\_Weapon\_add(B,\ axe));}
+\DoxyCodeLine{}
+\DoxyCodeLine{\mbox{\hyperlink{idl__gen__ts_8cpp_a97618fe2e31e62d92ace9b30478febba}{ns}}(Monster\_end\_as\_root(B));}
+
+\end{DoxyCode}
+ 
+
+\doxysection*{Basic Reflection}
+
+The C-\/\+API does support reading binary schema (.bfbs) files via code generated from the {\ttfamily reflection.\+fbs} schema, and an \href{https://github.com/dvidelabs/flatcc/tree/master/samples/reflection}{\texttt{ example usage}} shows how to use this. The reflection schema files are pre-\/generated in the \href{https://github.com/dvidelabs/flatcc/tree/master/include/flatcc/reflection}{\texttt{ runtime distribution}}.
+
+\doxysection*{Mutations and Reflection}
+
+The C-\/\+API does not support mutating reflection like C++ does, nor does the reader interface support mutating scalars (and it is generally unsafe to do so even after verification).
+
+The generated reader interface supports sorting vectors in-\/place after casting them to a mutating type because it is not practical to do so while building a buffer. This is covered in the builder documentation. ~\newline
+ The reflection example makes use of this feature to look up objects by name.
+
+It is possible to build new buffers using complex objects from existing buffers as source. This can be very efficient due to direct copy semantics without endian conversion or temporary stack allocation.
+
+Scalars, structs and strings can be used as source, as well vectors of these.
+
+It is currently not possible to use an existing table or vector of table as source, but it would be possible to add support for this at some point.
+
+\doxysection*{Namespaces}
+
+The {\ttfamily FLATBUFFERS\+\_\+\+WRAP\+\_\+\+NAMESPACE} approach used in the tutorial is convenient when each function has a very long namespace prefix. But it isn\textquotesingle{}t always the best approach. If the namespace is absent, or simple and informative, we might as well use the prefix directly. The \href{https://github.com/dvidelabs/flatcc/blob/master/samples/reflection/bfbs2json.c}{\texttt{ reflection example}} mentioned above uses this approach.
+
+\doxysection*{Checking for Present Members}
+
+Not all languages support testing if a field is present, but in C we can elaborate the reader section of the tutorial with tests for this. Recall that {\ttfamily mana} was set to the default value {\ttfamily 150} and therefore shouldn\textquotesingle{}t be present.
+
+ 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{int}\ hp\_present\ =\ \mbox{\hyperlink{idl__gen__ts_8cpp_a97618fe2e31e62d92ace9b30478febba}{ns}}(Monster\_hp\_is\_present(monster));\ \textcolor{comment}{//\ 1}}
+\DoxyCodeLine{\textcolor{keywordtype}{int}\ mana\_present\ =\ \mbox{\hyperlink{idl__gen__ts_8cpp_a97618fe2e31e62d92ace9b30478febba}{ns}}(Monster\_mana\_is\_present(monster));\ \textcolor{comment}{//\ 0}}
+
+\end{DoxyCode}
+ 
+
+\doxysection*{Alternative ways to add a Union}
+
+In the tutorial we used a single call to add a union. Here we show different ways to accomplish the same thing. The last form is rarely used, but is the low-\/level way to do it. It can be used to group small values together in the table by adding type and data at different points in time.
+
+ 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{idl__gen__ts_8cpp_a97618fe2e31e62d92ace9b30478febba}{ns}}(Equipment\_union\_ref\_t)\ equipped\ =\ \mbox{\hyperlink{idl__gen__ts_8cpp_a97618fe2e31e62d92ace9b30478febba}{ns}}(Equipment\_as\_Weapon(axe));}
+\DoxyCodeLine{\mbox{\hyperlink{idl__gen__ts_8cpp_a97618fe2e31e62d92ace9b30478febba}{ns}}(Monster\_equipped\_add(B,\ equipped));}
+\DoxyCodeLine{\textcolor{comment}{//\ or\ alternatively}}
+\DoxyCodeLine{\mbox{\hyperlink{idl__gen__ts_8cpp_a97618fe2e31e62d92ace9b30478febba}{ns}}(Monster\_equipped\_Weapon\_add(B,\ axe);}
+\DoxyCodeLine{\textcolor{comment}{//\ or\ alternatively}}
+\DoxyCodeLine{\mbox{\hyperlink{idl__gen__ts_8cpp_a97618fe2e31e62d92ace9b30478febba}{ns}}(Monster\_equipped\_add\_type(B,\ \mbox{\hyperlink{idl__gen__ts_8cpp_a97618fe2e31e62d92ace9b30478febba}{ns}}(Equipment\_Weapon));}
+\DoxyCodeLine{\mbox{\hyperlink{idl__gen__ts_8cpp_a97618fe2e31e62d92ace9b30478febba}{ns}}(Monster\_equipped\_add\_member(B,\ axe));}
+
+\end{DoxyCode}
+ 
+
+\doxysection*{Why not integrate with the {\ttfamily flatc} tool?}
+
+\href{https://github.com/dvidelabs/flatcc/issues/1}{\texttt{ It was considered how the C code generator could be integrated into the {\ttfamily flatc} tool}}, but it would either require that the standalone C implementation of the schema compiler was dropped, or it would lead to excessive code duplication, or a complicated intermediate representation would have to be invented. Neither of these alternatives are very attractive, and it isn\textquotesingle{}t a big deal to use the {\ttfamily flatcc} tool instead of {\ttfamily flatc} given that the Flat\+Buffers C runtime library needs to be made available regardless. 

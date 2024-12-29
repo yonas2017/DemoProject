@@ -1,0 +1,456 @@
+\doxysection{flatbuffers/include/flatbuffers/reflection\+\_\+generated.h File Reference}
+\hypertarget{reflection__generated_8h}{}\label{reflection__generated_8h}\index{flatbuffers/include/flatbuffers/reflection\_generated.h@{flatbuffers/include/flatbuffers/reflection\_generated.h}}
+{\ttfamily \#include "{}flatbuffers/flatbuffers.\+h"{}}\newline
+Include dependency graph for reflection\+\_\+generated.\+h\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structreflection_1_1FLATBUFFERS__FINAL__CLASS}{reflection\+::\+FLATBUFFERS\+\_\+\+FINAL\+\_\+\+CLASS}}
+\item 
+struct \mbox{\hyperlink{structreflection_1_1TypeBuilder}{reflection\+::\+Type\+Builder}}
+\item 
+struct \mbox{\hyperlink{structreflection_1_1KeyValueBuilder}{reflection\+::\+Key\+Value\+Builder}}
+\item 
+struct \mbox{\hyperlink{structreflection_1_1EnumValBuilder}{reflection\+::\+Enum\+Val\+Builder}}
+\item 
+struct \mbox{\hyperlink{structreflection_1_1EnumBuilder}{reflection\+::\+Enum\+Builder}}
+\item 
+struct \mbox{\hyperlink{structreflection_1_1FieldBuilder}{reflection\+::\+Field\+Builder}}
+\item 
+struct \mbox{\hyperlink{structreflection_1_1ObjectBuilder}{reflection\+::\+Object\+Builder}}
+\item 
+struct \mbox{\hyperlink{structreflection_1_1RPCCallBuilder}{reflection\+::\+RPCCall\+Builder}}
+\item 
+struct \mbox{\hyperlink{structreflection_1_1ServiceBuilder}{reflection\+::\+Service\+Builder}}
+\item 
+struct \mbox{\hyperlink{structreflection_1_1SchemaFileBuilder}{reflection\+::\+Schema\+File\+Builder}}
+\item 
+struct \mbox{\hyperlink{structreflection_1_1SchemaBuilder}{reflection\+::\+Schema\+Builder}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespacereflection}{reflection}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{namespacereflection_a94d99018201fa75e6e29207136c64d98}{reflection\+::\+Base\+Type}} \{ \newline
+\mbox{\hyperlink{namespacereflection_a94d99018201fa75e6e29207136c64d98aa2d0ae6ff7bbd4e32962314f37142735}{reflection\+::\+None}} = 0
+, \mbox{\hyperlink{namespacereflection_a94d99018201fa75e6e29207136c64d98a4689d6a6cc121b8dde9bf03191dae002}{reflection\+::\+UType}} = 1
+, \mbox{\hyperlink{namespacereflection_a94d99018201fa75e6e29207136c64d98a3c69f16b8309644035c0fadd2d82475e}{reflection\+::\+Bool}} = 2
+, \mbox{\hyperlink{namespacereflection_a94d99018201fa75e6e29207136c64d98a3a6a633b39aaa0ec835822e110bb1d21}{reflection\+::\+Byte}} = 3
+, \newline
+\mbox{\hyperlink{namespacereflection_a94d99018201fa75e6e29207136c64d98a9f2ab571567df364808930c30569013c}{reflection\+::\+UByte}} = 4
+, \mbox{\hyperlink{namespacereflection_a94d99018201fa75e6e29207136c64d98a5790064404173130aa484e61c6cd78b6}{reflection\+::\+Short}} = 5
+, \mbox{\hyperlink{namespacereflection_a94d99018201fa75e6e29207136c64d98a01ec82820fb9843da46eeda5721ec304}{reflection\+::\+UShort}} = 6
+, \mbox{\hyperlink{namespacereflection_a94d99018201fa75e6e29207136c64d98adf5b5eabd12251e4418dffccc07acc89}{reflection\+::\+Int}} = 7
+, \newline
+\mbox{\hyperlink{namespacereflection_a94d99018201fa75e6e29207136c64d98a4fa23d5e52107809a503cf4c9fa9aa01}{reflection\+::\+UInt}} = 8
+, \mbox{\hyperlink{namespacereflection_a94d99018201fa75e6e29207136c64d98a95a3aaa2584bd74ccca34ad4a931cd76}{reflection\+::\+Long}} = 9
+, \mbox{\hyperlink{namespacereflection_a94d99018201fa75e6e29207136c64d98ab1a1d1835f326bc2612c415a04447902}{reflection\+::\+ULong}} = 10
+, \mbox{\hyperlink{namespacereflection_a94d99018201fa75e6e29207136c64d98aac6ed15085e2175d406ea383633c5fec}{reflection\+::\+Float}} = 11
+, \newline
+\mbox{\hyperlink{namespacereflection_a94d99018201fa75e6e29207136c64d98af9b45883f4c280f7ca18fdda09699452}{reflection\+::\+Double}} = 12
+, \mbox{\hyperlink{namespacereflection_a94d99018201fa75e6e29207136c64d98a31dbbb45901c4d63a13a5c93bb549af6}{reflection\+::\+String}} = 13
+, \mbox{\hyperlink{namespacereflection_a94d99018201fa75e6e29207136c64d98aac1737fa54c7e36728a6ea973086fe34}{reflection\+::\+Vector}} = 14
+, \mbox{\hyperlink{namespacereflection_a94d99018201fa75e6e29207136c64d98aa8b436877df407b768c87b7c1f6fc8de}{reflection\+::\+Obj}} = 15
+, \newline
+\mbox{\hyperlink{namespacereflection_a94d99018201fa75e6e29207136c64d98a81945d64788a52fa2bc740d7715b0f9a}{reflection\+::\+Union}} = 16
+, \mbox{\hyperlink{namespacereflection_a94d99018201fa75e6e29207136c64d98a363d6c678a99d3ad722f67de5bb24f26}{reflection\+::\+Array}} = 17
+, \mbox{\hyperlink{namespacereflection_a94d99018201fa75e6e29207136c64d98a2fb73d6d7091b7aa993d740a72bef7c1}{reflection\+::\+Vector64}} = 18
+, \mbox{\hyperlink{namespacereflection_a94d99018201fa75e6e29207136c64d98a3a30e307216530f890e5e0f123e23e90}{reflection\+::\+Max\+Base\+Type}} = 19
+ \}
+\item 
+enum \mbox{\hyperlink{namespacereflection_ac35509643839fedc9ccf3afc60d51882}{reflection\+::\+Advanced\+Features}} \{ \mbox{\hyperlink{namespacereflection_ac35509643839fedc9ccf3afc60d51882a20a07eaed997d0a4a276242dd0421202}{reflection\+::\+Advanced\+Array\+Features}} = 1ULL
+, \mbox{\hyperlink{namespacereflection_ac35509643839fedc9ccf3afc60d51882a2ce99d10dde58195776ada656f8b97b6}{reflection\+::\+Advanced\+Union\+Features}} = 2ULL
+, \mbox{\hyperlink{namespacereflection_ac35509643839fedc9ccf3afc60d51882a9abf8c9c03acde47a97e09157f6a9431}{reflection\+::\+Optional\+Scalars}} = 4ULL
+, \mbox{\hyperlink{namespacereflection_ac35509643839fedc9ccf3afc60d51882a7e661d62b889c901a72980570add3074}{reflection\+::\+Default\+Vectors\+And\+Strings}} = 8ULL
+ \}
+\begin{DoxyCompactList}\small\item\em New schema language features that are not supported by old code generators. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+const \mbox{\hyperlink{namespacereflection_a94d99018201fa75e6e29207136c64d98}{Base\+Type}}(\& \mbox{\hyperlink{namespacereflection_ae102b9fb03cc1cd9fe9fa308945bf124}{reflection\+::\+Enum\+Values\+Base\+Type}} ())\mbox{[}20\mbox{]}
+\item 
+const char \texorpdfstring{$\ast$}{*}const \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{namespacereflection_a10fd596d0df7105ef89b81600a82e2b5}{reflection\+::\+Enum\+Names\+Base\+Type}} ()
+\item 
+const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{namespacereflection_abe648d5a8aec13582c1674742aee8de9}{reflection\+::\+Enum\+Name\+Base\+Type}} (\mbox{\hyperlink{namespacereflection_a94d99018201fa75e6e29207136c64d98}{Base\+Type}} e)
+\item 
+const \mbox{\hyperlink{namespacereflection_ac35509643839fedc9ccf3afc60d51882}{Advanced\+Features}}(\& \mbox{\hyperlink{namespacereflection_a4751d07a124c5dc3434eb0b0d581b306}{reflection\+::\+Enum\+Values\+Advanced\+Features}} ())\mbox{[}4\mbox{]}
+\item 
+const char \texorpdfstring{$\ast$}{*}const \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{namespacereflection_a6862bc623554751c5705561db5af8808}{reflection\+::\+Enum\+Names\+Advanced\+Features}} ()
+\item 
+const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{namespacereflection_a6f4885546ec775e39da955967aad9ad3}{reflection\+::\+Enum\+Name\+Advanced\+Features}} (\mbox{\hyperlink{namespacereflection_ac35509643839fedc9ccf3afc60d51882}{Advanced\+Features}} e)
+\item 
+inline \+::flatbuffers\+::\+Offset$<$ Type $>$ \mbox{\hyperlink{namespacereflection_ae4f75ff8004ad6da9e60e6025fc75792}{reflection\+::\+Create\+Type}} (\mbox{\hyperlink{namespaceflatbuffers_a41ac7b1c8f5f4a869e8f649b6c171ce7}{\+::flatbuffers\+::\+Flat\+Buffer\+Builder}} \&\+\_\+fbb, \mbox{\hyperlink{namespacereflection_a94d99018201fa75e6e29207136c64d98}{reflection\+::\+Base\+Type}} base\+\_\+type=\mbox{\hyperlink{namespacereflection_a94d99018201fa75e6e29207136c64d98aa2d0ae6ff7bbd4e32962314f37142735}{reflection\+::\+None}}, \mbox{\hyperlink{namespacereflection_a94d99018201fa75e6e29207136c64d98}{reflection\+::\+Base\+Type}} element=\mbox{\hyperlink{namespacereflection_a94d99018201fa75e6e29207136c64d98aa2d0ae6ff7bbd4e32962314f37142735}{reflection\+::\+None}}, int32\+\_\+t index=-\/1, uint16\+\_\+t fixed\+\_\+length=0, uint32\+\_\+t base\+\_\+size=4, uint32\+\_\+t element\+\_\+size=0)
+\item 
+inline \+::flatbuffers\+::\+Offset$<$ Key\+Value $>$ \mbox{\hyperlink{namespacereflection_a9a3bcf787df0fce10ad6fd0259868ab3}{reflection\+::\+Create\+Key\+Value}} (\mbox{\hyperlink{namespaceflatbuffers_a41ac7b1c8f5f4a869e8f649b6c171ce7}{\+::flatbuffers\+::\+Flat\+Buffer\+Builder}} \&\+\_\+fbb, \+::flatbuffers\+::\+Offset$<$\mbox{\hyperlink{structflatbuffers_1_1String}{\+::flatbuffers\+::\+String}} $>$ key=0, \+::flatbuffers\+::\+Offset$<$\mbox{\hyperlink{structflatbuffers_1_1String}{\+::flatbuffers\+::\+String}} $>$ \mbox{\hyperlink{annotated__binary__text__gen_8cpp_a5c33da5929c9f2f9ef8d006d2350e6ec}{value}}=0)
+\item 
+inline \+::flatbuffers\+::\+Offset$<$ Key\+Value $>$ \mbox{\hyperlink{namespacereflection_ae7145e2c30071db812168c417ff70eb7}{reflection\+::\+Create\+Key\+Value\+Direct}} (\mbox{\hyperlink{namespaceflatbuffers_a41ac7b1c8f5f4a869e8f649b6c171ce7}{\+::flatbuffers\+::\+Flat\+Buffer\+Builder}} \&\+\_\+fbb, const char \texorpdfstring{$\ast$}{*}key=nullptr, const char \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{annotated__binary__text__gen_8cpp_a5c33da5929c9f2f9ef8d006d2350e6ec}{value}}=nullptr)
+\item 
+inline \+::flatbuffers\+::\+Offset$<$ Enum\+Val $>$ \mbox{\hyperlink{namespacereflection_a7942d20355bb3a4f96322828af92254e}{reflection\+::\+Create\+Enum\+Val}} (\mbox{\hyperlink{namespaceflatbuffers_a41ac7b1c8f5f4a869e8f649b6c171ce7}{\+::flatbuffers\+::\+Flat\+Buffer\+Builder}} \&\+\_\+fbb, \+::flatbuffers\+::\+Offset$<$\mbox{\hyperlink{structflatbuffers_1_1String}{\+::flatbuffers\+::\+String}} $>$ \mbox{\hyperlink{idl__gen__ts_8cpp_a9b45b3e13bd9167aab02e17e08916231}{name}}=0, int64\+\_\+t \mbox{\hyperlink{annotated__binary__text__gen_8cpp_a5c33da5929c9f2f9ef8d006d2350e6ec}{value}}=0, \+::flatbuffers\+::\+Offset$<$ reflection\+::\+Type $>$ union\+\_\+type=0, \+::flatbuffers\+::\+Offset$<$\mbox{\hyperlink{classflatbuffers_1_1Vector}{\+::flatbuffers\+::\+Vector}}$<$\+::flatbuffers\+::\+Offset$<$\mbox{\hyperlink{structflatbuffers_1_1String}{\+::flatbuffers\+::\+String}} $>$ $>$ $>$ documentation=0, \+::flatbuffers\+::\+Offset$<$\mbox{\hyperlink{classflatbuffers_1_1Vector}{\+::flatbuffers\+::\+Vector}}$<$\+::flatbuffers\+::\+Offset$<$ reflection\+::\+Key\+Value $>$ $>$ $>$ attributes=0)
+\item 
+inline \+::flatbuffers\+::\+Offset$<$ Enum\+Val $>$ \mbox{\hyperlink{namespacereflection_a42b037c3da8d5f6d8a003f1708bd377d}{reflection\+::\+Create\+Enum\+Val\+Direct}} (\mbox{\hyperlink{namespaceflatbuffers_a41ac7b1c8f5f4a869e8f649b6c171ce7}{\+::flatbuffers\+::\+Flat\+Buffer\+Builder}} \&\+\_\+fbb, const char \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{idl__gen__ts_8cpp_a9b45b3e13bd9167aab02e17e08916231}{name}}=nullptr, int64\+\_\+t \mbox{\hyperlink{annotated__binary__text__gen_8cpp_a5c33da5929c9f2f9ef8d006d2350e6ec}{value}}=0, \+::flatbuffers\+::\+Offset$<$ reflection\+::\+Type $>$ union\+\_\+type=0, const std\+::vector$<$\+::flatbuffers\+::\+Offset$<$\mbox{\hyperlink{structflatbuffers_1_1String}{\+::flatbuffers\+::\+String}} $>$ $>$ \texorpdfstring{$\ast$}{*}documentation=nullptr, std\+::vector$<$\+::flatbuffers\+::\+Offset$<$ reflection\+::\+Key\+Value $>$ $>$ \texorpdfstring{$\ast$}{*}attributes=nullptr)
+\item 
+inline \+::flatbuffers\+::\+Offset$<$ Enum $>$ \mbox{\hyperlink{namespacereflection_a1f10cad4d9e4945ce60b8bb064b5a201}{reflection\+::\+Create\+Enum}} (\mbox{\hyperlink{namespaceflatbuffers_a41ac7b1c8f5f4a869e8f649b6c171ce7}{\+::flatbuffers\+::\+Flat\+Buffer\+Builder}} \&\+\_\+fbb, \+::flatbuffers\+::\+Offset$<$\mbox{\hyperlink{structflatbuffers_1_1String}{\+::flatbuffers\+::\+String}} $>$ \mbox{\hyperlink{idl__gen__ts_8cpp_a9b45b3e13bd9167aab02e17e08916231}{name}}=0, \+::flatbuffers\+::\+Offset$<$\mbox{\hyperlink{classflatbuffers_1_1Vector}{\+::flatbuffers\+::\+Vector}}$<$\+::flatbuffers\+::\+Offset$<$ reflection\+::\+Enum\+Val $>$ $>$ $>$ values=0, bool is\+\_\+union=false, \+::flatbuffers\+::\+Offset$<$ reflection\+::\+Type $>$ underlying\+\_\+type=0, \+::flatbuffers\+::\+Offset$<$\mbox{\hyperlink{classflatbuffers_1_1Vector}{\+::flatbuffers\+::\+Vector}}$<$\+::flatbuffers\+::\+Offset$<$ reflection\+::\+Key\+Value $>$ $>$ $>$ attributes=0, \+::flatbuffers\+::\+Offset$<$\mbox{\hyperlink{classflatbuffers_1_1Vector}{\+::flatbuffers\+::\+Vector}}$<$\+::flatbuffers\+::\+Offset$<$\mbox{\hyperlink{structflatbuffers_1_1String}{\+::flatbuffers\+::\+String}} $>$ $>$ $>$ documentation=0, \+::flatbuffers\+::\+Offset$<$\mbox{\hyperlink{structflatbuffers_1_1String}{\+::flatbuffers\+::\+String}} $>$ declaration\+\_\+file=0)
+\item 
+inline \+::flatbuffers\+::\+Offset$<$ Enum $>$ \mbox{\hyperlink{namespacereflection_ae10d198f97fecf7df6752e950c69d59b}{reflection\+::\+Create\+Enum\+Direct}} (\mbox{\hyperlink{namespaceflatbuffers_a41ac7b1c8f5f4a869e8f649b6c171ce7}{\+::flatbuffers\+::\+Flat\+Buffer\+Builder}} \&\+\_\+fbb, const char \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{idl__gen__ts_8cpp_a9b45b3e13bd9167aab02e17e08916231}{name}}=nullptr, std\+::vector$<$\+::flatbuffers\+::\+Offset$<$ reflection\+::\+Enum\+Val $>$ $>$ \texorpdfstring{$\ast$}{*}values=nullptr, bool is\+\_\+union=false, \+::flatbuffers\+::\+Offset$<$ reflection\+::\+Type $>$ underlying\+\_\+type=0, std\+::vector$<$\+::flatbuffers\+::\+Offset$<$ reflection\+::\+Key\+Value $>$ $>$ \texorpdfstring{$\ast$}{*}attributes=nullptr, const std\+::vector$<$\+::flatbuffers\+::\+Offset$<$\mbox{\hyperlink{structflatbuffers_1_1String}{\+::flatbuffers\+::\+String}} $>$ $>$ \texorpdfstring{$\ast$}{*}documentation=nullptr, const char \texorpdfstring{$\ast$}{*}declaration\+\_\+file=nullptr)
+\item 
+inline \+::flatbuffers\+::\+Offset$<$ Field $>$ \mbox{\hyperlink{namespacereflection_abdbba343dbe9b278bfb11ab41f743ee7}{reflection\+::\+Create\+Field}} (\mbox{\hyperlink{namespaceflatbuffers_a41ac7b1c8f5f4a869e8f649b6c171ce7}{\+::flatbuffers\+::\+Flat\+Buffer\+Builder}} \&\+\_\+fbb, \+::flatbuffers\+::\+Offset$<$\mbox{\hyperlink{structflatbuffers_1_1String}{\+::flatbuffers\+::\+String}} $>$ \mbox{\hyperlink{idl__gen__ts_8cpp_a9b45b3e13bd9167aab02e17e08916231}{name}}=0, \+::flatbuffers\+::\+Offset$<$ reflection\+::\+Type $>$ type=0, uint16\+\_\+t id=0, uint16\+\_\+t offset=0, int64\+\_\+t default\+\_\+integer=0, double default\+\_\+real=0.\+0, bool deprecated=false, bool required=false, bool key=false, \+::flatbuffers\+::\+Offset$<$\mbox{\hyperlink{classflatbuffers_1_1Vector}{\+::flatbuffers\+::\+Vector}}$<$\+::flatbuffers\+::\+Offset$<$ reflection\+::\+Key\+Value $>$ $>$ $>$ attributes=0, \+::flatbuffers\+::\+Offset$<$\mbox{\hyperlink{classflatbuffers_1_1Vector}{\+::flatbuffers\+::\+Vector}}$<$\+::flatbuffers\+::\+Offset$<$\mbox{\hyperlink{structflatbuffers_1_1String}{\+::flatbuffers\+::\+String}} $>$ $>$ $>$ documentation=0, bool optional=false, uint16\+\_\+t padding=0, bool offset64=false)
+\item 
+inline \+::flatbuffers\+::\+Offset$<$ Field $>$ \mbox{\hyperlink{namespacereflection_aad442982f788d77b14ab9ca55b2c8f13}{reflection\+::\+Create\+Field\+Direct}} (\mbox{\hyperlink{namespaceflatbuffers_a41ac7b1c8f5f4a869e8f649b6c171ce7}{\+::flatbuffers\+::\+Flat\+Buffer\+Builder}} \&\+\_\+fbb, const char \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{idl__gen__ts_8cpp_a9b45b3e13bd9167aab02e17e08916231}{name}}=nullptr, \+::flatbuffers\+::\+Offset$<$ reflection\+::\+Type $>$ type=0, uint16\+\_\+t id=0, uint16\+\_\+t offset=0, int64\+\_\+t default\+\_\+integer=0, double default\+\_\+real=0.\+0, bool deprecated=false, bool required=false, bool key=false, std\+::vector$<$\+::flatbuffers\+::\+Offset$<$ reflection\+::\+Key\+Value $>$ $>$ \texorpdfstring{$\ast$}{*}attributes=nullptr, const std\+::vector$<$\+::flatbuffers\+::\+Offset$<$\mbox{\hyperlink{structflatbuffers_1_1String}{\+::flatbuffers\+::\+String}} $>$ $>$ \texorpdfstring{$\ast$}{*}documentation=nullptr, bool optional=false, uint16\+\_\+t padding=0, bool offset64=false)
+\item 
+inline \+::flatbuffers\+::\+Offset$<$ Object $>$ \mbox{\hyperlink{namespacereflection_a26d7923fb90cec69a435c8e468aa8ca7}{reflection\+::\+Create\+Object}} (\mbox{\hyperlink{namespaceflatbuffers_a41ac7b1c8f5f4a869e8f649b6c171ce7}{\+::flatbuffers\+::\+Flat\+Buffer\+Builder}} \&\+\_\+fbb, \+::flatbuffers\+::\+Offset$<$\mbox{\hyperlink{structflatbuffers_1_1String}{\+::flatbuffers\+::\+String}} $>$ \mbox{\hyperlink{idl__gen__ts_8cpp_a9b45b3e13bd9167aab02e17e08916231}{name}}=0, \+::flatbuffers\+::\+Offset$<$\mbox{\hyperlink{classflatbuffers_1_1Vector}{\+::flatbuffers\+::\+Vector}}$<$\+::flatbuffers\+::\+Offset$<$ reflection\+::\+Field $>$ $>$ $>$ fields=0, bool is\+\_\+struct=false, int32\+\_\+t minalign=0, int32\+\_\+t bytesize=0, \+::flatbuffers\+::\+Offset$<$\mbox{\hyperlink{classflatbuffers_1_1Vector}{\+::flatbuffers\+::\+Vector}}$<$\+::flatbuffers\+::\+Offset$<$ reflection\+::\+Key\+Value $>$ $>$ $>$ attributes=0, \+::flatbuffers\+::\+Offset$<$\mbox{\hyperlink{classflatbuffers_1_1Vector}{\+::flatbuffers\+::\+Vector}}$<$\+::flatbuffers\+::\+Offset$<$\mbox{\hyperlink{structflatbuffers_1_1String}{\+::flatbuffers\+::\+String}} $>$ $>$ $>$ documentation=0, \+::flatbuffers\+::\+Offset$<$\mbox{\hyperlink{structflatbuffers_1_1String}{\+::flatbuffers\+::\+String}} $>$ declaration\+\_\+file=0)
+\item 
+inline \+::flatbuffers\+::\+Offset$<$ Object $>$ \mbox{\hyperlink{namespacereflection_acb253cf7b9d27bbcac69cb89f0f21041}{reflection\+::\+Create\+Object\+Direct}} (\mbox{\hyperlink{namespaceflatbuffers_a41ac7b1c8f5f4a869e8f649b6c171ce7}{\+::flatbuffers\+::\+Flat\+Buffer\+Builder}} \&\+\_\+fbb, const char \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{idl__gen__ts_8cpp_a9b45b3e13bd9167aab02e17e08916231}{name}}=nullptr, std\+::vector$<$\+::flatbuffers\+::\+Offset$<$ reflection\+::\+Field $>$ $>$ \texorpdfstring{$\ast$}{*}fields=nullptr, bool is\+\_\+struct=false, int32\+\_\+t minalign=0, int32\+\_\+t bytesize=0, std\+::vector$<$\+::flatbuffers\+::\+Offset$<$ reflection\+::\+Key\+Value $>$ $>$ \texorpdfstring{$\ast$}{*}attributes=nullptr, const std\+::vector$<$\+::flatbuffers\+::\+Offset$<$\mbox{\hyperlink{structflatbuffers_1_1String}{\+::flatbuffers\+::\+String}} $>$ $>$ \texorpdfstring{$\ast$}{*}documentation=nullptr, const char \texorpdfstring{$\ast$}{*}declaration\+\_\+file=nullptr)
+\item 
+inline \+::flatbuffers\+::\+Offset$<$ RPCCall $>$ \mbox{\hyperlink{namespacereflection_a153b6098cb21833e9e78136b687ac8a6}{reflection\+::\+Create\+RPCCall}} (\mbox{\hyperlink{namespaceflatbuffers_a41ac7b1c8f5f4a869e8f649b6c171ce7}{\+::flatbuffers\+::\+Flat\+Buffer\+Builder}} \&\+\_\+fbb, \+::flatbuffers\+::\+Offset$<$\mbox{\hyperlink{structflatbuffers_1_1String}{\+::flatbuffers\+::\+String}} $>$ \mbox{\hyperlink{idl__gen__ts_8cpp_a9b45b3e13bd9167aab02e17e08916231}{name}}=0, \+::flatbuffers\+::\+Offset$<$ reflection\+::\+Object $>$ request=0, \+::flatbuffers\+::\+Offset$<$ reflection\+::\+Object $>$ response=0, \+::flatbuffers\+::\+Offset$<$\mbox{\hyperlink{classflatbuffers_1_1Vector}{\+::flatbuffers\+::\+Vector}}$<$\+::flatbuffers\+::\+Offset$<$ reflection\+::\+Key\+Value $>$ $>$ $>$ attributes=0, \+::flatbuffers\+::\+Offset$<$\mbox{\hyperlink{classflatbuffers_1_1Vector}{\+::flatbuffers\+::\+Vector}}$<$\+::flatbuffers\+::\+Offset$<$\mbox{\hyperlink{structflatbuffers_1_1String}{\+::flatbuffers\+::\+String}} $>$ $>$ $>$ documentation=0)
+\item 
+inline \+::flatbuffers\+::\+Offset$<$ RPCCall $>$ \mbox{\hyperlink{namespacereflection_aa7aa4962aaeae3ababba3250a00c470c}{reflection\+::\+Create\+RPCCall\+Direct}} (\mbox{\hyperlink{namespaceflatbuffers_a41ac7b1c8f5f4a869e8f649b6c171ce7}{\+::flatbuffers\+::\+Flat\+Buffer\+Builder}} \&\+\_\+fbb, const char \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{idl__gen__ts_8cpp_a9b45b3e13bd9167aab02e17e08916231}{name}}=nullptr, \+::flatbuffers\+::\+Offset$<$ reflection\+::\+Object $>$ request=0, \+::flatbuffers\+::\+Offset$<$ reflection\+::\+Object $>$ response=0, std\+::vector$<$\+::flatbuffers\+::\+Offset$<$ reflection\+::\+Key\+Value $>$ $>$ \texorpdfstring{$\ast$}{*}attributes=nullptr, const std\+::vector$<$\+::flatbuffers\+::\+Offset$<$\mbox{\hyperlink{structflatbuffers_1_1String}{\+::flatbuffers\+::\+String}} $>$ $>$ \texorpdfstring{$\ast$}{*}documentation=nullptr)
+\item 
+inline \+::flatbuffers\+::\+Offset$<$ Service $>$ \mbox{\hyperlink{namespacereflection_a27219f4d2d60b59abca416630a75f623}{reflection\+::\+Create\+Service}} (\mbox{\hyperlink{namespaceflatbuffers_a41ac7b1c8f5f4a869e8f649b6c171ce7}{\+::flatbuffers\+::\+Flat\+Buffer\+Builder}} \&\+\_\+fbb, \+::flatbuffers\+::\+Offset$<$\mbox{\hyperlink{structflatbuffers_1_1String}{\+::flatbuffers\+::\+String}} $>$ \mbox{\hyperlink{idl__gen__ts_8cpp_a9b45b3e13bd9167aab02e17e08916231}{name}}=0, \+::flatbuffers\+::\+Offset$<$\mbox{\hyperlink{classflatbuffers_1_1Vector}{\+::flatbuffers\+::\+Vector}}$<$\+::flatbuffers\+::\+Offset$<$ reflection\+::\+RPCCall $>$ $>$ $>$ calls=0, \+::flatbuffers\+::\+Offset$<$\mbox{\hyperlink{classflatbuffers_1_1Vector}{\+::flatbuffers\+::\+Vector}}$<$\+::flatbuffers\+::\+Offset$<$ reflection\+::\+Key\+Value $>$ $>$ $>$ attributes=0, \+::flatbuffers\+::\+Offset$<$\mbox{\hyperlink{classflatbuffers_1_1Vector}{\+::flatbuffers\+::\+Vector}}$<$\+::flatbuffers\+::\+Offset$<$\mbox{\hyperlink{structflatbuffers_1_1String}{\+::flatbuffers\+::\+String}} $>$ $>$ $>$ documentation=0, \+::flatbuffers\+::\+Offset$<$\mbox{\hyperlink{structflatbuffers_1_1String}{\+::flatbuffers\+::\+String}} $>$ declaration\+\_\+file=0)
+\item 
+inline \+::flatbuffers\+::\+Offset$<$ Service $>$ \mbox{\hyperlink{namespacereflection_a0f37c5b8d72fe8d97e28cace91525bce}{reflection\+::\+Create\+Service\+Direct}} (\mbox{\hyperlink{namespaceflatbuffers_a41ac7b1c8f5f4a869e8f649b6c171ce7}{\+::flatbuffers\+::\+Flat\+Buffer\+Builder}} \&\+\_\+fbb, const char \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{idl__gen__ts_8cpp_a9b45b3e13bd9167aab02e17e08916231}{name}}=nullptr, std\+::vector$<$\+::flatbuffers\+::\+Offset$<$ reflection\+::\+RPCCall $>$ $>$ \texorpdfstring{$\ast$}{*}calls=nullptr, std\+::vector$<$\+::flatbuffers\+::\+Offset$<$ reflection\+::\+Key\+Value $>$ $>$ \texorpdfstring{$\ast$}{*}attributes=nullptr, const std\+::vector$<$\+::flatbuffers\+::\+Offset$<$\mbox{\hyperlink{structflatbuffers_1_1String}{\+::flatbuffers\+::\+String}} $>$ $>$ \texorpdfstring{$\ast$}{*}documentation=nullptr, const char \texorpdfstring{$\ast$}{*}declaration\+\_\+file=nullptr)
+\item 
+inline \+::flatbuffers\+::\+Offset$<$ Schema\+File $>$ \mbox{\hyperlink{namespacereflection_a6466814ba522882ff10a09c5d54f01c7}{reflection\+::\+Create\+Schema\+File}} (\mbox{\hyperlink{namespaceflatbuffers_a41ac7b1c8f5f4a869e8f649b6c171ce7}{\+::flatbuffers\+::\+Flat\+Buffer\+Builder}} \&\+\_\+fbb, \+::flatbuffers\+::\+Offset$<$\mbox{\hyperlink{structflatbuffers_1_1String}{\+::flatbuffers\+::\+String}} $>$ filename=0, \+::flatbuffers\+::\+Offset$<$\mbox{\hyperlink{classflatbuffers_1_1Vector}{\+::flatbuffers\+::\+Vector}}$<$\+::flatbuffers\+::\+Offset$<$\mbox{\hyperlink{structflatbuffers_1_1String}{\+::flatbuffers\+::\+String}} $>$ $>$ $>$ included\+\_\+filenames=0)
+\item 
+inline \+::flatbuffers\+::\+Offset$<$ Schema\+File $>$ \mbox{\hyperlink{namespacereflection_a473d925e360ba1a5b5ec9563408a583e}{reflection\+::\+Create\+Schema\+File\+Direct}} (\mbox{\hyperlink{namespaceflatbuffers_a41ac7b1c8f5f4a869e8f649b6c171ce7}{\+::flatbuffers\+::\+Flat\+Buffer\+Builder}} \&\+\_\+fbb, const char \texorpdfstring{$\ast$}{*}filename=nullptr, const std\+::vector$<$\+::flatbuffers\+::\+Offset$<$\mbox{\hyperlink{structflatbuffers_1_1String}{\+::flatbuffers\+::\+String}} $>$ $>$ \texorpdfstring{$\ast$}{*}included\+\_\+filenames=nullptr)
+\item 
+inline \+::flatbuffers\+::\+Offset$<$ Schema $>$ \mbox{\hyperlink{namespacereflection_a54dcc255479302a61f13d2f463ad7706}{reflection\+::\+Create\+Schema}} (\mbox{\hyperlink{namespaceflatbuffers_a41ac7b1c8f5f4a869e8f649b6c171ce7}{\+::flatbuffers\+::\+Flat\+Buffer\+Builder}} \&\+\_\+fbb, \+::flatbuffers\+::\+Offset$<$\mbox{\hyperlink{classflatbuffers_1_1Vector}{\+::flatbuffers\+::\+Vector}}$<$\+::flatbuffers\+::\+Offset$<$ reflection\+::\+Object $>$ $>$ $>$ objects=0, \+::flatbuffers\+::\+Offset$<$\mbox{\hyperlink{classflatbuffers_1_1Vector}{\+::flatbuffers\+::\+Vector}}$<$\+::flatbuffers\+::\+Offset$<$ reflection\+::\+Enum $>$ $>$ $>$ enums=0, \+::flatbuffers\+::\+Offset$<$\mbox{\hyperlink{structflatbuffers_1_1String}{\+::flatbuffers\+::\+String}} $>$ file\+\_\+ident=0, \+::flatbuffers\+::\+Offset$<$\mbox{\hyperlink{structflatbuffers_1_1String}{\+::flatbuffers\+::\+String}} $>$ file\+\_\+ext=0, \+::flatbuffers\+::\+Offset$<$ reflection\+::\+Object $>$ root\+\_\+table=0, \+::flatbuffers\+::\+Offset$<$\mbox{\hyperlink{classflatbuffers_1_1Vector}{\+::flatbuffers\+::\+Vector}}$<$\+::flatbuffers\+::\+Offset$<$ reflection\+::\+Service $>$ $>$ $>$ services=0, \mbox{\hyperlink{namespacereflection_ac35509643839fedc9ccf3afc60d51882}{reflection\+::\+Advanced\+Features}} advanced\+\_\+features=static\+\_\+cast$<$ \mbox{\hyperlink{namespacereflection_ac35509643839fedc9ccf3afc60d51882}{reflection\+::\+Advanced\+Features}} $>$(0), \+::flatbuffers\+::\+Offset$<$\mbox{\hyperlink{classflatbuffers_1_1Vector}{\+::flatbuffers\+::\+Vector}}$<$\+::flatbuffers\+::\+Offset$<$ reflection\+::\+Schema\+File $>$ $>$ $>$ fbs\+\_\+files=0)
+\item 
+inline \+::flatbuffers\+::\+Offset$<$ Schema $>$ \mbox{\hyperlink{namespacereflection_af61f7ff2e70f4fe79cea4ecfa663b33a}{reflection\+::\+Create\+Schema\+Direct}} (\mbox{\hyperlink{namespaceflatbuffers_a41ac7b1c8f5f4a869e8f649b6c171ce7}{\+::flatbuffers\+::\+Flat\+Buffer\+Builder}} \&\+\_\+fbb, std\+::vector$<$\+::flatbuffers\+::\+Offset$<$ reflection\+::\+Object $>$ $>$ \texorpdfstring{$\ast$}{*}objects=nullptr, std\+::vector$<$\+::flatbuffers\+::\+Offset$<$ reflection\+::\+Enum $>$ $>$ \texorpdfstring{$\ast$}{*}enums=nullptr, const char \texorpdfstring{$\ast$}{*}file\+\_\+ident=nullptr, const char \texorpdfstring{$\ast$}{*}file\+\_\+ext=nullptr, \+::flatbuffers\+::\+Offset$<$ reflection\+::\+Object $>$ root\+\_\+table=0, std\+::vector$<$\+::flatbuffers\+::\+Offset$<$ reflection\+::\+Service $>$ $>$ \texorpdfstring{$\ast$}{*}services=nullptr, \mbox{\hyperlink{namespacereflection_ac35509643839fedc9ccf3afc60d51882}{reflection\+::\+Advanced\+Features}} advanced\+\_\+features=static\+\_\+cast$<$ \mbox{\hyperlink{namespacereflection_ac35509643839fedc9ccf3afc60d51882}{reflection\+::\+Advanced\+Features}} $>$(0), std\+::vector$<$\+::flatbuffers\+::\+Offset$<$ reflection\+::\+Schema\+File $>$ $>$ \texorpdfstring{$\ast$}{*}fbs\+\_\+files=nullptr)
+\item 
+const reflection\+::\+Schema \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{namespacereflection_a6a30aeaf3a32572c93d8f11255c967c8}{reflection\+::\+Get\+Schema}} (const void \texorpdfstring{$\ast$}{*}buf)
+\item 
+const reflection\+::\+Schema \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{namespacereflection_acd9cfff90f18adc7623cb4667bc20033}{reflection\+::\+Get\+Size\+Prefixed\+Schema}} (const void \texorpdfstring{$\ast$}{*}buf)
+\item 
+const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{namespacereflection_a903bffcf345d9bfa08709648762609fc}{reflection\+::\+Schema\+Identifier}} ()
+\item 
+bool \mbox{\hyperlink{namespacereflection_a50cc097be1ad72c2fb0678b7b53d3dba}{reflection\+::\+Schema\+Buffer\+Has\+Identifier}} (const void \texorpdfstring{$\ast$}{*}buf)
+\item 
+bool \mbox{\hyperlink{namespacereflection_a9cb355781e5916270bbdccda8bec411c}{reflection\+::\+Size\+Prefixed\+Schema\+Buffer\+Has\+Identifier}} (const void \texorpdfstring{$\ast$}{*}buf)
+\item 
+bool \mbox{\hyperlink{namespacereflection_afddd482822ed14dda3cd8c1cd33b97e5}{reflection\+::\+Verify\+Schema\+Buffer}} (\mbox{\hyperlink{namespaceflatbuffers_a3268477941df91db2eb06442b6e5f922}{\+::flatbuffers\+::\+Verifier}} \&verifier)
+\item 
+bool \mbox{\hyperlink{namespacereflection_ada5d203adf1f795bf99bb0b44c5bc986}{reflection\+::\+Verify\+Size\+Prefixed\+Schema\+Buffer}} (\mbox{\hyperlink{namespaceflatbuffers_a3268477941df91db2eb06442b6e5f922}{\+::flatbuffers\+::\+Verifier}} \&verifier)
+\item 
+const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{namespacereflection_aa59f736a73500a63b787d446d37a9709}{reflection\+::\+Schema\+Extension}} ()
+\item 
+void \mbox{\hyperlink{namespacereflection_a825e37a82d5c236529a7dede65f99efd}{reflection\+::\+Finish\+Schema\+Buffer}} (\mbox{\hyperlink{namespaceflatbuffers_a41ac7b1c8f5f4a869e8f649b6c171ce7}{\+::flatbuffers\+::\+Flat\+Buffer\+Builder}} \&fbb, \+::flatbuffers\+::\+Offset$<$ reflection\+::\+Schema $>$ root)
+\item 
+void \mbox{\hyperlink{namespacereflection_aa4564b07883474f4768b8823c25ab96c}{reflection\+::\+Finish\+Size\+Prefixed\+Schema\+Buffer}} (\mbox{\hyperlink{namespaceflatbuffers_a41ac7b1c8f5f4a869e8f649b6c171ce7}{\+::flatbuffers\+::\+Flat\+Buffer\+Builder}} \&fbb, \+::flatbuffers\+::\+Offset$<$ reflection\+::\+Schema $>$ root)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{reflection__generated_8h_a07fd5822fc87a9ccfb121829c1f482eb}{VT\+\_\+\+BASE\+\_\+\+TYPE}} = 4
+\item 
+\mbox{\hyperlink{reflection__generated_8h_af1f239c291690bc5c52a3c9125247ba3}{VT\+\_\+\+ELEMENT}} = 6
+\item 
+\mbox{\hyperlink{reflection__generated_8h_a35ae605074f067ff895c25d27636b370}{VT\+\_\+\+INDEX}} = 8
+\item 
+\mbox{\hyperlink{reflection__generated_8h_abed6fae3201f3406a5739671a57888e4}{VT\+\_\+\+FIXED\+\_\+\+LENGTH}} = 10
+\item 
+\mbox{\hyperlink{reflection__generated_8h_a7a4b4692aafea5b63ec609644d51f642}{VT\+\_\+\+BASE\+\_\+\+SIZE}} = 12
+\item 
+\mbox{\hyperlink{reflection__generated_8h_aa519c44e0001ff02d781402f985f42ba}{VT\+\_\+\+KEY}} = 4
+\item 
+\mbox{\hyperlink{reflection__generated_8h_ad17bb8bd997e6ac35eddbf626077375f}{VT\+\_\+\+NAME}} = 4
+\item 
+\mbox{\hyperlink{reflection__generated_8h_abff06f2ad2981cb25be94c4cf9183a94}{VT\+\_\+\+VALUE}} = 6
+\item 
+\mbox{\hyperlink{reflection__generated_8h_a8330d21b3882c211b3490310d263a288}{VT\+\_\+\+UNION\+\_\+\+TYPE}} = 10
+\item 
+\mbox{\hyperlink{reflection__generated_8h_a9eead412c77898308e64b58edc0e6749}{VT\+\_\+\+DOCUMENTATION}} = 12
+\item 
+\mbox{\hyperlink{reflection__generated_8h_ac04a424192e3280dbf4d8df9810c3cf1}{VT\+\_\+\+VALUES}} = 6
+\item 
+\mbox{\hyperlink{reflection__generated_8h_a398af50476cc0e391178bde833b8c6d4}{VT\+\_\+\+IS\+\_\+\+UNION}} = 8
+\item 
+\mbox{\hyperlink{reflection__generated_8h_abaed3334865533b89f6a0e4329c701cf}{VT\+\_\+\+UNDERLYING\+\_\+\+TYPE}} = 10
+\item 
+\mbox{\hyperlink{reflection__generated_8h_a41c228937f4a6ea573d074da91424b84}{VT\+\_\+\+ATTRIBUTES}} = 12
+\item 
+\mbox{\hyperlink{reflection__generated_8h_a9899c62dd30928ac9776a9a29707f9d7}{VT\+\_\+\+TYPE}} = 6
+\item 
+\mbox{\hyperlink{reflection__generated_8h_a5f8774f08cc3055b520a0a2543613977}{VT\+\_\+\+ID}} = 8
+\item 
+\mbox{\hyperlink{reflection__generated_8h_a4f6589e1327294225730649f19f05900}{VT\+\_\+\+OFFSET}} = 10
+\item 
+\mbox{\hyperlink{reflection__generated_8h_aef559fb42bf8c7e75c7d8f8935a1f4c2}{VT\+\_\+\+DEFAULT\+\_\+\+INTEGER}} = 12
+\item 
+\mbox{\hyperlink{reflection__generated_8h_a42b8285e3df6aa720f0de76d87356bae}{VT\+\_\+\+DEFAULT\+\_\+\+REAL}} = 14
+\item 
+\mbox{\hyperlink{reflection__generated_8h_ad388ef369858c6919cb7dd8ca6faf819}{VT\+\_\+\+DEPRECATED}} = 16
+\item 
+\mbox{\hyperlink{reflection__generated_8h_a6c7fceccaf30eaa1932d9006e12f5bf3}{VT\+\_\+\+REQUIRED}} = 18
+\item 
+\mbox{\hyperlink{reflection__generated_8h_a0fcc9d4d7943d7170ab6259c41776517}{VT\+\_\+\+OPTIONAL}} = 26
+\item 
+\mbox{\hyperlink{reflection__generated_8h_a327af11070e0282d7a64f0732ef8ed95}{VT\+\_\+\+PADDING}} = 28
+\item 
+\mbox{\hyperlink{reflection__generated_8h_a5746c0133aaef8c963fb3d1fa7ae7d9d}{VT\+\_\+\+FIELDS}} = 6
+\item 
+\mbox{\hyperlink{reflection__generated_8h_a01a41bedc22fee89dd00a777d6f569f0}{VT\+\_\+\+IS\+\_\+\+STRUCT}} = 8
+\item 
+\mbox{\hyperlink{reflection__generated_8h_a2acad6f6557967cbd85fa9a133656ffd}{VT\+\_\+\+MINALIGN}} = 10
+\item 
+\mbox{\hyperlink{reflection__generated_8h_a360c52522f0847cf75ac0c1dea543caa}{VT\+\_\+\+BYTESIZE}} = 12
+\item 
+\mbox{\hyperlink{reflection__generated_8h_a48a60e48ce95ab7623b0eb265f928bbd}{VT\+\_\+\+REQUEST}} = 6
+\item 
+\mbox{\hyperlink{reflection__generated_8h_aa12f6a3f0440cae32b9193714d137708}{VT\+\_\+\+RESPONSE}} = 8
+\item 
+\mbox{\hyperlink{reflection__generated_8h_a182728946d010f7fc9b0e22a766d8c2a}{VT\+\_\+\+CALLS}} = 6
+\item 
+\mbox{\hyperlink{reflection__generated_8h_ac1084c428f7457bf297e13b90001cdec}{VT\+\_\+\+FILENAME}} = 4
+\item 
+\mbox{\hyperlink{reflection__generated_8h_aed3319b1bce37c1e0cdcef6bed135f08}{VT\+\_\+\+OBJECTS}} = 4
+\item 
+\mbox{\hyperlink{reflection__generated_8h_a8ae183f589ce284360d86192aae87d25}{VT\+\_\+\+ENUMS}} = 6
+\item 
+\mbox{\hyperlink{reflection__generated_8h_af37b83f70f953b13868905f9d6f41f4f}{VT\+\_\+\+FILE\+\_\+\+IDENT}} = 8
+\item 
+\mbox{\hyperlink{reflection__generated_8h_a46be0acea55c2c2919c5dadfd45e6d04}{VT\+\_\+\+FILE\+\_\+\+EXT}} = 10
+\item 
+\mbox{\hyperlink{reflection__generated_8h_a4dc319417f04c5d70962edf66ddd65fd}{VT\+\_\+\+ROOT\+\_\+\+TABLE}} = 12
+\item 
+\mbox{\hyperlink{reflection__generated_8h_a338534a6cf454a5ed06973916686e45c}{VT\+\_\+\+SERVICES}} = 14
+\item 
+\mbox{\hyperlink{reflection__generated_8h_ade2de0f34b8fc9258b611fcb21a16596}{VT\+\_\+\+ADVANCED\+\_\+\+FEATURES}} = 16
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{reflection__generated_8h_ade2de0f34b8fc9258b611fcb21a16596}\label{reflection__generated_8h_ade2de0f34b8fc9258b611fcb21a16596} 
+\index{reflection\_generated.h@{reflection\_generated.h}!VT\_ADVANCED\_FEATURES@{VT\_ADVANCED\_FEATURES}}
+\index{VT\_ADVANCED\_FEATURES@{VT\_ADVANCED\_FEATURES}!reflection\_generated.h@{reflection\_generated.h}}
+\doxysubsubsection{\texorpdfstring{VT\_ADVANCED\_FEATURES}{VT\_ADVANCED\_FEATURES}}
+{\footnotesize\ttfamily VT\+\_\+\+ADVANCED\+\_\+\+FEATURES = 16}
+
+\Hypertarget{reflection__generated_8h_a41c228937f4a6ea573d074da91424b84}\label{reflection__generated_8h_a41c228937f4a6ea573d074da91424b84} 
+\index{reflection\_generated.h@{reflection\_generated.h}!VT\_ATTRIBUTES@{VT\_ATTRIBUTES}}
+\index{VT\_ATTRIBUTES@{VT\_ATTRIBUTES}!reflection\_generated.h@{reflection\_generated.h}}
+\doxysubsubsection{\texorpdfstring{VT\_ATTRIBUTES}{VT\_ATTRIBUTES}}
+{\footnotesize\ttfamily VT\+\_\+\+ATTRIBUTES = 12}
+
+\Hypertarget{reflection__generated_8h_a7a4b4692aafea5b63ec609644d51f642}\label{reflection__generated_8h_a7a4b4692aafea5b63ec609644d51f642} 
+\index{reflection\_generated.h@{reflection\_generated.h}!VT\_BASE\_SIZE@{VT\_BASE\_SIZE}}
+\index{VT\_BASE\_SIZE@{VT\_BASE\_SIZE}!reflection\_generated.h@{reflection\_generated.h}}
+\doxysubsubsection{\texorpdfstring{VT\_BASE\_SIZE}{VT\_BASE\_SIZE}}
+{\footnotesize\ttfamily VT\+\_\+\+BASE\+\_\+\+SIZE = 12}
+
+\Hypertarget{reflection__generated_8h_a07fd5822fc87a9ccfb121829c1f482eb}\label{reflection__generated_8h_a07fd5822fc87a9ccfb121829c1f482eb} 
+\index{reflection\_generated.h@{reflection\_generated.h}!VT\_BASE\_TYPE@{VT\_BASE\_TYPE}}
+\index{VT\_BASE\_TYPE@{VT\_BASE\_TYPE}!reflection\_generated.h@{reflection\_generated.h}}
+\doxysubsubsection{\texorpdfstring{VT\_BASE\_TYPE}{VT\_BASE\_TYPE}}
+{\footnotesize\ttfamily VT\+\_\+\+BASE\+\_\+\+TYPE = 4}
+
+\Hypertarget{reflection__generated_8h_a360c52522f0847cf75ac0c1dea543caa}\label{reflection__generated_8h_a360c52522f0847cf75ac0c1dea543caa} 
+\index{reflection\_generated.h@{reflection\_generated.h}!VT\_BYTESIZE@{VT\_BYTESIZE}}
+\index{VT\_BYTESIZE@{VT\_BYTESIZE}!reflection\_generated.h@{reflection\_generated.h}}
+\doxysubsubsection{\texorpdfstring{VT\_BYTESIZE}{VT\_BYTESIZE}}
+{\footnotesize\ttfamily VT\+\_\+\+BYTESIZE = 12}
+
+\Hypertarget{reflection__generated_8h_a182728946d010f7fc9b0e22a766d8c2a}\label{reflection__generated_8h_a182728946d010f7fc9b0e22a766d8c2a} 
+\index{reflection\_generated.h@{reflection\_generated.h}!VT\_CALLS@{VT\_CALLS}}
+\index{VT\_CALLS@{VT\_CALLS}!reflection\_generated.h@{reflection\_generated.h}}
+\doxysubsubsection{\texorpdfstring{VT\_CALLS}{VT\_CALLS}}
+{\footnotesize\ttfamily VT\+\_\+\+CALLS = 6}
+
+\Hypertarget{reflection__generated_8h_aef559fb42bf8c7e75c7d8f8935a1f4c2}\label{reflection__generated_8h_aef559fb42bf8c7e75c7d8f8935a1f4c2} 
+\index{reflection\_generated.h@{reflection\_generated.h}!VT\_DEFAULT\_INTEGER@{VT\_DEFAULT\_INTEGER}}
+\index{VT\_DEFAULT\_INTEGER@{VT\_DEFAULT\_INTEGER}!reflection\_generated.h@{reflection\_generated.h}}
+\doxysubsubsection{\texorpdfstring{VT\_DEFAULT\_INTEGER}{VT\_DEFAULT\_INTEGER}}
+{\footnotesize\ttfamily VT\+\_\+\+DEFAULT\+\_\+\+INTEGER = 12}
+
+\Hypertarget{reflection__generated_8h_a42b8285e3df6aa720f0de76d87356bae}\label{reflection__generated_8h_a42b8285e3df6aa720f0de76d87356bae} 
+\index{reflection\_generated.h@{reflection\_generated.h}!VT\_DEFAULT\_REAL@{VT\_DEFAULT\_REAL}}
+\index{VT\_DEFAULT\_REAL@{VT\_DEFAULT\_REAL}!reflection\_generated.h@{reflection\_generated.h}}
+\doxysubsubsection{\texorpdfstring{VT\_DEFAULT\_REAL}{VT\_DEFAULT\_REAL}}
+{\footnotesize\ttfamily VT\+\_\+\+DEFAULT\+\_\+\+REAL = 14}
+
+\Hypertarget{reflection__generated_8h_ad388ef369858c6919cb7dd8ca6faf819}\label{reflection__generated_8h_ad388ef369858c6919cb7dd8ca6faf819} 
+\index{reflection\_generated.h@{reflection\_generated.h}!VT\_DEPRECATED@{VT\_DEPRECATED}}
+\index{VT\_DEPRECATED@{VT\_DEPRECATED}!reflection\_generated.h@{reflection\_generated.h}}
+\doxysubsubsection{\texorpdfstring{VT\_DEPRECATED}{VT\_DEPRECATED}}
+{\footnotesize\ttfamily VT\+\_\+\+DEPRECATED = 16}
+
+\Hypertarget{reflection__generated_8h_a9eead412c77898308e64b58edc0e6749}\label{reflection__generated_8h_a9eead412c77898308e64b58edc0e6749} 
+\index{reflection\_generated.h@{reflection\_generated.h}!VT\_DOCUMENTATION@{VT\_DOCUMENTATION}}
+\index{VT\_DOCUMENTATION@{VT\_DOCUMENTATION}!reflection\_generated.h@{reflection\_generated.h}}
+\doxysubsubsection{\texorpdfstring{VT\_DOCUMENTATION}{VT\_DOCUMENTATION}}
+{\footnotesize\ttfamily VT\+\_\+\+DOCUMENTATION = 12}
+
+\Hypertarget{reflection__generated_8h_af1f239c291690bc5c52a3c9125247ba3}\label{reflection__generated_8h_af1f239c291690bc5c52a3c9125247ba3} 
+\index{reflection\_generated.h@{reflection\_generated.h}!VT\_ELEMENT@{VT\_ELEMENT}}
+\index{VT\_ELEMENT@{VT\_ELEMENT}!reflection\_generated.h@{reflection\_generated.h}}
+\doxysubsubsection{\texorpdfstring{VT\_ELEMENT}{VT\_ELEMENT}}
+{\footnotesize\ttfamily VT\+\_\+\+ELEMENT = 6}
+
+\Hypertarget{reflection__generated_8h_a8ae183f589ce284360d86192aae87d25}\label{reflection__generated_8h_a8ae183f589ce284360d86192aae87d25} 
+\index{reflection\_generated.h@{reflection\_generated.h}!VT\_ENUMS@{VT\_ENUMS}}
+\index{VT\_ENUMS@{VT\_ENUMS}!reflection\_generated.h@{reflection\_generated.h}}
+\doxysubsubsection{\texorpdfstring{VT\_ENUMS}{VT\_ENUMS}}
+{\footnotesize\ttfamily VT\+\_\+\+ENUMS = 6}
+
+\Hypertarget{reflection__generated_8h_a5746c0133aaef8c963fb3d1fa7ae7d9d}\label{reflection__generated_8h_a5746c0133aaef8c963fb3d1fa7ae7d9d} 
+\index{reflection\_generated.h@{reflection\_generated.h}!VT\_FIELDS@{VT\_FIELDS}}
+\index{VT\_FIELDS@{VT\_FIELDS}!reflection\_generated.h@{reflection\_generated.h}}
+\doxysubsubsection{\texorpdfstring{VT\_FIELDS}{VT\_FIELDS}}
+{\footnotesize\ttfamily VT\+\_\+\+FIELDS = 6}
+
+\Hypertarget{reflection__generated_8h_a46be0acea55c2c2919c5dadfd45e6d04}\label{reflection__generated_8h_a46be0acea55c2c2919c5dadfd45e6d04} 
+\index{reflection\_generated.h@{reflection\_generated.h}!VT\_FILE\_EXT@{VT\_FILE\_EXT}}
+\index{VT\_FILE\_EXT@{VT\_FILE\_EXT}!reflection\_generated.h@{reflection\_generated.h}}
+\doxysubsubsection{\texorpdfstring{VT\_FILE\_EXT}{VT\_FILE\_EXT}}
+{\footnotesize\ttfamily VT\+\_\+\+FILE\+\_\+\+EXT = 10}
+
+\Hypertarget{reflection__generated_8h_af37b83f70f953b13868905f9d6f41f4f}\label{reflection__generated_8h_af37b83f70f953b13868905f9d6f41f4f} 
+\index{reflection\_generated.h@{reflection\_generated.h}!VT\_FILE\_IDENT@{VT\_FILE\_IDENT}}
+\index{VT\_FILE\_IDENT@{VT\_FILE\_IDENT}!reflection\_generated.h@{reflection\_generated.h}}
+\doxysubsubsection{\texorpdfstring{VT\_FILE\_IDENT}{VT\_FILE\_IDENT}}
+{\footnotesize\ttfamily VT\+\_\+\+FILE\+\_\+\+IDENT = 8}
+
+\Hypertarget{reflection__generated_8h_ac1084c428f7457bf297e13b90001cdec}\label{reflection__generated_8h_ac1084c428f7457bf297e13b90001cdec} 
+\index{reflection\_generated.h@{reflection\_generated.h}!VT\_FILENAME@{VT\_FILENAME}}
+\index{VT\_FILENAME@{VT\_FILENAME}!reflection\_generated.h@{reflection\_generated.h}}
+\doxysubsubsection{\texorpdfstring{VT\_FILENAME}{VT\_FILENAME}}
+{\footnotesize\ttfamily VT\+\_\+\+FILENAME = 4}
+
+\Hypertarget{reflection__generated_8h_abed6fae3201f3406a5739671a57888e4}\label{reflection__generated_8h_abed6fae3201f3406a5739671a57888e4} 
+\index{reflection\_generated.h@{reflection\_generated.h}!VT\_FIXED\_LENGTH@{VT\_FIXED\_LENGTH}}
+\index{VT\_FIXED\_LENGTH@{VT\_FIXED\_LENGTH}!reflection\_generated.h@{reflection\_generated.h}}
+\doxysubsubsection{\texorpdfstring{VT\_FIXED\_LENGTH}{VT\_FIXED\_LENGTH}}
+{\footnotesize\ttfamily VT\+\_\+\+FIXED\+\_\+\+LENGTH = 10}
+
+\Hypertarget{reflection__generated_8h_a5f8774f08cc3055b520a0a2543613977}\label{reflection__generated_8h_a5f8774f08cc3055b520a0a2543613977} 
+\index{reflection\_generated.h@{reflection\_generated.h}!VT\_ID@{VT\_ID}}
+\index{VT\_ID@{VT\_ID}!reflection\_generated.h@{reflection\_generated.h}}
+\doxysubsubsection{\texorpdfstring{VT\_ID}{VT\_ID}}
+{\footnotesize\ttfamily VT\+\_\+\+ID = 8}
+
+\Hypertarget{reflection__generated_8h_a35ae605074f067ff895c25d27636b370}\label{reflection__generated_8h_a35ae605074f067ff895c25d27636b370} 
+\index{reflection\_generated.h@{reflection\_generated.h}!VT\_INDEX@{VT\_INDEX}}
+\index{VT\_INDEX@{VT\_INDEX}!reflection\_generated.h@{reflection\_generated.h}}
+\doxysubsubsection{\texorpdfstring{VT\_INDEX}{VT\_INDEX}}
+{\footnotesize\ttfamily VT\+\_\+\+INDEX = 8}
+
+\Hypertarget{reflection__generated_8h_a01a41bedc22fee89dd00a777d6f569f0}\label{reflection__generated_8h_a01a41bedc22fee89dd00a777d6f569f0} 
+\index{reflection\_generated.h@{reflection\_generated.h}!VT\_IS\_STRUCT@{VT\_IS\_STRUCT}}
+\index{VT\_IS\_STRUCT@{VT\_IS\_STRUCT}!reflection\_generated.h@{reflection\_generated.h}}
+\doxysubsubsection{\texorpdfstring{VT\_IS\_STRUCT}{VT\_IS\_STRUCT}}
+{\footnotesize\ttfamily VT\+\_\+\+IS\+\_\+\+STRUCT = 8}
+
+\Hypertarget{reflection__generated_8h_a398af50476cc0e391178bde833b8c6d4}\label{reflection__generated_8h_a398af50476cc0e391178bde833b8c6d4} 
+\index{reflection\_generated.h@{reflection\_generated.h}!VT\_IS\_UNION@{VT\_IS\_UNION}}
+\index{VT\_IS\_UNION@{VT\_IS\_UNION}!reflection\_generated.h@{reflection\_generated.h}}
+\doxysubsubsection{\texorpdfstring{VT\_IS\_UNION}{VT\_IS\_UNION}}
+{\footnotesize\ttfamily VT\+\_\+\+IS\+\_\+\+UNION = 8}
+
+\Hypertarget{reflection__generated_8h_aa519c44e0001ff02d781402f985f42ba}\label{reflection__generated_8h_aa519c44e0001ff02d781402f985f42ba} 
+\index{reflection\_generated.h@{reflection\_generated.h}!VT\_KEY@{VT\_KEY}}
+\index{VT\_KEY@{VT\_KEY}!reflection\_generated.h@{reflection\_generated.h}}
+\doxysubsubsection{\texorpdfstring{VT\_KEY}{VT\_KEY}}
+{\footnotesize\ttfamily VT\+\_\+\+KEY = 4}
+
+\Hypertarget{reflection__generated_8h_a2acad6f6557967cbd85fa9a133656ffd}\label{reflection__generated_8h_a2acad6f6557967cbd85fa9a133656ffd} 
+\index{reflection\_generated.h@{reflection\_generated.h}!VT\_MINALIGN@{VT\_MINALIGN}}
+\index{VT\_MINALIGN@{VT\_MINALIGN}!reflection\_generated.h@{reflection\_generated.h}}
+\doxysubsubsection{\texorpdfstring{VT\_MINALIGN}{VT\_MINALIGN}}
+{\footnotesize\ttfamily VT\+\_\+\+MINALIGN = 10}
+
+\Hypertarget{reflection__generated_8h_ad17bb8bd997e6ac35eddbf626077375f}\label{reflection__generated_8h_ad17bb8bd997e6ac35eddbf626077375f} 
+\index{reflection\_generated.h@{reflection\_generated.h}!VT\_NAME@{VT\_NAME}}
+\index{VT\_NAME@{VT\_NAME}!reflection\_generated.h@{reflection\_generated.h}}
+\doxysubsubsection{\texorpdfstring{VT\_NAME}{VT\_NAME}}
+{\footnotesize\ttfamily VT\+\_\+\+NAME = 4}
+
+\Hypertarget{reflection__generated_8h_aed3319b1bce37c1e0cdcef6bed135f08}\label{reflection__generated_8h_aed3319b1bce37c1e0cdcef6bed135f08} 
+\index{reflection\_generated.h@{reflection\_generated.h}!VT\_OBJECTS@{VT\_OBJECTS}}
+\index{VT\_OBJECTS@{VT\_OBJECTS}!reflection\_generated.h@{reflection\_generated.h}}
+\doxysubsubsection{\texorpdfstring{VT\_OBJECTS}{VT\_OBJECTS}}
+{\footnotesize\ttfamily VT\+\_\+\+OBJECTS = 4}
+
+\Hypertarget{reflection__generated_8h_a4f6589e1327294225730649f19f05900}\label{reflection__generated_8h_a4f6589e1327294225730649f19f05900} 
+\index{reflection\_generated.h@{reflection\_generated.h}!VT\_OFFSET@{VT\_OFFSET}}
+\index{VT\_OFFSET@{VT\_OFFSET}!reflection\_generated.h@{reflection\_generated.h}}
+\doxysubsubsection{\texorpdfstring{VT\_OFFSET}{VT\_OFFSET}}
+{\footnotesize\ttfamily VT\+\_\+\+OFFSET = 10}
+
+\Hypertarget{reflection__generated_8h_a0fcc9d4d7943d7170ab6259c41776517}\label{reflection__generated_8h_a0fcc9d4d7943d7170ab6259c41776517} 
+\index{reflection\_generated.h@{reflection\_generated.h}!VT\_OPTIONAL@{VT\_OPTIONAL}}
+\index{VT\_OPTIONAL@{VT\_OPTIONAL}!reflection\_generated.h@{reflection\_generated.h}}
+\doxysubsubsection{\texorpdfstring{VT\_OPTIONAL}{VT\_OPTIONAL}}
+{\footnotesize\ttfamily VT\+\_\+\+OPTIONAL = 26}
+
+\Hypertarget{reflection__generated_8h_a327af11070e0282d7a64f0732ef8ed95}\label{reflection__generated_8h_a327af11070e0282d7a64f0732ef8ed95} 
+\index{reflection\_generated.h@{reflection\_generated.h}!VT\_PADDING@{VT\_PADDING}}
+\index{VT\_PADDING@{VT\_PADDING}!reflection\_generated.h@{reflection\_generated.h}}
+\doxysubsubsection{\texorpdfstring{VT\_PADDING}{VT\_PADDING}}
+{\footnotesize\ttfamily VT\+\_\+\+PADDING = 28}
+
+\Hypertarget{reflection__generated_8h_a48a60e48ce95ab7623b0eb265f928bbd}\label{reflection__generated_8h_a48a60e48ce95ab7623b0eb265f928bbd} 
+\index{reflection\_generated.h@{reflection\_generated.h}!VT\_REQUEST@{VT\_REQUEST}}
+\index{VT\_REQUEST@{VT\_REQUEST}!reflection\_generated.h@{reflection\_generated.h}}
+\doxysubsubsection{\texorpdfstring{VT\_REQUEST}{VT\_REQUEST}}
+{\footnotesize\ttfamily VT\+\_\+\+REQUEST = 6}
+
+\Hypertarget{reflection__generated_8h_a6c7fceccaf30eaa1932d9006e12f5bf3}\label{reflection__generated_8h_a6c7fceccaf30eaa1932d9006e12f5bf3} 
+\index{reflection\_generated.h@{reflection\_generated.h}!VT\_REQUIRED@{VT\_REQUIRED}}
+\index{VT\_REQUIRED@{VT\_REQUIRED}!reflection\_generated.h@{reflection\_generated.h}}
+\doxysubsubsection{\texorpdfstring{VT\_REQUIRED}{VT\_REQUIRED}}
+{\footnotesize\ttfamily VT\+\_\+\+REQUIRED = 18}
+
+\Hypertarget{reflection__generated_8h_aa12f6a3f0440cae32b9193714d137708}\label{reflection__generated_8h_aa12f6a3f0440cae32b9193714d137708} 
+\index{reflection\_generated.h@{reflection\_generated.h}!VT\_RESPONSE@{VT\_RESPONSE}}
+\index{VT\_RESPONSE@{VT\_RESPONSE}!reflection\_generated.h@{reflection\_generated.h}}
+\doxysubsubsection{\texorpdfstring{VT\_RESPONSE}{VT\_RESPONSE}}
+{\footnotesize\ttfamily VT\+\_\+\+RESPONSE = 8}
+
+\Hypertarget{reflection__generated_8h_a4dc319417f04c5d70962edf66ddd65fd}\label{reflection__generated_8h_a4dc319417f04c5d70962edf66ddd65fd} 
+\index{reflection\_generated.h@{reflection\_generated.h}!VT\_ROOT\_TABLE@{VT\_ROOT\_TABLE}}
+\index{VT\_ROOT\_TABLE@{VT\_ROOT\_TABLE}!reflection\_generated.h@{reflection\_generated.h}}
+\doxysubsubsection{\texorpdfstring{VT\_ROOT\_TABLE}{VT\_ROOT\_TABLE}}
+{\footnotesize\ttfamily VT\+\_\+\+ROOT\+\_\+\+TABLE = 12}
+
+\Hypertarget{reflection__generated_8h_a338534a6cf454a5ed06973916686e45c}\label{reflection__generated_8h_a338534a6cf454a5ed06973916686e45c} 
+\index{reflection\_generated.h@{reflection\_generated.h}!VT\_SERVICES@{VT\_SERVICES}}
+\index{VT\_SERVICES@{VT\_SERVICES}!reflection\_generated.h@{reflection\_generated.h}}
+\doxysubsubsection{\texorpdfstring{VT\_SERVICES}{VT\_SERVICES}}
+{\footnotesize\ttfamily VT\+\_\+\+SERVICES = 14}
+
+\Hypertarget{reflection__generated_8h_a9899c62dd30928ac9776a9a29707f9d7}\label{reflection__generated_8h_a9899c62dd30928ac9776a9a29707f9d7} 
+\index{reflection\_generated.h@{reflection\_generated.h}!VT\_TYPE@{VT\_TYPE}}
+\index{VT\_TYPE@{VT\_TYPE}!reflection\_generated.h@{reflection\_generated.h}}
+\doxysubsubsection{\texorpdfstring{VT\_TYPE}{VT\_TYPE}}
+{\footnotesize\ttfamily VT\+\_\+\+TYPE = 6}
+
+\Hypertarget{reflection__generated_8h_abaed3334865533b89f6a0e4329c701cf}\label{reflection__generated_8h_abaed3334865533b89f6a0e4329c701cf} 
+\index{reflection\_generated.h@{reflection\_generated.h}!VT\_UNDERLYING\_TYPE@{VT\_UNDERLYING\_TYPE}}
+\index{VT\_UNDERLYING\_TYPE@{VT\_UNDERLYING\_TYPE}!reflection\_generated.h@{reflection\_generated.h}}
+\doxysubsubsection{\texorpdfstring{VT\_UNDERLYING\_TYPE}{VT\_UNDERLYING\_TYPE}}
+{\footnotesize\ttfamily VT\+\_\+\+UNDERLYING\+\_\+\+TYPE = 10}
+
+\Hypertarget{reflection__generated_8h_a8330d21b3882c211b3490310d263a288}\label{reflection__generated_8h_a8330d21b3882c211b3490310d263a288} 
+\index{reflection\_generated.h@{reflection\_generated.h}!VT\_UNION\_TYPE@{VT\_UNION\_TYPE}}
+\index{VT\_UNION\_TYPE@{VT\_UNION\_TYPE}!reflection\_generated.h@{reflection\_generated.h}}
+\doxysubsubsection{\texorpdfstring{VT\_UNION\_TYPE}{VT\_UNION\_TYPE}}
+{\footnotesize\ttfamily VT\+\_\+\+UNION\+\_\+\+TYPE = 10}
+
+\Hypertarget{reflection__generated_8h_abff06f2ad2981cb25be94c4cf9183a94}\label{reflection__generated_8h_abff06f2ad2981cb25be94c4cf9183a94} 
+\index{reflection\_generated.h@{reflection\_generated.h}!VT\_VALUE@{VT\_VALUE}}
+\index{VT\_VALUE@{VT\_VALUE}!reflection\_generated.h@{reflection\_generated.h}}
+\doxysubsubsection{\texorpdfstring{VT\_VALUE}{VT\_VALUE}}
+{\footnotesize\ttfamily VT\+\_\+\+VALUE = 6}
+
+\Hypertarget{reflection__generated_8h_ac04a424192e3280dbf4d8df9810c3cf1}\label{reflection__generated_8h_ac04a424192e3280dbf4d8df9810c3cf1} 
+\index{reflection\_generated.h@{reflection\_generated.h}!VT\_VALUES@{VT\_VALUES}}
+\index{VT\_VALUES@{VT\_VALUES}!reflection\_generated.h@{reflection\_generated.h}}
+\doxysubsubsection{\texorpdfstring{VT\_VALUES}{VT\_VALUES}}
+{\footnotesize\ttfamily VT\+\_\+\+VALUES = 6}
+

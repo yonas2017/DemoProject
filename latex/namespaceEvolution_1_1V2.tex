@@ -1,0 +1,346 @@
+\doxysection{Evolution\+::V2 Namespace Reference}
+\hypertarget{namespaceEvolution_1_1V2}{}\label{namespaceEvolution_1_1V2}\index{Evolution::V2@{Evolution::V2}}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structEvolution_1_1V2_1_1FLATBUFFERS__FINAL__CLASS}{FLATBUFFERS\+\_\+\+FINAL\+\_\+\+CLASS}}
+\item 
+struct \mbox{\hyperlink{structEvolution_1_1V2_1_1RootBuilder}{Root\+Builder}}
+\item 
+struct \mbox{\hyperlink{structEvolution_1_1V2_1_1TableABuilder}{Table\+ABuilder}}
+\item 
+struct \mbox{\hyperlink{structEvolution_1_1V2_1_1TableBBuilder}{Table\+BBuilder}}
+\item 
+struct \mbox{\hyperlink{structEvolution_1_1V2_1_1TableCBuilder}{Table\+CBuilder}}
+\item 
+struct \mbox{\hyperlink{structEvolution_1_1V2_1_1UnionTraits}{Union\+Traits}}
+\item 
+struct \mbox{\hyperlink{structEvolution_1_1V2_1_1UnionTraits_3_01Evolution_1_1V2_1_1TableA_01_4}{Union\+Traits$<$ Evolution\+::\+V2\+::\+Table\+A $>$}}
+\item 
+struct \mbox{\hyperlink{structEvolution_1_1V2_1_1UnionTraits_3_01Evolution_1_1V2_1_1TableB_01_4}{Union\+Traits$<$ Evolution\+::\+V2\+::\+Table\+B $>$}}
+\item 
+struct \mbox{\hyperlink{structEvolution_1_1V2_1_1UnionTraits_3_01Evolution_1_1V2_1_1TableC_01_4}{Union\+Traits$<$ Evolution\+::\+V2\+::\+Table\+C $>$}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum class \mbox{\hyperlink{namespaceEvolution_1_1V2_abfc683f530c7917e3b9fa02df28832d7}{Enum}} \+: int8\+\_\+t \{ \newline
+\mbox{\hyperlink{namespaceEvolution_1_1V2_abfc683f530c7917e3b9fa02df28832d7a719ef271d38a388fd7b2bc967f4bd885}{King}} = 0
+, \mbox{\hyperlink{namespaceEvolution_1_1V2_abfc683f530c7917e3b9fa02df28832d7a2c2d2c0291163b077a372c2a9c5a6eda}{Queen}} = 1
+, \mbox{\hyperlink{namespaceEvolution_1_1V2_abfc683f530c7917e3b9fa02df28832d7a1a415f5ae0f891e49d34821a896b4466}{Rook}} = 2
+, \mbox{\hyperlink{namespaceEvolution_1_1V2_abfc683f530c7917e3b9fa02df28832d7a3aa4584e547efba20238772d4af5c03d}{Bishop}} = 3
+, \newline
+\mbox{\hyperlink{namespaceEvolution_1_1V2_abfc683f530c7917e3b9fa02df28832d7ace31e2a082d17e038fcc6e3006166653}{MIN}} = King
+, \mbox{\hyperlink{namespaceEvolution_1_1V2_abfc683f530c7917e3b9fa02df28832d7a26a4b44a837bf97b972628509912b4a5}{MAX}} = Bishop
+ \}
+\item 
+enum class \mbox{\hyperlink{namespaceEvolution_1_1V2_af734e948821000e818a0521e44c903a2}{Union}} \+: uint8\+\_\+t \{ \newline
+\mbox{\hyperlink{namespaceEvolution_1_1V2_af734e948821000e818a0521e44c903a2ab50339a10e1de285ac99d4c3990b8693}{NONE}} = 0
+, \mbox{\hyperlink{namespaceEvolution_1_1V2_af734e948821000e818a0521e44c903a2a4ca958e8b370c465a9c795914a44ad35}{TableA}} = 1
+, \mbox{\hyperlink{namespaceEvolution_1_1V2_af734e948821000e818a0521e44c903a2a507561a972de9e4f92f58c8313334343}{TableB}} = 2
+, \mbox{\hyperlink{namespaceEvolution_1_1V2_af734e948821000e818a0521e44c903a2a3c7d8be659dc03109c34b9433f9f427a}{TableC}} = 3
+, \newline
+\mbox{\hyperlink{namespaceEvolution_1_1V2_af734e948821000e818a0521e44c903a2ace31e2a082d17e038fcc6e3006166653}{MIN}} = NONE
+, \mbox{\hyperlink{namespaceEvolution_1_1V2_af734e948821000e818a0521e44c903a2a26a4b44a837bf97b972628509912b4a5}{MAX}} = TableC
+ \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+const \mbox{\hyperlink{namespaceEvolution_1_1V2_abfc683f530c7917e3b9fa02df28832d7}{Enum}}(\& \mbox{\hyperlink{namespaceEvolution_1_1V2_a07d4cd12efbe7f63cd82b768fa3bef59}{Enum\+Values\+Enum}} ())\mbox{[}4\mbox{]}
+\item 
+const char \texorpdfstring{$\ast$}{*}const \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{namespaceEvolution_1_1V2_aade2e44e433bcf97a3f09ab6f6a36ee0}{Enum\+Names\+Enum}} ()
+\item 
+const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{namespaceEvolution_1_1V2_a01627dc8157a48a87c34485b7221062e}{Enum\+Name\+Enum}} (\mbox{\hyperlink{namespaceEvolution_1_1V2_abfc683f530c7917e3b9fa02df28832d7}{Enum}} e)
+\item 
+const \mbox{\hyperlink{namespaceEvolution_1_1V2_af734e948821000e818a0521e44c903a2}{Union}}(\& \mbox{\hyperlink{namespaceEvolution_1_1V2_a4cb3ff288a4178f8170fcfe78bb2dd83}{Enum\+Values\+Union}} ())\mbox{[}4\mbox{]}
+\item 
+const char \texorpdfstring{$\ast$}{*}const \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{namespaceEvolution_1_1V2_a7d51e347c5e83fd8e20fb4c876454ccb}{Enum\+Names\+Union}} ()
+\item 
+const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{namespaceEvolution_1_1V2_a894e66547be5df88441df48461cd4cca}{Enum\+Name\+Union}} (\mbox{\hyperlink{namespaceEvolution_1_1V2_af734e948821000e818a0521e44c903a2}{Union}} e)
+\item 
+bool \mbox{\hyperlink{namespaceEvolution_1_1V2_ac78632340331c2d0b1814d812e60263c}{Verify\+Union}} (\mbox{\hyperlink{namespaceflatbuffers_a3268477941df91db2eb06442b6e5f922}{\+::flatbuffers\+::\+Verifier}} \&verifier, const void \texorpdfstring{$\ast$}{*}obj, \mbox{\hyperlink{namespaceEvolution_1_1V2_af734e948821000e818a0521e44c903a2}{Union}} type)
+\item 
+bool \mbox{\hyperlink{namespaceEvolution_1_1V2_ac73bc8549211e6ae38881fdf3940cf9b}{Verify\+Union\+Vector}} (\mbox{\hyperlink{namespaceflatbuffers_a3268477941df91db2eb06442b6e5f922}{\+::flatbuffers\+::\+Verifier}} \&verifier, const \mbox{\hyperlink{classflatbuffers_1_1Vector}{\+::flatbuffers\+::\+Vector}}$<$\+::flatbuffers\+::\+Offset$<$ void $>$ $>$ \texorpdfstring{$\ast$}{*}values, const \mbox{\hyperlink{classflatbuffers_1_1Vector}{\+::flatbuffers\+::\+Vector}}$<$ \mbox{\hyperlink{namespaceEvolution_1_1V2_af734e948821000e818a0521e44c903a2}{Union}} $>$ \texorpdfstring{$\ast$}{*}types)
+\item 
+\mbox{\hyperlink{namespaceEvolution_1_1V2_ac0a0ba4dd2abf7c54bbeac921756b2b2}{FLATBUFFERS\+\_\+\+MANUALLY\+\_\+\+ALIGNED\+\_\+\+STRUCT}} (8) Struct \mbox{\hyperlink{structEvolution_1_1V2_1_1FLATBUFFERS__FINAL__CLASS}{FLATBUFFERS\+\_\+\+FINAL\+\_\+\+CLASS}}
+\item 
+\mbox{\hyperlink{namespaceEvolution_1_1V2_a88ada80ef610ee0f59f3cf4681fdaac8}{FLATBUFFERS\+\_\+\+STRUCT\+\_\+\+END}} (Struct, 16)
+\item 
+bool \mbox{\hyperlink{namespaceEvolution_1_1V2_a6730be883aa894d2cbcab2dde14d3f34}{operator==}} (const Struct \&lhs, const Struct \&rhs)
+\item 
+bool \mbox{\hyperlink{namespaceEvolution_1_1V2_a8779496e989318bc5f3313fdcb6987d9}{operator!=}} (const Struct \&lhs, const Struct \&rhs)
+\item 
+inline \+::flatbuffers\+::\+Offset$<$ \mbox{\hyperlink{namespaceEvolution_1_1V2_af734e948821000e818a0521e44c903a2a4ca958e8b370c465a9c795914a44ad35}{TableA}} $>$ \mbox{\hyperlink{namespaceEvolution_1_1V2_a6ce826897d99f09879ca434bc95a1d8e}{Create\+TableA}} (\mbox{\hyperlink{namespaceflatbuffers_a41ac7b1c8f5f4a869e8f649b6c171ce7}{\+::flatbuffers\+::\+Flat\+Buffer\+Builder}} \&\+\_\+fbb, float a=0.\+0f, int32\+\_\+t b=0, \+::flatbuffers\+::\+Offset$<$\mbox{\hyperlink{structflatbuffers_1_1String}{\+::flatbuffers\+::\+String}} $>$ c=0)
+\item 
+inline \+::flatbuffers\+::\+Offset$<$ \mbox{\hyperlink{namespaceEvolution_1_1V2_af734e948821000e818a0521e44c903a2a4ca958e8b370c465a9c795914a44ad35}{TableA}} $>$ \mbox{\hyperlink{namespaceEvolution_1_1V2_a5e580144008261e182935e461a973198}{Create\+Table\+ADirect}} (\mbox{\hyperlink{namespaceflatbuffers_a41ac7b1c8f5f4a869e8f649b6c171ce7}{\+::flatbuffers\+::\+Flat\+Buffer\+Builder}} \&\+\_\+fbb, float a=0.\+0f, int32\+\_\+t b=0, const char \texorpdfstring{$\ast$}{*}c=nullptr)
+\item 
+inline \+::flatbuffers\+::\+Offset$<$ \mbox{\hyperlink{namespaceEvolution_1_1V2_af734e948821000e818a0521e44c903a2a507561a972de9e4f92f58c8313334343}{TableB}} $>$ \mbox{\hyperlink{namespaceEvolution_1_1V2_a3ebf5ed2d8b1ee5aea8abf1090c7415d}{Create\+TableB}} (\mbox{\hyperlink{namespaceflatbuffers_a41ac7b1c8f5f4a869e8f649b6c171ce7}{\+::flatbuffers\+::\+Flat\+Buffer\+Builder}} \&\+\_\+fbb, int32\+\_\+t a=0)
+\item 
+inline \+::flatbuffers\+::\+Offset$<$ \mbox{\hyperlink{namespaceEvolution_1_1V2_af734e948821000e818a0521e44c903a2a3c7d8be659dc03109c34b9433f9f427a}{TableC}} $>$ \mbox{\hyperlink{namespaceEvolution_1_1V2_a31c229abd151057f98d3f147bde585dd}{Create\+TableC}} (\mbox{\hyperlink{namespaceflatbuffers_a41ac7b1c8f5f4a869e8f649b6c171ce7}{\+::flatbuffers\+::\+Flat\+Buffer\+Builder}} \&\+\_\+fbb, double a=0.\+0, \+::flatbuffers\+::\+Offset$<$\mbox{\hyperlink{structflatbuffers_1_1String}{\+::flatbuffers\+::\+String}} $>$ b=0)
+\item 
+inline \+::flatbuffers\+::\+Offset$<$ \mbox{\hyperlink{namespaceEvolution_1_1V2_af734e948821000e818a0521e44c903a2a3c7d8be659dc03109c34b9433f9f427a}{TableC}} $>$ \mbox{\hyperlink{namespaceEvolution_1_1V2_a7b40c180dba0acc844e33e27798a3c20}{Create\+Table\+CDirect}} (\mbox{\hyperlink{namespaceflatbuffers_a41ac7b1c8f5f4a869e8f649b6c171ce7}{\+::flatbuffers\+::\+Flat\+Buffer\+Builder}} \&\+\_\+fbb, double a=0.\+0, const char \texorpdfstring{$\ast$}{*}b=nullptr)
+\item 
+template$<$$>$ const \mbox{\hyperlink{namespaceEvolution_1_1V2_af734e948821000e818a0521e44c903a2a4ca958e8b370c465a9c795914a44ad35}{Evolution\+::\+V2\+::\+TableA}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{namespaceEvolution_1_1V2_a6f85530951e89277b165786c46ceeb1a}{Root\+::c\+\_\+as$<$ Evolution\+::\+V2\+::\+Table\+A $>$}} () const
+\item 
+template$<$$>$ const \mbox{\hyperlink{namespaceEvolution_1_1V2_af734e948821000e818a0521e44c903a2a507561a972de9e4f92f58c8313334343}{Evolution\+::\+V2\+::\+TableB}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{namespaceEvolution_1_1V2_a26f6a8351406ddaffee536d9e0f1e97a}{Root\+::c\+\_\+as$<$ Evolution\+::\+V2\+::\+Table\+B $>$}} () const
+\item 
+template$<$$>$ const \mbox{\hyperlink{namespaceEvolution_1_1V2_af734e948821000e818a0521e44c903a2a3c7d8be659dc03109c34b9433f9f427a}{Evolution\+::\+V2\+::\+TableC}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{namespaceEvolution_1_1V2_adceebef64c6772e558a6e49ad54cb434}{Root\+::c\+\_\+as$<$ Evolution\+::\+V2\+::\+Table\+C $>$}} () const
+\item 
+inline \+::flatbuffers\+::\+Offset$<$ Root $>$ \mbox{\hyperlink{namespaceEvolution_1_1V2_ad3a0f9ba1bfcd622d9382c6b092d6691}{Create\+Root}} (\mbox{\hyperlink{namespaceflatbuffers_a41ac7b1c8f5f4a869e8f649b6c171ce7}{\+::flatbuffers\+::\+Flat\+Buffer\+Builder}} \&\+\_\+fbb, bool b=false, \mbox{\hyperlink{namespaceEvolution_1_1V2_af734e948821000e818a0521e44c903a2}{Evolution\+::\+V2\+::\+Union}} c\+\_\+type=\mbox{\hyperlink{namespaceEvolution_1_1V2_af734e948821000e818a0521e44c903a2ab50339a10e1de285ac99d4c3990b8693}{Evolution\+::\+V2\+::\+Union\+::\+NONE}}, \+::flatbuffers\+::\+Offset$<$ void $>$ c=0, \mbox{\hyperlink{namespaceEvolution_1_1V2_abfc683f530c7917e3b9fa02df28832d7}{Evolution\+::\+V2\+::\+Enum}} d=\mbox{\hyperlink{namespaceEvolution_1_1V2_abfc683f530c7917e3b9fa02df28832d7a719ef271d38a388fd7b2bc967f4bd885}{Evolution\+::\+V2\+::\+Enum\+::\+King}}, \+::flatbuffers\+::\+Offset$<$ \mbox{\hyperlink{namespaceEvolution_1_1V2_af734e948821000e818a0521e44c903a2a4ca958e8b370c465a9c795914a44ad35}{Evolution\+::\+V2\+::\+TableA}} $>$ e=0, const Evolution\+::\+V2\+::\+Struct \texorpdfstring{$\ast$}{*}ff=nullptr, \+::flatbuffers\+::\+Offset$<$\mbox{\hyperlink{classflatbuffers_1_1Vector}{\+::flatbuffers\+::\+Vector}}$<$ int32\+\_\+t $>$ $>$ g=0, \+::flatbuffers\+::\+Offset$<$\mbox{\hyperlink{classflatbuffers_1_1Vector}{\+::flatbuffers\+::\+Vector}}$<$\+::flatbuffers\+::\+Offset$<$ \mbox{\hyperlink{namespaceEvolution_1_1V2_af734e948821000e818a0521e44c903a2a507561a972de9e4f92f58c8313334343}{Evolution\+::\+V2\+::\+TableB}} $>$ $>$ $>$ h=0, uint32\+\_\+t \mbox{\hyperlink{gmock-matchers-comparisons__test_8cc_acb559820d9ca11295b4500f179ef6392}{i}}=1234, \+::flatbuffers\+::\+Offset$<$ \mbox{\hyperlink{namespaceEvolution_1_1V2_af734e948821000e818a0521e44c903a2a3c7d8be659dc03109c34b9433f9f427a}{Evolution\+::\+V2\+::\+TableC}} $>$ k=0, uint8\+\_\+t l=56)
+\item 
+inline \+::flatbuffers\+::\+Offset$<$ Root $>$ \mbox{\hyperlink{namespaceEvolution_1_1V2_a18e7a4ace7fc6e2e15d589b3c0e9b8f4}{Create\+Root\+Direct}} (\mbox{\hyperlink{namespaceflatbuffers_a41ac7b1c8f5f4a869e8f649b6c171ce7}{\+::flatbuffers\+::\+Flat\+Buffer\+Builder}} \&\+\_\+fbb, bool b=false, \mbox{\hyperlink{namespaceEvolution_1_1V2_af734e948821000e818a0521e44c903a2}{Evolution\+::\+V2\+::\+Union}} c\+\_\+type=\mbox{\hyperlink{namespaceEvolution_1_1V2_af734e948821000e818a0521e44c903a2ab50339a10e1de285ac99d4c3990b8693}{Evolution\+::\+V2\+::\+Union\+::\+NONE}}, \+::flatbuffers\+::\+Offset$<$ void $>$ c=0, \mbox{\hyperlink{namespaceEvolution_1_1V2_abfc683f530c7917e3b9fa02df28832d7}{Evolution\+::\+V2\+::\+Enum}} d=\mbox{\hyperlink{namespaceEvolution_1_1V2_abfc683f530c7917e3b9fa02df28832d7a719ef271d38a388fd7b2bc967f4bd885}{Evolution\+::\+V2\+::\+Enum\+::\+King}}, \+::flatbuffers\+::\+Offset$<$ \mbox{\hyperlink{namespaceEvolution_1_1V2_af734e948821000e818a0521e44c903a2a4ca958e8b370c465a9c795914a44ad35}{Evolution\+::\+V2\+::\+TableA}} $>$ e=0, const Evolution\+::\+V2\+::\+Struct \texorpdfstring{$\ast$}{*}ff=nullptr, const std\+::vector$<$ int32\+\_\+t $>$ \texorpdfstring{$\ast$}{*}g=nullptr, const std\+::vector$<$\+::flatbuffers\+::\+Offset$<$ \mbox{\hyperlink{namespaceEvolution_1_1V2_af734e948821000e818a0521e44c903a2a507561a972de9e4f92f58c8313334343}{Evolution\+::\+V2\+::\+TableB}} $>$ $>$ \texorpdfstring{$\ast$}{*}h=nullptr, uint32\+\_\+t \mbox{\hyperlink{gmock-matchers-comparisons__test_8cc_acb559820d9ca11295b4500f179ef6392}{i}}=1234, \+::flatbuffers\+::\+Offset$<$ \mbox{\hyperlink{namespaceEvolution_1_1V2_af734e948821000e818a0521e44c903a2a3c7d8be659dc03109c34b9433f9f427a}{Evolution\+::\+V2\+::\+TableC}} $>$ k=0, uint8\+\_\+t l=56)
+\item 
+const Evolution\+::\+V2\+::\+Root \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{namespaceEvolution_1_1V2_aacb50512e476a6ab03c03c2af7bc6acb}{Get\+Root}} (const void \texorpdfstring{$\ast$}{*}buf)
+\item 
+const Evolution\+::\+V2\+::\+Root \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{namespaceEvolution_1_1V2_a6ac0bce56a18d559394c953d975dcc3a}{Get\+Size\+Prefixed\+Root}} (const void \texorpdfstring{$\ast$}{*}buf)
+\item 
+bool \mbox{\hyperlink{namespaceEvolution_1_1V2_af4e00e3345ec39549e7b15371a859824}{Verify\+Root\+Buffer}} (\mbox{\hyperlink{namespaceflatbuffers_a3268477941df91db2eb06442b6e5f922}{\+::flatbuffers\+::\+Verifier}} \&verifier)
+\item 
+bool \mbox{\hyperlink{namespaceEvolution_1_1V2_a3bd8ecddbabcaf51885fe32bbc89757f}{Verify\+Size\+Prefixed\+Root\+Buffer}} (\mbox{\hyperlink{namespaceflatbuffers_a3268477941df91db2eb06442b6e5f922}{\+::flatbuffers\+::\+Verifier}} \&verifier)
+\item 
+void \mbox{\hyperlink{namespaceEvolution_1_1V2_a448ec95afd0b8b1b9d70f67abc3bb8e2}{Finish\+Root\+Buffer}} (\mbox{\hyperlink{namespaceflatbuffers_a41ac7b1c8f5f4a869e8f649b6c171ce7}{\+::flatbuffers\+::\+Flat\+Buffer\+Builder}} \&fbb, \+::flatbuffers\+::\+Offset$<$ Evolution\+::\+V2\+::\+Root $>$ root)
+\item 
+void \mbox{\hyperlink{namespaceEvolution_1_1V2_a8cf28823f2e7e4ec1205d5c38c350865}{Finish\+Size\+Prefixed\+Root\+Buffer}} (\mbox{\hyperlink{namespaceflatbuffers_a41ac7b1c8f5f4a869e8f649b6c171ce7}{\+::flatbuffers\+::\+Flat\+Buffer\+Builder}} \&fbb, \+::flatbuffers\+::\+Offset$<$ Evolution\+::\+V2\+::\+Root $>$ root)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Enumeration Type Documentation}
+\Hypertarget{namespaceEvolution_1_1V2_abfc683f530c7917e3b9fa02df28832d7}\label{namespaceEvolution_1_1V2_abfc683f530c7917e3b9fa02df28832d7} 
+\index{Evolution::V2@{Evolution::V2}!Enum@{Enum}}
+\index{Enum@{Enum}!Evolution::V2@{Evolution::V2}}
+\doxysubsubsection{\texorpdfstring{Enum}{Enum}}
+{\footnotesize\ttfamily enum class \mbox{\hyperlink{namespaceEvolution_1_1V2_abfc683f530c7917e3b9fa02df28832d7}{Evolution\+::\+V2\+::\+Enum}} \+: int8\+\_\+t\hspace{0.3cm}{\ttfamily [strong]}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{King@{King}!Evolution::V2@{Evolution::V2}}\index{Evolution::V2@{Evolution::V2}!King@{King}}}\Hypertarget{namespaceEvolution_1_1V2_abfc683f530c7917e3b9fa02df28832d7a719ef271d38a388fd7b2bc967f4bd885}\label{namespaceEvolution_1_1V2_abfc683f530c7917e3b9fa02df28832d7a719ef271d38a388fd7b2bc967f4bd885} 
+King&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Queen@{Queen}!Evolution::V2@{Evolution::V2}}\index{Evolution::V2@{Evolution::V2}!Queen@{Queen}}}\Hypertarget{namespaceEvolution_1_1V2_abfc683f530c7917e3b9fa02df28832d7a2c2d2c0291163b077a372c2a9c5a6eda}\label{namespaceEvolution_1_1V2_abfc683f530c7917e3b9fa02df28832d7a2c2d2c0291163b077a372c2a9c5a6eda} 
+Queen&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Rook@{Rook}!Evolution::V2@{Evolution::V2}}\index{Evolution::V2@{Evolution::V2}!Rook@{Rook}}}\Hypertarget{namespaceEvolution_1_1V2_abfc683f530c7917e3b9fa02df28832d7a1a415f5ae0f891e49d34821a896b4466}\label{namespaceEvolution_1_1V2_abfc683f530c7917e3b9fa02df28832d7a1a415f5ae0f891e49d34821a896b4466} 
+Rook&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Bishop@{Bishop}!Evolution::V2@{Evolution::V2}}\index{Evolution::V2@{Evolution::V2}!Bishop@{Bishop}}}\Hypertarget{namespaceEvolution_1_1V2_abfc683f530c7917e3b9fa02df28832d7a3aa4584e547efba20238772d4af5c03d}\label{namespaceEvolution_1_1V2_abfc683f530c7917e3b9fa02df28832d7a3aa4584e547efba20238772d4af5c03d} 
+Bishop&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MIN@{MIN}!Evolution::V2@{Evolution::V2}}\index{Evolution::V2@{Evolution::V2}!MIN@{MIN}}}\Hypertarget{namespaceEvolution_1_1V2_abfc683f530c7917e3b9fa02df28832d7ace31e2a082d17e038fcc6e3006166653}\label{namespaceEvolution_1_1V2_abfc683f530c7917e3b9fa02df28832d7ace31e2a082d17e038fcc6e3006166653} 
+MIN&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MAX@{MAX}!Evolution::V2@{Evolution::V2}}\index{Evolution::V2@{Evolution::V2}!MAX@{MAX}}}\Hypertarget{namespaceEvolution_1_1V2_abfc683f530c7917e3b9fa02df28832d7a26a4b44a837bf97b972628509912b4a5}\label{namespaceEvolution_1_1V2_abfc683f530c7917e3b9fa02df28832d7a26a4b44a837bf97b972628509912b4a5} 
+MAX&\\
+\hline
+
+\end{DoxyEnumFields}
+\Hypertarget{namespaceEvolution_1_1V2_af734e948821000e818a0521e44c903a2}\label{namespaceEvolution_1_1V2_af734e948821000e818a0521e44c903a2} 
+\index{Evolution::V2@{Evolution::V2}!Union@{Union}}
+\index{Union@{Union}!Evolution::V2@{Evolution::V2}}
+\doxysubsubsection{\texorpdfstring{Union}{Union}}
+{\footnotesize\ttfamily enum class \mbox{\hyperlink{namespaceEvolution_1_1V2_af734e948821000e818a0521e44c903a2}{Evolution\+::\+V2\+::\+Union}} \+: uint8\+\_\+t\hspace{0.3cm}{\ttfamily [strong]}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NONE@{NONE}!Evolution::V2@{Evolution::V2}}\index{Evolution::V2@{Evolution::V2}!NONE@{NONE}}}\Hypertarget{namespaceEvolution_1_1V2_af734e948821000e818a0521e44c903a2ab50339a10e1de285ac99d4c3990b8693}\label{namespaceEvolution_1_1V2_af734e948821000e818a0521e44c903a2ab50339a10e1de285ac99d4c3990b8693} 
+NONE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TableA@{TableA}!Evolution::V2@{Evolution::V2}}\index{Evolution::V2@{Evolution::V2}!TableA@{TableA}}}\Hypertarget{namespaceEvolution_1_1V2_af734e948821000e818a0521e44c903a2a4ca958e8b370c465a9c795914a44ad35}\label{namespaceEvolution_1_1V2_af734e948821000e818a0521e44c903a2a4ca958e8b370c465a9c795914a44ad35} 
+TableA&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TableB@{TableB}!Evolution::V2@{Evolution::V2}}\index{Evolution::V2@{Evolution::V2}!TableB@{TableB}}}\Hypertarget{namespaceEvolution_1_1V2_af734e948821000e818a0521e44c903a2a507561a972de9e4f92f58c8313334343}\label{namespaceEvolution_1_1V2_af734e948821000e818a0521e44c903a2a507561a972de9e4f92f58c8313334343} 
+TableB&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TableC@{TableC}!Evolution::V2@{Evolution::V2}}\index{Evolution::V2@{Evolution::V2}!TableC@{TableC}}}\Hypertarget{namespaceEvolution_1_1V2_af734e948821000e818a0521e44c903a2a3c7d8be659dc03109c34b9433f9f427a}\label{namespaceEvolution_1_1V2_af734e948821000e818a0521e44c903a2a3c7d8be659dc03109c34b9433f9f427a} 
+TableC&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MIN@{MIN}!Evolution::V2@{Evolution::V2}}\index{Evolution::V2@{Evolution::V2}!MIN@{MIN}}}\Hypertarget{namespaceEvolution_1_1V2_af734e948821000e818a0521e44c903a2ace31e2a082d17e038fcc6e3006166653}\label{namespaceEvolution_1_1V2_af734e948821000e818a0521e44c903a2ace31e2a082d17e038fcc6e3006166653} 
+MIN&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MAX@{MAX}!Evolution::V2@{Evolution::V2}}\index{Evolution::V2@{Evolution::V2}!MAX@{MAX}}}\Hypertarget{namespaceEvolution_1_1V2_af734e948821000e818a0521e44c903a2a26a4b44a837bf97b972628509912b4a5}\label{namespaceEvolution_1_1V2_af734e948821000e818a0521e44c903a2a26a4b44a837bf97b972628509912b4a5} 
+MAX&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{namespaceEvolution_1_1V2_ad3a0f9ba1bfcd622d9382c6b092d6691}\label{namespaceEvolution_1_1V2_ad3a0f9ba1bfcd622d9382c6b092d6691} 
+\index{Evolution::V2@{Evolution::V2}!CreateRoot@{CreateRoot}}
+\index{CreateRoot@{CreateRoot}!Evolution::V2@{Evolution::V2}}
+\doxysubsubsection{\texorpdfstring{CreateRoot()}{CreateRoot()}}
+{\footnotesize\ttfamily inline \+::flatbuffers\+::\+Offset$<$ Root $>$ Evolution\+::\+V2\+::\+Create\+Root (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceflatbuffers_a41ac7b1c8f5f4a869e8f649b6c171ce7}{\+::flatbuffers\+::\+Flat\+Buffer\+Builder}} \&}]{\+\_\+fbb,  }\item[{bool}]{b = {\ttfamily false},  }\item[{\mbox{\hyperlink{namespaceEvolution_1_1V2_af734e948821000e818a0521e44c903a2}{Evolution\+::\+V2\+::\+Union}}}]{c\+\_\+type = {\ttfamily \mbox{\hyperlink{namespaceEvolution_1_1V2_af734e948821000e818a0521e44c903a2ab50339a10e1de285ac99d4c3990b8693}{Evolution\+::\+V2\+::\+Union\+::\+NONE}}},  }\item[{\+::flatbuffers\+::\+Offset$<$ void $>$}]{c = {\ttfamily 0},  }\item[{\mbox{\hyperlink{namespaceEvolution_1_1V2_abfc683f530c7917e3b9fa02df28832d7}{Evolution\+::\+V2\+::\+Enum}}}]{d = {\ttfamily \mbox{\hyperlink{namespaceEvolution_1_1V2_abfc683f530c7917e3b9fa02df28832d7a719ef271d38a388fd7b2bc967f4bd885}{Evolution\+::\+V2\+::\+Enum\+::\+King}}},  }\item[{\+::flatbuffers\+::\+Offset$<$ \mbox{\hyperlink{namespaceEvolution_1_1V2_af734e948821000e818a0521e44c903a2a4ca958e8b370c465a9c795914a44ad35}{Evolution\+::\+V2\+::\+TableA}} $>$}]{e = {\ttfamily 0},  }\item[{const Evolution\+::\+V2\+::\+Struct \texorpdfstring{$\ast$}{*}}]{ff = {\ttfamily nullptr},  }\item[{\+::flatbuffers\+::\+Offset$<$\mbox{\hyperlink{classflatbuffers_1_1Vector}{\+::flatbuffers\+::\+Vector}}$<$ int32\+\_\+t $>$ $>$}]{g = {\ttfamily 0},  }\item[{\+::flatbuffers\+::\+Offset$<$\mbox{\hyperlink{classflatbuffers_1_1Vector}{\+::flatbuffers\+::\+Vector}}$<$\+::flatbuffers\+::\+Offset$<$ \mbox{\hyperlink{namespaceEvolution_1_1V2_af734e948821000e818a0521e44c903a2a507561a972de9e4f92f58c8313334343}{Evolution\+::\+V2\+::\+TableB}} $>$ $>$ $>$}]{h = {\ttfamily 0},  }\item[{uint32\+\_\+t}]{i = {\ttfamily 1234},  }\item[{\+::flatbuffers\+::\+Offset$<$ \mbox{\hyperlink{namespaceEvolution_1_1V2_af734e948821000e818a0521e44c903a2a3c7d8be659dc03109c34b9433f9f427a}{Evolution\+::\+V2\+::\+TableC}} $>$}]{k = {\ttfamily 0},  }\item[{uint8\+\_\+t}]{l = {\ttfamily 56} }\end{DoxyParamCaption})}
+
+\Hypertarget{namespaceEvolution_1_1V2_a18e7a4ace7fc6e2e15d589b3c0e9b8f4}\label{namespaceEvolution_1_1V2_a18e7a4ace7fc6e2e15d589b3c0e9b8f4} 
+\index{Evolution::V2@{Evolution::V2}!CreateRootDirect@{CreateRootDirect}}
+\index{CreateRootDirect@{CreateRootDirect}!Evolution::V2@{Evolution::V2}}
+\doxysubsubsection{\texorpdfstring{CreateRootDirect()}{CreateRootDirect()}}
+{\footnotesize\ttfamily inline \+::flatbuffers\+::\+Offset$<$ Root $>$ Evolution\+::\+V2\+::\+Create\+Root\+Direct (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceflatbuffers_a41ac7b1c8f5f4a869e8f649b6c171ce7}{\+::flatbuffers\+::\+Flat\+Buffer\+Builder}} \&}]{\+\_\+fbb,  }\item[{bool}]{b = {\ttfamily false},  }\item[{\mbox{\hyperlink{namespaceEvolution_1_1V2_af734e948821000e818a0521e44c903a2}{Evolution\+::\+V2\+::\+Union}}}]{c\+\_\+type = {\ttfamily \mbox{\hyperlink{namespaceEvolution_1_1V2_af734e948821000e818a0521e44c903a2ab50339a10e1de285ac99d4c3990b8693}{Evolution\+::\+V2\+::\+Union\+::\+NONE}}},  }\item[{\+::flatbuffers\+::\+Offset$<$ void $>$}]{c = {\ttfamily 0},  }\item[{\mbox{\hyperlink{namespaceEvolution_1_1V2_abfc683f530c7917e3b9fa02df28832d7}{Evolution\+::\+V2\+::\+Enum}}}]{d = {\ttfamily \mbox{\hyperlink{namespaceEvolution_1_1V2_abfc683f530c7917e3b9fa02df28832d7a719ef271d38a388fd7b2bc967f4bd885}{Evolution\+::\+V2\+::\+Enum\+::\+King}}},  }\item[{\+::flatbuffers\+::\+Offset$<$ \mbox{\hyperlink{namespaceEvolution_1_1V2_af734e948821000e818a0521e44c903a2a4ca958e8b370c465a9c795914a44ad35}{Evolution\+::\+V2\+::\+TableA}} $>$}]{e = {\ttfamily 0},  }\item[{const Evolution\+::\+V2\+::\+Struct \texorpdfstring{$\ast$}{*}}]{ff = {\ttfamily nullptr},  }\item[{const std\+::vector$<$ int32\+\_\+t $>$ \texorpdfstring{$\ast$}{*}}]{g = {\ttfamily nullptr},  }\item[{const std\+::vector$<$\+::flatbuffers\+::\+Offset$<$ \mbox{\hyperlink{namespaceEvolution_1_1V2_af734e948821000e818a0521e44c903a2a507561a972de9e4f92f58c8313334343}{Evolution\+::\+V2\+::\+TableB}} $>$ $>$ \texorpdfstring{$\ast$}{*}}]{h = {\ttfamily nullptr},  }\item[{uint32\+\_\+t}]{i = {\ttfamily 1234},  }\item[{\+::flatbuffers\+::\+Offset$<$ \mbox{\hyperlink{namespaceEvolution_1_1V2_af734e948821000e818a0521e44c903a2a3c7d8be659dc03109c34b9433f9f427a}{Evolution\+::\+V2\+::\+TableC}} $>$}]{k = {\ttfamily 0},  }\item[{uint8\+\_\+t}]{l = {\ttfamily 56} }\end{DoxyParamCaption})}
+
+\Hypertarget{namespaceEvolution_1_1V2_a6ce826897d99f09879ca434bc95a1d8e}\label{namespaceEvolution_1_1V2_a6ce826897d99f09879ca434bc95a1d8e} 
+\index{Evolution::V2@{Evolution::V2}!CreateTableA@{CreateTableA}}
+\index{CreateTableA@{CreateTableA}!Evolution::V2@{Evolution::V2}}
+\doxysubsubsection{\texorpdfstring{CreateTableA()}{CreateTableA()}}
+{\footnotesize\ttfamily inline \+::flatbuffers\+::\+Offset$<$ \mbox{\hyperlink{namespaceEvolution_1_1V2_af734e948821000e818a0521e44c903a2a4ca958e8b370c465a9c795914a44ad35}{TableA}} $>$ Evolution\+::\+V2\+::\+Create\+TableA (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceflatbuffers_a41ac7b1c8f5f4a869e8f649b6c171ce7}{\+::flatbuffers\+::\+Flat\+Buffer\+Builder}} \&}]{\+\_\+fbb,  }\item[{float}]{a = {\ttfamily 0.0f},  }\item[{int32\+\_\+t}]{b = {\ttfamily 0},  }\item[{\+::flatbuffers\+::\+Offset$<$\mbox{\hyperlink{structflatbuffers_1_1String}{\+::flatbuffers\+::\+String}} $>$}]{c = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+\Hypertarget{namespaceEvolution_1_1V2_a5e580144008261e182935e461a973198}\label{namespaceEvolution_1_1V2_a5e580144008261e182935e461a973198} 
+\index{Evolution::V2@{Evolution::V2}!CreateTableADirect@{CreateTableADirect}}
+\index{CreateTableADirect@{CreateTableADirect}!Evolution::V2@{Evolution::V2}}
+\doxysubsubsection{\texorpdfstring{CreateTableADirect()}{CreateTableADirect()}}
+{\footnotesize\ttfamily inline \+::flatbuffers\+::\+Offset$<$ \mbox{\hyperlink{namespaceEvolution_1_1V2_af734e948821000e818a0521e44c903a2a4ca958e8b370c465a9c795914a44ad35}{TableA}} $>$ Evolution\+::\+V2\+::\+Create\+Table\+ADirect (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceflatbuffers_a41ac7b1c8f5f4a869e8f649b6c171ce7}{\+::flatbuffers\+::\+Flat\+Buffer\+Builder}} \&}]{\+\_\+fbb,  }\item[{float}]{a = {\ttfamily 0.0f},  }\item[{int32\+\_\+t}]{b = {\ttfamily 0},  }\item[{const char \texorpdfstring{$\ast$}{*}}]{c = {\ttfamily nullptr} }\end{DoxyParamCaption})}
+
+\Hypertarget{namespaceEvolution_1_1V2_a3ebf5ed2d8b1ee5aea8abf1090c7415d}\label{namespaceEvolution_1_1V2_a3ebf5ed2d8b1ee5aea8abf1090c7415d} 
+\index{Evolution::V2@{Evolution::V2}!CreateTableB@{CreateTableB}}
+\index{CreateTableB@{CreateTableB}!Evolution::V2@{Evolution::V2}}
+\doxysubsubsection{\texorpdfstring{CreateTableB()}{CreateTableB()}}
+{\footnotesize\ttfamily inline \+::flatbuffers\+::\+Offset$<$ \mbox{\hyperlink{namespaceEvolution_1_1V2_af734e948821000e818a0521e44c903a2a507561a972de9e4f92f58c8313334343}{TableB}} $>$ Evolution\+::\+V2\+::\+Create\+TableB (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceflatbuffers_a41ac7b1c8f5f4a869e8f649b6c171ce7}{\+::flatbuffers\+::\+Flat\+Buffer\+Builder}} \&}]{\+\_\+fbb,  }\item[{int32\+\_\+t}]{a = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+\Hypertarget{namespaceEvolution_1_1V2_a31c229abd151057f98d3f147bde585dd}\label{namespaceEvolution_1_1V2_a31c229abd151057f98d3f147bde585dd} 
+\index{Evolution::V2@{Evolution::V2}!CreateTableC@{CreateTableC}}
+\index{CreateTableC@{CreateTableC}!Evolution::V2@{Evolution::V2}}
+\doxysubsubsection{\texorpdfstring{CreateTableC()}{CreateTableC()}}
+{\footnotesize\ttfamily inline \+::flatbuffers\+::\+Offset$<$ \mbox{\hyperlink{namespaceEvolution_1_1V2_af734e948821000e818a0521e44c903a2a3c7d8be659dc03109c34b9433f9f427a}{TableC}} $>$ Evolution\+::\+V2\+::\+Create\+TableC (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceflatbuffers_a41ac7b1c8f5f4a869e8f649b6c171ce7}{\+::flatbuffers\+::\+Flat\+Buffer\+Builder}} \&}]{\+\_\+fbb,  }\item[{double}]{a = {\ttfamily 0.0},  }\item[{\+::flatbuffers\+::\+Offset$<$\mbox{\hyperlink{structflatbuffers_1_1String}{\+::flatbuffers\+::\+String}} $>$}]{b = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+\Hypertarget{namespaceEvolution_1_1V2_a7b40c180dba0acc844e33e27798a3c20}\label{namespaceEvolution_1_1V2_a7b40c180dba0acc844e33e27798a3c20} 
+\index{Evolution::V2@{Evolution::V2}!CreateTableCDirect@{CreateTableCDirect}}
+\index{CreateTableCDirect@{CreateTableCDirect}!Evolution::V2@{Evolution::V2}}
+\doxysubsubsection{\texorpdfstring{CreateTableCDirect()}{CreateTableCDirect()}}
+{\footnotesize\ttfamily inline \+::flatbuffers\+::\+Offset$<$ \mbox{\hyperlink{namespaceEvolution_1_1V2_af734e948821000e818a0521e44c903a2a3c7d8be659dc03109c34b9433f9f427a}{TableC}} $>$ Evolution\+::\+V2\+::\+Create\+Table\+CDirect (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceflatbuffers_a41ac7b1c8f5f4a869e8f649b6c171ce7}{\+::flatbuffers\+::\+Flat\+Buffer\+Builder}} \&}]{\+\_\+fbb,  }\item[{double}]{a = {\ttfamily 0.0},  }\item[{const char \texorpdfstring{$\ast$}{*}}]{b = {\ttfamily nullptr} }\end{DoxyParamCaption})}
+
+\Hypertarget{namespaceEvolution_1_1V2_a01627dc8157a48a87c34485b7221062e}\label{namespaceEvolution_1_1V2_a01627dc8157a48a87c34485b7221062e} 
+\index{Evolution::V2@{Evolution::V2}!EnumNameEnum@{EnumNameEnum}}
+\index{EnumNameEnum@{EnumNameEnum}!Evolution::V2@{Evolution::V2}}
+\doxysubsubsection{\texorpdfstring{EnumNameEnum()}{EnumNameEnum()}}
+{\footnotesize\ttfamily const char \texorpdfstring{$\ast$}{*} Evolution\+::\+V2\+::\+Enum\+Name\+Enum (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceEvolution_1_1V2_abfc683f530c7917e3b9fa02df28832d7}{Enum}}}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{namespaceEvolution_1_1V2_aade2e44e433bcf97a3f09ab6f6a36ee0}\label{namespaceEvolution_1_1V2_aade2e44e433bcf97a3f09ab6f6a36ee0} 
+\index{Evolution::V2@{Evolution::V2}!EnumNamesEnum@{EnumNamesEnum}}
+\index{EnumNamesEnum@{EnumNamesEnum}!Evolution::V2@{Evolution::V2}}
+\doxysubsubsection{\texorpdfstring{EnumNamesEnum()}{EnumNamesEnum()}}
+{\footnotesize\ttfamily const char \texorpdfstring{$\ast$}{*}const  \texorpdfstring{$\ast$}{*} Evolution\+::\+V2\+::\+Enum\+Names\+Enum (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{namespaceEvolution_1_1V2_a7d51e347c5e83fd8e20fb4c876454ccb}\label{namespaceEvolution_1_1V2_a7d51e347c5e83fd8e20fb4c876454ccb} 
+\index{Evolution::V2@{Evolution::V2}!EnumNamesUnion@{EnumNamesUnion}}
+\index{EnumNamesUnion@{EnumNamesUnion}!Evolution::V2@{Evolution::V2}}
+\doxysubsubsection{\texorpdfstring{EnumNamesUnion()}{EnumNamesUnion()}}
+{\footnotesize\ttfamily const char \texorpdfstring{$\ast$}{*}const  \texorpdfstring{$\ast$}{*} Evolution\+::\+V2\+::\+Enum\+Names\+Union (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{namespaceEvolution_1_1V2_a894e66547be5df88441df48461cd4cca}\label{namespaceEvolution_1_1V2_a894e66547be5df88441df48461cd4cca} 
+\index{Evolution::V2@{Evolution::V2}!EnumNameUnion@{EnumNameUnion}}
+\index{EnumNameUnion@{EnumNameUnion}!Evolution::V2@{Evolution::V2}}
+\doxysubsubsection{\texorpdfstring{EnumNameUnion()}{EnumNameUnion()}}
+{\footnotesize\ttfamily const char \texorpdfstring{$\ast$}{*} Evolution\+::\+V2\+::\+Enum\+Name\+Union (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceEvolution_1_1V2_af734e948821000e818a0521e44c903a2}{Union}}}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{namespaceEvolution_1_1V2_a07d4cd12efbe7f63cd82b768fa3bef59}\label{namespaceEvolution_1_1V2_a07d4cd12efbe7f63cd82b768fa3bef59} 
+\index{Evolution::V2@{Evolution::V2}!EnumValuesEnum@{EnumValuesEnum}}
+\index{EnumValuesEnum@{EnumValuesEnum}!Evolution::V2@{Evolution::V2}}
+\doxysubsubsection{\texorpdfstring{EnumValuesEnum()}{EnumValuesEnum()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{namespaceEvolution_1_1V2_abfc683f530c7917e3b9fa02df28832d7}{Enum}}(\& Evolution\+::\+V2\+::\+Enum\+Values\+Enum (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}))\mbox{[}4\mbox{]}\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{namespaceEvolution_1_1V2_a4cb3ff288a4178f8170fcfe78bb2dd83}\label{namespaceEvolution_1_1V2_a4cb3ff288a4178f8170fcfe78bb2dd83} 
+\index{Evolution::V2@{Evolution::V2}!EnumValuesUnion@{EnumValuesUnion}}
+\index{EnumValuesUnion@{EnumValuesUnion}!Evolution::V2@{Evolution::V2}}
+\doxysubsubsection{\texorpdfstring{EnumValuesUnion()}{EnumValuesUnion()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{namespaceEvolution_1_1V2_af734e948821000e818a0521e44c903a2}{Union}}(\& Evolution\+::\+V2\+::\+Enum\+Values\+Union (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}))\mbox{[}4\mbox{]}\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{namespaceEvolution_1_1V2_a448ec95afd0b8b1b9d70f67abc3bb8e2}\label{namespaceEvolution_1_1V2_a448ec95afd0b8b1b9d70f67abc3bb8e2} 
+\index{Evolution::V2@{Evolution::V2}!FinishRootBuffer@{FinishRootBuffer}}
+\index{FinishRootBuffer@{FinishRootBuffer}!Evolution::V2@{Evolution::V2}}
+\doxysubsubsection{\texorpdfstring{FinishRootBuffer()}{FinishRootBuffer()}}
+{\footnotesize\ttfamily void Evolution\+::\+V2\+::\+Finish\+Root\+Buffer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceflatbuffers_a41ac7b1c8f5f4a869e8f649b6c171ce7}{\+::flatbuffers\+::\+Flat\+Buffer\+Builder}} \&}]{fbb,  }\item[{\+::flatbuffers\+::\+Offset$<$ Evolution\+::\+V2\+::\+Root $>$}]{root }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{namespaceEvolution_1_1V2_a8cf28823f2e7e4ec1205d5c38c350865}\label{namespaceEvolution_1_1V2_a8cf28823f2e7e4ec1205d5c38c350865} 
+\index{Evolution::V2@{Evolution::V2}!FinishSizePrefixedRootBuffer@{FinishSizePrefixedRootBuffer}}
+\index{FinishSizePrefixedRootBuffer@{FinishSizePrefixedRootBuffer}!Evolution::V2@{Evolution::V2}}
+\doxysubsubsection{\texorpdfstring{FinishSizePrefixedRootBuffer()}{FinishSizePrefixedRootBuffer()}}
+{\footnotesize\ttfamily void Evolution\+::\+V2\+::\+Finish\+Size\+Prefixed\+Root\+Buffer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceflatbuffers_a41ac7b1c8f5f4a869e8f649b6c171ce7}{\+::flatbuffers\+::\+Flat\+Buffer\+Builder}} \&}]{fbb,  }\item[{\+::flatbuffers\+::\+Offset$<$ Evolution\+::\+V2\+::\+Root $>$}]{root }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{namespaceEvolution_1_1V2_ac0a0ba4dd2abf7c54bbeac921756b2b2}\label{namespaceEvolution_1_1V2_ac0a0ba4dd2abf7c54bbeac921756b2b2} 
+\index{Evolution::V2@{Evolution::V2}!FLATBUFFERS\_MANUALLY\_ALIGNED\_STRUCT@{FLATBUFFERS\_MANUALLY\_ALIGNED\_STRUCT}}
+\index{FLATBUFFERS\_MANUALLY\_ALIGNED\_STRUCT@{FLATBUFFERS\_MANUALLY\_ALIGNED\_STRUCT}!Evolution::V2@{Evolution::V2}}
+\doxysubsubsection{\texorpdfstring{FLATBUFFERS\_MANUALLY\_ALIGNED\_STRUCT()}{FLATBUFFERS\_MANUALLY\_ALIGNED\_STRUCT()}}
+{\footnotesize\ttfamily Evolution\+::\+V2\+::\+FLATBUFFERS\+\_\+\+MANUALLY\+\_\+\+ALIGNED\+\_\+\+STRUCT (\begin{DoxyParamCaption}\item[{8}]{ }\end{DoxyParamCaption})}
+
+\Hypertarget{namespaceEvolution_1_1V2_a88ada80ef610ee0f59f3cf4681fdaac8}\label{namespaceEvolution_1_1V2_a88ada80ef610ee0f59f3cf4681fdaac8} 
+\index{Evolution::V2@{Evolution::V2}!FLATBUFFERS\_STRUCT\_END@{FLATBUFFERS\_STRUCT\_END}}
+\index{FLATBUFFERS\_STRUCT\_END@{FLATBUFFERS\_STRUCT\_END}!Evolution::V2@{Evolution::V2}}
+\doxysubsubsection{\texorpdfstring{FLATBUFFERS\_STRUCT\_END()}{FLATBUFFERS\_STRUCT\_END()}}
+{\footnotesize\ttfamily Evolution\+::\+V2\+::\+FLATBUFFERS\+\_\+\+STRUCT\+\_\+\+END (\begin{DoxyParamCaption}\item[{Struct}]{,  }\item[{16}]{ }\end{DoxyParamCaption})}
+
+\Hypertarget{namespaceEvolution_1_1V2_aacb50512e476a6ab03c03c2af7bc6acb}\label{namespaceEvolution_1_1V2_aacb50512e476a6ab03c03c2af7bc6acb} 
+\index{Evolution::V2@{Evolution::V2}!GetRoot@{GetRoot}}
+\index{GetRoot@{GetRoot}!Evolution::V2@{Evolution::V2}}
+\doxysubsubsection{\texorpdfstring{GetRoot()}{GetRoot()}}
+{\footnotesize\ttfamily const Evolution\+::\+V2\+::\+Root \texorpdfstring{$\ast$}{*} Evolution\+::\+V2\+::\+Get\+Root (\begin{DoxyParamCaption}\item[{const void \texorpdfstring{$\ast$}{*}}]{buf }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{namespaceEvolution_1_1V2_a6ac0bce56a18d559394c953d975dcc3a}\label{namespaceEvolution_1_1V2_a6ac0bce56a18d559394c953d975dcc3a} 
+\index{Evolution::V2@{Evolution::V2}!GetSizePrefixedRoot@{GetSizePrefixedRoot}}
+\index{GetSizePrefixedRoot@{GetSizePrefixedRoot}!Evolution::V2@{Evolution::V2}}
+\doxysubsubsection{\texorpdfstring{GetSizePrefixedRoot()}{GetSizePrefixedRoot()}}
+{\footnotesize\ttfamily const Evolution\+::\+V2\+::\+Root \texorpdfstring{$\ast$}{*} Evolution\+::\+V2\+::\+Get\+Size\+Prefixed\+Root (\begin{DoxyParamCaption}\item[{const void \texorpdfstring{$\ast$}{*}}]{buf }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{namespaceEvolution_1_1V2_a8779496e989318bc5f3313fdcb6987d9}\label{namespaceEvolution_1_1V2_a8779496e989318bc5f3313fdcb6987d9} 
+\index{Evolution::V2@{Evolution::V2}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!Evolution::V2@{Evolution::V2}}
+\doxysubsubsection{\texorpdfstring{operator"!=()}{operator!=()}}
+{\footnotesize\ttfamily bool Evolution\+::\+V2\+::operator!= (\begin{DoxyParamCaption}\item[{const Struct \&}]{lhs,  }\item[{const Struct \&}]{rhs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{namespaceEvolution_1_1V2_a6730be883aa894d2cbcab2dde14d3f34}\label{namespaceEvolution_1_1V2_a6730be883aa894d2cbcab2dde14d3f34} 
+\index{Evolution::V2@{Evolution::V2}!operator==@{operator==}}
+\index{operator==@{operator==}!Evolution::V2@{Evolution::V2}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily bool Evolution\+::\+V2\+::operator== (\begin{DoxyParamCaption}\item[{const Struct \&}]{lhs,  }\item[{const Struct \&}]{rhs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{namespaceEvolution_1_1V2_a6f85530951e89277b165786c46ceeb1a}\label{namespaceEvolution_1_1V2_a6f85530951e89277b165786c46ceeb1a} 
+\index{Evolution::V2@{Evolution::V2}!Root::c\_as$<$ Evolution::V2::TableA $>$@{Root::c\_as$<$ Evolution::V2::TableA $>$}}
+\index{Root::c\_as$<$ Evolution::V2::TableA $>$@{Root::c\_as$<$ Evolution::V2::TableA $>$}!Evolution::V2@{Evolution::V2}}
+\doxysubsubsection{\texorpdfstring{Root::c\_as$<$ Evolution::V2::TableA $>$()}{Root::c\_as< Evolution::V2::TableA >()}}
+{\footnotesize\ttfamily template$<$$>$ \\
+const \mbox{\hyperlink{namespaceEvolution_1_1V2_af734e948821000e818a0521e44c903a2a4ca958e8b370c465a9c795914a44ad35}{Evolution\+::\+V2\+::\+TableA}} \texorpdfstring{$\ast$}{*} Evolution\+::\+V2\+::\+Root\+::c\+\_\+as$<$ \mbox{\hyperlink{namespaceEvolution_1_1V2_af734e948821000e818a0521e44c903a2a4ca958e8b370c465a9c795914a44ad35}{Evolution\+::\+V2\+::\+TableA}} $>$ (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{namespaceEvolution_1_1V2_a26f6a8351406ddaffee536d9e0f1e97a}\label{namespaceEvolution_1_1V2_a26f6a8351406ddaffee536d9e0f1e97a} 
+\index{Evolution::V2@{Evolution::V2}!Root::c\_as$<$ Evolution::V2::TableB $>$@{Root::c\_as$<$ Evolution::V2::TableB $>$}}
+\index{Root::c\_as$<$ Evolution::V2::TableB $>$@{Root::c\_as$<$ Evolution::V2::TableB $>$}!Evolution::V2@{Evolution::V2}}
+\doxysubsubsection{\texorpdfstring{Root::c\_as$<$ Evolution::V2::TableB $>$()}{Root::c\_as< Evolution::V2::TableB >()}}
+{\footnotesize\ttfamily template$<$$>$ \\
+const \mbox{\hyperlink{namespaceEvolution_1_1V2_af734e948821000e818a0521e44c903a2a507561a972de9e4f92f58c8313334343}{Evolution\+::\+V2\+::\+TableB}} \texorpdfstring{$\ast$}{*} Evolution\+::\+V2\+::\+Root\+::c\+\_\+as$<$ \mbox{\hyperlink{namespaceEvolution_1_1V2_af734e948821000e818a0521e44c903a2a507561a972de9e4f92f58c8313334343}{Evolution\+::\+V2\+::\+TableB}} $>$ (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{namespaceEvolution_1_1V2_adceebef64c6772e558a6e49ad54cb434}\label{namespaceEvolution_1_1V2_adceebef64c6772e558a6e49ad54cb434} 
+\index{Evolution::V2@{Evolution::V2}!Root::c\_as$<$ Evolution::V2::TableC $>$@{Root::c\_as$<$ Evolution::V2::TableC $>$}}
+\index{Root::c\_as$<$ Evolution::V2::TableC $>$@{Root::c\_as$<$ Evolution::V2::TableC $>$}!Evolution::V2@{Evolution::V2}}
+\doxysubsubsection{\texorpdfstring{Root::c\_as$<$ Evolution::V2::TableC $>$()}{Root::c\_as< Evolution::V2::TableC >()}}
+{\footnotesize\ttfamily template$<$$>$ \\
+const \mbox{\hyperlink{namespaceEvolution_1_1V2_af734e948821000e818a0521e44c903a2a3c7d8be659dc03109c34b9433f9f427a}{Evolution\+::\+V2\+::\+TableC}} \texorpdfstring{$\ast$}{*} Evolution\+::\+V2\+::\+Root\+::c\+\_\+as$<$ \mbox{\hyperlink{namespaceEvolution_1_1V2_af734e948821000e818a0521e44c903a2a3c7d8be659dc03109c34b9433f9f427a}{Evolution\+::\+V2\+::\+TableC}} $>$ (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{namespaceEvolution_1_1V2_af4e00e3345ec39549e7b15371a859824}\label{namespaceEvolution_1_1V2_af4e00e3345ec39549e7b15371a859824} 
+\index{Evolution::V2@{Evolution::V2}!VerifyRootBuffer@{VerifyRootBuffer}}
+\index{VerifyRootBuffer@{VerifyRootBuffer}!Evolution::V2@{Evolution::V2}}
+\doxysubsubsection{\texorpdfstring{VerifyRootBuffer()}{VerifyRootBuffer()}}
+{\footnotesize\ttfamily bool Evolution\+::\+V2\+::\+Verify\+Root\+Buffer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceflatbuffers_a3268477941df91db2eb06442b6e5f922}{\+::flatbuffers\+::\+Verifier}} \&}]{verifier }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{namespaceEvolution_1_1V2_a3bd8ecddbabcaf51885fe32bbc89757f}\label{namespaceEvolution_1_1V2_a3bd8ecddbabcaf51885fe32bbc89757f} 
+\index{Evolution::V2@{Evolution::V2}!VerifySizePrefixedRootBuffer@{VerifySizePrefixedRootBuffer}}
+\index{VerifySizePrefixedRootBuffer@{VerifySizePrefixedRootBuffer}!Evolution::V2@{Evolution::V2}}
+\doxysubsubsection{\texorpdfstring{VerifySizePrefixedRootBuffer()}{VerifySizePrefixedRootBuffer()}}
+{\footnotesize\ttfamily bool Evolution\+::\+V2\+::\+Verify\+Size\+Prefixed\+Root\+Buffer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceflatbuffers_a3268477941df91db2eb06442b6e5f922}{\+::flatbuffers\+::\+Verifier}} \&}]{verifier }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{namespaceEvolution_1_1V2_ac78632340331c2d0b1814d812e60263c}\label{namespaceEvolution_1_1V2_ac78632340331c2d0b1814d812e60263c} 
+\index{Evolution::V2@{Evolution::V2}!VerifyUnion@{VerifyUnion}}
+\index{VerifyUnion@{VerifyUnion}!Evolution::V2@{Evolution::V2}}
+\doxysubsubsection{\texorpdfstring{VerifyUnion()}{VerifyUnion()}}
+{\footnotesize\ttfamily bool Evolution\+::\+V2\+::\+Verify\+Union (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceflatbuffers_a3268477941df91db2eb06442b6e5f922}{\+::flatbuffers\+::\+Verifier}} \&}]{verifier,  }\item[{const void \texorpdfstring{$\ast$}{*}}]{obj,  }\item[{\mbox{\hyperlink{namespaceEvolution_1_1V2_af734e948821000e818a0521e44c903a2}{Union}}}]{type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{namespaceEvolution_1_1V2_ac73bc8549211e6ae38881fdf3940cf9b}\label{namespaceEvolution_1_1V2_ac73bc8549211e6ae38881fdf3940cf9b} 
+\index{Evolution::V2@{Evolution::V2}!VerifyUnionVector@{VerifyUnionVector}}
+\index{VerifyUnionVector@{VerifyUnionVector}!Evolution::V2@{Evolution::V2}}
+\doxysubsubsection{\texorpdfstring{VerifyUnionVector()}{VerifyUnionVector()}}
+{\footnotesize\ttfamily bool Evolution\+::\+V2\+::\+Verify\+Union\+Vector (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceflatbuffers_a3268477941df91db2eb06442b6e5f922}{\+::flatbuffers\+::\+Verifier}} \&}]{verifier,  }\item[{const \mbox{\hyperlink{classflatbuffers_1_1Vector}{\+::flatbuffers\+::\+Vector}}$<$\+::flatbuffers\+::\+Offset$<$ void $>$ $>$ \texorpdfstring{$\ast$}{*}}]{values,  }\item[{const \mbox{\hyperlink{classflatbuffers_1_1Vector}{\+::flatbuffers\+::\+Vector}}$<$ \mbox{\hyperlink{namespaceEvolution_1_1V2_af734e948821000e818a0521e44c903a2}{Union}} $>$ \texorpdfstring{$\ast$}{*}}]{types }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+

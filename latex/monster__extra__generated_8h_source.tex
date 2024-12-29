@@ -1,0 +1,423 @@
+\doxysection{monster\+\_\+extra\+\_\+generated.\+h}
+\hypertarget{monster__extra__generated_8h_source}{}\label{monster__extra__generated_8h_source}\index{flatbuffers/tests/monster\_extra\_generated.h@{flatbuffers/tests/monster\_extra\_generated.h}}
+\mbox{\hyperlink{monster__extra__generated_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//\ automatically\ generated\ by\ the\ FlatBuffers\ compiler,\ do\ not\ modify}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#ifndef\ FLATBUFFERS\_GENERATED\_MONSTEREXTRA\_MYGAME\_H\_}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#define\ FLATBUFFERS\_GENERATED\_MONSTEREXTRA\_MYGAME\_H\_}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{flatbuffers_8h}{flatbuffers/flatbuffers.h}}"{}}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{comment}{//\ Ensure\ the\ included\ flatbuffers.h\ is\ the\ same\ version\ as\ when\ this\ file\ was}}
+\DoxyCodeLine{00010\ \textcolor{comment}{//\ generated,\ otherwise\ it\ may\ not\ be\ compatible.}}
+\DoxyCodeLine{00011\ \textcolor{keyword}{static\_assert}(FLATBUFFERS\_VERSION\_MAJOR\ ==\ 24\ \&\&}
+\DoxyCodeLine{00012\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ FLATBUFFERS\_VERSION\_MINOR\ ==\ 12\ \&\&}
+\DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ FLATBUFFERS\_VERSION\_REVISION\ ==\ 23,}
+\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}Non-\/compatible\ flatbuffers\ version\ included"{}});}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceMyGame}{MyGame}}\ \{}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \textcolor{keyword}{struct\ }MonsterExtra;}
+\DoxyCodeLine{00019\ \textcolor{keyword}{struct\ }MonsterExtraBuilder;}
+\DoxyCodeLine{00020\ \textcolor{keyword}{struct\ }MonsterExtraT;}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{namespaceMyGame_a5660adbe4b86ec213efe580164a890c7}{operator==}}(\textcolor{keyword}{const}\ MonsterExtraT\ \&lhs,\ \textcolor{keyword}{const}\ MonsterExtraT\ \&rhs);}
+\DoxyCodeLine{00023\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{namespaceMyGame_a86109b521e0f4d9e54d237fe6a3cc5dc}{operator!=}}(\textcolor{keyword}{const}\ MonsterExtraT\ \&lhs,\ \textcolor{keyword}{const}\ MonsterExtraT\ \&rhs);}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \textcolor{keyword}{inline}\ const\ ::flatbuffers::TypeTable\ *\mbox{\hyperlink{namespaceMyGame_a50be4251bbec371e133511bad9093896}{MonsterExtraTypeTable}}();}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structMyGame_1_1MonsterExtraT}{MonsterExtraT}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{structflatbuffers_1_1NativeTable}{::flatbuffers::NativeTable}}\ \{}
+\DoxyCodeLine{00028\ \ \ \textcolor{keyword}{typedef}\ \mbox{\hyperlink{structMyGame_1_1MonsterExtra}{MonsterExtra}}\ \mbox{\hyperlink{structMyGame_1_1MonsterExtraT_a43f7bf2b80e8c418edd7bca09114333f}{TableType}};}
+\DoxyCodeLine{00029\ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{structMyGame_1_1MonsterExtraT_a439399b567f8100b12beb682d5b2900b}{d0}}\ =\ std::numeric\_limits<double>::quiet\_NaN();}
+\DoxyCodeLine{00030\ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{structMyGame_1_1MonsterExtraT_a541b20f60f1b2c4e21541810e5d05d2f}{d1}}\ =\ std::numeric\_limits<double>::quiet\_NaN();}
+\DoxyCodeLine{00031\ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{structMyGame_1_1MonsterExtraT_aec86ef9bce57a84c23f8d9e79ea4614b}{d2}}\ =\ std::numeric\_limits<double>::infinity();}
+\DoxyCodeLine{00032\ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{structMyGame_1_1MonsterExtraT_a207d88c505bea7fa3ee694ddc3e3ab38}{d3}}\ =\ -\/std::numeric\_limits<double>::infinity();}
+\DoxyCodeLine{00033\ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{structMyGame_1_1MonsterExtraT_a90698f5f64cb8c31578ff40b8d862e84}{f0}}\ =\ std::numeric\_limits<float>::quiet\_NaN();}
+\DoxyCodeLine{00034\ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{structMyGame_1_1MonsterExtraT_afd0e728778aaefa0682f91af3aecb710}{f1}}\ =\ std::numeric\_limits<float>::quiet\_NaN();}
+\DoxyCodeLine{00035\ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{structMyGame_1_1MonsterExtraT_af9b9f4fdbb3dfeba733cbad85e3cf921}{f2}}\ =\ std::numeric\_limits<float>::infinity();}
+\DoxyCodeLine{00036\ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{structMyGame_1_1MonsterExtraT_a07c016b62d04442a069e10c4186d53d5}{f3}}\ =\ -\/std::numeric\_limits<float>::infinity();}
+\DoxyCodeLine{00037\ \ \ std::vector<double>\ \mbox{\hyperlink{structMyGame_1_1MonsterExtraT_a69510bdcd43a4886c1c83e6f43eac53d}{dvec}}\{\};}
+\DoxyCodeLine{00038\ \ \ std::vector<float>\ \mbox{\hyperlink{structMyGame_1_1MonsterExtraT_aca19508e71642ab03876770bc50e5b94}{fvec}}\{\};}
+\DoxyCodeLine{00039\ \};}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \textcolor{keyword}{struct\ }MonsterExtra\ \mbox{\hyperlink{structFLATBUFFERS__FINAL__CLASS}{FLATBUFFERS\_FINAL\_CLASS}}\ :\ \textcolor{keyword}{private}\ \mbox{\hyperlink{classflatbuffers_1_1Table}{::flatbuffers::Table}}\ \{}
+\DoxyCodeLine{00042\ \ \ \textcolor{keyword}{typedef}\ \mbox{\hyperlink{structMyGame_1_1MonsterExtraT}{MonsterExtraT}}\ \mbox{\hyperlink{structMyGame_1_1FLATBUFFERS__FINAL__CLASS_ad381b730d201fa49bb2cf1e66dc98529}{NativeTableType}};}
+\DoxyCodeLine{00043\ \ \ \textcolor{keyword}{typedef}\ \mbox{\hyperlink{structMyGame_1_1MonsterExtraBuilder}{MonsterExtraBuilder}}\ \mbox{\hyperlink{structMyGame_1_1FLATBUFFERS__FINAL__CLASS_adfba7d0bdf3eb77a10c3864d33dcea4d}{Builder}};}
+\DoxyCodeLine{00044\ \ \ \textcolor{keyword}{static}\ const\ ::flatbuffers::TypeTable\ *\mbox{\hyperlink{structMyGame_1_1FLATBUFFERS__FINAL__CLASS_ae68d46b5c0d82f91eaaf7e9ec43da5c4}{MiniReflectTypeTable}}()\ \{}
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{namespaceMyGame_a50be4251bbec371e133511bad9093896}{MonsterExtraTypeTable}}();}
+\DoxyCodeLine{00046\ \ \ \}}
+\DoxyCodeLine{00047\ \ \ \textcolor{keyword}{enum}\ FlatBuffersVTableOffset\ FLATBUFFERS\_VTABLE\_UNDERLYING\_TYPE\ \{}
+\DoxyCodeLine{00048\ \ \ \ \ \mbox{\hyperlink{monster__extra__generated_8h_af1edd21919a567b6615d7d34b9215275}{VT\_D0}}\ =\ 4,}
+\DoxyCodeLine{00049\ \ \ \ \ \mbox{\hyperlink{monster__extra__generated_8h_ad1f904d70b739187674eb95e390ecc9e}{VT\_D1}}\ =\ 6,}
+\DoxyCodeLine{00050\ \ \ \ \ \mbox{\hyperlink{monster__extra__generated_8h_a700646dd7b328c111b905fa8a8aca35e}{VT\_D2}}\ =\ 8,}
+\DoxyCodeLine{00051\ \ \ \ \ \mbox{\hyperlink{monster__extra__generated_8h_a62f94b714787a3de247e6ee524070f9c}{VT\_D3}}\ =\ 10,}
+\DoxyCodeLine{00052\ \ \ \ \ \mbox{\hyperlink{monster__extra__generated_8h_a9734deca94853e3b98f13f7f1b1ba552}{VT\_F0}}\ =\ 12,}
+\DoxyCodeLine{00053\ \ \ \ \ \mbox{\hyperlink{monster__extra__generated_8h_aa6269ea16ebea552d371f40b7d985f97}{VT\_F1}}\ =\ 14,}
+\DoxyCodeLine{00054\ \ \ \ \ \mbox{\hyperlink{monster__extra__generated_8h_a454b17e67d96912ad975d54a77d78447}{VT\_F2}}\ =\ 16,}
+\DoxyCodeLine{00055\ \ \ \ \ \mbox{\hyperlink{monster__extra__generated_8h_a200edc6575083a4573c4f0704bd7f4a8}{VT\_F3}}\ =\ 18,}
+\DoxyCodeLine{00056\ \ \ \ \ \mbox{\hyperlink{monster__extra__generated_8h_aad2f073d8c9261b09237c121dc246b84}{VT\_DVEC}}\ =\ 20,}
+\DoxyCodeLine{00057\ \ \ \ \ VT\_FVEC\ =\ 22}
+\DoxyCodeLine{00058\ \ \ \};}
+\DoxyCodeLine{00059\ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{structMyGame_1_1FLATBUFFERS__FINAL__CLASS_a6c0d62589622a2e7bd10bde36f665e05}{d0}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{keywordflow}{return}\ GetField<double>(\mbox{\hyperlink{monster__extra__generated_8h_af1edd21919a567b6615d7d34b9215275}{VT\_D0}},\ std::numeric\_limits<double>::quiet\_NaN());}
+\DoxyCodeLine{00061\ \ \ \}}
+\DoxyCodeLine{00062\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structMyGame_1_1FLATBUFFERS__FINAL__CLASS_a8024ceff82fa5033d40e7ae9a6a9efbe}{mutate\_d0}}(\textcolor{keywordtype}{double}\ \_d0\ =\ std::numeric\_limits<double>::quiet\_NaN())\ \{}
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keywordflow}{return}\ SetField<double>(\mbox{\hyperlink{monster__extra__generated_8h_af1edd21919a567b6615d7d34b9215275}{VT\_D0}},\ \_d0,\ std::numeric\_limits<double>::quiet\_NaN());}
+\DoxyCodeLine{00064\ \ \ \}}
+\DoxyCodeLine{00065\ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{structMyGame_1_1FLATBUFFERS__FINAL__CLASS_afc7d86cfa938fe4e8c239793a9d10b32}{d1}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00066\ \ \ \ \ \textcolor{keywordflow}{return}\ GetField<double>(\mbox{\hyperlink{monster__extra__generated_8h_ad1f904d70b739187674eb95e390ecc9e}{VT\_D1}},\ std::numeric\_limits<double>::quiet\_NaN());}
+\DoxyCodeLine{00067\ \ \ \}}
+\DoxyCodeLine{00068\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structMyGame_1_1FLATBUFFERS__FINAL__CLASS_a26c2c1baf80f232b75f55c83bb3a2a63}{mutate\_d1}}(\textcolor{keywordtype}{double}\ \_d1\ =\ std::numeric\_limits<double>::quiet\_NaN())\ \{}
+\DoxyCodeLine{00069\ \ \ \ \ \textcolor{keywordflow}{return}\ SetField<double>(\mbox{\hyperlink{monster__extra__generated_8h_ad1f904d70b739187674eb95e390ecc9e}{VT\_D1}},\ \_d1,\ std::numeric\_limits<double>::quiet\_NaN());}
+\DoxyCodeLine{00070\ \ \ \}}
+\DoxyCodeLine{00071\ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{structMyGame_1_1FLATBUFFERS__FINAL__CLASS_a1b6e0f38f07dbc32ad5d229fc45bf4f0}{d2}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00072\ \ \ \ \ \textcolor{keywordflow}{return}\ GetField<double>(\mbox{\hyperlink{monster__extra__generated_8h_a700646dd7b328c111b905fa8a8aca35e}{VT\_D2}},\ std::numeric\_limits<double>::infinity());}
+\DoxyCodeLine{00073\ \ \ \}}
+\DoxyCodeLine{00074\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structMyGame_1_1FLATBUFFERS__FINAL__CLASS_a8ef1863f9e3524acdd75ef4d4730ea56}{mutate\_d2}}(\textcolor{keywordtype}{double}\ \_d2\ =\ std::numeric\_limits<double>::infinity())\ \{}
+\DoxyCodeLine{00075\ \ \ \ \ \textcolor{keywordflow}{return}\ SetField<double>(\mbox{\hyperlink{monster__extra__generated_8h_a700646dd7b328c111b905fa8a8aca35e}{VT\_D2}},\ \_d2,\ std::numeric\_limits<double>::infinity());}
+\DoxyCodeLine{00076\ \ \ \}}
+\DoxyCodeLine{00077\ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{structMyGame_1_1FLATBUFFERS__FINAL__CLASS_a67ba0b0ca3d70f24ce465eb0c20c95aa}{d3}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00078\ \ \ \ \ \textcolor{keywordflow}{return}\ GetField<double>(\mbox{\hyperlink{monster__extra__generated_8h_a62f94b714787a3de247e6ee524070f9c}{VT\_D3}},\ -\/std::numeric\_limits<double>::infinity());}
+\DoxyCodeLine{00079\ \ \ \}}
+\DoxyCodeLine{00080\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structMyGame_1_1FLATBUFFERS__FINAL__CLASS_ab9c493bf4de6ed5078cd373305c8cb98}{mutate\_d3}}(\textcolor{keywordtype}{double}\ \_d3\ =\ -\/std::numeric\_limits<double>::infinity())\ \{}
+\DoxyCodeLine{00081\ \ \ \ \ \textcolor{keywordflow}{return}\ SetField<double>(\mbox{\hyperlink{monster__extra__generated_8h_a62f94b714787a3de247e6ee524070f9c}{VT\_D3}},\ \_d3,\ -\/std::numeric\_limits<double>::infinity());}
+\DoxyCodeLine{00082\ \ \ \}}
+\DoxyCodeLine{00083\ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{structMyGame_1_1FLATBUFFERS__FINAL__CLASS_a8ee7af3bd74b4b803cea48e2fd7f852d}{f0}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00084\ \ \ \ \ \textcolor{keywordflow}{return}\ GetField<float>(\mbox{\hyperlink{monster__extra__generated_8h_a9734deca94853e3b98f13f7f1b1ba552}{VT\_F0}},\ std::numeric\_limits<float>::quiet\_NaN());}
+\DoxyCodeLine{00085\ \ \ \}}
+\DoxyCodeLine{00086\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structMyGame_1_1FLATBUFFERS__FINAL__CLASS_a16b793c9fea537544581125d1220c31f}{mutate\_f0}}(\textcolor{keywordtype}{float}\ \_f0\ =\ std::numeric\_limits<float>::quiet\_NaN())\ \{}
+\DoxyCodeLine{00087\ \ \ \ \ \textcolor{keywordflow}{return}\ SetField<float>(\mbox{\hyperlink{monster__extra__generated_8h_a9734deca94853e3b98f13f7f1b1ba552}{VT\_F0}},\ \_f0,\ std::numeric\_limits<float>::quiet\_NaN());}
+\DoxyCodeLine{00088\ \ \ \}}
+\DoxyCodeLine{00089\ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{structMyGame_1_1FLATBUFFERS__FINAL__CLASS_a484b898849078440b56c4788b97b8555}{f1}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00090\ \ \ \ \ \textcolor{keywordflow}{return}\ GetField<float>(\mbox{\hyperlink{monster__extra__generated_8h_aa6269ea16ebea552d371f40b7d985f97}{VT\_F1}},\ std::numeric\_limits<float>::quiet\_NaN());}
+\DoxyCodeLine{00091\ \ \ \}}
+\DoxyCodeLine{00092\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structMyGame_1_1FLATBUFFERS__FINAL__CLASS_a4beafc71b0bf74eb28cfe1a68b2fd5c4}{mutate\_f1}}(\textcolor{keywordtype}{float}\ \_f1\ =\ std::numeric\_limits<float>::quiet\_NaN())\ \{}
+\DoxyCodeLine{00093\ \ \ \ \ \textcolor{keywordflow}{return}\ SetField<float>(\mbox{\hyperlink{monster__extra__generated_8h_aa6269ea16ebea552d371f40b7d985f97}{VT\_F1}},\ \_f1,\ std::numeric\_limits<float>::quiet\_NaN());}
+\DoxyCodeLine{00094\ \ \ \}}
+\DoxyCodeLine{00095\ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{structMyGame_1_1FLATBUFFERS__FINAL__CLASS_a279b50b706c2d717306251081b7351f2}{f2}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00096\ \ \ \ \ \textcolor{keywordflow}{return}\ GetField<float>(\mbox{\hyperlink{monster__extra__generated_8h_a454b17e67d96912ad975d54a77d78447}{VT\_F2}},\ std::numeric\_limits<float>::infinity());}
+\DoxyCodeLine{00097\ \ \ \}}
+\DoxyCodeLine{00098\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structMyGame_1_1FLATBUFFERS__FINAL__CLASS_a22937b68435c81b0cfdadc90ea25e6be}{mutate\_f2}}(\textcolor{keywordtype}{float}\ \_f2\ =\ std::numeric\_limits<float>::infinity())\ \{}
+\DoxyCodeLine{00099\ \ \ \ \ \textcolor{keywordflow}{return}\ SetField<float>(\mbox{\hyperlink{monster__extra__generated_8h_a454b17e67d96912ad975d54a77d78447}{VT\_F2}},\ \_f2,\ std::numeric\_limits<float>::infinity());}
+\DoxyCodeLine{00100\ \ \ \}}
+\DoxyCodeLine{00101\ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{structMyGame_1_1FLATBUFFERS__FINAL__CLASS_acfccbd642be0e375aa5068b9b047247e}{f3}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00102\ \ \ \ \ \textcolor{keywordflow}{return}\ GetField<float>(\mbox{\hyperlink{monster__extra__generated_8h_a200edc6575083a4573c4f0704bd7f4a8}{VT\_F3}},\ -\/std::numeric\_limits<float>::infinity());}
+\DoxyCodeLine{00103\ \ \ \}}
+\DoxyCodeLine{00104\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structMyGame_1_1FLATBUFFERS__FINAL__CLASS_a1ed4bacdf5fa9acd0cdb58f6616e90c5}{mutate\_f3}}(\textcolor{keywordtype}{float}\ \_f3\ =\ -\/std::numeric\_limits<float>::infinity())\ \{}
+\DoxyCodeLine{00105\ \ \ \ \ \textcolor{keywordflow}{return}\ SetField<float>(\mbox{\hyperlink{monster__extra__generated_8h_a200edc6575083a4573c4f0704bd7f4a8}{VT\_F3}},\ \_f3,\ -\/std::numeric\_limits<float>::infinity());}
+\DoxyCodeLine{00106\ \ \ \}}
+\DoxyCodeLine{00107\ \ \ const\ ::flatbuffers::Vector<double>\ *\mbox{\hyperlink{structMyGame_1_1FLATBUFFERS__FINAL__CLASS_a5cbbc7cf56c54ee74482de935ba08378}{dvec}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00108\ \ \ \ \ \textcolor{keywordflow}{return}\ GetPointer<const\ ::flatbuffers::Vector<double>\ *>(\mbox{\hyperlink{monster__extra__generated_8h_aad2f073d8c9261b09237c121dc246b84}{VT\_DVEC}});}
+\DoxyCodeLine{00109\ \ \ \}}
+\DoxyCodeLine{00110\ \ \ \mbox{\hyperlink{classflatbuffers_1_1Vector}{::flatbuffers::Vector<double>}}\ *\mbox{\hyperlink{structMyGame_1_1FLATBUFFERS__FINAL__CLASS_ab1dbb8100c90d4eb0c4cdbd70ce9f1fb}{mutable\_dvec}}()\ \{}
+\DoxyCodeLine{00111\ \ \ \ \ \textcolor{keywordflow}{return}\ GetPointer<::flatbuffers::Vector<double>\ *>(\mbox{\hyperlink{monster__extra__generated_8h_aad2f073d8c9261b09237c121dc246b84}{VT\_DVEC}});}
+\DoxyCodeLine{00112\ \ \ \}}
+\DoxyCodeLine{00113\ \ \ const\ ::flatbuffers::Vector<float>\ *\mbox{\hyperlink{structMyGame_1_1FLATBUFFERS__FINAL__CLASS_a2f73d146c5d5deeb237c53f9677242dc}{fvec}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00114\ \ \ \ \ \textcolor{keywordflow}{return}\ GetPointer<const\ ::flatbuffers::Vector<float>\ *>(VT\_FVEC);}
+\DoxyCodeLine{00115\ \ \ \}}
+\DoxyCodeLine{00116\ \ \ \mbox{\hyperlink{classflatbuffers_1_1Vector}{::flatbuffers::Vector<float>}}\ *\mbox{\hyperlink{structMyGame_1_1FLATBUFFERS__FINAL__CLASS_aa061a86df66118c070c3a317c34a60e1}{mutable\_fvec}}()\ \{}
+\DoxyCodeLine{00117\ \ \ \ \ \textcolor{keywordflow}{return}\ GetPointer<::flatbuffers::Vector<float>\ *>(VT\_FVEC);}
+\DoxyCodeLine{00118\ \ \ \}}
+\DoxyCodeLine{00119\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structMyGame_1_1FLATBUFFERS__FINAL__CLASS_a7955240291df044f69566a3bae03a257}{Verify}}(\mbox{\hyperlink{namespaceflatbuffers_a3268477941df91db2eb06442b6e5f922}{::flatbuffers::Verifier}}\ \&verifier)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00120\ \ \ \ \ \textcolor{keywordflow}{return}\ VerifyTableStart(verifier)\ \&\&}
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ \ \ \ VerifyField<double>(verifier,\ \mbox{\hyperlink{monster__extra__generated_8h_af1edd21919a567b6615d7d34b9215275}{VT\_D0}},\ 8)\ \&\&}
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \ \ \ VerifyField<double>(verifier,\ \mbox{\hyperlink{monster__extra__generated_8h_ad1f904d70b739187674eb95e390ecc9e}{VT\_D1}},\ 8)\ \&\&}
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ \ \ \ VerifyField<double>(verifier,\ \mbox{\hyperlink{monster__extra__generated_8h_a700646dd7b328c111b905fa8a8aca35e}{VT\_D2}},\ 8)\ \&\&}
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ \ \ \ VerifyField<double>(verifier,\ \mbox{\hyperlink{monster__extra__generated_8h_a62f94b714787a3de247e6ee524070f9c}{VT\_D3}},\ 8)\ \&\&}
+\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ \ \ \ VerifyField<float>(verifier,\ \mbox{\hyperlink{monster__extra__generated_8h_a9734deca94853e3b98f13f7f1b1ba552}{VT\_F0}},\ 4)\ \&\&}
+\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ \ \ \ VerifyField<float>(verifier,\ \mbox{\hyperlink{monster__extra__generated_8h_aa6269ea16ebea552d371f40b7d985f97}{VT\_F1}},\ 4)\ \&\&}
+\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ \ \ \ VerifyField<float>(verifier,\ \mbox{\hyperlink{monster__extra__generated_8h_a454b17e67d96912ad975d54a77d78447}{VT\_F2}},\ 4)\ \&\&}
+\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ \ \ \ VerifyField<float>(verifier,\ \mbox{\hyperlink{monster__extra__generated_8h_a200edc6575083a4573c4f0704bd7f4a8}{VT\_F3}},\ 4)\ \&\&}
+\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ \ \ \ VerifyOffset(verifier,\ \mbox{\hyperlink{monster__extra__generated_8h_aad2f073d8c9261b09237c121dc246b84}{VT\_DVEC}})\ \&\&}
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ \ \ \ verifier.VerifyVector(\mbox{\hyperlink{structMyGame_1_1MonsterExtra_a4e634162685a33c46bbbefe24cd2d7cf}{dvec}}())\ \&\&}
+\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ \ \ \ VerifyOffset(verifier,\ VT\_FVEC)\ \&\&}
+\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ \ \ \ verifier.VerifyVector(\mbox{\hyperlink{structMyGame_1_1MonsterExtra_aef0da3c2996ba85157270c40af3f5281}{fvec}}())\ \&\&}
+\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ \ \ \ verifier.EndTable();}
+\DoxyCodeLine{00134\ \ \ \}}
+\DoxyCodeLine{00135\ \ \ \mbox{\hyperlink{structMyGame_1_1MonsterExtraT}{MonsterExtraT}}\ *\mbox{\hyperlink{structMyGame_1_1FLATBUFFERS__FINAL__CLASS_a673b6a0feec506e6a66499f27c22dc4c}{UnPack}}(const\ ::flatbuffers::resolver\_function\_t\ *\_resolver\ =\ \textcolor{keyword}{nullptr})\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00136\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{structMyGame_1_1FLATBUFFERS__FINAL__CLASS_a5c47bb825903afe8953b92e19e3079f4}{UnPackTo}}(\mbox{\hyperlink{structMyGame_1_1MonsterExtraT}{MonsterExtraT}}\ *\_o,\ const\ ::flatbuffers::resolver\_function\_t\ *\_resolver\ =\ \textcolor{keyword}{nullptr})\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00137\ \ \ static\ ::flatbuffers::Offset<MonsterExtra>\ \mbox{\hyperlink{structMyGame_1_1FLATBUFFERS__FINAL__CLASS_a0b9a99a7670fdd223dc8694ba64402d0}{Pack}}(\mbox{\hyperlink{classflatbuffers_1_1FlatBufferBuilderImpl}{::flatbuffers::FlatBufferBuilder}}\ \&\_fbb,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{structMyGame_1_1MonsterExtraT}{MonsterExtraT}}*\ \_o,\ const\ ::flatbuffers::rehasher\_function\_t\ *\_rehasher\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00138\ \};}
+\DoxyCodeLine{00139\ }
+\DoxyCodeLine{00140\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structMyGame_1_1MonsterExtraBuilder}{MonsterExtraBuilder}}\ \{}
+\DoxyCodeLine{00141\ \ \ \textcolor{keyword}{typedef}\ \mbox{\hyperlink{structMyGame_1_1MonsterExtra}{MonsterExtra}}\ \mbox{\hyperlink{structMyGame_1_1MonsterExtraBuilder_a9f5ac1625c18cd4bd5ee2e830df90f33}{Table}};}
+\DoxyCodeLine{00142\ \ \ \mbox{\hyperlink{classflatbuffers_1_1FlatBufferBuilderImpl}{::flatbuffers::FlatBufferBuilder}}\ \&\mbox{\hyperlink{structMyGame_1_1MonsterExtraBuilder_ad05c2494392326e721fcc6631275d834}{fbb\_}};}
+\DoxyCodeLine{00143\ \ \ ::flatbuffers::uoffset\_t\ \mbox{\hyperlink{structMyGame_1_1MonsterExtraBuilder_abacb3a25d57093b22601d864c390d82d}{start\_}};}
+\DoxyCodeLine{00144\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{structMyGame_1_1MonsterExtraBuilder_ae883f13629c17895bddb52f070686205}{add\_d0}}(\textcolor{keywordtype}{double}\ d0)\ \{}
+\DoxyCodeLine{00145\ \ \ \ \ \mbox{\hyperlink{structMyGame_1_1MonsterExtraBuilder_ad05c2494392326e721fcc6631275d834}{fbb\_}}.AddElement<\textcolor{keywordtype}{double}>(MonsterExtra::VT\_D0,\ d0,\ std::numeric\_limits<double>::quiet\_NaN());}
+\DoxyCodeLine{00146\ \ \ \}}
+\DoxyCodeLine{00147\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{structMyGame_1_1MonsterExtraBuilder_a6922b598ae906b6abe06072bb8ace24a}{add\_d1}}(\textcolor{keywordtype}{double}\ d1)\ \{}
+\DoxyCodeLine{00148\ \ \ \ \ \mbox{\hyperlink{structMyGame_1_1MonsterExtraBuilder_ad05c2494392326e721fcc6631275d834}{fbb\_}}.AddElement<\textcolor{keywordtype}{double}>(MonsterExtra::VT\_D1,\ d1,\ std::numeric\_limits<double>::quiet\_NaN());}
+\DoxyCodeLine{00149\ \ \ \}}
+\DoxyCodeLine{00150\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{structMyGame_1_1MonsterExtraBuilder_a6d029875fe19cafafc87b22d081ff28b}{add\_d2}}(\textcolor{keywordtype}{double}\ d2)\ \{}
+\DoxyCodeLine{00151\ \ \ \ \ \mbox{\hyperlink{structMyGame_1_1MonsterExtraBuilder_ad05c2494392326e721fcc6631275d834}{fbb\_}}.AddElement<\textcolor{keywordtype}{double}>(MonsterExtra::VT\_D2,\ d2,\ std::numeric\_limits<double>::infinity());}
+\DoxyCodeLine{00152\ \ \ \}}
+\DoxyCodeLine{00153\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{structMyGame_1_1MonsterExtraBuilder_a212d9ea0294149adb3f7eec40e8538b2}{add\_d3}}(\textcolor{keywordtype}{double}\ d3)\ \{}
+\DoxyCodeLine{00154\ \ \ \ \ \mbox{\hyperlink{structMyGame_1_1MonsterExtraBuilder_ad05c2494392326e721fcc6631275d834}{fbb\_}}.AddElement<\textcolor{keywordtype}{double}>(MonsterExtra::VT\_D3,\ d3,\ -\/std::numeric\_limits<double>::infinity());}
+\DoxyCodeLine{00155\ \ \ \}}
+\DoxyCodeLine{00156\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{structMyGame_1_1MonsterExtraBuilder_ad40bd54122ff346011c1f2e40a5ed63d}{add\_f0}}(\textcolor{keywordtype}{float}\ f0)\ \{}
+\DoxyCodeLine{00157\ \ \ \ \ \mbox{\hyperlink{structMyGame_1_1MonsterExtraBuilder_ad05c2494392326e721fcc6631275d834}{fbb\_}}.AddElement<\textcolor{keywordtype}{float}>(MonsterExtra::VT\_F0,\ f0,\ std::numeric\_limits<float>::quiet\_NaN());}
+\DoxyCodeLine{00158\ \ \ \}}
+\DoxyCodeLine{00159\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{structMyGame_1_1MonsterExtraBuilder_a12a282e9327d7995100bfec7dc6d9c64}{add\_f1}}(\textcolor{keywordtype}{float}\ f1)\ \{}
+\DoxyCodeLine{00160\ \ \ \ \ \mbox{\hyperlink{structMyGame_1_1MonsterExtraBuilder_ad05c2494392326e721fcc6631275d834}{fbb\_}}.AddElement<\textcolor{keywordtype}{float}>(MonsterExtra::VT\_F1,\ f1,\ std::numeric\_limits<float>::quiet\_NaN());}
+\DoxyCodeLine{00161\ \ \ \}}
+\DoxyCodeLine{00162\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{structMyGame_1_1MonsterExtraBuilder_ae2d948018434ce26a29a03ff53760af1}{add\_f2}}(\textcolor{keywordtype}{float}\ f2)\ \{}
+\DoxyCodeLine{00163\ \ \ \ \ \mbox{\hyperlink{structMyGame_1_1MonsterExtraBuilder_ad05c2494392326e721fcc6631275d834}{fbb\_}}.AddElement<\textcolor{keywordtype}{float}>(MonsterExtra::VT\_F2,\ f2,\ std::numeric\_limits<float>::infinity());}
+\DoxyCodeLine{00164\ \ \ \}}
+\DoxyCodeLine{00165\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{structMyGame_1_1MonsterExtraBuilder_a79e700f1b7384e3988ba98ebeb668233}{add\_f3}}(\textcolor{keywordtype}{float}\ f3)\ \{}
+\DoxyCodeLine{00166\ \ \ \ \ \mbox{\hyperlink{structMyGame_1_1MonsterExtraBuilder_ad05c2494392326e721fcc6631275d834}{fbb\_}}.AddElement<\textcolor{keywordtype}{float}>(MonsterExtra::VT\_F3,\ f3,\ -\/std::numeric\_limits<float>::infinity());}
+\DoxyCodeLine{00167\ \ \ \}}
+\DoxyCodeLine{00168\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{structMyGame_1_1MonsterExtraBuilder_ad39591b3a0eb6e22b056f45c89141da6}{add\_dvec}}(::flatbuffers::Offset<\mbox{\hyperlink{classflatbuffers_1_1Vector}{::flatbuffers::Vector<double>}}>\ dvec)\ \{}
+\DoxyCodeLine{00169\ \ \ \ \ \mbox{\hyperlink{structMyGame_1_1MonsterExtraBuilder_ad05c2494392326e721fcc6631275d834}{fbb\_}}.AddOffset(MonsterExtra::VT\_DVEC,\ dvec);}
+\DoxyCodeLine{00170\ \ \ \}}
+\DoxyCodeLine{00171\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{structMyGame_1_1MonsterExtraBuilder_aaf1fb4a89e18f59ff39594e851952516}{add\_fvec}}(::flatbuffers::Offset<\mbox{\hyperlink{classflatbuffers_1_1Vector}{::flatbuffers::Vector<float>}}>\ fvec)\ \{}
+\DoxyCodeLine{00172\ \ \ \ \ \mbox{\hyperlink{structMyGame_1_1MonsterExtraBuilder_ad05c2494392326e721fcc6631275d834}{fbb\_}}.AddOffset(MonsterExtra::VT\_FVEC,\ fvec);}
+\DoxyCodeLine{00173\ \ \ \}}
+\DoxyCodeLine{00174\ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{structMyGame_1_1MonsterExtraBuilder_a84fd8762cd76fc366c2e7385284cc96d}{MonsterExtraBuilder}}(\mbox{\hyperlink{classflatbuffers_1_1FlatBufferBuilderImpl}{::flatbuffers::FlatBufferBuilder}}\ \&\_fbb)}
+\DoxyCodeLine{00175\ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{structMyGame_1_1MonsterExtraBuilder_ad05c2494392326e721fcc6631275d834}{fbb\_}}(\_fbb)\ \{}
+\DoxyCodeLine{00176\ \ \ \ \ \mbox{\hyperlink{structMyGame_1_1MonsterExtraBuilder_abacb3a25d57093b22601d864c390d82d}{start\_}}\ =\ \mbox{\hyperlink{structMyGame_1_1MonsterExtraBuilder_ad05c2494392326e721fcc6631275d834}{fbb\_}}.StartTable();}
+\DoxyCodeLine{00177\ \ \ \}}
+\DoxyCodeLine{00178\ \ \ ::flatbuffers::Offset<MonsterExtra>\ \mbox{\hyperlink{structMyGame_1_1MonsterExtraBuilder_ae9d61c37a6ca00a3df10f31228c7deb4}{Finish}}()\ \{}
+\DoxyCodeLine{00179\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{auto}\ end\ =\ \mbox{\hyperlink{structMyGame_1_1MonsterExtraBuilder_ad05c2494392326e721fcc6631275d834}{fbb\_}}.EndTable(\mbox{\hyperlink{structMyGame_1_1MonsterExtraBuilder_abacb3a25d57093b22601d864c390d82d}{start\_}});}
+\DoxyCodeLine{00180\ \ \ \ \ \textcolor{keyword}{auto}\ o\ =\ ::flatbuffers::Offset<MonsterExtra>(end);}
+\DoxyCodeLine{00181\ \ \ \ \ \textcolor{keywordflow}{return}\ o;}
+\DoxyCodeLine{00182\ \ \ \}}
+\DoxyCodeLine{00183\ \};}
+\DoxyCodeLine{00184\ }
+\DoxyCodeLine{00185\ inline\ ::flatbuffers::Offset<MonsterExtra>\ \mbox{\hyperlink{namespaceMyGame_adc2b9ecd9155da792e778ff1a101b1e3}{CreateMonsterExtra}}(}
+\DoxyCodeLine{00186\ \ \ \ \ \mbox{\hyperlink{classflatbuffers_1_1FlatBufferBuilderImpl}{::flatbuffers::FlatBufferBuilder}}\ \&\_fbb,}
+\DoxyCodeLine{00187\ \ \ \ \ \textcolor{keywordtype}{double}\ d0\ =\ std::numeric\_limits<double>::quiet\_NaN(),}
+\DoxyCodeLine{00188\ \ \ \ \ \textcolor{keywordtype}{double}\ d1\ =\ std::numeric\_limits<double>::quiet\_NaN(),}
+\DoxyCodeLine{00189\ \ \ \ \ \textcolor{keywordtype}{double}\ d2\ =\ std::numeric\_limits<double>::infinity(),}
+\DoxyCodeLine{00190\ \ \ \ \ \textcolor{keywordtype}{double}\ d3\ =\ -\/std::numeric\_limits<double>::infinity(),}
+\DoxyCodeLine{00191\ \ \ \ \ \textcolor{keywordtype}{float}\ f0\ =\ std::numeric\_limits<float>::quiet\_NaN(),}
+\DoxyCodeLine{00192\ \ \ \ \ \textcolor{keywordtype}{float}\ f1\ =\ std::numeric\_limits<float>::quiet\_NaN(),}
+\DoxyCodeLine{00193\ \ \ \ \ \textcolor{keywordtype}{float}\ f2\ =\ std::numeric\_limits<float>::infinity(),}
+\DoxyCodeLine{00194\ \ \ \ \ \textcolor{keywordtype}{float}\ f3\ =\ -\/std::numeric\_limits<float>::infinity(),}
+\DoxyCodeLine{00195\ \ \ \ \ ::flatbuffers::Offset<\mbox{\hyperlink{classflatbuffers_1_1Vector}{::flatbuffers::Vector<double>}}>\ dvec\ =\ 0,}
+\DoxyCodeLine{00196\ \ \ \ \ ::flatbuffers::Offset<\mbox{\hyperlink{classflatbuffers_1_1Vector}{::flatbuffers::Vector<float>}}>\ fvec\ =\ 0)\ \{}
+\DoxyCodeLine{00197\ \ \ \mbox{\hyperlink{structMyGame_1_1MonsterExtraBuilder}{MonsterExtraBuilder}}\ builder\_(\_fbb);}
+\DoxyCodeLine{00198\ \ \ builder\_.\mbox{\hyperlink{structMyGame_1_1MonsterExtraBuilder_a212d9ea0294149adb3f7eec40e8538b2}{add\_d3}}(d3);}
+\DoxyCodeLine{00199\ \ \ builder\_.\mbox{\hyperlink{structMyGame_1_1MonsterExtraBuilder_a6d029875fe19cafafc87b22d081ff28b}{add\_d2}}(d2);}
+\DoxyCodeLine{00200\ \ \ builder\_.\mbox{\hyperlink{structMyGame_1_1MonsterExtraBuilder_a6922b598ae906b6abe06072bb8ace24a}{add\_d1}}(d1);}
+\DoxyCodeLine{00201\ \ \ builder\_.\mbox{\hyperlink{structMyGame_1_1MonsterExtraBuilder_ae883f13629c17895bddb52f070686205}{add\_d0}}(d0);}
+\DoxyCodeLine{00202\ \ \ builder\_.\mbox{\hyperlink{structMyGame_1_1MonsterExtraBuilder_aaf1fb4a89e18f59ff39594e851952516}{add\_fvec}}(fvec);}
+\DoxyCodeLine{00203\ \ \ builder\_.\mbox{\hyperlink{structMyGame_1_1MonsterExtraBuilder_ad39591b3a0eb6e22b056f45c89141da6}{add\_dvec}}(dvec);}
+\DoxyCodeLine{00204\ \ \ builder\_.\mbox{\hyperlink{structMyGame_1_1MonsterExtraBuilder_a79e700f1b7384e3988ba98ebeb668233}{add\_f3}}(f3);}
+\DoxyCodeLine{00205\ \ \ builder\_.\mbox{\hyperlink{structMyGame_1_1MonsterExtraBuilder_ae2d948018434ce26a29a03ff53760af1}{add\_f2}}(f2);}
+\DoxyCodeLine{00206\ \ \ builder\_.\mbox{\hyperlink{structMyGame_1_1MonsterExtraBuilder_a12a282e9327d7995100bfec7dc6d9c64}{add\_f1}}(f1);}
+\DoxyCodeLine{00207\ \ \ builder\_.\mbox{\hyperlink{structMyGame_1_1MonsterExtraBuilder_ad40bd54122ff346011c1f2e40a5ed63d}{add\_f0}}(f0);}
+\DoxyCodeLine{00208\ \ \ \textcolor{keywordflow}{return}\ builder\_.\mbox{\hyperlink{structMyGame_1_1MonsterExtraBuilder_ae9d61c37a6ca00a3df10f31228c7deb4}{Finish}}();}
+\DoxyCodeLine{00209\ \}}
+\DoxyCodeLine{00210\ }
+\DoxyCodeLine{00211\ inline\ ::flatbuffers::Offset<MonsterExtra>\ \mbox{\hyperlink{namespaceMyGame_aed069c345ad086f836f5130c8b438251}{CreateMonsterExtraDirect}}(}
+\DoxyCodeLine{00212\ \ \ \ \ \mbox{\hyperlink{classflatbuffers_1_1FlatBufferBuilderImpl}{::flatbuffers::FlatBufferBuilder}}\ \&\_fbb,}
+\DoxyCodeLine{00213\ \ \ \ \ \textcolor{keywordtype}{double}\ d0\ =\ std::numeric\_limits<double>::quiet\_NaN(),}
+\DoxyCodeLine{00214\ \ \ \ \ \textcolor{keywordtype}{double}\ d1\ =\ std::numeric\_limits<double>::quiet\_NaN(),}
+\DoxyCodeLine{00215\ \ \ \ \ \textcolor{keywordtype}{double}\ d2\ =\ std::numeric\_limits<double>::infinity(),}
+\DoxyCodeLine{00216\ \ \ \ \ \textcolor{keywordtype}{double}\ d3\ =\ -\/std::numeric\_limits<double>::infinity(),}
+\DoxyCodeLine{00217\ \ \ \ \ \textcolor{keywordtype}{float}\ f0\ =\ std::numeric\_limits<float>::quiet\_NaN(),}
+\DoxyCodeLine{00218\ \ \ \ \ \textcolor{keywordtype}{float}\ f1\ =\ std::numeric\_limits<float>::quiet\_NaN(),}
+\DoxyCodeLine{00219\ \ \ \ \ \textcolor{keywordtype}{float}\ f2\ =\ std::numeric\_limits<float>::infinity(),}
+\DoxyCodeLine{00220\ \ \ \ \ \textcolor{keywordtype}{float}\ f3\ =\ -\/std::numeric\_limits<float>::infinity(),}
+\DoxyCodeLine{00221\ \ \ \ \ \textcolor{keyword}{const}\ std::vector<double>\ *dvec\ =\ \textcolor{keyword}{nullptr},}
+\DoxyCodeLine{00222\ \ \ \ \ \textcolor{keyword}{const}\ std::vector<float>\ *fvec\ =\ \textcolor{keyword}{nullptr})\ \{}
+\DoxyCodeLine{00223\ \ \ \textcolor{keyword}{auto}\ dvec\_\_\ =\ dvec\ ?\ \_fbb.\mbox{\hyperlink{classflatbuffers_1_1FlatBufferBuilderImpl_aceecafe87cf7fa1dd4117af618784884}{CreateVector}}<\textcolor{keywordtype}{double}>(*dvec)\ :\ 0;}
+\DoxyCodeLine{00224\ \ \ \textcolor{keyword}{auto}\ fvec\_\_\ =\ fvec\ ?\ \_fbb.\mbox{\hyperlink{classflatbuffers_1_1FlatBufferBuilderImpl_aceecafe87cf7fa1dd4117af618784884}{CreateVector}}<\textcolor{keywordtype}{float}>(*fvec)\ :\ 0;}
+\DoxyCodeLine{00225\ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{namespaceMyGame_adc2b9ecd9155da792e778ff1a101b1e3}{MyGame::CreateMonsterExtra}}(}
+\DoxyCodeLine{00226\ \ \ \ \ \ \ \_fbb,}
+\DoxyCodeLine{00227\ \ \ \ \ \ \ d0,}
+\DoxyCodeLine{00228\ \ \ \ \ \ \ d1,}
+\DoxyCodeLine{00229\ \ \ \ \ \ \ d2,}
+\DoxyCodeLine{00230\ \ \ \ \ \ \ d3,}
+\DoxyCodeLine{00231\ \ \ \ \ \ \ f0,}
+\DoxyCodeLine{00232\ \ \ \ \ \ \ f1,}
+\DoxyCodeLine{00233\ \ \ \ \ \ \ f2,}
+\DoxyCodeLine{00234\ \ \ \ \ \ \ f3,}
+\DoxyCodeLine{00235\ \ \ \ \ \ \ dvec\_\_,}
+\DoxyCodeLine{00236\ \ \ \ \ \ \ fvec\_\_);}
+\DoxyCodeLine{00237\ \}}
+\DoxyCodeLine{00238\ }
+\DoxyCodeLine{00239\ ::flatbuffers::Offset<MonsterExtra>\ \mbox{\hyperlink{namespaceMyGame_adc2b9ecd9155da792e778ff1a101b1e3}{CreateMonsterExtra}}(\mbox{\hyperlink{classflatbuffers_1_1FlatBufferBuilderImpl}{::flatbuffers::FlatBufferBuilder}}\ \&\_fbb,\ \textcolor{keyword}{const}\ MonsterExtraT\ *\_o,\ const\ ::flatbuffers::rehasher\_function\_t\ *\_rehasher\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00240\ }
+\DoxyCodeLine{00241\ }
+\DoxyCodeLine{00242\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{namespaceMyGame_a5660adbe4b86ec213efe580164a890c7}{operator==}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{structMyGame_1_1MonsterExtraT}{MonsterExtraT}}\ \&lhs,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{structMyGame_1_1MonsterExtraT}{MonsterExtraT}}\ \&rhs)\ \{}
+\DoxyCodeLine{00243\ \ \ \textcolor{keywordflow}{return}}
+\DoxyCodeLine{00244\ \ \ \ \ \ \ (lhs.\mbox{\hyperlink{structMyGame_1_1MonsterExtraT_a439399b567f8100b12beb682d5b2900b}{d0}}\ ==\ rhs.\mbox{\hyperlink{structMyGame_1_1MonsterExtraT_a439399b567f8100b12beb682d5b2900b}{d0}})\ \&\&}
+\DoxyCodeLine{00245\ \ \ \ \ \ \ (lhs.\mbox{\hyperlink{structMyGame_1_1MonsterExtraT_a541b20f60f1b2c4e21541810e5d05d2f}{d1}}\ ==\ rhs.\mbox{\hyperlink{structMyGame_1_1MonsterExtraT_a541b20f60f1b2c4e21541810e5d05d2f}{d1}})\ \&\&}
+\DoxyCodeLine{00246\ \ \ \ \ \ \ (lhs.\mbox{\hyperlink{structMyGame_1_1MonsterExtraT_aec86ef9bce57a84c23f8d9e79ea4614b}{d2}}\ ==\ rhs.\mbox{\hyperlink{structMyGame_1_1MonsterExtraT_aec86ef9bce57a84c23f8d9e79ea4614b}{d2}})\ \&\&}
+\DoxyCodeLine{00247\ \ \ \ \ \ \ (lhs.\mbox{\hyperlink{structMyGame_1_1MonsterExtraT_a207d88c505bea7fa3ee694ddc3e3ab38}{d3}}\ ==\ rhs.\mbox{\hyperlink{structMyGame_1_1MonsterExtraT_a207d88c505bea7fa3ee694ddc3e3ab38}{d3}})\ \&\&}
+\DoxyCodeLine{00248\ \ \ \ \ \ \ (lhs.\mbox{\hyperlink{structMyGame_1_1MonsterExtraT_a90698f5f64cb8c31578ff40b8d862e84}{f0}}\ ==\ rhs.\mbox{\hyperlink{structMyGame_1_1MonsterExtraT_a90698f5f64cb8c31578ff40b8d862e84}{f0}})\ \&\&}
+\DoxyCodeLine{00249\ \ \ \ \ \ \ (lhs.\mbox{\hyperlink{structMyGame_1_1MonsterExtraT_afd0e728778aaefa0682f91af3aecb710}{f1}}\ ==\ rhs.\mbox{\hyperlink{structMyGame_1_1MonsterExtraT_afd0e728778aaefa0682f91af3aecb710}{f1}})\ \&\&}
+\DoxyCodeLine{00250\ \ \ \ \ \ \ (lhs.\mbox{\hyperlink{structMyGame_1_1MonsterExtraT_af9b9f4fdbb3dfeba733cbad85e3cf921}{f2}}\ ==\ rhs.\mbox{\hyperlink{structMyGame_1_1MonsterExtraT_af9b9f4fdbb3dfeba733cbad85e3cf921}{f2}})\ \&\&}
+\DoxyCodeLine{00251\ \ \ \ \ \ \ (lhs.\mbox{\hyperlink{structMyGame_1_1MonsterExtraT_a07c016b62d04442a069e10c4186d53d5}{f3}}\ ==\ rhs.\mbox{\hyperlink{structMyGame_1_1MonsterExtraT_a07c016b62d04442a069e10c4186d53d5}{f3}})\ \&\&}
+\DoxyCodeLine{00252\ \ \ \ \ \ \ (lhs.\mbox{\hyperlink{structMyGame_1_1MonsterExtraT_a69510bdcd43a4886c1c83e6f43eac53d}{dvec}}\ ==\ rhs.\mbox{\hyperlink{structMyGame_1_1MonsterExtraT_a69510bdcd43a4886c1c83e6f43eac53d}{dvec}})\ \&\&}
+\DoxyCodeLine{00253\ \ \ \ \ \ \ (lhs.\mbox{\hyperlink{structMyGame_1_1MonsterExtraT_aca19508e71642ab03876770bc50e5b94}{fvec}}\ ==\ rhs.\mbox{\hyperlink{structMyGame_1_1MonsterExtraT_aca19508e71642ab03876770bc50e5b94}{fvec}});}
+\DoxyCodeLine{00254\ \}}
+\DoxyCodeLine{00255\ }
+\DoxyCodeLine{00256\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{namespaceMyGame_a86109b521e0f4d9e54d237fe6a3cc5dc}{operator!=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{structMyGame_1_1MonsterExtraT}{MonsterExtraT}}\ \&lhs,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{structMyGame_1_1MonsterExtraT}{MonsterExtraT}}\ \&rhs)\ \{}
+\DoxyCodeLine{00257\ \ \ \ \ \textcolor{keywordflow}{return}\ !(lhs\ ==\ rhs);}
+\DoxyCodeLine{00258\ \}}
+\DoxyCodeLine{00259\ }
+\DoxyCodeLine{00260\ }
+\DoxyCodeLine{00261\ \textcolor{keyword}{inline}\ MonsterExtraT\ *\mbox{\hyperlink{structMyGame_1_1MonsterExtra_ac2da3ee999fcd549c9780752829127a8}{MonsterExtra::UnPack}}(const\ ::flatbuffers::resolver\_function\_t\ *\_resolver)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00262\ \ \ \textcolor{keyword}{auto}\ \_o\ =\ std::unique\_ptr<MonsterExtraT>(\textcolor{keyword}{new}\ MonsterExtraT());}
+\DoxyCodeLine{00263\ \ \ \mbox{\hyperlink{structMyGame_1_1MonsterExtra_a67e76530497059daedb445c2c8c7dda1}{UnPackTo}}(\_o.get(),\ \_resolver);}
+\DoxyCodeLine{00264\ \ \ \textcolor{keywordflow}{return}\ \_o.release();}
+\DoxyCodeLine{00265\ \}}
+\DoxyCodeLine{00266\ }
+\DoxyCodeLine{00267\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{structMyGame_1_1MonsterExtra_a67e76530497059daedb445c2c8c7dda1}{MonsterExtra::UnPackTo}}(MonsterExtraT\ *\_o,\ const\ ::flatbuffers::resolver\_function\_t\ *\_resolver)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00268\ \ \ (\mbox{\hyperlink{namespaceKeywordTest_ac9113d43992ca4eb6d9c5fba0e88fd6eacab8111fd0b710a336c898e539090e34}{void}})\_o;}
+\DoxyCodeLine{00269\ \ \ (\mbox{\hyperlink{namespaceKeywordTest_ac9113d43992ca4eb6d9c5fba0e88fd6eacab8111fd0b710a336c898e539090e34}{void}})\_resolver;}
+\DoxyCodeLine{00270\ \ \ \{\ \textcolor{keyword}{auto}\ \_e\ =\ \mbox{\hyperlink{structMyGame_1_1MonsterExtra_ad9b902406eadc5c5b7c60f98197e7204}{d0}}();\ \_o-\/>d0\ =\ \_e;\ \}}
+\DoxyCodeLine{00271\ \ \ \{\ \textcolor{keyword}{auto}\ \_e\ =\ \mbox{\hyperlink{structMyGame_1_1MonsterExtra_a24fbbec44b13239a7fad0f1168b5cf8f}{d1}}();\ \_o-\/>d1\ =\ \_e;\ \}}
+\DoxyCodeLine{00272\ \ \ \{\ \textcolor{keyword}{auto}\ \_e\ =\ \mbox{\hyperlink{structMyGame_1_1MonsterExtra_a179adc64d67a4c280a7f4a79179b5c1f}{d2}}();\ \_o-\/>d2\ =\ \_e;\ \}}
+\DoxyCodeLine{00273\ \ \ \{\ \textcolor{keyword}{auto}\ \_e\ =\ \mbox{\hyperlink{structMyGame_1_1MonsterExtra_a15dc9908123bc5f7f35236828aa2ef37}{d3}}();\ \_o-\/>d3\ =\ \_e;\ \}}
+\DoxyCodeLine{00274\ \ \ \{\ \textcolor{keyword}{auto}\ \_e\ =\ \mbox{\hyperlink{structMyGame_1_1MonsterExtra_ac8e6c68f7c1c6ecf5af741ae9e9777d2}{f0}}();\ \_o-\/>f0\ =\ \_e;\ \}}
+\DoxyCodeLine{00275\ \ \ \{\ \textcolor{keyword}{auto}\ \_e\ =\ \mbox{\hyperlink{structMyGame_1_1MonsterExtra_ae959b68db609bf777758f84a44e06462}{f1}}();\ \_o-\/>f1\ =\ \_e;\ \}}
+\DoxyCodeLine{00276\ \ \ \{\ \textcolor{keyword}{auto}\ \_e\ =\ \mbox{\hyperlink{structMyGame_1_1MonsterExtra_a88189cc50586a971e4e57ba9a99863be}{f2}}();\ \_o-\/>f2\ =\ \_e;\ \}}
+\DoxyCodeLine{00277\ \ \ \{\ \textcolor{keyword}{auto}\ \_e\ =\ \mbox{\hyperlink{structMyGame_1_1MonsterExtra_abe24b9cb01964f6bd290656ec6e3d3a5}{f3}}();\ \_o-\/>f3\ =\ \_e;\ \}}
+\DoxyCodeLine{00278\ \ \ \{\ \textcolor{keyword}{auto}\ \_e\ =\ \mbox{\hyperlink{structMyGame_1_1MonsterExtra_a4e634162685a33c46bbbefe24cd2d7cf}{dvec}}();\ \textcolor{keywordflow}{if}\ (\_e)\ \{\ \_o-\/>dvec.resize(\_e-\/>size());\ \textcolor{keywordflow}{for}\ (::flatbuffers::uoffset\_t\ \_i\ =\ 0;\ \_i\ <\ \_e-\/>size();\ \_i++)\ \{\ \_o-\/>dvec[\_i]\ =\ \_e-\/>Get(\_i);\ \}\ \}\ \textcolor{keywordflow}{else}\ \{\ \_o-\/>dvec.resize(0);\ \}\ \}}
+\DoxyCodeLine{00279\ \ \ \{\ \textcolor{keyword}{auto}\ \_e\ =\ \mbox{\hyperlink{structMyGame_1_1MonsterExtra_aef0da3c2996ba85157270c40af3f5281}{fvec}}();\ \textcolor{keywordflow}{if}\ (\_e)\ \{\ \_o-\/>fvec.resize(\_e-\/>size());\ \textcolor{keywordflow}{for}\ (::flatbuffers::uoffset\_t\ \_i\ =\ 0;\ \_i\ <\ \_e-\/>size();\ \_i++)\ \{\ \_o-\/>fvec[\_i]\ =\ \_e-\/>Get(\_i);\ \}\ \}\ \textcolor{keywordflow}{else}\ \{\ \_o-\/>fvec.resize(0);\ \}\ \}}
+\DoxyCodeLine{00280\ \}}
+\DoxyCodeLine{00281\ }
+\DoxyCodeLine{00282\ inline\ ::flatbuffers::Offset<MonsterExtra>\ \mbox{\hyperlink{structMyGame_1_1MonsterExtra_aa48d33eb37a9e5dc1429b69180e171c2}{MonsterExtra::Pack}}(\mbox{\hyperlink{classflatbuffers_1_1FlatBufferBuilderImpl}{::flatbuffers::FlatBufferBuilder}}\ \&\_fbb,\ \textcolor{keyword}{const}\ MonsterExtraT*\ \_o,\ const\ ::flatbuffers::rehasher\_function\_t\ *\_rehasher)\ \{}
+\DoxyCodeLine{00283\ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structMyGame_1_1MonsterExtra_aff7352fb27262bf6539c8d63f5cb4205}{CreateMonsterExtra}}(\_fbb,\ \_o,\ \_rehasher);}
+\DoxyCodeLine{00284\ \}}
+\DoxyCodeLine{00285\ }
+\DoxyCodeLine{00286\ inline\ ::flatbuffers::Offset<MonsterExtra>\ \mbox{\hyperlink{namespaceMyGame_adc2b9ecd9155da792e778ff1a101b1e3}{CreateMonsterExtra}}(\mbox{\hyperlink{classflatbuffers_1_1FlatBufferBuilderImpl}{::flatbuffers::FlatBufferBuilder}}\ \&\_fbb,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{structMyGame_1_1MonsterExtraT}{MonsterExtraT}}\ *\_o,\ const\ ::flatbuffers::rehasher\_function\_t\ *\_rehasher)\ \{}
+\DoxyCodeLine{00287\ \ \ (void)\_rehasher;}
+\DoxyCodeLine{00288\ \ \ (void)\_o;}
+\DoxyCodeLine{00289\ \ \ \textcolor{keyword}{struct\ }\_VectorArgs\ \{\ \mbox{\hyperlink{classflatbuffers_1_1FlatBufferBuilderImpl}{::flatbuffers::FlatBufferBuilder}}\ *\_\_fbb;\ \textcolor{keyword}{const}\ \mbox{\hyperlink{structMyGame_1_1MonsterExtraT}{MonsterExtraT}}*\ \_\_o;\ const\ ::flatbuffers::rehasher\_function\_t\ *\_\_rehasher;\ \}\ \_va\ =\ \{\ \&\_fbb,\ \_o,\ \_rehasher\};\ (void)\_va;}
+\DoxyCodeLine{00290\ \ \ \textcolor{keyword}{auto}\ \_d0\ =\ \_o-\/>\mbox{\hyperlink{structMyGame_1_1MonsterExtraT_a439399b567f8100b12beb682d5b2900b}{d0}};}
+\DoxyCodeLine{00291\ \ \ \textcolor{keyword}{auto}\ \_d1\ =\ \_o-\/>\mbox{\hyperlink{structMyGame_1_1MonsterExtraT_a541b20f60f1b2c4e21541810e5d05d2f}{d1}};}
+\DoxyCodeLine{00292\ \ \ \textcolor{keyword}{auto}\ \_d2\ =\ \_o-\/>\mbox{\hyperlink{structMyGame_1_1MonsterExtraT_aec86ef9bce57a84c23f8d9e79ea4614b}{d2}};}
+\DoxyCodeLine{00293\ \ \ \textcolor{keyword}{auto}\ \_d3\ =\ \_o-\/>\mbox{\hyperlink{structMyGame_1_1MonsterExtraT_a207d88c505bea7fa3ee694ddc3e3ab38}{d3}};}
+\DoxyCodeLine{00294\ \ \ \textcolor{keyword}{auto}\ \_f0\ =\ \_o-\/>\mbox{\hyperlink{structMyGame_1_1MonsterExtraT_a90698f5f64cb8c31578ff40b8d862e84}{f0}};}
+\DoxyCodeLine{00295\ \ \ \textcolor{keyword}{auto}\ \_f1\ =\ \_o-\/>\mbox{\hyperlink{structMyGame_1_1MonsterExtraT_afd0e728778aaefa0682f91af3aecb710}{f1}};}
+\DoxyCodeLine{00296\ \ \ \textcolor{keyword}{auto}\ \_f2\ =\ \_o-\/>\mbox{\hyperlink{structMyGame_1_1MonsterExtraT_af9b9f4fdbb3dfeba733cbad85e3cf921}{f2}};}
+\DoxyCodeLine{00297\ \ \ \textcolor{keyword}{auto}\ \_f3\ =\ \_o-\/>\mbox{\hyperlink{structMyGame_1_1MonsterExtraT_a07c016b62d04442a069e10c4186d53d5}{f3}};}
+\DoxyCodeLine{00298\ \ \ \textcolor{keyword}{auto}\ \_dvec\ =\ \_o-\/>\mbox{\hyperlink{structMyGame_1_1MonsterExtraT_a69510bdcd43a4886c1c83e6f43eac53d}{dvec}}.size()\ ?\ \_fbb.\mbox{\hyperlink{classflatbuffers_1_1FlatBufferBuilderImpl_aceecafe87cf7fa1dd4117af618784884}{CreateVector}}(\_o-\/>\mbox{\hyperlink{structMyGame_1_1MonsterExtraT_a69510bdcd43a4886c1c83e6f43eac53d}{dvec}})\ :\ 0;}
+\DoxyCodeLine{00299\ \ \ \textcolor{keyword}{auto}\ \_fvec\ =\ \_o-\/>\mbox{\hyperlink{structMyGame_1_1MonsterExtraT_aca19508e71642ab03876770bc50e5b94}{fvec}}.size()\ ?\ \_fbb.\mbox{\hyperlink{classflatbuffers_1_1FlatBufferBuilderImpl_aceecafe87cf7fa1dd4117af618784884}{CreateVector}}(\_o-\/>\mbox{\hyperlink{structMyGame_1_1MonsterExtraT_aca19508e71642ab03876770bc50e5b94}{fvec}})\ :\ 0;}
+\DoxyCodeLine{00300\ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{namespaceMyGame_adc2b9ecd9155da792e778ff1a101b1e3}{MyGame::CreateMonsterExtra}}(}
+\DoxyCodeLine{00301\ \ \ \ \ \ \ \_fbb,}
+\DoxyCodeLine{00302\ \ \ \ \ \ \ \_d0,}
+\DoxyCodeLine{00303\ \ \ \ \ \ \ \_d1,}
+\DoxyCodeLine{00304\ \ \ \ \ \ \ \_d2,}
+\DoxyCodeLine{00305\ \ \ \ \ \ \ \_d3,}
+\DoxyCodeLine{00306\ \ \ \ \ \ \ \_f0,}
+\DoxyCodeLine{00307\ \ \ \ \ \ \ \_f1,}
+\DoxyCodeLine{00308\ \ \ \ \ \ \ \_f2,}
+\DoxyCodeLine{00309\ \ \ \ \ \ \ \_f3,}
+\DoxyCodeLine{00310\ \ \ \ \ \ \ \_dvec,}
+\DoxyCodeLine{00311\ \ \ \ \ \ \ \_fvec);}
+\DoxyCodeLine{00312\ \}}
+\DoxyCodeLine{00313\ }
+\DoxyCodeLine{00314\ \textcolor{keyword}{inline}\ const\ ::flatbuffers::TypeTable\ *\mbox{\hyperlink{namespaceMyGame_a50be4251bbec371e133511bad9093896}{MonsterExtraTypeTable}}()\ \{}
+\DoxyCodeLine{00315\ \ \ \textcolor{keyword}{static}\ const\ ::flatbuffers::TypeCode\ type\_codes[]\ =\ \{}
+\DoxyCodeLine{00316\ \ \ \ \ \{\ ::flatbuffers::ET\_DOUBLE,\ 0,\ -\/1\ \},}
+\DoxyCodeLine{00317\ \ \ \ \ \{\ ::flatbuffers::ET\_DOUBLE,\ 0,\ -\/1\ \},}
+\DoxyCodeLine{00318\ \ \ \ \ \{\ ::flatbuffers::ET\_DOUBLE,\ 0,\ -\/1\ \},}
+\DoxyCodeLine{00319\ \ \ \ \ \{\ ::flatbuffers::ET\_DOUBLE,\ 0,\ -\/1\ \},}
+\DoxyCodeLine{00320\ \ \ \ \ \{\ ::flatbuffers::ET\_FLOAT,\ 0,\ -\/1\ \},}
+\DoxyCodeLine{00321\ \ \ \ \ \{\ ::flatbuffers::ET\_FLOAT,\ 0,\ -\/1\ \},}
+\DoxyCodeLine{00322\ \ \ \ \ \{\ ::flatbuffers::ET\_FLOAT,\ 0,\ -\/1\ \},}
+\DoxyCodeLine{00323\ \ \ \ \ \{\ ::flatbuffers::ET\_FLOAT,\ 0,\ -\/1\ \},}
+\DoxyCodeLine{00324\ \ \ \ \ \{\ ::flatbuffers::ET\_DOUBLE,\ 1,\ -\/1\ \},}
+\DoxyCodeLine{00325\ \ \ \ \ \{\ ::flatbuffers::ET\_FLOAT,\ 1,\ -\/1\ \},}
+\DoxyCodeLine{00326\ \ \ \ \ \{\ ::flatbuffers::ET\_INT,\ 0,\ -\/1\ \}}
+\DoxyCodeLine{00327\ \ \ \};}
+\DoxyCodeLine{00328\ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *\ \textcolor{keyword}{const}\ names[]\ =\ \{}
+\DoxyCodeLine{00329\ \ \ \ \ \textcolor{stringliteral}{"{}d0"{}},}
+\DoxyCodeLine{00330\ \ \ \ \ \textcolor{stringliteral}{"{}d1"{}},}
+\DoxyCodeLine{00331\ \ \ \ \ \textcolor{stringliteral}{"{}d2"{}},}
+\DoxyCodeLine{00332\ \ \ \ \ \textcolor{stringliteral}{"{}d3"{}},}
+\DoxyCodeLine{00333\ \ \ \ \ \textcolor{stringliteral}{"{}f0"{}},}
+\DoxyCodeLine{00334\ \ \ \ \ \textcolor{stringliteral}{"{}f1"{}},}
+\DoxyCodeLine{00335\ \ \ \ \ \textcolor{stringliteral}{"{}f2"{}},}
+\DoxyCodeLine{00336\ \ \ \ \ \textcolor{stringliteral}{"{}f3"{}},}
+\DoxyCodeLine{00337\ \ \ \ \ \textcolor{stringliteral}{"{}dvec"{}},}
+\DoxyCodeLine{00338\ \ \ \ \ \textcolor{stringliteral}{"{}fvec"{}},}
+\DoxyCodeLine{00339\ \ \ \ \ \textcolor{stringliteral}{"{}deprec"{}}}
+\DoxyCodeLine{00340\ \ \ \};}
+\DoxyCodeLine{00341\ \ \ \textcolor{keyword}{static}\ const\ ::flatbuffers::TypeTable\ tt\ =\ \{}
+\DoxyCodeLine{00342\ \ \ \ \ \mbox{\hyperlink{namespaceflatbuffers_a38583f915214f05d7cd1841571d07208a8ecc4069f66bbf1d6547f0bd888520c0}{::flatbuffers::ST\_TABLE}},\ 11,\ type\_codes,\ \textcolor{keyword}{nullptr},\ \textcolor{keyword}{nullptr},\ \textcolor{keyword}{nullptr},\ names}
+\DoxyCodeLine{00343\ \ \ \};}
+\DoxyCodeLine{00344\ \ \ \textcolor{keywordflow}{return}\ \&tt;}
+\DoxyCodeLine{00345\ \}}
+\DoxyCodeLine{00346\ }
+\DoxyCodeLine{00347\ \textcolor{keyword}{inline}\ \textcolor{keyword}{const}\ \mbox{\hyperlink{structMyGame_1_1MonsterExtra}{MyGame::MonsterExtra}}\ *\mbox{\hyperlink{namespaceMyGame_a2993cbd139d3490d1ec66355cd2ab92b}{GetMonsterExtra}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{void}\ *buf)\ \{}
+\DoxyCodeLine{00348\ \ \ return\ ::flatbuffers::GetRoot<MyGame::MonsterExtra>(buf);}
+\DoxyCodeLine{00349\ \}}
+\DoxyCodeLine{00350\ }
+\DoxyCodeLine{00351\ \textcolor{keyword}{inline}\ \textcolor{keyword}{const}\ \mbox{\hyperlink{structMyGame_1_1MonsterExtra}{MyGame::MonsterExtra}}\ *\mbox{\hyperlink{namespaceMyGame_a1a05a9aaeb275e124dd941e3a1302e9f}{GetSizePrefixedMonsterExtra}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{void}\ *buf)\ \{}
+\DoxyCodeLine{00352\ \ \ return\ ::flatbuffers::GetSizePrefixedRoot<MyGame::MonsterExtra>(buf);}
+\DoxyCodeLine{00353\ \}}
+\DoxyCodeLine{00354\ }
+\DoxyCodeLine{00355\ \textcolor{keyword}{inline}\ \mbox{\hyperlink{structMyGame_1_1MonsterExtra}{MonsterExtra}}\ *\mbox{\hyperlink{namespaceMyGame_ad73d114aebbd5ff4a4a5a3c655f8aaf3}{GetMutableMonsterExtra}}(\textcolor{keywordtype}{void}\ *buf)\ \{}
+\DoxyCodeLine{00356\ \ \ return\ ::flatbuffers::GetMutableRoot<MonsterExtra>(buf);}
+\DoxyCodeLine{00357\ \}}
+\DoxyCodeLine{00358\ }
+\DoxyCodeLine{00359\ \textcolor{keyword}{inline}\ \mbox{\hyperlink{structMyGame_1_1MonsterExtra}{MyGame::MonsterExtra}}\ *\mbox{\hyperlink{namespaceMyGame_ac3178ac569cf751baff44277501758fc}{GetMutableSizePrefixedMonsterExtra}}(\textcolor{keywordtype}{void}\ *buf)\ \{}
+\DoxyCodeLine{00360\ \ \ return\ ::flatbuffers::GetMutableSizePrefixedRoot<MyGame::MonsterExtra>(buf);}
+\DoxyCodeLine{00361\ \}}
+\DoxyCodeLine{00362\ }
+\DoxyCodeLine{00363\ \textcolor{keyword}{inline}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *\mbox{\hyperlink{namespaceMyGame_a45fb1cb7c7cb1386d7d7d7f92c1de2dc}{MonsterExtraIdentifier}}()\ \{}
+\DoxyCodeLine{00364\ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}MONE"{}};}
+\DoxyCodeLine{00365\ \}}
+\DoxyCodeLine{00366\ }
+\DoxyCodeLine{00367\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{namespaceMyGame_a3a625300e533364f9894ab68459cf187}{MonsterExtraBufferHasIdentifier}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{void}\ *buf)\ \{}
+\DoxyCodeLine{00368\ \ \ return\ ::flatbuffers::BufferHasIdentifier(}
+\DoxyCodeLine{00369\ \ \ \ \ \ \ buf,\ \mbox{\hyperlink{namespaceMyGame_a45fb1cb7c7cb1386d7d7d7f92c1de2dc}{MonsterExtraIdentifier}}());}
+\DoxyCodeLine{00370\ \}}
+\DoxyCodeLine{00371\ }
+\DoxyCodeLine{00372\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{namespaceMyGame_adfd81233ca27175e3b6cedcf2f40ad8d}{SizePrefixedMonsterExtraBufferHasIdentifier}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{void}\ *buf)\ \{}
+\DoxyCodeLine{00373\ \ \ return\ ::flatbuffers::BufferHasIdentifier(}
+\DoxyCodeLine{00374\ \ \ \ \ \ \ buf,\ \mbox{\hyperlink{namespaceMyGame_a45fb1cb7c7cb1386d7d7d7f92c1de2dc}{MonsterExtraIdentifier}}(),\ \textcolor{keyword}{true});}
+\DoxyCodeLine{00375\ \}}
+\DoxyCodeLine{00376\ }
+\DoxyCodeLine{00377\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{namespaceMyGame_ae543942c6df515dcfb3cd84f541af2e4}{VerifyMonsterExtraBuffer}}(}
+\DoxyCodeLine{00378\ \ \ \ \ \mbox{\hyperlink{namespaceflatbuffers_a3268477941df91db2eb06442b6e5f922}{::flatbuffers::Verifier}}\ \&verifier)\ \{}
+\DoxyCodeLine{00379\ \ \ \textcolor{keywordflow}{return}\ verifier.VerifyBuffer<\mbox{\hyperlink{structMyGame_1_1MonsterExtra}{MyGame::MonsterExtra}}>(\mbox{\hyperlink{namespaceMyGame_a45fb1cb7c7cb1386d7d7d7f92c1de2dc}{MonsterExtraIdentifier}}());}
+\DoxyCodeLine{00380\ \}}
+\DoxyCodeLine{00381\ }
+\DoxyCodeLine{00382\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{namespaceMyGame_aafd26de8cf00105f37d22257f3146ef5}{VerifySizePrefixedMonsterExtraBuffer}}(}
+\DoxyCodeLine{00383\ \ \ \ \ \mbox{\hyperlink{namespaceflatbuffers_a3268477941df91db2eb06442b6e5f922}{::flatbuffers::Verifier}}\ \&verifier)\ \{}
+\DoxyCodeLine{00384\ \ \ \textcolor{keywordflow}{return}\ verifier.VerifySizePrefixedBuffer<\mbox{\hyperlink{structMyGame_1_1MonsterExtra}{MyGame::MonsterExtra}}>(\mbox{\hyperlink{namespaceMyGame_a45fb1cb7c7cb1386d7d7d7f92c1de2dc}{MonsterExtraIdentifier}}());}
+\DoxyCodeLine{00385\ \}}
+\DoxyCodeLine{00386\ }
+\DoxyCodeLine{00387\ \textcolor{keyword}{inline}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *\mbox{\hyperlink{namespaceMyGame_ac49312797656a8822ec3375d57450214}{MonsterExtraExtension}}()\ \{}
+\DoxyCodeLine{00388\ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}mon"{}};}
+\DoxyCodeLine{00389\ \}}
+\DoxyCodeLine{00390\ }
+\DoxyCodeLine{00391\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceMyGame_abafb4e27f0b39b4fc352f64af9815749}{FinishMonsterExtraBuffer}}(}
+\DoxyCodeLine{00392\ \ \ \ \ \mbox{\hyperlink{classflatbuffers_1_1FlatBufferBuilderImpl}{::flatbuffers::FlatBufferBuilder}}\ \&fbb,}
+\DoxyCodeLine{00393\ \ \ \ \ ::flatbuffers::Offset<MyGame::MonsterExtra>\ root)\ \{}
+\DoxyCodeLine{00394\ \ \ fbb.\mbox{\hyperlink{classflatbuffers_1_1FlatBufferBuilderImpl_a813b376143a53bd2828d9684713fe03c}{Finish}}(root,\ \mbox{\hyperlink{namespaceMyGame_a45fb1cb7c7cb1386d7d7d7f92c1de2dc}{MonsterExtraIdentifier}}());}
+\DoxyCodeLine{00395\ \}}
+\DoxyCodeLine{00396\ }
+\DoxyCodeLine{00397\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceMyGame_aca23c7af746486be0f47e845e7afb493}{FinishSizePrefixedMonsterExtraBuffer}}(}
+\DoxyCodeLine{00398\ \ \ \ \ \mbox{\hyperlink{classflatbuffers_1_1FlatBufferBuilderImpl}{::flatbuffers::FlatBufferBuilder}}\ \&fbb,}
+\DoxyCodeLine{00399\ \ \ \ \ ::flatbuffers::Offset<MyGame::MonsterExtra>\ root)\ \{}
+\DoxyCodeLine{00400\ \ \ fbb.\mbox{\hyperlink{classflatbuffers_1_1FlatBufferBuilderImpl_aaa87fe5c3b85e47bb959e6d1aec96b2c}{FinishSizePrefixed}}(root,\ \mbox{\hyperlink{namespaceMyGame_a45fb1cb7c7cb1386d7d7d7f92c1de2dc}{MonsterExtraIdentifier}}());}
+\DoxyCodeLine{00401\ \}}
+\DoxyCodeLine{00402\ }
+\DoxyCodeLine{00403\ \textcolor{keyword}{inline}\ std::unique\_ptr<MyGame::MonsterExtraT>\ \mbox{\hyperlink{namespaceMyGame_a054bfce63a046c98de34119bbe70cc6c}{UnPackMonsterExtra}}(}
+\DoxyCodeLine{00404\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{void}\ *buf,}
+\DoxyCodeLine{00405\ \ \ \ \ const\ ::flatbuffers::resolver\_function\_t\ *res\ =\ \textcolor{keyword}{nullptr})\ \{}
+\DoxyCodeLine{00406\ \ \ \textcolor{keywordflow}{return}\ std::unique\_ptr<MyGame::MonsterExtraT>(\mbox{\hyperlink{namespaceMyGame_a2993cbd139d3490d1ec66355cd2ab92b}{GetMonsterExtra}}(buf)-\/>UnPack(res));}
+\DoxyCodeLine{00407\ \}}
+\DoxyCodeLine{00408\ }
+\DoxyCodeLine{00409\ \textcolor{keyword}{inline}\ std::unique\_ptr<MyGame::MonsterExtraT>\ \mbox{\hyperlink{namespaceMyGame_a60b7a3ea559f824a2b4cfb392af3f29d}{UnPackSizePrefixedMonsterExtra}}(}
+\DoxyCodeLine{00410\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{void}\ *buf,}
+\DoxyCodeLine{00411\ \ \ \ \ const\ ::flatbuffers::resolver\_function\_t\ *res\ =\ \textcolor{keyword}{nullptr})\ \{}
+\DoxyCodeLine{00412\ \ \ \textcolor{keywordflow}{return}\ std::unique\_ptr<MyGame::MonsterExtraT>(\mbox{\hyperlink{namespaceMyGame_a1a05a9aaeb275e124dd941e3a1302e9f}{GetSizePrefixedMonsterExtra}}(buf)-\/>UnPack(res));}
+\DoxyCodeLine{00413\ \}}
+\DoxyCodeLine{00414\ }
+\DoxyCodeLine{00415\ \}\ \ \textcolor{comment}{//\ namespace\ MyGame}}
+\DoxyCodeLine{00416\ }
+\DoxyCodeLine{00417\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ FLATBUFFERS\_GENERATED\_MONSTEREXTRA\_MYGAME\_H\_}}
+
+\end{DoxyCode}

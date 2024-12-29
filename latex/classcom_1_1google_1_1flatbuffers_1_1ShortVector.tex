@@ -1,0 +1,80 @@
+\doxysection{com.\+google.\+flatbuffers.\+Short\+Vector Class Reference}
+\hypertarget{classcom_1_1google_1_1flatbuffers_1_1ShortVector}{}\label{classcom_1_1google_1_1flatbuffers_1_1ShortVector}\index{com.google.flatbuffers.ShortVector@{com.google.flatbuffers.ShortVector}}
+
+
+Inheritance diagram for com.\+google.\+flatbuffers.\+Short\+Vector\+:
+% FIG 0
+
+
+Collaboration diagram for com.\+google.\+flatbuffers.\+Short\+Vector\+:
+% FIG 1
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classcom_1_1google_1_1flatbuffers_1_1ShortVector}{Short\+Vector}} \mbox{\hyperlink{classcom_1_1google_1_1flatbuffers_1_1ShortVector_a86666ec18db67164d89e909ac206672d}{\+\_\+\+\_\+assign}} (int \+\_\+vector, Byte\+Buffer \+\_\+bb)
+\item 
+short \mbox{\hyperlink{classcom_1_1google_1_1flatbuffers_1_1ShortVector_aef1c2e0cbad19c52faf0166267ad3033}{get}} (int j)
+\item 
+int \mbox{\hyperlink{classcom_1_1google_1_1flatbuffers_1_1ShortVector_afb8024985434c7cd3fe098dfc64d1fcc}{get\+As\+Unsigned}} (int j)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Helper type for accessing vector of signed or unsigned 16-\/bit values. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classcom_1_1google_1_1flatbuffers_1_1ShortVector_a86666ec18db67164d89e909ac206672d}\label{classcom_1_1google_1_1flatbuffers_1_1ShortVector_a86666ec18db67164d89e909ac206672d} 
+\index{com.google.flatbuffers.ShortVector@{com.google.flatbuffers.ShortVector}!\_\_assign@{\_\_assign}}
+\index{\_\_assign@{\_\_assign}!com.google.flatbuffers.ShortVector@{com.google.flatbuffers.ShortVector}}
+\doxysubsubsection{\texorpdfstring{\_\_assign()}{\_\_assign()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classcom_1_1google_1_1flatbuffers_1_1ShortVector}{Short\+Vector}} com.\+google.\+flatbuffers.\+Short\+Vector.\+\_\+\+\_\+assign (\begin{DoxyParamCaption}\item[{int}]{\+\_\+vector,  }\item[{Byte\+Buffer}]{\+\_\+bb }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Assigns vector access object to vector data.
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+vector} & Start data of a vector. \\
+\hline
+{\em \+\_\+bb} & Table\textquotesingle{}s Byte\+Buffer. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns current vector access object assigned to vector data whose offset is stored at {\ttfamily vector}. 
+\end{DoxyReturn}
+\Hypertarget{classcom_1_1google_1_1flatbuffers_1_1ShortVector_aef1c2e0cbad19c52faf0166267ad3033}\label{classcom_1_1google_1_1flatbuffers_1_1ShortVector_aef1c2e0cbad19c52faf0166267ad3033} 
+\index{com.google.flatbuffers.ShortVector@{com.google.flatbuffers.ShortVector}!get@{get}}
+\index{get@{get}!com.google.flatbuffers.ShortVector@{com.google.flatbuffers.ShortVector}}
+\doxysubsubsection{\texorpdfstring{get()}{get()}}
+{\footnotesize\ttfamily short com.\+google.\+flatbuffers.\+Short\+Vector.\+get (\begin{DoxyParamCaption}\item[{int}]{j }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Reads the short value at the given index.
+
+
+\begin{DoxyParams}{Parameters}
+{\em j} & The index from which the short value will be read. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the 16-\/bit value at the given index. 
+\end{DoxyReturn}
+\Hypertarget{classcom_1_1google_1_1flatbuffers_1_1ShortVector_afb8024985434c7cd3fe098dfc64d1fcc}\label{classcom_1_1google_1_1flatbuffers_1_1ShortVector_afb8024985434c7cd3fe098dfc64d1fcc} 
+\index{com.google.flatbuffers.ShortVector@{com.google.flatbuffers.ShortVector}!getAsUnsigned@{getAsUnsigned}}
+\index{getAsUnsigned@{getAsUnsigned}!com.google.flatbuffers.ShortVector@{com.google.flatbuffers.ShortVector}}
+\doxysubsubsection{\texorpdfstring{getAsUnsigned()}{getAsUnsigned()}}
+{\footnotesize\ttfamily int com.\+google.\+flatbuffers.\+Short\+Vector.\+get\+As\+Unsigned (\begin{DoxyParamCaption}\item[{int}]{j }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Reads the short at the given index, zero-\/extends it to type int, and returns the result, which is therefore in the range 0 through 65535.
+
+
+\begin{DoxyParams}{Parameters}
+{\em j} & The index from which the short value will be read. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the unsigned 16-\/bit at the given index. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+flatbuffers/java/src/main/java/com/google/flatbuffers/\mbox{\hyperlink{ShortVector_8java}{Short\+Vector.\+java}}\end{DoxyCompactItemize}

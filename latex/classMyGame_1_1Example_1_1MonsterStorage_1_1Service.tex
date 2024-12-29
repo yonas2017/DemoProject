@@ -1,0 +1,277 @@
+\doxysection{My\+Game\+::Example\+::Monster\+Storage\+::Service Class Reference}
+\hypertarget{classMyGame_1_1Example_1_1MonsterStorage_1_1Service}{}\label{classMyGame_1_1Example_1_1MonsterStorage_1_1Service}\index{MyGame::Example::MonsterStorage::Service@{MyGame::Example::MonsterStorage::Service}}
+
+
+{\ttfamily \#include $<$monster\+\_\+test.\+grpc.\+fb.\+h$>$}
+
+
+
+Inheritance diagram for My\+Game\+::Example\+::Monster\+Storage\+::Service\+:
+% FIG 0
+
+
+Collaboration diagram for My\+Game\+::Example\+::Monster\+Storage\+::Service\+:
+% FIG 1
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classMyGame_1_1Example_1_1MonsterStorage_1_1Service_ac27be268d0bd90179a47dc66e13159d8}{Service}} ()
+\item 
+virtual \mbox{\hyperlink{classMyGame_1_1Example_1_1MonsterStorage_1_1Service_a3918e189756dbb7aac9d1ce3ca54e389}{\texorpdfstring{$\sim$}{\string~}\+Service}} ()
+\item 
+virtual \+::grpc\+::\+Status \mbox{\hyperlink{classMyGame_1_1Example_1_1MonsterStorage_1_1Service_a3113a58376f1b2725e65786ba0f5b6f7}{Store}} (\+::grpc\+::\+Server\+Context \texorpdfstring{$\ast$}{*}context, const \mbox{\hyperlink{classflatbuffers_1_1grpc_1_1Message}{flatbuffers\+::grpc\+::\+Message}}$<$ \mbox{\hyperlink{structMyGame_1_1Example_1_1Monster}{Monster}} $>$ \texorpdfstring{$\ast$}{*}request, \mbox{\hyperlink{classflatbuffers_1_1grpc_1_1Message}{flatbuffers\+::grpc\+::\+Message}}$<$ \mbox{\hyperlink{structMyGame_1_1Example_1_1Stat}{Stat}} $>$ \texorpdfstring{$\ast$}{*}response)
+\item 
+virtual \+::grpc\+::\+Status \mbox{\hyperlink{classMyGame_1_1Example_1_1MonsterStorage_1_1Service_a6896773df631193caba8c67c97a485ab}{Retrieve}} (\+::grpc\+::\+Server\+Context \texorpdfstring{$\ast$}{*}context, const \mbox{\hyperlink{classflatbuffers_1_1grpc_1_1Message}{flatbuffers\+::grpc\+::\+Message}}$<$ \mbox{\hyperlink{structMyGame_1_1Example_1_1Stat}{Stat}} $>$ \texorpdfstring{$\ast$}{*}request, \+::grpc\+::\+Server\+Writer$<$ \mbox{\hyperlink{classflatbuffers_1_1grpc_1_1Message}{flatbuffers\+::grpc\+::\+Message}}$<$ \mbox{\hyperlink{structMyGame_1_1Example_1_1Monster}{Monster}} $>$ $>$ \texorpdfstring{$\ast$}{*}writer)
+\item 
+virtual \+::grpc\+::\+Status \mbox{\hyperlink{classMyGame_1_1Example_1_1MonsterStorage_1_1Service_aa074165b5e0572115bf37137f20ee29d}{Get\+Max\+Hit\+Point}} (\+::grpc\+::\+Server\+Context \texorpdfstring{$\ast$}{*}context, \+::grpc\+::\+Server\+Reader$<$ \mbox{\hyperlink{classflatbuffers_1_1grpc_1_1Message}{flatbuffers\+::grpc\+::\+Message}}$<$ \mbox{\hyperlink{structMyGame_1_1Example_1_1Monster}{Monster}} $>$ $>$ \texorpdfstring{$\ast$}{*}reader, \mbox{\hyperlink{classflatbuffers_1_1grpc_1_1Message}{flatbuffers\+::grpc\+::\+Message}}$<$ \mbox{\hyperlink{structMyGame_1_1Example_1_1Stat}{Stat}} $>$ \texorpdfstring{$\ast$}{*}response)
+\item 
+virtual \+::grpc\+::\+Status \mbox{\hyperlink{classMyGame_1_1Example_1_1MonsterStorage_1_1Service_a83000f6342d0b252fc1f5fe7d125ccaf}{Get\+Min\+Max\+Hit\+Points}} (\+::grpc\+::\+Server\+Context \texorpdfstring{$\ast$}{*}context, \+::grpc\+::\+Server\+Reader\+Writer$<$ \mbox{\hyperlink{classflatbuffers_1_1grpc_1_1Message}{flatbuffers\+::grpc\+::\+Message}}$<$ \mbox{\hyperlink{structMyGame_1_1Example_1_1Stat}{Stat}} $>$, \mbox{\hyperlink{classflatbuffers_1_1grpc_1_1Message}{flatbuffers\+::grpc\+::\+Message}}$<$ \mbox{\hyperlink{structMyGame_1_1Example_1_1Monster}{Monster}} $>$ $>$ \texorpdfstring{$\ast$}{*}stream)
+\item 
+\mbox{\hyperlink{classMyGame_1_1Example_1_1MonsterStorage_1_1Service_ac27be268d0bd90179a47dc66e13159d8}{Service}} ()
+\item 
+virtual \mbox{\hyperlink{classMyGame_1_1Example_1_1MonsterStorage_1_1Service_a50c329f1771db6c05cbe25a8f1e3bd78}{\texorpdfstring{$\sim$}{\string~}\+Service}} ()
+\item 
+virtual \+::grpc\+::\+Status \mbox{\hyperlink{classMyGame_1_1Example_1_1MonsterStorage_1_1Service_ab16917282b99d5c40dd1796870eaa07c}{Store}} (\+::grpc\+::\+Server\+Context \texorpdfstring{$\ast$}{*}context, const \mbox{\hyperlink{classflatbuffers_1_1grpc_1_1Message}{flatbuffers\+::grpc\+::\+Message}}$<$ \mbox{\hyperlink{structMyGame_1_1Example_1_1Monster}{Monster}} $>$ \texorpdfstring{$\ast$}{*}request, \mbox{\hyperlink{classflatbuffers_1_1grpc_1_1Message}{flatbuffers\+::grpc\+::\+Message}}$<$ \mbox{\hyperlink{structMyGame_1_1Example_1_1Stat}{Stat}} $>$ \texorpdfstring{$\ast$}{*}response)
+\item 
+virtual \+::grpc\+::\+Status \mbox{\hyperlink{classMyGame_1_1Example_1_1MonsterStorage_1_1Service_ad6d3b52bca9b82ba9f5453e6a20b9ffb}{Retrieve}} (\+::grpc\+::\+Server\+Context \texorpdfstring{$\ast$}{*}context, const \mbox{\hyperlink{classflatbuffers_1_1grpc_1_1Message}{flatbuffers\+::grpc\+::\+Message}}$<$ \mbox{\hyperlink{structMyGame_1_1Example_1_1Stat}{Stat}} $>$ \texorpdfstring{$\ast$}{*}request, \+::grpc\+::\+Server\+Writer$<$ \mbox{\hyperlink{classflatbuffers_1_1grpc_1_1Message}{flatbuffers\+::grpc\+::\+Message}}$<$ \mbox{\hyperlink{structMyGame_1_1Example_1_1Monster}{Monster}} $>$ $>$ \texorpdfstring{$\ast$}{*}writer)
+\item 
+virtual \+::grpc\+::\+Status \mbox{\hyperlink{classMyGame_1_1Example_1_1MonsterStorage_1_1Service_ac3921573b25b94ccdb903ff92fe0a673}{Get\+Max\+Hit\+Point}} (\+::grpc\+::\+Server\+Context \texorpdfstring{$\ast$}{*}context, \+::grpc\+::\+Server\+Reader$<$ \mbox{\hyperlink{classflatbuffers_1_1grpc_1_1Message}{flatbuffers\+::grpc\+::\+Message}}$<$ \mbox{\hyperlink{structMyGame_1_1Example_1_1Monster}{Monster}} $>$ $>$ \texorpdfstring{$\ast$}{*}reader, \mbox{\hyperlink{classflatbuffers_1_1grpc_1_1Message}{flatbuffers\+::grpc\+::\+Message}}$<$ \mbox{\hyperlink{structMyGame_1_1Example_1_1Stat}{Stat}} $>$ \texorpdfstring{$\ast$}{*}response)
+\item 
+virtual \+::grpc\+::\+Status \mbox{\hyperlink{classMyGame_1_1Example_1_1MonsterStorage_1_1Service_aa1ef84d3e9aa7702f94ec55803d61cb4}{Get\+Min\+Max\+Hit\+Points}} (\+::grpc\+::\+Server\+Context \texorpdfstring{$\ast$}{*}context, \+::grpc\+::\+Server\+Reader\+Writer$<$ \mbox{\hyperlink{classflatbuffers_1_1grpc_1_1Message}{flatbuffers\+::grpc\+::\+Message}}$<$ \mbox{\hyperlink{structMyGame_1_1Example_1_1Stat}{Stat}} $>$, \mbox{\hyperlink{classflatbuffers_1_1grpc_1_1Message}{flatbuffers\+::grpc\+::\+Message}}$<$ \mbox{\hyperlink{structMyGame_1_1Example_1_1Monster}{Monster}} $>$ $>$ \texorpdfstring{$\ast$}{*}stream)
+\item 
+\mbox{\hyperlink{classMyGame_1_1Example_1_1MonsterStorage_1_1Service_ac27be268d0bd90179a47dc66e13159d8}{Service}} ()
+\item 
+virtual \mbox{\hyperlink{classMyGame_1_1Example_1_1MonsterStorage_1_1Service_a50c329f1771db6c05cbe25a8f1e3bd78}{\texorpdfstring{$\sim$}{\string~}\+Service}} ()
+\item 
+virtual \+::grpc\+::\+Status \mbox{\hyperlink{classMyGame_1_1Example_1_1MonsterStorage_1_1Service_ab16917282b99d5c40dd1796870eaa07c}{Store}} (\+::grpc\+::\+Server\+Context \texorpdfstring{$\ast$}{*}context, const \mbox{\hyperlink{classflatbuffers_1_1grpc_1_1Message}{flatbuffers\+::grpc\+::\+Message}}$<$ \mbox{\hyperlink{structMyGame_1_1Example_1_1Monster}{Monster}} $>$ \texorpdfstring{$\ast$}{*}request, \mbox{\hyperlink{classflatbuffers_1_1grpc_1_1Message}{flatbuffers\+::grpc\+::\+Message}}$<$ \mbox{\hyperlink{structMyGame_1_1Example_1_1Stat}{Stat}} $>$ \texorpdfstring{$\ast$}{*}response)
+\item 
+virtual \+::grpc\+::\+Status \mbox{\hyperlink{classMyGame_1_1Example_1_1MonsterStorage_1_1Service_ad6d3b52bca9b82ba9f5453e6a20b9ffb}{Retrieve}} (\+::grpc\+::\+Server\+Context \texorpdfstring{$\ast$}{*}context, const \mbox{\hyperlink{classflatbuffers_1_1grpc_1_1Message}{flatbuffers\+::grpc\+::\+Message}}$<$ \mbox{\hyperlink{structMyGame_1_1Example_1_1Stat}{Stat}} $>$ \texorpdfstring{$\ast$}{*}request, \+::grpc\+::\+Server\+Writer$<$ \mbox{\hyperlink{classflatbuffers_1_1grpc_1_1Message}{flatbuffers\+::grpc\+::\+Message}}$<$ \mbox{\hyperlink{structMyGame_1_1Example_1_1Monster}{Monster}} $>$ $>$ \texorpdfstring{$\ast$}{*}writer)
+\item 
+virtual \+::grpc\+::\+Status \mbox{\hyperlink{classMyGame_1_1Example_1_1MonsterStorage_1_1Service_ac3921573b25b94ccdb903ff92fe0a673}{Get\+Max\+Hit\+Point}} (\+::grpc\+::\+Server\+Context \texorpdfstring{$\ast$}{*}context, \+::grpc\+::\+Server\+Reader$<$ \mbox{\hyperlink{classflatbuffers_1_1grpc_1_1Message}{flatbuffers\+::grpc\+::\+Message}}$<$ \mbox{\hyperlink{structMyGame_1_1Example_1_1Monster}{Monster}} $>$ $>$ \texorpdfstring{$\ast$}{*}reader, \mbox{\hyperlink{classflatbuffers_1_1grpc_1_1Message}{flatbuffers\+::grpc\+::\+Message}}$<$ \mbox{\hyperlink{structMyGame_1_1Example_1_1Stat}{Stat}} $>$ \texorpdfstring{$\ast$}{*}response)
+\item 
+virtual \+::grpc\+::\+Status \mbox{\hyperlink{classMyGame_1_1Example_1_1MonsterStorage_1_1Service_aa1ef84d3e9aa7702f94ec55803d61cb4}{Get\+Min\+Max\+Hit\+Points}} (\+::grpc\+::\+Server\+Context \texorpdfstring{$\ast$}{*}context, \+::grpc\+::\+Server\+Reader\+Writer$<$ \mbox{\hyperlink{classflatbuffers_1_1grpc_1_1Message}{flatbuffers\+::grpc\+::\+Message}}$<$ \mbox{\hyperlink{structMyGame_1_1Example_1_1Stat}{Stat}} $>$, \mbox{\hyperlink{classflatbuffers_1_1grpc_1_1Message}{flatbuffers\+::grpc\+::\+Message}}$<$ \mbox{\hyperlink{structMyGame_1_1Example_1_1Monster}{Monster}} $>$ $>$ \texorpdfstring{$\ast$}{*}stream)
+\item 
+\mbox{\hyperlink{classMyGame_1_1Example_1_1MonsterStorage_1_1Service_ac27be268d0bd90179a47dc66e13159d8}{Service}} ()
+\item 
+virtual \mbox{\hyperlink{classMyGame_1_1Example_1_1MonsterStorage_1_1Service_a50c329f1771db6c05cbe25a8f1e3bd78}{\texorpdfstring{$\sim$}{\string~}\+Service}} ()
+\item 
+virtual \+::grpc\+::\+Status \mbox{\hyperlink{classMyGame_1_1Example_1_1MonsterStorage_1_1Service_ab16917282b99d5c40dd1796870eaa07c}{Store}} (\+::grpc\+::\+Server\+Context \texorpdfstring{$\ast$}{*}context, const \mbox{\hyperlink{classflatbuffers_1_1grpc_1_1Message}{flatbuffers\+::grpc\+::\+Message}}$<$ \mbox{\hyperlink{structMyGame_1_1Example_1_1Monster}{Monster}} $>$ \texorpdfstring{$\ast$}{*}request, \mbox{\hyperlink{classflatbuffers_1_1grpc_1_1Message}{flatbuffers\+::grpc\+::\+Message}}$<$ \mbox{\hyperlink{structMyGame_1_1Example_1_1Stat}{Stat}} $>$ \texorpdfstring{$\ast$}{*}response)
+\item 
+virtual \+::grpc\+::\+Status \mbox{\hyperlink{classMyGame_1_1Example_1_1MonsterStorage_1_1Service_ad6d3b52bca9b82ba9f5453e6a20b9ffb}{Retrieve}} (\+::grpc\+::\+Server\+Context \texorpdfstring{$\ast$}{*}context, const \mbox{\hyperlink{classflatbuffers_1_1grpc_1_1Message}{flatbuffers\+::grpc\+::\+Message}}$<$ \mbox{\hyperlink{structMyGame_1_1Example_1_1Stat}{Stat}} $>$ \texorpdfstring{$\ast$}{*}request, \+::grpc\+::\+Server\+Writer$<$ \mbox{\hyperlink{classflatbuffers_1_1grpc_1_1Message}{flatbuffers\+::grpc\+::\+Message}}$<$ \mbox{\hyperlink{structMyGame_1_1Example_1_1Monster}{Monster}} $>$ $>$ \texorpdfstring{$\ast$}{*}writer)
+\item 
+virtual \+::grpc\+::\+Status \mbox{\hyperlink{classMyGame_1_1Example_1_1MonsterStorage_1_1Service_ac3921573b25b94ccdb903ff92fe0a673}{Get\+Max\+Hit\+Point}} (\+::grpc\+::\+Server\+Context \texorpdfstring{$\ast$}{*}context, \+::grpc\+::\+Server\+Reader$<$ \mbox{\hyperlink{classflatbuffers_1_1grpc_1_1Message}{flatbuffers\+::grpc\+::\+Message}}$<$ \mbox{\hyperlink{structMyGame_1_1Example_1_1Monster}{Monster}} $>$ $>$ \texorpdfstring{$\ast$}{*}reader, \mbox{\hyperlink{classflatbuffers_1_1grpc_1_1Message}{flatbuffers\+::grpc\+::\+Message}}$<$ \mbox{\hyperlink{structMyGame_1_1Example_1_1Stat}{Stat}} $>$ \texorpdfstring{$\ast$}{*}response)
+\item 
+virtual \+::grpc\+::\+Status \mbox{\hyperlink{classMyGame_1_1Example_1_1MonsterStorage_1_1Service_aa1ef84d3e9aa7702f94ec55803d61cb4}{Get\+Min\+Max\+Hit\+Points}} (\+::grpc\+::\+Server\+Context \texorpdfstring{$\ast$}{*}context, \+::grpc\+::\+Server\+Reader\+Writer$<$ \mbox{\hyperlink{classflatbuffers_1_1grpc_1_1Message}{flatbuffers\+::grpc\+::\+Message}}$<$ \mbox{\hyperlink{structMyGame_1_1Example_1_1Stat}{Stat}} $>$, \mbox{\hyperlink{classflatbuffers_1_1grpc_1_1Message}{flatbuffers\+::grpc\+::\+Message}}$<$ \mbox{\hyperlink{structMyGame_1_1Example_1_1Monster}{Monster}} $>$ $>$ \texorpdfstring{$\ast$}{*}stream)
+\item 
+\mbox{\hyperlink{classMyGame_1_1Example_1_1MonsterStorage_1_1Service_ac27be268d0bd90179a47dc66e13159d8}{Service}} ()
+\item 
+virtual \mbox{\hyperlink{classMyGame_1_1Example_1_1MonsterStorage_1_1Service_a50c329f1771db6c05cbe25a8f1e3bd78}{\texorpdfstring{$\sim$}{\string~}\+Service}} ()
+\item 
+virtual \+::grpc\+::\+Status \mbox{\hyperlink{classMyGame_1_1Example_1_1MonsterStorage_1_1Service_ab16917282b99d5c40dd1796870eaa07c}{Store}} (\+::grpc\+::\+Server\+Context \texorpdfstring{$\ast$}{*}context, const \mbox{\hyperlink{classflatbuffers_1_1grpc_1_1Message}{flatbuffers\+::grpc\+::\+Message}}$<$ \mbox{\hyperlink{structMyGame_1_1Example_1_1Monster}{Monster}} $>$ \texorpdfstring{$\ast$}{*}request, \mbox{\hyperlink{classflatbuffers_1_1grpc_1_1Message}{flatbuffers\+::grpc\+::\+Message}}$<$ \mbox{\hyperlink{structMyGame_1_1Example_1_1Stat}{Stat}} $>$ \texorpdfstring{$\ast$}{*}response)
+\item 
+virtual \+::grpc\+::\+Status \mbox{\hyperlink{classMyGame_1_1Example_1_1MonsterStorage_1_1Service_ad6d3b52bca9b82ba9f5453e6a20b9ffb}{Retrieve}} (\+::grpc\+::\+Server\+Context \texorpdfstring{$\ast$}{*}context, const \mbox{\hyperlink{classflatbuffers_1_1grpc_1_1Message}{flatbuffers\+::grpc\+::\+Message}}$<$ \mbox{\hyperlink{structMyGame_1_1Example_1_1Stat}{Stat}} $>$ \texorpdfstring{$\ast$}{*}request, \+::grpc\+::\+Server\+Writer$<$ \mbox{\hyperlink{classflatbuffers_1_1grpc_1_1Message}{flatbuffers\+::grpc\+::\+Message}}$<$ \mbox{\hyperlink{structMyGame_1_1Example_1_1Monster}{Monster}} $>$ $>$ \texorpdfstring{$\ast$}{*}writer)
+\item 
+virtual \+::grpc\+::\+Status \mbox{\hyperlink{classMyGame_1_1Example_1_1MonsterStorage_1_1Service_ac3921573b25b94ccdb903ff92fe0a673}{Get\+Max\+Hit\+Point}} (\+::grpc\+::\+Server\+Context \texorpdfstring{$\ast$}{*}context, \+::grpc\+::\+Server\+Reader$<$ \mbox{\hyperlink{classflatbuffers_1_1grpc_1_1Message}{flatbuffers\+::grpc\+::\+Message}}$<$ \mbox{\hyperlink{structMyGame_1_1Example_1_1Monster}{Monster}} $>$ $>$ \texorpdfstring{$\ast$}{*}reader, \mbox{\hyperlink{classflatbuffers_1_1grpc_1_1Message}{flatbuffers\+::grpc\+::\+Message}}$<$ \mbox{\hyperlink{structMyGame_1_1Example_1_1Stat}{Stat}} $>$ \texorpdfstring{$\ast$}{*}response)
+\item 
+virtual \+::grpc\+::\+Status \mbox{\hyperlink{classMyGame_1_1Example_1_1MonsterStorage_1_1Service_aa1ef84d3e9aa7702f94ec55803d61cb4}{Get\+Min\+Max\+Hit\+Points}} (\+::grpc\+::\+Server\+Context \texorpdfstring{$\ast$}{*}context, \+::grpc\+::\+Server\+Reader\+Writer$<$ \mbox{\hyperlink{classflatbuffers_1_1grpc_1_1Message}{flatbuffers\+::grpc\+::\+Message}}$<$ \mbox{\hyperlink{structMyGame_1_1Example_1_1Stat}{Stat}} $>$, \mbox{\hyperlink{classflatbuffers_1_1grpc_1_1Message}{flatbuffers\+::grpc\+::\+Message}}$<$ \mbox{\hyperlink{structMyGame_1_1Example_1_1Monster}{Monster}} $>$ $>$ \texorpdfstring{$\ast$}{*}stream)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classMyGame_1_1Example_1_1MonsterStorage_1_1Service_ac27be268d0bd90179a47dc66e13159d8}\label{classMyGame_1_1Example_1_1MonsterStorage_1_1Service_ac27be268d0bd90179a47dc66e13159d8} 
+\index{MyGame::Example::MonsterStorage::Service@{MyGame::Example::MonsterStorage::Service}!Service@{Service}}
+\index{Service@{Service}!MyGame::Example::MonsterStorage::Service@{MyGame::Example::MonsterStorage::Service}}
+\doxysubsubsection{\texorpdfstring{Service()}{Service()}\hspace{0.1cm}{\footnotesize\ttfamily [1/5]}}
+{\footnotesize\ttfamily My\+Game\+::\+Example\+::\+Monster\+Storage\+::\+Service\+::\+Service (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{classMyGame_1_1Example_1_1MonsterStorage_1_1Service_a3918e189756dbb7aac9d1ce3ca54e389}\label{classMyGame_1_1Example_1_1MonsterStorage_1_1Service_a3918e189756dbb7aac9d1ce3ca54e389} 
+\index{MyGame::Example::MonsterStorage::Service@{MyGame::Example::MonsterStorage::Service}!````~Service@{\texorpdfstring{$\sim$}{\string~}Service}}
+\index{````~Service@{\texorpdfstring{$\sim$}{\string~}Service}!MyGame::Example::MonsterStorage::Service@{MyGame::Example::MonsterStorage::Service}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Service()}{\string~Service()}\hspace{0.1cm}{\footnotesize\ttfamily [1/5]}}
+{\footnotesize\ttfamily My\+Game\+::\+Example\+::\+Monster\+Storage\+::\+Service\+::\texorpdfstring{$\sim$}{\string~}\+Service (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+\Hypertarget{classMyGame_1_1Example_1_1MonsterStorage_1_1Service_ac27be268d0bd90179a47dc66e13159d8}\label{classMyGame_1_1Example_1_1MonsterStorage_1_1Service_ac27be268d0bd90179a47dc66e13159d8} 
+\index{MyGame::Example::MonsterStorage::Service@{MyGame::Example::MonsterStorage::Service}!Service@{Service}}
+\index{Service@{Service}!MyGame::Example::MonsterStorage::Service@{MyGame::Example::MonsterStorage::Service}}
+\doxysubsubsection{\texorpdfstring{Service()}{Service()}\hspace{0.1cm}{\footnotesize\ttfamily [2/5]}}
+{\footnotesize\ttfamily My\+Game\+::\+Example\+::\+Monster\+Storage\+::\+Service\+::\+Service (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{classMyGame_1_1Example_1_1MonsterStorage_1_1Service_a50c329f1771db6c05cbe25a8f1e3bd78}\label{classMyGame_1_1Example_1_1MonsterStorage_1_1Service_a50c329f1771db6c05cbe25a8f1e3bd78} 
+\index{MyGame::Example::MonsterStorage::Service@{MyGame::Example::MonsterStorage::Service}!````~Service@{\texorpdfstring{$\sim$}{\string~}Service}}
+\index{````~Service@{\texorpdfstring{$\sim$}{\string~}Service}!MyGame::Example::MonsterStorage::Service@{MyGame::Example::MonsterStorage::Service}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Service()}{\string~Service()}\hspace{0.1cm}{\footnotesize\ttfamily [2/5]}}
+{\footnotesize\ttfamily virtual My\+Game\+::\+Example\+::\+Monster\+Storage\+::\+Service\+::\texorpdfstring{$\sim$}{\string~}\+Service (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+\Hypertarget{classMyGame_1_1Example_1_1MonsterStorage_1_1Service_ac27be268d0bd90179a47dc66e13159d8}\label{classMyGame_1_1Example_1_1MonsterStorage_1_1Service_ac27be268d0bd90179a47dc66e13159d8} 
+\index{MyGame::Example::MonsterStorage::Service@{MyGame::Example::MonsterStorage::Service}!Service@{Service}}
+\index{Service@{Service}!MyGame::Example::MonsterStorage::Service@{MyGame::Example::MonsterStorage::Service}}
+\doxysubsubsection{\texorpdfstring{Service()}{Service()}\hspace{0.1cm}{\footnotesize\ttfamily [3/5]}}
+{\footnotesize\ttfamily My\+Game\+::\+Example\+::\+Monster\+Storage\+::\+Service\+::\+Service (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{classMyGame_1_1Example_1_1MonsterStorage_1_1Service_a50c329f1771db6c05cbe25a8f1e3bd78}\label{classMyGame_1_1Example_1_1MonsterStorage_1_1Service_a50c329f1771db6c05cbe25a8f1e3bd78} 
+\index{MyGame::Example::MonsterStorage::Service@{MyGame::Example::MonsterStorage::Service}!````~Service@{\texorpdfstring{$\sim$}{\string~}Service}}
+\index{````~Service@{\texorpdfstring{$\sim$}{\string~}Service}!MyGame::Example::MonsterStorage::Service@{MyGame::Example::MonsterStorage::Service}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Service()}{\string~Service()}\hspace{0.1cm}{\footnotesize\ttfamily [3/5]}}
+{\footnotesize\ttfamily virtual My\+Game\+::\+Example\+::\+Monster\+Storage\+::\+Service\+::\texorpdfstring{$\sim$}{\string~}\+Service (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+\Hypertarget{classMyGame_1_1Example_1_1MonsterStorage_1_1Service_ac27be268d0bd90179a47dc66e13159d8}\label{classMyGame_1_1Example_1_1MonsterStorage_1_1Service_ac27be268d0bd90179a47dc66e13159d8} 
+\index{MyGame::Example::MonsterStorage::Service@{MyGame::Example::MonsterStorage::Service}!Service@{Service}}
+\index{Service@{Service}!MyGame::Example::MonsterStorage::Service@{MyGame::Example::MonsterStorage::Service}}
+\doxysubsubsection{\texorpdfstring{Service()}{Service()}\hspace{0.1cm}{\footnotesize\ttfamily [4/5]}}
+{\footnotesize\ttfamily My\+Game\+::\+Example\+::\+Monster\+Storage\+::\+Service\+::\+Service (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{classMyGame_1_1Example_1_1MonsterStorage_1_1Service_a50c329f1771db6c05cbe25a8f1e3bd78}\label{classMyGame_1_1Example_1_1MonsterStorage_1_1Service_a50c329f1771db6c05cbe25a8f1e3bd78} 
+\index{MyGame::Example::MonsterStorage::Service@{MyGame::Example::MonsterStorage::Service}!````~Service@{\texorpdfstring{$\sim$}{\string~}Service}}
+\index{````~Service@{\texorpdfstring{$\sim$}{\string~}Service}!MyGame::Example::MonsterStorage::Service@{MyGame::Example::MonsterStorage::Service}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Service()}{\string~Service()}\hspace{0.1cm}{\footnotesize\ttfamily [4/5]}}
+{\footnotesize\ttfamily virtual My\+Game\+::\+Example\+::\+Monster\+Storage\+::\+Service\+::\texorpdfstring{$\sim$}{\string~}\+Service (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+\Hypertarget{classMyGame_1_1Example_1_1MonsterStorage_1_1Service_ac27be268d0bd90179a47dc66e13159d8}\label{classMyGame_1_1Example_1_1MonsterStorage_1_1Service_ac27be268d0bd90179a47dc66e13159d8} 
+\index{MyGame::Example::MonsterStorage::Service@{MyGame::Example::MonsterStorage::Service}!Service@{Service}}
+\index{Service@{Service}!MyGame::Example::MonsterStorage::Service@{MyGame::Example::MonsterStorage::Service}}
+\doxysubsubsection{\texorpdfstring{Service()}{Service()}\hspace{0.1cm}{\footnotesize\ttfamily [5/5]}}
+{\footnotesize\ttfamily My\+Game\+::\+Example\+::\+Monster\+Storage\+::\+Service\+::\+Service (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{classMyGame_1_1Example_1_1MonsterStorage_1_1Service_a50c329f1771db6c05cbe25a8f1e3bd78}\label{classMyGame_1_1Example_1_1MonsterStorage_1_1Service_a50c329f1771db6c05cbe25a8f1e3bd78} 
+\index{MyGame::Example::MonsterStorage::Service@{MyGame::Example::MonsterStorage::Service}!````~Service@{\texorpdfstring{$\sim$}{\string~}Service}}
+\index{````~Service@{\texorpdfstring{$\sim$}{\string~}Service}!MyGame::Example::MonsterStorage::Service@{MyGame::Example::MonsterStorage::Service}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Service()}{\string~Service()}\hspace{0.1cm}{\footnotesize\ttfamily [5/5]}}
+{\footnotesize\ttfamily virtual My\+Game\+::\+Example\+::\+Monster\+Storage\+::\+Service\+::\texorpdfstring{$\sim$}{\string~}\+Service (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classMyGame_1_1Example_1_1MonsterStorage_1_1Service_aa074165b5e0572115bf37137f20ee29d}\label{classMyGame_1_1Example_1_1MonsterStorage_1_1Service_aa074165b5e0572115bf37137f20ee29d} 
+\index{MyGame::Example::MonsterStorage::Service@{MyGame::Example::MonsterStorage::Service}!GetMaxHitPoint@{GetMaxHitPoint}}
+\index{GetMaxHitPoint@{GetMaxHitPoint}!MyGame::Example::MonsterStorage::Service@{MyGame::Example::MonsterStorage::Service}}
+\doxysubsubsection{\texorpdfstring{GetMaxHitPoint()}{GetMaxHitPoint()}\hspace{0.1cm}{\footnotesize\ttfamily [1/5]}}
+{\footnotesize\ttfamily grpc\+::\+Status My\+Game\+::\+Example\+::\+Monster\+Storage\+::\+Service\+::\+Get\+Max\+Hit\+Point (\begin{DoxyParamCaption}\item[{\+::grpc\+::\+Server\+Context \texorpdfstring{$\ast$}{*}}]{context,  }\item[{\+::grpc\+::\+Server\+Reader$<$ \mbox{\hyperlink{classflatbuffers_1_1grpc_1_1Message}{flatbuffers\+::grpc\+::\+Message}}$<$ \mbox{\hyperlink{structMyGame_1_1Example_1_1Monster}{Monster}} $>$ $>$ \texorpdfstring{$\ast$}{*}}]{reader,  }\item[{\mbox{\hyperlink{classflatbuffers_1_1grpc_1_1Message}{flatbuffers\+::grpc\+::\+Message}}$<$ \mbox{\hyperlink{structMyGame_1_1Example_1_1Stat}{Stat}} $>$ \texorpdfstring{$\ast$}{*}}]{response }\end{DoxyParamCaption})}
+
+\Hypertarget{classMyGame_1_1Example_1_1MonsterStorage_1_1Service_ac3921573b25b94ccdb903ff92fe0a673}\label{classMyGame_1_1Example_1_1MonsterStorage_1_1Service_ac3921573b25b94ccdb903ff92fe0a673} 
+\index{MyGame::Example::MonsterStorage::Service@{MyGame::Example::MonsterStorage::Service}!GetMaxHitPoint@{GetMaxHitPoint}}
+\index{GetMaxHitPoint@{GetMaxHitPoint}!MyGame::Example::MonsterStorage::Service@{MyGame::Example::MonsterStorage::Service}}
+\doxysubsubsection{\texorpdfstring{GetMaxHitPoint()}{GetMaxHitPoint()}\hspace{0.1cm}{\footnotesize\ttfamily [2/5]}}
+{\footnotesize\ttfamily virtual \+::grpc\+::\+Status My\+Game\+::\+Example\+::\+Monster\+Storage\+::\+Service\+::\+Get\+Max\+Hit\+Point (\begin{DoxyParamCaption}\item[{\+::grpc\+::\+Server\+Context \texorpdfstring{$\ast$}{*}}]{context,  }\item[{\+::grpc\+::\+Server\+Reader$<$ \mbox{\hyperlink{classflatbuffers_1_1grpc_1_1Message}{flatbuffers\+::grpc\+::\+Message}}$<$ \mbox{\hyperlink{structMyGame_1_1Example_1_1Monster}{Monster}} $>$ $>$ \texorpdfstring{$\ast$}{*}}]{reader,  }\item[{\mbox{\hyperlink{classflatbuffers_1_1grpc_1_1Message}{flatbuffers\+::grpc\+::\+Message}}$<$ \mbox{\hyperlink{structMyGame_1_1Example_1_1Stat}{Stat}} $>$ \texorpdfstring{$\ast$}{*}}]{response }\end{DoxyParamCaption})}
+
+\Hypertarget{classMyGame_1_1Example_1_1MonsterStorage_1_1Service_ac3921573b25b94ccdb903ff92fe0a673}\label{classMyGame_1_1Example_1_1MonsterStorage_1_1Service_ac3921573b25b94ccdb903ff92fe0a673} 
+\index{MyGame::Example::MonsterStorage::Service@{MyGame::Example::MonsterStorage::Service}!GetMaxHitPoint@{GetMaxHitPoint}}
+\index{GetMaxHitPoint@{GetMaxHitPoint}!MyGame::Example::MonsterStorage::Service@{MyGame::Example::MonsterStorage::Service}}
+\doxysubsubsection{\texorpdfstring{GetMaxHitPoint()}{GetMaxHitPoint()}\hspace{0.1cm}{\footnotesize\ttfamily [3/5]}}
+{\footnotesize\ttfamily virtual \+::grpc\+::\+Status My\+Game\+::\+Example\+::\+Monster\+Storage\+::\+Service\+::\+Get\+Max\+Hit\+Point (\begin{DoxyParamCaption}\item[{\+::grpc\+::\+Server\+Context \texorpdfstring{$\ast$}{*}}]{context,  }\item[{\+::grpc\+::\+Server\+Reader$<$ \mbox{\hyperlink{classflatbuffers_1_1grpc_1_1Message}{flatbuffers\+::grpc\+::\+Message}}$<$ \mbox{\hyperlink{structMyGame_1_1Example_1_1Monster}{Monster}} $>$ $>$ \texorpdfstring{$\ast$}{*}}]{reader,  }\item[{\mbox{\hyperlink{classflatbuffers_1_1grpc_1_1Message}{flatbuffers\+::grpc\+::\+Message}}$<$ \mbox{\hyperlink{structMyGame_1_1Example_1_1Stat}{Stat}} $>$ \texorpdfstring{$\ast$}{*}}]{response }\end{DoxyParamCaption})}
+
+\Hypertarget{classMyGame_1_1Example_1_1MonsterStorage_1_1Service_ac3921573b25b94ccdb903ff92fe0a673}\label{classMyGame_1_1Example_1_1MonsterStorage_1_1Service_ac3921573b25b94ccdb903ff92fe0a673} 
+\index{MyGame::Example::MonsterStorage::Service@{MyGame::Example::MonsterStorage::Service}!GetMaxHitPoint@{GetMaxHitPoint}}
+\index{GetMaxHitPoint@{GetMaxHitPoint}!MyGame::Example::MonsterStorage::Service@{MyGame::Example::MonsterStorage::Service}}
+\doxysubsubsection{\texorpdfstring{GetMaxHitPoint()}{GetMaxHitPoint()}\hspace{0.1cm}{\footnotesize\ttfamily [4/5]}}
+{\footnotesize\ttfamily virtual \+::grpc\+::\+Status My\+Game\+::\+Example\+::\+Monster\+Storage\+::\+Service\+::\+Get\+Max\+Hit\+Point (\begin{DoxyParamCaption}\item[{\+::grpc\+::\+Server\+Context \texorpdfstring{$\ast$}{*}}]{context,  }\item[{\+::grpc\+::\+Server\+Reader$<$ \mbox{\hyperlink{classflatbuffers_1_1grpc_1_1Message}{flatbuffers\+::grpc\+::\+Message}}$<$ \mbox{\hyperlink{structMyGame_1_1Example_1_1Monster}{Monster}} $>$ $>$ \texorpdfstring{$\ast$}{*}}]{reader,  }\item[{\mbox{\hyperlink{classflatbuffers_1_1grpc_1_1Message}{flatbuffers\+::grpc\+::\+Message}}$<$ \mbox{\hyperlink{structMyGame_1_1Example_1_1Stat}{Stat}} $>$ \texorpdfstring{$\ast$}{*}}]{response }\end{DoxyParamCaption})}
+
+\Hypertarget{classMyGame_1_1Example_1_1MonsterStorage_1_1Service_ac3921573b25b94ccdb903ff92fe0a673}\label{classMyGame_1_1Example_1_1MonsterStorage_1_1Service_ac3921573b25b94ccdb903ff92fe0a673} 
+\index{MyGame::Example::MonsterStorage::Service@{MyGame::Example::MonsterStorage::Service}!GetMaxHitPoint@{GetMaxHitPoint}}
+\index{GetMaxHitPoint@{GetMaxHitPoint}!MyGame::Example::MonsterStorage::Service@{MyGame::Example::MonsterStorage::Service}}
+\doxysubsubsection{\texorpdfstring{GetMaxHitPoint()}{GetMaxHitPoint()}\hspace{0.1cm}{\footnotesize\ttfamily [5/5]}}
+{\footnotesize\ttfamily virtual \+::grpc\+::\+Status My\+Game\+::\+Example\+::\+Monster\+Storage\+::\+Service\+::\+Get\+Max\+Hit\+Point (\begin{DoxyParamCaption}\item[{\+::grpc\+::\+Server\+Context \texorpdfstring{$\ast$}{*}}]{context,  }\item[{\+::grpc\+::\+Server\+Reader$<$ \mbox{\hyperlink{classflatbuffers_1_1grpc_1_1Message}{flatbuffers\+::grpc\+::\+Message}}$<$ \mbox{\hyperlink{structMyGame_1_1Example_1_1Monster}{Monster}} $>$ $>$ \texorpdfstring{$\ast$}{*}}]{reader,  }\item[{\mbox{\hyperlink{classflatbuffers_1_1grpc_1_1Message}{flatbuffers\+::grpc\+::\+Message}}$<$ \mbox{\hyperlink{structMyGame_1_1Example_1_1Stat}{Stat}} $>$ \texorpdfstring{$\ast$}{*}}]{response }\end{DoxyParamCaption})}
+
+\Hypertarget{classMyGame_1_1Example_1_1MonsterStorage_1_1Service_a83000f6342d0b252fc1f5fe7d125ccaf}\label{classMyGame_1_1Example_1_1MonsterStorage_1_1Service_a83000f6342d0b252fc1f5fe7d125ccaf} 
+\index{MyGame::Example::MonsterStorage::Service@{MyGame::Example::MonsterStorage::Service}!GetMinMaxHitPoints@{GetMinMaxHitPoints}}
+\index{GetMinMaxHitPoints@{GetMinMaxHitPoints}!MyGame::Example::MonsterStorage::Service@{MyGame::Example::MonsterStorage::Service}}
+\doxysubsubsection{\texorpdfstring{GetMinMaxHitPoints()}{GetMinMaxHitPoints()}\hspace{0.1cm}{\footnotesize\ttfamily [1/5]}}
+{\footnotesize\ttfamily grpc\+::\+Status My\+Game\+::\+Example\+::\+Monster\+Storage\+::\+Service\+::\+Get\+Min\+Max\+Hit\+Points (\begin{DoxyParamCaption}\item[{\+::grpc\+::\+Server\+Context \texorpdfstring{$\ast$}{*}}]{context,  }\item[{\+::grpc\+::\+Server\+Reader\+Writer$<$ \mbox{\hyperlink{classflatbuffers_1_1grpc_1_1Message}{flatbuffers\+::grpc\+::\+Message}}$<$ \mbox{\hyperlink{structMyGame_1_1Example_1_1Stat}{Stat}} $>$, \mbox{\hyperlink{classflatbuffers_1_1grpc_1_1Message}{flatbuffers\+::grpc\+::\+Message}}$<$ \mbox{\hyperlink{structMyGame_1_1Example_1_1Monster}{Monster}} $>$ $>$ \texorpdfstring{$\ast$}{*}}]{stream }\end{DoxyParamCaption})}
+
+\Hypertarget{classMyGame_1_1Example_1_1MonsterStorage_1_1Service_aa1ef84d3e9aa7702f94ec55803d61cb4}\label{classMyGame_1_1Example_1_1MonsterStorage_1_1Service_aa1ef84d3e9aa7702f94ec55803d61cb4} 
+\index{MyGame::Example::MonsterStorage::Service@{MyGame::Example::MonsterStorage::Service}!GetMinMaxHitPoints@{GetMinMaxHitPoints}}
+\index{GetMinMaxHitPoints@{GetMinMaxHitPoints}!MyGame::Example::MonsterStorage::Service@{MyGame::Example::MonsterStorage::Service}}
+\doxysubsubsection{\texorpdfstring{GetMinMaxHitPoints()}{GetMinMaxHitPoints()}\hspace{0.1cm}{\footnotesize\ttfamily [2/5]}}
+{\footnotesize\ttfamily virtual \+::grpc\+::\+Status My\+Game\+::\+Example\+::\+Monster\+Storage\+::\+Service\+::\+Get\+Min\+Max\+Hit\+Points (\begin{DoxyParamCaption}\item[{\+::grpc\+::\+Server\+Context \texorpdfstring{$\ast$}{*}}]{context,  }\item[{\+::grpc\+::\+Server\+Reader\+Writer$<$ \mbox{\hyperlink{classflatbuffers_1_1grpc_1_1Message}{flatbuffers\+::grpc\+::\+Message}}$<$ \mbox{\hyperlink{structMyGame_1_1Example_1_1Stat}{Stat}} $>$, \mbox{\hyperlink{classflatbuffers_1_1grpc_1_1Message}{flatbuffers\+::grpc\+::\+Message}}$<$ \mbox{\hyperlink{structMyGame_1_1Example_1_1Monster}{Monster}} $>$ $>$ \texorpdfstring{$\ast$}{*}}]{stream }\end{DoxyParamCaption})}
+
+\Hypertarget{classMyGame_1_1Example_1_1MonsterStorage_1_1Service_aa1ef84d3e9aa7702f94ec55803d61cb4}\label{classMyGame_1_1Example_1_1MonsterStorage_1_1Service_aa1ef84d3e9aa7702f94ec55803d61cb4} 
+\index{MyGame::Example::MonsterStorage::Service@{MyGame::Example::MonsterStorage::Service}!GetMinMaxHitPoints@{GetMinMaxHitPoints}}
+\index{GetMinMaxHitPoints@{GetMinMaxHitPoints}!MyGame::Example::MonsterStorage::Service@{MyGame::Example::MonsterStorage::Service}}
+\doxysubsubsection{\texorpdfstring{GetMinMaxHitPoints()}{GetMinMaxHitPoints()}\hspace{0.1cm}{\footnotesize\ttfamily [3/5]}}
+{\footnotesize\ttfamily virtual \+::grpc\+::\+Status My\+Game\+::\+Example\+::\+Monster\+Storage\+::\+Service\+::\+Get\+Min\+Max\+Hit\+Points (\begin{DoxyParamCaption}\item[{\+::grpc\+::\+Server\+Context \texorpdfstring{$\ast$}{*}}]{context,  }\item[{\+::grpc\+::\+Server\+Reader\+Writer$<$ \mbox{\hyperlink{classflatbuffers_1_1grpc_1_1Message}{flatbuffers\+::grpc\+::\+Message}}$<$ \mbox{\hyperlink{structMyGame_1_1Example_1_1Stat}{Stat}} $>$, \mbox{\hyperlink{classflatbuffers_1_1grpc_1_1Message}{flatbuffers\+::grpc\+::\+Message}}$<$ \mbox{\hyperlink{structMyGame_1_1Example_1_1Monster}{Monster}} $>$ $>$ \texorpdfstring{$\ast$}{*}}]{stream }\end{DoxyParamCaption})}
+
+\Hypertarget{classMyGame_1_1Example_1_1MonsterStorage_1_1Service_aa1ef84d3e9aa7702f94ec55803d61cb4}\label{classMyGame_1_1Example_1_1MonsterStorage_1_1Service_aa1ef84d3e9aa7702f94ec55803d61cb4} 
+\index{MyGame::Example::MonsterStorage::Service@{MyGame::Example::MonsterStorage::Service}!GetMinMaxHitPoints@{GetMinMaxHitPoints}}
+\index{GetMinMaxHitPoints@{GetMinMaxHitPoints}!MyGame::Example::MonsterStorage::Service@{MyGame::Example::MonsterStorage::Service}}
+\doxysubsubsection{\texorpdfstring{GetMinMaxHitPoints()}{GetMinMaxHitPoints()}\hspace{0.1cm}{\footnotesize\ttfamily [4/5]}}
+{\footnotesize\ttfamily virtual \+::grpc\+::\+Status My\+Game\+::\+Example\+::\+Monster\+Storage\+::\+Service\+::\+Get\+Min\+Max\+Hit\+Points (\begin{DoxyParamCaption}\item[{\+::grpc\+::\+Server\+Context \texorpdfstring{$\ast$}{*}}]{context,  }\item[{\+::grpc\+::\+Server\+Reader\+Writer$<$ \mbox{\hyperlink{classflatbuffers_1_1grpc_1_1Message}{flatbuffers\+::grpc\+::\+Message}}$<$ \mbox{\hyperlink{structMyGame_1_1Example_1_1Stat}{Stat}} $>$, \mbox{\hyperlink{classflatbuffers_1_1grpc_1_1Message}{flatbuffers\+::grpc\+::\+Message}}$<$ \mbox{\hyperlink{structMyGame_1_1Example_1_1Monster}{Monster}} $>$ $>$ \texorpdfstring{$\ast$}{*}}]{stream }\end{DoxyParamCaption})}
+
+\Hypertarget{classMyGame_1_1Example_1_1MonsterStorage_1_1Service_aa1ef84d3e9aa7702f94ec55803d61cb4}\label{classMyGame_1_1Example_1_1MonsterStorage_1_1Service_aa1ef84d3e9aa7702f94ec55803d61cb4} 
+\index{MyGame::Example::MonsterStorage::Service@{MyGame::Example::MonsterStorage::Service}!GetMinMaxHitPoints@{GetMinMaxHitPoints}}
+\index{GetMinMaxHitPoints@{GetMinMaxHitPoints}!MyGame::Example::MonsterStorage::Service@{MyGame::Example::MonsterStorage::Service}}
+\doxysubsubsection{\texorpdfstring{GetMinMaxHitPoints()}{GetMinMaxHitPoints()}\hspace{0.1cm}{\footnotesize\ttfamily [5/5]}}
+{\footnotesize\ttfamily virtual \+::grpc\+::\+Status My\+Game\+::\+Example\+::\+Monster\+Storage\+::\+Service\+::\+Get\+Min\+Max\+Hit\+Points (\begin{DoxyParamCaption}\item[{\+::grpc\+::\+Server\+Context \texorpdfstring{$\ast$}{*}}]{context,  }\item[{\+::grpc\+::\+Server\+Reader\+Writer$<$ \mbox{\hyperlink{classflatbuffers_1_1grpc_1_1Message}{flatbuffers\+::grpc\+::\+Message}}$<$ \mbox{\hyperlink{structMyGame_1_1Example_1_1Stat}{Stat}} $>$, \mbox{\hyperlink{classflatbuffers_1_1grpc_1_1Message}{flatbuffers\+::grpc\+::\+Message}}$<$ \mbox{\hyperlink{structMyGame_1_1Example_1_1Monster}{Monster}} $>$ $>$ \texorpdfstring{$\ast$}{*}}]{stream }\end{DoxyParamCaption})}
+
+\Hypertarget{classMyGame_1_1Example_1_1MonsterStorage_1_1Service_a6896773df631193caba8c67c97a485ab}\label{classMyGame_1_1Example_1_1MonsterStorage_1_1Service_a6896773df631193caba8c67c97a485ab} 
+\index{MyGame::Example::MonsterStorage::Service@{MyGame::Example::MonsterStorage::Service}!Retrieve@{Retrieve}}
+\index{Retrieve@{Retrieve}!MyGame::Example::MonsterStorage::Service@{MyGame::Example::MonsterStorage::Service}}
+\doxysubsubsection{\texorpdfstring{Retrieve()}{Retrieve()}\hspace{0.1cm}{\footnotesize\ttfamily [1/5]}}
+{\footnotesize\ttfamily grpc\+::\+Status My\+Game\+::\+Example\+::\+Monster\+Storage\+::\+Service\+::\+Retrieve (\begin{DoxyParamCaption}\item[{\+::grpc\+::\+Server\+Context \texorpdfstring{$\ast$}{*}}]{context,  }\item[{const \mbox{\hyperlink{classflatbuffers_1_1grpc_1_1Message}{flatbuffers\+::grpc\+::\+Message}}$<$ \mbox{\hyperlink{structMyGame_1_1Example_1_1Stat}{Stat}} $>$ \texorpdfstring{$\ast$}{*}}]{request,  }\item[{\+::grpc\+::\+Server\+Writer$<$ \mbox{\hyperlink{classflatbuffers_1_1grpc_1_1Message}{flatbuffers\+::grpc\+::\+Message}}$<$ \mbox{\hyperlink{structMyGame_1_1Example_1_1Monster}{Monster}} $>$ $>$ \texorpdfstring{$\ast$}{*}}]{writer }\end{DoxyParamCaption})}
+
+\Hypertarget{classMyGame_1_1Example_1_1MonsterStorage_1_1Service_ad6d3b52bca9b82ba9f5453e6a20b9ffb}\label{classMyGame_1_1Example_1_1MonsterStorage_1_1Service_ad6d3b52bca9b82ba9f5453e6a20b9ffb} 
+\index{MyGame::Example::MonsterStorage::Service@{MyGame::Example::MonsterStorage::Service}!Retrieve@{Retrieve}}
+\index{Retrieve@{Retrieve}!MyGame::Example::MonsterStorage::Service@{MyGame::Example::MonsterStorage::Service}}
+\doxysubsubsection{\texorpdfstring{Retrieve()}{Retrieve()}\hspace{0.1cm}{\footnotesize\ttfamily [2/5]}}
+{\footnotesize\ttfamily virtual \+::grpc\+::\+Status My\+Game\+::\+Example\+::\+Monster\+Storage\+::\+Service\+::\+Retrieve (\begin{DoxyParamCaption}\item[{\+::grpc\+::\+Server\+Context \texorpdfstring{$\ast$}{*}}]{context,  }\item[{const \mbox{\hyperlink{classflatbuffers_1_1grpc_1_1Message}{flatbuffers\+::grpc\+::\+Message}}$<$ \mbox{\hyperlink{structMyGame_1_1Example_1_1Stat}{Stat}} $>$ \texorpdfstring{$\ast$}{*}}]{request,  }\item[{\+::grpc\+::\+Server\+Writer$<$ \mbox{\hyperlink{classflatbuffers_1_1grpc_1_1Message}{flatbuffers\+::grpc\+::\+Message}}$<$ \mbox{\hyperlink{structMyGame_1_1Example_1_1Monster}{Monster}} $>$ $>$ \texorpdfstring{$\ast$}{*}}]{writer }\end{DoxyParamCaption})}
+
+\Hypertarget{classMyGame_1_1Example_1_1MonsterStorage_1_1Service_ad6d3b52bca9b82ba9f5453e6a20b9ffb}\label{classMyGame_1_1Example_1_1MonsterStorage_1_1Service_ad6d3b52bca9b82ba9f5453e6a20b9ffb} 
+\index{MyGame::Example::MonsterStorage::Service@{MyGame::Example::MonsterStorage::Service}!Retrieve@{Retrieve}}
+\index{Retrieve@{Retrieve}!MyGame::Example::MonsterStorage::Service@{MyGame::Example::MonsterStorage::Service}}
+\doxysubsubsection{\texorpdfstring{Retrieve()}{Retrieve()}\hspace{0.1cm}{\footnotesize\ttfamily [3/5]}}
+{\footnotesize\ttfamily virtual \+::grpc\+::\+Status My\+Game\+::\+Example\+::\+Monster\+Storage\+::\+Service\+::\+Retrieve (\begin{DoxyParamCaption}\item[{\+::grpc\+::\+Server\+Context \texorpdfstring{$\ast$}{*}}]{context,  }\item[{const \mbox{\hyperlink{classflatbuffers_1_1grpc_1_1Message}{flatbuffers\+::grpc\+::\+Message}}$<$ \mbox{\hyperlink{structMyGame_1_1Example_1_1Stat}{Stat}} $>$ \texorpdfstring{$\ast$}{*}}]{request,  }\item[{\+::grpc\+::\+Server\+Writer$<$ \mbox{\hyperlink{classflatbuffers_1_1grpc_1_1Message}{flatbuffers\+::grpc\+::\+Message}}$<$ \mbox{\hyperlink{structMyGame_1_1Example_1_1Monster}{Monster}} $>$ $>$ \texorpdfstring{$\ast$}{*}}]{writer }\end{DoxyParamCaption})}
+
+\Hypertarget{classMyGame_1_1Example_1_1MonsterStorage_1_1Service_ad6d3b52bca9b82ba9f5453e6a20b9ffb}\label{classMyGame_1_1Example_1_1MonsterStorage_1_1Service_ad6d3b52bca9b82ba9f5453e6a20b9ffb} 
+\index{MyGame::Example::MonsterStorage::Service@{MyGame::Example::MonsterStorage::Service}!Retrieve@{Retrieve}}
+\index{Retrieve@{Retrieve}!MyGame::Example::MonsterStorage::Service@{MyGame::Example::MonsterStorage::Service}}
+\doxysubsubsection{\texorpdfstring{Retrieve()}{Retrieve()}\hspace{0.1cm}{\footnotesize\ttfamily [4/5]}}
+{\footnotesize\ttfamily virtual \+::grpc\+::\+Status My\+Game\+::\+Example\+::\+Monster\+Storage\+::\+Service\+::\+Retrieve (\begin{DoxyParamCaption}\item[{\+::grpc\+::\+Server\+Context \texorpdfstring{$\ast$}{*}}]{context,  }\item[{const \mbox{\hyperlink{classflatbuffers_1_1grpc_1_1Message}{flatbuffers\+::grpc\+::\+Message}}$<$ \mbox{\hyperlink{structMyGame_1_1Example_1_1Stat}{Stat}} $>$ \texorpdfstring{$\ast$}{*}}]{request,  }\item[{\+::grpc\+::\+Server\+Writer$<$ \mbox{\hyperlink{classflatbuffers_1_1grpc_1_1Message}{flatbuffers\+::grpc\+::\+Message}}$<$ \mbox{\hyperlink{structMyGame_1_1Example_1_1Monster}{Monster}} $>$ $>$ \texorpdfstring{$\ast$}{*}}]{writer }\end{DoxyParamCaption})}
+
+\Hypertarget{classMyGame_1_1Example_1_1MonsterStorage_1_1Service_ad6d3b52bca9b82ba9f5453e6a20b9ffb}\label{classMyGame_1_1Example_1_1MonsterStorage_1_1Service_ad6d3b52bca9b82ba9f5453e6a20b9ffb} 
+\index{MyGame::Example::MonsterStorage::Service@{MyGame::Example::MonsterStorage::Service}!Retrieve@{Retrieve}}
+\index{Retrieve@{Retrieve}!MyGame::Example::MonsterStorage::Service@{MyGame::Example::MonsterStorage::Service}}
+\doxysubsubsection{\texorpdfstring{Retrieve()}{Retrieve()}\hspace{0.1cm}{\footnotesize\ttfamily [5/5]}}
+{\footnotesize\ttfamily virtual \+::grpc\+::\+Status My\+Game\+::\+Example\+::\+Monster\+Storage\+::\+Service\+::\+Retrieve (\begin{DoxyParamCaption}\item[{\+::grpc\+::\+Server\+Context \texorpdfstring{$\ast$}{*}}]{context,  }\item[{const \mbox{\hyperlink{classflatbuffers_1_1grpc_1_1Message}{flatbuffers\+::grpc\+::\+Message}}$<$ \mbox{\hyperlink{structMyGame_1_1Example_1_1Stat}{Stat}} $>$ \texorpdfstring{$\ast$}{*}}]{request,  }\item[{\+::grpc\+::\+Server\+Writer$<$ \mbox{\hyperlink{classflatbuffers_1_1grpc_1_1Message}{flatbuffers\+::grpc\+::\+Message}}$<$ \mbox{\hyperlink{structMyGame_1_1Example_1_1Monster}{Monster}} $>$ $>$ \texorpdfstring{$\ast$}{*}}]{writer }\end{DoxyParamCaption})}
+
+\Hypertarget{classMyGame_1_1Example_1_1MonsterStorage_1_1Service_a3113a58376f1b2725e65786ba0f5b6f7}\label{classMyGame_1_1Example_1_1MonsterStorage_1_1Service_a3113a58376f1b2725e65786ba0f5b6f7} 
+\index{MyGame::Example::MonsterStorage::Service@{MyGame::Example::MonsterStorage::Service}!Store@{Store}}
+\index{Store@{Store}!MyGame::Example::MonsterStorage::Service@{MyGame::Example::MonsterStorage::Service}}
+\doxysubsubsection{\texorpdfstring{Store()}{Store()}\hspace{0.1cm}{\footnotesize\ttfamily [1/5]}}
+{\footnotesize\ttfamily grpc\+::\+Status My\+Game\+::\+Example\+::\+Monster\+Storage\+::\+Service\+::\+Store (\begin{DoxyParamCaption}\item[{\+::grpc\+::\+Server\+Context \texorpdfstring{$\ast$}{*}}]{context,  }\item[{const \mbox{\hyperlink{classflatbuffers_1_1grpc_1_1Message}{flatbuffers\+::grpc\+::\+Message}}$<$ \mbox{\hyperlink{structMyGame_1_1Example_1_1Monster}{Monster}} $>$ \texorpdfstring{$\ast$}{*}}]{request,  }\item[{\mbox{\hyperlink{classflatbuffers_1_1grpc_1_1Message}{flatbuffers\+::grpc\+::\+Message}}$<$ \mbox{\hyperlink{structMyGame_1_1Example_1_1Stat}{Stat}} $>$ \texorpdfstring{$\ast$}{*}}]{response }\end{DoxyParamCaption})}
+
+\Hypertarget{classMyGame_1_1Example_1_1MonsterStorage_1_1Service_ab16917282b99d5c40dd1796870eaa07c}\label{classMyGame_1_1Example_1_1MonsterStorage_1_1Service_ab16917282b99d5c40dd1796870eaa07c} 
+\index{MyGame::Example::MonsterStorage::Service@{MyGame::Example::MonsterStorage::Service}!Store@{Store}}
+\index{Store@{Store}!MyGame::Example::MonsterStorage::Service@{MyGame::Example::MonsterStorage::Service}}
+\doxysubsubsection{\texorpdfstring{Store()}{Store()}\hspace{0.1cm}{\footnotesize\ttfamily [2/5]}}
+{\footnotesize\ttfamily virtual \+::grpc\+::\+Status My\+Game\+::\+Example\+::\+Monster\+Storage\+::\+Service\+::\+Store (\begin{DoxyParamCaption}\item[{\+::grpc\+::\+Server\+Context \texorpdfstring{$\ast$}{*}}]{context,  }\item[{const \mbox{\hyperlink{classflatbuffers_1_1grpc_1_1Message}{flatbuffers\+::grpc\+::\+Message}}$<$ \mbox{\hyperlink{structMyGame_1_1Example_1_1Monster}{Monster}} $>$ \texorpdfstring{$\ast$}{*}}]{request,  }\item[{\mbox{\hyperlink{classflatbuffers_1_1grpc_1_1Message}{flatbuffers\+::grpc\+::\+Message}}$<$ \mbox{\hyperlink{structMyGame_1_1Example_1_1Stat}{Stat}} $>$ \texorpdfstring{$\ast$}{*}}]{response }\end{DoxyParamCaption})}
+
+\Hypertarget{classMyGame_1_1Example_1_1MonsterStorage_1_1Service_ab16917282b99d5c40dd1796870eaa07c}\label{classMyGame_1_1Example_1_1MonsterStorage_1_1Service_ab16917282b99d5c40dd1796870eaa07c} 
+\index{MyGame::Example::MonsterStorage::Service@{MyGame::Example::MonsterStorage::Service}!Store@{Store}}
+\index{Store@{Store}!MyGame::Example::MonsterStorage::Service@{MyGame::Example::MonsterStorage::Service}}
+\doxysubsubsection{\texorpdfstring{Store()}{Store()}\hspace{0.1cm}{\footnotesize\ttfamily [3/5]}}
+{\footnotesize\ttfamily virtual \+::grpc\+::\+Status My\+Game\+::\+Example\+::\+Monster\+Storage\+::\+Service\+::\+Store (\begin{DoxyParamCaption}\item[{\+::grpc\+::\+Server\+Context \texorpdfstring{$\ast$}{*}}]{context,  }\item[{const \mbox{\hyperlink{classflatbuffers_1_1grpc_1_1Message}{flatbuffers\+::grpc\+::\+Message}}$<$ \mbox{\hyperlink{structMyGame_1_1Example_1_1Monster}{Monster}} $>$ \texorpdfstring{$\ast$}{*}}]{request,  }\item[{\mbox{\hyperlink{classflatbuffers_1_1grpc_1_1Message}{flatbuffers\+::grpc\+::\+Message}}$<$ \mbox{\hyperlink{structMyGame_1_1Example_1_1Stat}{Stat}} $>$ \texorpdfstring{$\ast$}{*}}]{response }\end{DoxyParamCaption})}
+
+\Hypertarget{classMyGame_1_1Example_1_1MonsterStorage_1_1Service_ab16917282b99d5c40dd1796870eaa07c}\label{classMyGame_1_1Example_1_1MonsterStorage_1_1Service_ab16917282b99d5c40dd1796870eaa07c} 
+\index{MyGame::Example::MonsterStorage::Service@{MyGame::Example::MonsterStorage::Service}!Store@{Store}}
+\index{Store@{Store}!MyGame::Example::MonsterStorage::Service@{MyGame::Example::MonsterStorage::Service}}
+\doxysubsubsection{\texorpdfstring{Store()}{Store()}\hspace{0.1cm}{\footnotesize\ttfamily [4/5]}}
+{\footnotesize\ttfamily virtual \+::grpc\+::\+Status My\+Game\+::\+Example\+::\+Monster\+Storage\+::\+Service\+::\+Store (\begin{DoxyParamCaption}\item[{\+::grpc\+::\+Server\+Context \texorpdfstring{$\ast$}{*}}]{context,  }\item[{const \mbox{\hyperlink{classflatbuffers_1_1grpc_1_1Message}{flatbuffers\+::grpc\+::\+Message}}$<$ \mbox{\hyperlink{structMyGame_1_1Example_1_1Monster}{Monster}} $>$ \texorpdfstring{$\ast$}{*}}]{request,  }\item[{\mbox{\hyperlink{classflatbuffers_1_1grpc_1_1Message}{flatbuffers\+::grpc\+::\+Message}}$<$ \mbox{\hyperlink{structMyGame_1_1Example_1_1Stat}{Stat}} $>$ \texorpdfstring{$\ast$}{*}}]{response }\end{DoxyParamCaption})}
+
+\Hypertarget{classMyGame_1_1Example_1_1MonsterStorage_1_1Service_ab16917282b99d5c40dd1796870eaa07c}\label{classMyGame_1_1Example_1_1MonsterStorage_1_1Service_ab16917282b99d5c40dd1796870eaa07c} 
+\index{MyGame::Example::MonsterStorage::Service@{MyGame::Example::MonsterStorage::Service}!Store@{Store}}
+\index{Store@{Store}!MyGame::Example::MonsterStorage::Service@{MyGame::Example::MonsterStorage::Service}}
+\doxysubsubsection{\texorpdfstring{Store()}{Store()}\hspace{0.1cm}{\footnotesize\ttfamily [5/5]}}
+{\footnotesize\ttfamily virtual \+::grpc\+::\+Status My\+Game\+::\+Example\+::\+Monster\+Storage\+::\+Service\+::\+Store (\begin{DoxyParamCaption}\item[{\+::grpc\+::\+Server\+Context \texorpdfstring{$\ast$}{*}}]{context,  }\item[{const \mbox{\hyperlink{classflatbuffers_1_1grpc_1_1Message}{flatbuffers\+::grpc\+::\+Message}}$<$ \mbox{\hyperlink{structMyGame_1_1Example_1_1Monster}{Monster}} $>$ \texorpdfstring{$\ast$}{*}}]{request,  }\item[{\mbox{\hyperlink{classflatbuffers_1_1grpc_1_1Message}{flatbuffers\+::grpc\+::\+Message}}$<$ \mbox{\hyperlink{structMyGame_1_1Example_1_1Stat}{Stat}} $>$ \texorpdfstring{$\ast$}{*}}]{response }\end{DoxyParamCaption})}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+flatbuffers/tests/\mbox{\hyperlink{monster__test_8grpc_8fb_8h}{monster\+\_\+test.\+grpc.\+fb.\+h}}\item 
+flatbuffers/tests/\mbox{\hyperlink{monster__test__generated_8grpc_8fb_8h}{monster\+\_\+test\+\_\+generated.\+grpc.\+fb.\+h}}\item 
+flatbuffers/tests/monster\+\_\+test\+\_\+suffix/ext\+\_\+only/\mbox{\hyperlink{monster__test__suffix_2ext__only_2monster__test_8grpc_8fb_8h}{monster\+\_\+test.\+grpc.\+fb.\+h}}\item 
+flatbuffers/tests/monster\+\_\+test\+\_\+suffix/filesuffix\+\_\+only/\mbox{\hyperlink{monster__test__suffix_2filesuffix__only_2monster__test_8grpc_8fb_8h}{monster\+\_\+test.\+grpc.\+fb.\+h}}\item 
+flatbuffers/tests/monster\+\_\+test\+\_\+suffix/\mbox{\hyperlink{monster__test__suffix_2monster__test_8grpc_8fb_8h}{monster\+\_\+test.\+grpc.\+fb.\+h}}\item 
+flatbuffers/tests/\mbox{\hyperlink{monster__test_8grpc_8fb_8cc}{monster\+\_\+test.\+grpc.\+fb.\+cc}}\item 
+flatbuffers/tests/\mbox{\hyperlink{monster__test__generated_8grpc_8fb_8cc}{monster\+\_\+test\+\_\+generated.\+grpc.\+fb.\+cc}}\item 
+flatbuffers/tests/monster\+\_\+test\+\_\+suffix/ext\+\_\+only/\mbox{\hyperlink{monster__test__suffix_2ext__only_2monster__test_8grpc_8fb_8cc}{monster\+\_\+test.\+grpc.\+fb.\+cc}}\item 
+flatbuffers/tests/monster\+\_\+test\+\_\+suffix/filesuffix\+\_\+only/\mbox{\hyperlink{monster__test__suffix_2filesuffix__only_2monster__test_8grpc_8fb_8cc}{monster\+\_\+test.\+grpc.\+fb.\+cc}}\item 
+flatbuffers/tests/monster\+\_\+test\+\_\+suffix/\mbox{\hyperlink{monster__test__suffix_2monster__test_8grpc_8fb_8cc}{monster\+\_\+test.\+grpc.\+fb.\+cc}}\end{DoxyCompactItemize}

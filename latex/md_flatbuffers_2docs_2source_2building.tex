@@ -1,0 +1,47 @@
+\chapter{Building}
+\hypertarget{md_flatbuffers_2docs_2source_2building}{}\label{md_flatbuffers_2docs_2source_2building}\index{Building@{Building}}
+\doxysection*{Building with CMake}
+
+The distribution main build system is configured by \href{https://www.cmake.org}{\texttt{ {\ttfamily cmake}}} which allows you to build the project for any platform.
+
+\doxysubsection*{Configuration}
+
+Use {\ttfamily cmake} to configure a project based on your environment and platform.
+
+=== "{}\+Unix"{} \begin{DoxyVerb}```sh
+cmake -G "Unix Makefiles" -DCMAKE_BUILD_TYPE=Release
+```
+
+!!! note
+
+    To use `clang` instead of `gcc` you may need to set prepend some
+    environment variables e.g. `CC=/usr/bin/clang CXX=/usr/bin/clang++ cmake
+    -G "Unix MakeFiles"`
+\end{DoxyVerb}
+ === "{}\+Windows"{} \begin{DoxyVerb}```sh
+cmake -G "Visual Studio 17 2022" -DCMAKE_BUILD_TYPE=Release
+```
+\end{DoxyVerb}
+ === "{}\+Mac\+OS"{} \begin{DoxyVerb}```sh
+cmake -G "Xcode" -DCMAKE_BUILD_TYPE=Release
+```
+\end{DoxyVerb}
+ \doxysubsection*{Building}
+
+Once the project files are generated, build as normal for your platform.
+
+=== "{}\+Unix"{} \begin{DoxyVerb}```sh
+make -j
+```
+\end{DoxyVerb}
+ === "{}\+Windows"{} \begin{DoxyVerb}```sh
+msbuild.exe FlatBuffers.sln
+```
+\end{DoxyVerb}
+ === "{}\+Mac\+OS"{} \begin{DoxyVerb}```sh
+xcodebuild -toolchain clang -configuration Release
+```
+\end{DoxyVerb}
+ \doxysection*{Building with Bazel}
+
+\doxysection*{Building with VCPKG}

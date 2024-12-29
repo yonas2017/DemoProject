@@ -1,0 +1,32 @@
+\doxysection{ts\+\_\+generator.\+h}
+\hypertarget{ts__generator_8h_source}{}\label{ts__generator_8h_source}\index{flatbuffers/grpc/src/compiler/ts\_generator.h@{flatbuffers/grpc/src/compiler/ts\_generator.h}}
+\mbox{\hyperlink{ts__generator_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ <set>}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{schema__interface_8h}{src/compiler/schema\_interface.h}}"{}}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#ifndef\ GRPC\_CUSTOM\_STRING}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#\ \ include\ <string>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#\ \ define\ GRPC\_CUSTOM\_STRING\ std::string}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacegrpc}{grpc}}\ \{}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{keyword}{typedef}\ \mbox{\hyperlink{cpp__generator_8h_af6ef913b6d13d83d79be41d007120992}{GRPC\_CUSTOM\_STRING}}\ \mbox{\hyperlink{namespacegrpc_a77f15e90a2c3651195f88645e4512267}{string}};}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \}\ \ \textcolor{comment}{//\ namespace\ grpc}}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacegrpc__ts__generator}{grpc\_ts\_generator}}\ \{}
+\DoxyCodeLine{00019\ \mbox{\hyperlink{namespacegrpc_a77f15e90a2c3651195f88645e4512267}{grpc::string}}\ \mbox{\hyperlink{namespacegrpc__ts__generator_a9dd5efdf916d652e0a06944b5e19e919}{Generate}}(\mbox{\hyperlink{structgrpc__generator_1_1File}{grpc\_generator::File}}\ *file,}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{structgrpc__generator_1_1Service}{grpc\_generator::Service}}\ *service,}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{namespacegrpc_a77f15e90a2c3651195f88645e4512267}{grpc::string}}\ \&filename);}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \mbox{\hyperlink{namespacegrpc_a77f15e90a2c3651195f88645e4512267}{grpc::string}}\ \mbox{\hyperlink{namespacegrpc__ts__generator_adf8e405f82994ee3010fe44c86802892}{GenerateInterface}}(\mbox{\hyperlink{structgrpc__generator_1_1File}{grpc\_generator::File}}\ *file,}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{structgrpc__generator_1_1Service}{grpc\_generator::Service}}\ *service,}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{namespacegrpc_a77f15e90a2c3651195f88645e4512267}{grpc::string}}\ \&filename);}
+\DoxyCodeLine{00026\ \}\ \ \textcolor{comment}{//\ namespace\ grpc\_ts\_generator}}
+
+\end{DoxyCode}

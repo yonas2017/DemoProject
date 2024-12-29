@@ -1,0 +1,52 @@
+\doxysection{src/client/tcp\+\_\+client.h File Reference}
+\hypertarget{tcp__client_8h}{}\label{tcp__client_8h}\index{src/client/tcp\_client.h@{src/client/tcp\_client.h}}
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include "{}messages.\+h"{}}\newline
+Include dependency graph for tcp\+\_\+client.\+h\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structtcp__t}{tcp\+\_\+t}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{tcp__client_8h_a26e74933102a44d1a94ba77625a77daf}{tcp\+\_\+open}} (\mbox{\hyperlink{structtcp__t}{tcp\+\_\+t}} \texorpdfstring{$\ast$}{*}tcp)
+\item 
+int \mbox{\hyperlink{tcp__client_8h_af672ddee215f52ee0ccc9ce7e1f0360d}{tcp\+\_\+send}} (\mbox{\hyperlink{structtcp__t}{tcp\+\_\+t}} \texorpdfstring{$\ast$}{*}tcp, const \mbox{\hyperlink{structclient__message__t}{client\+\_\+message\+\_\+t}} \texorpdfstring{$\ast$}{*}message)
+\item 
+int \mbox{\hyperlink{tcp__client_8h_aa4e99890ebf4637dc5fb25870da6354b}{tcp\+\_\+receive}} (\mbox{\hyperlink{structtcp__t}{tcp\+\_\+t}} \texorpdfstring{$\ast$}{*}tcp, \mbox{\hyperlink{structserver__message__t}{server\+\_\+message\+\_\+t}} \texorpdfstring{$\ast$}{*}message)
+\item 
+void \mbox{\hyperlink{tcp__client_8h_a22a5c9f4f7c973cd997b8698551b167e}{tcp\+\_\+close}} (\mbox{\hyperlink{structtcp__t}{tcp\+\_\+t}} \texorpdfstring{$\ast$}{*}tcp)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{tcp__client_8h_a22a5c9f4f7c973cd997b8698551b167e}\label{tcp__client_8h_a22a5c9f4f7c973cd997b8698551b167e} 
+\index{tcp\_client.h@{tcp\_client.h}!tcp\_close@{tcp\_close}}
+\index{tcp\_close@{tcp\_close}!tcp\_client.h@{tcp\_client.h}}
+\doxysubsubsection{\texorpdfstring{tcp\_close()}{tcp\_close()}}
+{\footnotesize\ttfamily void tcp\+\_\+close (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structtcp__t}{tcp\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{tcp }\end{DoxyParamCaption})}
+
+\Hypertarget{tcp__client_8h_a26e74933102a44d1a94ba77625a77daf}\label{tcp__client_8h_a26e74933102a44d1a94ba77625a77daf} 
+\index{tcp\_client.h@{tcp\_client.h}!tcp\_open@{tcp\_open}}
+\index{tcp\_open@{tcp\_open}!tcp\_client.h@{tcp\_client.h}}
+\doxysubsubsection{\texorpdfstring{tcp\_open()}{tcp\_open()}}
+{\footnotesize\ttfamily int tcp\+\_\+open (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structtcp__t}{tcp\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{tcp }\end{DoxyParamCaption})}
+
+\Hypertarget{tcp__client_8h_aa4e99890ebf4637dc5fb25870da6354b}\label{tcp__client_8h_aa4e99890ebf4637dc5fb25870da6354b} 
+\index{tcp\_client.h@{tcp\_client.h}!tcp\_receive@{tcp\_receive}}
+\index{tcp\_receive@{tcp\_receive}!tcp\_client.h@{tcp\_client.h}}
+\doxysubsubsection{\texorpdfstring{tcp\_receive()}{tcp\_receive()}}
+{\footnotesize\ttfamily int tcp\+\_\+receive (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structtcp__t}{tcp\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{tcp,  }\item[{\mbox{\hyperlink{structserver__message__t}{server\+\_\+message\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{message }\end{DoxyParamCaption})}
+
+\Hypertarget{tcp__client_8h_af672ddee215f52ee0ccc9ce7e1f0360d}\label{tcp__client_8h_af672ddee215f52ee0ccc9ce7e1f0360d} 
+\index{tcp\_client.h@{tcp\_client.h}!tcp\_send@{tcp\_send}}
+\index{tcp\_send@{tcp\_send}!tcp\_client.h@{tcp\_client.h}}
+\doxysubsubsection{\texorpdfstring{tcp\_send()}{tcp\_send()}}
+{\footnotesize\ttfamily int tcp\+\_\+send (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structtcp__t}{tcp\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{tcp,  }\item[{const \mbox{\hyperlink{structclient__message__t}{client\+\_\+message\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{message }\end{DoxyParamCaption})}
+

@@ -1,0 +1,108 @@
+\doxysection{flatbuffers/src/idl\+\_\+gen\+\_\+text.cpp File Reference}
+\hypertarget{idl__gen__text_8cpp}{}\label{idl__gen__text_8cpp}\index{flatbuffers/src/idl\_gen\_text.cpp@{flatbuffers/src/idl\_gen\_text.cpp}}
+{\ttfamily \#include "{}idl\+\_\+gen\+\_\+text.\+h"{}}\newline
+{\ttfamily \#include $<$algorithm$>$}\newline
+{\ttfamily \#include "{}flatbuffers/base.\+h"{}}\newline
+{\ttfamily \#include "{}flatbuffers/code\+\_\+generator.\+h"{}}\newline
+{\ttfamily \#include "{}flatbuffers/flatbuffers.\+h"{}}\newline
+{\ttfamily \#include "{}flatbuffers/flexbuffers.\+h"{}}\newline
+{\ttfamily \#include "{}flatbuffers/idl.\+h"{}}\newline
+{\ttfamily \#include "{}flatbuffers/util.\+h"{}}\newline
+Include dependency graph for idl\+\_\+gen\+\_\+text.\+cpp\+:
+% FIG 0
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structflatbuffers_1_1PrintScalarTag}{flatbuffers\+::\+Print\+Scalar\+Tag}}
+\item 
+struct \mbox{\hyperlink{structflatbuffers_1_1PrintPointerTag}{flatbuffers\+::\+Print\+Pointer\+Tag}}
+\item 
+struct \mbox{\hyperlink{structflatbuffers_1_1PrintTag}{flatbuffers\+::\+Print\+Tag$<$ T $>$}}
+\item 
+struct \mbox{\hyperlink{structflatbuffers_1_1PrintTag_3_01const_01void_01_5_01_4}{flatbuffers\+::\+Print\+Tag$<$ const void \texorpdfstring{$\ast$}{*} $>$}}
+\item 
+struct \mbox{\hyperlink{structflatbuffers_1_1JsonPrinter}{flatbuffers\+::\+Json\+Printer}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespaceflatbuffers}{flatbuffers}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{idl__gen__text_8cpp_a38ed67988203961e10a91d55532a3f61}{FLATBUFFERS\+\_\+\+TD}}(ENUM,  IDLTYPE,  CTYPE, ...)
+\item 
+\#define \mbox{\hyperlink{idl__gen__text_8cpp_a38ed67988203961e10a91d55532a3f61}{FLATBUFFERS\+\_\+\+TD}}(ENUM,  IDLTYPE,  CTYPE, ...)
+\item 
+\#define \mbox{\hyperlink{idl__gen__text_8cpp_a38ed67988203961e10a91d55532a3f61}{FLATBUFFERS\+\_\+\+TD}}(ENUM,  IDLTYPE,  CTYPE, ...)
+\item 
+\#define \mbox{\hyperlink{idl__gen__text_8cpp_a028f56f6249346d28bab548397c58f4f}{FLATBUFFERS\+\_\+\+TD}}(ENUM, ...)~          case BASE\+\_\+\+TYPE\+\_\+ \#\# ENUM\+:
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{namespaceflatbuffers_a1500f86d819a5b90d8d3ee33c3c4670c}{flatbuffers\+::\+Generate\+Text\+From\+Table}} (const \mbox{\hyperlink{classflatbuffers_1_1Parser}{Parser}} \&parser, const void \texorpdfstring{$\ast$}{*}table, const std\+::string \&tablename, std\+::string \texorpdfstring{$\ast$}{*}text)
+\item 
+const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{namespaceflatbuffers_a6777ecf323a7bdc20e606c03d40f7bae}{flatbuffers\+::\+Gen\+Text\+From\+Table}} (const \mbox{\hyperlink{classflatbuffers_1_1Parser}{Parser}} \&parser, const void \texorpdfstring{$\ast$}{*}table, const std\+::string \&tablename, std\+::string \texorpdfstring{$\ast$}{*}text)
+\item 
+const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{namespaceflatbuffers_a1ca4c0087f6b87204a3b06018f2ec29a}{flatbuffers\+::\+Generate\+Text}} (const \mbox{\hyperlink{classflatbuffers_1_1Parser}{Parser}} \&parser, const void \texorpdfstring{$\ast$}{*}flatbuffer, std\+::string \texorpdfstring{$\ast$}{*}text)
+\item 
+const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{namespaceflatbuffers_a3958f96ffa5821ab7c093f84faf101ab}{flatbuffers\+::\+Gen\+Text}} (const \mbox{\hyperlink{classflatbuffers_1_1Parser}{Parser}} \&parser, const void \texorpdfstring{$\ast$}{*}flatbuffer, std\+::string \texorpdfstring{$\ast$}{*}text)
+\item 
+const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{namespaceflatbuffers_aa8544b9dc671fe6d4bd40117fc63c205}{flatbuffers\+::\+Generate\+Text\+File}} (const \mbox{\hyperlink{classflatbuffers_1_1Parser}{Parser}} \&parser, const std\+::string \&path, const std\+::string \&file\+\_\+name)
+\item 
+const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{namespaceflatbuffers_abdde5ba9bb106d94a1a29315f7f25fba}{flatbuffers\+::\+Gen\+Text\+File}} (const \mbox{\hyperlink{classflatbuffers_1_1Parser}{Parser}} \&parser, const std\+::string \&path, const std\+::string \&file\+\_\+name)
+\item 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classflatbuffers_1_1CodeGenerator}{Code\+Generator}} $>$ \mbox{\hyperlink{namespaceflatbuffers_aac790ade241e2397f1595e7fe4b9db5d}{flatbuffers\+::\+New\+Text\+Code\+Generator}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{idl__gen__text_8cpp_a38ed67988203961e10a91d55532a3f61}\label{idl__gen__text_8cpp_a38ed67988203961e10a91d55532a3f61} 
+\index{idl\_gen\_text.cpp@{idl\_gen\_text.cpp}!FLATBUFFERS\_TD@{FLATBUFFERS\_TD}}
+\index{FLATBUFFERS\_TD@{FLATBUFFERS\_TD}!idl\_gen\_text.cpp@{idl\_gen\_text.cpp}}
+\doxysubsubsection{\texorpdfstring{FLATBUFFERS\_TD}{FLATBUFFERS\_TD}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily \#define FLATBUFFERS\+\_\+\+TD(\begin{DoxyParamCaption}\item[{}]{ENUM,  }\item[{}]{IDLTYPE,  }\item[{}]{CTYPE,  }\item[{}]{... }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ BASE\_TYPE\_\ \#\#\ ENUM:\ \{\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ err\ =\ PrintVector<CTYPE>(val,\ vec\_type,\ indent,\ prev\_val);\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ if\ (err)\ \textcolor{keywordflow}{return}\ err;\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};\ \}}
+
+\end{DoxyCode}
+\Hypertarget{idl__gen__text_8cpp_a38ed67988203961e10a91d55532a3f61}\label{idl__gen__text_8cpp_a38ed67988203961e10a91d55532a3f61} 
+\index{idl\_gen\_text.cpp@{idl\_gen\_text.cpp}!FLATBUFFERS\_TD@{FLATBUFFERS\_TD}}
+\index{FLATBUFFERS\_TD@{FLATBUFFERS\_TD}!idl\_gen\_text.cpp@{idl\_gen\_text.cpp}}
+\doxysubsubsection{\texorpdfstring{FLATBUFFERS\_TD}{FLATBUFFERS\_TD}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily \#define FLATBUFFERS\+\_\+\+TD(\begin{DoxyParamCaption}\item[{}]{ENUM,  }\item[{}]{IDLTYPE,  }\item[{}]{CTYPE,  }\item[{}]{... }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ BASE\_TYPE\_\ \#\#\ ENUM:\ \{\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ err\ =\ PrintArray<CTYPE>(val,\ type.fixed\_length,\ vec\_type,\ indent);\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ if\ (err)\ \textcolor{keywordflow}{return}\ err;\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};\ \}}
+
+\end{DoxyCode}
+\Hypertarget{idl__gen__text_8cpp_a38ed67988203961e10a91d55532a3f61}\label{idl__gen__text_8cpp_a38ed67988203961e10a91d55532a3f61} 
+\index{idl\_gen\_text.cpp@{idl\_gen\_text.cpp}!FLATBUFFERS\_TD@{FLATBUFFERS\_TD}}
+\index{FLATBUFFERS\_TD@{FLATBUFFERS\_TD}!idl\_gen\_text.cpp@{idl\_gen\_text.cpp}}
+\doxysubsubsection{\texorpdfstring{FLATBUFFERS\_TD}{FLATBUFFERS\_TD}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily \#define FLATBUFFERS\+\_\+\+TD(\begin{DoxyParamCaption}\item[{}]{ENUM,  }\item[{}]{IDLTYPE,  }\item[{}]{CTYPE,  }\item[{}]{... }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ BASE\_TYPE\_\ \#\#\ ENUM:\ \{\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ GenField<CTYPE>(fd,\ table,\ struct\_def.fixed,\ elem\_indent);\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};\ \}}
+
+\end{DoxyCode}
+\Hypertarget{idl__gen__text_8cpp_a028f56f6249346d28bab548397c58f4f}\label{idl__gen__text_8cpp_a028f56f6249346d28bab548397c58f4f} 
+\index{idl\_gen\_text.cpp@{idl\_gen\_text.cpp}!FLATBUFFERS\_TD@{FLATBUFFERS\_TD}}
+\index{FLATBUFFERS\_TD@{FLATBUFFERS\_TD}!idl\_gen\_text.cpp@{idl\_gen\_text.cpp}}
+\doxysubsubsection{\texorpdfstring{FLATBUFFERS\_TD}{FLATBUFFERS\_TD}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily \#define FLATBUFFERS\+\_\+\+TD(\begin{DoxyParamCaption}\item[{}]{ENUM,  }\item[{}]{... }\end{DoxyParamCaption})~          case BASE\+\_\+\+TYPE\+\_\+ \#\# ENUM\+:}
+

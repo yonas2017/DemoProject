@@ -1,0 +1,12 @@
+digraph "flatbuffers/rust/flatbuffers"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  compound=true
+  subgraph clusterdir_3ba5f9101eb9002aaa9b8666e7d2074e {
+    graph [ bgcolor="#edf0f7", pencolor="grey50", label="rust", fontname=Helvetica,fontsize=10 style="filled,dashed", URL="dir_3ba5f9101eb9002aaa9b8666e7d2074e.html",tooltip=""]
+  dir_e01dd3ca61ab8354385df2ec1ea20f63 [label="flatbuffers", fillcolor="#edf0f7", color="grey25", style="filled,bold", URL="dir_e01dd3ca61ab8354385df2ec1ea20f63.html",tooltip=""];
+  }
+}

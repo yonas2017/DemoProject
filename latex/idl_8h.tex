@@ -1,0 +1,282 @@
+\doxysection{flatbuffers/include/flatbuffers/idl.h File Reference}
+\hypertarget{idl_8h}{}\label{idl_8h}\index{flatbuffers/include/flatbuffers/idl.h@{flatbuffers/include/flatbuffers/idl.h}}
+{\ttfamily \#include $<$algorithm$>$}\newline
+{\ttfamily \#include $<$functional$>$}\newline
+{\ttfamily \#include $<$map$>$}\newline
+{\ttfamily \#include $<$memory$>$}\newline
+{\ttfamily \#include $<$stack$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include "{}flatbuffers/base.\+h"{}}\newline
+{\ttfamily \#include "{}flatbuffers/flatbuffers.\+h"{}}\newline
+{\ttfamily \#include "{}flatbuffers/flexbuffers.\+h"{}}\newline
+{\ttfamily \#include "{}flatbuffers/hash.\+h"{}}\newline
+{\ttfamily \#include "{}flatbuffers/reflection.\+h"{}}\newline
+Include dependency graph for idl.\+h\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structflatbuffers_1_1Type}{flatbuffers\+::\+Type}}
+\item 
+struct \mbox{\hyperlink{structflatbuffers_1_1Value}{flatbuffers\+::\+Value}}
+\item 
+class \mbox{\hyperlink{classflatbuffers_1_1SymbolTable}{flatbuffers\+::\+Symbol\+Table$<$ T $>$}}
+\item 
+struct \mbox{\hyperlink{structflatbuffers_1_1Namespace}{flatbuffers\+::\+Namespace}}
+\item 
+struct \mbox{\hyperlink{structflatbuffers_1_1Definition}{flatbuffers\+::\+Definition}}
+\item 
+struct \mbox{\hyperlink{structflatbuffers_1_1FieldDef}{flatbuffers\+::\+Field\+Def}}
+\item 
+struct \mbox{\hyperlink{structflatbuffers_1_1StructDef}{flatbuffers\+::\+Struct\+Def}}
+\item 
+struct \mbox{\hyperlink{structflatbuffers_1_1EnumVal}{flatbuffers\+::\+Enum\+Val}}
+\item 
+struct \mbox{\hyperlink{structflatbuffers_1_1EnumDef}{flatbuffers\+::\+Enum\+Def}}
+\item 
+struct \mbox{\hyperlink{structflatbuffers_1_1RPCCall}{flatbuffers\+::\+RPCCall}}
+\item 
+struct \mbox{\hyperlink{structflatbuffers_1_1ServiceDef}{flatbuffers\+::\+Service\+Def}}
+\item 
+struct \mbox{\hyperlink{structflatbuffers_1_1IncludedFile}{flatbuffers\+::\+Included\+File}}
+\item 
+struct \mbox{\hyperlink{structflatbuffers_1_1IDLOptions}{flatbuffers\+::\+IDLOptions}}
+\item 
+struct \mbox{\hyperlink{structflatbuffers_1_1ParserState}{flatbuffers\+::\+Parser\+State}}
+\item 
+class \mbox{\hyperlink{classflatbuffers_1_1CheckedError}{flatbuffers\+::\+Checked\+Error}}
+\item 
+class \mbox{\hyperlink{classflatbuffers_1_1Parser}{flatbuffers\+::\+Parser}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespaceflatbuffers}{flatbuffers}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{idl_8h_abd27f2e2966f4d0d8f9f4cb605408e30}{FLATBUFFERS\+\_\+\+MAX\+\_\+\+PARSING\+\_\+\+DEPTH}}~64
+\item 
+\#define \mbox{\hyperlink{idl_8h_ae59e645e081469901ca623766af6088c}{FLATBUFFERS\+\_\+\+GEN\+\_\+\+TYPES\+\_\+\+SCALAR}}(TD)
+\item 
+\#define \mbox{\hyperlink{idl_8h_a3952e57b432b2cbfb4d469af30a6f0bb}{FLATBUFFERS\+\_\+\+GEN\+\_\+\+TYPES\+\_\+\+POINTER}}(TD)
+\item 
+\#define \mbox{\hyperlink{idl_8h_a1309e07100ac0f2102d8c002bf44a411}{FLATBUFFERS\+\_\+\+GEN\+\_\+\+TYPE\+\_\+\+ARRAY}}(TD)~  TD(ARRAY,    "{}"{},       int,            int, int, int,          int, unused, Int, Offset$<$UOffset$>$, 17)
+\item 
+\#define \mbox{\hyperlink{idl_8h_a3abcc09468ed6e9f75762a77f2b056fd}{FLATBUFFERS\+\_\+\+GEN\+\_\+\+TYPES}}(TD)
+\item 
+\#define \mbox{\hyperlink{idl_8h_a7d3426d8cd4e01780be65c3d82e6d88b}{FLATBUFFERS\+\_\+\+TD}}(ENUM,  IDLTYPE,  CTYPE,  JTYPE,  GTYPE,  NTYPE,  PTYPE,  RTYPE,  KTYPE,  STYPE,  ENUM\+\_\+\+VALUE)~    BASE\+\_\+\+TYPE\+\_\+ \#\# ENUM = ENUM\+\_\+\+VALUE,
+\item 
+\#define \mbox{\hyperlink{idl_8h_a38ed67988203961e10a91d55532a3f61}{FLATBUFFERS\+\_\+\+TD}}(ENUM,  IDLTYPE,  CTYPE, ...)
+\item 
+\#define \mbox{\hyperlink{idl_8h_a38ed67988203961e10a91d55532a3f61}{FLATBUFFERS\+\_\+\+TD}}(ENUM,  IDLTYPE,  CTYPE, ...)~    case BASE\+\_\+\+TYPE\+\_\+\#\#ENUM\+: return sizeof(CTYPE);
+\item 
+\#define \mbox{\hyperlink{idl_8h_a163de7889c7c5658b04c93769e723200}{FLATBUFFERS\+\_\+\+TD}}(ENUM,  IDLTYPE, ...)~    case BASE\+\_\+\+TYPE\+\_\+\#\#ENUM\+: return IDLTYPE;
+\item 
+\#define \mbox{\hyperlink{idl_8h_a38ed67988203961e10a91d55532a3f61}{FLATBUFFERS\+\_\+\+TD}}(ENUM,  IDLTYPE,  CTYPE, ...)~    case BASE\+\_\+\+TYPE\+\_\+\#\#ENUM\+: return \#CTYPE;
+\item 
+\#define \mbox{\hyperlink{idl_8h_a00bf1d8f2dc92792b1c1982981da5655}{FLATBUFFERS\+\_\+\+CHECKED\+\_\+\+ERROR}}~Checked\+Error
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{namespaceflatbuffers_a120ddc06543f62f7dce4619b34cac8d4}{flatbuffers\+::\+Base\+Type}} 
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{namespaceflatbuffers_a134241b686451d29d27cb40a94370ba5}{flatbuffers\+::\+Is\+Scalar}} (\mbox{\hyperlink{namespaceflatbuffers_a120ddc06543f62f7dce4619b34cac8d4}{Base\+Type}} t)
+\item 
+bool \mbox{\hyperlink{namespaceflatbuffers_a121ce4531e45b127addd2d171c620353}{flatbuffers\+::\+Is\+Integer}} (\mbox{\hyperlink{namespaceflatbuffers_a120ddc06543f62f7dce4619b34cac8d4}{Base\+Type}} t)
+\item 
+bool \mbox{\hyperlink{namespaceflatbuffers_aacc9c647db53d57becf13c6740480db4}{flatbuffers\+::\+Is\+Float}} (\mbox{\hyperlink{namespaceflatbuffers_a120ddc06543f62f7dce4619b34cac8d4}{Base\+Type}} t)
+\item 
+bool \mbox{\hyperlink{namespaceflatbuffers_af3eb9eab4736aff6aefb22a3240d34a1}{flatbuffers\+::\+Is\+Long}} (\mbox{\hyperlink{namespaceflatbuffers_a120ddc06543f62f7dce4619b34cac8d4}{Base\+Type}} t)
+\item 
+bool \mbox{\hyperlink{namespaceflatbuffers_ab910d7c874c47c98cc0ac8f065316fa7}{flatbuffers\+::\+Is\+Bool}} (\mbox{\hyperlink{namespaceflatbuffers_a120ddc06543f62f7dce4619b34cac8d4}{Base\+Type}} t)
+\item 
+bool \mbox{\hyperlink{namespaceflatbuffers_a5495b3b151a5f8074ead6a5e29351c0b}{flatbuffers\+::\+Is\+One\+Byte}} (\mbox{\hyperlink{namespaceflatbuffers_a120ddc06543f62f7dce4619b34cac8d4}{Base\+Type}} t)
+\item 
+bool \mbox{\hyperlink{namespaceflatbuffers_af58f07008360fe3e9abca54e299d445b}{flatbuffers\+::\+Is\+Vector}} (\mbox{\hyperlink{namespaceflatbuffers_a120ddc06543f62f7dce4619b34cac8d4}{Base\+Type}} t)
+\item 
+bool \mbox{\hyperlink{namespaceflatbuffers_a2591847125f93fb5721ccfa253a55f12}{flatbuffers\+::\+Is\+Unsigned}} (\mbox{\hyperlink{namespaceflatbuffers_a120ddc06543f62f7dce4619b34cac8d4}{Base\+Type}} t)
+\item 
+size\+\_\+t \mbox{\hyperlink{namespaceflatbuffers_ac9dfc8086bace96097581cb57052dcea}{flatbuffers\+::\+Size\+Of}} (const \mbox{\hyperlink{namespaceflatbuffers_a120ddc06543f62f7dce4619b34cac8d4}{Base\+Type}} t)
+\item 
+const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{namespaceflatbuffers_a9f22bfec1f6b8d1b4964d065aa3b333e}{flatbuffers\+::\+Type\+Name}} (const \mbox{\hyperlink{namespaceflatbuffers_a120ddc06543f62f7dce4619b34cac8d4}{Base\+Type}} t)
+\item 
+const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{namespaceflatbuffers_ac1bb34de0db98949710bea46ded0fc06}{flatbuffers\+::\+String\+Of}} (const \mbox{\hyperlink{namespaceflatbuffers_a120ddc06543f62f7dce4619b34cac8d4}{Base\+Type}} t)
+\item 
+bool \mbox{\hyperlink{namespaceflatbuffers_a41a7fb23c175aa69ae14dc822ef16020}{flatbuffers\+::operator$<$}} (const \mbox{\hyperlink{structflatbuffers_1_1Namespace}{Namespace}} \&a, const \mbox{\hyperlink{structflatbuffers_1_1Namespace}{Namespace}} \&b)
+\item 
+bool \mbox{\hyperlink{namespaceflatbuffers_a4ab18a5553f83b533d0e4ffc337cc71d}{flatbuffers\+::\+Is\+String}} (const \mbox{\hyperlink{structflatbuffers_1_1Type}{Type}} \&type)
+\item 
+bool \mbox{\hyperlink{namespaceflatbuffers_a1f454ee0d32eef237b3884fb2713efaa}{flatbuffers\+::\+Is\+Struct}} (const \mbox{\hyperlink{structflatbuffers_1_1Type}{Type}} \&type)
+\item 
+bool \mbox{\hyperlink{namespaceflatbuffers_a2a8f9d5bd884cb1d013ffcd7ccea4b98}{flatbuffers\+::\+Is\+Incomplete\+Struct}} (const \mbox{\hyperlink{structflatbuffers_1_1Type}{Type}} \&type)
+\item 
+bool \mbox{\hyperlink{namespaceflatbuffers_aafa39270b6b6ae15a50befe000405eed}{flatbuffers\+::\+Is\+Table}} (const \mbox{\hyperlink{structflatbuffers_1_1Type}{Type}} \&type)
+\item 
+bool \mbox{\hyperlink{namespaceflatbuffers_a1e6ec8963242b0d738d76cd0b48bf0ac}{flatbuffers\+::\+Is\+Union}} (const \mbox{\hyperlink{structflatbuffers_1_1Type}{Type}} \&type)
+\item 
+bool \mbox{\hyperlink{namespaceflatbuffers_a9e313134e2701c2ba5c414bbf80b3e13}{flatbuffers\+::\+Is\+Union\+Type}} (const \mbox{\hyperlink{structflatbuffers_1_1Type}{Type}} \&type)
+\item 
+bool \mbox{\hyperlink{namespaceflatbuffers_ae84c4ff9ce53b908fa8277c002f7d694}{flatbuffers\+::\+Is\+Vector}} (const \mbox{\hyperlink{structflatbuffers_1_1Type}{Type}} \&type)
+\item 
+bool \mbox{\hyperlink{namespaceflatbuffers_adc7df9322f062d053117b5069fd45038}{flatbuffers\+::\+Is\+Vector\+Of\+Struct}} (const \mbox{\hyperlink{structflatbuffers_1_1Type}{Type}} \&type)
+\item 
+bool \mbox{\hyperlink{namespaceflatbuffers_a978620db5cf290d8b483460101f7e67e}{flatbuffers\+::\+Is\+Vector\+Of\+Table}} (const \mbox{\hyperlink{structflatbuffers_1_1Type}{Type}} \&type)
+\item 
+bool \mbox{\hyperlink{namespaceflatbuffers_aa0355a462aa5dbdbbf5f53cce49d668c}{flatbuffers\+::\+Is\+Array}} (const \mbox{\hyperlink{structflatbuffers_1_1Type}{Type}} \&type)
+\item 
+bool \mbox{\hyperlink{namespaceflatbuffers_a1e9d0cbdbe8e975ebe369d2a8889c975}{flatbuffers\+::\+Is\+Series}} (const \mbox{\hyperlink{structflatbuffers_1_1Type}{Type}} \&type)
+\item 
+bool \mbox{\hyperlink{namespaceflatbuffers_aea3f4d518fd873e3a81fbc205cb262e8}{flatbuffers\+::\+Is\+Enum}} (const \mbox{\hyperlink{structflatbuffers_1_1Type}{Type}} \&type)
+\item 
+size\+\_\+t \mbox{\hyperlink{namespaceflatbuffers_abe913a8c14c88b7ca759b3b61d0be086}{flatbuffers\+::\+Inline\+Size}} (const \mbox{\hyperlink{structflatbuffers_1_1Type}{Type}} \&type)
+\item 
+size\+\_\+t \mbox{\hyperlink{namespaceflatbuffers_a8d65ab7805690479966553e5a42bcc23}{flatbuffers\+::\+Inline\+Alignment}} (const \mbox{\hyperlink{structflatbuffers_1_1Type}{Type}} \&type)
+\item 
+bool \mbox{\hyperlink{namespaceflatbuffers_a24642f7d36c6e0e6956d30c91e8fa529}{flatbuffers\+::operator==}} (const \mbox{\hyperlink{structflatbuffers_1_1EnumVal}{Enum\+Val}} \&lhs, const \mbox{\hyperlink{structflatbuffers_1_1EnumVal}{Enum\+Val}} \&rhs)
+\item 
+bool \mbox{\hyperlink{namespaceflatbuffers_a0402bd09c199eb848b440120fd99176d}{flatbuffers\+::operator!=}} (const \mbox{\hyperlink{structflatbuffers_1_1EnumVal}{Enum\+Val}} \&lhs, const \mbox{\hyperlink{structflatbuffers_1_1EnumVal}{Enum\+Val}} \&rhs)
+\item 
+bool \mbox{\hyperlink{namespaceflatbuffers_af1b78b12b14bc7f5bbe7ced0d6efd16c}{flatbuffers\+::\+Equal\+By\+Name}} (const \mbox{\hyperlink{structflatbuffers_1_1Type}{Type}} \&a, const \mbox{\hyperlink{structflatbuffers_1_1Type}{Type}} \&b)
+\item 
+bool \mbox{\hyperlink{namespaceflatbuffers_aeef6b34466036177020edd3da482b0c9}{flatbuffers\+::operator$<$}} (const \mbox{\hyperlink{structflatbuffers_1_1IncludedFile}{Included\+File}} \&a, const \mbox{\hyperlink{structflatbuffers_1_1IncludedFile}{Included\+File}} \&b)
+\item 
+bool \mbox{\hyperlink{namespaceflatbuffers_a1500f86d819a5b90d8d3ee33c3c4670c}{flatbuffers\+::\+Generate\+Text\+From\+Table}} (const \mbox{\hyperlink{classflatbuffers_1_1Parser}{Parser}} \&parser, const void \texorpdfstring{$\ast$}{*}table, const std\+::string \&tablename, std\+::string \texorpdfstring{$\ast$}{*}text)
+\item 
+const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{namespaceflatbuffers_a1ca4c0087f6b87204a3b06018f2ec29a}{flatbuffers\+::\+Generate\+Text}} (const \mbox{\hyperlink{classflatbuffers_1_1Parser}{Parser}} \&parser, const void \texorpdfstring{$\ast$}{*}flatbuffer, std\+::string \texorpdfstring{$\ast$}{*}text)
+\item 
+const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{namespaceflatbuffers_aa8544b9dc671fe6d4bd40117fc63c205}{flatbuffers\+::\+Generate\+Text\+File}} (const \mbox{\hyperlink{classflatbuffers_1_1Parser}{Parser}} \&parser, const std\+::string \&path, const std\+::string \&file\+\_\+name)
+\item 
+const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{namespaceflatbuffers_a6777ecf323a7bdc20e606c03d40f7bae}{flatbuffers\+::\+Gen\+Text\+From\+Table}} (const \mbox{\hyperlink{classflatbuffers_1_1Parser}{Parser}} \&parser, const void \texorpdfstring{$\ast$}{*}table, const std\+::string \&tablename, std\+::string \texorpdfstring{$\ast$}{*}text)
+\item 
+const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{namespaceflatbuffers_a3958f96ffa5821ab7c093f84faf101ab}{flatbuffers\+::\+Gen\+Text}} (const \mbox{\hyperlink{classflatbuffers_1_1Parser}{Parser}} \&parser, const void \texorpdfstring{$\ast$}{*}flatbuffer, std\+::string \texorpdfstring{$\ast$}{*}text)
+\item 
+const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{namespaceflatbuffers_abdde5ba9bb106d94a1a29315f7f25fba}{flatbuffers\+::\+Gen\+Text\+File}} (const \mbox{\hyperlink{classflatbuffers_1_1Parser}{Parser}} \&parser, const std\+::string \&path, const std\+::string \&file\+\_\+name)
+\item 
+bool \mbox{\hyperlink{namespaceflatbuffers_a47b0f307a0b2d53c4b06761bebf6f9e7}{flatbuffers\+::\+Generate\+Cpp\+GRPC}} (const \mbox{\hyperlink{classflatbuffers_1_1Parser}{Parser}} \&parser, const std\+::string \&path, const std\+::string \&file\+\_\+name)
+\item 
+bool \mbox{\hyperlink{namespaceflatbuffers_a82bc12d1ce805727b6a899e72ef48b85}{flatbuffers\+::\+Generate\+Go\+GRPC}} (const \mbox{\hyperlink{classflatbuffers_1_1Parser}{Parser}} \&parser, const std\+::string \&path, const std\+::string \&file\+\_\+name)
+\item 
+bool \mbox{\hyperlink{namespaceflatbuffers_a220e8703d89a42cfc4851a90d266f283}{flatbuffers\+::\+Generate\+Java\+GRPC}} (const \mbox{\hyperlink{classflatbuffers_1_1Parser}{Parser}} \&parser, const std\+::string \&path, const std\+::string \&file\+\_\+name)
+\item 
+bool \mbox{\hyperlink{namespaceflatbuffers_ac90566f9ce256db115bb7596fe85721b}{flatbuffers\+::\+Generate\+Python\+GRPC}} (const \mbox{\hyperlink{classflatbuffers_1_1Parser}{Parser}} \&parser, const std\+::string \&path, const std\+::string \&file\+\_\+name)
+\item 
+bool \mbox{\hyperlink{namespaceflatbuffers_a00957b1d3a2dd9f4eef8397de5b36f35}{flatbuffers\+::\+Generate\+Swift\+GRPC}} (const \mbox{\hyperlink{classflatbuffers_1_1Parser}{Parser}} \&parser, const std\+::string \&path, const std\+::string \&file\+\_\+name)
+\item 
+bool \mbox{\hyperlink{namespaceflatbuffers_a1e5003889ec1320b457d0f26cb296a12}{flatbuffers\+::\+Generate\+TSGRPC}} (const \mbox{\hyperlink{classflatbuffers_1_1Parser}{Parser}} \&parser, const std\+::string \&path, const std\+::string \&file\+\_\+name)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{idl_8h_a00bf1d8f2dc92792b1c1982981da5655}\label{idl_8h_a00bf1d8f2dc92792b1c1982981da5655} 
+\index{idl.h@{idl.h}!FLATBUFFERS\_CHECKED\_ERROR@{FLATBUFFERS\_CHECKED\_ERROR}}
+\index{FLATBUFFERS\_CHECKED\_ERROR@{FLATBUFFERS\_CHECKED\_ERROR}!idl.h@{idl.h}}
+\doxysubsubsection{\texorpdfstring{FLATBUFFERS\_CHECKED\_ERROR}{FLATBUFFERS\_CHECKED\_ERROR}}
+{\footnotesize\ttfamily \#define FLATBUFFERS\+\_\+\+CHECKED\+\_\+\+ERROR~Checked\+Error}
+
+\Hypertarget{idl_8h_a1309e07100ac0f2102d8c002bf44a411}\label{idl_8h_a1309e07100ac0f2102d8c002bf44a411} 
+\index{idl.h@{idl.h}!FLATBUFFERS\_GEN\_TYPE\_ARRAY@{FLATBUFFERS\_GEN\_TYPE\_ARRAY}}
+\index{FLATBUFFERS\_GEN\_TYPE\_ARRAY@{FLATBUFFERS\_GEN\_TYPE\_ARRAY}!idl.h@{idl.h}}
+\doxysubsubsection{\texorpdfstring{FLATBUFFERS\_GEN\_TYPE\_ARRAY}{FLATBUFFERS\_GEN\_TYPE\_ARRAY}}
+{\footnotesize\ttfamily \#define FLATBUFFERS\+\_\+\+GEN\+\_\+\+TYPE\+\_\+\+ARRAY(\begin{DoxyParamCaption}\item[{}]{TD }\end{DoxyParamCaption})~  TD(ARRAY,    "{}"{},       int,            int, int, int,          int, unused, Int, Offset$<$UOffset$>$, 17)}
+
+\Hypertarget{idl_8h_a3abcc09468ed6e9f75762a77f2b056fd}\label{idl_8h_a3abcc09468ed6e9f75762a77f2b056fd} 
+\index{idl.h@{idl.h}!FLATBUFFERS\_GEN\_TYPES@{FLATBUFFERS\_GEN\_TYPES}}
+\index{FLATBUFFERS\_GEN\_TYPES@{FLATBUFFERS\_GEN\_TYPES}!idl.h@{idl.h}}
+\doxysubsubsection{\texorpdfstring{FLATBUFFERS\_GEN\_TYPES}{FLATBUFFERS\_GEN\_TYPES}}
+{\footnotesize\ttfamily \#define FLATBUFFERS\+\_\+\+GEN\+\_\+\+TYPES(\begin{DoxyParamCaption}\item[{}]{TD }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \mbox{\hyperlink{idl_8h_ae59e645e081469901ca623766af6088c}{FLATBUFFERS\_GEN\_TYPES\_SCALAR}}(TD)\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ FLATBUFFERS\_GEN\_TYPES\_POINTER(TD)\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ FLATBUFFERS\_GEN\_TYPE\_ARRAY(TD)}
+
+\end{DoxyCode}
+\Hypertarget{idl_8h_a3952e57b432b2cbfb4d469af30a6f0bb}\label{idl_8h_a3952e57b432b2cbfb4d469af30a6f0bb} 
+\index{idl.h@{idl.h}!FLATBUFFERS\_GEN\_TYPES\_POINTER@{FLATBUFFERS\_GEN\_TYPES\_POINTER}}
+\index{FLATBUFFERS\_GEN\_TYPES\_POINTER@{FLATBUFFERS\_GEN\_TYPES\_POINTER}!idl.h@{idl.h}}
+\doxysubsubsection{\texorpdfstring{FLATBUFFERS\_GEN\_TYPES\_POINTER}{FLATBUFFERS\_GEN\_TYPES\_POINTER}}
+{\footnotesize\ttfamily \#define FLATBUFFERS\+\_\+\+GEN\+\_\+\+TYPES\+\_\+\+POINTER(\begin{DoxyParamCaption}\item[{}]{TD }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ TD(STRING,\ \ \ \textcolor{stringliteral}{"{}string"{}},\ Offset<void>,\ \ \ \textcolor{keywordtype}{int},\ \textcolor{keywordtype}{int},\ StringOffset,\ \textcolor{keywordtype}{int},\ unused,\ Int,\ Offset<String>,\ 13)\ \(\backslash\)}
+\DoxyCodeLine{\ \ TD(VECTOR,\ \ \ \textcolor{stringliteral}{"{}"{}},\ \ \ \ \ \ \ Offset<void>,\ \ \ \textcolor{keywordtype}{int},\ \textcolor{keywordtype}{int},\ VectorOffset,\ \textcolor{keywordtype}{int},\ unused,\ Int,\ Offset<UOffset>,\ 14)\ \(\backslash\)}
+\DoxyCodeLine{\ \ TD(VECTOR64,\ \textcolor{stringliteral}{"{}"{}},\ \ \ \ \ \ \ Offset64<void>,\ \textcolor{keywordtype}{int},\ \textcolor{keywordtype}{int},\ VectorOffset,\ \textcolor{keywordtype}{int},\ unused,\ Int,\ Offset<UOffset>,\ 18)\ \(\backslash\)}
+\DoxyCodeLine{\ \ TD(STRUCT,\ \ \ \textcolor{stringliteral}{"{}"{}},\ \ \ \ \ \ \ Offset<void>,\ \ \ \textcolor{keywordtype}{int},\ \textcolor{keywordtype}{int},\ \textcolor{keywordtype}{int},\ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int},\ unused,\ Int,\ Offset<UOffset>,\ 15)\ \(\backslash\)}
+\DoxyCodeLine{\ \ TD(UNION,\ \ \ \ \textcolor{stringliteral}{"{}"{}},\ \ \ \ \ \ \ Offset<void>,\ \ \ \textcolor{keywordtype}{int},\ \textcolor{keywordtype}{int},\ \textcolor{keywordtype}{int},\ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int},\ unused,\ Int,\ Offset<UOffset>,\ 16)}
+
+\end{DoxyCode}
+\Hypertarget{idl_8h_ae59e645e081469901ca623766af6088c}\label{idl_8h_ae59e645e081469901ca623766af6088c} 
+\index{idl.h@{idl.h}!FLATBUFFERS\_GEN\_TYPES\_SCALAR@{FLATBUFFERS\_GEN\_TYPES\_SCALAR}}
+\index{FLATBUFFERS\_GEN\_TYPES\_SCALAR@{FLATBUFFERS\_GEN\_TYPES\_SCALAR}!idl.h@{idl.h}}
+\doxysubsubsection{\texorpdfstring{FLATBUFFERS\_GEN\_TYPES\_SCALAR}{FLATBUFFERS\_GEN\_TYPES\_SCALAR}}
+{\footnotesize\ttfamily \#define FLATBUFFERS\+\_\+\+GEN\+\_\+\+TYPES\+\_\+\+SCALAR(\begin{DoxyParamCaption}\item[{}]{TD }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ TD(\mbox{\hyperlink{cpp17_2generated__cpp17_2union__vector__generated_8h_a610a708620f190d988395dd925897f91ab50339a10e1de285ac99d4c3990b8693}{NONE}},\ \ \ \ \ \textcolor{stringliteral}{"{}"{}},\ \ \ \ \ \ \ uint8\_t,\ \ \textcolor{keywordtype}{byte},\ \ \ \textcolor{keywordtype}{byte},\ \ \ \ \textcolor{keywordtype}{byte},\ \ \ uint8,\ \ \ u8,\ \ \ UByte,\ UInt8,\ 0)\ \(\backslash\)}
+\DoxyCodeLine{\ \ TD(UTYPE,\ \ \ \ \textcolor{stringliteral}{"{}"{}},\ \ \ \ \ \ \ uint8\_t,\ \ \textcolor{keywordtype}{byte},\ \ \ \textcolor{keywordtype}{byte},\ \ \ \ \textcolor{keywordtype}{byte},\ \ \ uint8,\ \ \ u8,\ \ \ UByte,\ UInt8,\ 1)\ \textcolor{comment}{/*\ begin\ scalar/int\ */}\ \(\backslash\)}
+\DoxyCodeLine{\ \ TD(BOOL,\ \ \ \ \ \textcolor{stringliteral}{"{}bool"{}},\ \ \ uint8\_t,\ \ \textcolor{keywordtype}{boolean},\textcolor{keywordtype}{bool},\ \ \ \ \textcolor{keywordtype}{bool},\ \ \ \textcolor{keywordtype}{bool},\ \ \ \ \textcolor{keywordtype}{bool},\ Boolean,\ \mbox{\hyperlink{structBool}{Bool}},\ 2)\ \(\backslash\)}
+\DoxyCodeLine{\ \ TD(CHAR,\ \ \ \ \ \textcolor{stringliteral}{"{}byte"{}},\ \ \ int8\_t,\ \ \ \textcolor{keywordtype}{byte},\ \ \ int8,\ \ \ \ sbyte,\ \ int8,\ \ \ \ i8,\ \ \ Byte,\ Int8,\ 3)\ \(\backslash\)}
+\DoxyCodeLine{\ \ TD(UCHAR,\ \ \ \ \textcolor{stringliteral}{"{}ubyte"{}},\ \ uint8\_t,\ \ \textcolor{keywordtype}{byte},\ \ \ \textcolor{keywordtype}{byte},\ \ \ \ \textcolor{keywordtype}{byte},\ \ \ uint8,\ \ \ u8,\ \ \ UByte,\ UInt8,\ 4)\ \(\backslash\)}
+\DoxyCodeLine{\ \ TD(SHORT,\ \ \ \ \textcolor{stringliteral}{"{}short"{}},\ \ int16\_t,\ \ \textcolor{keywordtype}{short},\ \ int16,\ \ \ \textcolor{keywordtype}{short},\ \ int16,\ \ \ i16,\ \ Short,\ Int16,\ 5)\ \(\backslash\)}
+\DoxyCodeLine{\ \ TD(USHORT,\ \ \ \textcolor{stringliteral}{"{}ushort"{}},\ uint16\_t,\ \textcolor{keywordtype}{short},\ \ uint16,\ \ ushort,\ uint16,\ \ u16,\ \ UShort,\ UInt16,\ 6)\ \(\backslash\)}
+\DoxyCodeLine{\ \ TD(INT,\ \ \ \ \ \ \textcolor{stringliteral}{"{}int"{}},\ \ \ \ int32\_t,\ \ \textcolor{keywordtype}{int},\ \ \ \ int32,\ \ \ \textcolor{keywordtype}{int},\ \ \ \ int32,\ \ \ i32,\ \ Int,\ Int32,\ 7)\ \(\backslash\)}
+\DoxyCodeLine{\ \ TD(UINT,\ \ \ \ \ \textcolor{stringliteral}{"{}uint"{}},\ \ \ uint32\_t,\ \textcolor{keywordtype}{int},\ \ \ \ uint32,\ \ uint,\ \ \ uint32,\ \ u32,\ \ UInt,\ UInt32,\ 8)\ \(\backslash\)}
+\DoxyCodeLine{\ \ TD(LONG,\ \ \ \ \ \textcolor{stringliteral}{"{}long"{}},\ \ \ int64\_t,\ \ \textcolor{keywordtype}{long},\ \ \ int64,\ \ \ \textcolor{keywordtype}{long},\ \ \ int64,\ \ \ i64,\ \ Long,\ Int64,\ 9)\ \(\backslash\)}
+\DoxyCodeLine{\ \ TD(ULONG,\ \ \ \ \textcolor{stringliteral}{"{}ulong"{}},\ \ uint64\_t,\ \textcolor{keywordtype}{long},\ \ \ uint64,\ \ ulong,\ \ uint64,\ \ u64,\ \ ULong,\ UInt64,\ 10)\ \textcolor{comment}{/*\ end\ int\ */}\ \(\backslash\)}
+\DoxyCodeLine{\ \ TD(FLOAT,\ \ \ \ \textcolor{stringliteral}{"{}float"{}},\ \ \textcolor{keywordtype}{float},\ \ \ \ \textcolor{keywordtype}{float},\ \ float32,\ \textcolor{keywordtype}{float},\ \ float32,\ f32,\ \ Float,\ Float32,\ 11)\ \textcolor{comment}{/*\ begin\ float\ */}\ \(\backslash\)}
+\DoxyCodeLine{\ \ TD(DOUBLE,\ \ \ \textcolor{stringliteral}{"{}double"{}},\ \textcolor{keywordtype}{double},\ \ \ \textcolor{keywordtype}{double},\ float64,\ \textcolor{keywordtype}{double},\ float64,\ f64,\ \ Double,\ Double,\ 12)\ \textcolor{comment}{/*\ end\ float/scalar\ */}}
+
+\end{DoxyCode}
+\Hypertarget{idl_8h_abd27f2e2966f4d0d8f9f4cb605408e30}\label{idl_8h_abd27f2e2966f4d0d8f9f4cb605408e30} 
+\index{idl.h@{idl.h}!FLATBUFFERS\_MAX\_PARSING\_DEPTH@{FLATBUFFERS\_MAX\_PARSING\_DEPTH}}
+\index{FLATBUFFERS\_MAX\_PARSING\_DEPTH@{FLATBUFFERS\_MAX\_PARSING\_DEPTH}!idl.h@{idl.h}}
+\doxysubsubsection{\texorpdfstring{FLATBUFFERS\_MAX\_PARSING\_DEPTH}{FLATBUFFERS\_MAX\_PARSING\_DEPTH}}
+{\footnotesize\ttfamily \#define FLATBUFFERS\+\_\+\+MAX\+\_\+\+PARSING\+\_\+\+DEPTH~64}
+
+\Hypertarget{idl_8h_a7d3426d8cd4e01780be65c3d82e6d88b}\label{idl_8h_a7d3426d8cd4e01780be65c3d82e6d88b} 
+\index{idl.h@{idl.h}!FLATBUFFERS\_TD@{FLATBUFFERS\_TD}}
+\index{FLATBUFFERS\_TD@{FLATBUFFERS\_TD}!idl.h@{idl.h}}
+\doxysubsubsection{\texorpdfstring{FLATBUFFERS\_TD}{FLATBUFFERS\_TD}\hspace{0.1cm}{\footnotesize\ttfamily [1/5]}}
+{\footnotesize\ttfamily \#define FLATBUFFERS\+\_\+\+TD(\begin{DoxyParamCaption}\item[{}]{ENUM,  }\item[{}]{IDLTYPE,  }\item[{}]{CTYPE,  }\item[{}]{JTYPE,  }\item[{}]{GTYPE,  }\item[{}]{NTYPE,  }\item[{}]{PTYPE,  }\item[{}]{RTYPE,  }\item[{}]{KTYPE,  }\item[{}]{STYPE,  }\item[{}]{ENUM\+\_\+\+VALUE }\end{DoxyParamCaption})~    BASE\+\_\+\+TYPE\+\_\+ \#\# ENUM = ENUM\+\_\+\+VALUE,}
+
+\Hypertarget{idl_8h_a38ed67988203961e10a91d55532a3f61}\label{idl_8h_a38ed67988203961e10a91d55532a3f61} 
+\index{idl.h@{idl.h}!FLATBUFFERS\_TD@{FLATBUFFERS\_TD}}
+\index{FLATBUFFERS\_TD@{FLATBUFFERS\_TD}!idl.h@{idl.h}}
+\doxysubsubsection{\texorpdfstring{FLATBUFFERS\_TD}{FLATBUFFERS\_TD}\hspace{0.1cm}{\footnotesize\ttfamily [2/5]}}
+{\footnotesize\ttfamily \#define FLATBUFFERS\+\_\+\+TD(\begin{DoxyParamCaption}\item[{}]{ENUM,  }\item[{}]{IDLTYPE,  }\item[{}]{CTYPE,  }\item[{}]{... }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \textcolor{keyword}{static\_assert}(\textcolor{keyword}{sizeof}(CTYPE)\ <=\ \textcolor{keyword}{sizeof}(largest\_scalar\_t),\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}define\ largest\_scalar\_t\ as\ "{}}\ \#CTYPE);}
+
+\end{DoxyCode}
+\Hypertarget{idl_8h_a38ed67988203961e10a91d55532a3f61}\label{idl_8h_a38ed67988203961e10a91d55532a3f61} 
+\index{idl.h@{idl.h}!FLATBUFFERS\_TD@{FLATBUFFERS\_TD}}
+\index{FLATBUFFERS\_TD@{FLATBUFFERS\_TD}!idl.h@{idl.h}}
+\doxysubsubsection{\texorpdfstring{FLATBUFFERS\_TD}{FLATBUFFERS\_TD}\hspace{0.1cm}{\footnotesize\ttfamily [3/5]}}
+{\footnotesize\ttfamily \#define FLATBUFFERS\+\_\+\+TD(\begin{DoxyParamCaption}\item[{}]{ENUM,  }\item[{}]{IDLTYPE,  }\item[{}]{CTYPE,  }\item[{}]{... }\end{DoxyParamCaption})~    case BASE\+\_\+\+TYPE\+\_\+\#\#ENUM\+: return sizeof(CTYPE);}
+
+\Hypertarget{idl_8h_a38ed67988203961e10a91d55532a3f61}\label{idl_8h_a38ed67988203961e10a91d55532a3f61} 
+\index{idl.h@{idl.h}!FLATBUFFERS\_TD@{FLATBUFFERS\_TD}}
+\index{FLATBUFFERS\_TD@{FLATBUFFERS\_TD}!idl.h@{idl.h}}
+\doxysubsubsection{\texorpdfstring{FLATBUFFERS\_TD}{FLATBUFFERS\_TD}\hspace{0.1cm}{\footnotesize\ttfamily [4/5]}}
+{\footnotesize\ttfamily \#define FLATBUFFERS\+\_\+\+TD(\begin{DoxyParamCaption}\item[{}]{ENUM,  }\item[{}]{IDLTYPE,  }\item[{}]{CTYPE,  }\item[{}]{... }\end{DoxyParamCaption})~    case BASE\+\_\+\+TYPE\+\_\+\#\#ENUM\+: return \#CTYPE;}
+
+\Hypertarget{idl_8h_a163de7889c7c5658b04c93769e723200}\label{idl_8h_a163de7889c7c5658b04c93769e723200} 
+\index{idl.h@{idl.h}!FLATBUFFERS\_TD@{FLATBUFFERS\_TD}}
+\index{FLATBUFFERS\_TD@{FLATBUFFERS\_TD}!idl.h@{idl.h}}
+\doxysubsubsection{\texorpdfstring{FLATBUFFERS\_TD}{FLATBUFFERS\_TD}\hspace{0.1cm}{\footnotesize\ttfamily [5/5]}}
+{\footnotesize\ttfamily \#define FLATBUFFERS\+\_\+\+TD(\begin{DoxyParamCaption}\item[{}]{ENUM,  }\item[{}]{IDLTYPE,  }\item[{}]{... }\end{DoxyParamCaption})~    case BASE\+\_\+\+TYPE\+\_\+\#\#ENUM\+: return IDLTYPE;}
+

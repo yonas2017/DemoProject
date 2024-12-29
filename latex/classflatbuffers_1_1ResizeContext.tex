@@ -1,0 +1,49 @@
+\doxysection{flatbuffers\+::Resize\+Context Class Reference}
+\hypertarget{classflatbuffers_1_1ResizeContext}{}\label{classflatbuffers_1_1ResizeContext}\index{flatbuffers::ResizeContext@{flatbuffers::ResizeContext}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classflatbuffers_1_1ResizeContext_a92857af41f6ad910355d0f32f0d6639d}{Resize\+Context}} (const reflection\+::\+Schema \&schema, uoffset\+\_\+t start, int delta, std\+::vector$<$ uint8\+\_\+t $>$ \texorpdfstring{$\ast$}{*}flatbuf, const reflection\+::\+Object \texorpdfstring{$\ast$}{*}root\+\_\+table=nullptr)
+\item 
+{\footnotesize template$<$typename T , int D$>$ }\\void \mbox{\hyperlink{classflatbuffers_1_1ResizeContext_a7459473ec3ddb7f448275c90b9a8ba6a}{Straddle}} (const void \texorpdfstring{$\ast$}{*}first, const void \texorpdfstring{$\ast$}{*}second, void \texorpdfstring{$\ast$}{*}offsetloc)
+\item 
+uint8\+\_\+t \& \mbox{\hyperlink{classflatbuffers_1_1ResizeContext_a37f8324e3d16a792dde692a659a8bf56}{Dag\+Check}} (const void \texorpdfstring{$\ast$}{*}offsetloc)
+\item 
+void \mbox{\hyperlink{classflatbuffers_1_1ResizeContext_a2a4487aac26f7279cc6d41430bf66e4a}{Resize\+Table}} (const reflection\+::\+Object \&objectdef, \mbox{\hyperlink{classflatbuffers_1_1Table}{Table}} \texorpdfstring{$\ast$}{*}table)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classflatbuffers_1_1ResizeContext_a92857af41f6ad910355d0f32f0d6639d}\label{classflatbuffers_1_1ResizeContext_a92857af41f6ad910355d0f32f0d6639d} 
+\index{flatbuffers::ResizeContext@{flatbuffers::ResizeContext}!ResizeContext@{ResizeContext}}
+\index{ResizeContext@{ResizeContext}!flatbuffers::ResizeContext@{flatbuffers::ResizeContext}}
+\doxysubsubsection{\texorpdfstring{ResizeContext()}{ResizeContext()}}
+{\footnotesize\ttfamily flatbuffers\+::\+Resize\+Context\+::\+Resize\+Context (\begin{DoxyParamCaption}\item[{const reflection\+::\+Schema \&}]{schema,  }\item[{uoffset\+\_\+t}]{start,  }\item[{int}]{delta,  }\item[{std\+::vector$<$ uint8\+\_\+t $>$ \texorpdfstring{$\ast$}{*}}]{flatbuf,  }\item[{const reflection\+::\+Object \texorpdfstring{$\ast$}{*}}]{root\+\_\+table = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classflatbuffers_1_1ResizeContext_a37f8324e3d16a792dde692a659a8bf56}\label{classflatbuffers_1_1ResizeContext_a37f8324e3d16a792dde692a659a8bf56} 
+\index{flatbuffers::ResizeContext@{flatbuffers::ResizeContext}!DagCheck@{DagCheck}}
+\index{DagCheck@{DagCheck}!flatbuffers::ResizeContext@{flatbuffers::ResizeContext}}
+\doxysubsubsection{\texorpdfstring{DagCheck()}{DagCheck()}}
+{\footnotesize\ttfamily uint8\+\_\+t \& flatbuffers\+::\+Resize\+Context\+::\+Dag\+Check (\begin{DoxyParamCaption}\item[{const void \texorpdfstring{$\ast$}{*}}]{offsetloc }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflatbuffers_1_1ResizeContext_a2a4487aac26f7279cc6d41430bf66e4a}\label{classflatbuffers_1_1ResizeContext_a2a4487aac26f7279cc6d41430bf66e4a} 
+\index{flatbuffers::ResizeContext@{flatbuffers::ResizeContext}!ResizeTable@{ResizeTable}}
+\index{ResizeTable@{ResizeTable}!flatbuffers::ResizeContext@{flatbuffers::ResizeContext}}
+\doxysubsubsection{\texorpdfstring{ResizeTable()}{ResizeTable()}}
+{\footnotesize\ttfamily void flatbuffers\+::\+Resize\+Context\+::\+Resize\+Table (\begin{DoxyParamCaption}\item[{const reflection\+::\+Object \&}]{objectdef,  }\item[{\mbox{\hyperlink{classflatbuffers_1_1Table}{Table}} \texorpdfstring{$\ast$}{*}}]{table }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflatbuffers_1_1ResizeContext_a7459473ec3ddb7f448275c90b9a8ba6a}\label{classflatbuffers_1_1ResizeContext_a7459473ec3ddb7f448275c90b9a8ba6a} 
+\index{flatbuffers::ResizeContext@{flatbuffers::ResizeContext}!Straddle@{Straddle}}
+\index{Straddle@{Straddle}!flatbuffers::ResizeContext@{flatbuffers::ResizeContext}}
+\doxysubsubsection{\texorpdfstring{Straddle()}{Straddle()}}
+{\footnotesize\ttfamily template$<$typename T , int D$>$ \\
+void flatbuffers\+::\+Resize\+Context\+::\+Straddle (\begin{DoxyParamCaption}\item[{const void \texorpdfstring{$\ast$}{*}}]{first,  }\item[{const void \texorpdfstring{$\ast$}{*}}]{second,  }\item[{void \texorpdfstring{$\ast$}{*}}]{offsetloc }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+flatbuffers/src/\mbox{\hyperlink{reflection_8cpp}{reflection.\+cpp}}\end{DoxyCompactItemize}

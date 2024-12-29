@@ -1,0 +1,25 @@
+\doxysection{bench.\+h}
+\hypertarget{bench_8h_source}{}\label{bench_8h_source}\index{flatbuffers/benchmarks/cpp/bench.h@{flatbuffers/benchmarks/cpp/bench.h}}
+\mbox{\hyperlink{bench_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ BENCHMARKS\_CPP\_BENCH\_H\_}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ BENCHMARKS\_CPP\_BENCH\_H\_}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <cstdint>}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structBench}{Bench}}\ \{}
+\DoxyCodeLine{00007\ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{structBench_a50148d86e661861235c92d8792beee54}{\string~Bench}}()\ \{\}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{structBench_a779338e29b27cc55cd04cd7ae5a7697d}{Add}}(int64\_t\ \mbox{\hyperlink{annotated__binary__text__gen_8cpp_a5c33da5929c9f2f9ef8d006d2350e6ec}{value}})\ \{\ \mbox{\hyperlink{structBench_a49b5be35b60d53ea52750b7f12a3ce7f}{sum}}\ +=\ \mbox{\hyperlink{annotated__binary__text__gen_8cpp_a5c33da5929c9f2f9ef8d006d2350e6ec}{value}};\ \}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \ \ \textcolor{keyword}{virtual}\ uint8\_t\ *\mbox{\hyperlink{structBench_ab023ad15afc415cca2bc6071a189466a}{Encode}}(\textcolor{keywordtype}{void}\ *buf,\ int64\_t\ \&len)\ =\ 0;}
+\DoxyCodeLine{00012\ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ *\mbox{\hyperlink{structBench_a7f570b9a9b4e5382595b375fd8cd20ab}{Decode}}(\textcolor{keywordtype}{void}\ *buf,\ int64\_t\ len)\ =\ 0;}
+\DoxyCodeLine{00013\ \ \ \textcolor{keyword}{virtual}\ int64\_t\ \mbox{\hyperlink{structBench_a9b566d9c8420d2ca23dace76b74d7ba4}{Use}}(\textcolor{keywordtype}{void}\ *decoded)\ =\ 0;}
+\DoxyCodeLine{00014\ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{structBench_aa75594f64e1f85f8587d6bc8a8712474}{Dealloc}}(\textcolor{keywordtype}{void}\ *decoded)\ =\ 0;}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \ \ int64\_t\ \mbox{\hyperlink{structBench_a49b5be35b60d53ea52750b7f12a3ce7f}{sum}}\ =\ 0;}
+\DoxyCodeLine{00017\ \};}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ BENCHMARKS\_CPP\_BENCH\_H\_}}
+
+\end{DoxyCode}

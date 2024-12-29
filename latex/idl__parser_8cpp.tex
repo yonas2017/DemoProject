@@ -1,0 +1,306 @@
+\doxysection{flatbuffers/src/idl\+\_\+parser.cpp File Reference}
+\hypertarget{idl__parser_8cpp}{}\label{idl__parser_8cpp}\index{flatbuffers/src/idl\_parser.cpp@{flatbuffers/src/idl\_parser.cpp}}
+{\ttfamily \#include $<$algorithm$>$}\newline
+{\ttfamily \#include $<$cmath$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$list$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$utility$>$}\newline
+{\ttfamily \#include "{}flatbuffers/base.\+h"{}}\newline
+{\ttfamily \#include "{}flatbuffers/buffer.\+h"{}}\newline
+{\ttfamily \#include "{}flatbuffers/idl.\+h"{}}\newline
+{\ttfamily \#include "{}flatbuffers/reflection\+\_\+generated.\+h"{}}\newline
+{\ttfamily \#include "{}flatbuffers/util.\+h"{}}\newline
+Include dependency graph for idl\+\_\+parser.\+cpp\+:
+% FIG 0
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classflatbuffers_1_1Parser_1_1ParseDepthGuard}{flatbuffers\+::\+Parser\+::\+Parse\+Depth\+Guard}}
+\item 
+struct \mbox{\hyperlink{structflatbuffers_1_1EnumValBuilder}{flatbuffers\+::\+Enum\+Val\+Builder}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespaceflatbuffers}{flatbuffers}}
+\item 
+namespace \mbox{\hyperlink{namespaceflatbuffers_1_1EnumHelper}{flatbuffers\+::\+Enum\+Helper}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{idl__parser_8cpp_a88a8b1da6542c94c3a8ae2d7318c349e}{ECHECK}}(call)
+\item 
+\#define \mbox{\hyperlink{idl__parser_8cpp_afa19e2eadb751f3599e443d073862a2f}{NEXT}}()~\mbox{\hyperlink{idl__parser_8cpp_a88a8b1da6542c94c3a8ae2d7318c349e}{ECHECK}}(Next())
+\item 
+\#define \mbox{\hyperlink{idl__parser_8cpp_a3f829253d9136e4ea58810195d9f6784}{EXPECT}}(tok)~\mbox{\hyperlink{idl__parser_8cpp_a88a8b1da6542c94c3a8ae2d7318c349e}{ECHECK}}(Expect(tok))
+\item 
+\#define \mbox{\hyperlink{idl__parser_8cpp_acfd787fb072f74d3dba96a8add82b586}{FLATBUFFERS\+\_\+\+GEN\+\_\+\+TOKENS}}(TD)
+\item 
+\#define \mbox{\hyperlink{idl__parser_8cpp_aefac918fb4275776230d117af103840b}{FLATBUFFERS\+\_\+\+TOKEN}}(NAME,  VALUE,  STRING)~k\+Token \#\# NAME = VALUE,
+\item 
+\#define \mbox{\hyperlink{idl__parser_8cpp_aefac918fb4275776230d117af103840b}{FLATBUFFERS\+\_\+\+TOKEN}}(NAME,  VALUE,  STRING)~STRING,
+\item 
+\#define \mbox{\hyperlink{idl__parser_8cpp_a163de7889c7c5658b04c93769e723200}{FLATBUFFERS\+\_\+\+TD}}(ENUM,  IDLTYPE, ...)~      IDLTYPE,
+\item 
+\#define \mbox{\hyperlink{idl__parser_8cpp_a38ed67988203961e10a91d55532a3f61}{FLATBUFFERS\+\_\+\+TD}}(ENUM,  IDLTYPE,  CTYPE, ...)
+\item 
+\#define \mbox{\hyperlink{idl__parser_8cpp_a38ed67988203961e10a91d55532a3f61}{FLATBUFFERS\+\_\+\+TD}}(ENUM,  IDLTYPE,  CTYPE, ...)
+\item 
+\#define \mbox{\hyperlink{idl__parser_8cpp_a38ed67988203961e10a91d55532a3f61}{FLATBUFFERS\+\_\+\+TD}}(ENUM,  IDLTYPE,  CTYPE, ...)
+\item 
+\#define \mbox{\hyperlink{idl__parser_8cpp_a38ed67988203961e10a91d55532a3f61}{FLATBUFFERS\+\_\+\+TD}}(ENUM,  IDLTYPE,  CTYPE, ...)
+\item 
+\#define \mbox{\hyperlink{idl__parser_8cpp_a38ed67988203961e10a91d55532a3f61}{FLATBUFFERS\+\_\+\+TD}}(ENUM,  IDLTYPE,  CTYPE, ...)
+\item 
+\#define \mbox{\hyperlink{idl__parser_8cpp_af346b148c4b56194b56264fae2d72ec4}{FLATBUFFERS\+\_\+\+FN\+\_\+\+DOUBLE}}(\mbox{\hyperlink{idl__gen__ts_8cpp_a9b45b3e13bd9167aab02e17e08916231}{name}},  op)~    if (!func\+\_\+match \&\& functionname == \mbox{\hyperlink{idl__gen__ts_8cpp_a9b45b3e13bd9167aab02e17e08916231}{name}}) \{ \mbox{\hyperlink{gmock-matchers-containers__test_8cc_a39cb44155237f0205e0feb931d5acbed}{y}} = op; func\+\_\+match = true; \}
+\item 
+\#define \mbox{\hyperlink{idl__parser_8cpp_ab5b254c3192f385f4370c82152b4f314}{IF\+\_\+\+ECHECK\+\_\+}}(force,  dtoken,  check,  req)
+\item 
+\#define \mbox{\hyperlink{idl__parser_8cpp_a2737ac576c0805ae12f461798682d79d}{TRY\+\_\+\+ECHECK}}(dtoken,  check,  req)~\mbox{\hyperlink{idl__parser_8cpp_ab5b254c3192f385f4370c82152b4f314}{IF\+\_\+\+ECHECK\+\_\+}}(false, dtoken, check, req)
+\item 
+\#define \mbox{\hyperlink{idl__parser_8cpp_af768b49daf86eaf903b78c8f62b2f20b}{FORCE\+\_\+\+ECHECK}}(dtoken,  check,  req)~\mbox{\hyperlink{idl__parser_8cpp_ab5b254c3192f385f4370c82152b4f314}{IF\+\_\+\+ECHECK\+\_\+}}(true, dtoken, check, req)
+\item 
+\#define \mbox{\hyperlink{idl__parser_8cpp_a38ed67988203961e10a91d55532a3f61}{FLATBUFFERS\+\_\+\+TD}}(ENUM,  IDLTYPE,  CTYPE, ...)
+\item 
+\#define \mbox{\hyperlink{idl__parser_8cpp_a38ed67988203961e10a91d55532a3f61}{FLATBUFFERS\+\_\+\+TD}}(ENUM,  IDLTYPE,  CTYPE, ...)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{namespaceflatbuffers_a34a0b8c62c51bc91d777b50cb6b993a6}{flatbuffers\+::\+FLATBUFFERS\+\_\+\+VERSION}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{idl__parser_8cpp_a88a8b1da6542c94c3a8ae2d7318c349e}\label{idl__parser_8cpp_a88a8b1da6542c94c3a8ae2d7318c349e} 
+\index{idl\_parser.cpp@{idl\_parser.cpp}!ECHECK@{ECHECK}}
+\index{ECHECK@{ECHECK}!idl\_parser.cpp@{idl\_parser.cpp}}
+\doxysubsubsection{\texorpdfstring{ECHECK}{ECHECK}}
+{\footnotesize\ttfamily \#define ECHECK(\begin{DoxyParamCaption}\item[{}]{call }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{auto}\ ce\ =\ (call);\ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ if\ (ce.Check())\ return\ ce;\ \(\backslash\)}
+\DoxyCodeLine{\ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{idl__parser_8cpp_a3f829253d9136e4ea58810195d9f6784}\label{idl__parser_8cpp_a3f829253d9136e4ea58810195d9f6784} 
+\index{idl\_parser.cpp@{idl\_parser.cpp}!EXPECT@{EXPECT}}
+\index{EXPECT@{EXPECT}!idl\_parser.cpp@{idl\_parser.cpp}}
+\doxysubsubsection{\texorpdfstring{EXPECT}{EXPECT}}
+{\footnotesize\ttfamily \#define EXPECT(\begin{DoxyParamCaption}\item[{}]{tok }\end{DoxyParamCaption})~\mbox{\hyperlink{idl__parser_8cpp_a88a8b1da6542c94c3a8ae2d7318c349e}{ECHECK}}(Expect(tok))}
+
+\Hypertarget{idl__parser_8cpp_af346b148c4b56194b56264fae2d72ec4}\label{idl__parser_8cpp_af346b148c4b56194b56264fae2d72ec4} 
+\index{idl\_parser.cpp@{idl\_parser.cpp}!FLATBUFFERS\_FN\_DOUBLE@{FLATBUFFERS\_FN\_DOUBLE}}
+\index{FLATBUFFERS\_FN\_DOUBLE@{FLATBUFFERS\_FN\_DOUBLE}!idl\_parser.cpp@{idl\_parser.cpp}}
+\doxysubsubsection{\texorpdfstring{FLATBUFFERS\_FN\_DOUBLE}{FLATBUFFERS\_FN\_DOUBLE}}
+{\footnotesize\ttfamily \#define FLATBUFFERS\+\_\+\+FN\+\_\+\+DOUBLE(\begin{DoxyParamCaption}\item[{}]{\mbox{\hyperlink{idl__gen__ts_8cpp_a9b45b3e13bd9167aab02e17e08916231}{name}},  }\item[{}]{op }\end{DoxyParamCaption})~    if (!func\+\_\+match \&\& functionname == \mbox{\hyperlink{idl__gen__ts_8cpp_a9b45b3e13bd9167aab02e17e08916231}{name}}) \{ \mbox{\hyperlink{gmock-matchers-containers__test_8cc_a39cb44155237f0205e0feb931d5acbed}{y}} = op; func\+\_\+match = true; \}}
+
+\Hypertarget{idl__parser_8cpp_acfd787fb072f74d3dba96a8add82b586}\label{idl__parser_8cpp_acfd787fb072f74d3dba96a8add82b586} 
+\index{idl\_parser.cpp@{idl\_parser.cpp}!FLATBUFFERS\_GEN\_TOKENS@{FLATBUFFERS\_GEN\_TOKENS}}
+\index{FLATBUFFERS\_GEN\_TOKENS@{FLATBUFFERS\_GEN\_TOKENS}!idl\_parser.cpp@{idl\_parser.cpp}}
+\doxysubsubsection{\texorpdfstring{FLATBUFFERS\_GEN\_TOKENS}{FLATBUFFERS\_GEN\_TOKENS}}
+{\footnotesize\ttfamily \#define FLATBUFFERS\+\_\+\+GEN\+\_\+\+TOKENS(\begin{DoxyParamCaption}\item[{}]{TD }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ TD(Eof,\ 256,\ \textcolor{stringliteral}{"{}end\ of\ file"{}})\ \(\backslash\)}
+\DoxyCodeLine{\ \ TD(StringConstant,\ 257,\ \textcolor{stringliteral}{"{}string\ constant"{}})\ \(\backslash\)}
+\DoxyCodeLine{\ \ TD(IntegerConstant,\ 258,\ \textcolor{stringliteral}{"{}integer\ constant"{}})\ \(\backslash\)}
+\DoxyCodeLine{\ \ TD(FloatConstant,\ 259,\ \textcolor{stringliteral}{"{}float\ constant"{}})\ \(\backslash\)}
+\DoxyCodeLine{\ \ TD(Identifier,\ 260,\ \textcolor{stringliteral}{"{}identifier"{}})}
+
+\end{DoxyCode}
+\Hypertarget{idl__parser_8cpp_a38ed67988203961e10a91d55532a3f61}\label{idl__parser_8cpp_a38ed67988203961e10a91d55532a3f61} 
+\index{idl\_parser.cpp@{idl\_parser.cpp}!FLATBUFFERS\_TD@{FLATBUFFERS\_TD}}
+\index{FLATBUFFERS\_TD@{FLATBUFFERS\_TD}!idl\_parser.cpp@{idl\_parser.cpp}}
+\doxysubsubsection{\texorpdfstring{FLATBUFFERS\_TD}{FLATBUFFERS\_TD}\hspace{0.1cm}{\footnotesize\ttfamily [1/8]}}
+{\footnotesize\ttfamily \#define FLATBUFFERS\+\_\+\+TD(\begin{DoxyParamCaption}\item[{}]{ENUM,  }\item[{}]{IDLTYPE,  }\item[{}]{CTYPE,  }\item[{}]{... }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \textcolor{keywordflow}{case}\ BASE\_TYPE\_\#\#ENUM:\ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ CTYPE\ def\ =\ \textcolor{keyword}{static\_cast<}CTYPE\textcolor{keyword}{>}(0);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ if\ (!a\ ||\ !b)\ \{\ StringToNumber(key.value.constant.c\_str(),\ \&def);\ \}\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{auto}\ av\ =\ a\ ?\ ReadScalar<CTYPE>(a)\ :\ def;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{auto}\ bv\ =\ b\ ?\ ReadScalar<CTYPE>(b)\ :\ def;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{return}\ av\ <\ bv;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{idl__parser_8cpp_a38ed67988203961e10a91d55532a3f61}\label{idl__parser_8cpp_a38ed67988203961e10a91d55532a3f61} 
+\index{idl\_parser.cpp@{idl\_parser.cpp}!FLATBUFFERS\_TD@{FLATBUFFERS\_TD}}
+\index{FLATBUFFERS\_TD@{FLATBUFFERS\_TD}!idl\_parser.cpp@{idl\_parser.cpp}}
+\doxysubsubsection{\texorpdfstring{FLATBUFFERS\_TD}{FLATBUFFERS\_TD}\hspace{0.1cm}{\footnotesize\ttfamily [2/8]}}
+{\footnotesize\ttfamily \#define FLATBUFFERS\+\_\+\+TD(\begin{DoxyParamCaption}\item[{}]{ENUM,  }\item[{}]{IDLTYPE,  }\item[{}]{CTYPE,  }\item[{}]{... }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ BASE\_TYPE\_\ \#\#\ ENUM:\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ builder\_.Pad(field-\/>padding);\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ if\ (struct\_def.fixed)\ \{\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ CTYPE\ val;\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ECHECK(atot(field\_value.constant.c\_str(),\ *\textcolor{keyword}{this},\ \&val));\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ builder\_.PushElement(val);\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ if\ (field-\/>IsScalarOptional())\ \{\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ if\ (field\_value.constant\ !=\ \textcolor{stringliteral}{"{}null"{}})\ \{\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ CTYPE\ val;\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ECHECK(atot(field\_value.constant.c\_str(),\ *\textcolor{keyword}{this},\ \&val));\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ builder\_.AddElement(field\_value.offset,\ val);\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ CTYPE\ val,\ valdef;\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ECHECK(atot(field\_value.constant.c\_str(),\ *\textcolor{keyword}{this},\ \&val));\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ECHECK(atot(field-\/>value.constant.c\_str(),\ *\textcolor{keyword}{this},\ \&valdef));\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ builder\_.AddElement(field\_value.offset,\ val,\ valdef);\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+
+\end{DoxyCode}
+\Hypertarget{idl__parser_8cpp_a38ed67988203961e10a91d55532a3f61}\label{idl__parser_8cpp_a38ed67988203961e10a91d55532a3f61} 
+\index{idl\_parser.cpp@{idl\_parser.cpp}!FLATBUFFERS\_TD@{FLATBUFFERS\_TD}}
+\index{FLATBUFFERS\_TD@{FLATBUFFERS\_TD}!idl\_parser.cpp@{idl\_parser.cpp}}
+\doxysubsubsection{\texorpdfstring{FLATBUFFERS\_TD}{FLATBUFFERS\_TD}\hspace{0.1cm}{\footnotesize\ttfamily [3/8]}}
+{\footnotesize\ttfamily \#define FLATBUFFERS\+\_\+\+TD(\begin{DoxyParamCaption}\item[{}]{ENUM,  }\item[{}]{IDLTYPE,  }\item[{}]{CTYPE,  }\item[{}]{... }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ BASE\_TYPE\_\ \#\#\ ENUM:\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ builder\_.Pad(field-\/>padding);\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ if\ (IsStruct(field-\/>value.type))\ \{\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ SerializeStruct(*field-\/>value.type.struct\_def,\ field\_value);\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ Special\ case\ for\ fields\ that\ use\ 64-\/bit\ addressing\ */}\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ if(field-\/>offset64)\ \{\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Offset64<void>\ offset;\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ECHECK(atot(field\_value.constant.c\_str(),\ *\textcolor{keyword}{this},\ \&offset));\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ builder\_.AddOffset(field\_value.offset,\ offset);\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ CTYPE\ val;\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ECHECK(atot(field\_value.constant.c\_str(),\ *\textcolor{keyword}{this},\ \&val));\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ builder\_.AddOffset(field\_value.offset,\ val);\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+
+\end{DoxyCode}
+\Hypertarget{idl__parser_8cpp_a38ed67988203961e10a91d55532a3f61}\label{idl__parser_8cpp_a38ed67988203961e10a91d55532a3f61} 
+\index{idl\_parser.cpp@{idl\_parser.cpp}!FLATBUFFERS\_TD@{FLATBUFFERS\_TD}}
+\index{FLATBUFFERS\_TD@{FLATBUFFERS\_TD}!idl\_parser.cpp@{idl\_parser.cpp}}
+\doxysubsubsection{\texorpdfstring{FLATBUFFERS\_TD}{FLATBUFFERS\_TD}\hspace{0.1cm}{\footnotesize\ttfamily [4/8]}}
+{\footnotesize\ttfamily \#define FLATBUFFERS\+\_\+\+TD(\begin{DoxyParamCaption}\item[{}]{ENUM,  }\item[{}]{IDLTYPE,  }\item[{}]{CTYPE,  }\item[{}]{... }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ BASE\_TYPE\_\ \#\#\ ENUM:\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ if\ (IsStruct(val.type))\ SerializeStruct(*val.type.struct\_def,\ val);\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ else\ \{\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ CTYPE\ elem;\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ ECHECK(atot(val.constant.c\_str(),\ *\textcolor{keyword}{this},\ \&elem));\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ builder\_.PushElement(elem);\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \}\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+
+\end{DoxyCode}
+\Hypertarget{idl__parser_8cpp_a38ed67988203961e10a91d55532a3f61}\label{idl__parser_8cpp_a38ed67988203961e10a91d55532a3f61} 
+\index{idl\_parser.cpp@{idl\_parser.cpp}!FLATBUFFERS\_TD@{FLATBUFFERS\_TD}}
+\index{FLATBUFFERS\_TD@{FLATBUFFERS\_TD}!idl\_parser.cpp@{idl\_parser.cpp}}
+\doxysubsubsection{\texorpdfstring{FLATBUFFERS\_TD}{FLATBUFFERS\_TD}\hspace{0.1cm}{\footnotesize\ttfamily [5/8]}}
+{\footnotesize\ttfamily \#define FLATBUFFERS\+\_\+\+TD(\begin{DoxyParamCaption}\item[{}]{ENUM,  }\item[{}]{IDLTYPE,  }\item[{}]{CTYPE,  }\item[{}]{... }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ BASE\_TYPE\_\ \#\#\ ENUM:\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ if\ (IsStruct(val.type))\ \{\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ SerializeStruct(builder,\ *val.type.struct\_def,\ val);\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ CTYPE\ elem;\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ ECHECK(atot(val.constant.c\_str(),\ *\textcolor{keyword}{this},\ \&elem));\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ builder.PushElement(elem);\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \}\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+
+\end{DoxyCode}
+\Hypertarget{idl__parser_8cpp_a38ed67988203961e10a91d55532a3f61}\label{idl__parser_8cpp_a38ed67988203961e10a91d55532a3f61} 
+\index{idl\_parser.cpp@{idl\_parser.cpp}!FLATBUFFERS\_TD@{FLATBUFFERS\_TD}}
+\index{FLATBUFFERS\_TD@{FLATBUFFERS\_TD}!idl\_parser.cpp@{idl\_parser.cpp}}
+\doxysubsubsection{\texorpdfstring{FLATBUFFERS\_TD}{FLATBUFFERS\_TD}\hspace{0.1cm}{\footnotesize\ttfamily [6/8]}}
+{\footnotesize\ttfamily \#define FLATBUFFERS\+\_\+\+TD(\begin{DoxyParamCaption}\item[{}]{ENUM,  }\item[{}]{IDLTYPE,  }\item[{}]{CTYPE,  }\item[{}]{... }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \ \ \textcolor{keywordflow}{case}\ BASE\_TYPE\_\ \#\#\ ENUM:\ \{\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ CTYPE\ val;\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ ECHECK(atot(e.constant.c\_str(),\ *\textcolor{keyword}{this},\ \&val));\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ SingleValueRepack(e,\ val);\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};\ \}}
+
+\end{DoxyCode}
+\Hypertarget{idl__parser_8cpp_a38ed67988203961e10a91d55532a3f61}\label{idl__parser_8cpp_a38ed67988203961e10a91d55532a3f61} 
+\index{idl\_parser.cpp@{idl\_parser.cpp}!FLATBUFFERS\_TD@{FLATBUFFERS\_TD}}
+\index{FLATBUFFERS\_TD@{FLATBUFFERS\_TD}!idl\_parser.cpp@{idl\_parser.cpp}}
+\doxysubsubsection{\texorpdfstring{FLATBUFFERS\_TD}{FLATBUFFERS\_TD}\hspace{0.1cm}{\footnotesize\ttfamily [7/8]}}
+{\footnotesize\ttfamily \#define FLATBUFFERS\+\_\+\+TD(\begin{DoxyParamCaption}\item[{}]{ENUM,  }\item[{}]{IDLTYPE,  }\item[{}]{CTYPE,  }\item[{}]{... }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \ \ \textcolor{keywordflow}{case}\ BASE\_TYPE\_\#\#ENUM:\ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ if\ (!IsInteger(BASE\_TYPE\_\#\#ENUM))\ \textcolor{keywordflow}{break};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ ValidateImpl<BASE\_TYPE\_\#\#ENUM,\ CTYPE>(ev,\ next\ ?\ 1\ :\ 0);\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{idl__parser_8cpp_a163de7889c7c5658b04c93769e723200}\label{idl__parser_8cpp_a163de7889c7c5658b04c93769e723200} 
+\index{idl\_parser.cpp@{idl\_parser.cpp}!FLATBUFFERS\_TD@{FLATBUFFERS\_TD}}
+\index{FLATBUFFERS\_TD@{FLATBUFFERS\_TD}!idl\_parser.cpp@{idl\_parser.cpp}}
+\doxysubsubsection{\texorpdfstring{FLATBUFFERS\_TD}{FLATBUFFERS\_TD}\hspace{0.1cm}{\footnotesize\ttfamily [8/8]}}
+{\footnotesize\ttfamily \#define FLATBUFFERS\+\_\+\+TD(\begin{DoxyParamCaption}\item[{}]{ENUM,  }\item[{}]{IDLTYPE,  }\item[{}]{... }\end{DoxyParamCaption})~      IDLTYPE,}
+
+\Hypertarget{idl__parser_8cpp_aefac918fb4275776230d117af103840b}\label{idl__parser_8cpp_aefac918fb4275776230d117af103840b} 
+\index{idl\_parser.cpp@{idl\_parser.cpp}!FLATBUFFERS\_TOKEN@{FLATBUFFERS\_TOKEN}}
+\index{FLATBUFFERS\_TOKEN@{FLATBUFFERS\_TOKEN}!idl\_parser.cpp@{idl\_parser.cpp}}
+\doxysubsubsection{\texorpdfstring{FLATBUFFERS\_TOKEN}{FLATBUFFERS\_TOKEN}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \#define FLATBUFFERS\+\_\+\+TOKEN(\begin{DoxyParamCaption}\item[{}]{NAME,  }\item[{}]{VALUE,  }\item[{}]{STRING }\end{DoxyParamCaption})~k\+Token \#\# NAME = VALUE,}
+
+\Hypertarget{idl__parser_8cpp_aefac918fb4275776230d117af103840b}\label{idl__parser_8cpp_aefac918fb4275776230d117af103840b} 
+\index{idl\_parser.cpp@{idl\_parser.cpp}!FLATBUFFERS\_TOKEN@{FLATBUFFERS\_TOKEN}}
+\index{FLATBUFFERS\_TOKEN@{FLATBUFFERS\_TOKEN}!idl\_parser.cpp@{idl\_parser.cpp}}
+\doxysubsubsection{\texorpdfstring{FLATBUFFERS\_TOKEN}{FLATBUFFERS\_TOKEN}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \#define FLATBUFFERS\+\_\+\+TOKEN(\begin{DoxyParamCaption}\item[{}]{NAME,  }\item[{}]{VALUE,  }\item[{}]{STRING }\end{DoxyParamCaption})~STRING,}
+
+\Hypertarget{idl__parser_8cpp_af768b49daf86eaf903b78c8f62b2f20b}\label{idl__parser_8cpp_af768b49daf86eaf903b78c8f62b2f20b} 
+\index{idl\_parser.cpp@{idl\_parser.cpp}!FORCE\_ECHECK@{FORCE\_ECHECK}}
+\index{FORCE\_ECHECK@{FORCE\_ECHECK}!idl\_parser.cpp@{idl\_parser.cpp}}
+\doxysubsubsection{\texorpdfstring{FORCE\_ECHECK}{FORCE\_ECHECK}}
+{\footnotesize\ttfamily \#define FORCE\+\_\+\+ECHECK(\begin{DoxyParamCaption}\item[{}]{dtoken,  }\item[{}]{check,  }\item[{}]{req }\end{DoxyParamCaption})~\mbox{\hyperlink{idl__parser_8cpp_ab5b254c3192f385f4370c82152b4f314}{IF\+\_\+\+ECHECK\+\_\+}}(true, dtoken, check, req)}
+
+\Hypertarget{idl__parser_8cpp_ab5b254c3192f385f4370c82152b4f314}\label{idl__parser_8cpp_ab5b254c3192f385f4370c82152b4f314} 
+\index{idl\_parser.cpp@{idl\_parser.cpp}!IF\_ECHECK\_@{IF\_ECHECK\_}}
+\index{IF\_ECHECK\_@{IF\_ECHECK\_}!idl\_parser.cpp@{idl\_parser.cpp}}
+\doxysubsubsection{\texorpdfstring{IF\_ECHECK\_}{IF\_ECHECK\_}}
+{\footnotesize\ttfamily \#define IF\+\_\+\+ECHECK\+\_\+(\begin{DoxyParamCaption}\item[{}]{force,  }\item[{}]{dtoken,  }\item[{}]{check,  }\item[{}]{req }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{if}\ (!match\ \&\&\ ((dtoken)\ ==\ token\_)\ \&\&\ ((check)\ ||\ flatbuffers::IsConstTrue(force)))\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ ECHECK(TryTypedValue(\mbox{\hyperlink{idl__gen__ts_8cpp_a9b45b3e13bd9167aab02e17e08916231}{name}},\ dtoken,\ check,\ e,\ req,\ \&match))}
+
+\end{DoxyCode}
+\Hypertarget{idl__parser_8cpp_afa19e2eadb751f3599e443d073862a2f}\label{idl__parser_8cpp_afa19e2eadb751f3599e443d073862a2f} 
+\index{idl\_parser.cpp@{idl\_parser.cpp}!NEXT@{NEXT}}
+\index{NEXT@{NEXT}!idl\_parser.cpp@{idl\_parser.cpp}}
+\doxysubsubsection{\texorpdfstring{NEXT}{NEXT}}
+{\footnotesize\ttfamily \#define NEXT(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})~\mbox{\hyperlink{idl__parser_8cpp_a88a8b1da6542c94c3a8ae2d7318c349e}{ECHECK}}(Next())}
+
+\Hypertarget{idl__parser_8cpp_a2737ac576c0805ae12f461798682d79d}\label{idl__parser_8cpp_a2737ac576c0805ae12f461798682d79d} 
+\index{idl\_parser.cpp@{idl\_parser.cpp}!TRY\_ECHECK@{TRY\_ECHECK}}
+\index{TRY\_ECHECK@{TRY\_ECHECK}!idl\_parser.cpp@{idl\_parser.cpp}}
+\doxysubsubsection{\texorpdfstring{TRY\_ECHECK}{TRY\_ECHECK}}
+{\footnotesize\ttfamily \#define TRY\+\_\+\+ECHECK(\begin{DoxyParamCaption}\item[{}]{dtoken,  }\item[{}]{check,  }\item[{}]{req }\end{DoxyParamCaption})~\mbox{\hyperlink{idl__parser_8cpp_ab5b254c3192f385f4370c82152b4f314}{IF\+\_\+\+ECHECK\+\_\+}}(false, dtoken, check, req)}
+

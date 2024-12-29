@@ -1,0 +1,64 @@
+\doxysection{com.\+google.\+flatbuffers.\+String\+Vector Class Reference}
+\hypertarget{classcom_1_1google_1_1flatbuffers_1_1StringVector}{}\label{classcom_1_1google_1_1flatbuffers_1_1StringVector}\index{com.google.flatbuffers.StringVector@{com.google.flatbuffers.StringVector}}
+
+
+Inheritance diagram for com.\+google.\+flatbuffers.\+String\+Vector\+:
+% FIG 0
+
+
+Collaboration diagram for com.\+google.\+flatbuffers.\+String\+Vector\+:
+% FIG 1
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classcom_1_1google_1_1flatbuffers_1_1StringVector}{String\+Vector}} \mbox{\hyperlink{classcom_1_1google_1_1flatbuffers_1_1StringVector_abf0c1ca61bab2009a8704a551a8577f9}{\+\_\+\+\_\+assign}} (int \+\_\+vector, int \+\_\+element\+\_\+size, Byte\+Buffer \+\_\+bb)
+\item 
+String \mbox{\hyperlink{classcom_1_1google_1_1flatbuffers_1_1StringVector_a64c5bee56930170b356ae9c077952be3}{get}} (int j)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Helper type for accessing vector of String. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classcom_1_1google_1_1flatbuffers_1_1StringVector_abf0c1ca61bab2009a8704a551a8577f9}\label{classcom_1_1google_1_1flatbuffers_1_1StringVector_abf0c1ca61bab2009a8704a551a8577f9} 
+\index{com.google.flatbuffers.StringVector@{com.google.flatbuffers.StringVector}!\_\_assign@{\_\_assign}}
+\index{\_\_assign@{\_\_assign}!com.google.flatbuffers.StringVector@{com.google.flatbuffers.StringVector}}
+\doxysubsubsection{\texorpdfstring{\_\_assign()}{\_\_assign()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classcom_1_1google_1_1flatbuffers_1_1StringVector}{String\+Vector}} com.\+google.\+flatbuffers.\+String\+Vector.\+\_\+\+\_\+assign (\begin{DoxyParamCaption}\item[{int}]{\+\_\+vector,  }\item[{int}]{\+\_\+element\+\_\+size,  }\item[{Byte\+Buffer}]{\+\_\+bb }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Assigns vector access object to vector data.
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+vector} & Start data of a vector. \\
+\hline
+{\em \+\_\+element\+\_\+size} & Size of a vector element. \\
+\hline
+{\em \+\_\+bb} & Table\textquotesingle{}s Byte\+Buffer. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns current vector access object assigned to vector data whose offset is stored at {\ttfamily vector}. 
+\end{DoxyReturn}
+\Hypertarget{classcom_1_1google_1_1flatbuffers_1_1StringVector_a64c5bee56930170b356ae9c077952be3}\label{classcom_1_1google_1_1flatbuffers_1_1StringVector_a64c5bee56930170b356ae9c077952be3} 
+\index{com.google.flatbuffers.StringVector@{com.google.flatbuffers.StringVector}!get@{get}}
+\index{get@{get}!com.google.flatbuffers.StringVector@{com.google.flatbuffers.StringVector}}
+\doxysubsubsection{\texorpdfstring{get()}{get()}}
+{\footnotesize\ttfamily String com.\+google.\+flatbuffers.\+String\+Vector.\+get (\begin{DoxyParamCaption}\item[{int}]{j }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Reads the String at the given index.
+
+
+\begin{DoxyParams}{Parameters}
+{\em j} & The index from which the String value will be read. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the String at the given index. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+flatbuffers/java/src/main/java/com/google/flatbuffers/\mbox{\hyperlink{StringVector_8java}{String\+Vector.\+java}}\end{DoxyCompactItemize}

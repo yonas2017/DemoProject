@@ -1,0 +1,103 @@
+\doxysection{code\+\_\+generator.\+h}
+\hypertarget{code__generator_8h_source}{}\label{code__generator_8h_source}\index{flatbuffers/include/flatbuffers/code\_generator.h@{flatbuffers/include/flatbuffers/code\_generator.h}}
+\mbox{\hyperlink{code__generator_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ Copyright\ 2023\ Google\ Inc.\ All\ rights\ reserved.}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ Licensed\ under\ the\ Apache\ License,\ Version\ 2.0\ (the\ "{}License"{});}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ you\ may\ not\ use\ this\ file\ except\ in\ compliance\ with\ the\ License.}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *\ You\ may\ obtain\ a\ copy\ of\ the\ License\ at}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ *\ \ \ \ \ http://www.apache.org/licenses/LICENSE-\/2.0}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ *\ Unless\ required\ by\ applicable\ law\ or\ agreed\ to\ in\ writing,\ software}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ *\ distributed\ under\ the\ License\ is\ distributed\ on\ an\ "{}AS\ IS"{}\ BASIS,}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ *\ WITHOUT\ WARRANTIES\ OR\ CONDITIONS\ OF\ ANY\ KIND,\ either\ express\ or\ implied.}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ *\ See\ the\ License\ for\ the\ specific\ language\ governing\ permissions\ and}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ *\ limitations\ under\ the\ License.}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#ifndef\ FLATBUFFERS\_CODE\_GENERATOR\_H\_}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#define\ FLATBUFFERS\_CODE\_GENERATOR\_H\_}}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{idl_8h}{flatbuffers/idl.h}}"{}}}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceflatbuffers}{flatbuffers}}\ \{}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structflatbuffers_1_1CodeGenOptions}{CodeGenOptions}}\ \{}
+\DoxyCodeLine{00027\ \ \ std::string\ \mbox{\hyperlink{structflatbuffers_1_1CodeGenOptions_a37f37ad846be19a8964667ce4d6dcf27}{output\_path}};}
+\DoxyCodeLine{00028\ \};}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \textcolor{comment}{//\ A\ code\ generator\ interface\ for\ producing\ converting\ flatbuffer\ schema\ into}}
+\DoxyCodeLine{00031\ \textcolor{comment}{//\ code.}}
+\DoxyCodeLine{00032\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classflatbuffers_1_1CodeGenerator}{CodeGenerator}}\ \{}
+\DoxyCodeLine{00033\ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00034\ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classflatbuffers_1_1CodeGenerator_a60b65f3a16439dd3660b2a17dc4097eb}{\string~CodeGenerator}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \ \ \textcolor{keyword}{enum}\ \mbox{\hyperlink{classflatbuffers_1_1CodeGenerator_ace5ed21ca8a1faa20a6cf7da3eda8ffa}{Status}}\ \{}
+\DoxyCodeLine{00037\ \ \ \ \ \mbox{\hyperlink{classflatbuffers_1_1CodeGenerator_ace5ed21ca8a1faa20a6cf7da3eda8ffaa71dc2f8979fb40fc4be8421d7e0e8a4a}{OK}}\ =\ 0,}
+\DoxyCodeLine{00038\ \ \ \ \ \mbox{\hyperlink{classflatbuffers_1_1CodeGenerator_ace5ed21ca8a1faa20a6cf7da3eda8ffaa6b9ad17a70ddba7e7c7f5d73ef4d64df}{ERROR}}\ =\ 1,}
+\DoxyCodeLine{00039\ \ \ \ \ \mbox{\hyperlink{classflatbuffers_1_1CodeGenerator_ace5ed21ca8a1faa20a6cf7da3eda8ffaa5d31295f7c19c632ef9e1e0f7d74d173}{FAILED\_VERIFICATION}}\ =\ 2,}
+\DoxyCodeLine{00040\ \ \ \ \ \mbox{\hyperlink{classflatbuffers_1_1CodeGenerator_ace5ed21ca8a1faa20a6cf7da3eda8ffaae12ff9b014a92be1dce3fd91e0f05ea0}{NOT\_IMPLEMENTED}}\ =\ 3}
+\DoxyCodeLine{00041\ \ \ \};}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \ \ std::string\ \mbox{\hyperlink{classflatbuffers_1_1CodeGenerator_a3031b56b091bb933fc103fa1b11414c8}{status\_detail}};}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \ \ \textcolor{comment}{//\ Generate\ code\ from\ the\ provided\ \`{}parser`.}}
+\DoxyCodeLine{00046\ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{00047\ \ \ \textcolor{comment}{//\ DEPRECATED:\ prefer\ using\ the\ other\ overload\ of\ GenerateCode\ for\ bfbs.}}
+\DoxyCodeLine{00048\ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classflatbuffers_1_1CodeGenerator_ace5ed21ca8a1faa20a6cf7da3eda8ffa}{Status}}\ \mbox{\hyperlink{classflatbuffers_1_1CodeGenerator_a6d2ad14b8b914d6b447f8a2a6d1918c1}{GenerateCode}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classflatbuffers_1_1Parser}{Parser}}\ \&parser,\ \textcolor{keyword}{const}\ std::string\ \&path,}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\ \&filename)\ =\ 0;}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \ \ \textcolor{comment}{//\ Generate\ code\ from\ the\ provided\ \`{}parser`\ and\ place\ it\ in\ the\ output.}}
+\DoxyCodeLine{00052\ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classflatbuffers_1_1CodeGenerator_ace5ed21ca8a1faa20a6cf7da3eda8ffa}{Status}}\ \mbox{\hyperlink{classflatbuffers_1_1CodeGenerator_a34bd4e2e21e5a4674941c11a7738e554}{GenerateCodeString}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classflatbuffers_1_1Parser}{Parser}}\ \&parser,}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\ \&filename,}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ \&output)\ \{}
+\DoxyCodeLine{00055\ \ \ \ \ (void)parser;}
+\DoxyCodeLine{00056\ \ \ \ \ (void)filename;}
+\DoxyCodeLine{00057\ \ \ \ \ (void)output;}
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classflatbuffers_1_1CodeGenerator_ace5ed21ca8a1faa20a6cf7da3eda8ffaae12ff9b014a92be1dce3fd91e0f05ea0}{Status::NOT\_IMPLEMENTED}};}
+\DoxyCodeLine{00059\ \ \ \}}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ \ \ \textcolor{comment}{//\ Generate\ code\ from\ the\ provided\ \`{}buffer`\ of\ given\ \`{}length`.\ The\ buffer\ is\ a}}
+\DoxyCodeLine{00062\ \ \ \textcolor{comment}{//\ serialized\ reflection.fbs.}}
+\DoxyCodeLine{00063\ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classflatbuffers_1_1CodeGenerator_ace5ed21ca8a1faa20a6cf7da3eda8ffa}{Status}}\ \mbox{\hyperlink{classflatbuffers_1_1CodeGenerator_a64feca33047f7ee06f6a6de58dff2267}{GenerateCode}}(\textcolor{keyword}{const}\ uint8\_t\ *buffer,\ int64\_t\ length,}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{structflatbuffers_1_1CodeGenOptions}{CodeGenOptions}}\ \&options)\ =\ 0;}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00066\ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classflatbuffers_1_1CodeGenerator_ace5ed21ca8a1faa20a6cf7da3eda8ffa}{Status}}\ \mbox{\hyperlink{classflatbuffers_1_1CodeGenerator_a1d4a52cfffefb2835d9fa30144b32cf4}{GenerateMakeRule}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classflatbuffers_1_1Parser}{Parser}}\ \&parser,\ \textcolor{keyword}{const}\ std::string\ \&path,}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\ \&filename,}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ \&output)\ =\ 0;}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00070\ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classflatbuffers_1_1CodeGenerator_ace5ed21ca8a1faa20a6cf7da3eda8ffa}{Status}}\ \mbox{\hyperlink{classflatbuffers_1_1CodeGenerator_a6d4c3b8beaa7f76aa2d1ff21c0c97f93}{GenerateGrpcCode}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classflatbuffers_1_1Parser}{Parser}}\ \&parser,\ \textcolor{keyword}{const}\ std::string\ \&path,}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\ \&filename)\ =\ 0;}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00073\ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classflatbuffers_1_1CodeGenerator_ace5ed21ca8a1faa20a6cf7da3eda8ffa}{Status}}\ \mbox{\hyperlink{classflatbuffers_1_1CodeGenerator_ac745e2e6785f7049d4641393492d69d5}{GenerateRootFile}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classflatbuffers_1_1Parser}{Parser}}\ \&parser,}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\ \&path)\ =\ 0;}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00076\ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classflatbuffers_1_1CodeGenerator_ab4fd90d8914b467a86413688eb19017f}{IsSchemaOnly}}()\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00078\ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classflatbuffers_1_1CodeGenerator_a6b4ba4a0b9c54bb3a31ab2ae1541857e}{SupportsBfbsGeneration}}()\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00080\ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classflatbuffers_1_1CodeGenerator_a477e9fac99eb370ede8cd97a0a616774}{SupportsRootFileGeneration}}()\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00082\ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{structflatbuffers_1_1IDLOptions_a86ee4542187c2b04945f43cf6aebaffc}{IDLOptions::Language}}\ \mbox{\hyperlink{classflatbuffers_1_1CodeGenerator_a00a85f44dc29d57ee844b92704a789c8}{Language}}()\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00084\ \ \ \textcolor{keyword}{virtual}\ std::string\ \mbox{\hyperlink{classflatbuffers_1_1CodeGenerator_a5bc8484b9233632d57596cb9db704569}{LanguageName}}()\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00086\ \ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00087\ \ \ \mbox{\hyperlink{classflatbuffers_1_1CodeGenerator_a6bdc967a1e7eedeb148ea663ca95f9d8}{CodeGenerator}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00088\ }
+\DoxyCodeLine{00089\ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00090\ \ \ \textcolor{comment}{//\ Copying\ is\ not\ supported.}}
+\DoxyCodeLine{00091\ \ \ \mbox{\hyperlink{classflatbuffers_1_1CodeGenerator_a6bdc967a1e7eedeb148ea663ca95f9d8}{CodeGenerator}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classflatbuffers_1_1CodeGenerator}{CodeGenerator}}\ \&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00092\ \ \ \mbox{\hyperlink{classflatbuffers_1_1CodeGenerator}{CodeGenerator}}\ \&operator=(\textcolor{keyword}{const}\ \mbox{\hyperlink{classflatbuffers_1_1CodeGenerator}{CodeGenerator}}\ \&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00093\ \};}
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00095\ \}\ \ \textcolor{comment}{//\ namespace\ flatbuffers}}
+\DoxyCodeLine{00096\ }
+\DoxyCodeLine{00097\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ FLATBUFFERS\_CODE\_GENERATOR\_H\_}}
+
+\end{DoxyCode}

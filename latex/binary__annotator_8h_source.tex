@@ -1,0 +1,433 @@
+\doxysection{binary\+\_\+annotator.\+h}
+\hypertarget{binary__annotator_8h_source}{}\label{binary__annotator_8h_source}\index{flatbuffers/src/binary\_annotator.h@{flatbuffers/src/binary\_annotator.h}}
+\mbox{\hyperlink{binary__annotator_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ Copyright\ 2021\ Google\ Inc.\ All\ rights\ reserved.}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ Licensed\ under\ the\ Apache\ License,\ Version\ 2.0\ (the\ "{}License"{});}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ you\ may\ not\ use\ this\ file\ except\ in\ compliance\ with\ the\ License.}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *\ You\ may\ obtain\ a\ copy\ of\ the\ License\ at}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ *\ \ \ \ \ http://www.apache.org/licenses/LICENSE-\/2.0}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ *\ Unless\ required\ by\ applicable\ law\ or\ agreed\ to\ in\ writing,\ software}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ *\ distributed\ under\ the\ License\ is\ distributed\ on\ an\ "{}AS\ IS"{}\ BASIS,}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ *\ WITHOUT\ WARRANTIES\ OR\ CONDITIONS\ OF\ ANY\ KIND,\ either\ express\ or\ implied.}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ *\ See\ the\ License\ for\ the\ specific\ language\ governing\ permissions\ and}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ *\ limitations\ under\ the\ License.}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#ifndef\ FLATBUFFERS\_BINARY\_ANNOTATOR\_H\_}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#define\ FLATBUFFERS\_BINARY\_ANNOTATOR\_H\_}}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ <cstddef>}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ <cstdint>}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#include\ <iomanip>}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#include\ <ios>}}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#include\ <list>}}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#include\ <map>}}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#include\ <sstream>}}
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#include\ <utility>}}
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{base_8h}{flatbuffers/base.h}}"{}}}
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{reflection_8h}{flatbuffers/reflection.h}}"{}}}
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{reflection__generated_8h}{flatbuffers/reflection\_generated.h}}"{}}}
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{stl__emulation_8h}{flatbuffers/stl\_emulation.h}}"{}}}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceflatbuffers}{flatbuffers}}\ \{}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \textcolor{keyword}{enum\ class}\ \mbox{\hyperlink{namespaceflatbuffers_a33c27de12587a162bc0111b2e6a58879}{BinaryRegionType}}\ \{}
+\DoxyCodeLine{00039\ \ \ \mbox{\hyperlink{namespaceflatbuffers_a33c27de12587a162bc0111b2e6a58879a88183b946cc5f0e8c96b2e66e1c74a7e}{Unknown}}\ =\ 0,}
+\DoxyCodeLine{00040\ \ \ \mbox{\hyperlink{namespaceflatbuffers_a33c27de12587a162bc0111b2e6a58879a73cd3aff5b763333c1e8c493bd3d6de9}{UOffset}}\ =\ 1,}
+\DoxyCodeLine{00041\ \ \ \mbox{\hyperlink{namespaceflatbuffers_a33c27de12587a162bc0111b2e6a58879a13d20f35f9667f023ee6bd6fd40f27bb}{SOffset}}\ =\ 2,}
+\DoxyCodeLine{00042\ \ \ \mbox{\hyperlink{namespaceflatbuffers_a33c27de12587a162bc0111b2e6a58879a5f50b24c4442e0c86b8ab5695a3c098f}{VOffset}}\ =\ 3,}
+\DoxyCodeLine{00043\ \ \ \mbox{\hyperlink{structBool}{Bool}}\ =\ 4,}
+\DoxyCodeLine{00044\ \ \ \mbox{\hyperlink{namespaceflatbuffers_a33c27de12587a162bc0111b2e6a58879aa245c3230debe5c956484ecc6fa93877}{Byte}}\ =\ 5,}
+\DoxyCodeLine{00045\ \ \ \mbox{\hyperlink{namespaceflatbuffers_a33c27de12587a162bc0111b2e6a58879a8e95e84813830072b7516cfaa7dbc1a9}{Char}}\ =\ 6,}
+\DoxyCodeLine{00046\ \ \ \mbox{\hyperlink{namespaceflatbuffers_a33c27de12587a162bc0111b2e6a58879a3a33b05b1fe0bad48ad87ffbacdddd15}{Uint8}}\ =\ 7,}
+\DoxyCodeLine{00047\ \ \ \mbox{\hyperlink{namespaceflatbuffers_a33c27de12587a162bc0111b2e6a58879a7d839b2c12bfd40ac121b4cc9e81c539}{Int8}}\ =\ 8,}
+\DoxyCodeLine{00048\ \ \ \mbox{\hyperlink{namespaceflatbuffers_a33c27de12587a162bc0111b2e6a58879a3167337450665ae9b3b34004d33cafe8}{Uint16}}\ =\ 9,}
+\DoxyCodeLine{00049\ \ \ \mbox{\hyperlink{namespaceflatbuffers_a33c27de12587a162bc0111b2e6a58879a39bc2ae44b184207f560ff8619823208}{Int16}}\ =\ 10,}
+\DoxyCodeLine{00050\ \ \ \mbox{\hyperlink{namespaceflatbuffers_a33c27de12587a162bc0111b2e6a58879a2f3a46e0add3a07937412cbeb8f95727}{Uint32}}\ =\ 11,}
+\DoxyCodeLine{00051\ \ \ \mbox{\hyperlink{namespaceflatbuffers_a33c27de12587a162bc0111b2e6a58879ac06129f6e6e15c09328365e553f1dc31}{Int32}}\ =\ 12,}
+\DoxyCodeLine{00052\ \ \ \mbox{\hyperlink{namespaceflatbuffers_a33c27de12587a162bc0111b2e6a58879ac970503874fb72afdf908cb54a4c10ee}{Uint64}}\ =\ 13,}
+\DoxyCodeLine{00053\ \ \ \mbox{\hyperlink{namespaceflatbuffers_a33c27de12587a162bc0111b2e6a58879afbde23b11d7e59af7828e81144c8b487}{Int64}}\ =\ 14,}
+\DoxyCodeLine{00054\ \ \ \mbox{\hyperlink{namespaceflatbuffers_a33c27de12587a162bc0111b2e6a58879a22ae0e2b89e5e3d477f988cc36d3272b}{Float}}\ =\ 15,}
+\DoxyCodeLine{00055\ \ \ \mbox{\hyperlink{namespaceflatbuffers_a33c27de12587a162bc0111b2e6a58879ad909d38d705ce75386dd86e611a82f5b}{Double}}\ =\ 16,}
+\DoxyCodeLine{00056\ \ \ \mbox{\hyperlink{namespaceflatbuffers_a33c27de12587a162bc0111b2e6a58879a05596c73b0345cc43c028d2e36c2a0f1}{UType}}\ =\ 17,}
+\DoxyCodeLine{00057\ \ \ \mbox{\hyperlink{namespaceflatbuffers_a33c27de12587a162bc0111b2e6a58879abd92630a443fa538b56d10dc61fe6b26}{UOffset64}}\ =\ 18,}
+\DoxyCodeLine{00058\ \};}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00061\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ std::string\ ToHex(T\ \mbox{\hyperlink{gmock-matchers-comparisons__test_8cc_acb559820d9ca11295b4500f179ef6392}{i}},\ \textcolor{keywordtype}{size\_t}\ width\ =\ \textcolor{keyword}{sizeof}(T))\ \{}
+\DoxyCodeLine{00062\ \ \ std::stringstream\ stream;}
+\DoxyCodeLine{00063\ \ \ stream\ <<\ std::hex\ <<\ std::uppercase\ <<\ std::setfill(\textcolor{charliteral}{'0'})}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \ <<\ std::setw(\textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(width))\ <<\ \mbox{\hyperlink{gmock-matchers-comparisons__test_8cc_acb559820d9ca11295b4500f179ef6392}{i}};}
+\DoxyCodeLine{00065\ \ \ \textcolor{keywordflow}{return}\ stream.str();}
+\DoxyCodeLine{00066\ \}}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00068\ \textcolor{comment}{//\ Specialized\ version\ for\ uint8\_t\ that\ don't\ work\ well\ with\ std::hex.}}
+\DoxyCodeLine{00069\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ std::string\ ToHex(uint8\_t\ \mbox{\hyperlink{gmock-matchers-comparisons__test_8cc_acb559820d9ca11295b4500f179ef6392}{i}})\ \{}
+\DoxyCodeLine{00070\ \ \ \textcolor{keywordflow}{return}\ ToHex<int>(\textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(\mbox{\hyperlink{gmock-matchers-comparisons__test_8cc_acb559820d9ca11295b4500f179ef6392}{i}}),\ 2);}
+\DoxyCodeLine{00071\ \}}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00073\ \textcolor{keyword}{enum\ class}\ \mbox{\hyperlink{namespaceflatbuffers_ac1f0e15fc3107848716b6e091aa68437}{BinaryRegionStatus}}\ \{}
+\DoxyCodeLine{00074\ \ \ \mbox{\hyperlink{namespaceflatbuffers_ac1f0e15fc3107848716b6e091aa68437ae0aa021e21dddbd6d8cecec71e9cf564}{OK}}\ =\ 0,}
+\DoxyCodeLine{00075\ \ \ \mbox{\hyperlink{namespaceflatbuffers_ac1f0e15fc3107848716b6e091aa68437a32bd8a1db2275458673903bdb84cb277}{WARN}}\ =\ 100,}
+\DoxyCodeLine{00076\ \ \ \mbox{\hyperlink{namespaceflatbuffers_ac1f0e15fc3107848716b6e091aa68437a5d54cb8c476b9e0881fd332c7b862e3b}{WARN\_NO\_REFERENCES}},}
+\DoxyCodeLine{00077\ \ \ \mbox{\hyperlink{namespaceflatbuffers_ac1f0e15fc3107848716b6e091aa68437a2cb4cab3ca05929532228a548488ebc2}{WARN\_CORRUPTED\_PADDING}},}
+\DoxyCodeLine{00078\ \ \ \mbox{\hyperlink{namespaceflatbuffers_ac1f0e15fc3107848716b6e091aa68437a87f864a86d1c6506233a85d5d36efcaf}{WARN\_PADDING\_LENGTH}},}
+\DoxyCodeLine{00079\ \ \ \mbox{\hyperlink{namespaceflatbuffers_ac1f0e15fc3107848716b6e091aa68437abb1ca97ec761fc37101737ba0aa2e7c5}{ERROR}}\ =\ 200,}
+\DoxyCodeLine{00080\ \ \ \textcolor{comment}{//\ An\ offset\ is\ pointing\ outside\ the\ binary\ bounds.}}
+\DoxyCodeLine{00081\ \ \ \mbox{\hyperlink{namespaceflatbuffers_ac1f0e15fc3107848716b6e091aa68437adb53ca92d4817eefe5405bd91afef168}{ERROR\_OFFSET\_OUT\_OF\_BINARY}},}
+\DoxyCodeLine{00082\ \ \ \textcolor{comment}{//\ Expecting\ to\ read\ N\ bytes\ but\ not\ enough\ remain\ in\ the\ binary.}}
+\DoxyCodeLine{00083\ \ \ \mbox{\hyperlink{namespaceflatbuffers_ac1f0e15fc3107848716b6e091aa68437a77c42417f663cfb6451937a503fd1989}{ERROR\_INCOMPLETE\_BINARY}},}
+\DoxyCodeLine{00084\ \ \ \textcolor{comment}{//\ When\ a\ length\ of\ a\ vtable/vector\ is\ longer\ than\ possible.}}
+\DoxyCodeLine{00085\ \ \ \mbox{\hyperlink{namespaceflatbuffers_ac1f0e15fc3107848716b6e091aa68437a24cde4d8546ad630e6d218fd5ff4e28e}{ERROR\_LENGTH\_TOO\_LONG}},}
+\DoxyCodeLine{00086\ \ \ \textcolor{comment}{//\ When\ a\ length\ of\ a\ vtable/vector\ is\ shorter\ than\ possible.}}
+\DoxyCodeLine{00087\ \ \ \mbox{\hyperlink{namespaceflatbuffers_ac1f0e15fc3107848716b6e091aa68437af8aa5cc4aa170ed81a69e3ef371fe2fa}{ERROR\_LENGTH\_TOO\_SHORT}},}
+\DoxyCodeLine{00088\ \ \ \textcolor{comment}{//\ A\ field\ mark\ required\ is\ not\ present\ in\ the\ vtable.}}
+\DoxyCodeLine{00089\ \ \ \mbox{\hyperlink{namespaceflatbuffers_ac1f0e15fc3107848716b6e091aa68437ab5ebfbb6940b97e7f410b2119c06a236}{ERROR\_REQUIRED\_FIELD\_NOT\_PRESENT}},}
+\DoxyCodeLine{00090\ \ \ \textcolor{comment}{//\ A\ realized\ union\ type\ is\ not\ within\ the\ enum\ bounds.}}
+\DoxyCodeLine{00091\ \ \ \mbox{\hyperlink{namespaceflatbuffers_ac1f0e15fc3107848716b6e091aa68437ac66f613e428eb529288e4fdcefa28010}{ERROR\_INVALID\_UNION\_TYPE}},}
+\DoxyCodeLine{00092\ \ \ \textcolor{comment}{//\ Occurs\ when\ there\ is\ a\ cycle\ in\ offsets.}}
+\DoxyCodeLine{00093\ \ \ \mbox{\hyperlink{namespaceflatbuffers_ac1f0e15fc3107848716b6e091aa68437aabea9b28d8a9e02cf2c13f3b871dfcc7}{ERROR\_CYCLE\_DETECTED}},}
+\DoxyCodeLine{00094\ \};}
+\DoxyCodeLine{00095\ }
+\DoxyCodeLine{00096\ \textcolor{keyword}{enum\ class}\ \mbox{\hyperlink{namespaceflatbuffers_a90c9f831ebebbb6cc3ebcff20848c9b7}{BinaryRegionCommentType}}\ \{}
+\DoxyCodeLine{00097\ \ \ \mbox{\hyperlink{namespaceflatbuffers_a33c27de12587a162bc0111b2e6a58879a88183b946cc5f0e8c96b2e66e1c74a7e}{Unknown}}\ =\ 0,}
+\DoxyCodeLine{00098\ \ \ \mbox{\hyperlink{namespaceflatbuffers_a90c9f831ebebbb6cc3ebcff20848c9b7a30f70a78bf63dc38a27280ab7c6fe1f9}{SizePrefix}},}
+\DoxyCodeLine{00099\ \ \ \textcolor{comment}{//\ The\ offset\ to\ the\ root\ table.}}
+\DoxyCodeLine{00100\ \ \ \mbox{\hyperlink{namespaceflatbuffers_a90c9f831ebebbb6cc3ebcff20848c9b7ac585961d59a889f6561f5db50bd32727}{RootTableOffset}},}
+\DoxyCodeLine{00101\ \ \ \textcolor{comment}{//\ The\ optional\ 4-\/char\ file\ identifier.}}
+\DoxyCodeLine{00102\ \ \ \mbox{\hyperlink{namespaceflatbuffers_a90c9f831ebebbb6cc3ebcff20848c9b7afe99907ea766cac41429f0a9c877f12b}{FileIdentifier}},}
+\DoxyCodeLine{00103\ \ \ \textcolor{comment}{//\ Generic\ 0-\/filled\ padding}}
+\DoxyCodeLine{00104\ \ \ \mbox{\hyperlink{namespaceflatbuffers_a90c9f831ebebbb6cc3ebcff20848c9b7aa10443964156b9e87c95e74c8f9baf15}{Padding}},}
+\DoxyCodeLine{00105\ \ \ \textcolor{comment}{//\ The\ size\ of\ the\ vtable.}}
+\DoxyCodeLine{00106\ \ \ \mbox{\hyperlink{namespaceflatbuffers_a90c9f831ebebbb6cc3ebcff20848c9b7afd550b14b38f39911b72964283c5b729}{VTableSize}},}
+\DoxyCodeLine{00107\ \ \ \textcolor{comment}{//\ The\ size\ of\ the\ referring\ table.}}
+\DoxyCodeLine{00108\ \ \ \mbox{\hyperlink{namespaceflatbuffers_a90c9f831ebebbb6cc3ebcff20848c9b7a597cded72b0619e501da1ad1286ec42b}{VTableRefferingTableLength}},}
+\DoxyCodeLine{00109\ \ \ \textcolor{comment}{//\ Offsets\ to\ vtable\ fields.}}
+\DoxyCodeLine{00110\ \ \ \mbox{\hyperlink{namespaceflatbuffers_a90c9f831ebebbb6cc3ebcff20848c9b7a6737ca694066ce75575e0011917eb66e}{VTableFieldOffset}},}
+\DoxyCodeLine{00111\ \ \ \textcolor{comment}{//\ Offsets\ to\ unknown\ vtable\ fields.}}
+\DoxyCodeLine{00112\ \ \ \mbox{\hyperlink{namespaceflatbuffers_a90c9f831ebebbb6cc3ebcff20848c9b7ae18ed8bf44f9451580624947e8014821}{VTableUnknownFieldOffset}},}
+\DoxyCodeLine{00113\ \ \ \textcolor{comment}{//\ The\ vtable\ offset\ of\ a\ table.}}
+\DoxyCodeLine{00114\ \ \ \mbox{\hyperlink{namespaceflatbuffers_a90c9f831ebebbb6cc3ebcff20848c9b7a563951a5c4fe378dbe45967984b82d3d}{TableVTableOffset}},}
+\DoxyCodeLine{00115\ \ \ \textcolor{comment}{//\ A\ "{}inline"{}\ table\ field\ value.}}
+\DoxyCodeLine{00116\ \ \ \mbox{\hyperlink{namespaceflatbuffers_a90c9f831ebebbb6cc3ebcff20848c9b7a953144aba1511e701fc163cf7a390356}{TableField}},}
+\DoxyCodeLine{00117\ \ \ \textcolor{comment}{//\ A\ table\ field\ that\ is\ unknown.}}
+\DoxyCodeLine{00118\ \ \ \mbox{\hyperlink{namespaceflatbuffers_a90c9f831ebebbb6cc3ebcff20848c9b7af6810af9723b61ddd46609e4fa43ed02}{TableUnknownField}},}
+\DoxyCodeLine{00119\ \ \ \textcolor{comment}{//\ A\ table\ field\ value\ that\ points\ to\ another\ section.}}
+\DoxyCodeLine{00120\ \ \ \mbox{\hyperlink{namespaceflatbuffers_a90c9f831ebebbb6cc3ebcff20848c9b7a7fcca0b9dd24ccd7db82f620c30f9b14}{TableOffsetField}},}
+\DoxyCodeLine{00121\ \ \ \textcolor{comment}{//\ A\ struct\ field\ value.}}
+\DoxyCodeLine{00122\ \ \ \mbox{\hyperlink{namespaceflatbuffers_a90c9f831ebebbb6cc3ebcff20848c9b7afb3318a62187d6f696193ca86e00c967}{StructField}},}
+\DoxyCodeLine{00123\ \ \ \textcolor{comment}{//\ A\ array\ field\ value.}}
+\DoxyCodeLine{00124\ \ \ \mbox{\hyperlink{namespaceflatbuffers_a90c9f831ebebbb6cc3ebcff20848c9b7a43c611fc90b15a15ab8f5dc7048bc07a}{ArrayField}},}
+\DoxyCodeLine{00125\ \ \ \textcolor{comment}{//\ The\ length\ of\ the\ string.}}
+\DoxyCodeLine{00126\ \ \ \mbox{\hyperlink{namespaceflatbuffers_a90c9f831ebebbb6cc3ebcff20848c9b7aa67dcce12ff5a0120783533515872746}{StringLength}},}
+\DoxyCodeLine{00127\ \ \ \textcolor{comment}{//\ The\ string\ contents.}}
+\DoxyCodeLine{00128\ \ \ \mbox{\hyperlink{namespaceflatbuffers_a90c9f831ebebbb6cc3ebcff20848c9b7af6d2b0e17b94cf73adf2a5be1f0ca160}{StringValue}},}
+\DoxyCodeLine{00129\ \ \ \textcolor{comment}{//\ The\ explicit\ string\ terminator.}}
+\DoxyCodeLine{00130\ \ \ \mbox{\hyperlink{namespaceflatbuffers_a90c9f831ebebbb6cc3ebcff20848c9b7a3f75dc0fc0b11b1216008fd780ac61b4}{StringTerminator}},}
+\DoxyCodeLine{00131\ \ \ \textcolor{comment}{//\ The\ length\ of\ the\ vector\ (\#\ of\ items).}}
+\DoxyCodeLine{00132\ \ \ \mbox{\hyperlink{namespaceflatbuffers_a90c9f831ebebbb6cc3ebcff20848c9b7a194a4640ba605996c30a058165bb3987}{VectorLength}},}
+\DoxyCodeLine{00133\ \ \ \textcolor{comment}{//\ A\ "{}inline"{}\ value\ of\ a\ vector.}}
+\DoxyCodeLine{00134\ \ \ \mbox{\hyperlink{namespaceflatbuffers_a90c9f831ebebbb6cc3ebcff20848c9b7a4f9b5e3187231038a1b4251b90fc9fcc}{VectorValue}},}
+\DoxyCodeLine{00135\ \ \ \textcolor{comment}{//\ A\ vector\ value\ that\ points\ to\ another\ section.}}
+\DoxyCodeLine{00136\ \ \ \mbox{\hyperlink{namespaceflatbuffers_a90c9f831ebebbb6cc3ebcff20848c9b7ae6c92fa3bdb3625fb99bd5d30f345e56}{VectorTableValue}},}
+\DoxyCodeLine{00137\ \ \ \mbox{\hyperlink{namespaceflatbuffers_a90c9f831ebebbb6cc3ebcff20848c9b7ac3f689e1f5c9152aedcd34b3dc4be1d4}{VectorStringValue}},}
+\DoxyCodeLine{00138\ \ \ \mbox{\hyperlink{namespaceflatbuffers_a90c9f831ebebbb6cc3ebcff20848c9b7a3f7db4780189dce67bab72f381081f58}{VectorUnionValue}},}
+\DoxyCodeLine{00139\ \};}
+\DoxyCodeLine{00140\ }
+\DoxyCodeLine{00141\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structflatbuffers_1_1BinaryRegionComment}{BinaryRegionComment}}\ \{}
+\DoxyCodeLine{00142\ \ \ \mbox{\hyperlink{namespaceflatbuffers_ac1f0e15fc3107848716b6e091aa68437}{BinaryRegionStatus}}\ \mbox{\hyperlink{structflatbuffers_1_1BinaryRegionComment_ad605659708c361e4d8acff7cd3e81f9e}{status}}\ =\ \mbox{\hyperlink{namespaceflatbuffers_ac1f0e15fc3107848716b6e091aa68437ae0aa021e21dddbd6d8cecec71e9cf564}{BinaryRegionStatus::OK}};}
+\DoxyCodeLine{00143\ }
+\DoxyCodeLine{00144\ \ \ \textcolor{comment}{//\ If\ status\ is\ non\ OK,\ this\ may\ be\ filled\ in\ with\ additional\ details.}}
+\DoxyCodeLine{00145\ \ \ std::string\ \mbox{\hyperlink{structflatbuffers_1_1BinaryRegionComment_adccb1d9841e7be832ee850f5346282e9}{status\_message}};}
+\DoxyCodeLine{00146\ }
+\DoxyCodeLine{00147\ \ \ \mbox{\hyperlink{namespaceflatbuffers_a90c9f831ebebbb6cc3ebcff20848c9b7}{BinaryRegionCommentType}}\ \mbox{\hyperlink{structflatbuffers_1_1BinaryRegionComment_a97bb1347979d192cee2707d5891fd015}{type}}\ =\ \mbox{\hyperlink{namespaceflatbuffers_a90c9f831ebebbb6cc3ebcff20848c9b7a88183b946cc5f0e8c96b2e66e1c74a7e}{BinaryRegionCommentType::Unknown}};}
+\DoxyCodeLine{00148\ }
+\DoxyCodeLine{00149\ \ \ std::string\ \mbox{\hyperlink{structflatbuffers_1_1BinaryRegionComment_a0c42a14559fce5659779e28c63ae65cf}{name}};}
+\DoxyCodeLine{00150\ }
+\DoxyCodeLine{00151\ \ \ std::string\ \mbox{\hyperlink{structflatbuffers_1_1BinaryRegionComment_a8d703de41533fd62361c4a101908388e}{default\_value}};}
+\DoxyCodeLine{00152\ }
+\DoxyCodeLine{00153\ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{structflatbuffers_1_1BinaryRegionComment_a9110022c7ed2b79d27965a3c5021243a}{index}}\ =\ 0;}
+\DoxyCodeLine{00154\ \};}
+\DoxyCodeLine{00155\ }
+\DoxyCodeLine{00156\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structflatbuffers_1_1BinaryRegion}{BinaryRegion}}\ \{}
+\DoxyCodeLine{00157\ \ \ \textcolor{comment}{//\ Offset\ into\ the\ binary\ where\ this\ region\ begins.}}
+\DoxyCodeLine{00158\ \ \ uint64\_t\ \mbox{\hyperlink{structflatbuffers_1_1BinaryRegion_a9f337c39618a9d29b36e1a81cdd28f26}{offset}}\ =\ 0;}
+\DoxyCodeLine{00159\ }
+\DoxyCodeLine{00160\ \ \ \textcolor{comment}{//\ The\ length\ of\ this\ region\ in\ bytes.}}
+\DoxyCodeLine{00161\ \ \ uint64\_t\ \mbox{\hyperlink{structflatbuffers_1_1BinaryRegion_a91907444ebd1fad8656b300176feccf8}{length}}\ =\ 0;}
+\DoxyCodeLine{00162\ }
+\DoxyCodeLine{00163\ \ \ \textcolor{comment}{//\ The\ underlying\ datatype\ of\ this\ region}}
+\DoxyCodeLine{00164\ \ \ \mbox{\hyperlink{namespaceflatbuffers_a33c27de12587a162bc0111b2e6a58879}{BinaryRegionType}}\ \mbox{\hyperlink{structflatbuffers_1_1BinaryRegion_a74c79e6755e61d16adaa6b0d5057ab98}{type}}\ =\ \mbox{\hyperlink{namespaceflatbuffers_a33c27de12587a162bc0111b2e6a58879a88183b946cc5f0e8c96b2e66e1c74a7e}{BinaryRegionType::Unknown}};}
+\DoxyCodeLine{00165\ }
+\DoxyCodeLine{00166\ \ \ \textcolor{comment}{//\ If\ \`{}type`\ is\ an\ array/vector,\ this\ is\ the\ number\ of\ those\ types\ this\ region}}
+\DoxyCodeLine{00167\ \ \ \textcolor{comment}{//\ encompasses.}}
+\DoxyCodeLine{00168\ \ \ uint64\_t\ \mbox{\hyperlink{structflatbuffers_1_1BinaryRegion_a52dd57df1e999eb8307d642758ab3f7f}{array\_length}}\ =\ 0;}
+\DoxyCodeLine{00169\ }
+\DoxyCodeLine{00170\ \ \ \textcolor{comment}{//\ If\ the\ is\ an\ offset\ to\ some\ other\ region,\ this\ is\ what\ it\ points\ to.\ The}}
+\DoxyCodeLine{00171\ \ \ \textcolor{comment}{//\ offset\ is\ relative\ to\ overall\ binary,\ not\ to\ this\ region.}}
+\DoxyCodeLine{00172\ \ \ uint64\_t\ \mbox{\hyperlink{structflatbuffers_1_1BinaryRegion_a0ab58b9ed6d631cbb07c5a70f8a83921}{points\_to\_offset}}\ =\ 0;}
+\DoxyCodeLine{00173\ }
+\DoxyCodeLine{00174\ \ \ \textcolor{comment}{//\ The\ comment\ on\ the\ region.}}
+\DoxyCodeLine{00175\ \ \ \mbox{\hyperlink{structflatbuffers_1_1BinaryRegionComment}{BinaryRegionComment}}\ \mbox{\hyperlink{structflatbuffers_1_1BinaryRegion_a148e4bbb2b7f3ca24769432e2f0395a2}{comment}};}
+\DoxyCodeLine{00176\ \};}
+\DoxyCodeLine{00177\ }
+\DoxyCodeLine{00178\ \textcolor{keyword}{enum\ class}\ \mbox{\hyperlink{namespaceflatbuffers_a83021555a8107d7d2791e8db0b4d7d18}{BinarySectionType}}\ \{}
+\DoxyCodeLine{00179\ \ \ \mbox{\hyperlink{namespaceflatbuffers_a33c27de12587a162bc0111b2e6a58879a88183b946cc5f0e8c96b2e66e1c74a7e}{Unknown}}\ =\ 0,}
+\DoxyCodeLine{00180\ \ \ \mbox{\hyperlink{namespaceflatbuffers_a83021555a8107d7d2791e8db0b4d7d18abf50d5e661106d0abe925af3c2e6f7e7}{Header}}\ =\ 1,}
+\DoxyCodeLine{00181\ \ \ \mbox{\hyperlink{classflatbuffers_1_1Table}{Table}}\ =\ 2,}
+\DoxyCodeLine{00182\ \ \ \mbox{\hyperlink{namespaceflatbuffers_a83021555a8107d7d2791e8db0b4d7d18a3c306fb942a417a1b14dbfb030b04138}{RootTable}}\ =\ 3,}
+\DoxyCodeLine{00183\ \ \ \mbox{\hyperlink{namespaceflatbuffers_a83021555a8107d7d2791e8db0b4d7d18a5fe1b444a36c9acc94c001c1add97722}{VTable}}\ =\ 4,}
+\DoxyCodeLine{00184\ \ \ \mbox{\hyperlink{namespaceflatbuffers_a83021555a8107d7d2791e8db0b4d7d18a886ef5dbd655a6c97726d7091c6b173e}{Struct}}\ =\ 5,}
+\DoxyCodeLine{00185\ \ \ \mbox{\hyperlink{structflatbuffers_1_1String}{String}}\ =\ 6,}
+\DoxyCodeLine{00186\ \ \ \mbox{\hyperlink{classflatbuffers_1_1Vector}{Vector}}\ =\ 7,}
+\DoxyCodeLine{00187\ \ \ \mbox{\hyperlink{namespaceflatbuffers_a83021555a8107d7d2791e8db0b4d7d18aaef12e903e606a4895a16b393bfdec8c}{Union}}\ =\ 8,}
+\DoxyCodeLine{00188\ \ \ \mbox{\hyperlink{namespaceflatbuffers_a90c9f831ebebbb6cc3ebcff20848c9b7aa10443964156b9e87c95e74c8f9baf15}{Padding}}\ =\ 9,}
+\DoxyCodeLine{00189\ \ \ \mbox{\hyperlink{classflatbuffers_1_1Vector}{Vector64}}\ =\ 10,}
+\DoxyCodeLine{00190\ \};}
+\DoxyCodeLine{00191\ }
+\DoxyCodeLine{00192\ \textcolor{comment}{//\ A\ section\ of\ the\ binary\ that\ is\ grouped\ together\ in\ some\ logical\ manner,\ and}}
+\DoxyCodeLine{00193\ \textcolor{comment}{//\ often\ is\ pointed\ too\ by\ some\ other\ offset\ BinaryRegion.\ Sections\ include}}
+\DoxyCodeLine{00194\ \textcolor{comment}{//\ \`{}tables`,\ \`{}vtables`,\ \`{}strings`,\ \`{}vectors`,\ etc..}}
+\DoxyCodeLine{00195\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structflatbuffers_1_1BinarySection}{BinarySection}}\ \{}
+\DoxyCodeLine{00196\ \ \ \textcolor{comment}{//\ User-\/specified\ name\ of\ the\ section,\ if\ applicable.}}
+\DoxyCodeLine{00197\ \ \ std::string\ \mbox{\hyperlink{structflatbuffers_1_1BinarySection_a0a2df8c87c7b8494890fc9aaba6b451e}{name}};}
+\DoxyCodeLine{00198\ }
+\DoxyCodeLine{00199\ \ \ \textcolor{comment}{//\ The\ type\ of\ this\ section.}}
+\DoxyCodeLine{00200\ \ \ \mbox{\hyperlink{namespaceflatbuffers_a83021555a8107d7d2791e8db0b4d7d18}{BinarySectionType}}\ \mbox{\hyperlink{structflatbuffers_1_1BinarySection_a5fd8863a47bb9db9ed9c7b2fa0c2a0a1}{type}}\ =\ \mbox{\hyperlink{namespaceflatbuffers_a83021555a8107d7d2791e8db0b4d7d18a88183b946cc5f0e8c96b2e66e1c74a7e}{BinarySectionType::Unknown}};}
+\DoxyCodeLine{00201\ }
+\DoxyCodeLine{00202\ \ \ \textcolor{comment}{//\ The\ binary\ regions\ that\ make\ up\ this\ section,\ in\ order\ of\ their\ offsets.}}
+\DoxyCodeLine{00203\ \ \ std::vector<BinaryRegion>\ \mbox{\hyperlink{structflatbuffers_1_1BinarySection_a3406ba26c6f4d0cf7b9940b14de4ccaa}{regions}};}
+\DoxyCodeLine{00204\ \};}
+\DoxyCodeLine{00205\ }
+\DoxyCodeLine{00206\ \textcolor{keyword}{inline}\ \textcolor{keyword}{static}\ \mbox{\hyperlink{namespaceflatbuffers_a33c27de12587a162bc0111b2e6a58879}{BinaryRegionType}}\ GetRegionType(\mbox{\hyperlink{namespacereflection_a94d99018201fa75e6e29207136c64d98}{reflection::BaseType}}\ base\_type)\ \{}
+\DoxyCodeLine{00207\ \ \ \textcolor{keywordflow}{switch}\ (base\_type)\ \{}
+\DoxyCodeLine{00208\ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{namespacereflection_a94d99018201fa75e6e29207136c64d98a4689d6a6cc121b8dde9bf03191dae002}{reflection::UType}}:\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{namespaceflatbuffers_a33c27de12587a162bc0111b2e6a58879a05596c73b0345cc43c028d2e36c2a0f1}{BinaryRegionType::UType}};}
+\DoxyCodeLine{00209\ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{namespacereflection_a94d99018201fa75e6e29207136c64d98a3c69f16b8309644035c0fadd2d82475e}{reflection::Bool}}:\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{namespaceflatbuffers_a33c27de12587a162bc0111b2e6a58879a3a33b05b1fe0bad48ad87ffbacdddd15}{BinaryRegionType::Uint8}};}
+\DoxyCodeLine{00210\ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{namespacereflection_a94d99018201fa75e6e29207136c64d98a3a6a633b39aaa0ec835822e110bb1d21}{reflection::Byte}}:\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{namespaceflatbuffers_a33c27de12587a162bc0111b2e6a58879a3a33b05b1fe0bad48ad87ffbacdddd15}{BinaryRegionType::Uint8}};}
+\DoxyCodeLine{00211\ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{namespacereflection_a94d99018201fa75e6e29207136c64d98a9f2ab571567df364808930c30569013c}{reflection::UByte}}:\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{namespaceflatbuffers_a33c27de12587a162bc0111b2e6a58879a3a33b05b1fe0bad48ad87ffbacdddd15}{BinaryRegionType::Uint8}};}
+\DoxyCodeLine{00212\ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{namespacereflection_a94d99018201fa75e6e29207136c64d98a5790064404173130aa484e61c6cd78b6}{reflection::Short}}:\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{namespaceflatbuffers_a33c27de12587a162bc0111b2e6a58879a39bc2ae44b184207f560ff8619823208}{BinaryRegionType::Int16}};}
+\DoxyCodeLine{00213\ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{namespacereflection_a94d99018201fa75e6e29207136c64d98a01ec82820fb9843da46eeda5721ec304}{reflection::UShort}}:\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{namespaceflatbuffers_a33c27de12587a162bc0111b2e6a58879a3167337450665ae9b3b34004d33cafe8}{BinaryRegionType::Uint16}};}
+\DoxyCodeLine{00214\ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{namespacereflection_a94d99018201fa75e6e29207136c64d98adf5b5eabd12251e4418dffccc07acc89}{reflection::Int}}:\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{namespaceflatbuffers_a33c27de12587a162bc0111b2e6a58879a2f3a46e0add3a07937412cbeb8f95727}{BinaryRegionType::Uint32}};}
+\DoxyCodeLine{00215\ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{namespacereflection_a94d99018201fa75e6e29207136c64d98a4fa23d5e52107809a503cf4c9fa9aa01}{reflection::UInt}}:\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{namespaceflatbuffers_a33c27de12587a162bc0111b2e6a58879a2f3a46e0add3a07937412cbeb8f95727}{BinaryRegionType::Uint32}};}
+\DoxyCodeLine{00216\ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{namespacereflection_a94d99018201fa75e6e29207136c64d98a95a3aaa2584bd74ccca34ad4a931cd76}{reflection::Long}}:\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{namespaceflatbuffers_a33c27de12587a162bc0111b2e6a58879afbde23b11d7e59af7828e81144c8b487}{BinaryRegionType::Int64}};}
+\DoxyCodeLine{00217\ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{namespacereflection_a94d99018201fa75e6e29207136c64d98ab1a1d1835f326bc2612c415a04447902}{reflection::ULong}}:\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{namespaceflatbuffers_a33c27de12587a162bc0111b2e6a58879ac970503874fb72afdf908cb54a4c10ee}{BinaryRegionType::Uint64}};}
+\DoxyCodeLine{00218\ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{namespacereflection_a94d99018201fa75e6e29207136c64d98aac6ed15085e2175d406ea383633c5fec}{reflection::Float}}:\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{namespaceflatbuffers_a33c27de12587a162bc0111b2e6a58879a22ae0e2b89e5e3d477f988cc36d3272b}{BinaryRegionType::Float}};}
+\DoxyCodeLine{00219\ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{namespacereflection_a94d99018201fa75e6e29207136c64d98af9b45883f4c280f7ca18fdda09699452}{reflection::Double}}:\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{namespaceflatbuffers_a33c27de12587a162bc0111b2e6a58879ad909d38d705ce75386dd86e611a82f5b}{BinaryRegionType::Double}};}
+\DoxyCodeLine{00220\ \ \ \ \ \textcolor{keywordflow}{default}:\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{namespaceflatbuffers_a33c27de12587a162bc0111b2e6a58879a88183b946cc5f0e8c96b2e66e1c74a7e}{BinaryRegionType::Unknown}};}
+\DoxyCodeLine{00221\ \ \ \}}
+\DoxyCodeLine{00222\ \}}
+\DoxyCodeLine{00223\ }
+\DoxyCodeLine{00224\ \textcolor{keyword}{inline}\ \textcolor{keyword}{static}\ std::string\ ToString(\textcolor{keyword}{const}\ \mbox{\hyperlink{namespaceflatbuffers_a33c27de12587a162bc0111b2e6a58879}{BinaryRegionType}}\ type)\ \{}
+\DoxyCodeLine{00225\ \ \ \textcolor{keywordflow}{switch}\ (type)\ \{}
+\DoxyCodeLine{00226\ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{namespaceflatbuffers_a33c27de12587a162bc0111b2e6a58879a73cd3aff5b763333c1e8c493bd3d6de9}{BinaryRegionType::UOffset}}:\ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}UOffset32"{}};}
+\DoxyCodeLine{00227\ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{namespaceflatbuffers_a33c27de12587a162bc0111b2e6a58879abd92630a443fa538b56d10dc61fe6b26}{BinaryRegionType::UOffset64}}:\ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}UOffset64"{}};}
+\DoxyCodeLine{00228\ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{namespaceflatbuffers_a33c27de12587a162bc0111b2e6a58879a13d20f35f9667f023ee6bd6fd40f27bb}{BinaryRegionType::SOffset}}:\ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}SOffset32"{}};}
+\DoxyCodeLine{00229\ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{namespaceflatbuffers_a33c27de12587a162bc0111b2e6a58879a5f50b24c4442e0c86b8ab5695a3c098f}{BinaryRegionType::VOffset}}:\ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}VOffset16"{}};}
+\DoxyCodeLine{00230\ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{namespaceflatbuffers_a33c27de12587a162bc0111b2e6a58879ac26f15e86e3de4c398a8273272aba034}{BinaryRegionType::Bool}}:\ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}bool"{}};}
+\DoxyCodeLine{00231\ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{namespaceflatbuffers_a33c27de12587a162bc0111b2e6a58879a8e95e84813830072b7516cfaa7dbc1a9}{BinaryRegionType::Char}}:\ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}char"{}};}
+\DoxyCodeLine{00232\ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{namespaceflatbuffers_a33c27de12587a162bc0111b2e6a58879aa245c3230debe5c956484ecc6fa93877}{BinaryRegionType::Byte}}:\ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}int8\_t"{}};}
+\DoxyCodeLine{00233\ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{namespaceflatbuffers_a33c27de12587a162bc0111b2e6a58879a3a33b05b1fe0bad48ad87ffbacdddd15}{BinaryRegionType::Uint8}}:\ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}uint8\_t"{}};}
+\DoxyCodeLine{00234\ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{namespaceflatbuffers_a33c27de12587a162bc0111b2e6a58879a3167337450665ae9b3b34004d33cafe8}{BinaryRegionType::Uint16}}:\ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}uint16\_t"{}};}
+\DoxyCodeLine{00235\ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{namespaceflatbuffers_a33c27de12587a162bc0111b2e6a58879a2f3a46e0add3a07937412cbeb8f95727}{BinaryRegionType::Uint32}}:\ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}uint32\_t"{}};}
+\DoxyCodeLine{00236\ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{namespaceflatbuffers_a33c27de12587a162bc0111b2e6a58879ac970503874fb72afdf908cb54a4c10ee}{BinaryRegionType::Uint64}}:\ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}uint64\_t"{}};}
+\DoxyCodeLine{00237\ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{namespaceflatbuffers_a33c27de12587a162bc0111b2e6a58879a7d839b2c12bfd40ac121b4cc9e81c539}{BinaryRegionType::Int8}}:\ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}int8\_t"{}};}
+\DoxyCodeLine{00238\ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{namespaceflatbuffers_a33c27de12587a162bc0111b2e6a58879a39bc2ae44b184207f560ff8619823208}{BinaryRegionType::Int16}}:\ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}int16\_t"{}};}
+\DoxyCodeLine{00239\ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{namespaceflatbuffers_a33c27de12587a162bc0111b2e6a58879ac06129f6e6e15c09328365e553f1dc31}{BinaryRegionType::Int32}}:\ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}int32\_t"{}};}
+\DoxyCodeLine{00240\ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{namespaceflatbuffers_a33c27de12587a162bc0111b2e6a58879afbde23b11d7e59af7828e81144c8b487}{BinaryRegionType::Int64}}:\ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}int64\_t"{}};}
+\DoxyCodeLine{00241\ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{namespaceflatbuffers_a33c27de12587a162bc0111b2e6a58879ad909d38d705ce75386dd86e611a82f5b}{BinaryRegionType::Double}}:\ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}double"{}};}
+\DoxyCodeLine{00242\ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{namespaceflatbuffers_a33c27de12587a162bc0111b2e6a58879a22ae0e2b89e5e3d477f988cc36d3272b}{BinaryRegionType::Float}}:\ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}float"{}};}
+\DoxyCodeLine{00243\ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{namespaceflatbuffers_a33c27de12587a162bc0111b2e6a58879a05596c73b0345cc43c028d2e36c2a0f1}{BinaryRegionType::UType}}:\ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}UType8"{}};}
+\DoxyCodeLine{00244\ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{namespaceflatbuffers_a33c27de12587a162bc0111b2e6a58879a88183b946cc5f0e8c96b2e66e1c74a7e}{BinaryRegionType::Unknown}}:\ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}?uint8\_t"{}};}
+\DoxyCodeLine{00245\ \ \ \ \ \textcolor{keywordflow}{default}:\ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}todo"{}};}
+\DoxyCodeLine{00246\ \ \ \}}
+\DoxyCodeLine{00247\ \}}
+\DoxyCodeLine{00248\ }
+\DoxyCodeLine{00249\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classflatbuffers_1_1BinaryAnnotator}{BinaryAnnotator}}\ \{}
+\DoxyCodeLine{00250\ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00251\ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classflatbuffers_1_1BinaryAnnotator_ab31c1953b72e97ea814c58d44b069daf}{BinaryAnnotator}}(\textcolor{keyword}{const}\ uint8\_t\ *\textcolor{keyword}{const}\ bfbs,}
+\DoxyCodeLine{00252\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ uint64\_t\ bfbs\_length,}
+\DoxyCodeLine{00253\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ uint8\_t\ *\textcolor{keyword}{const}\ binary,}
+\DoxyCodeLine{00254\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ uint64\_t\ binary\_length,}
+\DoxyCodeLine{00255\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{bool}\ is\_size\_prefixed)}
+\DoxyCodeLine{00256\ \ \ \ \ \ \ :\ bfbs\_(bfbs),}
+\DoxyCodeLine{00257\ \ \ \ \ \ \ \ \ bfbs\_length\_(bfbs\_length),}
+\DoxyCodeLine{00258\ \ \ \ \ \ \ \ \ schema\_(\mbox{\hyperlink{namespacereflection}{reflection}}::GetSchema(bfbs)),}
+\DoxyCodeLine{00259\ \ \ \ \ \ \ \ \ root\_table\_(\textcolor{stringliteral}{"{}"{}}),}
+\DoxyCodeLine{00260\ \ \ \ \ \ \ \ \ binary\_(binary),}
+\DoxyCodeLine{00261\ \ \ \ \ \ \ \ \ binary\_length\_(binary\_length),}
+\DoxyCodeLine{00262\ \ \ \ \ \ \ \ \ is\_size\_prefixed\_(is\_size\_prefixed)\ \{\}}
+\DoxyCodeLine{00263\ }
+\DoxyCodeLine{00264\ \ \ \mbox{\hyperlink{classflatbuffers_1_1BinaryAnnotator_aa5bfdf78be95872e8ac6c995d0a34b43}{BinaryAnnotator}}(\textcolor{keyword}{const}\ reflection::Schema\ *schema,}
+\DoxyCodeLine{00265\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\ \&root\_table,\ \textcolor{keyword}{const}\ uint8\_t\ *binary,}
+\DoxyCodeLine{00266\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint64\_t\ binary\_length,\ \textcolor{keywordtype}{bool}\ is\_size\_prefixed)}
+\DoxyCodeLine{00267\ \ \ \ \ \ \ :\ bfbs\_(nullptr),}
+\DoxyCodeLine{00268\ \ \ \ \ \ \ \ \ bfbs\_length\_(0),}
+\DoxyCodeLine{00269\ \ \ \ \ \ \ \ \ schema\_(schema),}
+\DoxyCodeLine{00270\ \ \ \ \ \ \ \ \ root\_table\_(root\_table),}
+\DoxyCodeLine{00271\ \ \ \ \ \ \ \ \ binary\_(binary),}
+\DoxyCodeLine{00272\ \ \ \ \ \ \ \ \ binary\_length\_(binary\_length),}
+\DoxyCodeLine{00273\ \ \ \ \ \ \ \ \ is\_size\_prefixed\_(is\_size\_prefixed)\ \{\}}
+\DoxyCodeLine{00274\ }
+\DoxyCodeLine{00275\ \ \ std::map<uint64\_t,\ BinarySection>\ \mbox{\hyperlink{classflatbuffers_1_1BinaryAnnotator_a843585cfe81fa3c83774a1de7d70abb7}{Annotate}}();}
+\DoxyCodeLine{00276\ }
+\DoxyCodeLine{00277\ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00278\ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{namespaceflatbuffers_a83021555a8107d7d2791e8db0b4d7d18a5fe1b444a36c9acc94c001c1add97722}{VTable}}\ \{}
+\DoxyCodeLine{00279\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structflatbuffers_1_1BinaryAnnotator_1_1VTable_1_1Entry}{Entry}}\ \{}
+\DoxyCodeLine{00280\ \ \ \ \ \ \ \textcolor{keyword}{const}\ reflection::Field\ *\mbox{\hyperlink{structflatbuffers_1_1BinaryAnnotator_1_1VTable_1_1Entry_a711bbf053bbfe5914d21d6e2d5292fef}{field}}\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00281\ \ \ \ \ \ \ uint16\_t\ \mbox{\hyperlink{structflatbuffers_1_1BinaryAnnotator_1_1VTable_1_1Entry_a8e6354a182f5cfb81715e2e3e41e56a4}{offset\_from\_table}}\ =\ 0;}
+\DoxyCodeLine{00282\ \ \ \ \ \};}
+\DoxyCodeLine{00283\ }
+\DoxyCodeLine{00284\ \ \ \ \ \textcolor{keyword}{const}\ reflection::Object\ *referring\_table\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00285\ }
+\DoxyCodeLine{00286\ \ \ \ \ \textcolor{comment}{//\ Field\ ID\ -\/>\ \{field\ def,\ offset\ from\ table\}}}
+\DoxyCodeLine{00287\ \ \ \ \ std::map<uint16\_t,\ Entry>\ fields;}
+\DoxyCodeLine{00288\ }
+\DoxyCodeLine{00289\ \ \ \ \ uint16\_t\ vtable\_size\ =\ 0;}
+\DoxyCodeLine{00290\ \ \ \ \ uint16\_t\ table\_size\ =\ 0;}
+\DoxyCodeLine{00291\ \ \ \};}
+\DoxyCodeLine{00292\ }
+\DoxyCodeLine{00293\ \ \ uint64\_t\ BuildHeader(uint64\_t\ offset);}
+\DoxyCodeLine{00294\ }
+\DoxyCodeLine{00295\ \ \ \textcolor{comment}{//\ VTables\ can\ be\ shared\ across\ instances\ or\ even\ across\ objects.\ This}}
+\DoxyCodeLine{00296\ \ \ \textcolor{comment}{//\ attempts\ to\ get\ an\ existing\ vtable\ given\ the\ offset\ and\ table\ type,}}
+\DoxyCodeLine{00297\ \ \ \textcolor{comment}{//\ otherwise\ it\ will\ built\ the\ vtable,\ memorize\ it,\ and\ return\ the\ built}}
+\DoxyCodeLine{00298\ \ \ \textcolor{comment}{//\ VTable.\ Returns\ nullptr\ if\ building\ the\ VTable\ fails.}}
+\DoxyCodeLine{00299\ \ \ \mbox{\hyperlink{namespaceflatbuffers_a83021555a8107d7d2791e8db0b4d7d18a5fe1b444a36c9acc94c001c1add97722}{VTable}}\ *GetOrBuildVTable(uint64\_t\ offset,\ \textcolor{keyword}{const}\ reflection::Object\ *table,}
+\DoxyCodeLine{00300\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint64\_t\ offset\_of\_referring\_table);}
+\DoxyCodeLine{00301\ }
+\DoxyCodeLine{00302\ \ \ \textcolor{keywordtype}{void}\ BuildTable(uint64\_t\ offset,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{namespaceflatbuffers_a83021555a8107d7d2791e8db0b4d7d18}{BinarySectionType}}\ type,}
+\DoxyCodeLine{00303\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ reflection::Object\ *table);}
+\DoxyCodeLine{00304\ }
+\DoxyCodeLine{00305\ \ \ uint64\_t\ BuildStruct(uint64\_t\ offset,\ std::vector<BinaryRegion>\ \&regions,}
+\DoxyCodeLine{00306\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\ referring\_field\_name,}
+\DoxyCodeLine{00307\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ reflection::Object\ *structure);}
+\DoxyCodeLine{00308\ }
+\DoxyCodeLine{00309\ \ \ \textcolor{keywordtype}{void}\ BuildString(uint64\_t\ offset,\ \textcolor{keyword}{const}\ reflection::Object\ *table,}
+\DoxyCodeLine{00310\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ reflection::Field\ *field);}
+\DoxyCodeLine{00311\ }
+\DoxyCodeLine{00312\ \ \ \textcolor{keywordtype}{void}\ BuildVector(uint64\_t\ offset,\ \textcolor{keyword}{const}\ reflection::Object\ *table,}
+\DoxyCodeLine{00313\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ reflection::Field\ *field,\ uint64\_t\ parent\_table\_offset,}
+\DoxyCodeLine{00314\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::map<uint16\_t,\ VTable::Entry>\ vtable\_fields);}
+\DoxyCodeLine{00315\ }
+\DoxyCodeLine{00316\ \ \ std::string\ BuildUnion(uint64\_t\ offset,\ uint8\_t\ realized\_type,}
+\DoxyCodeLine{00317\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ reflection::Field\ *field);}
+\DoxyCodeLine{00318\ }
+\DoxyCodeLine{00319\ \ \ \textcolor{keywordtype}{void}\ FixMissingRegions();}
+\DoxyCodeLine{00320\ \ \ \textcolor{keywordtype}{void}\ FixMissingSections();}
+\DoxyCodeLine{00321\ }
+\DoxyCodeLine{00322\ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{bool}\ IsValidOffset(\textcolor{keyword}{const}\ uint64\_t\ offset)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00323\ \ \ \ \ \textcolor{keywordflow}{return}\ offset\ <\ binary\_length\_;}
+\DoxyCodeLine{00324\ \ \ \}}
+\DoxyCodeLine{00325\ }
+\DoxyCodeLine{00326\ \ \ \textcolor{comment}{//\ Determines\ if\ performing\ a\ GetScalar\ request\ for\ \`{}T`\ at\ \`{}offset`\ would\ read}}
+\DoxyCodeLine{00327\ \ \ \textcolor{comment}{//\ passed\ the\ end\ of\ the\ binary.}}
+\DoxyCodeLine{00328\ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{bool}\ IsValidRead(\textcolor{keyword}{const}\ uint64\_t\ offset)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00329\ \ \ \ \ \textcolor{keywordflow}{return}\ IsValidRead(offset,\ \textcolor{keyword}{sizeof}(T));}
+\DoxyCodeLine{00330\ \ \ \}}
+\DoxyCodeLine{00331\ }
+\DoxyCodeLine{00332\ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{bool}\ IsValidRead(\textcolor{keyword}{const}\ uint64\_t\ offset,\ \textcolor{keyword}{const}\ uint64\_t\ length)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00333\ \ \ \ \ \textcolor{keywordflow}{return}\ length\ <\ binary\_length\_\ \&\&\ IsValidOffset(offset\ +\ length\ -\/\ 1);}
+\DoxyCodeLine{00334\ \ \ \}}
+\DoxyCodeLine{00335\ }
+\DoxyCodeLine{00336\ \ \ \textcolor{comment}{//\ Calculate\ the\ number\ of\ bytes\ remaining\ from\ the\ given\ offset.\ If\ offset\ is}}
+\DoxyCodeLine{00337\ \ \ \textcolor{comment}{//\ >\ binary\_length,\ 0\ is\ returned.}}
+\DoxyCodeLine{00338\ \ \ uint64\_t\ RemainingBytes(\textcolor{keyword}{const}\ uint64\_t\ offset)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00339\ \ \ \ \ \textcolor{keywordflow}{return}\ IsValidOffset(offset)\ ?\ binary\_length\_\ -\/\ offset\ :\ 0;}
+\DoxyCodeLine{00340\ \ \ \}}
+\DoxyCodeLine{00341\ }
+\DoxyCodeLine{00342\ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00343\ \ \ flatbuffers::Optional<T>\ ReadScalar(\textcolor{keyword}{const}\ uint64\_t\ offset)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00344\ \ \ \ \ \textcolor{keywordflow}{if}\ (!IsValidRead<T>(offset))\ \{\ \textcolor{keywordflow}{return}\ flatbuffers::nullopt;\ \}}
+\DoxyCodeLine{00345\ }
+\DoxyCodeLine{00346\ \ \ \ \ \textcolor{keywordflow}{return}\ flatbuffers::ReadScalar<T>(binary\_\ +\ offset);}
+\DoxyCodeLine{00347\ \ \ \}}
+\DoxyCodeLine{00348\ }
+\DoxyCodeLine{00349\ \ \ \textcolor{comment}{//\ Adds\ the\ provided\ \`{}section`\ keyed\ by\ the\ \`{}offset`\ it\ occurs\ at.\ If\ a}}
+\DoxyCodeLine{00350\ \ \ \textcolor{comment}{//\ section\ is\ already\ added\ at\ that\ offset,\ it\ doesn't\ replace\ the\ existing}}
+\DoxyCodeLine{00351\ \ \ \textcolor{comment}{//\ one.}}
+\DoxyCodeLine{00352\ \ \ \textcolor{keywordtype}{void}\ AddSection(\textcolor{keyword}{const}\ uint64\_t\ offset,\ \textcolor{keyword}{const}\ BinarySection\ \&section)\ \{}
+\DoxyCodeLine{00353\ \ \ \ \ sections\_.insert(std::make\_pair(offset,\ section));}
+\DoxyCodeLine{00354\ \ \ \}}
+\DoxyCodeLine{00355\ }
+\DoxyCodeLine{00356\ \ \ \textcolor{keywordtype}{bool}\ IsInlineField(\textcolor{keyword}{const}\ reflection::Field\ *\textcolor{keyword}{const}\ field)\ \{}
+\DoxyCodeLine{00357\ \ \ \ \ \textcolor{keywordflow}{if}\ (field-\/>type()-\/>base\_type()\ ==\ \mbox{\hyperlink{namespacereflection_a94d99018201fa75e6e29207136c64d98aa8b436877df407b768c87b7c1f6fc8de}{reflection::BaseType::Obj}})\ \{}
+\DoxyCodeLine{00358\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ schema\_-\/>objects()-\/>Get(field-\/>type()-\/>index())-\/>is\_struct();}
+\DoxyCodeLine{00359\ \ \ \ \ \}}
+\DoxyCodeLine{00360\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{namespaceflatbuffers_a134241b686451d29d27cb40a94370ba5}{IsScalar}}(field-\/>type()-\/>base\_type());}
+\DoxyCodeLine{00361\ \ \ \}}
+\DoxyCodeLine{00362\ }
+\DoxyCodeLine{00363\ \ \ \textcolor{keywordtype}{bool}\ IsUnionType(\textcolor{keyword}{const}\ \mbox{\hyperlink{namespacereflection_a94d99018201fa75e6e29207136c64d98}{reflection::BaseType}}\ type)\ \{}
+\DoxyCodeLine{00364\ \ \ \ \ \textcolor{keywordflow}{return}\ (type\ ==\ \mbox{\hyperlink{namespacereflection_a94d99018201fa75e6e29207136c64d98a4689d6a6cc121b8dde9bf03191dae002}{reflection::BaseType::UType}}\ ||}
+\DoxyCodeLine{00365\ \ \ \ \ \ \ \ \ \ \ \ \ type\ ==\ \mbox{\hyperlink{namespacereflection_a94d99018201fa75e6e29207136c64d98a81945d64788a52fa2bc740d7715b0f9a}{reflection::BaseType::Union}});}
+\DoxyCodeLine{00366\ \ \ \}}
+\DoxyCodeLine{00367\ }
+\DoxyCodeLine{00368\ \ \ \textcolor{keywordtype}{bool}\ IsUnionType(\textcolor{keyword}{const}\ reflection::Field\ *\textcolor{keyword}{const}\ field)\ \{}
+\DoxyCodeLine{00369\ \ \ \ \ \textcolor{keywordflow}{return}\ IsUnionType(field-\/>type()-\/>base\_type())\ \&\&}
+\DoxyCodeLine{00370\ \ \ \ \ \ \ \ \ \ \ \ field-\/>type()-\/>index()\ >=\ 0;}
+\DoxyCodeLine{00371\ \ \ \}}
+\DoxyCodeLine{00372\ }
+\DoxyCodeLine{00373\ \ \ \textcolor{keywordtype}{bool}\ IsValidUnionValue(\textcolor{keyword}{const}\ reflection::Field\ *\textcolor{keyword}{const}\ field,}
+\DoxyCodeLine{00374\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ uint8\_t\ \mbox{\hyperlink{annotated__binary__text__gen_8cpp_a5c33da5929c9f2f9ef8d006d2350e6ec}{value}})\ \{}
+\DoxyCodeLine{00375\ \ \ \ \ \textcolor{keywordflow}{return}\ IsUnionType(field)\ \&\&}
+\DoxyCodeLine{00376\ \ \ \ \ \ \ \ \ \ \ \ IsValidUnionValue(field-\/>type()-\/>index(),\ \mbox{\hyperlink{annotated__binary__text__gen_8cpp_a5c33da5929c9f2f9ef8d006d2350e6ec}{value}});}
+\DoxyCodeLine{00377\ \ \ \}}
+\DoxyCodeLine{00378\ }
+\DoxyCodeLine{00379\ \ \ \textcolor{keywordtype}{bool}\ IsValidUnionValue(\textcolor{keyword}{const}\ uint32\_t\ enum\_id,\ \textcolor{keyword}{const}\ uint8\_t\ \mbox{\hyperlink{annotated__binary__text__gen_8cpp_a5c33da5929c9f2f9ef8d006d2350e6ec}{value}})\ \{}
+\DoxyCodeLine{00380\ \ \ \ \ \textcolor{keywordflow}{if}\ (enum\_id\ >=\ schema\_-\/>enums()-\/>size())\ \{\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};\ \}}
+\DoxyCodeLine{00381\ }
+\DoxyCodeLine{00382\ \ \ \ \ \textcolor{keyword}{const}\ reflection::Enum\ *enum\_def\ =\ schema\_-\/>enums()-\/>Get(enum\_id);}
+\DoxyCodeLine{00383\ }
+\DoxyCodeLine{00384\ \ \ \ \ \textcolor{keywordflow}{if}\ (enum\_def\ ==\ \textcolor{keyword}{nullptr})\ \{\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};\ \}}
+\DoxyCodeLine{00385\ }
+\DoxyCodeLine{00386\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{annotated__binary__text__gen_8cpp_a5c33da5929c9f2f9ef8d006d2350e6ec}{value}}\ <\ enum\_def-\/>values()-\/>size();}
+\DoxyCodeLine{00387\ \ \ \}}
+\DoxyCodeLine{00388\ }
+\DoxyCodeLine{00389\ \ \ uint64\_t\ GetElementSize(\textcolor{keyword}{const}\ reflection::Field\ *\textcolor{keyword}{const}\ field)\ \{}
+\DoxyCodeLine{00390\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{namespaceflatbuffers_a134241b686451d29d27cb40a94370ba5}{IsScalar}}(field-\/>type()-\/>element()))\ \{}
+\DoxyCodeLine{00391\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{namespaceflatbuffers_ac27552c87ff00e7aed58f7feefcdbcd3}{GetTypeSize}}(field-\/>type()-\/>element());}
+\DoxyCodeLine{00392\ \ \ \ \ \}}
+\DoxyCodeLine{00393\ }
+\DoxyCodeLine{00394\ \ \ \ \ \textcolor{keywordflow}{switch}\ (field-\/>type()-\/>element())\ \{}
+\DoxyCodeLine{00395\ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{namespacereflection_a94d99018201fa75e6e29207136c64d98aa8b436877df407b768c87b7c1f6fc8de}{reflection::BaseType::Obj}}:\ \{}
+\DoxyCodeLine{00396\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ obj\ =\ schema\_-\/>objects()-\/>Get(field-\/>type()-\/>index());}
+\DoxyCodeLine{00397\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ obj-\/>is\_struct()\ ?\ obj-\/>bytesize()\ :\ \textcolor{keyword}{sizeof}(uint32\_t);}
+\DoxyCodeLine{00398\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00399\ \ \ \ \ \ \ \textcolor{keywordflow}{default}:\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{sizeof}(uint32\_t);}
+\DoxyCodeLine{00400\ \ \ \ \ \}}
+\DoxyCodeLine{00401\ \ \ \}}
+\DoxyCodeLine{00402\ }
+\DoxyCodeLine{00403\ \ \ \textcolor{keywordtype}{bool}\ ContainsSection(\textcolor{keyword}{const}\ uint64\_t\ offset);}
+\DoxyCodeLine{00404\ }
+\DoxyCodeLine{00405\ \ \ \textcolor{keyword}{const}\ reflection::Object\ *RootTable()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00406\ }
+\DoxyCodeLine{00407\ \ \ \textcolor{comment}{//\ The\ schema\ for\ the\ binary\ file}}
+\DoxyCodeLine{00408\ \ \ \textcolor{keyword}{const}\ uint8\_t\ *bfbs\_;}
+\DoxyCodeLine{00409\ \ \ \textcolor{keyword}{const}\ uint64\_t\ bfbs\_length\_;}
+\DoxyCodeLine{00410\ \ \ \textcolor{keyword}{const}\ reflection::Schema\ *schema\_;}
+\DoxyCodeLine{00411\ \ \ \textcolor{keyword}{const}\ std::string\ root\_table\_;}
+\DoxyCodeLine{00412\ }
+\DoxyCodeLine{00413\ \ \ \textcolor{comment}{//\ The\ binary\ data\ itself.}}
+\DoxyCodeLine{00414\ \ \ \textcolor{keyword}{const}\ uint8\_t\ *binary\_;}
+\DoxyCodeLine{00415\ \ \ \textcolor{keyword}{const}\ uint64\_t\ binary\_length\_;}
+\DoxyCodeLine{00416\ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{bool}\ is\_size\_prefixed\_;}
+\DoxyCodeLine{00417\ }
+\DoxyCodeLine{00418\ \ \ \textcolor{comment}{//\ Map\ of\ binary\ offset\ to\ vtables,\ to\ dedupe\ vtables.}}
+\DoxyCodeLine{00419\ \ \ std::map<uint64\_t,\ std::list<VTable>>\ vtables\_;}
+\DoxyCodeLine{00420\ }
+\DoxyCodeLine{00421\ \ \ \textcolor{comment}{//\ The\ annotated\ binary\ sections,\ index\ by\ their\ absolute\ offset.}}
+\DoxyCodeLine{00422\ \ \ std::map<uint64\_t,\ BinarySection>\ sections\_;}
+\DoxyCodeLine{00423\ \};}
+\DoxyCodeLine{00424\ }
+\DoxyCodeLine{00425\ \}\ \ \textcolor{comment}{//\ namespace\ flatbuffers}}
+\DoxyCodeLine{00426\ }
+\DoxyCodeLine{00427\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ FLATBUFFERS\_BINARY\_ANNOTATOR\_H\_}}
+
+\end{DoxyCode}

@@ -1,0 +1,212 @@
+\doxysection{com.\+google.\+flatbuffers.\+Read\+Buf Interface Reference}
+\hypertarget{interfacecom_1_1google_1_1flatbuffers_1_1ReadBuf}{}\label{interfacecom_1_1google_1_1flatbuffers_1_1ReadBuf}\index{com.google.flatbuffers.ReadBuf@{com.google.flatbuffers.ReadBuf}}
+
+
+Inheritance diagram for com.\+google.\+flatbuffers.\+Read\+Buf\+:
+% FIG 0
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+boolean \mbox{\hyperlink{interfacecom_1_1google_1_1flatbuffers_1_1ReadBuf_a4cd2ca604d2dc0a78b83d572cc4e4048}{get\+Boolean}} (int index)
+\item 
+byte \mbox{\hyperlink{interfacecom_1_1google_1_1flatbuffers_1_1ReadBuf_a9d10237e6fba120b292dca3bd3e5bb14}{get}} (int index)
+\item 
+short \mbox{\hyperlink{interfacecom_1_1google_1_1flatbuffers_1_1ReadBuf_a0fd31ab96ff910d2b029f8e0c995e6c0}{get\+Short}} (int index)
+\item 
+int \mbox{\hyperlink{interfacecom_1_1google_1_1flatbuffers_1_1ReadBuf_a7b1b5d410baa0171ecbc87b4605fc43e}{get\+Int}} (int index)
+\item 
+long \mbox{\hyperlink{interfacecom_1_1google_1_1flatbuffers_1_1ReadBuf_a37c04ff40b667285a72d38cfbd004d38}{get\+Long}} (int index)
+\item 
+float \mbox{\hyperlink{interfacecom_1_1google_1_1flatbuffers_1_1ReadBuf_a2128f1c05db0b3b06a5cfacfc0aaa26c}{get\+Float}} (int index)
+\item 
+double \mbox{\hyperlink{interfacecom_1_1google_1_1flatbuffers_1_1ReadBuf_a2dbca946a086ed56425308cc8c00b8f7}{get\+Double}} (int index)
+\item 
+String \mbox{\hyperlink{interfacecom_1_1google_1_1flatbuffers_1_1ReadBuf_a9f5c9e2642b0d48fb1b0c023349da771}{get\+String}} (int start, int size)
+\item 
+byte\mbox{[}$\,$\mbox{]} \mbox{\hyperlink{interfacecom_1_1google_1_1flatbuffers_1_1ReadBuf_a6567b4cc49c02c4a2c7e7521e26213a2}{data}} ()
+\item 
+int \mbox{\hyperlink{interfacecom_1_1google_1_1flatbuffers_1_1ReadBuf_aa0d26f781c088a7bdcc59116f7ee947f}{limit}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represent a chunk of data, where Flex\+Buffers will read from. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{interfacecom_1_1google_1_1flatbuffers_1_1ReadBuf_a6567b4cc49c02c4a2c7e7521e26213a2}\label{interfacecom_1_1google_1_1flatbuffers_1_1ReadBuf_a6567b4cc49c02c4a2c7e7521e26213a2} 
+\index{com.google.flatbuffers.ReadBuf@{com.google.flatbuffers.ReadBuf}!data@{data}}
+\index{data@{data}!com.google.flatbuffers.ReadBuf@{com.google.flatbuffers.ReadBuf}}
+\doxysubsubsection{\texorpdfstring{data()}{data()}}
+{\footnotesize\ttfamily byte\mbox{[}$\,$\mbox{]} com.\+google.\+flatbuffers.\+Read\+Buf.\+data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Expose Read\+Buf as an array of bytes. This method is meant to be as efficient as possible, so for a array-\/backed Read\+Buf, it should return its own internal data. In case access to internal data is not possible, a copy of the data into an array of bytes might occur. \begin{DoxyReturn}{Returns}
+Read\+Buf as an array of bytes 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classcom_1_1google_1_1flatbuffers_1_1ArrayReadWriteBuf_ab8adc98b0de731d5d940d1c210ff10fc}{com.\+google.\+flatbuffers.\+Array\+Read\+Write\+Buf}}, and \mbox{\hyperlink{classcom_1_1google_1_1flatbuffers_1_1ByteBufferReadWriteBuf_a3adcd89cc32c2a7193284e42a3a8ba17}{com.\+google.\+flatbuffers.\+Byte\+Buffer\+Read\+Write\+Buf}}.
+
+\Hypertarget{interfacecom_1_1google_1_1flatbuffers_1_1ReadBuf_a9d10237e6fba120b292dca3bd3e5bb14}\label{interfacecom_1_1google_1_1flatbuffers_1_1ReadBuf_a9d10237e6fba120b292dca3bd3e5bb14} 
+\index{com.google.flatbuffers.ReadBuf@{com.google.flatbuffers.ReadBuf}!get@{get}}
+\index{get@{get}!com.google.flatbuffers.ReadBuf@{com.google.flatbuffers.ReadBuf}}
+\doxysubsubsection{\texorpdfstring{get()}{get()}}
+{\footnotesize\ttfamily byte com.\+google.\+flatbuffers.\+Read\+Buf.\+get (\begin{DoxyParamCaption}\item[{int}]{index }\end{DoxyParamCaption})}
+
+Read a byte from data. 
+\begin{DoxyParams}{Parameters}
+{\em index} & position of the element in Read\+Buf \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a byte 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classcom_1_1google_1_1flatbuffers_1_1ArrayReadWriteBuf_ad1fa1938fc245a69af0b943848832793}{com.\+google.\+flatbuffers.\+Array\+Read\+Write\+Buf}}, and \mbox{\hyperlink{classcom_1_1google_1_1flatbuffers_1_1ByteBufferReadWriteBuf_aec1e57290aabd831a50b3f8535879fe5}{com.\+google.\+flatbuffers.\+Byte\+Buffer\+Read\+Write\+Buf}}.
+
+\Hypertarget{interfacecom_1_1google_1_1flatbuffers_1_1ReadBuf_a4cd2ca604d2dc0a78b83d572cc4e4048}\label{interfacecom_1_1google_1_1flatbuffers_1_1ReadBuf_a4cd2ca604d2dc0a78b83d572cc4e4048} 
+\index{com.google.flatbuffers.ReadBuf@{com.google.flatbuffers.ReadBuf}!getBoolean@{getBoolean}}
+\index{getBoolean@{getBoolean}!com.google.flatbuffers.ReadBuf@{com.google.flatbuffers.ReadBuf}}
+\doxysubsubsection{\texorpdfstring{getBoolean()}{getBoolean()}}
+{\footnotesize\ttfamily boolean com.\+google.\+flatbuffers.\+Read\+Buf.\+get\+Boolean (\begin{DoxyParamCaption}\item[{int}]{index }\end{DoxyParamCaption})}
+
+Read boolean from data. Booleans as stored as single byte 
+\begin{DoxyParams}{Parameters}
+{\em index} & position of the element in Read\+Buf \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+boolean element 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classcom_1_1google_1_1flatbuffers_1_1ArrayReadWriteBuf_a014dc7a3e7200996bb3c309e44d81719}{com.\+google.\+flatbuffers.\+Array\+Read\+Write\+Buf}}, and \mbox{\hyperlink{classcom_1_1google_1_1flatbuffers_1_1ByteBufferReadWriteBuf_a9db81f0aa0d0d8a55d9d816eeef5d009}{com.\+google.\+flatbuffers.\+Byte\+Buffer\+Read\+Write\+Buf}}.
+
+\Hypertarget{interfacecom_1_1google_1_1flatbuffers_1_1ReadBuf_a2dbca946a086ed56425308cc8c00b8f7}\label{interfacecom_1_1google_1_1flatbuffers_1_1ReadBuf_a2dbca946a086ed56425308cc8c00b8f7} 
+\index{com.google.flatbuffers.ReadBuf@{com.google.flatbuffers.ReadBuf}!getDouble@{getDouble}}
+\index{getDouble@{getDouble}!com.google.flatbuffers.ReadBuf@{com.google.flatbuffers.ReadBuf}}
+\doxysubsubsection{\texorpdfstring{getDouble()}{getDouble()}}
+{\footnotesize\ttfamily double com.\+google.\+flatbuffers.\+Read\+Buf.\+get\+Double (\begin{DoxyParamCaption}\item[{int}]{index }\end{DoxyParamCaption})}
+
+Read a 64-\/bit float from data. 
+\begin{DoxyParams}{Parameters}
+{\em index} & position of the element in Read\+Buf \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a double 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classcom_1_1google_1_1flatbuffers_1_1ArrayReadWriteBuf_aead600d380d6fc4835caef241ebc06b9}{com.\+google.\+flatbuffers.\+Array\+Read\+Write\+Buf}}, and \mbox{\hyperlink{classcom_1_1google_1_1flatbuffers_1_1ByteBufferReadWriteBuf_a787c463b13e258388ade44659049ec9b}{com.\+google.\+flatbuffers.\+Byte\+Buffer\+Read\+Write\+Buf}}.
+
+\Hypertarget{interfacecom_1_1google_1_1flatbuffers_1_1ReadBuf_a2128f1c05db0b3b06a5cfacfc0aaa26c}\label{interfacecom_1_1google_1_1flatbuffers_1_1ReadBuf_a2128f1c05db0b3b06a5cfacfc0aaa26c} 
+\index{com.google.flatbuffers.ReadBuf@{com.google.flatbuffers.ReadBuf}!getFloat@{getFloat}}
+\index{getFloat@{getFloat}!com.google.flatbuffers.ReadBuf@{com.google.flatbuffers.ReadBuf}}
+\doxysubsubsection{\texorpdfstring{getFloat()}{getFloat()}}
+{\footnotesize\ttfamily float com.\+google.\+flatbuffers.\+Read\+Buf.\+get\+Float (\begin{DoxyParamCaption}\item[{int}]{index }\end{DoxyParamCaption})}
+
+Read a 32-\/bit float from data. 
+\begin{DoxyParams}{Parameters}
+{\em index} & position of the element in Read\+Buf \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a float 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classcom_1_1google_1_1flatbuffers_1_1ArrayReadWriteBuf_a15e79add2143d2ce4f11c2009a1261ea}{com.\+google.\+flatbuffers.\+Array\+Read\+Write\+Buf}}, and \mbox{\hyperlink{classcom_1_1google_1_1flatbuffers_1_1ByteBufferReadWriteBuf_a3b45184a9500e409b67416ddb734085e}{com.\+google.\+flatbuffers.\+Byte\+Buffer\+Read\+Write\+Buf}}.
+
+\Hypertarget{interfacecom_1_1google_1_1flatbuffers_1_1ReadBuf_a7b1b5d410baa0171ecbc87b4605fc43e}\label{interfacecom_1_1google_1_1flatbuffers_1_1ReadBuf_a7b1b5d410baa0171ecbc87b4605fc43e} 
+\index{com.google.flatbuffers.ReadBuf@{com.google.flatbuffers.ReadBuf}!getInt@{getInt}}
+\index{getInt@{getInt}!com.google.flatbuffers.ReadBuf@{com.google.flatbuffers.ReadBuf}}
+\doxysubsubsection{\texorpdfstring{getInt()}{getInt()}}
+{\footnotesize\ttfamily int com.\+google.\+flatbuffers.\+Read\+Buf.\+get\+Int (\begin{DoxyParamCaption}\item[{int}]{index }\end{DoxyParamCaption})}
+
+Read a 32-\/bit int from data. 
+\begin{DoxyParams}{Parameters}
+{\em index} & position of the element in Read\+Buf \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+an int 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classcom_1_1google_1_1flatbuffers_1_1ArrayReadWriteBuf_a2efe5730ee74a86407929646a16faf09}{com.\+google.\+flatbuffers.\+Array\+Read\+Write\+Buf}}, and \mbox{\hyperlink{classcom_1_1google_1_1flatbuffers_1_1ByteBufferReadWriteBuf_abad9ef17aaaabe67937fdeeaf021061d}{com.\+google.\+flatbuffers.\+Byte\+Buffer\+Read\+Write\+Buf}}.
+
+\Hypertarget{interfacecom_1_1google_1_1flatbuffers_1_1ReadBuf_a37c04ff40b667285a72d38cfbd004d38}\label{interfacecom_1_1google_1_1flatbuffers_1_1ReadBuf_a37c04ff40b667285a72d38cfbd004d38} 
+\index{com.google.flatbuffers.ReadBuf@{com.google.flatbuffers.ReadBuf}!getLong@{getLong}}
+\index{getLong@{getLong}!com.google.flatbuffers.ReadBuf@{com.google.flatbuffers.ReadBuf}}
+\doxysubsubsection{\texorpdfstring{getLong()}{getLong()}}
+{\footnotesize\ttfamily long com.\+google.\+flatbuffers.\+Read\+Buf.\+get\+Long (\begin{DoxyParamCaption}\item[{int}]{index }\end{DoxyParamCaption})}
+
+Read a 64-\/bit long from data. 
+\begin{DoxyParams}{Parameters}
+{\em index} & position of the element in Read\+Buf \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a long 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classcom_1_1google_1_1flatbuffers_1_1ArrayReadWriteBuf_aa8e4762e6095d39f3a3f562c55f85d54}{com.\+google.\+flatbuffers.\+Array\+Read\+Write\+Buf}}, and \mbox{\hyperlink{classcom_1_1google_1_1flatbuffers_1_1ByteBufferReadWriteBuf_a5d6b27a33fd5ad89677f39e21178a8de}{com.\+google.\+flatbuffers.\+Byte\+Buffer\+Read\+Write\+Buf}}.
+
+\Hypertarget{interfacecom_1_1google_1_1flatbuffers_1_1ReadBuf_a0fd31ab96ff910d2b029f8e0c995e6c0}\label{interfacecom_1_1google_1_1flatbuffers_1_1ReadBuf_a0fd31ab96ff910d2b029f8e0c995e6c0} 
+\index{com.google.flatbuffers.ReadBuf@{com.google.flatbuffers.ReadBuf}!getShort@{getShort}}
+\index{getShort@{getShort}!com.google.flatbuffers.ReadBuf@{com.google.flatbuffers.ReadBuf}}
+\doxysubsubsection{\texorpdfstring{getShort()}{getShort()}}
+{\footnotesize\ttfamily short com.\+google.\+flatbuffers.\+Read\+Buf.\+get\+Short (\begin{DoxyParamCaption}\item[{int}]{index }\end{DoxyParamCaption})}
+
+Read a short from data. 
+\begin{DoxyParams}{Parameters}
+{\em index} & position of the element in Read\+Buf \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a short 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classcom_1_1google_1_1flatbuffers_1_1ArrayReadWriteBuf_a23a071854c544d7eb968955595c8c525}{com.\+google.\+flatbuffers.\+Array\+Read\+Write\+Buf}}, and \mbox{\hyperlink{classcom_1_1google_1_1flatbuffers_1_1ByteBufferReadWriteBuf_a790b18227ab7184ae28521bd0bf01800}{com.\+google.\+flatbuffers.\+Byte\+Buffer\+Read\+Write\+Buf}}.
+
+\Hypertarget{interfacecom_1_1google_1_1flatbuffers_1_1ReadBuf_a9f5c9e2642b0d48fb1b0c023349da771}\label{interfacecom_1_1google_1_1flatbuffers_1_1ReadBuf_a9f5c9e2642b0d48fb1b0c023349da771} 
+\index{com.google.flatbuffers.ReadBuf@{com.google.flatbuffers.ReadBuf}!getString@{getString}}
+\index{getString@{getString}!com.google.flatbuffers.ReadBuf@{com.google.flatbuffers.ReadBuf}}
+\doxysubsubsection{\texorpdfstring{getString()}{getString()}}
+{\footnotesize\ttfamily String com.\+google.\+flatbuffers.\+Read\+Buf.\+get\+String (\begin{DoxyParamCaption}\item[{int}]{start,  }\item[{int}]{size }\end{DoxyParamCaption})}
+
+Read an UTF-\/8 string from data. 
+\begin{DoxyParams}{Parameters}
+{\em start} & initial element of the string \\
+\hline
+{\em size} & size of the string in bytes. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a {\ttfamily String} 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classcom_1_1google_1_1flatbuffers_1_1ArrayReadWriteBuf_ab4b85878c24a6973a456f693b672a758}{com.\+google.\+flatbuffers.\+Array\+Read\+Write\+Buf}}, and \mbox{\hyperlink{classcom_1_1google_1_1flatbuffers_1_1ByteBufferReadWriteBuf_a2095fb395b7727c45b5385e6d24d7925}{com.\+google.\+flatbuffers.\+Byte\+Buffer\+Read\+Write\+Buf}}.
+
+\Hypertarget{interfacecom_1_1google_1_1flatbuffers_1_1ReadBuf_aa0d26f781c088a7bdcc59116f7ee947f}\label{interfacecom_1_1google_1_1flatbuffers_1_1ReadBuf_aa0d26f781c088a7bdcc59116f7ee947f} 
+\index{com.google.flatbuffers.ReadBuf@{com.google.flatbuffers.ReadBuf}!limit@{limit}}
+\index{limit@{limit}!com.google.flatbuffers.ReadBuf@{com.google.flatbuffers.ReadBuf}}
+\doxysubsubsection{\texorpdfstring{limit()}{limit()}}
+{\footnotesize\ttfamily int com.\+google.\+flatbuffers.\+Read\+Buf.\+limit (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Defines the size of the message in the buffer. It also determines last position that buffer can be read. Last byte to be accessed is in position {\ttfamily limit() -\/1}. \begin{DoxyReturn}{Returns}
+indicate last position 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classcom_1_1google_1_1flatbuffers_1_1ArrayReadWriteBuf_a07981d65375caf17ec8c7b4192c1d74c}{com.\+google.\+flatbuffers.\+Array\+Read\+Write\+Buf}}, \mbox{\hyperlink{classcom_1_1google_1_1flatbuffers_1_1ByteBufferReadWriteBuf_a544de84b8aef8d1f0a9027c71bba5553}{com.\+google.\+flatbuffers.\+Byte\+Buffer\+Read\+Write\+Buf}}, and \mbox{\hyperlink{interfacecom_1_1google_1_1flatbuffers_1_1ReadWriteBuf_a82018f24bd3f97ace73b9eb4e546065b}{com.\+google.\+flatbuffers.\+Read\+Write\+Buf}}.
+
+
+
+The documentation for this interface was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+flatbuffers/java/src/main/java/com/google/flatbuffers/\mbox{\hyperlink{ReadBuf_8java}{Read\+Buf.\+java}}\end{DoxyCompactItemize}

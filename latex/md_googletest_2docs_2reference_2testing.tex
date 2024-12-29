@@ -1,0 +1,1133 @@
+\chapter{Testing Reference}
+\hypertarget{md_googletest_2docs_2reference_2testing}{}\label{md_googletest_2docs_2reference_2testing}\index{Testing Reference@{Testing Reference}}
+This page lists the facilities provided by Google\+Test for writing test programs. To use them, add {\ttfamily \#include \texorpdfstring{$<$}{<}\doxylink{gtest_8h}{gtest/gtest.\+h}\texorpdfstring{$>$}{>}}.
+
+\doxysection*{Macros}
+
+Google\+Test defines the following macros for writing tests.\hypertarget{md_googletest_2docs_2reference_2testing_TEST}{}\doxysubsection{\texorpdfstring{TEST}{TEST}}\label{md_googletest_2docs_2reference_2testing_TEST}
+
+\begin{DoxyPre}
+TEST({\itshape TestSuiteName}, {\itshape TestName}) \{
+  ... {\itshape statements} ...
+\}
+\end{DoxyPre}
+
+
+Defines an individual test named \texorpdfstring{$\ast$}{*}{\ttfamily Test\+Name}\texorpdfstring{$\ast$}{*} in the test suite \texorpdfstring{$\ast$}{*}{\ttfamily Test\+Suite\+Name}\texorpdfstring{$\ast$}{*}, consisting of the given statements.
+
+Both arguments \texorpdfstring{$\ast$}{*}{\ttfamily Test\+Suite\+Name}\texorpdfstring{$\ast$}{*} and \texorpdfstring{$\ast$}{*}{\ttfamily Test\+Name}\texorpdfstring{$\ast$}{*} must be valid C++ identifiers and must not contain underscores ({\ttfamily \+\_\+}). Tests in different test suites can have the same individual name.
+
+The statements within the test body can be any code under test. \doxysectlink{md_googletest_2docs_2reference_2assertions}{Assertions}{0} used within the test body determine the outcome of the test.\hypertarget{md_googletest_2docs_2reference_2testing_TEST_F}{}\doxysubsection{\texorpdfstring{TEST\+\_\+F}{TEST\_F}}\label{md_googletest_2docs_2reference_2testing_TEST_F}
+
+\begin{DoxyPre}
+TEST\_F({\itshape TestFixtureName}, {\itshape TestName}) \{
+  ... {\itshape statements} ...
+\}
+\end{DoxyPre}
+
+
+Defines an individual test named \texorpdfstring{$\ast$}{*}{\ttfamily Test\+Name}\texorpdfstring{$\ast$}{*} that uses the test fixture class \texorpdfstring{$\ast$}{*}{\ttfamily Test\+Fixture\+Name}\texorpdfstring{$\ast$}{*}. The test suite name is \texorpdfstring{$\ast$}{*}{\ttfamily Test\+Fixture\+Name}\texorpdfstring{$\ast$}{*}.
+
+Both arguments \texorpdfstring{$\ast$}{*}{\ttfamily Test\+Fixture\+Name}\texorpdfstring{$\ast$}{*} and \texorpdfstring{$\ast$}{*}{\ttfamily Test\+Name}\texorpdfstring{$\ast$}{*} must be valid C++ identifiers and must not contain underscores ({\ttfamily \+\_\+}). \texorpdfstring{$\ast$}{*}{\ttfamily Test\+Fixture\+Name}\texorpdfstring{$\ast$}{*} must be the name of a test fixture class—see \href{../primer.md\#same-data-multiple-tests}{\texttt{ Test Fixtures}}.
+
+The statements within the test body can be any code under test. \doxysectlink{md_googletest_2docs_2reference_2assertions}{Assertions}{0} used within the test body determine the outcome of the test.\hypertarget{md_googletest_2docs_2reference_2testing_TEST_P}{}\doxysubsection{\texorpdfstring{TEST\+\_\+P}{TEST\_P}}\label{md_googletest_2docs_2reference_2testing_TEST_P}
+
+\begin{DoxyPre}
+TEST\_P({\itshape TestFixtureName}, {\itshape TestName}) \{
+  ... {\itshape statements} ...
+\}
+\end{DoxyPre}
+
+
+Defines an individual value-\/parameterized test named \texorpdfstring{$\ast$}{*}{\ttfamily Test\+Name}\texorpdfstring{$\ast$}{*} that uses the test fixture class \texorpdfstring{$\ast$}{*}{\ttfamily Test\+Fixture\+Name}\texorpdfstring{$\ast$}{*}. The test suite name is \texorpdfstring{$\ast$}{*}{\ttfamily Test\+Fixture\+Name}\texorpdfstring{$\ast$}{*}.
+
+Both arguments \texorpdfstring{$\ast$}{*}{\ttfamily Test\+Fixture\+Name}\texorpdfstring{$\ast$}{*} and \texorpdfstring{$\ast$}{*}{\ttfamily Test\+Name}\texorpdfstring{$\ast$}{*} must be valid C++ identifiers and must not contain underscores ({\ttfamily \+\_\+}). \texorpdfstring{$\ast$}{*}{\ttfamily Test\+Fixture\+Name}\texorpdfstring{$\ast$}{*} must be the name of a value-\/parameterized test fixture class—see \href{../advanced.md\#value-parameterized-tests}{\texttt{ Value-\/\+Parameterized Tests}}.
+
+The statements within the test body can be any code under test. Within the test body, the test parameter can be accessed with the {\ttfamily Get\+Param()} function (see \doxysectlink{md_googletest_2docs_2reference_2testing_WithParamInterface}{\`{}\+With\+Param\+Interface\`{}}{2}). For example\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{gtest-param-test_8h_a1adc861b311e3fbd97bcc72e0b0f5962}{TEST\_P}}(MyTestSuite,\ DoesSomething)\ \{}
+\DoxyCodeLine{\ \ ...}
+\DoxyCodeLine{\ \ \mbox{\hyperlink{gtest_8h_ac33e7cdfb5d44a7a0f0ab552eb5c3c6a}{EXPECT\_TRUE}}(DoSomething(GetParam()));}
+\DoxyCodeLine{\ \ ...}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+\doxysectlink{md_googletest_2docs_2reference_2assertions}{Assertions}{0} used within the test body determine the outcome of the test.
+
+See also \doxysectlink{md_googletest_2docs_2reference_2testing_INSTANTIATE_TEST_SUITE_P}{\`{}\+INSTANTIATE\+\_\+\+TEST\+\_\+\+SUITE\+\_\+\+P\`{}}{2}.\hypertarget{md_googletest_2docs_2reference_2testing_INSTANTIATE_TEST_SUITE_P}{}\doxysubsection{\texorpdfstring{INSTANTIATE\+\_\+\+TEST\+\_\+\+SUITE\+\_\+P}{INSTANTIATE\_TEST\_SUITE\_P}}\label{md_googletest_2docs_2reference_2testing_INSTANTIATE_TEST_SUITE_P}
+{\ttfamily INSTANTIATE\+\_\+\+TEST\+\_\+\+SUITE\+\_\+P(}\texorpdfstring{$\ast$}{*}{\ttfamily Instantiation\+Name}\texorpdfstring{$\ast$}{*}{\ttfamily ,}\texorpdfstring{$\ast$}{*}{\ttfamily Test\+Suite\+Name}\texorpdfstring{$\ast$}{*}{\ttfamily ,}\texorpdfstring{$\ast$}{*}{\ttfamily param\+\_\+generator}\texorpdfstring{$\ast$}{*}{\ttfamily )} \textbackslash{} {\ttfamily INSTANTIATE\+\_\+\+TEST\+\_\+\+SUITE\+\_\+P(}\texorpdfstring{$\ast$}{*}{\ttfamily Instantiation\+Name}\texorpdfstring{$\ast$}{*}{\ttfamily ,}\texorpdfstring{$\ast$}{*}{\ttfamily Test\+Suite\+Name}\texorpdfstring{$\ast$}{*}{\ttfamily ,}\texorpdfstring{$\ast$}{*}{\ttfamily param\+\_\+generator}\texorpdfstring{$\ast$}{*}{\ttfamily ,}\texorpdfstring{$\ast$}{*}{\ttfamily name\+\_\+generator}\texorpdfstring{$\ast$}{*}{\ttfamily )}
+
+Instantiates the value-\/parameterized test suite \texorpdfstring{$\ast$}{*}{\ttfamily Test\+Suite\+Name}\texorpdfstring{$\ast$}{*} (defined with \doxysectlink{md_googletest_2docs_2reference_2testing_TEST_P}{\`{}\+TEST\+\_\+\+P\`{}}{2}).
+
+The argument \texorpdfstring{$\ast$}{*}{\ttfamily Instantiation\+Name}\texorpdfstring{$\ast$}{*} is a unique name for the instantiation of the test suite, to distinguish between multiple instantiations. In test output, the instantiation name is added as a prefix to the test suite name \texorpdfstring{$\ast$}{*}{\ttfamily Test\+Suite\+Name}\texorpdfstring{$\ast$}{*}. If \texorpdfstring{$\ast$}{*}{\ttfamily Instantiation\+Name}\texorpdfstring{$\ast$}{*} is empty ({\ttfamily \doxylink{gtest-param-test_8h_a6a5cb3ce0a0fe17f84f357a6f39a4ba5}{INSTANTIATE\+\_\+\+TEST\+\_\+\+SUITE\+\_\+\+P(, ...)}}), no prefix is added.
+
+The argument \texorpdfstring{$\ast$}{*}{\ttfamily param\+\_\+generator}\texorpdfstring{$\ast$}{*} is one of the following Google\+Test-\/provided functions that generate the test parameters, all defined in the {\ttfamily \doxylink{namespacetesting}{testing}} namespace\+:
+
+
+
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Parameter Generator   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Behavior    }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Parameter Generator   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Behavior    }\\\cline{1-2}
+\endhead
+{\ttfamily Range(begin, end \mbox{[}, step\mbox{]})}   &Yields values {\ttfamily \{begin, begin+step, begin+step+step, ...\}}. The values do not include {\ttfamily end}. {\ttfamily step} defaults to 1.    \\\cline{1-2}
+{\ttfamily Values(v1, v2, ..., v\+N)}   &Yields values {\ttfamily \{\doxylink{namespacev1}{v1}, \doxylink{namespacev2}{v2}, ..., vN\}}.    \\\cline{1-2}
+{\ttfamily Values\+In(container)} or {\ttfamily Values\+In(begin,end)}   &Yields values from a C-\/style array, an STL-\/style container, or an iterator range {\ttfamily \mbox{[}begin, end)}.    \\\cline{1-2}
+{\ttfamily \doxylink{structBool}{Bool()}}   &Yields sequence {\ttfamily \{false, true\}}.    \\\cline{1-2}
+{\ttfamily Combine(g1, g2, ..., g\+N)}   &Yields as {\ttfamily std\+::tuple} {\itshape n}-\/tuples all combinations (Cartesian product) of the values generated by the given {\itshape n} generators {\ttfamily g1}, {\ttfamily g2}, ..., {\ttfamily gN}.    \\\cline{1-2}
+{\ttfamily Convert\+Generator\texorpdfstring{$<$}{<}T\texorpdfstring{$>$}{>}(g)}   &Yields values generated by generator {\ttfamily g}, {\ttfamily static\+\_\+cast} to {\ttfamily T}.   \\\cline{1-2}
+\end{longtabu}
+
+
+The optional last argument \texorpdfstring{$\ast$}{*}{\ttfamily name\+\_\+generator}\texorpdfstring{$\ast$}{*} is a function or functor that generates custom test name suffixes based on the test parameters. The function must accept an argument of type \doxysectlink{md_googletest_2docs_2reference_2testing_TestParamInfo}{\`{}\+Test\+Param\+Info\texorpdfstring{$<$}{<}class Param\+Type\texorpdfstring{$>$}{>}\`{}}{2} and return a {\ttfamily std\+::string}. The test name suffix can only contain alphanumeric characters and underscores. Google\+Test provides \doxysectlink{md_googletest_2docs_2reference_2testing_PrintToStringParamName}{\`{}\+Print\+To\+String\+Param\+Name\`{}}{2}, or a custom function can be used for more control\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{gtest-param-test_8h_a6a5cb3ce0a0fe17f84f357a6f39a4ba5}{INSTANTIATE\_TEST\_SUITE\_P}}(}
+\DoxyCodeLine{\ \ \ \ MyInstantiation,\ MyTestSuite,}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{namespacetesting_abd3c87b40c2a0663691c9b617ed5fcc2}{testing::Values}}(...),}
+\DoxyCodeLine{\ \ \ \ [](\textcolor{keyword}{const}\ \mbox{\hyperlink{structtesting_1_1TestParamInfo}{testing::TestParamInfo<MyTestSuite::ParamType>}}\&\ info)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \textcolor{comment}{//\ Can\ use\ info.param\ here\ to\ generate\ the\ test\ suffix}}
+\DoxyCodeLine{\ \ \ \ \ \ std::string\ \mbox{\hyperlink{idl__gen__ts_8cpp_a9b45b3e13bd9167aab02e17e08916231}{name}}\ =\ ...}
+\DoxyCodeLine{\ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{idl__gen__ts_8cpp_a9b45b3e13bd9167aab02e17e08916231}{name}};}
+\DoxyCodeLine{\ \ \ \ \});}
+
+\end{DoxyCode}
+
+
+For more information, see \href{../advanced.md\#value-parameterized-tests}{\texttt{ Value-\/\+Parameterized Tests}}.
+
+See also \doxysectlink{md_googletest_2docs_2reference_2testing_GTEST_ALLOW_UNINSTANTIATED_PARAMETERIZED_TEST}{\`{}\+GTEST\+\_\+\+ALLOW\+\_\+\+UNINSTANTIATED\+\_\+\+PARAMETERIZED\+\_\+\+TEST\`{}}{2}.\hypertarget{md_googletest_2docs_2reference_2testing_TYPED_TEST_SUITE}{}\doxysubsection{\texorpdfstring{TYPED\+\_\+\+TEST\+\_\+\+SUITE}{TYPED\_TEST\_SUITE}}\label{md_googletest_2docs_2reference_2testing_TYPED_TEST_SUITE}
+{\ttfamily TYPED\+\_\+\+TEST\+\_\+\+SUITE(}\texorpdfstring{$\ast$}{*}{\ttfamily Test\+Fixture\+Name}\texorpdfstring{$\ast$}{*}{\ttfamily ,}\texorpdfstring{$\ast$}{*}{\ttfamily Types}\texorpdfstring{$\ast$}{*}{\ttfamily )} {\ttfamily TYPED\+\_\+\+TEST\+\_\+\+SUITE(}\texorpdfstring{$\ast$}{*}{\ttfamily Test\+Fixture\+Name}\texorpdfstring{$\ast$}{*}{\ttfamily ,}\texorpdfstring{$\ast$}{*}{\ttfamily Types}\texorpdfstring{$\ast$}{*}{\ttfamily ,}\texorpdfstring{$\ast$}{*}{\ttfamily Name\+Generator}\texorpdfstring{$\ast$}{*}{\ttfamily )}
+
+Defines a typed test suite based on the test fixture \texorpdfstring{$\ast$}{*}{\ttfamily Test\+Fixture\+Name}\texorpdfstring{$\ast$}{*}. The test suite name is \texorpdfstring{$\ast$}{*}{\ttfamily Test\+Fixture\+Name}\texorpdfstring{$\ast$}{*}.
+
+The argument \texorpdfstring{$\ast$}{*}{\ttfamily Test\+Fixture\+Name}\texorpdfstring{$\ast$}{*} is a fixture class template, parameterized by a type, for example\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{\textcolor{keyword}{class\ }MyFixture\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classtesting_1_1Test}{testing::Test}}\ \{}
+\DoxyCodeLine{\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\ \ ...}
+\DoxyCodeLine{\ \ \textcolor{keyword}{using\ }List\ =\ std::list<T>;}
+\DoxyCodeLine{\ \ \textcolor{keyword}{static}\ T\ shared\_;}
+\DoxyCodeLine{\ \ T\ value\_;}
+\DoxyCodeLine{\};}
+
+\end{DoxyCode}
+
+
+The argument \texorpdfstring{$\ast$}{*}{\ttfamily Types}\texorpdfstring{$\ast$}{*} is a \doxysectlink{md_googletest_2docs_2reference_2testing_Types}{\`{}\+Types\`{}}{2} object representing the list of types to run the tests on, for example\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{using\ }\mbox{\hyperlink{structtesting_1_1internal_1_1ProxyTypeList}{MyTypes}}\ =\ \mbox{\hyperlink{structtesting_1_1internal_1_1ProxyTypeList}{::testing::Types<char,\ int,\ unsigned\ int>}};}
+\DoxyCodeLine{\mbox{\hyperlink{gtest-typed-test_8h_af84bf8ca7d774f32797e526bec88d12f}{TYPED\_TEST\_SUITE}}(MyFixture,\ \mbox{\hyperlink{structtesting_1_1internal_1_1ProxyTypeList}{MyTypes}});}
+
+\end{DoxyCode}
+
+
+The type alias ({\ttfamily using} or {\ttfamily typedef}) is necessary for the {\ttfamily TYPED\+\_\+\+TEST\+\_\+\+SUITE} macro to parse correctly.
+
+The optional third argument \texorpdfstring{$\ast$}{*}{\ttfamily Name\+Generator}\texorpdfstring{$\ast$}{*} allows specifying a class that exposes a templated static function {\ttfamily Get\+Name(int)}. For example\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{class\ }NameGenerator\ \{}
+\DoxyCodeLine{\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{\ \ \textcolor{keyword}{static}\ std::string\ GetName(\textcolor{keywordtype}{int})\ \{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{if}\ \textcolor{keyword}{constexpr}\ (std::is\_same\_v<T,\ char>)\ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}char"{}};}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{if}\ \textcolor{keyword}{constexpr}\ (std::is\_same\_v<T,\ int>)\ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}int"{}};}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{if}\ \textcolor{keyword}{constexpr}\ (std::is\_same\_v<T,\ unsigned\ int>)\ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}unsignedInt"{}};}
+\DoxyCodeLine{\ \ \}}
+\DoxyCodeLine{\};}
+\DoxyCodeLine{\mbox{\hyperlink{gtest-typed-test_8h_af84bf8ca7d774f32797e526bec88d12f}{TYPED\_TEST\_SUITE}}(MyFixture,\ \mbox{\hyperlink{structtesting_1_1internal_1_1ProxyTypeList}{MyTypes}},\ NameGenerator);}
+
+\end{DoxyCode}
+
+
+See also \doxysectlink{md_googletest_2docs_2reference_2testing_TYPED_TEST}{\`{}\+TYPED\+\_\+\+TEST\`{}}{2} and \href{../advanced.md\#typed-tests}{\texttt{ Typed Tests}} for more information.\hypertarget{md_googletest_2docs_2reference_2testing_TYPED_TEST}{}\doxysubsection{\texorpdfstring{TYPED\+\_\+\+TEST}{TYPED\_TEST}}\label{md_googletest_2docs_2reference_2testing_TYPED_TEST}
+
+\begin{DoxyPre}
+TYPED\_TEST({\itshape TestSuiteName}, {\itshape TestName}) \{
+  ... {\itshape statements} ...
+\}
+\end{DoxyPre}
+
+
+Defines an individual typed test named \texorpdfstring{$\ast$}{*}{\ttfamily Test\+Name}\texorpdfstring{$\ast$}{*} in the typed test suite \texorpdfstring{$\ast$}{*}{\ttfamily Test\+Suite\+Name}\texorpdfstring{$\ast$}{*}. The test suite must be defined with \doxysectlink{md_googletest_2docs_2reference_2testing_TYPED_TEST_SUITE}{\`{}\+TYPED\+\_\+\+TEST\+\_\+\+SUITE\`{}}{2}.
+
+Within the test body, the special name {\ttfamily Type\+Param} refers to the type parameter, and {\ttfamily Test\+Fixture} refers to the fixture class. See the following example\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{gtest-typed-test_8h_ae6f575265873190de41b1329d16df0f0}{TYPED\_TEST}}(MyFixture,\ Example)\ \{}
+\DoxyCodeLine{\ \ \textcolor{comment}{//\ Inside\ a\ test,\ refer\ to\ the\ special\ name\ TypeParam\ to\ get\ the\ type}}
+\DoxyCodeLine{\ \ \textcolor{comment}{//\ parameter.\ \ Since\ we\ are\ inside\ a\ derived\ class\ template,\ C++\ requires}}
+\DoxyCodeLine{\ \ \textcolor{comment}{//\ us\ to\ visit\ the\ members\ of\ MyFixture\ via\ 'this'.}}
+\DoxyCodeLine{\ \ TypeParam\ n\ =\ this-\/>value\_;}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \textcolor{comment}{//\ To\ visit\ static\ members\ of\ the\ fixture,\ add\ the\ 'TestFixture::'}}
+\DoxyCodeLine{\ \ \textcolor{comment}{//\ prefix.}}
+\DoxyCodeLine{\ \ n\ +=\ TestFixture::shared\_;}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \textcolor{comment}{//\ To\ refer\ to\ typedefs\ in\ the\ fixture,\ add\ the\ 'typename\ TestFixture::'}}
+\DoxyCodeLine{\ \ \textcolor{comment}{//\ prefix.\ The\ 'typename'\ is\ required\ to\ satisfy\ the\ compiler.}}
+\DoxyCodeLine{\ \ \textcolor{keyword}{typename}\ TestFixture::List\ values;}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ values.push\_back(n);}
+\DoxyCodeLine{\ \ ...}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+For more information, see \href{../advanced.md\#typed-tests}{\texttt{ Typed Tests}}.\hypertarget{md_googletest_2docs_2reference_2testing_TYPED_TEST_SUITE_P}{}\doxysubsection{\texorpdfstring{TYPED\+\_\+\+TEST\+\_\+\+SUITE\+\_\+P}{TYPED\_TEST\_SUITE\_P}}\label{md_googletest_2docs_2reference_2testing_TYPED_TEST_SUITE_P}
+{\ttfamily TYPED\+\_\+\+TEST\+\_\+\+SUITE\+\_\+P(}\texorpdfstring{$\ast$}{*}{\ttfamily Test\+Fixture\+Name}\texorpdfstring{$\ast$}{*}{\ttfamily )}
+
+Defines a type-\/parameterized test suite based on the test fixture \texorpdfstring{$\ast$}{*}{\ttfamily Test\+Fixture\+Name}\texorpdfstring{$\ast$}{*}. The test suite name is \texorpdfstring{$\ast$}{*}{\ttfamily Test\+Fixture\+Name}\texorpdfstring{$\ast$}{*}.
+
+The argument \texorpdfstring{$\ast$}{*}{\ttfamily Test\+Fixture\+Name}\texorpdfstring{$\ast$}{*} is a fixture class template, parameterized by a type. See \doxysectlink{md_googletest_2docs_2reference_2testing_TYPED_TEST_SUITE}{\`{}\+TYPED\+\_\+\+TEST\+\_\+\+SUITE\`{}}{2} for an example.
+
+See also \doxysectlink{md_googletest_2docs_2reference_2testing_TYPED_TEST_P}{\`{}\+TYPED\+\_\+\+TEST\+\_\+\+P\`{}}{2} and \href{../advanced.md\#type-parameterized-tests}{\texttt{ Type-\/\+Parameterized Tests}} for more information.\hypertarget{md_googletest_2docs_2reference_2testing_TYPED_TEST_P}{}\doxysubsection{\texorpdfstring{TYPED\+\_\+\+TEST\+\_\+P}{TYPED\_TEST\_P}}\label{md_googletest_2docs_2reference_2testing_TYPED_TEST_P}
+
+\begin{DoxyPre}
+TYPED\_TEST\_P({\itshape TestSuiteName}, {\itshape TestName}) \{
+  ... {\itshape statements} ...
+\}
+\end{DoxyPre}
+
+
+Defines an individual type-\/parameterized test named \texorpdfstring{$\ast$}{*}{\ttfamily Test\+Name}\texorpdfstring{$\ast$}{*} in the type-\/parameterized test suite \texorpdfstring{$\ast$}{*}{\ttfamily Test\+Suite\+Name}\texorpdfstring{$\ast$}{*}. The test suite must be defined with \doxysectlink{md_googletest_2docs_2reference_2testing_TYPED_TEST_SUITE_P}{\`{}\+TYPED\+\_\+\+TEST\+\_\+\+SUITE\+\_\+\+P\`{}}{2}.
+
+Within the test body, the special name {\ttfamily Type\+Param} refers to the type parameter, and {\ttfamily Test\+Fixture} refers to the fixture class. See \doxysectlink{md_googletest_2docs_2reference_2testing_TYPED_TEST}{\`{}\+TYPED\+\_\+\+TEST\`{}}{2} for an example.
+
+See also \doxysectlink{md_googletest_2docs_2reference_2testing_REGISTER_TYPED_TEST_SUITE_P}{\`{}\+REGISTER\+\_\+\+TYPED\+\_\+\+TEST\+\_\+\+SUITE\+\_\+\+P\`{}}{2} and \href{../advanced.md\#type-parameterized-tests}{\texttt{ Type-\/\+Parameterized Tests}} for more information.\hypertarget{md_googletest_2docs_2reference_2testing_REGISTER_TYPED_TEST_SUITE_P}{}\doxysubsection{\texorpdfstring{REGISTER\+\_\+\+TYPED\+\_\+\+TEST\+\_\+\+SUITE\+\_\+P}{REGISTER\_TYPED\_TEST\_SUITE\_P}}\label{md_googletest_2docs_2reference_2testing_REGISTER_TYPED_TEST_SUITE_P}
+{\ttfamily REGISTER\+\_\+\+TYPED\+\_\+\+TEST\+\_\+\+SUITE\+\_\+P(}\texorpdfstring{$\ast$}{*}{\ttfamily Test\+Suite\+Name}\texorpdfstring{$\ast$}{*}{\ttfamily ,}\texorpdfstring{$\ast$}{*}{\ttfamily Test\+Names...}\texorpdfstring{$\ast$}{*}{\ttfamily )}
+
+Registers the type-\/parameterized tests \texorpdfstring{$\ast$}{*}{\ttfamily Test\+Names...}\texorpdfstring{$\ast$}{*} of the test suite \texorpdfstring{$\ast$}{*}{\ttfamily Test\+Suite\+Name}\texorpdfstring{$\ast$}{*}. The test suite and tests must be defined with \doxysectlink{md_googletest_2docs_2reference_2testing_TYPED_TEST_SUITE_P}{\`{}\+TYPED\+\_\+\+TEST\+\_\+\+SUITE\+\_\+\+P\`{}}{2} and \doxysectlink{md_googletest_2docs_2reference_2testing_TYPED_TEST_P}{\`{}\+TYPED\+\_\+\+TEST\+\_\+\+P\`{}}{2}.
+
+For example\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{comment}{//\ Define\ the\ test\ suite\ and\ tests.}}
+\DoxyCodeLine{\mbox{\hyperlink{gtest-typed-test_8h_a3d74325e27e02ed1d1c7b30a24f7af13}{TYPED\_TEST\_SUITE\_P}}(MyFixture);}
+\DoxyCodeLine{\mbox{\hyperlink{gtest-typed-test_8h_a6e9d1cd9b97da0076ae699775d3222d0}{TYPED\_TEST\_P}}(MyFixture,\ HasPropertyA)\ \{\ ...\ \}}
+\DoxyCodeLine{\mbox{\hyperlink{gtest-typed-test_8h_a6e9d1cd9b97da0076ae699775d3222d0}{TYPED\_TEST\_P}}(MyFixture,\ HasPropertyB)\ \{\ ...\ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ Register\ the\ tests\ in\ the\ test\ suite.}}
+\DoxyCodeLine{\mbox{\hyperlink{gtest-typed-test_8h_a03990bffa8f0f58c37d4938107722f99}{REGISTER\_TYPED\_TEST\_SUITE\_P}}(MyFixture,\ HasPropertyA,\ HasPropertyB);}
+
+\end{DoxyCode}
+
+
+See also \doxysectlink{md_googletest_2docs_2reference_2testing_INSTANTIATE_TYPED_TEST_SUITE_P}{\`{}\+INSTANTIATE\+\_\+\+TYPED\+\_\+\+TEST\+\_\+\+SUITE\+\_\+\+P\`{}}{2} and \href{../advanced.md\#type-parameterized-tests}{\texttt{ Type-\/\+Parameterized Tests}} for more information.\hypertarget{md_googletest_2docs_2reference_2testing_INSTANTIATE_TYPED_TEST_SUITE_P}{}\doxysubsection{\texorpdfstring{INSTANTIATE\+\_\+\+TYPED\+\_\+\+TEST\+\_\+\+SUITE\+\_\+P}{INSTANTIATE\_TYPED\_TEST\_SUITE\_P}}\label{md_googletest_2docs_2reference_2testing_INSTANTIATE_TYPED_TEST_SUITE_P}
+{\ttfamily INSTANTIATE\+\_\+\+TYPED\+\_\+\+TEST\+\_\+\+SUITE\+\_\+P(}\texorpdfstring{$\ast$}{*}{\ttfamily Instantiation\+Name}\texorpdfstring{$\ast$}{*}{\ttfamily ,}\texorpdfstring{$\ast$}{*}{\ttfamily Test\+Suite\+Name}\texorpdfstring{$\ast$}{*}{\ttfamily ,}\texorpdfstring{$\ast$}{*}{\ttfamily Types}\texorpdfstring{$\ast$}{*}{\ttfamily )}
+
+Instantiates the type-\/parameterized test suite \texorpdfstring{$\ast$}{*}{\ttfamily Test\+Suite\+Name}\texorpdfstring{$\ast$}{*}. The test suite must be registered with \doxysectlink{md_googletest_2docs_2reference_2testing_REGISTER_TYPED_TEST_SUITE_P}{\`{}\+REGISTER\+\_\+\+TYPED\+\_\+\+TEST\+\_\+\+SUITE\+\_\+\+P\`{}}{2}.
+
+The argument \texorpdfstring{$\ast$}{*}{\ttfamily Instantiation\+Name}\texorpdfstring{$\ast$}{*} is a unique name for the instantiation of the test suite, to distinguish between multiple instantiations. In test output, the instantiation name is added as a prefix to the test suite name \texorpdfstring{$\ast$}{*}{\ttfamily Test\+Suite\+Name}\texorpdfstring{$\ast$}{*}. If \texorpdfstring{$\ast$}{*}{\ttfamily Instantiation\+Name}\texorpdfstring{$\ast$}{*} is empty ({\ttfamily \doxylink{gtest-typed-test_8h_ae1f8548fa07ec0a138362654b7bc3194}{INSTANTIATE\+\_\+\+TYPED\+\_\+\+TEST\+\_\+\+SUITE\+\_\+\+P(, ...)}}), no prefix is added.
+
+The argument \texorpdfstring{$\ast$}{*}{\ttfamily Types}\texorpdfstring{$\ast$}{*} is a \doxysectlink{md_googletest_2docs_2reference_2testing_Types}{\`{}\+Types\`{}}{2} object representing the list of types to run the tests on, for example\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{using\ }\mbox{\hyperlink{structtesting_1_1internal_1_1ProxyTypeList}{MyTypes}}\ =\ \mbox{\hyperlink{structtesting_1_1internal_1_1ProxyTypeList}{::testing::Types<char,\ int,\ unsigned\ int>}};}
+\DoxyCodeLine{\mbox{\hyperlink{gtest-typed-test_8h_ae1f8548fa07ec0a138362654b7bc3194}{INSTANTIATE\_TYPED\_TEST\_SUITE\_P}}(MyInstantiation,\ MyFixture,\ \mbox{\hyperlink{structtesting_1_1internal_1_1ProxyTypeList}{MyTypes}});}
+
+\end{DoxyCode}
+
+
+The type alias ({\ttfamily using} or {\ttfamily typedef}) is necessary for the {\ttfamily INSTANTIATE\+\_\+\+TYPED\+\_\+\+TEST\+\_\+\+SUITE\+\_\+P} macro to parse correctly.
+
+For more information, see \href{../advanced.md\#type-parameterized-tests}{\texttt{ Type-\/\+Parameterized Tests}}.\hypertarget{md_googletest_2docs_2reference_2testing_FRIEND_TEST}{}\doxysubsection{\texorpdfstring{FRIEND\+\_\+\+TEST}{FRIEND\_TEST}}\label{md_googletest_2docs_2reference_2testing_FRIEND_TEST}
+{\ttfamily FRIEND\+\_\+\+TEST(}\texorpdfstring{$\ast$}{*}{\ttfamily Test\+Suite\+Name}\texorpdfstring{$\ast$}{*}{\ttfamily ,}\texorpdfstring{$\ast$}{*}{\ttfamily Test\+Name}\texorpdfstring{$\ast$}{*}{\ttfamily )}
+
+Within a class body, declares an individual test as a friend of the class, enabling the test to access private class members.
+
+If the class is defined in a namespace, then in order to be friends of the class, test fixtures and tests must be defined in the exact same namespace, without inline or anonymous namespaces.
+
+For example, if the class definition looks like the following\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacemy__namespace}{my\_namespace}}\ \{}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keyword}{class\ }MyClass\ \{}
+\DoxyCodeLine{\ \ \textcolor{keyword}{friend}\ \textcolor{keyword}{class\ }MyClassTest;}
+\DoxyCodeLine{\ \ \mbox{\hyperlink{gtest__prod_8h_a8d443b4cc1d87a7a17943b8fbdbf3910}{FRIEND\_TEST}}(MyClassTest,\ HasPropertyA);}
+\DoxyCodeLine{\ \ \mbox{\hyperlink{gtest__prod_8h_a8d443b4cc1d87a7a17943b8fbdbf3910}{FRIEND\_TEST}}(MyClassTest,\ HasPropertyB);}
+\DoxyCodeLine{\ \ ...\ definition\ of\ \textcolor{keyword}{class\ }MyClass\ ...}
+\DoxyCodeLine{\};}
+\DoxyCodeLine{}
+\DoxyCodeLine{\}\ \ \textcolor{comment}{//\ namespace\ my\_namespace}}
+
+\end{DoxyCode}
+
+
+Then the test code should look like\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacemy__namespace}{my\_namespace}}\ \{}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keyword}{class\ }MyClassTest\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classtesting_1_1Test}{testing::Test}}\ \{}
+\DoxyCodeLine{\ \ ...}
+\DoxyCodeLine{\};}
+\DoxyCodeLine{}
+\DoxyCodeLine{\mbox{\hyperlink{gtest_8h_a0ee66d464d1a06c20c1929cae09d8758}{TEST\_F}}(MyClassTest,\ HasPropertyA)\ \{\ ...\ \}}
+\DoxyCodeLine{\mbox{\hyperlink{gtest_8h_a0ee66d464d1a06c20c1929cae09d8758}{TEST\_F}}(MyClassTest,\ HasPropertyB)\ \{\ ...\ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\}\ \ \textcolor{comment}{//\ namespace\ my\_namespace}}
+
+\end{DoxyCode}
+
+
+See \href{../advanced.md\#testing-private-code}{\texttt{ Testing Private Code}} for more information.\hypertarget{md_googletest_2docs_2reference_2testing_SCOPED_TRACE}{}\doxysubsection{\texorpdfstring{SCOPED\+\_\+\+TRACE}{SCOPED\_TRACE}}\label{md_googletest_2docs_2reference_2testing_SCOPED_TRACE}
+{\ttfamily SCOPED\+\_\+\+TRACE(}\texorpdfstring{$\ast$}{*}{\ttfamily message}\texorpdfstring{$\ast$}{*}{\ttfamily )}
+
+Causes the current file name, line number, and the given message \texorpdfstring{$\ast$}{*}{\ttfamily message}\texorpdfstring{$\ast$}{*} to be added to the failure message for each assertion failure that occurs in the scope.
+
+For more information, see \href{../advanced.md\#adding-traces-to-assertions}{\texttt{ Adding Traces to Assertions}}.
+
+See also the \doxysectlink{md_googletest_2docs_2reference_2testing_ScopedTrace}{\`{}\+Scoped\+Trace\`{} class}{2}.\hypertarget{md_googletest_2docs_2reference_2testing_GTEST_SKIP}{}\doxysubsection{\texorpdfstring{GTEST\+\_\+\+SKIP}{GTEST\_SKIP}}\label{md_googletest_2docs_2reference_2testing_GTEST_SKIP}
+{\ttfamily \doxylink{gtest_8h_a3c0bbb980d533108ecc23c3534527d3c}{GTEST\+\_\+\+SKIP()}}
+
+Prevents further test execution at runtime.
+
+Can be used in individual test cases or in the {\ttfamily Set\+Up()} methods of test environments or test fixtures (classes derived from the \doxysectlink{md_googletest_2docs_2reference_2testing_Environment}{\`{}\+Environment\`{}}{2} or \doxysectlink{md_googletest_2docs_2reference_2testing_Test}{\`{}\+Test\`{}}{2} classes). If used in a global test environment {\ttfamily Set\+Up()} method, it skips all tests in the test program. If used in a test fixture {\ttfamily Set\+Up()} method, it skips all tests in the corresponding test suite.
+
+Similar to assertions, {\ttfamily GTEST\+\_\+\+SKIP} allows streaming a custom message into it.
+
+See \href{../advanced.md\#skipping-test-execution}{\texttt{ Skipping Test Execution}} for more information.\hypertarget{md_googletest_2docs_2reference_2testing_GTEST_ALLOW_UNINSTANTIATED_PARAMETERIZED_TEST}{}\doxysubsection{\texorpdfstring{GTEST\+\_\+\+ALLOW\+\_\+\+UNINSTANTIATED\+\_\+\+PARAMETERIZED\+\_\+\+TEST}{GTEST\_ALLOW\_UNINSTANTIATED\_PARAMETERIZED\_TEST}}\label{md_googletest_2docs_2reference_2testing_GTEST_ALLOW_UNINSTANTIATED_PARAMETERIZED_TEST}
+{\ttfamily GTEST\+\_\+\+ALLOW\+\_\+\+UNINSTANTIATED\+\_\+\+PARAMETERIZED\+\_\+\+TEST(}\texorpdfstring{$\ast$}{*}{\ttfamily Test\+Suite\+Name}\texorpdfstring{$\ast$}{*}{\ttfamily )}
+
+Allows the value-\/parameterized test suite \texorpdfstring{$\ast$}{*}{\ttfamily Test\+Suite\+Name}\texorpdfstring{$\ast$}{*} to be uninstantiated.
+
+By default, every \doxysectlink{md_googletest_2docs_2reference_2testing_TEST_P}{\`{}\+TEST\+\_\+\+P\`{}}{2} call without a corresponding \doxysectlink{md_googletest_2docs_2reference_2testing_INSTANTIATE_TEST_SUITE_P}{\`{}\+INSTANTIATE\+\_\+\+TEST\+\_\+\+SUITE\+\_\+\+P\`{}}{2} call causes a failing test in the test suite {\ttfamily Google\+Test\+Verification}. {\ttfamily GTEST\+\_\+\+ALLOW\+\_\+\+UNINSTANTIATED\+\_\+\+PARAMETERIZED\+\_\+\+TEST} suppresses this failure for the given test suite.
+
+\doxysection*{Classes and types}
+
+Google\+Test defines the following classes and types to help with writing tests.\hypertarget{md_googletest_2docs_2reference_2testing_AssertionResult}{}\doxysubsection{\texorpdfstring{Assertion\+Result}{AssertionResult}}\label{md_googletest_2docs_2reference_2testing_AssertionResult}
+{\ttfamily testing\+::\+Assertion\+Result}
+
+A class for indicating whether an assertion was successful.
+
+When the assertion wasn\textquotesingle{}t successful, the {\ttfamily Assertion\+Result} object stores a non-\/empty failure message that can be retrieved with the object\textquotesingle{}s {\ttfamily message()} method.
+
+To create an instance of this class, use one of the factory functions \doxysectlink{md_googletest_2docs_2reference_2testing_AssertionSuccess}{\`{}\+Assertion\+Success()\`{}}{2} or \doxysectlink{md_googletest_2docs_2reference_2testing_AssertionFailure}{\`{}\+Assertion\+Failure()\`{}}{2}.\hypertarget{md_googletest_2docs_2reference_2testing_AssertionException}{}\doxysubsection{\texorpdfstring{Assertion\+Exception}{AssertionException}}\label{md_googletest_2docs_2reference_2testing_AssertionException}
+{\ttfamily testing\+::\+Assertion\+Exception}
+
+Exception which can be thrown from \`{}\+Test\+Event\+Listener\+::On\+Test\+Part\+Result\`{}.\hypertarget{md_googletest_2docs_2reference_2testing_EmptyTestEventListener}{}\doxysubsection{\texorpdfstring{Empty\+Test\+Event\+Listener}{EmptyTestEventListener}}\label{md_googletest_2docs_2reference_2testing_EmptyTestEventListener}
+{\ttfamily \doxylink{classtesting_1_1EmptyTestEventListener}{testing\+::\+Empty\+Test\+Event\+Listener}}
+
+Provides an empty implementation of all methods in the \doxysectlink{md_googletest_2docs_2reference_2testing_TestEventListener}{\`{}\+Test\+Event\+Listener\`{}}{2} interface, such that a subclass only needs to override the methods it cares about.\hypertarget{md_googletest_2docs_2reference_2testing_Environment}{}\doxysubsection{\texorpdfstring{Environment}{Environment}}\label{md_googletest_2docs_2reference_2testing_Environment}
+{\ttfamily \doxylink{classtesting_1_1Environment}{testing\+::\+Environment}}
+
+Represents a global test environment. See \href{../advanced.md\#global-set-up-and-tear-down}{\texttt{ Global Set-\/\+Up and Tear-\/\+Down}}.\hypertarget{md_googletest_2docs_2reference_2testing_Environment-protected}{}\doxysubsubsection{\texorpdfstring{Protected Methods}{Protected Methods}}\label{md_googletest_2docs_2reference_2testing_Environment-protected}
+\doxyparagraph*{Set\+Up \{\#\+Environment\+::\+Set\+Up\}}
+
+{\ttfamily virtual void Environment\+::\+Set\+Up()}
+
+Override this to define how to set up the environment.
+
+\doxyparagraph*{Tear\+Down \{\#\+Environment\+::\+Tear\+Down\}}
+
+{\ttfamily virtual void Environment\+::\+Tear\+Down()}
+
+Override this to define how to tear down the environment.\hypertarget{md_googletest_2docs_2reference_2testing_ScopedTrace}{}\doxysubsection{\texorpdfstring{Scoped\+Trace}{ScopedTrace}}\label{md_googletest_2docs_2reference_2testing_ScopedTrace}
+{\ttfamily \doxylink{classtesting_1_1ScopedTrace}{testing\+::\+Scoped\+Trace}}
+
+An instance of this class causes a trace to be included in every test failure message generated by code in the scope of the lifetime of the {\ttfamily Scoped\+Trace} instance. The effect is undone with the destruction of the instance.
+
+The {\ttfamily Scoped\+Trace} constructor has the following form\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{ScopedTrace(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ file,\ \textcolor{keywordtype}{int}\ line,\ \textcolor{keyword}{const}\ T\&\ message)}
+
+\end{DoxyCode}
+
+
+Example usage\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classtesting_1_1ScopedTrace}{testing::ScopedTrace}}\ trace(\textcolor{stringliteral}{"{}file.cc"{}},\ 123,\ \textcolor{stringliteral}{"{}message"{}});}
+
+\end{DoxyCode}
+
+
+The resulting trace includes the given source file path and line number, and the given message. The {\ttfamily message} argument can be anything streamable to {\ttfamily std\+::ostream}.
+
+See also \doxysectlink{md_googletest_2docs_2reference_2testing_SCOPED_TRACE}{\`{}\+SCOPED\+\_\+\+TRACE\`{}}{2}.\hypertarget{md_googletest_2docs_2reference_2testing_Test}{}\doxysubsection{\texorpdfstring{Test}{Test}}\label{md_googletest_2docs_2reference_2testing_Test}
+{\ttfamily \doxylink{classtesting_1_1Test}{testing\+::\+Test}}
+
+The abstract class that all tests inherit from. {\ttfamily Test} is not copyable.\hypertarget{md_googletest_2docs_2reference_2testing_Test-public}{}\doxysubsubsection{\texorpdfstring{Public Methods}{Public Methods}}\label{md_googletest_2docs_2reference_2testing_Test-public}
+\doxyparagraph*{Set\+Up\+Test\+Suite \{\#\+Test\+::\+Set\+Up\+Test\+Suite\}}
+
+{\ttfamily static void Test\+::\+Set\+Up\+Test\+Suite()}
+
+Performs shared setup for all tests in the test suite. Google\+Test calls {\ttfamily Set\+Up\+Test\+Suite()} before running the first test in the test suite.
+
+\doxyparagraph*{Tear\+Down\+Test\+Suite \{\#\+Test\+::\+Tear\+Down\+Test\+Suite\}}
+
+{\ttfamily static void Test\+::\+Tear\+Down\+Test\+Suite()}
+
+Performs shared teardown for all tests in the test suite. Google\+Test calls {\ttfamily Tear\+Down\+Test\+Suite()} after running the last test in the test suite.
+
+\doxyparagraph*{Has\+Fatal\+Failure \{\#\+Test\+::\+Has\+Fatal\+Failure\}}
+
+{\ttfamily static bool Test\+::\+Has\+Fatal\+Failure()}
+
+Returns true if and only if the current test has a fatal failure.
+
+\doxyparagraph*{Has\+Nonfatal\+Failure \{\#\+Test\+::\+Has\+Nonfatal\+Failure\}}
+
+{\ttfamily static bool Test\+::\+Has\+Nonfatal\+Failure()}
+
+Returns true if and only if the current test has a nonfatal failure.
+
+\doxyparagraph*{Has\+Failure \{\#\+Test\+::\+Has\+Failure\}}
+
+{\ttfamily static bool Test\+::\+Has\+Failure()}
+
+Returns true if and only if the current test has any failure, either fatal or nonfatal.
+
+\doxyparagraph*{Is\+Skipped \{\#\+Test\+::\+Is\+Skipped\}}
+
+{\ttfamily static bool Test\+::\+Is\+Skipped()}
+
+Returns true if and only if the current test was skipped.
+
+\doxyparagraph*{Record\+Property \{\#\+Test\+::\+Record\+Property\}}
+
+{\ttfamily static void Test\+::\+Record\+Property(const std\+::string\& key, const std\+::string\& value)} \textbackslash{} {\ttfamily static void Test\+::\+Record\+Property(const std\+::string\& key, int value)}
+
+Logs a property for the current test, test suite, or entire invocation of the test program. Only the last value for a given key is logged.
+
+The key must be a valid XML attribute name, and cannot conflict with the ones already used by Google\+Test ({\ttfamily name}, {\ttfamily file}, {\ttfamily line}, {\ttfamily status}, {\ttfamily time}, {\ttfamily classname}, {\ttfamily type\+\_\+param}, and {\ttfamily value\+\_\+param}).
+
+{\ttfamily Record\+Property} is {\ttfamily public static} so it can be called from utility functions that are not members of the test fixture.
+
+Calls to {\ttfamily Record\+Property} made during the lifespan of the test (from the moment its constructor starts to the moment its destructor finishes) are output in XML as attributes of the {\ttfamily \texorpdfstring{$<$}{<}testcase\texorpdfstring{$>$}{>}} element. Properties recorded from a fixture\textquotesingle{}s {\ttfamily Set\+Up\+Test\+Suite} or {\ttfamily Tear\+Down\+Test\+Suite} methods are logged as attributes of the corresponding {\ttfamily \texorpdfstring{$<$}{<}testsuite\texorpdfstring{$>$}{>}} element. Calls to {\ttfamily Record\+Property} made in the global context (before or after invocation of {\ttfamily RUN\+\_\+\+ALL\+\_\+\+TESTS} or from the {\ttfamily Set\+Up}/{\ttfamily Tear\+Down} methods of registered {\ttfamily Environment} objects) are output as attributes of the {\ttfamily \texorpdfstring{$<$}{<}testsuites\texorpdfstring{$>$}{>}} element.\hypertarget{md_googletest_2docs_2reference_2testing_Test-protected}{}\doxysubsubsection{\texorpdfstring{Protected Methods}{Protected Methods}}\label{md_googletest_2docs_2reference_2testing_Test-protected}
+\doxyparagraph*{Set\+Up \{\#\+Test\+::\+Set\+Up\}}
+
+{\ttfamily virtual void Test\+::\+Set\+Up()}
+
+Override this to perform test fixture setup. Google\+Test calls {\ttfamily Set\+Up()} before running each individual test.
+
+\doxyparagraph*{Tear\+Down \{\#\+Test\+::\+Tear\+Down\}}
+
+{\ttfamily virtual void Test\+::\+Tear\+Down()}
+
+Override this to perform test fixture teardown. Google\+Test calls {\ttfamily Tear\+Down()} after running each individual test.\hypertarget{md_googletest_2docs_2reference_2testing_TestWithParam}{}\doxysubsection{\texorpdfstring{Test\+With\+Param}{TestWithParam}}\label{md_googletest_2docs_2reference_2testing_TestWithParam}
+{\ttfamily \doxylink{classtesting_1_1TestWithParam}{testing\+::\+Test\+With\+Param}\texorpdfstring{$<$}{<}T\texorpdfstring{$>$}{>}}
+
+A convenience class which inherits from both \doxysectlink{md_googletest_2docs_2reference_2testing_Test}{\`{}\+Test\`{}}{2} and \doxysectlink{md_googletest_2docs_2reference_2testing_WithParamInterface}{\`{}\+With\+Param\+Interface\texorpdfstring{$<$}{<}T\texorpdfstring{$>$}{>}\`{}}{2}.\hypertarget{md_googletest_2docs_2reference_2testing_TestSuite}{}\doxysubsection{\texorpdfstring{Test\+Suite}{TestSuite}}\label{md_googletest_2docs_2reference_2testing_TestSuite}
+Represents a test suite. {\ttfamily Test\+Suite} is not copyable.\hypertarget{md_googletest_2docs_2reference_2testing_TestSuite-public}{}\doxysubsubsection{\texorpdfstring{Public Methods}{Public Methods}}\label{md_googletest_2docs_2reference_2testing_TestSuite-public}
+\doxyparagraph*{name \{\#\+Test\+Suite\+::name\}}
+
+{\ttfamily const char\texorpdfstring{$\ast$}{*} Test\+Suite\+::name() const}
+
+Gets the name of the test suite.
+
+\doxyparagraph*{type\+\_\+param \{\#\+Test\+Suite\+::type\+\_\+param\}}
+
+{\ttfamily const char\texorpdfstring{$\ast$}{*} Test\+Suite\+::type\+\_\+param() const}
+
+Returns the name of the parameter type, or {\ttfamily NULL} if this is not a typed or type-\/parameterized test suite. See \href{../advanced.md\#typed-tests}{\texttt{ Typed Tests}} and \href{../advanced.md\#type-parameterized-tests}{\texttt{ Type-\/\+Parameterized Tests}}.
+
+\doxyparagraph*{should\+\_\+run \{\#\+Test\+Suite\+::should\+\_\+run\}}
+
+{\ttfamily bool Test\+Suite\+::should\+\_\+run() const}
+
+Returns true if any test in this test suite should run.
+
+\doxyparagraph*{successful\+\_\+test\+\_\+count \{\#\+Test\+Suite\+::successful\+\_\+test\+\_\+count\}}
+
+{\ttfamily int Test\+Suite\+::successful\+\_\+test\+\_\+count() const}
+
+Gets the number of successful tests in this test suite.
+
+\doxyparagraph*{skipped\+\_\+test\+\_\+count \{\#\+Test\+Suite\+::skipped\+\_\+test\+\_\+count\}}
+
+{\ttfamily int Test\+Suite\+::skipped\+\_\+test\+\_\+count() const}
+
+Gets the number of skipped tests in this test suite.
+
+\doxyparagraph*{failed\+\_\+test\+\_\+count \{\#\+Test\+Suite\+::failed\+\_\+test\+\_\+count\}}
+
+{\ttfamily int Test\+Suite\+::failed\+\_\+test\+\_\+count() const}
+
+Gets the number of failed tests in this test suite.
+
+\doxyparagraph*{reportable\+\_\+disabled\+\_\+test\+\_\+count \{\#\+Test\+Suite\+::reportable\+\_\+disabled\+\_\+test\+\_\+count\}}
+
+{\ttfamily int Test\+Suite\+::reportable\+\_\+disabled\+\_\+test\+\_\+count() const}
+
+Gets the number of disabled tests that will be reported in the XML report.
+
+\doxyparagraph*{disabled\+\_\+test\+\_\+count \{\#\+Test\+Suite\+::disabled\+\_\+test\+\_\+count\}}
+
+{\ttfamily int Test\+Suite\+::disabled\+\_\+test\+\_\+count() const}
+
+Gets the number of disabled tests in this test suite.
+
+\doxyparagraph*{reportable\+\_\+test\+\_\+count \{\#\+Test\+Suite\+::reportable\+\_\+test\+\_\+count\}}
+
+{\ttfamily int Test\+Suite\+::reportable\+\_\+test\+\_\+count() const}
+
+Gets the number of tests to be printed in the XML report.
+
+\doxyparagraph*{test\+\_\+to\+\_\+run\+\_\+count \{\#\+Test\+Suite\+::test\+\_\+to\+\_\+run\+\_\+count\}}
+
+{\ttfamily int Test\+Suite\+::test\+\_\+to\+\_\+run\+\_\+count() const}
+
+Get the number of tests in this test suite that should run.
+
+\doxyparagraph*{total\+\_\+test\+\_\+count \{\#\+Test\+Suite\+::total\+\_\+test\+\_\+count\}}
+
+{\ttfamily int Test\+Suite\+::total\+\_\+test\+\_\+count() const}
+
+Gets the number of all tests in this test suite.
+
+\doxyparagraph*{Passed \{\#\+Test\+Suite\+::\+Passed\}}
+
+{\ttfamily bool Test\+Suite\+::\+Passed() const}
+
+Returns true if and only if the test suite passed.
+
+\doxyparagraph*{Failed \{\#\+Test\+Suite\+::\+Failed\}}
+
+{\ttfamily bool Test\+Suite\+::\+Failed() const}
+
+Returns true if and only if the test suite failed.
+
+\doxyparagraph*{elapsed\+\_\+time \{\#\+Test\+Suite\+::elapsed\+\_\+time\}}
+
+{\ttfamily Time\+In\+Millis Test\+Suite\+::elapsed\+\_\+time() const}
+
+Returns the elapsed time, in milliseconds.
+
+\doxyparagraph*{start\+\_\+timestamp \{\#\+Test\+Suite\+::start\+\_\+timestamp\}}
+
+{\ttfamily Time\+In\+Millis Test\+Suite\+::start\+\_\+timestamp() const}
+
+Gets the time of the test suite start, in ms from the start of the UNIX epoch.
+
+\doxyparagraph*{Get\+Test\+Info \{\#\+Test\+Suite\+::\+Get\+Test\+Info\}}
+
+{\ttfamily const Test\+Info\texorpdfstring{$\ast$}{*} Test\+Suite\+::\+Get\+Test\+Info(int i) const}
+
+Returns the \doxysectlink{md_googletest_2docs_2reference_2testing_TestInfo}{\`{}\+Test\+Info\`{}}{2} for the {\ttfamily i}-\/th test among all the tests. {\ttfamily i} can range from 0 to {\ttfamily total\+\_\+test\+\_\+count() -\/ 1}. If {\ttfamily i} is not in that range, returns {\ttfamily NULL}.
+
+\doxyparagraph*{ad\+\_\+hoc\+\_\+test\+\_\+result \{\#\+Test\+Suite\+::ad\+\_\+hoc\+\_\+test\+\_\+result\}}
+
+{\ttfamily const Test\+Result\& Test\+Suite\+::ad\+\_\+hoc\+\_\+test\+\_\+result() const}
+
+Returns the \doxysectlink{md_googletest_2docs_2reference_2testing_TestResult}{\`{}\+Test\+Result\`{}}{2} that holds test properties recorded during execution of {\ttfamily Set\+Up\+Test\+Suite} and {\ttfamily Tear\+Down\+Test\+Suite}.\hypertarget{md_googletest_2docs_2reference_2testing_TestInfo}{}\doxysubsection{\texorpdfstring{Test\+Info}{TestInfo}}\label{md_googletest_2docs_2reference_2testing_TestInfo}
+{\ttfamily \doxylink{classtesting_1_1TestInfo}{testing\+::\+Test\+Info}}
+
+Stores information about a test.\hypertarget{md_googletest_2docs_2reference_2testing_TestInfo-public}{}\doxysubsubsection{\texorpdfstring{Public Methods}{Public Methods}}\label{md_googletest_2docs_2reference_2testing_TestInfo-public}
+\doxyparagraph*{test\+\_\+suite\+\_\+name \{\#\+Test\+Info\+::test\+\_\+suite\+\_\+name\}}
+
+{\ttfamily const char\texorpdfstring{$\ast$}{*} Test\+Info\+::test\+\_\+suite\+\_\+name() const}
+
+Returns the test suite name.
+
+\doxyparagraph*{name \{\#\+Test\+Info\+::name\}}
+
+{\ttfamily const char\texorpdfstring{$\ast$}{*} Test\+Info\+::name() const}
+
+Returns the test name.
+
+\doxyparagraph*{type\+\_\+param \{\#\+Test\+Info\+::type\+\_\+param\}}
+
+{\ttfamily const char\texorpdfstring{$\ast$}{*} Test\+Info\+::type\+\_\+param() const}
+
+Returns the name of the parameter type, or {\ttfamily NULL} if this is not a typed or type-\/parameterized test. See \href{../advanced.md\#typed-tests}{\texttt{ Typed Tests}} and \href{../advanced.md\#type-parameterized-tests}{\texttt{ Type-\/\+Parameterized Tests}}.
+
+\doxyparagraph*{value\+\_\+param \{\#\+Test\+Info\+::value\+\_\+param\}}
+
+{\ttfamily const char\texorpdfstring{$\ast$}{*} Test\+Info\+::value\+\_\+param() const}
+
+Returns the text representation of the value parameter, or {\ttfamily NULL} if this is not a value-\/parameterized test. See \href{../advanced.md\#value-parameterized-tests}{\texttt{ Value-\/\+Parameterized Tests}}.
+
+\doxyparagraph*{file \{\#\+Test\+Info\+::file\}}
+
+{\ttfamily const char\texorpdfstring{$\ast$}{*} Test\+Info\+::file() const}
+
+Returns the file name where this test is defined.
+
+\doxyparagraph*{line \{\#\+Test\+Info\+::line\}}
+
+{\ttfamily int Test\+Info\+::line() const}
+
+Returns the line where this test is defined.
+
+\doxyparagraph*{is\+\_\+in\+\_\+another\+\_\+shard \{\#\+Test\+Info\+::is\+\_\+in\+\_\+another\+\_\+shard\}}
+
+{\ttfamily bool Test\+Info\+::is\+\_\+in\+\_\+another\+\_\+shard() const}
+
+Returns true if this test should not be run because it\textquotesingle{}s in another shard.
+
+\doxyparagraph*{should\+\_\+run \{\#\+Test\+Info\+::should\+\_\+run\}}
+
+{\ttfamily bool Test\+Info\+::should\+\_\+run() const}
+
+Returns true if this test should run, that is if the test is not disabled (or it is disabled but the {\ttfamily also\+\_\+run\+\_\+disabled\+\_\+tests} flag has been specified) and its full name matches the user-\/specified filter.
+
+Google\+Test allows the user to filter the tests by their full names. Only the tests that match the filter will run. See \href{../advanced.md\#running-a-subset-of-the-tests}{\texttt{ Running a Subset of the Tests}} for more information.
+
+\doxyparagraph*{is\+\_\+reportable \{\#\+Test\+Info\+::is\+\_\+reportable\}}
+
+{\ttfamily bool Test\+Info\+::is\+\_\+reportable() const}
+
+Returns true if and only if this test will appear in the XML report.
+
+\doxyparagraph*{result \{\#\+Test\+Info\+::result\}}
+
+{\ttfamily const Test\+Result\texorpdfstring{$\ast$}{*} Test\+Info\+::result() const}
+
+Returns the result of the test. See \doxysectlink{md_googletest_2docs_2reference_2testing_TestResult}{\`{}\+Test\+Result\`{}}{2}.\hypertarget{md_googletest_2docs_2reference_2testing_TestParamInfo}{}\doxysubsection{\texorpdfstring{Test\+Param\+Info}{TestParamInfo}}\label{md_googletest_2docs_2reference_2testing_TestParamInfo}
+{\ttfamily \doxylink{structtesting_1_1TestParamInfo}{testing\+::\+Test\+Param\+Info}\texorpdfstring{$<$}{<}T\texorpdfstring{$>$}{>}}
+
+Describes a parameter to a value-\/parameterized test. The type {\ttfamily T} is the type of the parameter.
+
+Contains the fields {\ttfamily param} and {\ttfamily index} which hold the value of the parameter and its integer index respectively.\hypertarget{md_googletest_2docs_2reference_2testing_UnitTest}{}\doxysubsection{\texorpdfstring{Unit\+Test}{UnitTest}}\label{md_googletest_2docs_2reference_2testing_UnitTest}
+{\ttfamily \doxylink{classtesting_1_1UnitTest}{testing\+::\+Unit\+Test}}
+
+This class contains information about the test program.
+
+{\ttfamily Unit\+Test} is a singleton class. The only instance is created when {\ttfamily Unit\+Test\+::\+Get\+Instance()} is first called. This instance is never deleted.
+
+{\ttfamily Unit\+Test} is not copyable.\hypertarget{md_googletest_2docs_2reference_2testing_UnitTest-public}{}\doxysubsubsection{\texorpdfstring{Public Methods}{Public Methods}}\label{md_googletest_2docs_2reference_2testing_UnitTest-public}
+\doxyparagraph*{Get\+Instance \{\#\+Unit\+Test\+::\+Get\+Instance\}}
+
+{\ttfamily static Unit\+Test\texorpdfstring{$\ast$}{*} Unit\+Test\+::\+Get\+Instance()}
+
+Gets the singleton {\ttfamily Unit\+Test} object. The first time this method is called, a {\ttfamily Unit\+Test} object is constructed and returned. Consecutive calls will return the same object.
+
+\doxyparagraph*{original\+\_\+working\+\_\+dir \{\#\+Unit\+Test\+::original\+\_\+working\+\_\+dir\}}
+
+{\ttfamily const char\texorpdfstring{$\ast$}{*} Unit\+Test\+::original\+\_\+working\+\_\+dir() const}
+
+Returns the working directory when the first \doxysectlink{md_googletest_2docs_2reference_2testing_TEST}{\`{}\+TEST()\`{}}{2} or \doxysectlink{md_googletest_2docs_2reference_2testing_TEST_F}{\`{}\+TEST\+\_\+F()\`{}}{2} was executed. The {\ttfamily Unit\+Test} object owns the string.
+
+\doxyparagraph*{current\+\_\+test\+\_\+suite \{\#\+Unit\+Test\+::current\+\_\+test\+\_\+suite\}}
+
+{\ttfamily const Test\+Suite\texorpdfstring{$\ast$}{*} Unit\+Test\+::current\+\_\+test\+\_\+suite() const}
+
+Returns the \doxysectlink{md_googletest_2docs_2reference_2testing_TestSuite}{\`{}\+Test\+Suite\`{}}{2} object for the test that\textquotesingle{}s currently running, or {\ttfamily NULL} if no test is running.
+
+\doxyparagraph*{current\+\_\+test\+\_\+info \{\#\+Unit\+Test\+::current\+\_\+test\+\_\+info\}}
+
+{\ttfamily const Test\+Info\texorpdfstring{$\ast$}{*} Unit\+Test\+::current\+\_\+test\+\_\+info() const}
+
+Returns the \doxysectlink{md_googletest_2docs_2reference_2testing_TestInfo}{\`{}\+Test\+Info\`{}}{2} object for the test that\textquotesingle{}s currently running, or {\ttfamily NULL} if no test is running.
+
+\doxyparagraph*{random\+\_\+seed \{\#\+Unit\+Test\+::random\+\_\+seed\}}
+
+{\ttfamily int Unit\+Test\+::random\+\_\+seed() const}
+
+Returns the random seed used at the start of the current test run.
+
+\doxyparagraph*{successful\+\_\+test\+\_\+suite\+\_\+count \{\#\+Unit\+Test\+::successful\+\_\+test\+\_\+suite\+\_\+count\}}
+
+{\ttfamily int Unit\+Test\+::successful\+\_\+test\+\_\+suite\+\_\+count() const}
+
+Gets the number of successful test suites.
+
+\doxyparagraph*{failed\+\_\+test\+\_\+suite\+\_\+count \{\#\+Unit\+Test\+::failed\+\_\+test\+\_\+suite\+\_\+count\}}
+
+{\ttfamily int Unit\+Test\+::failed\+\_\+test\+\_\+suite\+\_\+count() const}
+
+Gets the number of failed test suites.
+
+\doxyparagraph*{total\+\_\+test\+\_\+suite\+\_\+count \{\#\+Unit\+Test\+::total\+\_\+test\+\_\+suite\+\_\+count\}}
+
+{\ttfamily int Unit\+Test\+::total\+\_\+test\+\_\+suite\+\_\+count() const}
+
+Gets the number of all test suites.
+
+\doxyparagraph*{test\+\_\+suite\+\_\+to\+\_\+run\+\_\+count \{\#\+Unit\+Test\+::test\+\_\+suite\+\_\+to\+\_\+run\+\_\+count\}}
+
+{\ttfamily int Unit\+Test\+::test\+\_\+suite\+\_\+to\+\_\+run\+\_\+count() const}
+
+Gets the number of all test suites that contain at least one test that should run.
+
+\doxyparagraph*{successful\+\_\+test\+\_\+count \{\#\+Unit\+Test\+::successful\+\_\+test\+\_\+count\}}
+
+{\ttfamily int Unit\+Test\+::successful\+\_\+test\+\_\+count() const}
+
+Gets the number of successful tests.
+
+\doxyparagraph*{skipped\+\_\+test\+\_\+count \{\#\+Unit\+Test\+::skipped\+\_\+test\+\_\+count\}}
+
+{\ttfamily int Unit\+Test\+::skipped\+\_\+test\+\_\+count() const}
+
+Gets the number of skipped tests.
+
+\doxyparagraph*{failed\+\_\+test\+\_\+count \{\#\+Unit\+Test\+::failed\+\_\+test\+\_\+count\}}
+
+{\ttfamily int Unit\+Test\+::failed\+\_\+test\+\_\+count() const}
+
+Gets the number of failed tests.
+
+\doxyparagraph*{reportable\+\_\+disabled\+\_\+test\+\_\+count \{\#\+Unit\+Test\+::reportable\+\_\+disabled\+\_\+test\+\_\+count\}}
+
+{\ttfamily int Unit\+Test\+::reportable\+\_\+disabled\+\_\+test\+\_\+count() const}
+
+Gets the number of disabled tests that will be reported in the XML report.
+
+\doxyparagraph*{disabled\+\_\+test\+\_\+count \{\#\+Unit\+Test\+::disabled\+\_\+test\+\_\+count\}}
+
+{\ttfamily int Unit\+Test\+::disabled\+\_\+test\+\_\+count() const}
+
+Gets the number of disabled tests.
+
+\doxyparagraph*{reportable\+\_\+test\+\_\+count \{\#\+Unit\+Test\+::reportable\+\_\+test\+\_\+count\}}
+
+{\ttfamily int Unit\+Test\+::reportable\+\_\+test\+\_\+count() const}
+
+Gets the number of tests to be printed in the XML report.
+
+\doxyparagraph*{total\+\_\+test\+\_\+count \{\#\+Unit\+Test\+::total\+\_\+test\+\_\+count\}}
+
+{\ttfamily int Unit\+Test\+::total\+\_\+test\+\_\+count() const}
+
+Gets the number of all tests.
+
+\doxyparagraph*{test\+\_\+to\+\_\+run\+\_\+count \{\#\+Unit\+Test\+::test\+\_\+to\+\_\+run\+\_\+count\}}
+
+{\ttfamily int Unit\+Test\+::test\+\_\+to\+\_\+run\+\_\+count() const}
+
+Gets the number of tests that should run.
+
+\doxyparagraph*{start\+\_\+timestamp \{\#\+Unit\+Test\+::start\+\_\+timestamp\}}
+
+{\ttfamily Time\+In\+Millis Unit\+Test\+::start\+\_\+timestamp() const}
+
+Gets the time of the test program start, in ms from the start of the UNIX epoch.
+
+\doxyparagraph*{elapsed\+\_\+time \{\#\+Unit\+Test\+::elapsed\+\_\+time\}}
+
+{\ttfamily Time\+In\+Millis Unit\+Test\+::elapsed\+\_\+time() const}
+
+Gets the elapsed time, in milliseconds.
+
+\doxyparagraph*{Passed \{\#\+Unit\+Test\+::\+Passed\}}
+
+{\ttfamily bool Unit\+Test\+::\+Passed() const}
+
+Returns true if and only if the unit test passed (i.\+e. all test suites passed).
+
+\doxyparagraph*{Failed \{\#\+Unit\+Test\+::\+Failed\}}
+
+{\ttfamily bool Unit\+Test\+::\+Failed() const}
+
+Returns true if and only if the unit test failed (i.\+e. some test suite failed or something outside of all tests failed).
+
+\doxyparagraph*{Get\+Test\+Suite \{\#\+Unit\+Test\+::\+Get\+Test\+Suite\}}
+
+{\ttfamily const Test\+Suite\texorpdfstring{$\ast$}{*} Unit\+Test\+::\+Get\+Test\+Suite(int i) const}
+
+Gets the \doxysectlink{md_googletest_2docs_2reference_2testing_TestSuite}{\`{}\+Test\+Suite\`{}}{2} object for the {\ttfamily i}-\/th test suite among all the test suites. {\ttfamily i} can range from 0 to {\ttfamily total\+\_\+test\+\_\+suite\+\_\+count() -\/ 1}. If {\ttfamily i} is not in that range, returns {\ttfamily NULL}.
+
+\doxyparagraph*{ad\+\_\+hoc\+\_\+test\+\_\+result \{\#\+Unit\+Test\+::ad\+\_\+hoc\+\_\+test\+\_\+result\}}
+
+{\ttfamily const Test\+Result\& Unit\+Test\+::ad\+\_\+hoc\+\_\+test\+\_\+result() const}
+
+Returns the \doxysectlink{md_googletest_2docs_2reference_2testing_TestResult}{\`{}\+Test\+Result\`{}}{2} containing information on test failures and properties logged outside of individual test suites.
+
+\doxyparagraph*{listeners \{\#\+Unit\+Test\+::listeners\}}
+
+{\ttfamily Test\+Event\+Listeners\& Unit\+Test\+::listeners()}
+
+Returns the list of event listeners that can be used to track events inside Google\+Test. See \doxysectlink{md_googletest_2docs_2reference_2testing_TestEventListeners}{\`{}\+Test\+Event\+Listeners\`{}}{2}.\hypertarget{md_googletest_2docs_2reference_2testing_TestEventListener}{}\doxysubsection{\texorpdfstring{Test\+Event\+Listener}{TestEventListener}}\label{md_googletest_2docs_2reference_2testing_TestEventListener}
+{\ttfamily \doxylink{classtesting_1_1TestEventListener}{testing\+::\+Test\+Event\+Listener}}
+
+The interface for tracing execution of tests. The methods below are listed in the order the corresponding events are fired.\hypertarget{md_googletest_2docs_2reference_2testing_TestEventListener-public}{}\doxysubsubsection{\texorpdfstring{Public Methods}{Public Methods}}\label{md_googletest_2docs_2reference_2testing_TestEventListener-public}
+\doxyparagraph*{On\+Test\+Program\+Start \{\#\+Test\+Event\+Listener\+::\+On\+Test\+Program\+Start\}}
+
+{\ttfamily virtual void Test\+Event\+Listener\+::\+On\+Test\+Program\+Start(const Unit\+Test\& unit\+\_\+test)}
+
+Fired before any test activity starts.
+
+\doxyparagraph*{On\+Test\+Iteration\+Start \{\#\+Test\+Event\+Listener\+::\+On\+Test\+Iteration\+Start\}}
+
+{\ttfamily virtual void Test\+Event\+Listener\+::\+On\+Test\+Iteration\+Start(const Unit\+Test\& unit\+\_\+test, int iteration)}
+
+Fired before each iteration of tests starts. There may be more than one iteration if {\ttfamily \doxylink{gtest-port_8h_a828f4e34a1c4b510da50ec1563e3562a}{GTEST\+\_\+\+FLAG(repeat)}} is set. {\ttfamily iteration} is the iteration index, starting from 0.
+
+\doxyparagraph*{On\+Environments\+Set\+Up\+Start \{\#\+Test\+Event\+Listener\+::\+On\+Environments\+Set\+Up\+Start\}}
+
+{\ttfamily virtual void Test\+Event\+Listener\+::\+On\+Environments\+Set\+Up\+Start(const Unit\+Test\& unit\+\_\+test)}
+
+Fired before environment set-\/up for each iteration of tests starts.
+
+\doxyparagraph*{On\+Environments\+Set\+Up\+End \{\#\+Test\+Event\+Listener\+::\+On\+Environments\+Set\+Up\+End\}}
+
+{\ttfamily virtual void Test\+Event\+Listener\+::\+On\+Environments\+Set\+Up\+End(const Unit\+Test\& unit\+\_\+test)}
+
+Fired after environment set-\/up for each iteration of tests ends.
+
+\doxyparagraph*{On\+Test\+Suite\+Start \{\#\+Test\+Event\+Listener\+::\+On\+Test\+Suite\+Start\}}
+
+{\ttfamily virtual void Test\+Event\+Listener\+::\+On\+Test\+Suite\+Start(const Test\+Suite\& test\+\_\+suite)}
+
+Fired before the test suite starts.
+
+\doxyparagraph*{On\+Test\+Start \{\#\+Test\+Event\+Listener\+::\+On\+Test\+Start\}}
+
+{\ttfamily virtual void Test\+Event\+Listener\+::\+On\+Test\+Start(const Test\+Info\& test\+\_\+info)}
+
+Fired before the test starts.
+
+\doxyparagraph*{On\+Test\+Part\+Result \{\#\+Test\+Event\+Listener\+::\+On\+Test\+Part\+Result\}}
+
+{\ttfamily virtual void Test\+Event\+Listener\+::\+On\+Test\+Part\+Result(const Test\+Part\+Result\& test\+\_\+part\+\_\+result)}
+
+Fired after a failed assertion or a {\ttfamily \doxylink{gtest_8h_a75adcdf89f69b0b615e395daafc315af}{SUCCEED()}} invocation. If you want to throw an exception from this function to skip to the next test, it must be an \doxysectlink{md_googletest_2docs_2reference_2testing_AssertionException}{\`{}\+Assertion\+Exception\`{}}{2} or inherited from it.
+
+\doxyparagraph*{On\+Test\+End \{\#\+Test\+Event\+Listener\+::\+On\+Test\+End\}}
+
+{\ttfamily virtual void Test\+Event\+Listener\+::\+On\+Test\+End(const Test\+Info\& test\+\_\+info)}
+
+Fired after the test ends.
+
+\doxyparagraph*{On\+Test\+Suite\+End \{\#\+Test\+Event\+Listener\+::\+On\+Test\+Suite\+End\}}
+
+{\ttfamily virtual void Test\+Event\+Listener\+::\+On\+Test\+Suite\+End(const Test\+Suite\& test\+\_\+suite)}
+
+Fired after the test suite ends.
+
+\doxyparagraph*{On\+Environments\+Tear\+Down\+Start \{\#\+Test\+Event\+Listener\+::\+On\+Environments\+Tear\+Down\+Start\}}
+
+{\ttfamily virtual void Test\+Event\+Listener\+::\+On\+Environments\+Tear\+Down\+Start(const Unit\+Test\& unit\+\_\+test)}
+
+Fired before environment tear-\/down for each iteration of tests starts.
+
+\doxyparagraph*{On\+Environments\+Tear\+Down\+End \{\#\+Test\+Event\+Listener\+::\+On\+Environments\+Tear\+Down\+End\}}
+
+{\ttfamily virtual void Test\+Event\+Listener\+::\+On\+Environments\+Tear\+Down\+End(const Unit\+Test\& unit\+\_\+test)}
+
+Fired after environment tear-\/down for each iteration of tests ends.
+
+\doxyparagraph*{On\+Test\+Iteration\+End \{\#\+Test\+Event\+Listener\+::\+On\+Test\+Iteration\+End\}}
+
+{\ttfamily virtual void Test\+Event\+Listener\+::\+On\+Test\+Iteration\+End(const Unit\+Test\& unit\+\_\+test, int iteration)}
+
+Fired after each iteration of tests finishes.
+
+\doxyparagraph*{On\+Test\+Program\+End \{\#\+Test\+Event\+Listener\+::\+On\+Test\+Program\+End\}}
+
+{\ttfamily virtual void Test\+Event\+Listener\+::\+On\+Test\+Program\+End(const Unit\+Test\& unit\+\_\+test)}
+
+Fired after all test activities have ended.\hypertarget{md_googletest_2docs_2reference_2testing_TestEventListeners}{}\doxysubsection{\texorpdfstring{Test\+Event\+Listeners}{TestEventListeners}}\label{md_googletest_2docs_2reference_2testing_TestEventListeners}
+{\ttfamily \doxylink{classtesting_1_1TestEventListeners}{testing\+::\+Test\+Event\+Listeners}}
+
+Lets users add listeners to track events in Google\+Test.\hypertarget{md_googletest_2docs_2reference_2testing_TestEventListeners-public}{}\doxysubsubsection{\texorpdfstring{Public Methods}{Public Methods}}\label{md_googletest_2docs_2reference_2testing_TestEventListeners-public}
+\doxyparagraph*{Append \{\#\+Test\+Event\+Listeners\+::\+Append\}}
+
+{\ttfamily void Test\+Event\+Listeners\+::\+Append(\+Test\+Event\+Listener\texorpdfstring{$\ast$}{*} listener)}
+
+Appends an event listener to the end of the list. Google\+Test assumes ownership of the listener (i.\+e. it will delete the listener when the test program finishes).
+
+\doxyparagraph*{Release \{\#\+Test\+Event\+Listeners\+::\+Release\}}
+
+{\ttfamily Test\+Event\+Listener\texorpdfstring{$\ast$}{*} Test\+Event\+Listeners\+::\+Release(\+Test\+Event\+Listener\texorpdfstring{$\ast$}{*} listener)}
+
+Removes the given event listener from the list and returns it. It then becomes the caller\textquotesingle{}s responsibility to delete the listener. Returns {\ttfamily NULL} if the listener is not found in the list.
+
+\doxyparagraph*{default\+\_\+result\+\_\+printer \{\#\+Test\+Event\+Listeners\+::default\+\_\+result\+\_\+printer\}}
+
+{\ttfamily Test\+Event\+Listener\texorpdfstring{$\ast$}{*} Test\+Event\+Listeners\+::default\+\_\+result\+\_\+printer() const}
+
+Returns the standard listener responsible for the default console output. Can be removed from the listeners list to shut down default console output. Note that removing this object from the listener list with \`{}\+Release()\`{} transfers its ownership to the caller and makes this function return {\ttfamily NULL} the next time.
+
+\doxyparagraph*{default\+\_\+xml\+\_\+generator \{\#\+Test\+Event\+Listeners\+::default\+\_\+xml\+\_\+generator\}}
+
+{\ttfamily Test\+Event\+Listener\texorpdfstring{$\ast$}{*} Test\+Event\+Listeners\+::default\+\_\+xml\+\_\+generator() const}
+
+Returns the standard listener responsible for the default XML output controlled by the {\ttfamily -\/-\/gtest\+\_\+output=xml} flag. Can be removed from the listeners list by users who want to shut down the default XML output controlled by this flag and substitute it with custom one. Note that removing this object from the listener list with \`{}\+Release()\`{} transfers its ownership to the caller and makes this function return {\ttfamily NULL} the next time.\hypertarget{md_googletest_2docs_2reference_2testing_TestPartResult}{}\doxysubsection{\texorpdfstring{Test\+Part\+Result}{TestPartResult}}\label{md_googletest_2docs_2reference_2testing_TestPartResult}
+{\ttfamily testing\+::\+Test\+Part\+Result}
+
+A copyable object representing the result of a test part (i.\+e. an assertion or an explicit {\ttfamily \doxylink{gtest_8h_a3e26a8d27caa386ed0ea7ce9d5b7c4ed}{FAIL()}}, {\ttfamily \doxylink{gtest_8h_adc16b5b0a740c39084ea5c9e960e3063}{ADD\+\_\+\+FAILURE()}}, or {\ttfamily SUCCESS()}).\hypertarget{md_googletest_2docs_2reference_2testing_TestPartResult-public}{}\doxysubsubsection{\texorpdfstring{Public Methods}{Public Methods}}\label{md_googletest_2docs_2reference_2testing_TestPartResult-public}
+\doxyparagraph*{type \{\#\+Test\+Part\+Result\+::type\}}
+
+{\ttfamily Type Test\+Part\+Result\+::type() const}
+
+Gets the outcome of the test part.
+
+The return type {\ttfamily Type} is an enum defined as follows\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{enum}\ \mbox{\hyperlink{namespaceflexbuffers_aa0b4995478c086629fff32c3d10c3872}{Type}}\ \{}
+\DoxyCodeLine{\ \ kSuccess,\ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Succeeded.}}
+\DoxyCodeLine{\ \ kNonFatalFailure,\ \ \textcolor{comment}{//\ Failed\ but\ the\ test\ can\ continue.}}
+\DoxyCodeLine{\ \ kFatalFailure,\ \ \ \ \ \textcolor{comment}{//\ Failed\ and\ the\ test\ should\ be\ terminated.}}
+\DoxyCodeLine{\ \ kSkip\ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Skipped.}}
+\DoxyCodeLine{\};}
+
+\end{DoxyCode}
+
+
+\doxyparagraph*{file\+\_\+name \{\#\+Test\+Part\+Result\+::file\+\_\+name\}}
+
+{\ttfamily const char\texorpdfstring{$\ast$}{*} Test\+Part\+Result\+::file\+\_\+name() const}
+
+Gets the name of the source file where the test part took place, or {\ttfamily NULL} if it\textquotesingle{}s unknown.
+
+\doxyparagraph*{line\+\_\+number \{\#\+Test\+Part\+Result\+::line\+\_\+number\}}
+
+{\ttfamily int Test\+Part\+Result\+::line\+\_\+number() const}
+
+Gets the line in the source file where the test part took place, or {\ttfamily -\/1} if it\textquotesingle{}s unknown.
+
+\doxyparagraph*{summary \{\#\+Test\+Part\+Result\+::summary\}}
+
+{\ttfamily const char\texorpdfstring{$\ast$}{*} Test\+Part\+Result\+::summary() const}
+
+Gets the summary of the failure message.
+
+\doxyparagraph*{message \{\#\+Test\+Part\+Result\+::message\}}
+
+{\ttfamily const char\texorpdfstring{$\ast$}{*} Test\+Part\+Result\+::message() const}
+
+Gets the message associated with the test part.
+
+\doxyparagraph*{skipped \{\#\+Test\+Part\+Result\+::skipped\}}
+
+{\ttfamily bool Test\+Part\+Result\+::skipped() const}
+
+Returns true if and only if the test part was skipped.
+
+\doxyparagraph*{passed \{\#\+Test\+Part\+Result\+::passed\}}
+
+{\ttfamily bool Test\+Part\+Result\+::passed() const}
+
+Returns true if and only if the test part passed.
+
+\doxyparagraph*{nonfatally\+\_\+failed \{\#\+Test\+Part\+Result\+::nonfatally\+\_\+failed\}}
+
+{\ttfamily bool Test\+Part\+Result\+::nonfatally\+\_\+failed() const}
+
+Returns true if and only if the test part non-\/fatally failed.
+
+\doxyparagraph*{fatally\+\_\+failed \{\#\+Test\+Part\+Result\+::fatally\+\_\+failed\}}
+
+{\ttfamily bool Test\+Part\+Result\+::fatally\+\_\+failed() const}
+
+Returns true if and only if the test part fatally failed.
+
+\doxyparagraph*{failed \{\#\+Test\+Part\+Result\+::failed\}}
+
+{\ttfamily bool Test\+Part\+Result\+::failed() const}
+
+Returns true if and only if the test part failed.\hypertarget{md_googletest_2docs_2reference_2testing_TestProperty}{}\doxysubsection{\texorpdfstring{Test\+Property}{TestProperty}}\label{md_googletest_2docs_2reference_2testing_TestProperty}
+{\ttfamily \doxylink{classtesting_1_1TestProperty}{testing\+::\+Test\+Property}}
+
+A copyable object representing a user-\/specified test property which can be output as a key/value string pair.\hypertarget{md_googletest_2docs_2reference_2testing_TestProperty-public}{}\doxysubsubsection{\texorpdfstring{Public Methods}{Public Methods}}\label{md_googletest_2docs_2reference_2testing_TestProperty-public}
+\hypertarget{md_googletest_2docs_2reference_2testing_key}{}\doxyparagraph{\texorpdfstring{key}{key}}\label{md_googletest_2docs_2reference_2testing_key}
+{\ttfamily const char\texorpdfstring{$\ast$}{*} key() const}
+
+Gets the user-\/supplied key.\hypertarget{md_googletest_2docs_2reference_2testing_value}{}\doxyparagraph{\texorpdfstring{value}{value}}\label{md_googletest_2docs_2reference_2testing_value}
+{\ttfamily const char\texorpdfstring{$\ast$}{*} \doxylink{annotated__binary__text__gen_8cpp_a5c33da5929c9f2f9ef8d006d2350e6ec}{value() const}}
+
+Gets the user-\/supplied value.\hypertarget{md_googletest_2docs_2reference_2testing_SetValue}{}\doxyparagraph{\texorpdfstring{Set\+Value}{SetValue}}\label{md_googletest_2docs_2reference_2testing_SetValue}
+{\ttfamily void Set\+Value(const std\+::string\& new\+\_\+value)}
+
+Sets a new value, overriding the previous one.\hypertarget{md_googletest_2docs_2reference_2testing_TestResult}{}\doxysubsection{\texorpdfstring{Test\+Result}{TestResult}}\label{md_googletest_2docs_2reference_2testing_TestResult}
+{\ttfamily \doxylink{classtesting_1_1TestResult}{testing\+::\+Test\+Result}}
+
+Contains information about the result of a single test.
+
+{\ttfamily Test\+Result} is not copyable.\hypertarget{md_googletest_2docs_2reference_2testing_TestResult-public}{}\doxysubsubsection{\texorpdfstring{Public Methods}{Public Methods}}\label{md_googletest_2docs_2reference_2testing_TestResult-public}
+\doxyparagraph*{total\+\_\+part\+\_\+count \{\#\+Test\+Result\+::total\+\_\+part\+\_\+count\}}
+
+{\ttfamily int Test\+Result\+::total\+\_\+part\+\_\+count() const}
+
+Gets the number of all test parts. This is the sum of the number of successful test parts and the number of failed test parts.
+
+\doxyparagraph*{test\+\_\+property\+\_\+count \{\#\+Test\+Result\+::test\+\_\+property\+\_\+count\}}
+
+{\ttfamily int Test\+Result\+::test\+\_\+property\+\_\+count() const}
+
+Returns the number of test properties.
+
+\doxyparagraph*{Passed \{\#\+Test\+Result\+::\+Passed\}}
+
+{\ttfamily bool Test\+Result\+::\+Passed() const}
+
+Returns true if and only if the test passed (i.\+e. no test part failed).
+
+\doxyparagraph*{Skipped \{\#\+Test\+Result\+::\+Skipped\}}
+
+{\ttfamily bool Test\+Result\+::\+Skipped() const}
+
+Returns true if and only if the test was skipped.
+
+\doxyparagraph*{Failed \{\#\+Test\+Result\+::\+Failed\}}
+
+{\ttfamily bool Test\+Result\+::\+Failed() const}
+
+Returns true if and only if the test failed.
+
+\doxyparagraph*{Has\+Fatal\+Failure \{\#\+Test\+Result\+::\+Has\+Fatal\+Failure\}}
+
+{\ttfamily bool Test\+Result\+::\+Has\+Fatal\+Failure() const}
+
+Returns true if and only if the test fatally failed.
+
+\doxyparagraph*{Has\+Nonfatal\+Failure \{\#\+Test\+Result\+::\+Has\+Nonfatal\+Failure\}}
+
+{\ttfamily bool Test\+Result\+::\+Has\+Nonfatal\+Failure() const}
+
+Returns true if and only if the test has a non-\/fatal failure.
+
+\doxyparagraph*{elapsed\+\_\+time \{\#\+Test\+Result\+::elapsed\+\_\+time\}}
+
+{\ttfamily Time\+In\+Millis Test\+Result\+::elapsed\+\_\+time() const}
+
+Returns the elapsed time, in milliseconds.
+
+\doxyparagraph*{start\+\_\+timestamp \{\#\+Test\+Result\+::start\+\_\+timestamp\}}
+
+{\ttfamily Time\+In\+Millis Test\+Result\+::start\+\_\+timestamp() const}
+
+Gets the time of the test case start, in ms from the start of the UNIX epoch.
+
+\doxyparagraph*{Get\+Test\+Part\+Result \{\#\+Test\+Result\+::\+Get\+Test\+Part\+Result\}}
+
+{\ttfamily const Test\+Part\+Result\& Test\+Result\+::\+Get\+Test\+Part\+Result(int i) const}
+
+Returns the \doxysectlink{md_googletest_2docs_2reference_2testing_TestPartResult}{\`{}\+Test\+Part\+Result\`{}}{2} for the {\ttfamily i}-\/th test part result among all the results. {\ttfamily i} can range from 0 to {\ttfamily total\+\_\+part\+\_\+count() -\/ 1}. If {\ttfamily i} is not in that range, aborts the program.
+
+\doxyparagraph*{Get\+Test\+Property \{\#\+Test\+Result\+::\+Get\+Test\+Property\}}
+
+{\ttfamily const Test\+Property\& Test\+Result\+::\+Get\+Test\+Property(int i) const}
+
+Returns the \doxysectlink{md_googletest_2docs_2reference_2testing_TestProperty}{\`{}\+Test\+Property\`{}}{2} object for the {\ttfamily i}-\/th test property. {\ttfamily i} can range from 0 to {\ttfamily test\+\_\+property\+\_\+count() -\/ 1}. If {\ttfamily i} is not in that range, aborts the program.\hypertarget{md_googletest_2docs_2reference_2testing_TimeInMillis}{}\doxysubsection{\texorpdfstring{Time\+In\+Millis}{TimeInMillis}}\label{md_googletest_2docs_2reference_2testing_TimeInMillis}
+{\ttfamily \doxylink{namespacetesting_a992de1d091ce660f451d1e8b3ce30fd6}{testing\+::\+Time\+In\+Millis}}
+
+An integer type representing time in milliseconds.\hypertarget{md_googletest_2docs_2reference_2testing_Types}{}\doxysubsection{\texorpdfstring{Types}{Types}}\label{md_googletest_2docs_2reference_2testing_Types}
+{\ttfamily \doxylink{namespacetesting_a29eec4c1aba59e52881d8eb38cece83c}{testing\+::\+Types}\texorpdfstring{$<$}{<}T...\texorpdfstring{$>$}{>}}
+
+Represents a list of types for use in typed tests and type-\/parameterized tests.
+
+The template argument {\ttfamily T...} can be any number of types, for example\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{testing::Types<char,\ int,\ unsigned\ int>}
+
+\end{DoxyCode}
+
+
+See \href{../advanced.md\#typed-tests}{\texttt{ Typed Tests}} and \href{../advanced.md\#type-parameterized-tests}{\texttt{ Type-\/\+Parameterized Tests}} for more information.\hypertarget{md_googletest_2docs_2reference_2testing_WithParamInterface}{}\doxysubsection{\texorpdfstring{With\+Param\+Interface}{WithParamInterface}}\label{md_googletest_2docs_2reference_2testing_WithParamInterface}
+{\ttfamily \doxylink{classtesting_1_1WithParamInterface}{testing\+::\+With\+Param\+Interface}\texorpdfstring{$<$}{<}T\texorpdfstring{$>$}{>}}
+
+The pure interface class that all value-\/parameterized tests inherit from.
+
+A value-\/parameterized test fixture class must inherit from both \doxysectlink{md_googletest_2docs_2reference_2testing_Test}{\`{}\+Test\`{}}{2} and {\ttfamily With\+Param\+Interface}. In most cases that just means inheriting from \doxysectlink{md_googletest_2docs_2reference_2testing_TestWithParam}{\`{}\+Test\+With\+Param\`{}}{2}, but more complicated test hierarchies may need to inherit from {\ttfamily Test} and {\ttfamily With\+Param\+Interface} at different levels.
+
+This interface defines the type alias {\ttfamily Param\+Type} for the parameter type {\ttfamily T} and has support for accessing the test parameter value via the {\ttfamily Get\+Param()} method\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{static\ const\ ParamType\&\ GetParam()}
+
+\end{DoxyCode}
+
+
+For more information, see \href{../advanced.md\#value-parameterized-tests}{\texttt{ Value-\/\+Parameterized Tests}}.
+
+\doxysection*{Functions}
+
+Google\+Test defines the following functions to help with writing and running tests.\hypertarget{md_googletest_2docs_2reference_2testing_InitGoogleTest}{}\doxysubsection{\texorpdfstring{Init\+Google\+Test}{InitGoogleTest}}\label{md_googletest_2docs_2reference_2testing_InitGoogleTest}
+{\ttfamily void \doxylink{namespacetesting_afd726ae08c9bd16dc52f78c822d9946b}{testing\+::\+Init\+Google\+Test(int\texorpdfstring{$\ast$}{*} argc, char\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} argv)}} \textbackslash{} {\ttfamily void \doxylink{namespacetesting_ae5a88709a4a7529e30c83242156556b3}{testing\+::\+Init\+Google\+Test(int\texorpdfstring{$\ast$}{*} argc, wchar\+\_\+t\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} argv)}} \textbackslash{} {\ttfamily void \doxylink{namespacetesting_ace27eb9a2534996f3711aa719689f987}{testing\+::\+Init\+Google\+Test()}}
+
+Initializes Google\+Test. This must be called before calling \doxysectlink{md_googletest_2docs_2reference_2testing_RUN_ALL_TESTS}{\`{}\+RUN\+\_\+\+ALL\+\_\+\+TESTS()\`{}}{2}. In particular, it parses the command line for the flags that Google\+Test recognizes. Whenever a Google\+Test flag is seen, it is removed from {\ttfamily argv}, and {\ttfamily \texorpdfstring{$\ast$}{*}argc} is decremented. Keep in mind that {\ttfamily argv} must terminate with a {\ttfamily NULL} pointer (i.\+e. {\ttfamily argv\mbox{[}argc\mbox{]}} is {\ttfamily NULL}), which is already the case with the default {\ttfamily argv} passed to {\ttfamily main}.
+
+No value is returned. Instead, the Google\+Test flag variables are updated.
+
+The {\ttfamily Init\+Google\+Test(int\texorpdfstring{$\ast$}{*} argc, wchar\+\_\+t\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} argv)} overload can be used in Windows programs compiled in {\ttfamily UNICODE} mode.
+
+The argument-\/less {\ttfamily Init\+Google\+Test()} overload can be used on Arduino/embedded platforms where there is no {\ttfamily argc}/{\ttfamily argv}.\hypertarget{md_googletest_2docs_2reference_2testing_AddGlobalTestEnvironment}{}\doxysubsection{\texorpdfstring{Add\+Global\+Test\+Environment}{AddGlobalTestEnvironment}}\label{md_googletest_2docs_2reference_2testing_AddGlobalTestEnvironment}
+{\ttfamily Environment\texorpdfstring{$\ast$}{*} testing\+::\+Add\+Global\+Test\+Environment(\+Environment\texorpdfstring{$\ast$}{*} env)}
+
+Adds a test environment to the test program. Must be called before \doxysectlink{md_googletest_2docs_2reference_2testing_RUN_ALL_TESTS}{\`{}\+RUN\+\_\+\+ALL\+\_\+\+TESTS()\`{}}{2} is called. See \href{../advanced.md\#global-set-up-and-tear-down}{\texttt{ Global Set-\/\+Up and Tear-\/\+Down}} for more information.
+
+See also \doxysectlink{md_googletest_2docs_2reference_2testing_Environment}{\`{}\+Environment\`{}}{2}.\hypertarget{md_googletest_2docs_2reference_2testing_RegisterTest}{}\doxysubsection{\texorpdfstring{Register\+Test}{RegisterTest}}\label{md_googletest_2docs_2reference_2testing_RegisterTest}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ Factory>}
+\DoxyCodeLine{TestInfo*\ \mbox{\hyperlink{namespacetesting_a8b90d759c019a155800afdd4b8d623c3}{testing::RegisterTest}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ test\_suite\_name,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ test\_name,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ type\_param,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ value\_param,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ file,\ \textcolor{keywordtype}{int}\ line,\ Factory\ factory)}
+
+\end{DoxyCode}
+
+
+Dynamically registers a test with the framework.
+
+The {\ttfamily factory} argument is a factory callable (move-\/constructible) object or function pointer that creates a new instance of the {\ttfamily Test} object. It handles ownership to the caller. The signature of the callable is {\ttfamily Fixture\texorpdfstring{$\ast$}{*}()}, where {\ttfamily \doxylink{classFixture}{Fixture}} is the test fixture class for the test. All tests registered with the same {\ttfamily test\+\_\+suite\+\_\+name} must return the same fixture type. This is checked at runtime.
+
+The framework will infer the fixture class from the factory and will call the {\ttfamily Set\+Up\+Test\+Suite} and {\ttfamily Tear\+Down\+Test\+Suite} methods for it.
+
+Must be called before \doxysectlink{md_googletest_2docs_2reference_2testing_RUN_ALL_TESTS}{\`{}\+RUN\+\_\+\+ALL\+\_\+\+TESTS()\`{}}{2} is invoked, otherwise behavior is undefined.
+
+See \href{../advanced.md\#registering-tests-programmatically}{\texttt{ Registering tests programmatically}} for more information.\hypertarget{md_googletest_2docs_2reference_2testing_RUN_ALL_TESTS}{}\doxysubsection{\texorpdfstring{RUN\+\_\+\+ALL\+\_\+\+TESTS}{RUN\_ALL\_TESTS}}\label{md_googletest_2docs_2reference_2testing_RUN_ALL_TESTS}
+{\ttfamily int \doxylink{gtest_8h_a853a3792807489591d3d4a2f2ff9359f}{RUN\+\_\+\+ALL\+\_\+\+TESTS()}}
+
+Use this function in {\ttfamily main()} to run all tests. It returns {\ttfamily 0} if all tests are successful, or {\ttfamily 1} otherwise.
+
+{\ttfamily \doxylink{gtest_8h_a853a3792807489591d3d4a2f2ff9359f}{RUN\+\_\+\+ALL\+\_\+\+TESTS()}} should be invoked after the command line has been parsed by \doxysectlink{md_googletest_2docs_2reference_2testing_InitGoogleTest}{\`{}\+Init\+Google\+Test()\`{}}{2}.
+
+This function was formerly a macro; thus, it is in the global namespace and has an all-\/caps name.\hypertarget{md_googletest_2docs_2reference_2testing_AssertionSuccess}{}\doxysubsection{\texorpdfstring{Assertion\+Success}{AssertionSuccess}}\label{md_googletest_2docs_2reference_2testing_AssertionSuccess}
+{\ttfamily Assertion\+Result \doxylink{namespacetesting_ac1d0baedb17286c5c6c87bd1a45da8ac}{testing\+::\+Assertion\+Success()}}
+
+Creates a successful assertion result. See \doxysectlink{md_googletest_2docs_2reference_2testing_AssertionResult}{\`{}\+Assertion\+Result\`{}}{2}.\hypertarget{md_googletest_2docs_2reference_2testing_AssertionFailure}{}\doxysubsection{\texorpdfstring{Assertion\+Failure}{AssertionFailure}}\label{md_googletest_2docs_2reference_2testing_AssertionFailure}
+{\ttfamily Assertion\+Result \doxylink{namespacetesting_a75cb789614cb1c28c34627a4a3c053df}{testing\+::\+Assertion\+Failure()}}
+
+Creates a failed assertion result. Use the {\ttfamily \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<}} operator to store a failure message\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{namespacetesting_a75cb789614cb1c28c34627a4a3c053df}{testing::AssertionFailure}}()\ <<\ \textcolor{stringliteral}{"{}My\ failure\ message"{}};}
+
+\end{DoxyCode}
+
+
+See \doxysectlink{md_googletest_2docs_2reference_2testing_AssertionResult}{\`{}\+Assertion\+Result\`{}}{2}.\hypertarget{md_googletest_2docs_2reference_2testing_StaticAssertTypeEq}{}\doxysubsection{\texorpdfstring{Static\+Assert\+Type\+Eq}{StaticAssertTypeEq}}\label{md_googletest_2docs_2reference_2testing_StaticAssertTypeEq}
+{\ttfamily \doxylink{namespacetesting_a8318a0c014ef26fc3d5b8b3492198ff7}{testing\+::\+Static\+Assert\+Type\+Eq}\texorpdfstring{$<$}{<}T1, T2\texorpdfstring{$>$}{>}()}
+
+Compile-\/time assertion for type equality. Compiles if and only if {\ttfamily T1} and {\ttfamily T2} are the same type. The value it returns is irrelevant.
+
+See \href{../advanced.md\#type-assertions}{\texttt{ Type Assertions}} for more information.\hypertarget{md_googletest_2docs_2reference_2testing_PrintToString}{}\doxysubsection{\texorpdfstring{Print\+To\+String}{PrintToString}}\label{md_googletest_2docs_2reference_2testing_PrintToString}
+{\ttfamily std\+::string testing\+::\+Print\+To\+String(x)}
+
+Prints any value {\ttfamily x} using Google\+Test\textquotesingle{}s value printer.
+
+See \href{../advanced.md\#teaching-googletest-how-to-print-your-values}{\texttt{ Teaching Google\+Test How to Print Your Values}} for more information.\hypertarget{md_googletest_2docs_2reference_2testing_PrintToStringParamName}{}\doxysubsection{\texorpdfstring{Print\+To\+String\+Param\+Name}{PrintToStringParamName}}\label{md_googletest_2docs_2reference_2testing_PrintToStringParamName}
+{\ttfamily std\+::string \doxylink{structtesting_1_1PrintToStringParamName}{testing\+::\+Print\+To\+String\+Param\+Name}(Test\+Param\+Info\texorpdfstring{$<$}{<}T\texorpdfstring{$>$}{>}\& info)}
+
+A built-\/in parameterized test name generator which returns the result of \doxysectlink{md_googletest_2docs_2reference_2testing_PrintToString}{\`{}\+Print\+To\+String\`{}}{2} called on {\ttfamily info.\+param}. Does not work when the test parameter is a {\ttfamily std\+::string} or C string. See \href{../advanced.md\#specifying-names-for-value-parameterized-test-parameters}{\texttt{ Specifying Names for Value-\/\+Parameterized Test Parameters}} for more information.
+
+See also \doxysectlink{md_googletest_2docs_2reference_2testing_TestParamInfo}{\`{}\+Test\+Param\+Info\`{}}{2} and \doxysectlink{md_googletest_2docs_2reference_2testing_INSTANTIATE_TEST_SUITE_P}{\`{}\+INSTANTIATE\+\_\+\+TEST\+\_\+\+SUITE\+\_\+\+P\`{}}{2}. 

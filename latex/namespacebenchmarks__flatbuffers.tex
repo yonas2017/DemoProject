@@ -1,0 +1,188 @@
+\doxysection{benchmarks\+\_\+flatbuffers Namespace Reference}
+\hypertarget{namespacebenchmarks__flatbuffers}{}\label{namespacebenchmarks__flatbuffers}\index{benchmarks\_flatbuffers@{benchmarks\_flatbuffers}}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structbenchmarks__flatbuffers_1_1FLATBUFFERS__FINAL__CLASS}{FLATBUFFERS\+\_\+\+FINAL\+\_\+\+CLASS}}
+\item 
+struct \mbox{\hyperlink{structbenchmarks__flatbuffers_1_1FooBarBuilder}{Foo\+Bar\+Builder}}
+\item 
+struct \mbox{\hyperlink{structbenchmarks__flatbuffers_1_1FooBarContainerBuilder}{Foo\+Bar\+Container\+Builder}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{namespacebenchmarks__flatbuffers_a34a50ac4fd7a558658623e620ea989c2}{Enum}} \+: int16\+\_\+t \{ \newline
+\mbox{\hyperlink{namespacebenchmarks__flatbuffers_a34a50ac4fd7a558658623e620ea989c2ad0e5af6144a6e160231da1a78ce7dcdc}{Enum\+\_\+\+Apples}} = 0
+, \mbox{\hyperlink{namespacebenchmarks__flatbuffers_a34a50ac4fd7a558658623e620ea989c2ac0e04689e126203c95a2673cba5bbbf4}{Enum\+\_\+\+Pears}} = 1
+, \mbox{\hyperlink{namespacebenchmarks__flatbuffers_a34a50ac4fd7a558658623e620ea989c2a10cd7af8f022405b9562afd1cc9dc907}{Enum\+\_\+\+Bananas}} = 2
+, \mbox{\hyperlink{namespacebenchmarks__flatbuffers_a34a50ac4fd7a558658623e620ea989c2a8cb614205da384605593e96070f1908a}{Enum\+\_\+\+MIN}} = Enum\+\_\+\+Apples
+, \newline
+\mbox{\hyperlink{namespacebenchmarks__flatbuffers_a34a50ac4fd7a558658623e620ea989c2ace3c54b35251ab69a8f1606979bd8998}{Enum\+\_\+\+MAX}} = Enum\+\_\+\+Bananas
+ \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+const \mbox{\hyperlink{namespacebenchmarks__flatbuffers_a34a50ac4fd7a558658623e620ea989c2}{Enum}}(\& \mbox{\hyperlink{namespacebenchmarks__flatbuffers_abc7ad4088595f58a7ba2d32e2c476cd5}{Enum\+Values\+Enum}} ())\mbox{[}3\mbox{]}
+\item 
+const char \texorpdfstring{$\ast$}{*}const \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{namespacebenchmarks__flatbuffers_a3da97f24938c154cdfc83f1bdb2af101}{Enum\+Names\+Enum}} ()
+\item 
+const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{namespacebenchmarks__flatbuffers_ab82109b5f6042524b479db00a3d4cf44}{Enum\+Name\+Enum}} (\mbox{\hyperlink{namespacebenchmarks__flatbuffers_a34a50ac4fd7a558658623e620ea989c2}{Enum}} e)
+\item 
+\mbox{\hyperlink{namespacebenchmarks__flatbuffers_a2b1da9845d107930059ad647a03035d8}{FLATBUFFERS\+\_\+\+MANUALLY\+\_\+\+ALIGNED\+\_\+\+STRUCT}} (8) Foo \mbox{\hyperlink{structbenchmarks__flatbuffers_1_1FLATBUFFERS__FINAL__CLASS}{FLATBUFFERS\+\_\+\+FINAL\+\_\+\+CLASS}}
+\item 
+\mbox{\hyperlink{namespacebenchmarks__flatbuffers_ad01564339d21619c4794aaa8bd4634fc}{FLATBUFFERS\+\_\+\+STRUCT\+\_\+\+END}} (Foo, 16)
+\item 
+\mbox{\hyperlink{namespacebenchmarks__flatbuffers_a1a87cd82fac1b8f1812e68f8bac3ce37}{FLATBUFFERS\+\_\+\+STRUCT\+\_\+\+END}} (Bar, 32)
+\item 
+flatbuffers\+::\+Offset$<$ Foo\+Bar $>$ \mbox{\hyperlink{namespacebenchmarks__flatbuffers_aaf57a29e22c129af8b764548b8a228f3}{Create\+Foo\+Bar}} (\mbox{\hyperlink{namespaceflatbuffers_a41ac7b1c8f5f4a869e8f649b6c171ce7}{flatbuffers\+::\+Flat\+Buffer\+Builder}} \&\+\_\+fbb, const benchmarks\+\_\+flatbuffers\+::\+Bar \texorpdfstring{$\ast$}{*}sibling=nullptr, flatbuffers\+::\+Offset$<$ \mbox{\hyperlink{structflatbuffers_1_1String}{flatbuffers\+::\+String}} $>$ \mbox{\hyperlink{idl__gen__ts_8cpp_a9b45b3e13bd9167aab02e17e08916231}{name}}=0, double rating=0.\+0, uint8\+\_\+t postfix=0)
+\item 
+flatbuffers\+::\+Offset$<$ Foo\+Bar $>$ \mbox{\hyperlink{namespacebenchmarks__flatbuffers_a1c974d7cd3f7fe458246c59382b17a50}{Create\+Foo\+Bar\+Direct}} (\mbox{\hyperlink{namespaceflatbuffers_a41ac7b1c8f5f4a869e8f649b6c171ce7}{flatbuffers\+::\+Flat\+Buffer\+Builder}} \&\+\_\+fbb, const benchmarks\+\_\+flatbuffers\+::\+Bar \texorpdfstring{$\ast$}{*}sibling=nullptr, const char \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{idl__gen__ts_8cpp_a9b45b3e13bd9167aab02e17e08916231}{name}}=nullptr, double rating=0.\+0, uint8\+\_\+t postfix=0)
+\item 
+flatbuffers\+::\+Offset$<$ Foo\+Bar\+Container $>$ \mbox{\hyperlink{namespacebenchmarks__flatbuffers_a0767c86fe1e2a0151017d52d673ad872}{Create\+Foo\+Bar\+Container}} (\mbox{\hyperlink{namespaceflatbuffers_a41ac7b1c8f5f4a869e8f649b6c171ce7}{flatbuffers\+::\+Flat\+Buffer\+Builder}} \&\+\_\+fbb, flatbuffers\+::\+Offset$<$ \mbox{\hyperlink{classflatbuffers_1_1Vector}{flatbuffers\+::\+Vector}}$<$ flatbuffers\+::\+Offset$<$ benchmarks\+\_\+flatbuffers\+::\+Foo\+Bar $>$ $>$ $>$ list=0, bool initialized=false, \mbox{\hyperlink{namespacebenchmarks__flatbuffers_a34a50ac4fd7a558658623e620ea989c2}{benchmarks\+\_\+flatbuffers\+::\+Enum}} fruit=\mbox{\hyperlink{namespacebenchmarks__flatbuffers_a34a50ac4fd7a558658623e620ea989c2ad0e5af6144a6e160231da1a78ce7dcdc}{benchmarks\+\_\+flatbuffers\+::\+Enum\+\_\+\+Apples}}, flatbuffers\+::\+Offset$<$ \mbox{\hyperlink{structflatbuffers_1_1String}{flatbuffers\+::\+String}} $>$ location=0)
+\item 
+flatbuffers\+::\+Offset$<$ Foo\+Bar\+Container $>$ \mbox{\hyperlink{namespacebenchmarks__flatbuffers_a1985e14a185a492758facb39bb1686d5}{Create\+Foo\+Bar\+Container\+Direct}} (\mbox{\hyperlink{namespaceflatbuffers_a41ac7b1c8f5f4a869e8f649b6c171ce7}{flatbuffers\+::\+Flat\+Buffer\+Builder}} \&\+\_\+fbb, const std\+::vector$<$ flatbuffers\+::\+Offset$<$ benchmarks\+\_\+flatbuffers\+::\+Foo\+Bar $>$ $>$ \texorpdfstring{$\ast$}{*}list=nullptr, bool initialized=false, \mbox{\hyperlink{namespacebenchmarks__flatbuffers_a34a50ac4fd7a558658623e620ea989c2}{benchmarks\+\_\+flatbuffers\+::\+Enum}} fruit=\mbox{\hyperlink{namespacebenchmarks__flatbuffers_a34a50ac4fd7a558658623e620ea989c2ad0e5af6144a6e160231da1a78ce7dcdc}{benchmarks\+\_\+flatbuffers\+::\+Enum\+\_\+\+Apples}}, const char \texorpdfstring{$\ast$}{*}location=nullptr)
+\item 
+const benchmarks\+\_\+flatbuffers\+::\+Foo\+Bar\+Container \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{namespacebenchmarks__flatbuffers_a37231308d144fb9657c5b968ef642fb9}{Get\+Foo\+Bar\+Container}} (const void \texorpdfstring{$\ast$}{*}buf)
+\item 
+const benchmarks\+\_\+flatbuffers\+::\+Foo\+Bar\+Container \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{namespacebenchmarks__flatbuffers_a9cbf0e0905ecf651b1dc86fb87cba45c}{Get\+Size\+Prefixed\+Foo\+Bar\+Container}} (const void \texorpdfstring{$\ast$}{*}buf)
+\item 
+bool \mbox{\hyperlink{namespacebenchmarks__flatbuffers_aab99593ca78b828820d38caf9628b739}{Verify\+Foo\+Bar\+Container\+Buffer}} (\mbox{\hyperlink{namespaceflatbuffers_a3268477941df91db2eb06442b6e5f922}{flatbuffers\+::\+Verifier}} \&verifier)
+\item 
+bool \mbox{\hyperlink{namespacebenchmarks__flatbuffers_aac4b45fbd557501b1c824adcac80cc2f}{Verify\+Size\+Prefixed\+Foo\+Bar\+Container\+Buffer}} (\mbox{\hyperlink{namespaceflatbuffers_a3268477941df91db2eb06442b6e5f922}{flatbuffers\+::\+Verifier}} \&verifier)
+\item 
+void \mbox{\hyperlink{namespacebenchmarks__flatbuffers_a1bd22fdfb4ca6794c90a42f6dff148d5}{Finish\+Foo\+Bar\+Container\+Buffer}} (\mbox{\hyperlink{namespaceflatbuffers_a41ac7b1c8f5f4a869e8f649b6c171ce7}{flatbuffers\+::\+Flat\+Buffer\+Builder}} \&fbb, flatbuffers\+::\+Offset$<$ benchmarks\+\_\+flatbuffers\+::\+Foo\+Bar\+Container $>$ root)
+\item 
+void \mbox{\hyperlink{namespacebenchmarks__flatbuffers_ac6a72ee460f24600ac2d92ed44b00f43}{Finish\+Size\+Prefixed\+Foo\+Bar\+Container\+Buffer}} (\mbox{\hyperlink{namespaceflatbuffers_a41ac7b1c8f5f4a869e8f649b6c171ce7}{flatbuffers\+::\+Flat\+Buffer\+Builder}} \&fbb, flatbuffers\+::\+Offset$<$ benchmarks\+\_\+flatbuffers\+::\+Foo\+Bar\+Container $>$ root)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Enumeration Type Documentation}
+\Hypertarget{namespacebenchmarks__flatbuffers_a34a50ac4fd7a558658623e620ea989c2}\label{namespacebenchmarks__flatbuffers_a34a50ac4fd7a558658623e620ea989c2} 
+\index{benchmarks\_flatbuffers@{benchmarks\_flatbuffers}!Enum@{Enum}}
+\index{Enum@{Enum}!benchmarks\_flatbuffers@{benchmarks\_flatbuffers}}
+\doxysubsubsection{\texorpdfstring{Enum}{Enum}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{namespacebenchmarks__flatbuffers_a34a50ac4fd7a558658623e620ea989c2}{benchmarks\+\_\+flatbuffers\+::\+Enum}} \+: int16\+\_\+t}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Enum\_Apples@{Enum\_Apples}!benchmarks\_flatbuffers@{benchmarks\_flatbuffers}}\index{benchmarks\_flatbuffers@{benchmarks\_flatbuffers}!Enum\_Apples@{Enum\_Apples}}}\Hypertarget{namespacebenchmarks__flatbuffers_a34a50ac4fd7a558658623e620ea989c2ad0e5af6144a6e160231da1a78ce7dcdc}\label{namespacebenchmarks__flatbuffers_a34a50ac4fd7a558658623e620ea989c2ad0e5af6144a6e160231da1a78ce7dcdc} 
+Enum\+\_\+\+Apples&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Enum\_Pears@{Enum\_Pears}!benchmarks\_flatbuffers@{benchmarks\_flatbuffers}}\index{benchmarks\_flatbuffers@{benchmarks\_flatbuffers}!Enum\_Pears@{Enum\_Pears}}}\Hypertarget{namespacebenchmarks__flatbuffers_a34a50ac4fd7a558658623e620ea989c2ac0e04689e126203c95a2673cba5bbbf4}\label{namespacebenchmarks__flatbuffers_a34a50ac4fd7a558658623e620ea989c2ac0e04689e126203c95a2673cba5bbbf4} 
+Enum\+\_\+\+Pears&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Enum\_Bananas@{Enum\_Bananas}!benchmarks\_flatbuffers@{benchmarks\_flatbuffers}}\index{benchmarks\_flatbuffers@{benchmarks\_flatbuffers}!Enum\_Bananas@{Enum\_Bananas}}}\Hypertarget{namespacebenchmarks__flatbuffers_a34a50ac4fd7a558658623e620ea989c2a10cd7af8f022405b9562afd1cc9dc907}\label{namespacebenchmarks__flatbuffers_a34a50ac4fd7a558658623e620ea989c2a10cd7af8f022405b9562afd1cc9dc907} 
+Enum\+\_\+\+Bananas&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Enum\_MIN@{Enum\_MIN}!benchmarks\_flatbuffers@{benchmarks\_flatbuffers}}\index{benchmarks\_flatbuffers@{benchmarks\_flatbuffers}!Enum\_MIN@{Enum\_MIN}}}\Hypertarget{namespacebenchmarks__flatbuffers_a34a50ac4fd7a558658623e620ea989c2a8cb614205da384605593e96070f1908a}\label{namespacebenchmarks__flatbuffers_a34a50ac4fd7a558658623e620ea989c2a8cb614205da384605593e96070f1908a} 
+Enum\+\_\+\+MIN&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Enum\_MAX@{Enum\_MAX}!benchmarks\_flatbuffers@{benchmarks\_flatbuffers}}\index{benchmarks\_flatbuffers@{benchmarks\_flatbuffers}!Enum\_MAX@{Enum\_MAX}}}\Hypertarget{namespacebenchmarks__flatbuffers_a34a50ac4fd7a558658623e620ea989c2ace3c54b35251ab69a8f1606979bd8998}\label{namespacebenchmarks__flatbuffers_a34a50ac4fd7a558658623e620ea989c2ace3c54b35251ab69a8f1606979bd8998} 
+Enum\+\_\+\+MAX&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{namespacebenchmarks__flatbuffers_aaf57a29e22c129af8b764548b8a228f3}\label{namespacebenchmarks__flatbuffers_aaf57a29e22c129af8b764548b8a228f3} 
+\index{benchmarks\_flatbuffers@{benchmarks\_flatbuffers}!CreateFooBar@{CreateFooBar}}
+\index{CreateFooBar@{CreateFooBar}!benchmarks\_flatbuffers@{benchmarks\_flatbuffers}}
+\doxysubsubsection{\texorpdfstring{CreateFooBar()}{CreateFooBar()}}
+{\footnotesize\ttfamily flatbuffers\+::\+Offset$<$ Foo\+Bar $>$ benchmarks\+\_\+flatbuffers\+::\+Create\+Foo\+Bar (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceflatbuffers_a41ac7b1c8f5f4a869e8f649b6c171ce7}{flatbuffers\+::\+Flat\+Buffer\+Builder}} \&}]{\+\_\+fbb,  }\item[{const benchmarks\+\_\+flatbuffers\+::\+Bar \texorpdfstring{$\ast$}{*}}]{sibling = {\ttfamily nullptr},  }\item[{flatbuffers\+::\+Offset$<$ \mbox{\hyperlink{structflatbuffers_1_1String}{flatbuffers\+::\+String}} $>$}]{name = {\ttfamily 0},  }\item[{double}]{rating = {\ttfamily 0.0},  }\item[{uint8\+\_\+t}]{postfix = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{namespacebenchmarks__flatbuffers_a0767c86fe1e2a0151017d52d673ad872}\label{namespacebenchmarks__flatbuffers_a0767c86fe1e2a0151017d52d673ad872} 
+\index{benchmarks\_flatbuffers@{benchmarks\_flatbuffers}!CreateFooBarContainer@{CreateFooBarContainer}}
+\index{CreateFooBarContainer@{CreateFooBarContainer}!benchmarks\_flatbuffers@{benchmarks\_flatbuffers}}
+\doxysubsubsection{\texorpdfstring{CreateFooBarContainer()}{CreateFooBarContainer()}}
+{\footnotesize\ttfamily flatbuffers\+::\+Offset$<$ Foo\+Bar\+Container $>$ benchmarks\+\_\+flatbuffers\+::\+Create\+Foo\+Bar\+Container (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceflatbuffers_a41ac7b1c8f5f4a869e8f649b6c171ce7}{flatbuffers\+::\+Flat\+Buffer\+Builder}} \&}]{\+\_\+fbb,  }\item[{flatbuffers\+::\+Offset$<$ \mbox{\hyperlink{classflatbuffers_1_1Vector}{flatbuffers\+::\+Vector}}$<$ flatbuffers\+::\+Offset$<$ benchmarks\+\_\+flatbuffers\+::\+Foo\+Bar $>$ $>$ $>$}]{list = {\ttfamily 0},  }\item[{bool}]{initialized = {\ttfamily false},  }\item[{\mbox{\hyperlink{namespacebenchmarks__flatbuffers_a34a50ac4fd7a558658623e620ea989c2}{benchmarks\+\_\+flatbuffers\+::\+Enum}}}]{fruit = {\ttfamily \mbox{\hyperlink{namespacebenchmarks__flatbuffers_a34a50ac4fd7a558658623e620ea989c2ad0e5af6144a6e160231da1a78ce7dcdc}{benchmarks\+\_\+flatbuffers\+::\+Enum\+\_\+\+Apples}}},  }\item[{flatbuffers\+::\+Offset$<$ \mbox{\hyperlink{structflatbuffers_1_1String}{flatbuffers\+::\+String}} $>$}]{location = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{namespacebenchmarks__flatbuffers_a1985e14a185a492758facb39bb1686d5}\label{namespacebenchmarks__flatbuffers_a1985e14a185a492758facb39bb1686d5} 
+\index{benchmarks\_flatbuffers@{benchmarks\_flatbuffers}!CreateFooBarContainerDirect@{CreateFooBarContainerDirect}}
+\index{CreateFooBarContainerDirect@{CreateFooBarContainerDirect}!benchmarks\_flatbuffers@{benchmarks\_flatbuffers}}
+\doxysubsubsection{\texorpdfstring{CreateFooBarContainerDirect()}{CreateFooBarContainerDirect()}}
+{\footnotesize\ttfamily flatbuffers\+::\+Offset$<$ Foo\+Bar\+Container $>$ benchmarks\+\_\+flatbuffers\+::\+Create\+Foo\+Bar\+Container\+Direct (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceflatbuffers_a41ac7b1c8f5f4a869e8f649b6c171ce7}{flatbuffers\+::\+Flat\+Buffer\+Builder}} \&}]{\+\_\+fbb,  }\item[{const std\+::vector$<$ flatbuffers\+::\+Offset$<$ benchmarks\+\_\+flatbuffers\+::\+Foo\+Bar $>$ $>$ \texorpdfstring{$\ast$}{*}}]{list = {\ttfamily nullptr},  }\item[{bool}]{initialized = {\ttfamily false},  }\item[{\mbox{\hyperlink{namespacebenchmarks__flatbuffers_a34a50ac4fd7a558658623e620ea989c2}{benchmarks\+\_\+flatbuffers\+::\+Enum}}}]{fruit = {\ttfamily \mbox{\hyperlink{namespacebenchmarks__flatbuffers_a34a50ac4fd7a558658623e620ea989c2ad0e5af6144a6e160231da1a78ce7dcdc}{benchmarks\+\_\+flatbuffers\+::\+Enum\+\_\+\+Apples}}},  }\item[{const char \texorpdfstring{$\ast$}{*}}]{location = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{namespacebenchmarks__flatbuffers_a1c974d7cd3f7fe458246c59382b17a50}\label{namespacebenchmarks__flatbuffers_a1c974d7cd3f7fe458246c59382b17a50} 
+\index{benchmarks\_flatbuffers@{benchmarks\_flatbuffers}!CreateFooBarDirect@{CreateFooBarDirect}}
+\index{CreateFooBarDirect@{CreateFooBarDirect}!benchmarks\_flatbuffers@{benchmarks\_flatbuffers}}
+\doxysubsubsection{\texorpdfstring{CreateFooBarDirect()}{CreateFooBarDirect()}}
+{\footnotesize\ttfamily flatbuffers\+::\+Offset$<$ Foo\+Bar $>$ benchmarks\+\_\+flatbuffers\+::\+Create\+Foo\+Bar\+Direct (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceflatbuffers_a41ac7b1c8f5f4a869e8f649b6c171ce7}{flatbuffers\+::\+Flat\+Buffer\+Builder}} \&}]{\+\_\+fbb,  }\item[{const benchmarks\+\_\+flatbuffers\+::\+Bar \texorpdfstring{$\ast$}{*}}]{sibling = {\ttfamily nullptr},  }\item[{const char \texorpdfstring{$\ast$}{*}}]{name = {\ttfamily nullptr},  }\item[{double}]{rating = {\ttfamily 0.0},  }\item[{uint8\+\_\+t}]{postfix = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{namespacebenchmarks__flatbuffers_ab82109b5f6042524b479db00a3d4cf44}\label{namespacebenchmarks__flatbuffers_ab82109b5f6042524b479db00a3d4cf44} 
+\index{benchmarks\_flatbuffers@{benchmarks\_flatbuffers}!EnumNameEnum@{EnumNameEnum}}
+\index{EnumNameEnum@{EnumNameEnum}!benchmarks\_flatbuffers@{benchmarks\_flatbuffers}}
+\doxysubsubsection{\texorpdfstring{EnumNameEnum()}{EnumNameEnum()}}
+{\footnotesize\ttfamily const char \texorpdfstring{$\ast$}{*} benchmarks\+\_\+flatbuffers\+::\+Enum\+Name\+Enum (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacebenchmarks__flatbuffers_a34a50ac4fd7a558658623e620ea989c2}{Enum}}}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{namespacebenchmarks__flatbuffers_a3da97f24938c154cdfc83f1bdb2af101}\label{namespacebenchmarks__flatbuffers_a3da97f24938c154cdfc83f1bdb2af101} 
+\index{benchmarks\_flatbuffers@{benchmarks\_flatbuffers}!EnumNamesEnum@{EnumNamesEnum}}
+\index{EnumNamesEnum@{EnumNamesEnum}!benchmarks\_flatbuffers@{benchmarks\_flatbuffers}}
+\doxysubsubsection{\texorpdfstring{EnumNamesEnum()}{EnumNamesEnum()}}
+{\footnotesize\ttfamily const char \texorpdfstring{$\ast$}{*}const  \texorpdfstring{$\ast$}{*} benchmarks\+\_\+flatbuffers\+::\+Enum\+Names\+Enum (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{namespacebenchmarks__flatbuffers_abc7ad4088595f58a7ba2d32e2c476cd5}\label{namespacebenchmarks__flatbuffers_abc7ad4088595f58a7ba2d32e2c476cd5} 
+\index{benchmarks\_flatbuffers@{benchmarks\_flatbuffers}!EnumValuesEnum@{EnumValuesEnum}}
+\index{EnumValuesEnum@{EnumValuesEnum}!benchmarks\_flatbuffers@{benchmarks\_flatbuffers}}
+\doxysubsubsection{\texorpdfstring{EnumValuesEnum()}{EnumValuesEnum()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{namespacebenchmarks__flatbuffers_a34a50ac4fd7a558658623e620ea989c2}{Enum}}(\& benchmarks\+\_\+flatbuffers\+::\+Enum\+Values\+Enum (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}))\mbox{[}3\mbox{]}\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{namespacebenchmarks__flatbuffers_a1bd22fdfb4ca6794c90a42f6dff148d5}\label{namespacebenchmarks__flatbuffers_a1bd22fdfb4ca6794c90a42f6dff148d5} 
+\index{benchmarks\_flatbuffers@{benchmarks\_flatbuffers}!FinishFooBarContainerBuffer@{FinishFooBarContainerBuffer}}
+\index{FinishFooBarContainerBuffer@{FinishFooBarContainerBuffer}!benchmarks\_flatbuffers@{benchmarks\_flatbuffers}}
+\doxysubsubsection{\texorpdfstring{FinishFooBarContainerBuffer()}{FinishFooBarContainerBuffer()}}
+{\footnotesize\ttfamily void benchmarks\+\_\+flatbuffers\+::\+Finish\+Foo\+Bar\+Container\+Buffer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceflatbuffers_a41ac7b1c8f5f4a869e8f649b6c171ce7}{flatbuffers\+::\+Flat\+Buffer\+Builder}} \&}]{fbb,  }\item[{flatbuffers\+::\+Offset$<$ benchmarks\+\_\+flatbuffers\+::\+Foo\+Bar\+Container $>$}]{root }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{namespacebenchmarks__flatbuffers_ac6a72ee460f24600ac2d92ed44b00f43}\label{namespacebenchmarks__flatbuffers_ac6a72ee460f24600ac2d92ed44b00f43} 
+\index{benchmarks\_flatbuffers@{benchmarks\_flatbuffers}!FinishSizePrefixedFooBarContainerBuffer@{FinishSizePrefixedFooBarContainerBuffer}}
+\index{FinishSizePrefixedFooBarContainerBuffer@{FinishSizePrefixedFooBarContainerBuffer}!benchmarks\_flatbuffers@{benchmarks\_flatbuffers}}
+\doxysubsubsection{\texorpdfstring{FinishSizePrefixedFooBarContainerBuffer()}{FinishSizePrefixedFooBarContainerBuffer()}}
+{\footnotesize\ttfamily void benchmarks\+\_\+flatbuffers\+::\+Finish\+Size\+Prefixed\+Foo\+Bar\+Container\+Buffer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceflatbuffers_a41ac7b1c8f5f4a869e8f649b6c171ce7}{flatbuffers\+::\+Flat\+Buffer\+Builder}} \&}]{fbb,  }\item[{flatbuffers\+::\+Offset$<$ benchmarks\+\_\+flatbuffers\+::\+Foo\+Bar\+Container $>$}]{root }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{namespacebenchmarks__flatbuffers_a2b1da9845d107930059ad647a03035d8}\label{namespacebenchmarks__flatbuffers_a2b1da9845d107930059ad647a03035d8} 
+\index{benchmarks\_flatbuffers@{benchmarks\_flatbuffers}!FLATBUFFERS\_MANUALLY\_ALIGNED\_STRUCT@{FLATBUFFERS\_MANUALLY\_ALIGNED\_STRUCT}}
+\index{FLATBUFFERS\_MANUALLY\_ALIGNED\_STRUCT@{FLATBUFFERS\_MANUALLY\_ALIGNED\_STRUCT}!benchmarks\_flatbuffers@{benchmarks\_flatbuffers}}
+\doxysubsubsection{\texorpdfstring{FLATBUFFERS\_MANUALLY\_ALIGNED\_STRUCT()}{FLATBUFFERS\_MANUALLY\_ALIGNED\_STRUCT()}}
+{\footnotesize\ttfamily benchmarks\+\_\+flatbuffers\+::\+FLATBUFFERS\+\_\+\+MANUALLY\+\_\+\+ALIGNED\+\_\+\+STRUCT (\begin{DoxyParamCaption}\item[{8}]{ }\end{DoxyParamCaption})}
+
+\Hypertarget{namespacebenchmarks__flatbuffers_a1a87cd82fac1b8f1812e68f8bac3ce37}\label{namespacebenchmarks__flatbuffers_a1a87cd82fac1b8f1812e68f8bac3ce37} 
+\index{benchmarks\_flatbuffers@{benchmarks\_flatbuffers}!FLATBUFFERS\_STRUCT\_END@{FLATBUFFERS\_STRUCT\_END}}
+\index{FLATBUFFERS\_STRUCT\_END@{FLATBUFFERS\_STRUCT\_END}!benchmarks\_flatbuffers@{benchmarks\_flatbuffers}}
+\doxysubsubsection{\texorpdfstring{FLATBUFFERS\_STRUCT\_END()}{FLATBUFFERS\_STRUCT\_END()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily benchmarks\+\_\+flatbuffers\+::\+FLATBUFFERS\+\_\+\+STRUCT\+\_\+\+END (\begin{DoxyParamCaption}\item[{Bar}]{,  }\item[{32}]{ }\end{DoxyParamCaption})}
+
+\Hypertarget{namespacebenchmarks__flatbuffers_ad01564339d21619c4794aaa8bd4634fc}\label{namespacebenchmarks__flatbuffers_ad01564339d21619c4794aaa8bd4634fc} 
+\index{benchmarks\_flatbuffers@{benchmarks\_flatbuffers}!FLATBUFFERS\_STRUCT\_END@{FLATBUFFERS\_STRUCT\_END}}
+\index{FLATBUFFERS\_STRUCT\_END@{FLATBUFFERS\_STRUCT\_END}!benchmarks\_flatbuffers@{benchmarks\_flatbuffers}}
+\doxysubsubsection{\texorpdfstring{FLATBUFFERS\_STRUCT\_END()}{FLATBUFFERS\_STRUCT\_END()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily benchmarks\+\_\+flatbuffers\+::\+FLATBUFFERS\+\_\+\+STRUCT\+\_\+\+END (\begin{DoxyParamCaption}\item[{Foo}]{,  }\item[{16}]{ }\end{DoxyParamCaption})}
+
+\Hypertarget{namespacebenchmarks__flatbuffers_a37231308d144fb9657c5b968ef642fb9}\label{namespacebenchmarks__flatbuffers_a37231308d144fb9657c5b968ef642fb9} 
+\index{benchmarks\_flatbuffers@{benchmarks\_flatbuffers}!GetFooBarContainer@{GetFooBarContainer}}
+\index{GetFooBarContainer@{GetFooBarContainer}!benchmarks\_flatbuffers@{benchmarks\_flatbuffers}}
+\doxysubsubsection{\texorpdfstring{GetFooBarContainer()}{GetFooBarContainer()}}
+{\footnotesize\ttfamily const benchmarks\+\_\+flatbuffers\+::\+Foo\+Bar\+Container \texorpdfstring{$\ast$}{*} benchmarks\+\_\+flatbuffers\+::\+Get\+Foo\+Bar\+Container (\begin{DoxyParamCaption}\item[{const void \texorpdfstring{$\ast$}{*}}]{buf }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{namespacebenchmarks__flatbuffers_a9cbf0e0905ecf651b1dc86fb87cba45c}\label{namespacebenchmarks__flatbuffers_a9cbf0e0905ecf651b1dc86fb87cba45c} 
+\index{benchmarks\_flatbuffers@{benchmarks\_flatbuffers}!GetSizePrefixedFooBarContainer@{GetSizePrefixedFooBarContainer}}
+\index{GetSizePrefixedFooBarContainer@{GetSizePrefixedFooBarContainer}!benchmarks\_flatbuffers@{benchmarks\_flatbuffers}}
+\doxysubsubsection{\texorpdfstring{GetSizePrefixedFooBarContainer()}{GetSizePrefixedFooBarContainer()}}
+{\footnotesize\ttfamily const benchmarks\+\_\+flatbuffers\+::\+Foo\+Bar\+Container \texorpdfstring{$\ast$}{*} benchmarks\+\_\+flatbuffers\+::\+Get\+Size\+Prefixed\+Foo\+Bar\+Container (\begin{DoxyParamCaption}\item[{const void \texorpdfstring{$\ast$}{*}}]{buf }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{namespacebenchmarks__flatbuffers_aab99593ca78b828820d38caf9628b739}\label{namespacebenchmarks__flatbuffers_aab99593ca78b828820d38caf9628b739} 
+\index{benchmarks\_flatbuffers@{benchmarks\_flatbuffers}!VerifyFooBarContainerBuffer@{VerifyFooBarContainerBuffer}}
+\index{VerifyFooBarContainerBuffer@{VerifyFooBarContainerBuffer}!benchmarks\_flatbuffers@{benchmarks\_flatbuffers}}
+\doxysubsubsection{\texorpdfstring{VerifyFooBarContainerBuffer()}{VerifyFooBarContainerBuffer()}}
+{\footnotesize\ttfamily bool benchmarks\+\_\+flatbuffers\+::\+Verify\+Foo\+Bar\+Container\+Buffer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceflatbuffers_a3268477941df91db2eb06442b6e5f922}{flatbuffers\+::\+Verifier}} \&}]{verifier }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{namespacebenchmarks__flatbuffers_aac4b45fbd557501b1c824adcac80cc2f}\label{namespacebenchmarks__flatbuffers_aac4b45fbd557501b1c824adcac80cc2f} 
+\index{benchmarks\_flatbuffers@{benchmarks\_flatbuffers}!VerifySizePrefixedFooBarContainerBuffer@{VerifySizePrefixedFooBarContainerBuffer}}
+\index{VerifySizePrefixedFooBarContainerBuffer@{VerifySizePrefixedFooBarContainerBuffer}!benchmarks\_flatbuffers@{benchmarks\_flatbuffers}}
+\doxysubsubsection{\texorpdfstring{VerifySizePrefixedFooBarContainerBuffer()}{VerifySizePrefixedFooBarContainerBuffer()}}
+{\footnotesize\ttfamily bool benchmarks\+\_\+flatbuffers\+::\+Verify\+Size\+Prefixed\+Foo\+Bar\+Container\+Buffer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceflatbuffers_a3268477941df91db2eb06442b6e5f922}{flatbuffers\+::\+Verifier}} \&}]{verifier }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+

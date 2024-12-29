@@ -1,0 +1,565 @@
+\doxysection{flatbuffers\+::kotlin\+::Kotlin\+Generator Class Reference}
+\hypertarget{classflatbuffers_1_1kotlin_1_1KotlinGenerator}{}\label{classflatbuffers_1_1kotlin_1_1KotlinGenerator}\index{flatbuffers::kotlin::KotlinGenerator@{flatbuffers::kotlin::KotlinGenerator}}
+
+
+Inheritance diagram for flatbuffers\+::kotlin\+::Kotlin\+Generator\+:
+% FIG 0
+
+
+Collaboration diagram for flatbuffers\+::kotlin\+::Kotlin\+Generator\+:
+% FIG 1
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classflatbuffers_1_1kotlin_1_1KotlinGenerator_a1d67000146e8ad2aabd1e08c0ccd61c4}{Kotlin\+Generator}} (const \mbox{\hyperlink{classflatbuffers_1_1Parser}{Parser}} \&parser, const std\+::string \&path, const std\+::string \&file\+\_\+name)
+\item 
+\mbox{\hyperlink{classflatbuffers_1_1kotlin_1_1KotlinGenerator}{Kotlin\+Generator}} \& \mbox{\hyperlink{classflatbuffers_1_1kotlin_1_1KotlinGenerator_a6b70de373e19f41f87e2fabc552dffa3}{operator=}} (const \mbox{\hyperlink{classflatbuffers_1_1kotlin_1_1KotlinGenerator}{Kotlin\+Generator}} \&)
+\item 
+bool \mbox{\hyperlink{classflatbuffers_1_1kotlin_1_1KotlinGenerator_ae1b285a0eb4104ee49fc465fe2a3e996}{generate}} () FLATBUFFERS\+\_\+\+OVERRIDE
+\item 
+bool \mbox{\hyperlink{classflatbuffers_1_1kotlin_1_1KotlinGenerator_a4d3dfcde1a9355734e2d5beb00bd46fa}{Save\+Type}} (const std\+::string \&defname, const \mbox{\hyperlink{structflatbuffers_1_1Namespace}{Namespace}} \&\mbox{\hyperlink{idl__gen__ts_8cpp_a97618fe2e31e62d92ace9b30478febba}{ns}}, const std\+::string \&classcode, bool needs\+\_\+includes) const
+\item 
+std\+::string \mbox{\hyperlink{classflatbuffers_1_1kotlin_1_1KotlinGenerator_a771ab3d54651deb2956f9d8698f6c4ef}{Gen\+Type\+Pointer}} (const \mbox{\hyperlink{structflatbuffers_1_1Type}{Type}} \&type) const
+\item 
+std\+::string \mbox{\hyperlink{classflatbuffers_1_1kotlin_1_1KotlinGenerator_a1c7d1d0b2890f0a6695c67feb841c423}{Getter\+Return\+Type}} (const \mbox{\hyperlink{structflatbuffers_1_1FieldDef}{Field\+Def}} \&field) const
+\item 
+std\+::string \mbox{\hyperlink{classflatbuffers_1_1kotlin_1_1KotlinGenerator_a886196bb4c233da8f45c21b90b9b7435}{Gen\+Type\+Get}} (const \mbox{\hyperlink{structflatbuffers_1_1Type}{Type}} \&type) const
+\item 
+std\+::string \mbox{\hyperlink{classflatbuffers_1_1kotlin_1_1KotlinGenerator_a10510bdfc12eae6078f4ed17f4d4d607}{Gen\+Enum\+Default\+Value}} (const \mbox{\hyperlink{structflatbuffers_1_1FieldDef}{Field\+Def}} \&field) const
+\item 
+std\+::string \mbox{\hyperlink{classflatbuffers_1_1kotlin_1_1KotlinGenerator_a00e9316f1a29e9445aaa9674d8d01a0f}{Gen\+FBBDefault\+Value}} (const \mbox{\hyperlink{structflatbuffers_1_1FieldDef}{Field\+Def}} \&field) const
+\item 
+std\+::string \mbox{\hyperlink{classflatbuffers_1_1kotlin_1_1KotlinGenerator_a6081867ddff0dab7eba703e169750963}{Gen\+FBBValue\+Cast}} (const \mbox{\hyperlink{structflatbuffers_1_1FieldDef}{Field\+Def}} \&field) const
+\item 
+std\+::string \mbox{\hyperlink{classflatbuffers_1_1kotlin_1_1KotlinGenerator_aa3dbef675291c123eff26e526a053057}{Gen\+Default\+Value}} (const \mbox{\hyperlink{structflatbuffers_1_1FieldDef}{Field\+Def}} \&field, bool force\+\_\+signed=false) const
+\item 
+void \mbox{\hyperlink{classflatbuffers_1_1kotlin_1_1KotlinGenerator_af38745b5616025b7200f06e7314ce93e}{Gen\+Enum}} (\mbox{\hyperlink{structflatbuffers_1_1EnumDef}{Enum\+Def}} \&enum\+\_\+def, \mbox{\hyperlink{classflatbuffers_1_1CodeWriter}{Code\+Writer}} \&writer) const
+\item 
+std\+::string \mbox{\hyperlink{classflatbuffers_1_1kotlin_1_1KotlinGenerator_a46acc7cb94a0aa00d9c1d3fc0bb4e50f}{Byte\+Buffer\+Getter}} (const \mbox{\hyperlink{structflatbuffers_1_1Type}{Type}} \&type, std\+::string bb\+\_\+var\+\_\+name) const
+\item 
+std\+::string \mbox{\hyperlink{classflatbuffers_1_1kotlin_1_1KotlinGenerator_ae6ca6f49199947c5a627a22f08328f06}{Byte\+Buffer\+Setter}} (const \mbox{\hyperlink{structflatbuffers_1_1Type}{Type}} \&type) const
+\item 
+std\+::string \mbox{\hyperlink{classflatbuffers_1_1kotlin_1_1KotlinGenerator_a2f36b077a5c0639b51ba3933ab82e69f}{Gen\+Lookup\+By\+Key}} (\mbox{\hyperlink{structflatbuffers_1_1FieldDef}{flatbuffers\+::\+Field\+Def}} \texorpdfstring{$\ast$}{*}key\+\_\+field, const std\+::string \&bb\+\_\+var\+\_\+name, const char \texorpdfstring{$\ast$}{*}num=nullptr) const
+\item 
+void \mbox{\hyperlink{classflatbuffers_1_1kotlin_1_1KotlinGenerator_a700b727989d89a2c2bf8951cf3ac4bbf}{Gen\+Struct\+Args}} (const \mbox{\hyperlink{structflatbuffers_1_1StructDef}{Struct\+Def}} \&struct\+\_\+def, \mbox{\hyperlink{classflatbuffers_1_1CodeWriter}{Code\+Writer}} \&writer, const char \texorpdfstring{$\ast$}{*}nameprefix) const
+\item 
+void \mbox{\hyperlink{classflatbuffers_1_1kotlin_1_1KotlinGenerator_ad81975426d56fa31cddfe73840857666}{Gen\+Struct\+Body}} (const \mbox{\hyperlink{structflatbuffers_1_1StructDef}{Struct\+Def}} \&struct\+\_\+def, \mbox{\hyperlink{classflatbuffers_1_1CodeWriter}{Code\+Writer}} \&writer, const char \texorpdfstring{$\ast$}{*}nameprefix) const
+\item 
+std\+::string \mbox{\hyperlink{classflatbuffers_1_1kotlin_1_1KotlinGenerator_aa921fbce29c0447b5d65c0874fda3e0b}{Gen\+Byte\+Buffer\+Length}} (const char \texorpdfstring{$\ast$}{*}bb\+\_\+name) const
+\item 
+std\+::string \mbox{\hyperlink{classflatbuffers_1_1kotlin_1_1KotlinGenerator_a4006872d0001da729eb0bf9552fdd047}{Gen\+Offset\+Getter}} (\mbox{\hyperlink{structflatbuffers_1_1FieldDef}{flatbuffers\+::\+Field\+Def}} \texorpdfstring{$\ast$}{*}key\+\_\+field, const char \texorpdfstring{$\ast$}{*}num=nullptr) const
+\item 
+void \mbox{\hyperlink{classflatbuffers_1_1kotlin_1_1KotlinGenerator_a48cb04e12bf40e9a72866d0a1afc0b32}{Gen\+Struct}} (\mbox{\hyperlink{structflatbuffers_1_1StructDef}{Struct\+Def}} \&struct\+\_\+def, \mbox{\hyperlink{classflatbuffers_1_1CodeWriter}{Code\+Writer}} \&writer, \mbox{\hyperlink{structflatbuffers_1_1IDLOptions}{IDLOptions}} options) const
+\item 
+void \mbox{\hyperlink{classflatbuffers_1_1kotlin_1_1KotlinGenerator_a43078eed06f2f13cd8017a8b0e823522}{Generate\+Lookup\+By\+Key}} (\mbox{\hyperlink{structflatbuffers_1_1FieldDef}{Field\+Def}} \texorpdfstring{$\ast$}{*}key\+\_\+field, \mbox{\hyperlink{structflatbuffers_1_1StructDef}{Struct\+Def}} \&struct\+\_\+def, \mbox{\hyperlink{classflatbuffers_1_1CodeWriter}{Code\+Writer}} \&writer, const \mbox{\hyperlink{structflatbuffers_1_1IDLOptions}{IDLOptions}} options) const
+\item 
+void \mbox{\hyperlink{classflatbuffers_1_1kotlin_1_1KotlinGenerator_af55cfd74049b4be7cd2dbb43536b6815}{Generate\+Finish\+Size\+Prefixed}} (\mbox{\hyperlink{structflatbuffers_1_1StructDef}{Struct\+Def}} \&struct\+\_\+def, const std\+::string \&identifier, \mbox{\hyperlink{classflatbuffers_1_1CodeWriter}{Code\+Writer}} \&writer, const \mbox{\hyperlink{structflatbuffers_1_1IDLOptions}{IDLOptions}} options) const
+\item 
+void \mbox{\hyperlink{classflatbuffers_1_1kotlin_1_1KotlinGenerator_ad24810ae6639152232525f63122df98c}{Generate\+Finish\+Struct\+Buffer}} (\mbox{\hyperlink{structflatbuffers_1_1StructDef}{Struct\+Def}} \&struct\+\_\+def, const std\+::string \&identifier, \mbox{\hyperlink{classflatbuffers_1_1CodeWriter}{Code\+Writer}} \&writer, const \mbox{\hyperlink{structflatbuffers_1_1IDLOptions}{IDLOptions}} options) const
+\item 
+void \mbox{\hyperlink{classflatbuffers_1_1kotlin_1_1KotlinGenerator_abfce7b40482704e9519c2e22701ba267}{Generate\+End\+Struct\+Method}} (\mbox{\hyperlink{structflatbuffers_1_1StructDef}{Struct\+Def}} \&struct\+\_\+def, \mbox{\hyperlink{classflatbuffers_1_1CodeWriter}{Code\+Writer}} \&writer, const \mbox{\hyperlink{structflatbuffers_1_1IDLOptions}{IDLOptions}} options) const
+\item 
+void \mbox{\hyperlink{classflatbuffers_1_1kotlin_1_1KotlinGenerator_a4c56fdac47f985a02fb8bdf7bc3cbbdc}{Generate\+Create\+Vector\+Field}} (\mbox{\hyperlink{structflatbuffers_1_1FieldDef}{Field\+Def}} \&field, \mbox{\hyperlink{classflatbuffers_1_1CodeWriter}{Code\+Writer}} \&writer, const \mbox{\hyperlink{structflatbuffers_1_1IDLOptions}{IDLOptions}} options) const
+\item 
+void \mbox{\hyperlink{classflatbuffers_1_1kotlin_1_1KotlinGenerator_abbb08bca556ae735fb4d825ea3e0fc59}{Generate\+Start\+Vector\+Field}} (\mbox{\hyperlink{structflatbuffers_1_1FieldDef}{Field\+Def}} \&field, \mbox{\hyperlink{classflatbuffers_1_1CodeWriter}{Code\+Writer}} \&writer, const \mbox{\hyperlink{structflatbuffers_1_1IDLOptions}{IDLOptions}} options) const
+\item 
+void \mbox{\hyperlink{classflatbuffers_1_1kotlin_1_1KotlinGenerator_a51bef46bd83612ec4d5dbc16c217c18e}{Generate\+Add\+Field}} (std\+::string field\+\_\+pos, \mbox{\hyperlink{structflatbuffers_1_1FieldDef}{Field\+Def}} \&field, \mbox{\hyperlink{classflatbuffers_1_1CodeWriter}{Code\+Writer}} \&writer, const \mbox{\hyperlink{structflatbuffers_1_1IDLOptions}{IDLOptions}} options) const
+\item 
+void \mbox{\hyperlink{classflatbuffers_1_1kotlin_1_1KotlinGenerator_a0b92ce300ceffb4be8c17a09bd275fa3}{Generate\+Start\+Struct\+Method}} (\mbox{\hyperlink{structflatbuffers_1_1StructDef}{Struct\+Def}} \&struct\+\_\+def, \mbox{\hyperlink{classflatbuffers_1_1CodeWriter}{Code\+Writer}} \&code, const \mbox{\hyperlink{structflatbuffers_1_1IDLOptions}{IDLOptions}} options) const
+\item 
+void \mbox{\hyperlink{classflatbuffers_1_1kotlin_1_1KotlinGenerator_a44a48b1761f2b2b202f0b224414a9101}{Generate\+Table\+Creator}} (\mbox{\hyperlink{structflatbuffers_1_1StructDef}{Struct\+Def}} \&struct\+\_\+def, \mbox{\hyperlink{classflatbuffers_1_1CodeWriter}{Code\+Writer}} \&writer, const \mbox{\hyperlink{structflatbuffers_1_1IDLOptions}{IDLOptions}} options) const
+\item 
+void \mbox{\hyperlink{classflatbuffers_1_1kotlin_1_1KotlinGenerator_aee77db2004bc220cae3e1c45bfd3b5b7}{Generate\+Buffer\+Has\+Identifier}} (\mbox{\hyperlink{structflatbuffers_1_1StructDef}{Struct\+Def}} \&struct\+\_\+def, \mbox{\hyperlink{classflatbuffers_1_1CodeWriter}{Code\+Writer}} \&writer, \mbox{\hyperlink{structflatbuffers_1_1IDLOptions}{IDLOptions}} options) const
+\item 
+void \mbox{\hyperlink{classflatbuffers_1_1kotlin_1_1KotlinGenerator_a3a970d26d00156382e6cf5267d2aa116}{Generate\+Struct\+Getters}} (\mbox{\hyperlink{structflatbuffers_1_1StructDef}{Struct\+Def}} \&struct\+\_\+def, \mbox{\hyperlink{classflatbuffers_1_1CodeWriter}{Code\+Writer}} \&writer) const
+\item 
+void \mbox{\hyperlink{classflatbuffers_1_1kotlin_1_1KotlinGenerator_a3c361a6a3abc3a88e4fb7085da6a94a5}{Generate\+Companion\+Object}} (\mbox{\hyperlink{classflatbuffers_1_1CodeWriter}{Code\+Writer}} \&code, const std\+::function$<$ void()$>$ \&callback) const
+\item 
+void \mbox{\hyperlink{classflatbuffers_1_1kotlin_1_1KotlinGenerator_ad79b23beb40e7228eb1452ea49d0a2c8}{Generate\+Comment}} (const std\+::vector$<$ std\+::string $>$ \&dc, \mbox{\hyperlink{classflatbuffers_1_1CodeWriter}{Code\+Writer}} \&writer, const \mbox{\hyperlink{structflatbuffers_1_1CommentConfig}{Comment\+Config}} \texorpdfstring{$\ast$}{*}config) const
+\item 
+void \mbox{\hyperlink{classflatbuffers_1_1kotlin_1_1KotlinGenerator_a1fdbc4891f3e5128a1646d717448d0e6}{Generate\+Get\+Root\+As\+Accessors}} (const std\+::string \&struct\+\_\+name, \mbox{\hyperlink{classflatbuffers_1_1CodeWriter}{Code\+Writer}} \&writer, \mbox{\hyperlink{structflatbuffers_1_1IDLOptions}{IDLOptions}} options) const
+\item 
+void \mbox{\hyperlink{classflatbuffers_1_1kotlin_1_1KotlinGenerator_a3e33a7155bd321be8439de6c88ecb3ac}{Generate\+Static\+Constructor}} (const \mbox{\hyperlink{structflatbuffers_1_1StructDef}{Struct\+Def}} \&struct\+\_\+def, \mbox{\hyperlink{classflatbuffers_1_1CodeWriter}{Code\+Writer}} \&code, const \mbox{\hyperlink{structflatbuffers_1_1IDLOptions}{IDLOptions}} options) const
+\item 
+std\+::string \mbox{\hyperlink{classflatbuffers_1_1kotlin_1_1KotlinGenerator_a6e44cfb258d5a63f3a35c8f5ef787cee}{Struct\+Constructor\+Params}} (const \mbox{\hyperlink{structflatbuffers_1_1StructDef}{Struct\+Def}} \&struct\+\_\+def, const std\+::string \&prefix="{}"{}) const
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classflatbuffers_1_1BaseGenerator}{flatbuffers\+::\+Base\+Generator}}}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{classflatbuffers_1_1BaseGenerator_a8559bf41626bdecd53736bfc9153d4b5}{Generated\+File\+Name}} (const std\+::string \&path, const std\+::string \&file\+\_\+name, const \mbox{\hyperlink{structflatbuffers_1_1IDLOptions}{IDLOptions}} \&options) const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static bool \mbox{\hyperlink{classflatbuffers_1_1kotlin_1_1KotlinGenerator_a9a9e37600d85ac19088cc333b9528bbd}{Is\+Enum}} (const \mbox{\hyperlink{structflatbuffers_1_1Type}{Type}} \&type)
+\item 
+static std\+::string \mbox{\hyperlink{classflatbuffers_1_1kotlin_1_1KotlinGenerator_afb878233ae534899d05ac1cd870a9d12}{Gen\+Type\+Basic}} (const \mbox{\hyperlink{namespaceflatbuffers_a120ddc06543f62f7dce4619b34cac8d4}{Base\+Type}} \&type)
+\item 
+static std\+::string \mbox{\hyperlink{classflatbuffers_1_1kotlin_1_1KotlinGenerator_a2d2baf371590425fd744c95c4adb4d11}{Gen\+Method}} (const \mbox{\hyperlink{structflatbuffers_1_1Type}{Type}} \&type)
+\item 
+static std\+::string \mbox{\hyperlink{classflatbuffers_1_1kotlin_1_1KotlinGenerator_ab910a32f4687e95644669970c20d675b}{To\+Signed\+Type}} (const \mbox{\hyperlink{structflatbuffers_1_1Type}{Type}} \&type)
+\item 
+static std\+::string \mbox{\hyperlink{classflatbuffers_1_1kotlin_1_1KotlinGenerator_ad938b9c8783caa00a6cdd84e5c8ffc59}{Flex\+Buffer\+Builder\+Cast}} (const std\+::string \&method, \mbox{\hyperlink{structflatbuffers_1_1FieldDef}{Field\+Def}} \&field, bool is\+First)
+\item 
+static std\+::string \mbox{\hyperlink{classflatbuffers_1_1kotlin_1_1KotlinGenerator_ac87a6441c5f56e433cd76aebd83ea4fc}{Cast\+To\+Usigned}} (const \mbox{\hyperlink{structflatbuffers_1_1FieldDef}{Field\+Def}} \&field)
+\item 
+static std\+::string \mbox{\hyperlink{classflatbuffers_1_1kotlin_1_1KotlinGenerator_a4da78708bfff859254934488611d07e3}{Cast\+To\+Usigned}} (const \mbox{\hyperlink{structflatbuffers_1_1Type}{Type}} type)
+\item 
+static std\+::string \mbox{\hyperlink{classflatbuffers_1_1kotlin_1_1KotlinGenerator_af0517204dce7b359ecabd0a3c75efda6}{Cast\+To\+Signed}} (const \mbox{\hyperlink{structflatbuffers_1_1FieldDef}{Field\+Def}} \&field)
+\item 
+static std\+::string \mbox{\hyperlink{classflatbuffers_1_1kotlin_1_1KotlinGenerator_ad8c3120bb3e77acd4f4e8a45fdb04b28}{Cast\+To\+Signed}} (const \mbox{\hyperlink{structflatbuffers_1_1Type}{Type}} type)
+\item 
+static std\+::string \mbox{\hyperlink{classflatbuffers_1_1kotlin_1_1KotlinGenerator_a9b0dbba319f5338e342c8e0b9fd2c3a5}{Literal\+Suffix}} (const \mbox{\hyperlink{namespaceflatbuffers_a120ddc06543f62f7dce4619b34cac8d4}{Base\+Type}} type)
+\item 
+static void \mbox{\hyperlink{classflatbuffers_1_1kotlin_1_1KotlinGenerator_a74d8c1e07f5419f6d68f543736677232}{Generate\+Property\+One\+Line}} (\mbox{\hyperlink{classflatbuffers_1_1CodeWriter}{Code\+Writer}} \&writer, const std\+::string \&\mbox{\hyperlink{idl__gen__ts_8cpp_a9b45b3e13bd9167aab02e17e08916231}{name}}, const std\+::string \&type, const std\+::function$<$ void()$>$ \&body)
+\item 
+static void \mbox{\hyperlink{classflatbuffers_1_1kotlin_1_1KotlinGenerator_afbf09296fd2c7ee57d6a7e201ecb0d99}{Generate\+Getter\+One\+Line}} (\mbox{\hyperlink{classflatbuffers_1_1CodeWriter}{Code\+Writer}} \&writer, const std\+::string \&\mbox{\hyperlink{idl__gen__ts_8cpp_a9b45b3e13bd9167aab02e17e08916231}{name}}, const std\+::string \&type, const std\+::function$<$ void()$>$ \&body)
+\item 
+static void \mbox{\hyperlink{classflatbuffers_1_1kotlin_1_1KotlinGenerator_a41019913a682b7ad08b4f0a6df675877}{Generate\+Getter}} (\mbox{\hyperlink{classflatbuffers_1_1CodeWriter}{Code\+Writer}} \&writer, const std\+::string \&\mbox{\hyperlink{idl__gen__ts_8cpp_a9b45b3e13bd9167aab02e17e08916231}{name}}, const std\+::string \&type, const std\+::function$<$ void()$>$ \&body)
+\item 
+static void \mbox{\hyperlink{classflatbuffers_1_1kotlin_1_1KotlinGenerator_aeb064b18bce6131d1d17e23a1ad13305}{Generate\+Fun}} (\mbox{\hyperlink{classflatbuffers_1_1CodeWriter}{Code\+Writer}} \&writer, const std\+::string \&\mbox{\hyperlink{idl__gen__ts_8cpp_a9b45b3e13bd9167aab02e17e08916231}{name}}, const std\+::string \&params, const std\+::string \&return\+Type, const std\+::function$<$ void()$>$ \&body, bool gen\+\_\+jvmstatic=false)
+\item 
+static void \mbox{\hyperlink{classflatbuffers_1_1kotlin_1_1KotlinGenerator_a5e1eb2fb1abded94e1ceb79fe29c0971}{Generate\+Fun\+One\+Line}} (\mbox{\hyperlink{classflatbuffers_1_1CodeWriter}{Code\+Writer}} \&writer, const std\+::string \&\mbox{\hyperlink{idl__gen__ts_8cpp_a9b45b3e13bd9167aab02e17e08916231}{name}}, const std\+::string \&params, const std\+::string \&return\+Type, const std\+::function$<$ void()$>$ \&body, bool gen\+\_\+jvmstatic=false)
+\item 
+static void \mbox{\hyperlink{classflatbuffers_1_1kotlin_1_1KotlinGenerator_a632c6003f2927951672e0479820f6f1c}{Generate\+Override\+Fun}} (\mbox{\hyperlink{classflatbuffers_1_1CodeWriter}{Code\+Writer}} \&writer, const std\+::string \&\mbox{\hyperlink{idl__gen__ts_8cpp_a9b45b3e13bd9167aab02e17e08916231}{name}}, const std\+::string \&params, const std\+::string \&return\+Type, const std\+::function$<$ void()$>$ \&body)
+\item 
+static void \mbox{\hyperlink{classflatbuffers_1_1kotlin_1_1KotlinGenerator_a6c83bcda861361da7a5a07f3af206893}{Generate\+Override\+Fun\+One\+Line}} (\mbox{\hyperlink{classflatbuffers_1_1CodeWriter}{Code\+Writer}} \&writer, const std\+::string \&\mbox{\hyperlink{idl__gen__ts_8cpp_a9b45b3e13bd9167aab02e17e08916231}{name}}, const std\+::string \&params, const std\+::string \&return\+Type, const std\+::string \&statement)
+\item 
+static std\+::string \mbox{\hyperlink{classflatbuffers_1_1kotlin_1_1KotlinGenerator_a8785a6c86ac118aae9dc3d6a36cb084c}{Offset\+Wrapper\+One\+Line}} (const std\+::string \&offset, const std\+::string \&found, const std\+::string \&not\+\_\+found)
+\item 
+static void \mbox{\hyperlink{classflatbuffers_1_1kotlin_1_1KotlinGenerator_a11b565c87cee028c47b7a5f5a6c4134f}{Offset\+Wrapper}} (\mbox{\hyperlink{classflatbuffers_1_1CodeWriter}{Code\+Writer}} \&code, const std\+::string \&offset, const std\+::function$<$ void()$>$ \&found, const std\+::function$<$ void()$>$ \&not\+\_\+found)
+\item 
+static std\+::string \mbox{\hyperlink{classflatbuffers_1_1kotlin_1_1KotlinGenerator_af18fc39ba3a444c51d11dba85effa88b}{Indirect}} (const std\+::string \&index, bool fixed)
+\item 
+static std\+::string \mbox{\hyperlink{classflatbuffers_1_1kotlin_1_1KotlinGenerator_a5a1763463a643ff2457ace1a8402c30e}{Not\+Found\+Return}} (\mbox{\hyperlink{namespaceflatbuffers_a120ddc06543f62f7dce4619b34cac8d4}{Base\+Type}} el)
+\item 
+static void \mbox{\hyperlink{classflatbuffers_1_1kotlin_1_1KotlinGenerator_af3a1e09b6d673c22b4549d2da9252c47}{Generate\+Jvm\+Static\+Annotation}} (\mbox{\hyperlink{classflatbuffers_1_1CodeWriter}{Code\+Writer}} \&code, bool gen\+\_\+jvmstatic)
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions inherited from \mbox{\hyperlink{classflatbuffers_1_1BaseGenerator}{flatbuffers\+::\+Base\+Generator}}}
+\begin{DoxyCompactItemize}
+\item 
+static std\+::string \mbox{\hyperlink{classflatbuffers_1_1BaseGenerator_ab7fdb905d7dd8d1177a470eef2da089e}{Namespace\+Dir}} (const \mbox{\hyperlink{classflatbuffers_1_1Parser}{Parser}} \&parser, const std\+::string \&path, const \mbox{\hyperlink{structflatbuffers_1_1Namespace}{Namespace}} \&\mbox{\hyperlink{idl__gen__ts_8cpp_a97618fe2e31e62d92ace9b30478febba}{ns}}, const bool dasherize=false)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+const \mbox{\hyperlink{classflatbuffers_1_1IdlNamer}{Idl\+Namer}} \mbox{\hyperlink{classflatbuffers_1_1kotlin_1_1KotlinGenerator_a8d7d920d124ce13b5c2cd4fe6b35505d}{namer\+\_\+}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{classflatbuffers_1_1BaseGenerator}{flatbuffers\+::\+Base\+Generator}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classflatbuffers_1_1BaseGenerator_aa1607736e698a0105f44e2c167963343}{Base\+Generator}} (const \mbox{\hyperlink{classflatbuffers_1_1Parser}{Parser}} \&parser, const std\+::string \&path, const std\+::string \&file\+\_\+name, std\+::string qualifying\+\_\+start, std\+::string qualifying\+\_\+separator, std\+::string default\+\_\+extension)
+\item 
+virtual \mbox{\hyperlink{classflatbuffers_1_1BaseGenerator_aeab72f6ee75c6753054c84ef9d8a7f04}{\texorpdfstring{$\sim$}{\string~}\+Base\+Generator}} ()
+\item 
+\mbox{\hyperlink{classflatbuffers_1_1BaseGenerator}{Base\+Generator}} \& \mbox{\hyperlink{classflatbuffers_1_1BaseGenerator_a10696c81aa5d52cb15c4365238ba27ed}{operator=}} (const \mbox{\hyperlink{classflatbuffers_1_1BaseGenerator}{Base\+Generator}} \&)
+\item 
+\mbox{\hyperlink{classflatbuffers_1_1BaseGenerator_a6769aab327d5dcb931f9f8c8c1797525}{Base\+Generator}} (const \mbox{\hyperlink{classflatbuffers_1_1BaseGenerator}{Base\+Generator}} \&)
+\item 
+std\+::string \mbox{\hyperlink{classflatbuffers_1_1BaseGenerator_a99f2098106976757252afd99c05bf0ff}{Namespace\+Dir}} (const \mbox{\hyperlink{structflatbuffers_1_1Namespace}{Namespace}} \&\mbox{\hyperlink{idl__gen__ts_8cpp_a97618fe2e31e62d92ace9b30478febba}{ns}}, const bool dasherize=false) const
+\item 
+virtual const \mbox{\hyperlink{structflatbuffers_1_1Namespace}{Namespace}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classflatbuffers_1_1BaseGenerator_ae9894dabc9bac7eff32a810067a9a221}{Current\+Name\+Space}} () const
+\item 
+std\+::string \mbox{\hyperlink{classflatbuffers_1_1BaseGenerator_a4ceefb68a9f65fe861458e82b87c3944}{Wrap\+In\+Name\+Space}} (const \mbox{\hyperlink{structflatbuffers_1_1Namespace}{Namespace}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{idl__gen__ts_8cpp_a97618fe2e31e62d92ace9b30478febba}{ns}}, const std\+::string \&\mbox{\hyperlink{idl__gen__ts_8cpp_a9b45b3e13bd9167aab02e17e08916231}{name}}) const
+\item 
+std\+::string \mbox{\hyperlink{classflatbuffers_1_1BaseGenerator_a1a39f31f1d50c515c1943989765b2330}{Wrap\+In\+Name\+Space}} (const \mbox{\hyperlink{structflatbuffers_1_1Definition}{Definition}} \&def, const std\+::string \&suffix="{}"{}) const
+\item 
+std\+::string \mbox{\hyperlink{classflatbuffers_1_1BaseGenerator_a6b6bbd8e0606f051018d90994bb73e4c}{Get\+Name\+Space}} (const \mbox{\hyperlink{structflatbuffers_1_1Definition}{Definition}} \&def) const
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Protected Member Functions inherited from \mbox{\hyperlink{classflatbuffers_1_1BaseGenerator}{flatbuffers\+::\+Base\+Generator}}}
+\begin{DoxyCompactItemize}
+\item 
+static const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classflatbuffers_1_1BaseGenerator_a04ffaceb3b3c37e9eb8296ddf72ff0f3}{Flat\+Buffers\+Generated\+Warning}} ()
+\item 
+static std\+::string \mbox{\hyperlink{classflatbuffers_1_1BaseGenerator_aa6d96041a6635ba2edc088834fb57ed6}{Full\+Namespace}} (const char \texorpdfstring{$\ast$}{*}separator, const \mbox{\hyperlink{structflatbuffers_1_1Namespace}{Namespace}} \&\mbox{\hyperlink{idl__gen__ts_8cpp_a97618fe2e31e62d92ace9b30478febba}{ns}})
+\item 
+static std\+::string \mbox{\hyperlink{classflatbuffers_1_1BaseGenerator_a8ce0d595629188ca5de97c3b37d556f5}{Last\+Namespace\+Part}} (const \mbox{\hyperlink{structflatbuffers_1_1Namespace}{Namespace}} \&\mbox{\hyperlink{idl__gen__ts_8cpp_a97618fe2e31e62d92ace9b30478febba}{ns}})
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classflatbuffers_1_1BaseGenerator}{flatbuffers\+::\+Base\+Generator}}}
+\begin{DoxyCompactItemize}
+\item 
+const \mbox{\hyperlink{classflatbuffers_1_1Parser}{Parser}} \& \mbox{\hyperlink{classflatbuffers_1_1BaseGenerator_a0cc4eb04a1d94766c92684135b89c245}{parser\+\_\+}}
+\item 
+const std\+::string \& \mbox{\hyperlink{classflatbuffers_1_1BaseGenerator_ad50fb4f2324ac78a5bc86bb6eb97858c}{path\+\_\+}}
+\item 
+const std\+::string \& \mbox{\hyperlink{classflatbuffers_1_1BaseGenerator_af25bcc46e0d71cfc0f23377c30f426c5}{file\+\_\+name\+\_\+}}
+\item 
+const std\+::string \mbox{\hyperlink{classflatbuffers_1_1BaseGenerator_ab3f483b39345cbc52bc266ebcd0643db}{qualifying\+\_\+start\+\_\+}}
+\item 
+const std\+::string \mbox{\hyperlink{classflatbuffers_1_1BaseGenerator_a95353c1506706274d696a79bb4214215}{qualifying\+\_\+separator\+\_\+}}
+\item 
+const std\+::string \mbox{\hyperlink{classflatbuffers_1_1BaseGenerator_a37d8a4da67a4e0272aed29f28f212762}{default\+\_\+extension\+\_\+}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classflatbuffers_1_1kotlin_1_1KotlinGenerator_a1d67000146e8ad2aabd1e08c0ccd61c4}\label{classflatbuffers_1_1kotlin_1_1KotlinGenerator_a1d67000146e8ad2aabd1e08c0ccd61c4} 
+\index{flatbuffers::kotlin::KotlinGenerator@{flatbuffers::kotlin::KotlinGenerator}!KotlinGenerator@{KotlinGenerator}}
+\index{KotlinGenerator@{KotlinGenerator}!flatbuffers::kotlin::KotlinGenerator@{flatbuffers::kotlin::KotlinGenerator}}
+\doxysubsubsection{\texorpdfstring{KotlinGenerator()}{KotlinGenerator()}}
+{\footnotesize\ttfamily flatbuffers\+::kotlin\+::\+Kotlin\+Generator\+::\+Kotlin\+Generator (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classflatbuffers_1_1Parser}{Parser}} \&}]{parser,  }\item[{const std\+::string \&}]{path,  }\item[{const std\+::string \&}]{file\+\_\+name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classflatbuffers_1_1kotlin_1_1KotlinGenerator_a46acc7cb94a0aa00d9c1d3fc0bb4e50f}\label{classflatbuffers_1_1kotlin_1_1KotlinGenerator_a46acc7cb94a0aa00d9c1d3fc0bb4e50f} 
+\index{flatbuffers::kotlin::KotlinGenerator@{flatbuffers::kotlin::KotlinGenerator}!ByteBufferGetter@{ByteBufferGetter}}
+\index{ByteBufferGetter@{ByteBufferGetter}!flatbuffers::kotlin::KotlinGenerator@{flatbuffers::kotlin::KotlinGenerator}}
+\doxysubsubsection{\texorpdfstring{ByteBufferGetter()}{ByteBufferGetter()}}
+{\footnotesize\ttfamily std\+::string flatbuffers\+::kotlin\+::\+Kotlin\+Generator\+::\+Byte\+Buffer\+Getter (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structflatbuffers_1_1Type}{Type}} \&}]{type,  }\item[{std\+::string}]{bb\+\_\+var\+\_\+name }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflatbuffers_1_1kotlin_1_1KotlinGenerator_ae6ca6f49199947c5a627a22f08328f06}\label{classflatbuffers_1_1kotlin_1_1KotlinGenerator_ae6ca6f49199947c5a627a22f08328f06} 
+\index{flatbuffers::kotlin::KotlinGenerator@{flatbuffers::kotlin::KotlinGenerator}!ByteBufferSetter@{ByteBufferSetter}}
+\index{ByteBufferSetter@{ByteBufferSetter}!flatbuffers::kotlin::KotlinGenerator@{flatbuffers::kotlin::KotlinGenerator}}
+\doxysubsubsection{\texorpdfstring{ByteBufferSetter()}{ByteBufferSetter()}}
+{\footnotesize\ttfamily std\+::string flatbuffers\+::kotlin\+::\+Kotlin\+Generator\+::\+Byte\+Buffer\+Setter (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structflatbuffers_1_1Type}{Type}} \&}]{type }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflatbuffers_1_1kotlin_1_1KotlinGenerator_af0517204dce7b359ecabd0a3c75efda6}\label{classflatbuffers_1_1kotlin_1_1KotlinGenerator_af0517204dce7b359ecabd0a3c75efda6} 
+\index{flatbuffers::kotlin::KotlinGenerator@{flatbuffers::kotlin::KotlinGenerator}!CastToSigned@{CastToSigned}}
+\index{CastToSigned@{CastToSigned}!flatbuffers::kotlin::KotlinGenerator@{flatbuffers::kotlin::KotlinGenerator}}
+\doxysubsubsection{\texorpdfstring{CastToSigned()}{CastToSigned()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily static std\+::string flatbuffers\+::kotlin\+::\+Kotlin\+Generator\+::\+Cast\+To\+Signed (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structflatbuffers_1_1FieldDef}{Field\+Def}} \&}]{field }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+\Hypertarget{classflatbuffers_1_1kotlin_1_1KotlinGenerator_ad8c3120bb3e77acd4f4e8a45fdb04b28}\label{classflatbuffers_1_1kotlin_1_1KotlinGenerator_ad8c3120bb3e77acd4f4e8a45fdb04b28} 
+\index{flatbuffers::kotlin::KotlinGenerator@{flatbuffers::kotlin::KotlinGenerator}!CastToSigned@{CastToSigned}}
+\index{CastToSigned@{CastToSigned}!flatbuffers::kotlin::KotlinGenerator@{flatbuffers::kotlin::KotlinGenerator}}
+\doxysubsubsection{\texorpdfstring{CastToSigned()}{CastToSigned()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily static std\+::string flatbuffers\+::kotlin\+::\+Kotlin\+Generator\+::\+Cast\+To\+Signed (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structflatbuffers_1_1Type}{Type}}}]{type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+\Hypertarget{classflatbuffers_1_1kotlin_1_1KotlinGenerator_ac87a6441c5f56e433cd76aebd83ea4fc}\label{classflatbuffers_1_1kotlin_1_1KotlinGenerator_ac87a6441c5f56e433cd76aebd83ea4fc} 
+\index{flatbuffers::kotlin::KotlinGenerator@{flatbuffers::kotlin::KotlinGenerator}!CastToUsigned@{CastToUsigned}}
+\index{CastToUsigned@{CastToUsigned}!flatbuffers::kotlin::KotlinGenerator@{flatbuffers::kotlin::KotlinGenerator}}
+\doxysubsubsection{\texorpdfstring{CastToUsigned()}{CastToUsigned()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily static std\+::string flatbuffers\+::kotlin\+::\+Kotlin\+Generator\+::\+Cast\+To\+Usigned (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structflatbuffers_1_1FieldDef}{Field\+Def}} \&}]{field }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+\Hypertarget{classflatbuffers_1_1kotlin_1_1KotlinGenerator_a4da78708bfff859254934488611d07e3}\label{classflatbuffers_1_1kotlin_1_1KotlinGenerator_a4da78708bfff859254934488611d07e3} 
+\index{flatbuffers::kotlin::KotlinGenerator@{flatbuffers::kotlin::KotlinGenerator}!CastToUsigned@{CastToUsigned}}
+\index{CastToUsigned@{CastToUsigned}!flatbuffers::kotlin::KotlinGenerator@{flatbuffers::kotlin::KotlinGenerator}}
+\doxysubsubsection{\texorpdfstring{CastToUsigned()}{CastToUsigned()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily static std\+::string flatbuffers\+::kotlin\+::\+Kotlin\+Generator\+::\+Cast\+To\+Usigned (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structflatbuffers_1_1Type}{Type}}}]{type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+\Hypertarget{classflatbuffers_1_1kotlin_1_1KotlinGenerator_ad938b9c8783caa00a6cdd84e5c8ffc59}\label{classflatbuffers_1_1kotlin_1_1KotlinGenerator_ad938b9c8783caa00a6cdd84e5c8ffc59} 
+\index{flatbuffers::kotlin::KotlinGenerator@{flatbuffers::kotlin::KotlinGenerator}!FlexBufferBuilderCast@{FlexBufferBuilderCast}}
+\index{FlexBufferBuilderCast@{FlexBufferBuilderCast}!flatbuffers::kotlin::KotlinGenerator@{flatbuffers::kotlin::KotlinGenerator}}
+\doxysubsubsection{\texorpdfstring{FlexBufferBuilderCast()}{FlexBufferBuilderCast()}}
+{\footnotesize\ttfamily static std\+::string flatbuffers\+::kotlin\+::\+Kotlin\+Generator\+::\+Flex\+Buffer\+Builder\+Cast (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{method,  }\item[{\mbox{\hyperlink{structflatbuffers_1_1FieldDef}{Field\+Def}} \&}]{field,  }\item[{bool}]{is\+First }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+\Hypertarget{classflatbuffers_1_1kotlin_1_1KotlinGenerator_aa921fbce29c0447b5d65c0874fda3e0b}\label{classflatbuffers_1_1kotlin_1_1KotlinGenerator_aa921fbce29c0447b5d65c0874fda3e0b} 
+\index{flatbuffers::kotlin::KotlinGenerator@{flatbuffers::kotlin::KotlinGenerator}!GenByteBufferLength@{GenByteBufferLength}}
+\index{GenByteBufferLength@{GenByteBufferLength}!flatbuffers::kotlin::KotlinGenerator@{flatbuffers::kotlin::KotlinGenerator}}
+\doxysubsubsection{\texorpdfstring{GenByteBufferLength()}{GenByteBufferLength()}}
+{\footnotesize\ttfamily std\+::string flatbuffers\+::kotlin\+::\+Kotlin\+Generator\+::\+Gen\+Byte\+Buffer\+Length (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{bb\+\_\+name }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflatbuffers_1_1kotlin_1_1KotlinGenerator_aa3dbef675291c123eff26e526a053057}\label{classflatbuffers_1_1kotlin_1_1KotlinGenerator_aa3dbef675291c123eff26e526a053057} 
+\index{flatbuffers::kotlin::KotlinGenerator@{flatbuffers::kotlin::KotlinGenerator}!GenDefaultValue@{GenDefaultValue}}
+\index{GenDefaultValue@{GenDefaultValue}!flatbuffers::kotlin::KotlinGenerator@{flatbuffers::kotlin::KotlinGenerator}}
+\doxysubsubsection{\texorpdfstring{GenDefaultValue()}{GenDefaultValue()}}
+{\footnotesize\ttfamily std\+::string flatbuffers\+::kotlin\+::\+Kotlin\+Generator\+::\+Gen\+Default\+Value (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structflatbuffers_1_1FieldDef}{Field\+Def}} \&}]{field,  }\item[{bool}]{force\+\_\+signed = {\ttfamily false} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflatbuffers_1_1kotlin_1_1KotlinGenerator_af38745b5616025b7200f06e7314ce93e}\label{classflatbuffers_1_1kotlin_1_1KotlinGenerator_af38745b5616025b7200f06e7314ce93e} 
+\index{flatbuffers::kotlin::KotlinGenerator@{flatbuffers::kotlin::KotlinGenerator}!GenEnum@{GenEnum}}
+\index{GenEnum@{GenEnum}!flatbuffers::kotlin::KotlinGenerator@{flatbuffers::kotlin::KotlinGenerator}}
+\doxysubsubsection{\texorpdfstring{GenEnum()}{GenEnum()}}
+{\footnotesize\ttfamily void flatbuffers\+::kotlin\+::\+Kotlin\+Generator\+::\+Gen\+Enum (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structflatbuffers_1_1EnumDef}{Enum\+Def}} \&}]{enum\+\_\+def,  }\item[{\mbox{\hyperlink{classflatbuffers_1_1CodeWriter}{Code\+Writer}} \&}]{writer }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflatbuffers_1_1kotlin_1_1KotlinGenerator_a10510bdfc12eae6078f4ed17f4d4d607}\label{classflatbuffers_1_1kotlin_1_1KotlinGenerator_a10510bdfc12eae6078f4ed17f4d4d607} 
+\index{flatbuffers::kotlin::KotlinGenerator@{flatbuffers::kotlin::KotlinGenerator}!GenEnumDefaultValue@{GenEnumDefaultValue}}
+\index{GenEnumDefaultValue@{GenEnumDefaultValue}!flatbuffers::kotlin::KotlinGenerator@{flatbuffers::kotlin::KotlinGenerator}}
+\doxysubsubsection{\texorpdfstring{GenEnumDefaultValue()}{GenEnumDefaultValue()}}
+{\footnotesize\ttfamily std\+::string flatbuffers\+::kotlin\+::\+Kotlin\+Generator\+::\+Gen\+Enum\+Default\+Value (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structflatbuffers_1_1FieldDef}{Field\+Def}} \&}]{field }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflatbuffers_1_1kotlin_1_1KotlinGenerator_ae1b285a0eb4104ee49fc465fe2a3e996}\label{classflatbuffers_1_1kotlin_1_1KotlinGenerator_ae1b285a0eb4104ee49fc465fe2a3e996} 
+\index{flatbuffers::kotlin::KotlinGenerator@{flatbuffers::kotlin::KotlinGenerator}!generate@{generate}}
+\index{generate@{generate}!flatbuffers::kotlin::KotlinGenerator@{flatbuffers::kotlin::KotlinGenerator}}
+\doxysubsubsection{\texorpdfstring{generate()}{generate()}}
+{\footnotesize\ttfamily bool flatbuffers\+::kotlin\+::\+Kotlin\+Generator\+::generate (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classflatbuffers_1_1BaseGenerator_a32156e35f9273398435ce55386874187}{flatbuffers\+::\+Base\+Generator}}.
+
+\Hypertarget{classflatbuffers_1_1kotlin_1_1KotlinGenerator_a51bef46bd83612ec4d5dbc16c217c18e}\label{classflatbuffers_1_1kotlin_1_1KotlinGenerator_a51bef46bd83612ec4d5dbc16c217c18e} 
+\index{flatbuffers::kotlin::KotlinGenerator@{flatbuffers::kotlin::KotlinGenerator}!GenerateAddField@{GenerateAddField}}
+\index{GenerateAddField@{GenerateAddField}!flatbuffers::kotlin::KotlinGenerator@{flatbuffers::kotlin::KotlinGenerator}}
+\doxysubsubsection{\texorpdfstring{GenerateAddField()}{GenerateAddField()}}
+{\footnotesize\ttfamily void flatbuffers\+::kotlin\+::\+Kotlin\+Generator\+::\+Generate\+Add\+Field (\begin{DoxyParamCaption}\item[{std\+::string}]{field\+\_\+pos,  }\item[{\mbox{\hyperlink{structflatbuffers_1_1FieldDef}{Field\+Def}} \&}]{field,  }\item[{\mbox{\hyperlink{classflatbuffers_1_1CodeWriter}{Code\+Writer}} \&}]{writer,  }\item[{const \mbox{\hyperlink{structflatbuffers_1_1IDLOptions}{IDLOptions}}}]{options }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflatbuffers_1_1kotlin_1_1KotlinGenerator_aee77db2004bc220cae3e1c45bfd3b5b7}\label{classflatbuffers_1_1kotlin_1_1KotlinGenerator_aee77db2004bc220cae3e1c45bfd3b5b7} 
+\index{flatbuffers::kotlin::KotlinGenerator@{flatbuffers::kotlin::KotlinGenerator}!GenerateBufferHasIdentifier@{GenerateBufferHasIdentifier}}
+\index{GenerateBufferHasIdentifier@{GenerateBufferHasIdentifier}!flatbuffers::kotlin::KotlinGenerator@{flatbuffers::kotlin::KotlinGenerator}}
+\doxysubsubsection{\texorpdfstring{GenerateBufferHasIdentifier()}{GenerateBufferHasIdentifier()}}
+{\footnotesize\ttfamily void flatbuffers\+::kotlin\+::\+Kotlin\+Generator\+::\+Generate\+Buffer\+Has\+Identifier (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structflatbuffers_1_1StructDef}{Struct\+Def}} \&}]{struct\+\_\+def,  }\item[{\mbox{\hyperlink{classflatbuffers_1_1CodeWriter}{Code\+Writer}} \&}]{writer,  }\item[{\mbox{\hyperlink{structflatbuffers_1_1IDLOptions}{IDLOptions}}}]{options }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflatbuffers_1_1kotlin_1_1KotlinGenerator_ad79b23beb40e7228eb1452ea49d0a2c8}\label{classflatbuffers_1_1kotlin_1_1KotlinGenerator_ad79b23beb40e7228eb1452ea49d0a2c8} 
+\index{flatbuffers::kotlin::KotlinGenerator@{flatbuffers::kotlin::KotlinGenerator}!GenerateComment@{GenerateComment}}
+\index{GenerateComment@{GenerateComment}!flatbuffers::kotlin::KotlinGenerator@{flatbuffers::kotlin::KotlinGenerator}}
+\doxysubsubsection{\texorpdfstring{GenerateComment()}{GenerateComment()}}
+{\footnotesize\ttfamily void flatbuffers\+::kotlin\+::\+Kotlin\+Generator\+::\+Generate\+Comment (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ std\+::string $>$ \&}]{dc,  }\item[{\mbox{\hyperlink{classflatbuffers_1_1CodeWriter}{Code\+Writer}} \&}]{writer,  }\item[{const \mbox{\hyperlink{structflatbuffers_1_1CommentConfig}{Comment\+Config}} \texorpdfstring{$\ast$}{*}}]{config }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflatbuffers_1_1kotlin_1_1KotlinGenerator_a3c361a6a3abc3a88e4fb7085da6a94a5}\label{classflatbuffers_1_1kotlin_1_1KotlinGenerator_a3c361a6a3abc3a88e4fb7085da6a94a5} 
+\index{flatbuffers::kotlin::KotlinGenerator@{flatbuffers::kotlin::KotlinGenerator}!GenerateCompanionObject@{GenerateCompanionObject}}
+\index{GenerateCompanionObject@{GenerateCompanionObject}!flatbuffers::kotlin::KotlinGenerator@{flatbuffers::kotlin::KotlinGenerator}}
+\doxysubsubsection{\texorpdfstring{GenerateCompanionObject()}{GenerateCompanionObject()}}
+{\footnotesize\ttfamily void flatbuffers\+::kotlin\+::\+Kotlin\+Generator\+::\+Generate\+Companion\+Object (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classflatbuffers_1_1CodeWriter}{Code\+Writer}} \&}]{code,  }\item[{const std\+::function$<$ void()$>$ \&}]{callback }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflatbuffers_1_1kotlin_1_1KotlinGenerator_a4c56fdac47f985a02fb8bdf7bc3cbbdc}\label{classflatbuffers_1_1kotlin_1_1KotlinGenerator_a4c56fdac47f985a02fb8bdf7bc3cbbdc} 
+\index{flatbuffers::kotlin::KotlinGenerator@{flatbuffers::kotlin::KotlinGenerator}!GenerateCreateVectorField@{GenerateCreateVectorField}}
+\index{GenerateCreateVectorField@{GenerateCreateVectorField}!flatbuffers::kotlin::KotlinGenerator@{flatbuffers::kotlin::KotlinGenerator}}
+\doxysubsubsection{\texorpdfstring{GenerateCreateVectorField()}{GenerateCreateVectorField()}}
+{\footnotesize\ttfamily void flatbuffers\+::kotlin\+::\+Kotlin\+Generator\+::\+Generate\+Create\+Vector\+Field (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structflatbuffers_1_1FieldDef}{Field\+Def}} \&}]{field,  }\item[{\mbox{\hyperlink{classflatbuffers_1_1CodeWriter}{Code\+Writer}} \&}]{writer,  }\item[{const \mbox{\hyperlink{structflatbuffers_1_1IDLOptions}{IDLOptions}}}]{options }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflatbuffers_1_1kotlin_1_1KotlinGenerator_abfce7b40482704e9519c2e22701ba267}\label{classflatbuffers_1_1kotlin_1_1KotlinGenerator_abfce7b40482704e9519c2e22701ba267} 
+\index{flatbuffers::kotlin::KotlinGenerator@{flatbuffers::kotlin::KotlinGenerator}!GenerateEndStructMethod@{GenerateEndStructMethod}}
+\index{GenerateEndStructMethod@{GenerateEndStructMethod}!flatbuffers::kotlin::KotlinGenerator@{flatbuffers::kotlin::KotlinGenerator}}
+\doxysubsubsection{\texorpdfstring{GenerateEndStructMethod()}{GenerateEndStructMethod()}}
+{\footnotesize\ttfamily void flatbuffers\+::kotlin\+::\+Kotlin\+Generator\+::\+Generate\+End\+Struct\+Method (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structflatbuffers_1_1StructDef}{Struct\+Def}} \&}]{struct\+\_\+def,  }\item[{\mbox{\hyperlink{classflatbuffers_1_1CodeWriter}{Code\+Writer}} \&}]{writer,  }\item[{const \mbox{\hyperlink{structflatbuffers_1_1IDLOptions}{IDLOptions}}}]{options }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflatbuffers_1_1kotlin_1_1KotlinGenerator_af55cfd74049b4be7cd2dbb43536b6815}\label{classflatbuffers_1_1kotlin_1_1KotlinGenerator_af55cfd74049b4be7cd2dbb43536b6815} 
+\index{flatbuffers::kotlin::KotlinGenerator@{flatbuffers::kotlin::KotlinGenerator}!GenerateFinishSizePrefixed@{GenerateFinishSizePrefixed}}
+\index{GenerateFinishSizePrefixed@{GenerateFinishSizePrefixed}!flatbuffers::kotlin::KotlinGenerator@{flatbuffers::kotlin::KotlinGenerator}}
+\doxysubsubsection{\texorpdfstring{GenerateFinishSizePrefixed()}{GenerateFinishSizePrefixed()}}
+{\footnotesize\ttfamily void flatbuffers\+::kotlin\+::\+Kotlin\+Generator\+::\+Generate\+Finish\+Size\+Prefixed (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structflatbuffers_1_1StructDef}{Struct\+Def}} \&}]{struct\+\_\+def,  }\item[{const std\+::string \&}]{identifier,  }\item[{\mbox{\hyperlink{classflatbuffers_1_1CodeWriter}{Code\+Writer}} \&}]{writer,  }\item[{const \mbox{\hyperlink{structflatbuffers_1_1IDLOptions}{IDLOptions}}}]{options }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflatbuffers_1_1kotlin_1_1KotlinGenerator_ad24810ae6639152232525f63122df98c}\label{classflatbuffers_1_1kotlin_1_1KotlinGenerator_ad24810ae6639152232525f63122df98c} 
+\index{flatbuffers::kotlin::KotlinGenerator@{flatbuffers::kotlin::KotlinGenerator}!GenerateFinishStructBuffer@{GenerateFinishStructBuffer}}
+\index{GenerateFinishStructBuffer@{GenerateFinishStructBuffer}!flatbuffers::kotlin::KotlinGenerator@{flatbuffers::kotlin::KotlinGenerator}}
+\doxysubsubsection{\texorpdfstring{GenerateFinishStructBuffer()}{GenerateFinishStructBuffer()}}
+{\footnotesize\ttfamily void flatbuffers\+::kotlin\+::\+Kotlin\+Generator\+::\+Generate\+Finish\+Struct\+Buffer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structflatbuffers_1_1StructDef}{Struct\+Def}} \&}]{struct\+\_\+def,  }\item[{const std\+::string \&}]{identifier,  }\item[{\mbox{\hyperlink{classflatbuffers_1_1CodeWriter}{Code\+Writer}} \&}]{writer,  }\item[{const \mbox{\hyperlink{structflatbuffers_1_1IDLOptions}{IDLOptions}}}]{options }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflatbuffers_1_1kotlin_1_1KotlinGenerator_aeb064b18bce6131d1d17e23a1ad13305}\label{classflatbuffers_1_1kotlin_1_1KotlinGenerator_aeb064b18bce6131d1d17e23a1ad13305} 
+\index{flatbuffers::kotlin::KotlinGenerator@{flatbuffers::kotlin::KotlinGenerator}!GenerateFun@{GenerateFun}}
+\index{GenerateFun@{GenerateFun}!flatbuffers::kotlin::KotlinGenerator@{flatbuffers::kotlin::KotlinGenerator}}
+\doxysubsubsection{\texorpdfstring{GenerateFun()}{GenerateFun()}}
+{\footnotesize\ttfamily static void flatbuffers\+::kotlin\+::\+Kotlin\+Generator\+::\+Generate\+Fun (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classflatbuffers_1_1CodeWriter}{Code\+Writer}} \&}]{writer,  }\item[{const std\+::string \&}]{name,  }\item[{const std\+::string \&}]{params,  }\item[{const std\+::string \&}]{return\+Type,  }\item[{const std\+::function$<$ void()$>$ \&}]{body,  }\item[{bool}]{gen\+\_\+jvmstatic = {\ttfamily false} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+\Hypertarget{classflatbuffers_1_1kotlin_1_1KotlinGenerator_a5e1eb2fb1abded94e1ceb79fe29c0971}\label{classflatbuffers_1_1kotlin_1_1KotlinGenerator_a5e1eb2fb1abded94e1ceb79fe29c0971} 
+\index{flatbuffers::kotlin::KotlinGenerator@{flatbuffers::kotlin::KotlinGenerator}!GenerateFunOneLine@{GenerateFunOneLine}}
+\index{GenerateFunOneLine@{GenerateFunOneLine}!flatbuffers::kotlin::KotlinGenerator@{flatbuffers::kotlin::KotlinGenerator}}
+\doxysubsubsection{\texorpdfstring{GenerateFunOneLine()}{GenerateFunOneLine()}}
+{\footnotesize\ttfamily static void flatbuffers\+::kotlin\+::\+Kotlin\+Generator\+::\+Generate\+Fun\+One\+Line (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classflatbuffers_1_1CodeWriter}{Code\+Writer}} \&}]{writer,  }\item[{const std\+::string \&}]{name,  }\item[{const std\+::string \&}]{params,  }\item[{const std\+::string \&}]{return\+Type,  }\item[{const std\+::function$<$ void()$>$ \&}]{body,  }\item[{bool}]{gen\+\_\+jvmstatic = {\ttfamily false} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+\Hypertarget{classflatbuffers_1_1kotlin_1_1KotlinGenerator_a1fdbc4891f3e5128a1646d717448d0e6}\label{classflatbuffers_1_1kotlin_1_1KotlinGenerator_a1fdbc4891f3e5128a1646d717448d0e6} 
+\index{flatbuffers::kotlin::KotlinGenerator@{flatbuffers::kotlin::KotlinGenerator}!GenerateGetRootAsAccessors@{GenerateGetRootAsAccessors}}
+\index{GenerateGetRootAsAccessors@{GenerateGetRootAsAccessors}!flatbuffers::kotlin::KotlinGenerator@{flatbuffers::kotlin::KotlinGenerator}}
+\doxysubsubsection{\texorpdfstring{GenerateGetRootAsAccessors()}{GenerateGetRootAsAccessors()}}
+{\footnotesize\ttfamily void flatbuffers\+::kotlin\+::\+Kotlin\+Generator\+::\+Generate\+Get\+Root\+As\+Accessors (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{struct\+\_\+name,  }\item[{\mbox{\hyperlink{classflatbuffers_1_1CodeWriter}{Code\+Writer}} \&}]{writer,  }\item[{\mbox{\hyperlink{structflatbuffers_1_1IDLOptions}{IDLOptions}}}]{options }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflatbuffers_1_1kotlin_1_1KotlinGenerator_a41019913a682b7ad08b4f0a6df675877}\label{classflatbuffers_1_1kotlin_1_1KotlinGenerator_a41019913a682b7ad08b4f0a6df675877} 
+\index{flatbuffers::kotlin::KotlinGenerator@{flatbuffers::kotlin::KotlinGenerator}!GenerateGetter@{GenerateGetter}}
+\index{GenerateGetter@{GenerateGetter}!flatbuffers::kotlin::KotlinGenerator@{flatbuffers::kotlin::KotlinGenerator}}
+\doxysubsubsection{\texorpdfstring{GenerateGetter()}{GenerateGetter()}}
+{\footnotesize\ttfamily static void flatbuffers\+::kotlin\+::\+Kotlin\+Generator\+::\+Generate\+Getter (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classflatbuffers_1_1CodeWriter}{Code\+Writer}} \&}]{writer,  }\item[{const std\+::string \&}]{name,  }\item[{const std\+::string \&}]{type,  }\item[{const std\+::function$<$ void()$>$ \&}]{body }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+\Hypertarget{classflatbuffers_1_1kotlin_1_1KotlinGenerator_afbf09296fd2c7ee57d6a7e201ecb0d99}\label{classflatbuffers_1_1kotlin_1_1KotlinGenerator_afbf09296fd2c7ee57d6a7e201ecb0d99} 
+\index{flatbuffers::kotlin::KotlinGenerator@{flatbuffers::kotlin::KotlinGenerator}!GenerateGetterOneLine@{GenerateGetterOneLine}}
+\index{GenerateGetterOneLine@{GenerateGetterOneLine}!flatbuffers::kotlin::KotlinGenerator@{flatbuffers::kotlin::KotlinGenerator}}
+\doxysubsubsection{\texorpdfstring{GenerateGetterOneLine()}{GenerateGetterOneLine()}}
+{\footnotesize\ttfamily static void flatbuffers\+::kotlin\+::\+Kotlin\+Generator\+::\+Generate\+Getter\+One\+Line (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classflatbuffers_1_1CodeWriter}{Code\+Writer}} \&}]{writer,  }\item[{const std\+::string \&}]{name,  }\item[{const std\+::string \&}]{type,  }\item[{const std\+::function$<$ void()$>$ \&}]{body }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+\Hypertarget{classflatbuffers_1_1kotlin_1_1KotlinGenerator_af3a1e09b6d673c22b4549d2da9252c47}\label{classflatbuffers_1_1kotlin_1_1KotlinGenerator_af3a1e09b6d673c22b4549d2da9252c47} 
+\index{flatbuffers::kotlin::KotlinGenerator@{flatbuffers::kotlin::KotlinGenerator}!GenerateJvmStaticAnnotation@{GenerateJvmStaticAnnotation}}
+\index{GenerateJvmStaticAnnotation@{GenerateJvmStaticAnnotation}!flatbuffers::kotlin::KotlinGenerator@{flatbuffers::kotlin::KotlinGenerator}}
+\doxysubsubsection{\texorpdfstring{GenerateJvmStaticAnnotation()}{GenerateJvmStaticAnnotation()}}
+{\footnotesize\ttfamily static void flatbuffers\+::kotlin\+::\+Kotlin\+Generator\+::\+Generate\+Jvm\+Static\+Annotation (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classflatbuffers_1_1CodeWriter}{Code\+Writer}} \&}]{code,  }\item[{bool}]{gen\+\_\+jvmstatic }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+\Hypertarget{classflatbuffers_1_1kotlin_1_1KotlinGenerator_a43078eed06f2f13cd8017a8b0e823522}\label{classflatbuffers_1_1kotlin_1_1KotlinGenerator_a43078eed06f2f13cd8017a8b0e823522} 
+\index{flatbuffers::kotlin::KotlinGenerator@{flatbuffers::kotlin::KotlinGenerator}!GenerateLookupByKey@{GenerateLookupByKey}}
+\index{GenerateLookupByKey@{GenerateLookupByKey}!flatbuffers::kotlin::KotlinGenerator@{flatbuffers::kotlin::KotlinGenerator}}
+\doxysubsubsection{\texorpdfstring{GenerateLookupByKey()}{GenerateLookupByKey()}}
+{\footnotesize\ttfamily void flatbuffers\+::kotlin\+::\+Kotlin\+Generator\+::\+Generate\+Lookup\+By\+Key (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structflatbuffers_1_1FieldDef}{Field\+Def}} \texorpdfstring{$\ast$}{*}}]{key\+\_\+field,  }\item[{\mbox{\hyperlink{structflatbuffers_1_1StructDef}{Struct\+Def}} \&}]{struct\+\_\+def,  }\item[{\mbox{\hyperlink{classflatbuffers_1_1CodeWriter}{Code\+Writer}} \&}]{writer,  }\item[{const \mbox{\hyperlink{structflatbuffers_1_1IDLOptions}{IDLOptions}}}]{options }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflatbuffers_1_1kotlin_1_1KotlinGenerator_a632c6003f2927951672e0479820f6f1c}\label{classflatbuffers_1_1kotlin_1_1KotlinGenerator_a632c6003f2927951672e0479820f6f1c} 
+\index{flatbuffers::kotlin::KotlinGenerator@{flatbuffers::kotlin::KotlinGenerator}!GenerateOverrideFun@{GenerateOverrideFun}}
+\index{GenerateOverrideFun@{GenerateOverrideFun}!flatbuffers::kotlin::KotlinGenerator@{flatbuffers::kotlin::KotlinGenerator}}
+\doxysubsubsection{\texorpdfstring{GenerateOverrideFun()}{GenerateOverrideFun()}}
+{\footnotesize\ttfamily static void flatbuffers\+::kotlin\+::\+Kotlin\+Generator\+::\+Generate\+Override\+Fun (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classflatbuffers_1_1CodeWriter}{Code\+Writer}} \&}]{writer,  }\item[{const std\+::string \&}]{name,  }\item[{const std\+::string \&}]{params,  }\item[{const std\+::string \&}]{return\+Type,  }\item[{const std\+::function$<$ void()$>$ \&}]{body }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+\Hypertarget{classflatbuffers_1_1kotlin_1_1KotlinGenerator_a6c83bcda861361da7a5a07f3af206893}\label{classflatbuffers_1_1kotlin_1_1KotlinGenerator_a6c83bcda861361da7a5a07f3af206893} 
+\index{flatbuffers::kotlin::KotlinGenerator@{flatbuffers::kotlin::KotlinGenerator}!GenerateOverrideFunOneLine@{GenerateOverrideFunOneLine}}
+\index{GenerateOverrideFunOneLine@{GenerateOverrideFunOneLine}!flatbuffers::kotlin::KotlinGenerator@{flatbuffers::kotlin::KotlinGenerator}}
+\doxysubsubsection{\texorpdfstring{GenerateOverrideFunOneLine()}{GenerateOverrideFunOneLine()}}
+{\footnotesize\ttfamily static void flatbuffers\+::kotlin\+::\+Kotlin\+Generator\+::\+Generate\+Override\+Fun\+One\+Line (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classflatbuffers_1_1CodeWriter}{Code\+Writer}} \&}]{writer,  }\item[{const std\+::string \&}]{name,  }\item[{const std\+::string \&}]{params,  }\item[{const std\+::string \&}]{return\+Type,  }\item[{const std\+::string \&}]{statement }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+\Hypertarget{classflatbuffers_1_1kotlin_1_1KotlinGenerator_a74d8c1e07f5419f6d68f543736677232}\label{classflatbuffers_1_1kotlin_1_1KotlinGenerator_a74d8c1e07f5419f6d68f543736677232} 
+\index{flatbuffers::kotlin::KotlinGenerator@{flatbuffers::kotlin::KotlinGenerator}!GeneratePropertyOneLine@{GeneratePropertyOneLine}}
+\index{GeneratePropertyOneLine@{GeneratePropertyOneLine}!flatbuffers::kotlin::KotlinGenerator@{flatbuffers::kotlin::KotlinGenerator}}
+\doxysubsubsection{\texorpdfstring{GeneratePropertyOneLine()}{GeneratePropertyOneLine()}}
+{\footnotesize\ttfamily static void flatbuffers\+::kotlin\+::\+Kotlin\+Generator\+::\+Generate\+Property\+One\+Line (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classflatbuffers_1_1CodeWriter}{Code\+Writer}} \&}]{writer,  }\item[{const std\+::string \&}]{name,  }\item[{const std\+::string \&}]{type,  }\item[{const std\+::function$<$ void()$>$ \&}]{body }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+\Hypertarget{classflatbuffers_1_1kotlin_1_1KotlinGenerator_a0b92ce300ceffb4be8c17a09bd275fa3}\label{classflatbuffers_1_1kotlin_1_1KotlinGenerator_a0b92ce300ceffb4be8c17a09bd275fa3} 
+\index{flatbuffers::kotlin::KotlinGenerator@{flatbuffers::kotlin::KotlinGenerator}!GenerateStartStructMethod@{GenerateStartStructMethod}}
+\index{GenerateStartStructMethod@{GenerateStartStructMethod}!flatbuffers::kotlin::KotlinGenerator@{flatbuffers::kotlin::KotlinGenerator}}
+\doxysubsubsection{\texorpdfstring{GenerateStartStructMethod()}{GenerateStartStructMethod()}}
+{\footnotesize\ttfamily void flatbuffers\+::kotlin\+::\+Kotlin\+Generator\+::\+Generate\+Start\+Struct\+Method (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structflatbuffers_1_1StructDef}{Struct\+Def}} \&}]{struct\+\_\+def,  }\item[{\mbox{\hyperlink{classflatbuffers_1_1CodeWriter}{Code\+Writer}} \&}]{code,  }\item[{const \mbox{\hyperlink{structflatbuffers_1_1IDLOptions}{IDLOptions}}}]{options }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflatbuffers_1_1kotlin_1_1KotlinGenerator_abbb08bca556ae735fb4d825ea3e0fc59}\label{classflatbuffers_1_1kotlin_1_1KotlinGenerator_abbb08bca556ae735fb4d825ea3e0fc59} 
+\index{flatbuffers::kotlin::KotlinGenerator@{flatbuffers::kotlin::KotlinGenerator}!GenerateStartVectorField@{GenerateStartVectorField}}
+\index{GenerateStartVectorField@{GenerateStartVectorField}!flatbuffers::kotlin::KotlinGenerator@{flatbuffers::kotlin::KotlinGenerator}}
+\doxysubsubsection{\texorpdfstring{GenerateStartVectorField()}{GenerateStartVectorField()}}
+{\footnotesize\ttfamily void flatbuffers\+::kotlin\+::\+Kotlin\+Generator\+::\+Generate\+Start\+Vector\+Field (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structflatbuffers_1_1FieldDef}{Field\+Def}} \&}]{field,  }\item[{\mbox{\hyperlink{classflatbuffers_1_1CodeWriter}{Code\+Writer}} \&}]{writer,  }\item[{const \mbox{\hyperlink{structflatbuffers_1_1IDLOptions}{IDLOptions}}}]{options }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflatbuffers_1_1kotlin_1_1KotlinGenerator_a3e33a7155bd321be8439de6c88ecb3ac}\label{classflatbuffers_1_1kotlin_1_1KotlinGenerator_a3e33a7155bd321be8439de6c88ecb3ac} 
+\index{flatbuffers::kotlin::KotlinGenerator@{flatbuffers::kotlin::KotlinGenerator}!GenerateStaticConstructor@{GenerateStaticConstructor}}
+\index{GenerateStaticConstructor@{GenerateStaticConstructor}!flatbuffers::kotlin::KotlinGenerator@{flatbuffers::kotlin::KotlinGenerator}}
+\doxysubsubsection{\texorpdfstring{GenerateStaticConstructor()}{GenerateStaticConstructor()}}
+{\footnotesize\ttfamily void flatbuffers\+::kotlin\+::\+Kotlin\+Generator\+::\+Generate\+Static\+Constructor (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structflatbuffers_1_1StructDef}{Struct\+Def}} \&}]{struct\+\_\+def,  }\item[{\mbox{\hyperlink{classflatbuffers_1_1CodeWriter}{Code\+Writer}} \&}]{code,  }\item[{const \mbox{\hyperlink{structflatbuffers_1_1IDLOptions}{IDLOptions}}}]{options }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflatbuffers_1_1kotlin_1_1KotlinGenerator_a3a970d26d00156382e6cf5267d2aa116}\label{classflatbuffers_1_1kotlin_1_1KotlinGenerator_a3a970d26d00156382e6cf5267d2aa116} 
+\index{flatbuffers::kotlin::KotlinGenerator@{flatbuffers::kotlin::KotlinGenerator}!GenerateStructGetters@{GenerateStructGetters}}
+\index{GenerateStructGetters@{GenerateStructGetters}!flatbuffers::kotlin::KotlinGenerator@{flatbuffers::kotlin::KotlinGenerator}}
+\doxysubsubsection{\texorpdfstring{GenerateStructGetters()}{GenerateStructGetters()}}
+{\footnotesize\ttfamily void flatbuffers\+::kotlin\+::\+Kotlin\+Generator\+::\+Generate\+Struct\+Getters (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structflatbuffers_1_1StructDef}{Struct\+Def}} \&}]{struct\+\_\+def,  }\item[{\mbox{\hyperlink{classflatbuffers_1_1CodeWriter}{Code\+Writer}} \&}]{writer }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflatbuffers_1_1kotlin_1_1KotlinGenerator_a44a48b1761f2b2b202f0b224414a9101}\label{classflatbuffers_1_1kotlin_1_1KotlinGenerator_a44a48b1761f2b2b202f0b224414a9101} 
+\index{flatbuffers::kotlin::KotlinGenerator@{flatbuffers::kotlin::KotlinGenerator}!GenerateTableCreator@{GenerateTableCreator}}
+\index{GenerateTableCreator@{GenerateTableCreator}!flatbuffers::kotlin::KotlinGenerator@{flatbuffers::kotlin::KotlinGenerator}}
+\doxysubsubsection{\texorpdfstring{GenerateTableCreator()}{GenerateTableCreator()}}
+{\footnotesize\ttfamily void flatbuffers\+::kotlin\+::\+Kotlin\+Generator\+::\+Generate\+Table\+Creator (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structflatbuffers_1_1StructDef}{Struct\+Def}} \&}]{struct\+\_\+def,  }\item[{\mbox{\hyperlink{classflatbuffers_1_1CodeWriter}{Code\+Writer}} \&}]{writer,  }\item[{const \mbox{\hyperlink{structflatbuffers_1_1IDLOptions}{IDLOptions}}}]{options }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflatbuffers_1_1kotlin_1_1KotlinGenerator_a00e9316f1a29e9445aaa9674d8d01a0f}\label{classflatbuffers_1_1kotlin_1_1KotlinGenerator_a00e9316f1a29e9445aaa9674d8d01a0f} 
+\index{flatbuffers::kotlin::KotlinGenerator@{flatbuffers::kotlin::KotlinGenerator}!GenFBBDefaultValue@{GenFBBDefaultValue}}
+\index{GenFBBDefaultValue@{GenFBBDefaultValue}!flatbuffers::kotlin::KotlinGenerator@{flatbuffers::kotlin::KotlinGenerator}}
+\doxysubsubsection{\texorpdfstring{GenFBBDefaultValue()}{GenFBBDefaultValue()}}
+{\footnotesize\ttfamily std\+::string flatbuffers\+::kotlin\+::\+Kotlin\+Generator\+::\+Gen\+FBBDefault\+Value (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structflatbuffers_1_1FieldDef}{Field\+Def}} \&}]{field }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflatbuffers_1_1kotlin_1_1KotlinGenerator_a6081867ddff0dab7eba703e169750963}\label{classflatbuffers_1_1kotlin_1_1KotlinGenerator_a6081867ddff0dab7eba703e169750963} 
+\index{flatbuffers::kotlin::KotlinGenerator@{flatbuffers::kotlin::KotlinGenerator}!GenFBBValueCast@{GenFBBValueCast}}
+\index{GenFBBValueCast@{GenFBBValueCast}!flatbuffers::kotlin::KotlinGenerator@{flatbuffers::kotlin::KotlinGenerator}}
+\doxysubsubsection{\texorpdfstring{GenFBBValueCast()}{GenFBBValueCast()}}
+{\footnotesize\ttfamily std\+::string flatbuffers\+::kotlin\+::\+Kotlin\+Generator\+::\+Gen\+FBBValue\+Cast (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structflatbuffers_1_1FieldDef}{Field\+Def}} \&}]{field }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflatbuffers_1_1kotlin_1_1KotlinGenerator_a2f36b077a5c0639b51ba3933ab82e69f}\label{classflatbuffers_1_1kotlin_1_1KotlinGenerator_a2f36b077a5c0639b51ba3933ab82e69f} 
+\index{flatbuffers::kotlin::KotlinGenerator@{flatbuffers::kotlin::KotlinGenerator}!GenLookupByKey@{GenLookupByKey}}
+\index{GenLookupByKey@{GenLookupByKey}!flatbuffers::kotlin::KotlinGenerator@{flatbuffers::kotlin::KotlinGenerator}}
+\doxysubsubsection{\texorpdfstring{GenLookupByKey()}{GenLookupByKey()}}
+{\footnotesize\ttfamily std\+::string flatbuffers\+::kotlin\+::\+Kotlin\+Generator\+::\+Gen\+Lookup\+By\+Key (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structflatbuffers_1_1FieldDef}{flatbuffers\+::\+Field\+Def}} \texorpdfstring{$\ast$}{*}}]{key\+\_\+field,  }\item[{const std\+::string \&}]{bb\+\_\+var\+\_\+name,  }\item[{const char \texorpdfstring{$\ast$}{*}}]{num = {\ttfamily nullptr} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflatbuffers_1_1kotlin_1_1KotlinGenerator_a2d2baf371590425fd744c95c4adb4d11}\label{classflatbuffers_1_1kotlin_1_1KotlinGenerator_a2d2baf371590425fd744c95c4adb4d11} 
+\index{flatbuffers::kotlin::KotlinGenerator@{flatbuffers::kotlin::KotlinGenerator}!GenMethod@{GenMethod}}
+\index{GenMethod@{GenMethod}!flatbuffers::kotlin::KotlinGenerator@{flatbuffers::kotlin::KotlinGenerator}}
+\doxysubsubsection{\texorpdfstring{GenMethod()}{GenMethod()}}
+{\footnotesize\ttfamily static std\+::string flatbuffers\+::kotlin\+::\+Kotlin\+Generator\+::\+Gen\+Method (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structflatbuffers_1_1Type}{Type}} \&}]{type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+\Hypertarget{classflatbuffers_1_1kotlin_1_1KotlinGenerator_a4006872d0001da729eb0bf9552fdd047}\label{classflatbuffers_1_1kotlin_1_1KotlinGenerator_a4006872d0001da729eb0bf9552fdd047} 
+\index{flatbuffers::kotlin::KotlinGenerator@{flatbuffers::kotlin::KotlinGenerator}!GenOffsetGetter@{GenOffsetGetter}}
+\index{GenOffsetGetter@{GenOffsetGetter}!flatbuffers::kotlin::KotlinGenerator@{flatbuffers::kotlin::KotlinGenerator}}
+\doxysubsubsection{\texorpdfstring{GenOffsetGetter()}{GenOffsetGetter()}}
+{\footnotesize\ttfamily std\+::string flatbuffers\+::kotlin\+::\+Kotlin\+Generator\+::\+Gen\+Offset\+Getter (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structflatbuffers_1_1FieldDef}{flatbuffers\+::\+Field\+Def}} \texorpdfstring{$\ast$}{*}}]{key\+\_\+field,  }\item[{const char \texorpdfstring{$\ast$}{*}}]{num = {\ttfamily nullptr} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflatbuffers_1_1kotlin_1_1KotlinGenerator_a48cb04e12bf40e9a72866d0a1afc0b32}\label{classflatbuffers_1_1kotlin_1_1KotlinGenerator_a48cb04e12bf40e9a72866d0a1afc0b32} 
+\index{flatbuffers::kotlin::KotlinGenerator@{flatbuffers::kotlin::KotlinGenerator}!GenStruct@{GenStruct}}
+\index{GenStruct@{GenStruct}!flatbuffers::kotlin::KotlinGenerator@{flatbuffers::kotlin::KotlinGenerator}}
+\doxysubsubsection{\texorpdfstring{GenStruct()}{GenStruct()}}
+{\footnotesize\ttfamily void flatbuffers\+::kotlin\+::\+Kotlin\+Generator\+::\+Gen\+Struct (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structflatbuffers_1_1StructDef}{Struct\+Def}} \&}]{struct\+\_\+def,  }\item[{\mbox{\hyperlink{classflatbuffers_1_1CodeWriter}{Code\+Writer}} \&}]{writer,  }\item[{\mbox{\hyperlink{structflatbuffers_1_1IDLOptions}{IDLOptions}}}]{options }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflatbuffers_1_1kotlin_1_1KotlinGenerator_a700b727989d89a2c2bf8951cf3ac4bbf}\label{classflatbuffers_1_1kotlin_1_1KotlinGenerator_a700b727989d89a2c2bf8951cf3ac4bbf} 
+\index{flatbuffers::kotlin::KotlinGenerator@{flatbuffers::kotlin::KotlinGenerator}!GenStructArgs@{GenStructArgs}}
+\index{GenStructArgs@{GenStructArgs}!flatbuffers::kotlin::KotlinGenerator@{flatbuffers::kotlin::KotlinGenerator}}
+\doxysubsubsection{\texorpdfstring{GenStructArgs()}{GenStructArgs()}}
+{\footnotesize\ttfamily void flatbuffers\+::kotlin\+::\+Kotlin\+Generator\+::\+Gen\+Struct\+Args (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structflatbuffers_1_1StructDef}{Struct\+Def}} \&}]{struct\+\_\+def,  }\item[{\mbox{\hyperlink{classflatbuffers_1_1CodeWriter}{Code\+Writer}} \&}]{writer,  }\item[{const char \texorpdfstring{$\ast$}{*}}]{nameprefix }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflatbuffers_1_1kotlin_1_1KotlinGenerator_ad81975426d56fa31cddfe73840857666}\label{classflatbuffers_1_1kotlin_1_1KotlinGenerator_ad81975426d56fa31cddfe73840857666} 
+\index{flatbuffers::kotlin::KotlinGenerator@{flatbuffers::kotlin::KotlinGenerator}!GenStructBody@{GenStructBody}}
+\index{GenStructBody@{GenStructBody}!flatbuffers::kotlin::KotlinGenerator@{flatbuffers::kotlin::KotlinGenerator}}
+\doxysubsubsection{\texorpdfstring{GenStructBody()}{GenStructBody()}}
+{\footnotesize\ttfamily void flatbuffers\+::kotlin\+::\+Kotlin\+Generator\+::\+Gen\+Struct\+Body (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structflatbuffers_1_1StructDef}{Struct\+Def}} \&}]{struct\+\_\+def,  }\item[{\mbox{\hyperlink{classflatbuffers_1_1CodeWriter}{Code\+Writer}} \&}]{writer,  }\item[{const char \texorpdfstring{$\ast$}{*}}]{nameprefix }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflatbuffers_1_1kotlin_1_1KotlinGenerator_afb878233ae534899d05ac1cd870a9d12}\label{classflatbuffers_1_1kotlin_1_1KotlinGenerator_afb878233ae534899d05ac1cd870a9d12} 
+\index{flatbuffers::kotlin::KotlinGenerator@{flatbuffers::kotlin::KotlinGenerator}!GenTypeBasic@{GenTypeBasic}}
+\index{GenTypeBasic@{GenTypeBasic}!flatbuffers::kotlin::KotlinGenerator@{flatbuffers::kotlin::KotlinGenerator}}
+\doxysubsubsection{\texorpdfstring{GenTypeBasic()}{GenTypeBasic()}}
+{\footnotesize\ttfamily static std\+::string flatbuffers\+::kotlin\+::\+Kotlin\+Generator\+::\+Gen\+Type\+Basic (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{namespaceflatbuffers_a120ddc06543f62f7dce4619b34cac8d4}{Base\+Type}} \&}]{type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+\Hypertarget{classflatbuffers_1_1kotlin_1_1KotlinGenerator_a886196bb4c233da8f45c21b90b9b7435}\label{classflatbuffers_1_1kotlin_1_1KotlinGenerator_a886196bb4c233da8f45c21b90b9b7435} 
+\index{flatbuffers::kotlin::KotlinGenerator@{flatbuffers::kotlin::KotlinGenerator}!GenTypeGet@{GenTypeGet}}
+\index{GenTypeGet@{GenTypeGet}!flatbuffers::kotlin::KotlinGenerator@{flatbuffers::kotlin::KotlinGenerator}}
+\doxysubsubsection{\texorpdfstring{GenTypeGet()}{GenTypeGet()}}
+{\footnotesize\ttfamily std\+::string flatbuffers\+::kotlin\+::\+Kotlin\+Generator\+::\+Gen\+Type\+Get (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structflatbuffers_1_1Type}{Type}} \&}]{type }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflatbuffers_1_1kotlin_1_1KotlinGenerator_a771ab3d54651deb2956f9d8698f6c4ef}\label{classflatbuffers_1_1kotlin_1_1KotlinGenerator_a771ab3d54651deb2956f9d8698f6c4ef} 
+\index{flatbuffers::kotlin::KotlinGenerator@{flatbuffers::kotlin::KotlinGenerator}!GenTypePointer@{GenTypePointer}}
+\index{GenTypePointer@{GenTypePointer}!flatbuffers::kotlin::KotlinGenerator@{flatbuffers::kotlin::KotlinGenerator}}
+\doxysubsubsection{\texorpdfstring{GenTypePointer()}{GenTypePointer()}}
+{\footnotesize\ttfamily std\+::string flatbuffers\+::kotlin\+::\+Kotlin\+Generator\+::\+Gen\+Type\+Pointer (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structflatbuffers_1_1Type}{Type}} \&}]{type }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflatbuffers_1_1kotlin_1_1KotlinGenerator_a1c7d1d0b2890f0a6695c67feb841c423}\label{classflatbuffers_1_1kotlin_1_1KotlinGenerator_a1c7d1d0b2890f0a6695c67feb841c423} 
+\index{flatbuffers::kotlin::KotlinGenerator@{flatbuffers::kotlin::KotlinGenerator}!GetterReturnType@{GetterReturnType}}
+\index{GetterReturnType@{GetterReturnType}!flatbuffers::kotlin::KotlinGenerator@{flatbuffers::kotlin::KotlinGenerator}}
+\doxysubsubsection{\texorpdfstring{GetterReturnType()}{GetterReturnType()}}
+{\footnotesize\ttfamily std\+::string flatbuffers\+::kotlin\+::\+Kotlin\+Generator\+::\+Getter\+Return\+Type (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structflatbuffers_1_1FieldDef}{Field\+Def}} \&}]{field }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflatbuffers_1_1kotlin_1_1KotlinGenerator_af18fc39ba3a444c51d11dba85effa88b}\label{classflatbuffers_1_1kotlin_1_1KotlinGenerator_af18fc39ba3a444c51d11dba85effa88b} 
+\index{flatbuffers::kotlin::KotlinGenerator@{flatbuffers::kotlin::KotlinGenerator}!Indirect@{Indirect}}
+\index{Indirect@{Indirect}!flatbuffers::kotlin::KotlinGenerator@{flatbuffers::kotlin::KotlinGenerator}}
+\doxysubsubsection{\texorpdfstring{Indirect()}{Indirect()}}
+{\footnotesize\ttfamily static std\+::string flatbuffers\+::kotlin\+::\+Kotlin\+Generator\+::\+Indirect (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{index,  }\item[{bool}]{fixed }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+\Hypertarget{classflatbuffers_1_1kotlin_1_1KotlinGenerator_a9a9e37600d85ac19088cc333b9528bbd}\label{classflatbuffers_1_1kotlin_1_1KotlinGenerator_a9a9e37600d85ac19088cc333b9528bbd} 
+\index{flatbuffers::kotlin::KotlinGenerator@{flatbuffers::kotlin::KotlinGenerator}!IsEnum@{IsEnum}}
+\index{IsEnum@{IsEnum}!flatbuffers::kotlin::KotlinGenerator@{flatbuffers::kotlin::KotlinGenerator}}
+\doxysubsubsection{\texorpdfstring{IsEnum()}{IsEnum()}}
+{\footnotesize\ttfamily static bool flatbuffers\+::kotlin\+::\+Kotlin\+Generator\+::\+Is\+Enum (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structflatbuffers_1_1Type}{Type}} \&}]{type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+\Hypertarget{classflatbuffers_1_1kotlin_1_1KotlinGenerator_a9b0dbba319f5338e342c8e0b9fd2c3a5}\label{classflatbuffers_1_1kotlin_1_1KotlinGenerator_a9b0dbba319f5338e342c8e0b9fd2c3a5} 
+\index{flatbuffers::kotlin::KotlinGenerator@{flatbuffers::kotlin::KotlinGenerator}!LiteralSuffix@{LiteralSuffix}}
+\index{LiteralSuffix@{LiteralSuffix}!flatbuffers::kotlin::KotlinGenerator@{flatbuffers::kotlin::KotlinGenerator}}
+\doxysubsubsection{\texorpdfstring{LiteralSuffix()}{LiteralSuffix()}}
+{\footnotesize\ttfamily static std\+::string flatbuffers\+::kotlin\+::\+Kotlin\+Generator\+::\+Literal\+Suffix (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{namespaceflatbuffers_a120ddc06543f62f7dce4619b34cac8d4}{Base\+Type}}}]{type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+\Hypertarget{classflatbuffers_1_1kotlin_1_1KotlinGenerator_a5a1763463a643ff2457ace1a8402c30e}\label{classflatbuffers_1_1kotlin_1_1KotlinGenerator_a5a1763463a643ff2457ace1a8402c30e} 
+\index{flatbuffers::kotlin::KotlinGenerator@{flatbuffers::kotlin::KotlinGenerator}!NotFoundReturn@{NotFoundReturn}}
+\index{NotFoundReturn@{NotFoundReturn}!flatbuffers::kotlin::KotlinGenerator@{flatbuffers::kotlin::KotlinGenerator}}
+\doxysubsubsection{\texorpdfstring{NotFoundReturn()}{NotFoundReturn()}}
+{\footnotesize\ttfamily static std\+::string flatbuffers\+::kotlin\+::\+Kotlin\+Generator\+::\+Not\+Found\+Return (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceflatbuffers_a120ddc06543f62f7dce4619b34cac8d4}{Base\+Type}}}]{el }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+\Hypertarget{classflatbuffers_1_1kotlin_1_1KotlinGenerator_a11b565c87cee028c47b7a5f5a6c4134f}\label{classflatbuffers_1_1kotlin_1_1KotlinGenerator_a11b565c87cee028c47b7a5f5a6c4134f} 
+\index{flatbuffers::kotlin::KotlinGenerator@{flatbuffers::kotlin::KotlinGenerator}!OffsetWrapper@{OffsetWrapper}}
+\index{OffsetWrapper@{OffsetWrapper}!flatbuffers::kotlin::KotlinGenerator@{flatbuffers::kotlin::KotlinGenerator}}
+\doxysubsubsection{\texorpdfstring{OffsetWrapper()}{OffsetWrapper()}}
+{\footnotesize\ttfamily static void flatbuffers\+::kotlin\+::\+Kotlin\+Generator\+::\+Offset\+Wrapper (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classflatbuffers_1_1CodeWriter}{Code\+Writer}} \&}]{code,  }\item[{const std\+::string \&}]{offset,  }\item[{const std\+::function$<$ void()$>$ \&}]{found,  }\item[{const std\+::function$<$ void()$>$ \&}]{not\+\_\+found }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+\Hypertarget{classflatbuffers_1_1kotlin_1_1KotlinGenerator_a8785a6c86ac118aae9dc3d6a36cb084c}\label{classflatbuffers_1_1kotlin_1_1KotlinGenerator_a8785a6c86ac118aae9dc3d6a36cb084c} 
+\index{flatbuffers::kotlin::KotlinGenerator@{flatbuffers::kotlin::KotlinGenerator}!OffsetWrapperOneLine@{OffsetWrapperOneLine}}
+\index{OffsetWrapperOneLine@{OffsetWrapperOneLine}!flatbuffers::kotlin::KotlinGenerator@{flatbuffers::kotlin::KotlinGenerator}}
+\doxysubsubsection{\texorpdfstring{OffsetWrapperOneLine()}{OffsetWrapperOneLine()}}
+{\footnotesize\ttfamily static std\+::string flatbuffers\+::kotlin\+::\+Kotlin\+Generator\+::\+Offset\+Wrapper\+One\+Line (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{offset,  }\item[{const std\+::string \&}]{found,  }\item[{const std\+::string \&}]{not\+\_\+found }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+\Hypertarget{classflatbuffers_1_1kotlin_1_1KotlinGenerator_a6b70de373e19f41f87e2fabc552dffa3}\label{classflatbuffers_1_1kotlin_1_1KotlinGenerator_a6b70de373e19f41f87e2fabc552dffa3} 
+\index{flatbuffers::kotlin::KotlinGenerator@{flatbuffers::kotlin::KotlinGenerator}!operator=@{operator=}}
+\index{operator=@{operator=}!flatbuffers::kotlin::KotlinGenerator@{flatbuffers::kotlin::KotlinGenerator}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classflatbuffers_1_1kotlin_1_1KotlinGenerator}{Kotlin\+Generator}} \& flatbuffers\+::kotlin\+::\+Kotlin\+Generator\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classflatbuffers_1_1kotlin_1_1KotlinGenerator}{Kotlin\+Generator}} \&}]{ }\end{DoxyParamCaption})}
+
+\Hypertarget{classflatbuffers_1_1kotlin_1_1KotlinGenerator_a4d3dfcde1a9355734e2d5beb00bd46fa}\label{classflatbuffers_1_1kotlin_1_1KotlinGenerator_a4d3dfcde1a9355734e2d5beb00bd46fa} 
+\index{flatbuffers::kotlin::KotlinGenerator@{flatbuffers::kotlin::KotlinGenerator}!SaveType@{SaveType}}
+\index{SaveType@{SaveType}!flatbuffers::kotlin::KotlinGenerator@{flatbuffers::kotlin::KotlinGenerator}}
+\doxysubsubsection{\texorpdfstring{SaveType()}{SaveType()}}
+{\footnotesize\ttfamily bool flatbuffers\+::kotlin\+::\+Kotlin\+Generator\+::\+Save\+Type (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{defname,  }\item[{const \mbox{\hyperlink{structflatbuffers_1_1Namespace}{Namespace}} \&}]{ns,  }\item[{const std\+::string \&}]{classcode,  }\item[{bool}]{needs\+\_\+includes }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflatbuffers_1_1kotlin_1_1KotlinGenerator_a6e44cfb258d5a63f3a35c8f5ef787cee}\label{classflatbuffers_1_1kotlin_1_1KotlinGenerator_a6e44cfb258d5a63f3a35c8f5ef787cee} 
+\index{flatbuffers::kotlin::KotlinGenerator@{flatbuffers::kotlin::KotlinGenerator}!StructConstructorParams@{StructConstructorParams}}
+\index{StructConstructorParams@{StructConstructorParams}!flatbuffers::kotlin::KotlinGenerator@{flatbuffers::kotlin::KotlinGenerator}}
+\doxysubsubsection{\texorpdfstring{StructConstructorParams()}{StructConstructorParams()}}
+{\footnotesize\ttfamily std\+::string flatbuffers\+::kotlin\+::\+Kotlin\+Generator\+::\+Struct\+Constructor\+Params (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structflatbuffers_1_1StructDef}{Struct\+Def}} \&}]{struct\+\_\+def,  }\item[{const std\+::string \&}]{prefix = {\ttfamily "{}"{}} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflatbuffers_1_1kotlin_1_1KotlinGenerator_ab910a32f4687e95644669970c20d675b}\label{classflatbuffers_1_1kotlin_1_1KotlinGenerator_ab910a32f4687e95644669970c20d675b} 
+\index{flatbuffers::kotlin::KotlinGenerator@{flatbuffers::kotlin::KotlinGenerator}!ToSignedType@{ToSignedType}}
+\index{ToSignedType@{ToSignedType}!flatbuffers::kotlin::KotlinGenerator@{flatbuffers::kotlin::KotlinGenerator}}
+\doxysubsubsection{\texorpdfstring{ToSignedType()}{ToSignedType()}}
+{\footnotesize\ttfamily static std\+::string flatbuffers\+::kotlin\+::\+Kotlin\+Generator\+::\+To\+Signed\+Type (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structflatbuffers_1_1Type}{Type}} \&}]{type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classflatbuffers_1_1kotlin_1_1KotlinGenerator_a8d7d920d124ce13b5c2cd4fe6b35505d}\label{classflatbuffers_1_1kotlin_1_1KotlinGenerator_a8d7d920d124ce13b5c2cd4fe6b35505d} 
+\index{flatbuffers::kotlin::KotlinGenerator@{flatbuffers::kotlin::KotlinGenerator}!namer\_@{namer\_}}
+\index{namer\_@{namer\_}!flatbuffers::kotlin::KotlinGenerator@{flatbuffers::kotlin::KotlinGenerator}}
+\doxysubsubsection{\texorpdfstring{namer\_}{namer\_}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{classflatbuffers_1_1IdlNamer}{Idl\+Namer}} flatbuffers\+::kotlin\+::\+Kotlin\+Generator\+::namer\+\_\+}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+flatbuffers/src/\mbox{\hyperlink{idl__gen__kotlin_8cpp}{idl\+\_\+gen\+\_\+kotlin.\+cpp}}\end{DoxyCompactItemize}

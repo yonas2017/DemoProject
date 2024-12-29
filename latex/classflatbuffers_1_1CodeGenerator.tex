@@ -1,0 +1,185 @@
+\doxysection{flatbuffers\+::Code\+Generator Class Reference}
+\hypertarget{classflatbuffers_1_1CodeGenerator}{}\label{classflatbuffers_1_1CodeGenerator}\index{flatbuffers::CodeGenerator@{flatbuffers::CodeGenerator}}
+
+
+{\ttfamily \#include $<$code\+\_\+generator.\+h$>$}
+
+
+
+Inheritance diagram for flatbuffers\+::Code\+Generator\+:
+% FIG 0
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{classflatbuffers_1_1CodeGenerator_ace5ed21ca8a1faa20a6cf7da3eda8ffa}{Status}} \{ \mbox{\hyperlink{classflatbuffers_1_1CodeGenerator_ace5ed21ca8a1faa20a6cf7da3eda8ffaa71dc2f8979fb40fc4be8421d7e0e8a4a}{OK}} = 0
+, \mbox{\hyperlink{classflatbuffers_1_1CodeGenerator_ace5ed21ca8a1faa20a6cf7da3eda8ffaa6b9ad17a70ddba7e7c7f5d73ef4d64df}{ERROR}} = 1
+, \mbox{\hyperlink{classflatbuffers_1_1CodeGenerator_ace5ed21ca8a1faa20a6cf7da3eda8ffaa5d31295f7c19c632ef9e1e0f7d74d173}{FAILED\+\_\+\+VERIFICATION}} = 2
+, \mbox{\hyperlink{classflatbuffers_1_1CodeGenerator_ace5ed21ca8a1faa20a6cf7da3eda8ffaae12ff9b014a92be1dce3fd91e0f05ea0}{NOT\+\_\+\+IMPLEMENTED}} = 3
+ \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classflatbuffers_1_1CodeGenerator_a60b65f3a16439dd3660b2a17dc4097eb}{\texorpdfstring{$\sim$}{\string~}\+Code\+Generator}} ()=default
+\item 
+virtual \mbox{\hyperlink{classflatbuffers_1_1CodeGenerator_ace5ed21ca8a1faa20a6cf7da3eda8ffa}{Status}} \mbox{\hyperlink{classflatbuffers_1_1CodeGenerator_a6d2ad14b8b914d6b447f8a2a6d1918c1}{Generate\+Code}} (const \mbox{\hyperlink{classflatbuffers_1_1Parser}{Parser}} \&parser, const std\+::string \&path, const std\+::string \&filename)=0
+\item 
+virtual \mbox{\hyperlink{classflatbuffers_1_1CodeGenerator_ace5ed21ca8a1faa20a6cf7da3eda8ffa}{Status}} \mbox{\hyperlink{classflatbuffers_1_1CodeGenerator_a34bd4e2e21e5a4674941c11a7738e554}{Generate\+Code\+String}} (const \mbox{\hyperlink{classflatbuffers_1_1Parser}{Parser}} \&parser, const std\+::string \&filename, std\+::string \&output)
+\item 
+virtual \mbox{\hyperlink{classflatbuffers_1_1CodeGenerator_ace5ed21ca8a1faa20a6cf7da3eda8ffa}{Status}} \mbox{\hyperlink{classflatbuffers_1_1CodeGenerator_a64feca33047f7ee06f6a6de58dff2267}{Generate\+Code}} (const uint8\+\_\+t \texorpdfstring{$\ast$}{*}buffer, int64\+\_\+t length, const \mbox{\hyperlink{structflatbuffers_1_1CodeGenOptions}{Code\+Gen\+Options}} \&options)=0
+\item 
+virtual \mbox{\hyperlink{classflatbuffers_1_1CodeGenerator_ace5ed21ca8a1faa20a6cf7da3eda8ffa}{Status}} \mbox{\hyperlink{classflatbuffers_1_1CodeGenerator_a1d4a52cfffefb2835d9fa30144b32cf4}{Generate\+Make\+Rule}} (const \mbox{\hyperlink{classflatbuffers_1_1Parser}{Parser}} \&parser, const std\+::string \&path, const std\+::string \&filename, std\+::string \&output)=0
+\item 
+virtual \mbox{\hyperlink{classflatbuffers_1_1CodeGenerator_ace5ed21ca8a1faa20a6cf7da3eda8ffa}{Status}} \mbox{\hyperlink{classflatbuffers_1_1CodeGenerator_a6d4c3b8beaa7f76aa2d1ff21c0c97f93}{Generate\+Grpc\+Code}} (const \mbox{\hyperlink{classflatbuffers_1_1Parser}{Parser}} \&parser, const std\+::string \&path, const std\+::string \&filename)=0
+\item 
+virtual \mbox{\hyperlink{classflatbuffers_1_1CodeGenerator_ace5ed21ca8a1faa20a6cf7da3eda8ffa}{Status}} \mbox{\hyperlink{classflatbuffers_1_1CodeGenerator_ac745e2e6785f7049d4641393492d69d5}{Generate\+Root\+File}} (const \mbox{\hyperlink{classflatbuffers_1_1Parser}{Parser}} \&parser, const std\+::string \&path)=0
+\item 
+virtual bool \mbox{\hyperlink{classflatbuffers_1_1CodeGenerator_ab4fd90d8914b467a86413688eb19017f}{Is\+Schema\+Only}} () const =0
+\item 
+virtual bool \mbox{\hyperlink{classflatbuffers_1_1CodeGenerator_a6b4ba4a0b9c54bb3a31ab2ae1541857e}{Supports\+Bfbs\+Generation}} () const =0
+\item 
+virtual bool \mbox{\hyperlink{classflatbuffers_1_1CodeGenerator_a477e9fac99eb370ede8cd97a0a616774}{Supports\+Root\+File\+Generation}} () const =0
+\item 
+virtual \mbox{\hyperlink{structflatbuffers_1_1IDLOptions_a86ee4542187c2b04945f43cf6aebaffc}{IDLOptions\+::\+Language}} \mbox{\hyperlink{classflatbuffers_1_1CodeGenerator_a00a85f44dc29d57ee844b92704a789c8}{Language}} () const =0
+\item 
+virtual std\+::string \mbox{\hyperlink{classflatbuffers_1_1CodeGenerator_a5bc8484b9233632d57596cb9db704569}{Language\+Name}} () const =0
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{classflatbuffers_1_1CodeGenerator_a3031b56b091bb933fc103fa1b11414c8}{status\+\_\+detail}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classflatbuffers_1_1CodeGenerator_a6bdc967a1e7eedeb148ea663ca95f9d8}{Code\+Generator}} ()=default
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Enumeration Documentation}
+\Hypertarget{classflatbuffers_1_1CodeGenerator_ace5ed21ca8a1faa20a6cf7da3eda8ffa}\label{classflatbuffers_1_1CodeGenerator_ace5ed21ca8a1faa20a6cf7da3eda8ffa} 
+\index{flatbuffers::CodeGenerator@{flatbuffers::CodeGenerator}!Status@{Status}}
+\index{Status@{Status}!flatbuffers::CodeGenerator@{flatbuffers::CodeGenerator}}
+\doxysubsubsection{\texorpdfstring{Status}{Status}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{classflatbuffers_1_1CodeGenerator_ace5ed21ca8a1faa20a6cf7da3eda8ffa}{flatbuffers\+::\+Code\+Generator\+::\+Status}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{OK@{OK}!flatbuffers::CodeGenerator@{flatbuffers::CodeGenerator}}\index{flatbuffers::CodeGenerator@{flatbuffers::CodeGenerator}!OK@{OK}}}\Hypertarget{classflatbuffers_1_1CodeGenerator_ace5ed21ca8a1faa20a6cf7da3eda8ffaa71dc2f8979fb40fc4be8421d7e0e8a4a}\label{classflatbuffers_1_1CodeGenerator_ace5ed21ca8a1faa20a6cf7da3eda8ffaa71dc2f8979fb40fc4be8421d7e0e8a4a} 
+OK&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ERROR@{ERROR}!flatbuffers::CodeGenerator@{flatbuffers::CodeGenerator}}\index{flatbuffers::CodeGenerator@{flatbuffers::CodeGenerator}!ERROR@{ERROR}}}\Hypertarget{classflatbuffers_1_1CodeGenerator_ace5ed21ca8a1faa20a6cf7da3eda8ffaa6b9ad17a70ddba7e7c7f5d73ef4d64df}\label{classflatbuffers_1_1CodeGenerator_ace5ed21ca8a1faa20a6cf7da3eda8ffaa6b9ad17a70ddba7e7c7f5d73ef4d64df} 
+ERROR&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{FAILED\_VERIFICATION@{FAILED\_VERIFICATION}!flatbuffers::CodeGenerator@{flatbuffers::CodeGenerator}}\index{flatbuffers::CodeGenerator@{flatbuffers::CodeGenerator}!FAILED\_VERIFICATION@{FAILED\_VERIFICATION}}}\Hypertarget{classflatbuffers_1_1CodeGenerator_ace5ed21ca8a1faa20a6cf7da3eda8ffaa5d31295f7c19c632ef9e1e0f7d74d173}\label{classflatbuffers_1_1CodeGenerator_ace5ed21ca8a1faa20a6cf7da3eda8ffaa5d31295f7c19c632ef9e1e0f7d74d173} 
+FAILED\+\_\+\+VERIFICATION&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NOT\_IMPLEMENTED@{NOT\_IMPLEMENTED}!flatbuffers::CodeGenerator@{flatbuffers::CodeGenerator}}\index{flatbuffers::CodeGenerator@{flatbuffers::CodeGenerator}!NOT\_IMPLEMENTED@{NOT\_IMPLEMENTED}}}\Hypertarget{classflatbuffers_1_1CodeGenerator_ace5ed21ca8a1faa20a6cf7da3eda8ffaae12ff9b014a92be1dce3fd91e0f05ea0}\label{classflatbuffers_1_1CodeGenerator_ace5ed21ca8a1faa20a6cf7da3eda8ffaae12ff9b014a92be1dce3fd91e0f05ea0} 
+NOT\+\_\+\+IMPLEMENTED&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classflatbuffers_1_1CodeGenerator_a60b65f3a16439dd3660b2a17dc4097eb}\label{classflatbuffers_1_1CodeGenerator_a60b65f3a16439dd3660b2a17dc4097eb} 
+\index{flatbuffers::CodeGenerator@{flatbuffers::CodeGenerator}!````~CodeGenerator@{\texorpdfstring{$\sim$}{\string~}CodeGenerator}}
+\index{````~CodeGenerator@{\texorpdfstring{$\sim$}{\string~}CodeGenerator}!flatbuffers::CodeGenerator@{flatbuffers::CodeGenerator}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}CodeGenerator()}{\string~CodeGenerator()}}
+{\footnotesize\ttfamily virtual flatbuffers\+::\+Code\+Generator\+::\texorpdfstring{$\sim$}{\string~}\+Code\+Generator (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+\Hypertarget{classflatbuffers_1_1CodeGenerator_a6bdc967a1e7eedeb148ea663ca95f9d8}\label{classflatbuffers_1_1CodeGenerator_a6bdc967a1e7eedeb148ea663ca95f9d8} 
+\index{flatbuffers::CodeGenerator@{flatbuffers::CodeGenerator}!CodeGenerator@{CodeGenerator}}
+\index{CodeGenerator@{CodeGenerator}!flatbuffers::CodeGenerator@{flatbuffers::CodeGenerator}}
+\doxysubsubsection{\texorpdfstring{CodeGenerator()}{CodeGenerator()}}
+{\footnotesize\ttfamily flatbuffers\+::\+Code\+Generator\+::\+Code\+Generator (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [default]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classflatbuffers_1_1CodeGenerator_a6d2ad14b8b914d6b447f8a2a6d1918c1}\label{classflatbuffers_1_1CodeGenerator_a6d2ad14b8b914d6b447f8a2a6d1918c1} 
+\index{flatbuffers::CodeGenerator@{flatbuffers::CodeGenerator}!GenerateCode@{GenerateCode}}
+\index{GenerateCode@{GenerateCode}!flatbuffers::CodeGenerator@{flatbuffers::CodeGenerator}}
+\doxysubsubsection{\texorpdfstring{GenerateCode()}{GenerateCode()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{classflatbuffers_1_1CodeGenerator_ace5ed21ca8a1faa20a6cf7da3eda8ffa}{Status}} flatbuffers\+::\+Code\+Generator\+::\+Generate\+Code (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classflatbuffers_1_1Parser}{Parser}} \&}]{parser,  }\item[{const std\+::string \&}]{path,  }\item[{const std\+::string \&}]{filename }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+\Hypertarget{classflatbuffers_1_1CodeGenerator_a64feca33047f7ee06f6a6de58dff2267}\label{classflatbuffers_1_1CodeGenerator_a64feca33047f7ee06f6a6de58dff2267} 
+\index{flatbuffers::CodeGenerator@{flatbuffers::CodeGenerator}!GenerateCode@{GenerateCode}}
+\index{GenerateCode@{GenerateCode}!flatbuffers::CodeGenerator@{flatbuffers::CodeGenerator}}
+\doxysubsubsection{\texorpdfstring{GenerateCode()}{GenerateCode()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{classflatbuffers_1_1CodeGenerator_ace5ed21ca8a1faa20a6cf7da3eda8ffa}{Status}} flatbuffers\+::\+Code\+Generator\+::\+Generate\+Code (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t \texorpdfstring{$\ast$}{*}}]{buffer,  }\item[{int64\+\_\+t}]{length,  }\item[{const \mbox{\hyperlink{structflatbuffers_1_1CodeGenOptions}{Code\+Gen\+Options}} \&}]{options }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{classflatbuffers_1_1BaseBfbsGenerator_a0ea2ec2343c6a02fade634029190fc2d}{flatbuffers\+::\+Base\+Bfbs\+Generator}}.
+
+\Hypertarget{classflatbuffers_1_1CodeGenerator_a34bd4e2e21e5a4674941c11a7738e554}\label{classflatbuffers_1_1CodeGenerator_a34bd4e2e21e5a4674941c11a7738e554} 
+\index{flatbuffers::CodeGenerator@{flatbuffers::CodeGenerator}!GenerateCodeString@{GenerateCodeString}}
+\index{GenerateCodeString@{GenerateCodeString}!flatbuffers::CodeGenerator@{flatbuffers::CodeGenerator}}
+\doxysubsubsection{\texorpdfstring{GenerateCodeString()}{GenerateCodeString()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{classflatbuffers_1_1CodeGenerator_ace5ed21ca8a1faa20a6cf7da3eda8ffa}{Status}} flatbuffers\+::\+Code\+Generator\+::\+Generate\+Code\+String (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classflatbuffers_1_1Parser}{Parser}} \&}]{parser,  }\item[{const std\+::string \&}]{filename,  }\item[{std\+::string \&}]{output }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+\Hypertarget{classflatbuffers_1_1CodeGenerator_a6d4c3b8beaa7f76aa2d1ff21c0c97f93}\label{classflatbuffers_1_1CodeGenerator_a6d4c3b8beaa7f76aa2d1ff21c0c97f93} 
+\index{flatbuffers::CodeGenerator@{flatbuffers::CodeGenerator}!GenerateGrpcCode@{GenerateGrpcCode}}
+\index{GenerateGrpcCode@{GenerateGrpcCode}!flatbuffers::CodeGenerator@{flatbuffers::CodeGenerator}}
+\doxysubsubsection{\texorpdfstring{GenerateGrpcCode()}{GenerateGrpcCode()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{classflatbuffers_1_1CodeGenerator_ace5ed21ca8a1faa20a6cf7da3eda8ffa}{Status}} flatbuffers\+::\+Code\+Generator\+::\+Generate\+Grpc\+Code (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classflatbuffers_1_1Parser}{Parser}} \&}]{parser,  }\item[{const std\+::string \&}]{path,  }\item[{const std\+::string \&}]{filename }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+\Hypertarget{classflatbuffers_1_1CodeGenerator_a1d4a52cfffefb2835d9fa30144b32cf4}\label{classflatbuffers_1_1CodeGenerator_a1d4a52cfffefb2835d9fa30144b32cf4} 
+\index{flatbuffers::CodeGenerator@{flatbuffers::CodeGenerator}!GenerateMakeRule@{GenerateMakeRule}}
+\index{GenerateMakeRule@{GenerateMakeRule}!flatbuffers::CodeGenerator@{flatbuffers::CodeGenerator}}
+\doxysubsubsection{\texorpdfstring{GenerateMakeRule()}{GenerateMakeRule()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{classflatbuffers_1_1CodeGenerator_ace5ed21ca8a1faa20a6cf7da3eda8ffa}{Status}} flatbuffers\+::\+Code\+Generator\+::\+Generate\+Make\+Rule (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classflatbuffers_1_1Parser}{Parser}} \&}]{parser,  }\item[{const std\+::string \&}]{path,  }\item[{const std\+::string \&}]{filename,  }\item[{std\+::string \&}]{output }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+\Hypertarget{classflatbuffers_1_1CodeGenerator_ac745e2e6785f7049d4641393492d69d5}\label{classflatbuffers_1_1CodeGenerator_ac745e2e6785f7049d4641393492d69d5} 
+\index{flatbuffers::CodeGenerator@{flatbuffers::CodeGenerator}!GenerateRootFile@{GenerateRootFile}}
+\index{GenerateRootFile@{GenerateRootFile}!flatbuffers::CodeGenerator@{flatbuffers::CodeGenerator}}
+\doxysubsubsection{\texorpdfstring{GenerateRootFile()}{GenerateRootFile()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{classflatbuffers_1_1CodeGenerator_ace5ed21ca8a1faa20a6cf7da3eda8ffa}{Status}} flatbuffers\+::\+Code\+Generator\+::\+Generate\+Root\+File (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classflatbuffers_1_1Parser}{Parser}} \&}]{parser,  }\item[{const std\+::string \&}]{path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+\Hypertarget{classflatbuffers_1_1CodeGenerator_ab4fd90d8914b467a86413688eb19017f}\label{classflatbuffers_1_1CodeGenerator_ab4fd90d8914b467a86413688eb19017f} 
+\index{flatbuffers::CodeGenerator@{flatbuffers::CodeGenerator}!IsSchemaOnly@{IsSchemaOnly}}
+\index{IsSchemaOnly@{IsSchemaOnly}!flatbuffers::CodeGenerator@{flatbuffers::CodeGenerator}}
+\doxysubsubsection{\texorpdfstring{IsSchemaOnly()}{IsSchemaOnly()}}
+{\footnotesize\ttfamily virtual bool flatbuffers\+::\+Code\+Generator\+::\+Is\+Schema\+Only (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+\Hypertarget{classflatbuffers_1_1CodeGenerator_a00a85f44dc29d57ee844b92704a789c8}\label{classflatbuffers_1_1CodeGenerator_a00a85f44dc29d57ee844b92704a789c8} 
+\index{flatbuffers::CodeGenerator@{flatbuffers::CodeGenerator}!Language@{Language}}
+\index{Language@{Language}!flatbuffers::CodeGenerator@{flatbuffers::CodeGenerator}}
+\doxysubsubsection{\texorpdfstring{Language()}{Language()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{structflatbuffers_1_1IDLOptions_a86ee4542187c2b04945f43cf6aebaffc}{IDLOptions\+::\+Language}} flatbuffers\+::\+Code\+Generator\+::\+Language (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+\Hypertarget{classflatbuffers_1_1CodeGenerator_a5bc8484b9233632d57596cb9db704569}\label{classflatbuffers_1_1CodeGenerator_a5bc8484b9233632d57596cb9db704569} 
+\index{flatbuffers::CodeGenerator@{flatbuffers::CodeGenerator}!LanguageName@{LanguageName}}
+\index{LanguageName@{LanguageName}!flatbuffers::CodeGenerator@{flatbuffers::CodeGenerator}}
+\doxysubsubsection{\texorpdfstring{LanguageName()}{LanguageName()}}
+{\footnotesize\ttfamily virtual std\+::string flatbuffers\+::\+Code\+Generator\+::\+Language\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+\Hypertarget{classflatbuffers_1_1CodeGenerator_a6b4ba4a0b9c54bb3a31ab2ae1541857e}\label{classflatbuffers_1_1CodeGenerator_a6b4ba4a0b9c54bb3a31ab2ae1541857e} 
+\index{flatbuffers::CodeGenerator@{flatbuffers::CodeGenerator}!SupportsBfbsGeneration@{SupportsBfbsGeneration}}
+\index{SupportsBfbsGeneration@{SupportsBfbsGeneration}!flatbuffers::CodeGenerator@{flatbuffers::CodeGenerator}}
+\doxysubsubsection{\texorpdfstring{SupportsBfbsGeneration()}{SupportsBfbsGeneration()}}
+{\footnotesize\ttfamily virtual bool flatbuffers\+::\+Code\+Generator\+::\+Supports\+Bfbs\+Generation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+\Hypertarget{classflatbuffers_1_1CodeGenerator_a477e9fac99eb370ede8cd97a0a616774}\label{classflatbuffers_1_1CodeGenerator_a477e9fac99eb370ede8cd97a0a616774} 
+\index{flatbuffers::CodeGenerator@{flatbuffers::CodeGenerator}!SupportsRootFileGeneration@{SupportsRootFileGeneration}}
+\index{SupportsRootFileGeneration@{SupportsRootFileGeneration}!flatbuffers::CodeGenerator@{flatbuffers::CodeGenerator}}
+\doxysubsubsection{\texorpdfstring{SupportsRootFileGeneration()}{SupportsRootFileGeneration()}}
+{\footnotesize\ttfamily virtual bool flatbuffers\+::\+Code\+Generator\+::\+Supports\+Root\+File\+Generation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classflatbuffers_1_1CodeGenerator_a3031b56b091bb933fc103fa1b11414c8}\label{classflatbuffers_1_1CodeGenerator_a3031b56b091bb933fc103fa1b11414c8} 
+\index{flatbuffers::CodeGenerator@{flatbuffers::CodeGenerator}!status\_detail@{status\_detail}}
+\index{status\_detail@{status\_detail}!flatbuffers::CodeGenerator@{flatbuffers::CodeGenerator}}
+\doxysubsubsection{\texorpdfstring{status\_detail}{status\_detail}}
+{\footnotesize\ttfamily std\+::string flatbuffers\+::\+Code\+Generator\+::status\+\_\+detail}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+flatbuffers/include/flatbuffers/\mbox{\hyperlink{code__generator_8h}{code\+\_\+generator.\+h}}\end{DoxyCompactItemize}

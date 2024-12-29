@@ -1,0 +1,73 @@
+\doxysection{flatbuffers\+::Default\+Allocator Class Reference}
+\hypertarget{classflatbuffers_1_1DefaultAllocator}{}\label{classflatbuffers_1_1DefaultAllocator}\index{flatbuffers::DefaultAllocator@{flatbuffers::DefaultAllocator}}
+
+
+{\ttfamily \#include $<$default\+\_\+allocator.\+h$>$}
+
+
+
+Inheritance diagram for flatbuffers\+::Default\+Allocator\+:
+% FIG 0
+
+
+Collaboration diagram for flatbuffers\+::Default\+Allocator\+:
+% FIG 1
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+uint8\+\_\+t \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classflatbuffers_1_1DefaultAllocator_aeba7d4a7c546d7725b707ecbeaf68ebf}{allocate}} (size\+\_\+t size) FLATBUFFERS\+\_\+\+OVERRIDE
+\item 
+void \mbox{\hyperlink{classflatbuffers_1_1DefaultAllocator_acfc866696fe9db8e74d9529d8fc70aac}{deallocate}} (uint8\+\_\+t \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{gmock-matchers-containers__test_8cc_a6bc6b007533335efe02bafff799ec64c}{p}}, size\+\_\+t) FLATBUFFERS\+\_\+\+OVERRIDE
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classflatbuffers_1_1Allocator}{flatbuffers\+::\+Allocator}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classflatbuffers_1_1Allocator_a96abc6f31fe94e932d7f4daac10388b9}{\texorpdfstring{$\sim$}{\string~}\+Allocator}} ()
+\item 
+virtual uint8\+\_\+t \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classflatbuffers_1_1Allocator_a5c213f8ead50ce81e4427f65ba639892}{reallocate\+\_\+downward}} (uint8\+\_\+t \texorpdfstring{$\ast$}{*}old\+\_\+p, size\+\_\+t old\+\_\+size, size\+\_\+t new\+\_\+size, size\+\_\+t in\+\_\+use\+\_\+back, size\+\_\+t in\+\_\+use\+\_\+front)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{classflatbuffers_1_1DefaultAllocator_a7549b946d7bd892dcb773db38a44907c}{dealloc}} (void \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{gmock-matchers-containers__test_8cc_a6bc6b007533335efe02bafff799ec64c}{p}}, size\+\_\+t)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{classflatbuffers_1_1Allocator}{flatbuffers\+::\+Allocator}}}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classflatbuffers_1_1Allocator_afa22a0382f1886795440785d7e3bb478}{memcpy\+\_\+downward}} (uint8\+\_\+t \texorpdfstring{$\ast$}{*}old\+\_\+p, size\+\_\+t old\+\_\+size, uint8\+\_\+t \texorpdfstring{$\ast$}{*}new\+\_\+p, size\+\_\+t new\+\_\+size, size\+\_\+t in\+\_\+use\+\_\+back, size\+\_\+t in\+\_\+use\+\_\+front)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classflatbuffers_1_1DefaultAllocator_aeba7d4a7c546d7725b707ecbeaf68ebf}\label{classflatbuffers_1_1DefaultAllocator_aeba7d4a7c546d7725b707ecbeaf68ebf} 
+\index{flatbuffers::DefaultAllocator@{flatbuffers::DefaultAllocator}!allocate@{allocate}}
+\index{allocate@{allocate}!flatbuffers::DefaultAllocator@{flatbuffers::DefaultAllocator}}
+\doxysubsubsection{\texorpdfstring{allocate()}{allocate()}}
+{\footnotesize\ttfamily uint8\+\_\+t \texorpdfstring{$\ast$}{*} flatbuffers\+::\+Default\+Allocator\+::allocate (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classflatbuffers_1_1Allocator_a8fde2800ed6bfcc35472c1219862573e}{flatbuffers\+::\+Allocator}}.
+
+\Hypertarget{classflatbuffers_1_1DefaultAllocator_a7549b946d7bd892dcb773db38a44907c}\label{classflatbuffers_1_1DefaultAllocator_a7549b946d7bd892dcb773db38a44907c} 
+\index{flatbuffers::DefaultAllocator@{flatbuffers::DefaultAllocator}!dealloc@{dealloc}}
+\index{dealloc@{dealloc}!flatbuffers::DefaultAllocator@{flatbuffers::DefaultAllocator}}
+\doxysubsubsection{\texorpdfstring{dealloc()}{dealloc()}}
+{\footnotesize\ttfamily static void flatbuffers\+::\+Default\+Allocator\+::dealloc (\begin{DoxyParamCaption}\item[{void \texorpdfstring{$\ast$}{*}}]{p,  }\item[{size\+\_\+t}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+\Hypertarget{classflatbuffers_1_1DefaultAllocator_acfc866696fe9db8e74d9529d8fc70aac}\label{classflatbuffers_1_1DefaultAllocator_acfc866696fe9db8e74d9529d8fc70aac} 
+\index{flatbuffers::DefaultAllocator@{flatbuffers::DefaultAllocator}!deallocate@{deallocate}}
+\index{deallocate@{deallocate}!flatbuffers::DefaultAllocator@{flatbuffers::DefaultAllocator}}
+\doxysubsubsection{\texorpdfstring{deallocate()}{deallocate()}}
+{\footnotesize\ttfamily void flatbuffers\+::\+Default\+Allocator\+::deallocate (\begin{DoxyParamCaption}\item[{uint8\+\_\+t \texorpdfstring{$\ast$}{*}}]{p,  }\item[{size\+\_\+t}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classflatbuffers_1_1Allocator_ab72efb51f31b9238373f5922ac282a89}{flatbuffers\+::\+Allocator}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+flatbuffers/include/flatbuffers/\mbox{\hyperlink{default__allocator_8h}{default\+\_\+allocator.\+h}}\end{DoxyCompactItemize}

@@ -1,0 +1,504 @@
+\doxysection{base.\+h}
+\hypertarget{base_8h_source}{}\label{base_8h_source}\index{flatbuffers/include/flatbuffers/base.h@{flatbuffers/include/flatbuffers/base.h}}
+\mbox{\hyperlink{base_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ FLATBUFFERS\_BASE\_H\_}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ FLATBUFFERS\_BASE\_H\_}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{comment}{//\ clang-\/format\ off}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{comment}{//\ If\ activate\ should\ be\ declared\ and\ included\ first.}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#if\ defined(FLATBUFFERS\_MEMORY\_LEAK\_TRACKING)\ \&\&\ \(\backslash\)}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\ \ \ \ defined(\_MSC\_VER)\ \&\&\ defined(\_DEBUG)}}
+\DoxyCodeLine{00009\ \ \ \textcolor{comment}{//\ The\ \_CRTDBG\_MAP\_ALLOC\ inside\ <crtdbg.h>\ will\ replace}}
+\DoxyCodeLine{00010\ \ \ \textcolor{comment}{//\ calloc/free\ (etc)\ to\ its\ debug\ version\ using\ \#define\ directives.}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\ \ \#define\ \_CRTDBG\_MAP\_ALLOC}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\ \ \#include\ <stdlib.h>}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\ \ \#include\ <crtdbg.h>}}
+\DoxyCodeLine{00014\ \ \ \textcolor{comment}{//\ Replace\ operator\ new\ by\ trace-\/enabled\ version.}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\ \ \#define\ DEBUG\_NEW\ new(\_NORMAL\_BLOCK,\ \_\_FILE\_\_,\ \_\_LINE\_\_)}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\ \ \#define\ new\ DEBUG\_NEW}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#if\ !defined(FLATBUFFERS\_ASSERT)}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ <assert.h>}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#define\ FLATBUFFERS\_ASSERT\ assert}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#elif\ defined(FLATBUFFERS\_ASSERT\_INCLUDE)}}
+\DoxyCodeLine{00023\ \textcolor{comment}{//\ Include\ file\ with\ forward\ declaration}}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#include\ FLATBUFFERS\_ASSERT\_INCLUDE}}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#ifndef\ ARDUINO}}
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#include\ <cstdint>}}
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#include\ <cstddef>}}
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#include\ <cstdlib>}}
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#include\ <cstring>}}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#if\ defined(ARDUINO)\ \&\&\ !defined(ARDUINOSTL\_M\_H)\ \&\&\ defined(\_\_AVR\_\_)}}
+\DoxyCodeLine{00036\ \textcolor{preprocessor}{\ \ \#include\ <utility.h>}}
+\DoxyCodeLine{00037\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00038\ \textcolor{preprocessor}{\ \ \#include\ <utility>}}
+\DoxyCodeLine{00039\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00042\ \textcolor{preprocessor}{\#include\ <type\_traits>}}
+\DoxyCodeLine{00043\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00044\ \textcolor{preprocessor}{\#include\ <set>}}
+\DoxyCodeLine{00045\ \textcolor{preprocessor}{\#include\ <algorithm>}}
+\DoxyCodeLine{00046\ \textcolor{preprocessor}{\#include\ <limits>}}
+\DoxyCodeLine{00047\ \textcolor{preprocessor}{\#include\ <iterator>}}
+\DoxyCodeLine{00048\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \textcolor{preprocessor}{\#if\ defined(\_\_unix\_\_)\ \&\&\ !defined(FLATBUFFERS\_LOCALE\_INDEPENDENT)}}
+\DoxyCodeLine{00051\ \textcolor{preprocessor}{\ \ \#include\ <unistd.h>}}
+\DoxyCodeLine{00052\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ \textcolor{preprocessor}{\#ifdef\ \_\_ANDROID\_\_}}
+\DoxyCodeLine{00055\ \textcolor{preprocessor}{\ \ \#include\ <android/api-\/level.h>}}
+\DoxyCodeLine{00056\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ \textcolor{preprocessor}{\#if\ defined(\_\_ICCARM\_\_)}}
+\DoxyCodeLine{00059\ \textcolor{preprocessor}{\#include\ <intrinsics.h>}}
+\DoxyCodeLine{00060\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ \textcolor{comment}{//\ Note\ the\ \_\_clang\_\_\ check\ is\ needed,\ because\ clang\ presents\ itself}}
+\DoxyCodeLine{00063\ \textcolor{comment}{//\ as\ an\ older\ GNUC\ compiler\ (4.2).}}
+\DoxyCodeLine{00064\ \textcolor{comment}{//\ Clang\ 3.3\ and\ later\ implement\ all\ of\ the\ ISO\ C++\ 2011\ standard.}}
+\DoxyCodeLine{00065\ \textcolor{comment}{//\ Clang\ 3.4\ and\ later\ implement\ all\ of\ the\ ISO\ C++\ 2014\ standard.}}
+\DoxyCodeLine{00066\ \textcolor{comment}{//\ http://clang.llvm.org/cxx\_status.html}}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00068\ \textcolor{comment}{//\ Note\ the\ MSVC\ value\ '\_\_cplusplus'\ may\ be\ incorrect:}}
+\DoxyCodeLine{00069\ \textcolor{comment}{//\ The\ '\_\_cplusplus'\ predefined\ macro\ in\ the\ MSVC\ stuck\ at\ the\ value\ 199711L,}}
+\DoxyCodeLine{00070\ \textcolor{comment}{//\ indicating\ (erroneously!)\ that\ the\ compiler\ conformed\ to\ the\ C++98\ Standard.}}
+\DoxyCodeLine{00071\ \textcolor{comment}{//\ This\ value\ should\ be\ correct\ starting\ from\ MSVC2017-\/15.7-\/Preview-\/3.}}
+\DoxyCodeLine{00072\ \textcolor{comment}{//\ The\ '\_\_cplusplus'\ will\ be\ valid\ only\ if\ MSVC2017-\/15.7-\/P3\ and\ the\ \`{}/Zc:\_\_cplusplus`\ switch\ is\ set.}}
+\DoxyCodeLine{00073\ \textcolor{comment}{//\ Workaround\ (for\ details\ see\ MSDN):}}
+\DoxyCodeLine{00074\ \textcolor{comment}{//\ Use\ the\ \_MSC\_VER\ and\ \_MSVC\_LANG\ definition\ instead\ of\ the\ \_\_cplusplus\ \ for\ compatibility.}}
+\DoxyCodeLine{00075\ \textcolor{comment}{//\ The\ \_MSVC\_LANG\ macro\ reports\ the\ Standard\ version\ regardless\ of\ the\ '/Zc:\_\_cplusplus'\ switch.}}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00077\ \textcolor{preprocessor}{\#if\ defined(\_\_GNUC\_\_)\ \&\&\ !defined(\_\_clang\_\_)}}
+\DoxyCodeLine{00078\ \textcolor{preprocessor}{\ \ \#define\ FLATBUFFERS\_GCC\ (\_\_GNUC\_\_\ *\ 10000\ +\ \_\_GNUC\_MINOR\_\_\ *\ 100\ +\ \_\_GNUC\_PATCHLEVEL\_\_)}}
+\DoxyCodeLine{00079\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00080\ \textcolor{preprocessor}{\ \ \#define\ FLATBUFFERS\_GCC\ 0}}
+\DoxyCodeLine{00081\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00083\ \textcolor{preprocessor}{\#if\ defined(\_\_clang\_\_)}}
+\DoxyCodeLine{00084\ \textcolor{preprocessor}{\ \ \#define\ FLATBUFFERS\_CLANG\ (\_\_clang\_major\_\_\ *\ 10000\ +\ \_\_clang\_minor\_\_\ *\ 100\ +\ \_\_clang\_patchlevel\_\_)}}
+\DoxyCodeLine{00085\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00086\ \textcolor{preprocessor}{\ \ \#define\ FLATBUFFERS\_CLANG\ 0}}
+\DoxyCodeLine{00087\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00088\ }
+\DoxyCodeLine{00090\ \textcolor{preprocessor}{\#if\ \_\_cplusplus\ <=\ 199711L\ \&\&\ \(\backslash\)}}
+\DoxyCodeLine{00091\ \textcolor{preprocessor}{\ \ \ \ (!defined(\_MSC\_VER)\ ||\ \_MSC\_VER\ <\ 1600)\ \&\&\ \(\backslash\)}}
+\DoxyCodeLine{00092\ \textcolor{preprocessor}{\ \ \ \ (!defined(\_\_GNUC\_\_)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00093\ \textcolor{preprocessor}{\ \ \ \ \ \ (\_\_GNUC\_\_\ *\ 10000\ +\ \_\_GNUC\_MINOR\_\_\ *\ 100\ +\ \_\_GNUC\_PATCHLEVEL\_\_\ <\ 40400))}}
+\DoxyCodeLine{00094\ \textcolor{preprocessor}{\ \ \#error\ A\ C++11\ compatible\ compiler\ with\ support\ for\ the\ auto\ typing\ is\ \(\backslash\)}}
+\DoxyCodeLine{00095\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ required\ for\ FlatBuffers.}}
+\DoxyCodeLine{00096\ \textcolor{preprocessor}{\ \ \#error\ \_\_cplusplus\ \_MSC\_VER\ \_\_GNUC\_\_\ \ \_\_GNUC\_MINOR\_\_\ \ \_\_GNUC\_PATCHLEVEL\_\_}}
+\DoxyCodeLine{00097\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00098\ }
+\DoxyCodeLine{00099\ \textcolor{preprocessor}{\#if\ !defined(\_\_clang\_\_)\ \&\&\ \(\backslash\)}}
+\DoxyCodeLine{00100\ \textcolor{preprocessor}{\ \ \ \ defined(\_\_GNUC\_\_)\ \&\&\ \(\backslash\)}}
+\DoxyCodeLine{00101\ \textcolor{preprocessor}{\ \ \ \ (\_\_GNUC\_\_\ *\ 10000\ +\ \_\_GNUC\_MINOR\_\_\ *\ 100\ +\ \_\_GNUC\_PATCHLEVEL\_\_\ <\ 40600)}}
+\DoxyCodeLine{00102\ \ \ \textcolor{comment}{//\ Backwards\ compatibility\ for\ g++\ 4.4,\ and\ 4.5\ which\ don't\ have\ the\ nullptr}}
+\DoxyCodeLine{00103\ \ \ \textcolor{comment}{//\ and\ constexpr\ keywords.\ Note\ the\ \_\_clang\_\_\ check\ is\ needed,\ because\ clang}}
+\DoxyCodeLine{00104\ \ \ \textcolor{comment}{//\ presents\ itself\ as\ an\ older\ GNUC\ compiler.}}
+\DoxyCodeLine{00105\ \textcolor{preprocessor}{\ \ \#ifndef\ nullptr\_t}}
+\DoxyCodeLine{00106\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{class\ }nullptr\_t\ \{}
+\DoxyCodeLine{00107\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{class}\ T>\ \textcolor{keyword}{inline}\ \textcolor{keyword}{operator}\ T*()\ \textcolor{keyword}{const}\ \{\ \textcolor{keywordflow}{return}\ 0;\ \}}
+\DoxyCodeLine{00109\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ operator\&()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00111\ \ \ \ \ \}\ \textcolor{keyword}{nullptr}\ =\ \{\};}
+\DoxyCodeLine{00112\ \textcolor{preprocessor}{\ \ \#endif}}
+\DoxyCodeLine{00113\ \textcolor{preprocessor}{\ \ \#ifndef\ constexpr}}
+\DoxyCodeLine{00114\ \textcolor{preprocessor}{\ \ \ \ \#define\ constexpr\ const}}
+\DoxyCodeLine{00115\ \textcolor{preprocessor}{\ \ \#endif}}
+\DoxyCodeLine{00116\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00117\ }
+\DoxyCodeLine{00118\ \textcolor{comment}{//\ The\ wire\ format\ uses\ a\ little\ endian\ encoding\ (since\ that's\ efficient\ for}}
+\DoxyCodeLine{00119\ \textcolor{comment}{//\ the\ common\ platforms).}}
+\DoxyCodeLine{00120\ \textcolor{preprocessor}{\#if\ defined(\_\_s390x\_\_)}}
+\DoxyCodeLine{00121\ \textcolor{preprocessor}{\ \ \#define\ FLATBUFFERS\_LITTLEENDIAN\ 0}}
+\DoxyCodeLine{00122\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ \_\_s390x\_\_}}
+\DoxyCodeLine{00123\ \textcolor{preprocessor}{\#if\ !defined(FLATBUFFERS\_LITTLEENDIAN)}}
+\DoxyCodeLine{00124\ \textcolor{preprocessor}{\ \ \#if\ defined(\_\_GNUC\_\_)\ ||\ defined(\_\_clang\_\_)\ ||\ defined(\_\_ICCARM\_\_)}}
+\DoxyCodeLine{00125\ \textcolor{preprocessor}{\ \ \ \ \#if\ (defined(\_\_BIG\_ENDIAN\_\_)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00126\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ (defined(\_\_BYTE\_ORDER\_\_)\ \&\&\ \_\_BYTE\_ORDER\_\_\ ==\ \_\_ORDER\_BIG\_ENDIAN\_\_))}}
+\DoxyCodeLine{00127\ \textcolor{preprocessor}{\ \ \ \ \ \ \#define\ FLATBUFFERS\_LITTLEENDIAN\ 0}}
+\DoxyCodeLine{00128\ \textcolor{preprocessor}{\ \ \ \ \#else}}
+\DoxyCodeLine{00129\ \textcolor{preprocessor}{\ \ \ \ \ \ \#define\ FLATBUFFERS\_LITTLEENDIAN\ 1}}
+\DoxyCodeLine{00130\ \textcolor{preprocessor}{\ \ \ \ \#endif\ }\textcolor{comment}{//\ \_\_BIG\_ENDIAN\_\_}}
+\DoxyCodeLine{00131\ \textcolor{preprocessor}{\ \ \#elif\ defined(\_MSC\_VER)}}
+\DoxyCodeLine{00132\ \textcolor{preprocessor}{\ \ \ \ \#if\ defined(\_M\_PPC)}}
+\DoxyCodeLine{00133\ \textcolor{preprocessor}{\ \ \ \ \ \ \#define\ FLATBUFFERS\_LITTLEENDIAN\ 0}}
+\DoxyCodeLine{00134\ \textcolor{preprocessor}{\ \ \ \ \#else}}
+\DoxyCodeLine{00135\ \textcolor{preprocessor}{\ \ \ \ \ \ \#define\ FLATBUFFERS\_LITTLEENDIAN\ 1}}
+\DoxyCodeLine{00136\ \textcolor{preprocessor}{\ \ \ \ \#endif}}
+\DoxyCodeLine{00137\ \textcolor{preprocessor}{\ \ \#else}}
+\DoxyCodeLine{00138\ \textcolor{preprocessor}{\ \ \ \ \#error\ Unable\ to\ determine\ endianness,\ define\ FLATBUFFERS\_LITTLEENDIAN.}}
+\DoxyCodeLine{00139\ \textcolor{preprocessor}{\ \ \#endif}}
+\DoxyCodeLine{00140\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ !defined(FLATBUFFERS\_LITTLEENDIAN)}}
+\DoxyCodeLine{00141\ }
+\DoxyCodeLine{00142\ \textcolor{preprocessor}{\#define\ FLATBUFFERS\_VERSION\_MAJOR\ 24}}
+\DoxyCodeLine{00143\ \textcolor{preprocessor}{\#define\ FLATBUFFERS\_VERSION\_MINOR\ 12}}
+\DoxyCodeLine{00144\ \textcolor{preprocessor}{\#define\ FLATBUFFERS\_VERSION\_REVISION\ 23}}
+\DoxyCodeLine{00145\ \textcolor{preprocessor}{\#define\ FLATBUFFERS\_STRING\_EXPAND(X)\ \#X}}
+\DoxyCodeLine{00146\ \textcolor{preprocessor}{\#define\ FLATBUFFERS\_STRING(X)\ FLATBUFFERS\_STRING\_EXPAND(X)}}
+\DoxyCodeLine{00147\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceflatbuffers}{flatbuffers}}\ \{}
+\DoxyCodeLine{00148\ \ \ \textcolor{comment}{//\ Returns\ version\ as\ string\ \ "{}MAJOR.MINOR.REVISION"{}.}}
+\DoxyCodeLine{00149\ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{namespaceflatbuffers_a34a0b8c62c51bc91d777b50cb6b993a6}{FLATBUFFERS\_VERSION}}();}
+\DoxyCodeLine{00150\ \}}
+\DoxyCodeLine{00151\ }
+\DoxyCodeLine{00152\ \textcolor{preprocessor}{\#if\ (!defined(\_MSC\_VER)\ ||\ \_MSC\_VER\ >\ 1600)\ \&\&\ \(\backslash\)}}
+\DoxyCodeLine{00153\ \textcolor{preprocessor}{\ \ \ \ (!defined(\_\_GNUC\_\_)\ ||\ (\_\_GNUC\_\_\ *\ 100\ +\ \_\_GNUC\_MINOR\_\_\ >=\ 407))\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00154\ \textcolor{preprocessor}{\ \ \ \ defined(\_\_clang\_\_)}}
+\DoxyCodeLine{00155\ \textcolor{preprocessor}{\ \ \#define\ FLATBUFFERS\_FINAL\_CLASS\ final}}
+\DoxyCodeLine{00156\ \textcolor{preprocessor}{\ \ \#define\ FLATBUFFERS\_OVERRIDE\ override}}
+\DoxyCodeLine{00157\ \textcolor{preprocessor}{\ \ \#define\ FLATBUFFERS\_EXPLICIT\_CPP11\ explicit}}
+\DoxyCodeLine{00158\ \textcolor{preprocessor}{\ \ \#define\ FLATBUFFERS\_VTABLE\_UNDERLYING\_TYPE\ :\ ::flatbuffers::voffset\_t}}
+\DoxyCodeLine{00159\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00160\ \textcolor{preprocessor}{\ \ \#define\ FLATBUFFERS\_FINAL\_CLASS}}
+\DoxyCodeLine{00161\ \textcolor{preprocessor}{\ \ \#define\ FLATBUFFERS\_OVERRIDE}}
+\DoxyCodeLine{00162\ \textcolor{preprocessor}{\ \ \#define\ FLATBUFFERS\_EXPLICIT\_CPP11}}
+\DoxyCodeLine{00163\ \textcolor{preprocessor}{\ \ \#define\ FLATBUFFERS\_VTABLE\_UNDERLYING\_TYPE}}
+\DoxyCodeLine{00164\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00165\ }
+\DoxyCodeLine{00166\ \textcolor{preprocessor}{\#if\ (!defined(\_MSC\_VER)\ ||\ \_MSC\_VER\ >=\ 1900)\ \&\&\ \(\backslash\)}}
+\DoxyCodeLine{00167\ \textcolor{preprocessor}{\ \ \ \ (!defined(\_\_GNUC\_\_)\ ||\ (\_\_GNUC\_\_\ *\ 100\ +\ \_\_GNUC\_MINOR\_\_\ >=\ 406))\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00168\ \textcolor{preprocessor}{\ \ \ \ (defined(\_\_cpp\_constexpr)\ \&\&\ \_\_cpp\_constexpr\ >=\ 200704)}}
+\DoxyCodeLine{00169\ \textcolor{preprocessor}{\ \ \#define\ FLATBUFFERS\_CONSTEXPR\ constexpr}}
+\DoxyCodeLine{00170\ \textcolor{preprocessor}{\ \ \#define\ FLATBUFFERS\_CONSTEXPR\_CPP11\ constexpr}}
+\DoxyCodeLine{00171\ \textcolor{preprocessor}{\ \ \#define\ FLATBUFFERS\_CONSTEXPR\_DEFINED}}
+\DoxyCodeLine{00172\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00173\ \textcolor{preprocessor}{\ \ \#define\ FLATBUFFERS\_CONSTEXPR\ const}}
+\DoxyCodeLine{00174\ \textcolor{preprocessor}{\ \ \#define\ FLATBUFFERS\_CONSTEXPR\_CPP11}}
+\DoxyCodeLine{00175\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00176\ }
+\DoxyCodeLine{00177\ \textcolor{preprocessor}{\#if\ (defined(\_\_cplusplus)\ \&\&\ \_\_cplusplus\ >=\ 201402L)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00178\ \textcolor{preprocessor}{\ \ \ \ (defined(\_\_cpp\_constexpr)\ \&\&\ \_\_cpp\_constexpr\ >=\ 201304)}}
+\DoxyCodeLine{00179\ \textcolor{preprocessor}{\ \ \#define\ FLATBUFFERS\_CONSTEXPR\_CPP14\ FLATBUFFERS\_CONSTEXPR\_CPP11}}
+\DoxyCodeLine{00180\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00181\ \textcolor{preprocessor}{\ \ \#define\ FLATBUFFERS\_CONSTEXPR\_CPP14}}
+\DoxyCodeLine{00182\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00183\ }
+\DoxyCodeLine{00184\ \textcolor{preprocessor}{\#if\ (defined(\_\_GXX\_EXPERIMENTAL\_CXX0X\_\_)\ \&\&\ (\_\_GNUC\_\_\ *\ 100\ +\ \_\_GNUC\_MINOR\_\_\ >=\ 406))\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00185\ \textcolor{preprocessor}{\ \ \ \ (defined(\_MSC\_FULL\_VER)\ \&\&\ (\_MSC\_FULL\_VER\ >=\ 190023026))\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00186\ \textcolor{preprocessor}{\ \ \ \ defined(\_\_clang\_\_)}}
+\DoxyCodeLine{00187\ \textcolor{preprocessor}{\ \ \#define\ FLATBUFFERS\_NOEXCEPT\ noexcept}}
+\DoxyCodeLine{00188\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00189\ \textcolor{preprocessor}{\ \ \#define\ FLATBUFFERS\_NOEXCEPT}}
+\DoxyCodeLine{00190\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00191\ }
+\DoxyCodeLine{00192\ \textcolor{comment}{//\ NOTE:\ the\ FLATBUFFERS\_DELETE\_FUNC\ macro\ may\ change\ the\ access\ mode\ to}}
+\DoxyCodeLine{00193\ \textcolor{comment}{//\ private,\ so\ be\ sure\ to\ put\ it\ at\ the\ end\ or\ reset\ access\ mode\ explicitly.}}
+\DoxyCodeLine{00194\ \textcolor{preprocessor}{\#if\ (!defined(\_MSC\_VER)\ ||\ \_MSC\_FULL\_VER\ >=\ 180020827)\ \&\&\ \(\backslash\)}}
+\DoxyCodeLine{00195\ \textcolor{preprocessor}{\ \ \ \ (!defined(\_\_GNUC\_\_)\ ||\ (\_\_GNUC\_\_\ *\ 100\ +\ \_\_GNUC\_MINOR\_\_\ >=\ 404))\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00196\ \textcolor{preprocessor}{\ \ \ \ defined(\_\_clang\_\_)}}
+\DoxyCodeLine{00197\ \textcolor{preprocessor}{\ \ \#define\ FLATBUFFERS\_DELETE\_FUNC(func)\ func\ =\ delete}}
+\DoxyCodeLine{00198\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00199\ \textcolor{preprocessor}{\ \ \#define\ FLATBUFFERS\_DELETE\_FUNC(func)\ private:\ func}}
+\DoxyCodeLine{00200\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00201\ }
+\DoxyCodeLine{00202\ \textcolor{preprocessor}{\#if\ (!defined(\_MSC\_VER)\ ||\ \_MSC\_VER\ >=\ 1900)\ \&\&\ \(\backslash\)}}
+\DoxyCodeLine{00203\ \textcolor{preprocessor}{\ \ \ \ (!defined(\_\_GNUC\_\_)\ ||\ (\_\_GNUC\_\_\ *\ 100\ +\ \_\_GNUC\_MINOR\_\_\ >=\ 409))\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00204\ \textcolor{preprocessor}{\ \ \ \ defined(\_\_clang\_\_)}}
+\DoxyCodeLine{00205\ \textcolor{preprocessor}{\ \ \#define\ FLATBUFFERS\_DEFAULT\_DECLARATION}}
+\DoxyCodeLine{00206\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00207\ }
+\DoxyCodeLine{00208\ \textcolor{comment}{//\ Check\ if\ we\ can\ use\ template\ aliases}}
+\DoxyCodeLine{00209\ \textcolor{comment}{//\ Not\ possible\ if\ Microsoft\ Compiler\ before\ 2012}}
+\DoxyCodeLine{00210\ \textcolor{comment}{//\ Possible\ is\ the\ language\ feature\ \_\_cpp\_alias\_templates\ is\ defined\ well}}
+\DoxyCodeLine{00211\ \textcolor{comment}{//\ Or\ possible\ if\ the\ C++\ std\ is\ C+11\ or\ newer}}
+\DoxyCodeLine{00212\ \textcolor{preprocessor}{\#if\ (defined(\_MSC\_VER)\ \&\&\ \_MSC\_VER\ >\ 1700\ }\textcolor{comment}{/*\ MSVC2012\ */}\textcolor{preprocessor}{)\ \(\backslash\)}}
+\DoxyCodeLine{00213\ \textcolor{preprocessor}{\ \ \ \ ||\ (defined(\_\_cpp\_alias\_templates)\ \&\&\ \_\_cpp\_alias\_templates\ >=\ 200704)\ \(\backslash\)}}
+\DoxyCodeLine{00214\ \textcolor{preprocessor}{\ \ \ \ ||\ (defined(\_\_cplusplus)\ \&\&\ \_\_cplusplus\ >=\ 201103L)}}
+\DoxyCodeLine{00215\ \textcolor{preprocessor}{\ \ \#define\ FLATBUFFERS\_TEMPLATES\_ALIASES}}
+\DoxyCodeLine{00216\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00217\ }
+\DoxyCodeLine{00218\ \textcolor{preprocessor}{\#ifndef\ FLATBUFFERS\_HAS\_STRING\_VIEW}}
+\DoxyCodeLine{00219\ \ \ \textcolor{comment}{//\ Only\ provide\ flatbuffers::string\_view\ if\ \_\_has\_include\ can\ be\ used}}
+\DoxyCodeLine{00220\ \ \ \textcolor{comment}{//\ to\ detect\ a\ header\ that\ provides\ an\ implementation}}
+\DoxyCodeLine{00221\ \textcolor{preprocessor}{\ \ \#if\ defined(\_\_has\_include)}}
+\DoxyCodeLine{00222\ \ \ \ \ \textcolor{comment}{//\ Check\ for\ std::string\_view\ (in\ c++17)}}
+\DoxyCodeLine{00223\ \textcolor{preprocessor}{\ \ \ \ \#if\ \_\_has\_include(<string\_view>)\ \&\&\ (\_\_cplusplus\ >=\ 201606\ ||\ (defined(\_HAS\_CXX17)\ \&\&\ \_HAS\_CXX17))}}
+\DoxyCodeLine{00224\ \textcolor{preprocessor}{\ \ \ \ \ \ \#include\ <string\_view>}}
+\DoxyCodeLine{00225\ \ \ \ \ \ \ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceflatbuffers}{flatbuffers}}\ \{}
+\DoxyCodeLine{00226\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typedef}\ std::string\_view\ string\_view;}
+\DoxyCodeLine{00227\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00228\ \textcolor{preprocessor}{\ \ \ \ \ \ \#define\ FLATBUFFERS\_HAS\_STRING\_VIEW\ 1}}
+\DoxyCodeLine{00229\ \ \ \ \ \textcolor{comment}{//\ Check\ for\ std::experimental::string\_view\ (in\ c++14,\ compiler-\/dependent)}}
+\DoxyCodeLine{00230\ \textcolor{preprocessor}{\ \ \ \ \#elif\ \_\_has\_include(<experimental/string\_view>)\ \&\&\ (\_\_cplusplus\ >=\ 201411)}}
+\DoxyCodeLine{00231\ \textcolor{preprocessor}{\ \ \ \ \ \ \#include\ <experimental/string\_view>}}
+\DoxyCodeLine{00232\ \ \ \ \ \ \ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceflatbuffers}{flatbuffers}}\ \{}
+\DoxyCodeLine{00233\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typedef}\ std::experimental::string\_view\ string\_view;}
+\DoxyCodeLine{00234\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00235\ \textcolor{preprocessor}{\ \ \ \ \ \ \#define\ FLATBUFFERS\_HAS\_STRING\_VIEW\ 1}}
+\DoxyCodeLine{00236\ \ \ \ \ \textcolor{comment}{//\ Check\ for\ absl::string\_view}}
+\DoxyCodeLine{00237\ \textcolor{preprocessor}{\ \ \ \ \#elif\ \_\_has\_include("{}absl/strings/string\_view.h"{})\ \&\&\ \(\backslash\)}}
+\DoxyCodeLine{00238\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \_\_has\_include("{}absl/base/config.h"{})\ \&\&\ \(\backslash\)}}
+\DoxyCodeLine{00239\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ (\_\_cplusplus\ >=\ 201411)}}
+\DoxyCodeLine{00240\ \textcolor{preprocessor}{\ \ \ \ \ \ \#include\ "{}absl/base/config.h"{}}}
+\DoxyCodeLine{00241\ \textcolor{preprocessor}{\ \ \ \ \ \ \#if\ !defined(ABSL\_USES\_STD\_STRING\_VIEW)}}
+\DoxyCodeLine{00242\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#include\ "{}absl/strings/string\_view.h"{}}}
+\DoxyCodeLine{00243\ \ \ \ \ \ \ \ \ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceflatbuffers}{flatbuffers}}\ \{}
+\DoxyCodeLine{00244\ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{typedef}\ absl::string\_view\ string\_view;}
+\DoxyCodeLine{00245\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00246\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#define\ FLATBUFFERS\_HAS\_STRING\_VIEW\ 1}}
+\DoxyCodeLine{00247\ \textcolor{preprocessor}{\ \ \ \ \ \ \#endif}}
+\DoxyCodeLine{00248\ \textcolor{preprocessor}{\ \ \ \ \#endif}}
+\DoxyCodeLine{00249\ \textcolor{preprocessor}{\ \ \#endif\ }\textcolor{comment}{//\ \_\_has\_include}}
+\DoxyCodeLine{00250\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ !FLATBUFFERS\_HAS\_STRING\_VIEW}}
+\DoxyCodeLine{00251\ }
+\DoxyCodeLine{00252\ \textcolor{preprocessor}{\#ifndef\ FLATBUFFERS\_GENERAL\_HEAP\_ALLOC\_OK}}
+\DoxyCodeLine{00253\ \ \ \textcolor{comment}{//\ Allow\ heap\ allocations\ to\ be\ used}}
+\DoxyCodeLine{00254\ \textcolor{preprocessor}{\ \ \#define\ FLATBUFFERS\_GENERAL\_HEAP\_ALLOC\_OK\ 1}}
+\DoxyCodeLine{00255\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ !FLATBUFFERS\_GENERAL\_HEAP\_ALLOC\_OK}}
+\DoxyCodeLine{00256\ }
+\DoxyCodeLine{00257\ \textcolor{preprocessor}{\#ifndef\ FLATBUFFERS\_HAS\_NEW\_STRTOD}}
+\DoxyCodeLine{00258\ \ \ \textcolor{comment}{//\ Modern\ (C++11)\ strtod\ and\ strtof\ functions\ are\ available\ for\ use.}}
+\DoxyCodeLine{00259\ \ \ \textcolor{comment}{//\ 1)\ nan/inf\ strings\ as\ argument\ of\ strtod;}}
+\DoxyCodeLine{00260\ \ \ \textcolor{comment}{//\ 2)\ hex-\/float\ \ as\ argument\ of\ \ strtod/strtof.}}
+\DoxyCodeLine{00261\ \textcolor{preprocessor}{\ \ \#if\ (defined(\_MSC\_VER)\ \&\&\ \_MSC\_VER\ >=\ 1900)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00262\ \textcolor{preprocessor}{\ \ \ \ \ \ (defined(\_\_GNUC\_\_)\ \&\&\ (\_\_GNUC\_\_\ *\ 100\ +\ \_\_GNUC\_MINOR\_\_\ >=\ 409))\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00263\ \textcolor{preprocessor}{\ \ \ \ \ \ (defined(\_\_clang\_\_))}}
+\DoxyCodeLine{00264\ \textcolor{preprocessor}{\ \ \ \ \#define\ FLATBUFFERS\_HAS\_NEW\_STRTOD\ 1}}
+\DoxyCodeLine{00265\ \textcolor{preprocessor}{\ \ \#endif}}
+\DoxyCodeLine{00266\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ !FLATBUFFERS\_HAS\_NEW\_STRTOD}}
+\DoxyCodeLine{00267\ }
+\DoxyCodeLine{00268\ \textcolor{preprocessor}{\#ifndef\ FLATBUFFERS\_LOCALE\_INDEPENDENT}}
+\DoxyCodeLine{00269\ \ \ \textcolor{comment}{//\ Enable\ locale\ independent\ functions\ \{strtof\_l,\ strtod\_l,strtoll\_l,}}
+\DoxyCodeLine{00270\ \ \ \textcolor{comment}{//\ strtoull\_l\}.}}
+\DoxyCodeLine{00271\ \textcolor{preprocessor}{\ \ \#if\ (defined(\_MSC\_VER)\ \&\&\ \_MSC\_VER\ >=\ 1800)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00272\ \textcolor{preprocessor}{\ \ \ \ \ \ (defined(\_\_ANDROID\_API\_\_)\ \&\&\ \_\_ANDROID\_API\_\_>=\ 21)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00273\ \textcolor{preprocessor}{\ \ \ \ \ \ (defined(\_XOPEN\_VERSION)\ \&\&\ (\_XOPEN\_VERSION\ >=\ 700))\ \&\&\ \(\backslash\)}}
+\DoxyCodeLine{00274\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ (!defined(\_\_Fuchsia\_\_)\ \&\&\ !defined(\_\_ANDROID\_API\_\_))}}
+\DoxyCodeLine{00275\ \textcolor{preprocessor}{\ \ \ \ \#define\ FLATBUFFERS\_LOCALE\_INDEPENDENT\ 1}}
+\DoxyCodeLine{00276\ \textcolor{preprocessor}{\ \ \#else}}
+\DoxyCodeLine{00277\ \textcolor{preprocessor}{\ \ \ \ \#define\ FLATBUFFERS\_LOCALE\_INDEPENDENT\ 0}}
+\DoxyCodeLine{00278\ \textcolor{preprocessor}{\ \ \#endif}}
+\DoxyCodeLine{00279\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ !FLATBUFFERS\_LOCALE\_INDEPENDENT}}
+\DoxyCodeLine{00280\ }
+\DoxyCodeLine{00281\ \textcolor{comment}{//\ Suppress\ Undefined\ Behavior\ Sanitizer\ (recoverable\ only).\ Usage:}}
+\DoxyCodeLine{00282\ \textcolor{comment}{//\ -\/\ FLATBUFFERS\_SUPPRESS\_UBSAN("{}undefined"{})}}
+\DoxyCodeLine{00283\ \textcolor{comment}{//\ -\/\ FLATBUFFERS\_SUPPRESS\_UBSAN("{}signed-\/integer-\/overflow"{})}}
+\DoxyCodeLine{00284\ \textcolor{preprocessor}{\#if\ defined(\_\_clang\_\_)\ \&\&\ (\_\_clang\_major\_\_\ >\ 3\ ||\ (\_\_clang\_major\_\_\ ==\ 3\ \&\&\ \_\_clang\_minor\_\_\ >=7))}}
+\DoxyCodeLine{00285\ \textcolor{preprocessor}{\ \ \#define\ FLATBUFFERS\_SUPPRESS\_UBSAN(type)\ \_\_attribute\_\_((no\_sanitize(type)))}}
+\DoxyCodeLine{00286\ \textcolor{preprocessor}{\#elif\ defined(\_\_GNUC\_\_)\ \&\&\ (\_\_GNUC\_\_\ *\ 100\ +\ \_\_GNUC\_MINOR\_\_\ >=\ 409)}}
+\DoxyCodeLine{00287\ \textcolor{preprocessor}{\ \ \#define\ FLATBUFFERS\_SUPPRESS\_UBSAN(type)\ \_\_attribute\_\_((no\_sanitize\_undefined))}}
+\DoxyCodeLine{00288\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00289\ \textcolor{preprocessor}{\ \ \#define\ FLATBUFFERS\_SUPPRESS\_UBSAN(type)}}
+\DoxyCodeLine{00290\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00291\ }
+\DoxyCodeLine{00292\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceflatbuffers}{flatbuffers}}\ \{}
+\DoxyCodeLine{00293\ \ \ \textcolor{comment}{//\ This\ is\ constexpr\ function\ used\ for\ checking\ compile-\/time\ constants.}}
+\DoxyCodeLine{00294\ \ \ \textcolor{comment}{//\ Avoid\ \`{}\#pragma\ warning(disable:\ 4127)\ //\ C4127:\ expression\ is\ constant`.}}
+\DoxyCodeLine{00295\ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>\ FLATBUFFERS\_CONSTEXPR\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{bool}\ IsConstTrue(T\ t)\ \{}
+\DoxyCodeLine{00296\ \ \ \ \ \textcolor{keywordflow}{return}\ !!t;}
+\DoxyCodeLine{00297\ \ \ \}}
+\DoxyCodeLine{00298\ \}}
+\DoxyCodeLine{00299\ }
+\DoxyCodeLine{00300\ \textcolor{comment}{//\ Enable\ C++\ attribute\ [[]]\ if\ std:c++17\ or\ higher.}}
+\DoxyCodeLine{00301\ \textcolor{preprocessor}{\#if\ ((\_\_cplusplus\ >=\ 201703L)\ \(\backslash\)}}
+\DoxyCodeLine{00302\ \textcolor{preprocessor}{\ \ \ \ ||\ (defined(\_MSVC\_LANG)\ \&\&\ \ (\_MSVC\_LANG\ >=\ 201703L)))}}
+\DoxyCodeLine{00303\ \ \ \textcolor{comment}{//\ All\ attributes\ unknown\ to\ an\ implementation\ are\ ignored\ without\ causing\ an\ error.}}
+\DoxyCodeLine{00304\ \textcolor{preprocessor}{\ \ \#define\ FLATBUFFERS\_ATTRIBUTE(attr)\ attr}}
+\DoxyCodeLine{00305\ }
+\DoxyCodeLine{00306\ \textcolor{preprocessor}{\ \ \#define\ FLATBUFFERS\_FALLTHROUGH()\ [[fallthrough]]}}
+\DoxyCodeLine{00307\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00308\ \textcolor{preprocessor}{\ \ \#define\ FLATBUFFERS\_ATTRIBUTE(attr)}}
+\DoxyCodeLine{00309\ }
+\DoxyCodeLine{00310\ \textcolor{preprocessor}{\ \ \#if\ FLATBUFFERS\_CLANG\ >=\ 30800}}
+\DoxyCodeLine{00311\ \textcolor{preprocessor}{\ \ \ \ \#define\ FLATBUFFERS\_FALLTHROUGH()\ [[clang::fallthrough]]}}
+\DoxyCodeLine{00312\ \textcolor{preprocessor}{\ \ \#elif\ FLATBUFFERS\_GCC\ >=\ 70300}}
+\DoxyCodeLine{00313\ \textcolor{preprocessor}{\ \ \ \ \#define\ FLATBUFFERS\_FALLTHROUGH()\ [[gnu::fallthrough]]}}
+\DoxyCodeLine{00314\ \textcolor{preprocessor}{\ \ \#else}}
+\DoxyCodeLine{00315\ \textcolor{preprocessor}{\ \ \ \ \#define\ FLATBUFFERS\_FALLTHROUGH()}}
+\DoxyCodeLine{00316\ \textcolor{preprocessor}{\ \ \#endif}}
+\DoxyCodeLine{00317\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00318\ }
+\DoxyCodeLine{00320\ }
+\DoxyCodeLine{00322\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceflatbuffers}{flatbuffers}}\ \{}
+\DoxyCodeLine{00323\ }
+\DoxyCodeLine{00325\ \textcolor{comment}{//\ Our\ default\ offset\ /\ size\ type,\ 32bit\ on\ purpose\ on\ 64bit\ systems.}}
+\DoxyCodeLine{00326\ \textcolor{comment}{//\ Also,\ using\ a\ consistent\ offset\ type\ maintains\ compatibility\ of\ serialized}}
+\DoxyCodeLine{00327\ \textcolor{comment}{//\ offset\ values\ between\ 32bit\ and\ 64bit\ systems.}}
+\DoxyCodeLine{00328\ \textcolor{keyword}{typedef}\ uint32\_t\ uoffset\_t;}
+\DoxyCodeLine{00329\ \textcolor{keyword}{typedef}\ uint64\_t\ uoffset64\_t;}
+\DoxyCodeLine{00330\ }
+\DoxyCodeLine{00331\ \textcolor{comment}{//\ Signed\ offsets\ for\ references\ that\ can\ go\ in\ both\ directions.}}
+\DoxyCodeLine{00332\ \textcolor{keyword}{typedef}\ int32\_t\ soffset\_t;}
+\DoxyCodeLine{00333\ \textcolor{keyword}{typedef}\ int64\_t\ soffset64\_t;}
+\DoxyCodeLine{00334\ }
+\DoxyCodeLine{00335\ \textcolor{comment}{//\ Offset/index\ used\ in\ v-\/tables,\ can\ be\ changed\ to\ uint8\_t\ in}}
+\DoxyCodeLine{00336\ \textcolor{comment}{//\ format\ forks\ to\ save\ a\ bit\ of\ space\ if\ desired.}}
+\DoxyCodeLine{00337\ \textcolor{keyword}{typedef}\ uint16\_t\ voffset\_t;}
+\DoxyCodeLine{00338\ }
+\DoxyCodeLine{00339\ \textcolor{keyword}{typedef}\ uintmax\_t\ largest\_scalar\_t;}
+\DoxyCodeLine{00340\ }
+\DoxyCodeLine{00341\ \textcolor{comment}{//\ In\ 32bits,\ this\ evaluates\ to\ 2GB\ -\/\ 1}}
+\DoxyCodeLine{00342\ \textcolor{preprocessor}{\#define\ FLATBUFFERS\_MAX\_BUFFER\_SIZE\ (std::numeric\_limits<::flatbuffers::soffset\_t>::max)()}}
+\DoxyCodeLine{00343\ \textcolor{preprocessor}{\#define\ FLATBUFFERS\_MAX\_64\_BUFFER\_SIZE\ (std::numeric\_limits<::flatbuffers::soffset64\_t>::max)()}}
+\DoxyCodeLine{00344\ }
+\DoxyCodeLine{00345\ \textcolor{comment}{//\ The\ minimum\ size\ buffer\ that\ can\ be\ a\ valid\ flatbuffer.}}
+\DoxyCodeLine{00346\ \textcolor{comment}{//\ Includes\ the\ offset\ to\ the\ root\ table\ (uoffset\_t),\ the\ offset\ to\ the\ vtable}}
+\DoxyCodeLine{00347\ \textcolor{comment}{//\ of\ the\ root\ table\ (soffset\_t),\ the\ size\ of\ the\ vtable\ (uint16\_t),\ and\ the}}
+\DoxyCodeLine{00348\ \textcolor{comment}{//\ size\ of\ the\ referring\ table\ (uint16\_t).}}
+\DoxyCodeLine{00349\ \textcolor{preprocessor}{\#define\ FLATBUFFERS\_MIN\_BUFFER\_SIZE\ sizeof(::flatbuffers::uoffset\_t)\ +\ \(\backslash\)}}
+\DoxyCodeLine{00350\ \textcolor{preprocessor}{\ \ sizeof(::flatbuffers::soffset\_t)\ +\ sizeof(uint16\_t)\ +\ sizeof(uint16\_t)}}
+\DoxyCodeLine{00351\ }
+\DoxyCodeLine{00352\ \textcolor{comment}{//\ We\ support\ aligning\ the\ contents\ of\ buffers\ up\ to\ this\ size.}}
+\DoxyCodeLine{00353\ \textcolor{preprocessor}{\#ifndef\ FLATBUFFERS\_MAX\_ALIGNMENT}}
+\DoxyCodeLine{00354\ \textcolor{preprocessor}{\ \ \#define\ FLATBUFFERS\_MAX\_ALIGNMENT\ 32}}
+\DoxyCodeLine{00355\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00356\ }
+\DoxyCodeLine{00358\ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ kFileIdentifierLength\ =\ 4;}
+\DoxyCodeLine{00359\ }
+\DoxyCodeLine{00360\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{bool}\ VerifyAlignmentRequirements(\textcolor{keywordtype}{size\_t}\ align,\ \textcolor{keywordtype}{size\_t}\ min\_align\ =\ 1)\ \{}
+\DoxyCodeLine{00361\ \ \ \textcolor{keywordflow}{return}\ (min\_align\ <=\ align)\ \&\&\ (align\ <=\ (FLATBUFFERS\_MAX\_ALIGNMENT))\ \&\&}
+\DoxyCodeLine{00362\ \ \ \ \ \ \ \ \ \ (align\ \&\ (align\ -\/\ 1))\ ==\ 0;\ \ \textcolor{comment}{//\ must\ be\ power\ of\ 2}}
+\DoxyCodeLine{00363\ \}}
+\DoxyCodeLine{00364\ }
+\DoxyCodeLine{00365\ \textcolor{preprocessor}{\#if\ defined(\_MSC\_VER)}}
+\DoxyCodeLine{00366\ \textcolor{preprocessor}{\ \ \#pragma\ warning(push)}}
+\DoxyCodeLine{00367\ \textcolor{preprocessor}{\ \ \#pragma\ warning(disable:\ 4127)\ }\textcolor{comment}{//\ C4127:\ conditional\ expression\ is\ constant}}
+\DoxyCodeLine{00368\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00369\ }
+\DoxyCodeLine{00370\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>\ T\ EndianSwap(T\ t)\ \{}
+\DoxyCodeLine{00371\ \textcolor{preprocessor}{\ \ \#if\ defined(\_MSC\_VER)}}
+\DoxyCodeLine{00372\ \textcolor{preprocessor}{\ \ \ \ \#define\ FLATBUFFERS\_BYTESWAP16\ \_byteswap\_ushort}}
+\DoxyCodeLine{00373\ \textcolor{preprocessor}{\ \ \ \ \#define\ FLATBUFFERS\_BYTESWAP32\ \_byteswap\_ulong}}
+\DoxyCodeLine{00374\ \textcolor{preprocessor}{\ \ \ \ \#define\ FLATBUFFERS\_BYTESWAP64\ \_byteswap\_uint64}}
+\DoxyCodeLine{00375\ \textcolor{preprocessor}{\ \ \#elif\ defined(\_\_ICCARM\_\_)}}
+\DoxyCodeLine{00376\ \textcolor{preprocessor}{\ \ \ \ \#define\ FLATBUFFERS\_BYTESWAP16\ \_\_REV16}}
+\DoxyCodeLine{00377\ \textcolor{preprocessor}{\ \ \ \ \#define\ FLATBUFFERS\_BYTESWAP32\ \_\_REV}}
+\DoxyCodeLine{00378\ \textcolor{preprocessor}{\ \ \ \ \#define\ FLATBUFFERS\_BYTESWAP64(x)\ \(\backslash\)}}
+\DoxyCodeLine{00379\ \textcolor{preprocessor}{\ \ \ \ \ \ \ ((\_\_REV(static\_cast<uint32\_t>(x\ >>\ 32U)))\ |\ (static\_cast<uint64\_t>(\_\_REV(static\_cast<uint32\_t>(x))))\ <<\ 32U)}}
+\DoxyCodeLine{00380\ \textcolor{preprocessor}{\ \ \#else}}
+\DoxyCodeLine{00381\ \textcolor{preprocessor}{\ \ \ \ \#if\ defined(\_\_GNUC\_\_)\ \&\&\ \_\_GNUC\_\_\ *\ 100\ +\ \_\_GNUC\_MINOR\_\_\ <\ 408\ \&\&\ !defined(\_\_clang\_\_)}}
+\DoxyCodeLine{00382\ \ \ \ \ \ \ \textcolor{comment}{//\ \_\_builtin\_bswap16\ was\ missing\ prior\ to\ GCC\ 4.8.}}
+\DoxyCodeLine{00383\ \textcolor{preprocessor}{\ \ \ \ \ \ \#define\ FLATBUFFERS\_BYTESWAP16(x)\ \(\backslash\)}}
+\DoxyCodeLine{00384\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ static\_cast<uint16\_t>(\_\_builtin\_bswap32(static\_cast<uint32\_t>(x)\ <<\ 16))}}
+\DoxyCodeLine{00385\ \textcolor{preprocessor}{\ \ \ \ \#else}}
+\DoxyCodeLine{00386\ \textcolor{preprocessor}{\ \ \ \ \ \ \#define\ FLATBUFFERS\_BYTESWAP16\ \_\_builtin\_bswap16}}
+\DoxyCodeLine{00387\ \textcolor{preprocessor}{\ \ \ \ \#endif}}
+\DoxyCodeLine{00388\ \textcolor{preprocessor}{\ \ \ \ \#define\ FLATBUFFERS\_BYTESWAP32\ \_\_builtin\_bswap32}}
+\DoxyCodeLine{00389\ \textcolor{preprocessor}{\ \ \ \ \#define\ FLATBUFFERS\_BYTESWAP64\ \_\_builtin\_bswap64}}
+\DoxyCodeLine{00390\ \textcolor{preprocessor}{\ \ \#endif}}
+\DoxyCodeLine{00391\ \ \ \textcolor{keywordflow}{if}\ (\textcolor{keyword}{sizeof}(T)\ ==\ 1)\ \{\ \ \ \textcolor{comment}{//\ Compile-\/time\ if-\/then's.}}
+\DoxyCodeLine{00392\ \ \ \ \ \textcolor{keywordflow}{return}\ t;}
+\DoxyCodeLine{00393\ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (\textcolor{keyword}{sizeof}(T)\ ==\ 2)\ \{}
+\DoxyCodeLine{00394\ \ \ \ \ \textcolor{keyword}{union\ }\{\ T\ t;\ uint16\_t\ \mbox{\hyperlink{gmock-matchers-comparisons__test_8cc_acb559820d9ca11295b4500f179ef6392}{i}};\ \}\ u\ =\ \{\ t\ \};}
+\DoxyCodeLine{00395\ \ \ \ \ u.i\ =\ FLATBUFFERS\_BYTESWAP16(u.i);}
+\DoxyCodeLine{00396\ \ \ \ \ \textcolor{keywordflow}{return}\ u.t;}
+\DoxyCodeLine{00397\ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (\textcolor{keyword}{sizeof}(T)\ ==\ 4)\ \{}
+\DoxyCodeLine{00398\ \ \ \ \ \textcolor{keyword}{union\ }\{\ T\ t;\ uint32\_t\ \mbox{\hyperlink{gmock-matchers-comparisons__test_8cc_acb559820d9ca11295b4500f179ef6392}{i}};\ \}\ u\ =\ \{\ t\ \};}
+\DoxyCodeLine{00399\ \ \ \ \ u.i\ =\ FLATBUFFERS\_BYTESWAP32(u.i);}
+\DoxyCodeLine{00400\ \ \ \ \ \textcolor{keywordflow}{return}\ u.t;}
+\DoxyCodeLine{00401\ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (\textcolor{keyword}{sizeof}(T)\ ==\ 8)\ \{}
+\DoxyCodeLine{00402\ \ \ \ \ \textcolor{keyword}{union\ }\{\ T\ t;\ uint64\_t\ \mbox{\hyperlink{gmock-matchers-comparisons__test_8cc_acb559820d9ca11295b4500f179ef6392}{i}};\ \}\ u\ =\ \{\ t\ \};}
+\DoxyCodeLine{00403\ \ \ \ \ u.i\ =\ FLATBUFFERS\_BYTESWAP64(u.i);}
+\DoxyCodeLine{00404\ \ \ \ \ \textcolor{keywordflow}{return}\ u.t;}
+\DoxyCodeLine{00405\ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00406\ \ \ \ \ \mbox{\hyperlink{base_8h_ab2116a3957cb3c19761609ea7fd796fe}{FLATBUFFERS\_ASSERT}}(0);}
+\DoxyCodeLine{00407\ \ \ \ \ \textcolor{keywordflow}{return}\ t;}
+\DoxyCodeLine{00408\ \ \ \}}
+\DoxyCodeLine{00409\ \}}
+\DoxyCodeLine{00410\ }
+\DoxyCodeLine{00411\ \textcolor{preprocessor}{\#if\ defined(\_MSC\_VER)}}
+\DoxyCodeLine{00412\ \textcolor{preprocessor}{\ \ \#pragma\ warning(pop)}}
+\DoxyCodeLine{00413\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00414\ }
+\DoxyCodeLine{00415\ }
+\DoxyCodeLine{00416\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>\ T\ EndianScalar(T\ t)\ \{}
+\DoxyCodeLine{00417\ \textcolor{preprocessor}{\ \ \#if\ FLATBUFFERS\_LITTLEENDIAN}}
+\DoxyCodeLine{00418\ \ \ \ \ \textcolor{keywordflow}{return}\ t;}
+\DoxyCodeLine{00419\ \textcolor{preprocessor}{\ \ \#else}}
+\DoxyCodeLine{00420\ \ \ \ \ \textcolor{keywordflow}{return}\ EndianSwap(t);}
+\DoxyCodeLine{00421\ \textcolor{preprocessor}{\ \ \#endif}}
+\DoxyCodeLine{00422\ \}}
+\DoxyCodeLine{00423\ }
+\DoxyCodeLine{00424\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00425\ \textcolor{comment}{//\ UBSAN:\ C++\ aliasing\ type\ rules,\ see\ std::bit\_cast<>\ for\ details.}}
+\DoxyCodeLine{00426\ FLATBUFFERS\_SUPPRESS\_UBSAN(\textcolor{stringliteral}{"{}alignment"{}})}
+\DoxyCodeLine{00427\ T\ ReadScalar(const\ \textcolor{keywordtype}{void}\ *\mbox{\hyperlink{gmock-matchers-containers__test_8cc_a6bc6b007533335efe02bafff799ec64c}{p}})\ \{}
+\DoxyCodeLine{00428\ \ \ \textcolor{keywordflow}{return}\ EndianScalar(*\textcolor{keyword}{reinterpret\_cast<}\textcolor{keyword}{const\ }T\ *\textcolor{keyword}{>}(\mbox{\hyperlink{gmock-matchers-containers__test_8cc_a6bc6b007533335efe02bafff799ec64c}{p}}));}
+\DoxyCodeLine{00429\ \}}
+\DoxyCodeLine{00430\ }
+\DoxyCodeLine{00431\ \textcolor{comment}{//\ See\ https://github.com/google/flatbuffers/issues/5950}}
+\DoxyCodeLine{00432\ }
+\DoxyCodeLine{00433\ \textcolor{preprocessor}{\#if\ (FLATBUFFERS\_GCC\ >=\ 100000)\ \&\&\ (FLATBUFFERS\_GCC\ <\ 110000)}}
+\DoxyCodeLine{00434\ \textcolor{preprocessor}{\ \ \#pragma\ GCC\ diagnostic\ push}}
+\DoxyCodeLine{00435\ \textcolor{preprocessor}{\ \ \#pragma\ GCC\ diagnostic\ ignored\ "{}-\/Wstringop-\/overflow"{}}}
+\DoxyCodeLine{00436\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00437\ }
+\DoxyCodeLine{00438\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00439\ \textcolor{comment}{//\ UBSAN:\ C++\ aliasing\ type\ rules,\ see\ std::bit\_cast<>\ for\ details.}}
+\DoxyCodeLine{00440\ FLATBUFFERS\_SUPPRESS\_UBSAN(\textcolor{stringliteral}{"{}alignment"{}})}
+\DoxyCodeLine{00441\ void\ WriteScalar(\textcolor{keywordtype}{void}\ *\mbox{\hyperlink{gmock-matchers-containers__test_8cc_a6bc6b007533335efe02bafff799ec64c}{p}},\ T\ t)\ \{}
+\DoxyCodeLine{00442\ \ \ *\textcolor{keyword}{reinterpret\_cast<}T\ *\textcolor{keyword}{>}(\mbox{\hyperlink{gmock-matchers-containers__test_8cc_a6bc6b007533335efe02bafff799ec64c}{p}})\ =\ EndianScalar(t);}
+\DoxyCodeLine{00443\ \}}
+\DoxyCodeLine{00444\ }
+\DoxyCodeLine{00445\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>\ \textcolor{keyword}{struct\ }Offset;}
+\DoxyCodeLine{00446\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>\ FLATBUFFERS\_SUPPRESS\_UBSAN(\textcolor{stringliteral}{"{}alignment"{}})\ void\ WriteScalar(\textcolor{keywordtype}{void}\ *\mbox{\hyperlink{gmock-matchers-containers__test_8cc_a6bc6b007533335efe02bafff799ec64c}{p}},\ Offset<T>\ t)\ \{}
+\DoxyCodeLine{00447\ \ \ *\textcolor{keyword}{reinterpret\_cast<}uoffset\_t\ *\textcolor{keyword}{>}(\mbox{\hyperlink{gmock-matchers-containers__test_8cc_a6bc6b007533335efe02bafff799ec64c}{p}})\ =\ EndianScalar(t.o);}
+\DoxyCodeLine{00448\ \}}
+\DoxyCodeLine{00449\ }
+\DoxyCodeLine{00450\ \textcolor{preprocessor}{\#if\ (FLATBUFFERS\_GCC\ >=\ 100000)\ \&\&\ (FLATBUFFERS\_GCC\ <\ 110000)}}
+\DoxyCodeLine{00451\ \textcolor{preprocessor}{\ \ \#pragma\ GCC\ diagnostic\ pop}}
+\DoxyCodeLine{00452\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00453\ }
+\DoxyCodeLine{00454\ \textcolor{comment}{//\ Computes\ how\ many\ bytes\ you'd\ have\ to\ pad\ to\ be\ able\ to\ write\ an}}
+\DoxyCodeLine{00455\ \textcolor{comment}{//\ "{}scalar\_size"{}\ scalar\ if\ the\ buffer\ had\ grown\ to\ "{}buf\_size"{}\ (downwards\ in}}
+\DoxyCodeLine{00456\ \textcolor{comment}{//\ memory).}}
+\DoxyCodeLine{00457\ FLATBUFFERS\_SUPPRESS\_UBSAN(\textcolor{stringliteral}{"{}unsigned-\/integer-\/overflow"{}})}
+\DoxyCodeLine{00458\ inline\ \textcolor{keywordtype}{size\_t}\ PaddingBytes(\textcolor{keywordtype}{size\_t}\ buf\_size,\ \textcolor{keywordtype}{size\_t}\ scalar\_size)\ \{}
+\DoxyCodeLine{00459\ \ \ \textcolor{keywordflow}{return}\ ((\string~buf\_size)\ +\ 1)\ \&\ (scalar\_size\ -\/\ 1);}
+\DoxyCodeLine{00460\ \}}
+\DoxyCodeLine{00461\ }
+\DoxyCodeLine{00462\ \textcolor{preprocessor}{\#if\ !defined(\_MSC\_VER)}}
+\DoxyCodeLine{00463\ \textcolor{preprocessor}{\ \ \#pragma\ GCC\ diagnostic\ push}}
+\DoxyCodeLine{00464\ \textcolor{preprocessor}{\ \ \#pragma\ GCC\ diagnostic\ ignored\ "{}-\/Wfloat-\/equal"{}}}
+\DoxyCodeLine{00465\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00466\ \textcolor{comment}{//\ Generic\ 'operator=='\ with\ conditional\ specialisations.}}
+\DoxyCodeLine{00467\ \textcolor{comment}{//\ T\ e\ -\/\ new\ value\ of\ a\ scalar\ field.}}
+\DoxyCodeLine{00468\ \textcolor{comment}{//\ T\ def\ -\/\ default\ of\ scalar\ (is\ known\ at\ compile-\/time).}}
+\DoxyCodeLine{00469\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{bool}\ IsTheSameAs(T\ e,\ T\ def)\ \{\ \textcolor{keywordflow}{return}\ e\ ==\ def;\ \}}
+\DoxyCodeLine{00470\ \textcolor{preprocessor}{\#if\ !defined(\_MSC\_VER)}}
+\DoxyCodeLine{00471\ \textcolor{preprocessor}{\ \ \#pragma\ GCC\ diagnostic\ pop}}
+\DoxyCodeLine{00472\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00473\ }
+\DoxyCodeLine{00474\ \textcolor{preprocessor}{\#if\ defined(FLATBUFFERS\_NAN\_DEFAULTS)\ \&\&\ \(\backslash\)}}
+\DoxyCodeLine{00475\ \textcolor{preprocessor}{\ \ \ \ defined(FLATBUFFERS\_HAS\_NEW\_STRTOD)\ \&\&\ (FLATBUFFERS\_HAS\_NEW\_STRTOD\ >\ 0)}}
+\DoxyCodeLine{00476\ \textcolor{comment}{//\ Like\ \`{}operator==(e,\ def)`\ with\ weak\ NaN\ if\ T=(float|double).}}
+\DoxyCodeLine{00477\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{bool}\ IsFloatTheSameAs(T\ e,\ T\ def)\ \{}
+\DoxyCodeLine{00478\ \ \ \textcolor{keywordflow}{return}\ (e\ ==\ def)\ ||\ ((def\ !=\ def)\ \&\&\ (e\ !=\ e));}
+\DoxyCodeLine{00479\ \}}
+\DoxyCodeLine{00480\ \textcolor{keyword}{template}<>\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{bool}\ IsTheSameAs<float>(\textcolor{keywordtype}{float}\ e,\ \textcolor{keywordtype}{float}\ def)\ \{}
+\DoxyCodeLine{00481\ \ \ \textcolor{keywordflow}{return}\ IsFloatTheSameAs(e,\ def);}
+\DoxyCodeLine{00482\ \}}
+\DoxyCodeLine{00483\ \textcolor{keyword}{template}<>\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{bool}\ IsTheSameAs<double>(\textcolor{keywordtype}{double}\ e,\ \textcolor{keywordtype}{double}\ def)\ \{}
+\DoxyCodeLine{00484\ \ \ \textcolor{keywordflow}{return}\ IsFloatTheSameAs(e,\ def);}
+\DoxyCodeLine{00485\ \}}
+\DoxyCodeLine{00486\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00487\ }
+\DoxyCodeLine{00488\ \textcolor{comment}{//\ Check\ 'v'\ is\ out\ of\ closed\ range\ [low;\ high].}}
+\DoxyCodeLine{00489\ \textcolor{comment}{//\ Workaround\ for\ GCC\ warning\ [-\/Werror=type-\/limits]:}}
+\DoxyCodeLine{00490\ \textcolor{comment}{//\ comparison\ is\ always\ true\ due\ to\ limited\ range\ of\ data\ type.}}
+\DoxyCodeLine{00491\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00492\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{bool}\ IsOutRange(\textcolor{keyword}{const}\ T\ \&v,\ \textcolor{keyword}{const}\ T\ \&low,\ \textcolor{keyword}{const}\ T\ \&high)\ \{}
+\DoxyCodeLine{00493\ \ \ \textcolor{keywordflow}{return}\ (v\ <\ low)\ ||\ (high\ <\ v);}
+\DoxyCodeLine{00494\ \}}
+\DoxyCodeLine{00495\ }
+\DoxyCodeLine{00496\ \textcolor{comment}{//\ Check\ 'v'\ is\ in\ closed\ range\ [low;\ high].}}
+\DoxyCodeLine{00497\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00498\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{bool}\ IsInRange(\textcolor{keyword}{const}\ T\ \&v,\ \textcolor{keyword}{const}\ T\ \&low,\ \textcolor{keyword}{const}\ T\ \&high)\ \{}
+\DoxyCodeLine{00499\ \ \ \textcolor{keywordflow}{return}\ !IsOutRange(v,\ low,\ high);}
+\DoxyCodeLine{00500\ \}}
+\DoxyCodeLine{00501\ }
+\DoxyCodeLine{00502\ \}\ \ \textcolor{comment}{//\ namespace\ flatbuffers}}
+\DoxyCodeLine{00503\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ FLATBUFFERS\_BASE\_H\_}}
+
+\end{DoxyCode}

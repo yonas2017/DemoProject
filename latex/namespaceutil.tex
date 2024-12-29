@@ -1,0 +1,103 @@
+\doxysection{util Namespace Reference}
+\hypertarget{namespaceutil}{}\label{namespaceutil}\index{util@{util}}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespaceutil_a9463ccca4eda29e42d162503ef7fd1a2}{flatc}} (options, schema, prefix=None, include=None, data=None, cwd=\mbox{\hyperlink{namespaceutil_aaf45bf9c4eb244ec176338688fecf2b2}{tests\+\_\+path}})
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespaceutil_ab1f9441164da7ac0c5d60dc888079c98}{parser}} = argparse.\+Argument\+Parser()
+\item 
+\mbox{\hyperlink{namespaceutil_a8e47e3a2c9217bb28bcda5a1b7921585}{help}}
+\item 
+\mbox{\hyperlink{namespaceutil_a524644615c8073aa8746a33be44c220f}{action}}
+\item 
+\mbox{\hyperlink{namespaceutil_a9dd2567917f99f7640c4352037f3ae12}{args}} = parser.\+parse\+\_\+args()
+\item 
+\mbox{\hyperlink{namespaceutil_a06505e1edf68e68e3750c85927e1421b}{script\+\_\+path}} = Path(\+\_\+\+\_\+file\+\_\+\+\_\+).parent.\+resolve()
+\item 
+\mbox{\hyperlink{namespaceutil_aa8be7ee811231dcf1fa2676e897f771c}{root\+\_\+path}} = script\+\_\+path.\+parent.\+absolute()
+\item 
+\mbox{\hyperlink{namespaceutil_aaf45bf9c4eb244ec176338688fecf2b2}{tests\+\_\+path}} = Path(\mbox{\hyperlink{namespaceutil_aa8be7ee811231dcf1fa2676e897f771c}{root\+\_\+path}}, "{}tests"{})
+\item 
+\mbox{\hyperlink{namespaceutil_a60cd70609b5387c4c3494fb4c17a0c24}{flatc\+\_\+exe}}
+\item 
+\mbox{\hyperlink{namespaceutil_abe1220619b49860a77d7cb7518a926c8}{flatc\+\_\+path}} = Path(\mbox{\hyperlink{namespaceutil_aa8be7ee811231dcf1fa2676e897f771c}{root\+\_\+path}}, \mbox{\hyperlink{namespaceutil_a60cd70609b5387c4c3494fb4c17a0c24}{flatc\+\_\+exe}})
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{namespaceutil_a9463ccca4eda29e42d162503ef7fd1a2}\label{namespaceutil_a9463ccca4eda29e42d162503ef7fd1a2} 
+\index{util@{util}!flatc@{flatc}}
+\index{flatc@{flatc}!util@{util}}
+\doxysubsubsection{\texorpdfstring{flatc()}{flatc()}}
+{\footnotesize\ttfamily util.\+flatc (\begin{DoxyParamCaption}\item[{}]{options,  }\item[{}]{schema,  }\item[{}]{prefix = {\ttfamily None},  }\item[{}]{include = {\ttfamily None},  }\item[{}]{data = {\ttfamily None},  }\item[{}]{cwd = {\ttfamily \mbox{\hyperlink{namespaceutil_aaf45bf9c4eb244ec176338688fecf2b2}{tests\+\_\+path}}} }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{namespaceutil_a524644615c8073aa8746a33be44c220f}\label{namespaceutil_a524644615c8073aa8746a33be44c220f} 
+\index{util@{util}!action@{action}}
+\index{action@{action}!util@{util}}
+\doxysubsubsection{\texorpdfstring{action}{action}}
+{\footnotesize\ttfamily util.\+action}
+
+\Hypertarget{namespaceutil_a9dd2567917f99f7640c4352037f3ae12}\label{namespaceutil_a9dd2567917f99f7640c4352037f3ae12} 
+\index{util@{util}!args@{args}}
+\index{args@{args}!util@{util}}
+\doxysubsubsection{\texorpdfstring{args}{args}}
+{\footnotesize\ttfamily util.\+args = parser.\+parse\+\_\+args()}
+
+\Hypertarget{namespaceutil_a60cd70609b5387c4c3494fb4c17a0c24}\label{namespaceutil_a60cd70609b5387c4c3494fb4c17a0c24} 
+\index{util@{util}!flatc\_exe@{flatc\_exe}}
+\index{flatc\_exe@{flatc\_exe}!util@{util}}
+\doxysubsubsection{\texorpdfstring{flatc\_exe}{flatc\_exe}}
+{\footnotesize\ttfamily util.\+flatc\+\_\+exe}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ =\ \ Path(}
+\DoxyCodeLine{00002\ \ \ \ \ (\textcolor{stringliteral}{"{}flatc"{}}\ \textcolor{keywordflow}{if}\ \textcolor{keywordflow}{not}\ platform.system()\ ==\ \textcolor{stringliteral}{"{}Windows"{}}\ \textcolor{keywordflow}{else}\ \textcolor{stringliteral}{"{}flatc.exe"{}})}
+\DoxyCodeLine{00003\ \ \ \ \ \textcolor{keywordflow}{if}\ \textcolor{keywordflow}{not}\ args.flatc}
+\DoxyCodeLine{00004\ \ \ \ \ \textcolor{keywordflow}{else}\ args.flatc}
+\DoxyCodeLine{00005\ )}
+
+\end{DoxyCode}
+\Hypertarget{namespaceutil_abe1220619b49860a77d7cb7518a926c8}\label{namespaceutil_abe1220619b49860a77d7cb7518a926c8} 
+\index{util@{util}!flatc\_path@{flatc\_path}}
+\index{flatc\_path@{flatc\_path}!util@{util}}
+\doxysubsubsection{\texorpdfstring{flatc\_path}{flatc\_path}}
+{\footnotesize\ttfamily util.\+flatc\+\_\+path = Path(\mbox{\hyperlink{namespaceutil_aa8be7ee811231dcf1fa2676e897f771c}{root\+\_\+path}}, \mbox{\hyperlink{namespaceutil_a60cd70609b5387c4c3494fb4c17a0c24}{flatc\+\_\+exe}})}
+
+\Hypertarget{namespaceutil_a8e47e3a2c9217bb28bcda5a1b7921585}\label{namespaceutil_a8e47e3a2c9217bb28bcda5a1b7921585} 
+\index{util@{util}!help@{help}}
+\index{help@{help}!util@{util}}
+\doxysubsubsection{\texorpdfstring{help}{help}}
+{\footnotesize\ttfamily util.\+help}
+
+\Hypertarget{namespaceutil_ab1f9441164da7ac0c5d60dc888079c98}\label{namespaceutil_ab1f9441164da7ac0c5d60dc888079c98} 
+\index{util@{util}!parser@{parser}}
+\index{parser@{parser}!util@{util}}
+\doxysubsubsection{\texorpdfstring{parser}{parser}}
+{\footnotesize\ttfamily util.\+parser = argparse.\+Argument\+Parser()}
+
+\Hypertarget{namespaceutil_aa8be7ee811231dcf1fa2676e897f771c}\label{namespaceutil_aa8be7ee811231dcf1fa2676e897f771c} 
+\index{util@{util}!root\_path@{root\_path}}
+\index{root\_path@{root\_path}!util@{util}}
+\doxysubsubsection{\texorpdfstring{root\_path}{root\_path}}
+{\footnotesize\ttfamily util.\+root\+\_\+path = script\+\_\+path.\+parent.\+absolute()}
+
+\Hypertarget{namespaceutil_a06505e1edf68e68e3750c85927e1421b}\label{namespaceutil_a06505e1edf68e68e3750c85927e1421b} 
+\index{util@{util}!script\_path@{script\_path}}
+\index{script\_path@{script\_path}!util@{util}}
+\doxysubsubsection{\texorpdfstring{script\_path}{script\_path}}
+{\footnotesize\ttfamily util.\+script\+\_\+path = Path(\+\_\+\+\_\+file\+\_\+\+\_\+).parent.\+resolve()}
+
+\Hypertarget{namespaceutil_aaf45bf9c4eb244ec176338688fecf2b2}\label{namespaceutil_aaf45bf9c4eb244ec176338688fecf2b2} 
+\index{util@{util}!tests\_path@{tests\_path}}
+\index{tests\_path@{tests\_path}!util@{util}}
+\doxysubsubsection{\texorpdfstring{tests\_path}{tests\_path}}
+{\footnotesize\ttfamily util.\+tests\+\_\+path = Path(\mbox{\hyperlink{namespaceutil_aa8be7ee811231dcf1fa2676e897f771c}{root\+\_\+path}}, "{}tests"{})}
+

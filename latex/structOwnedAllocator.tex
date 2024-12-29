@@ -1,0 +1,40 @@
+\doxysection{Owned\+Allocator Struct Reference}
+\hypertarget{structOwnedAllocator}{}\label{structOwnedAllocator}\index{OwnedAllocator@{OwnedAllocator}}
+
+
+Inheritance diagram for Owned\+Allocator\+:
+% FIG 0
+
+
+Collaboration diagram for Owned\+Allocator\+:
+% FIG 1
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classflatbuffers_1_1DefaultAllocator}{flatbuffers\+::\+Default\+Allocator}}}
+\begin{DoxyCompactItemize}
+\item 
+uint8\+\_\+t \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classflatbuffers_1_1DefaultAllocator_aeba7d4a7c546d7725b707ecbeaf68ebf}{allocate}} (size\+\_\+t size) FLATBUFFERS\+\_\+\+OVERRIDE
+\item 
+void \mbox{\hyperlink{classflatbuffers_1_1DefaultAllocator_acfc866696fe9db8e74d9529d8fc70aac}{deallocate}} (uint8\+\_\+t \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{gmock-matchers-containers__test_8cc_a6bc6b007533335efe02bafff799ec64c}{p}}, size\+\_\+t) FLATBUFFERS\+\_\+\+OVERRIDE
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classflatbuffers_1_1Allocator}{flatbuffers\+::\+Allocator}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classflatbuffers_1_1Allocator_a96abc6f31fe94e932d7f4daac10388b9}{\texorpdfstring{$\sim$}{\string~}\+Allocator}} ()
+\item 
+virtual uint8\+\_\+t \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classflatbuffers_1_1Allocator_a5c213f8ead50ce81e4427f65ba639892}{reallocate\+\_\+downward}} (uint8\+\_\+t \texorpdfstring{$\ast$}{*}old\+\_\+p, size\+\_\+t old\+\_\+size, size\+\_\+t new\+\_\+size, size\+\_\+t in\+\_\+use\+\_\+back, size\+\_\+t in\+\_\+use\+\_\+front)
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions inherited from \mbox{\hyperlink{classflatbuffers_1_1DefaultAllocator}{flatbuffers\+::\+Default\+Allocator}}}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{classflatbuffers_1_1DefaultAllocator_a7549b946d7bd892dcb773db38a44907c}{dealloc}} (void \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{gmock-matchers-containers__test_8cc_a6bc6b007533335efe02bafff799ec64c}{p}}, size\+\_\+t)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{classflatbuffers_1_1Allocator}{flatbuffers\+::\+Allocator}}}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classflatbuffers_1_1Allocator_afa22a0382f1886795440785d7e3bb478}{memcpy\+\_\+downward}} (uint8\+\_\+t \texorpdfstring{$\ast$}{*}old\+\_\+p, size\+\_\+t old\+\_\+size, uint8\+\_\+t \texorpdfstring{$\ast$}{*}new\+\_\+p, size\+\_\+t new\+\_\+size, size\+\_\+t in\+\_\+use\+\_\+back, size\+\_\+t in\+\_\+use\+\_\+front)
+\end{DoxyCompactItemize}
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+flatbuffers/tests/\mbox{\hyperlink{test__builder_8cpp}{test\+\_\+builder.\+cpp}}\end{DoxyCompactItemize}

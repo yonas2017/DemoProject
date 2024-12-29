@@ -1,0 +1,223 @@
+\chapter{Use in C\#}
+\hypertarget{flatbuffers_guide_use_c-sharp}{}\label{flatbuffers_guide_use_c-sharp}\index{Use in C\#@{Use in C\#}}
+\doxysection*{Before you get started}
+
+Before diving into the Flat\+Buffers usage in C\#, it should be noted that the \doxysectlink{flatbuffers_guide_tutorial}{Tutorial}{0} page has a complete guide to general Flat\+Buffers usage in all of the supported languages (including C\#). This page is designed to cover the nuances of Flat\+Buffers usage, specific to C\#.
+
+You should also have read the \doxysectlink{flatbuffers_guide_building}{Building}{0} documentation to build {\ttfamily flatc} and should be familiar with \doxysectlink{flatbuffers_guide_using_schema_compiler}{Using the schema compiler}{0} and \doxysectlink{flatbuffers_guide_writing_schema}{Writing a schema}{0}.
+
+\doxysection*{Flat\+Buffers C\# code location}
+
+The code for the Flat\+Buffers C\# library can be found at {\ttfamily flatbuffers/net/\+Flat\+Buffers}. You can browse the library on the \href{https://github.com/google/flatbuffers/tree/master/net/
+FlatBuffers}{\texttt{ Flat\+Buffers Git\+Hub page}}.
+
+\doxysection*{Building the Flat\+Buffers C\# library}
+
+The {\ttfamily Flat\+Buffers.\+csproj} project contains multitargeting for .NET Standard 2.\+1, .NET 6 and .NET 8.
+
+You can build for a specific framework target when using the cross-\/platform \href{https://dotnet.microsoft.com/download}{\texttt{ .NET Core SDK}} by adding the {\ttfamily -\/f} command line option\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{dotnet\ build\ -\/f\ netstandard2.1\ "{}FlatBuffers.csproj"{}}
+
+\end{DoxyCode}
+
+
+The {\ttfamily Flat\+Buffers.\+csproj} project also provides support for defining various conditional compilation symbols (see "{}\+Conditional compilation symbols"{} section below) using the {\ttfamily -\/p} command line option\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{dotnet\ build\ -\/f\ netstandard2.1\ -\/p:ENABLE\_SPAN\_T=true\ -\/p:UNSAFE\_BYTEBUFFER=true\ "{}FlatBuffers.csproj"{}}
+
+\end{DoxyCode}
+
+
+\doxysection*{Testing the Flat\+Buffers C\# library}
+
+The code to test the libraries can be found at {\ttfamily flatbuffers/tests}.
+
+The test code for C\# is located in the \href{https://github.com/
+google/flatbuffers/tree/master/tests/FlatBuffers.Test}{\texttt{ Flat\+Buffers.\+Test}} subfolder. To run the tests, open {\ttfamily Flat\+Buffers.\+Test.\+csproj} in \href{https://www.visualstudio.com}{\texttt{ Visual Studio}}, and compile/run the project.
+
+Optionally, you can run this using \href{http://www.mono-project.com/}{\texttt{ Mono}} instead. Once you have installed Mono, you can run the tests from the command line by running the following commands from inside the {\ttfamily Flat\+Buffers.\+Test} folder\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{mcs\ *.cs\ ../MyGame/Example/*.cs\ ../../net/FlatBuffers/*.cs}
+\DoxyCodeLine{mono\ Assert.exe}
+
+\end{DoxyCode}
+
+
+\doxysection*{Using the Flat\+Buffers C\# library}
+
+{\itshape Note\+: See \doxysectlink{flatbuffers_guide_tutorial}{Tutorial}{0} for a more in-\/depth example of how to use Flat\+Buffers in C\#.}
+
+Flat\+Buffers supports reading and writing binary Flat\+Buffers in C\#.
+
+To use Flat\+Buffers in your own code, first generate C\# classes from your schema with the {\ttfamily -\/-\/csharp} option to {\ttfamily flatc}. Then you can include both Flat\+Buffers and the generated code to read or write a Flat\+Buffer.
+
+For example, here is how you would read a Flat\+Buffer binary file in C\#\+: First, import the library and generated code. Then, you read a Flat\+Buffer binary file into a {\ttfamily byte\mbox{[}\mbox{]}}. You then turn the {\ttfamily byte\mbox{[}\mbox{]}} into a {\ttfamily Byte\+Buffer}, which you pass to the {\ttfamily Get\+Root\+As\+My\+Root\+Type} function\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{using\ }\mbox{\hyperlink{namespaceMyGame_1_1Example}{MyGame.Example}};}
+\DoxyCodeLine{\textcolor{keyword}{using\ }\mbox{\hyperlink{namespaceGoogle_1_1FlatBuffers}{Google.FlatBuffers}};}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ This\ snippet\ ignores\ exceptions\ for\ brevity.}}
+\DoxyCodeLine{\textcolor{keywordtype}{byte}[]\ \mbox{\hyperlink{namespacegenerate__code_aebc120e8b184d051fc85a24ac04dc891}{data}}\ =\ File.ReadAllBytes(\textcolor{stringliteral}{"{}monsterdata\_test.mon"{}});}
+\DoxyCodeLine{}
+\DoxyCodeLine{\mbox{\hyperlink{classGoogle_1_1FlatBuffers_1_1ByteBuffer}{ByteBuffer}}\ bb\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classGoogle_1_1FlatBuffers_1_1ByteBuffer}{ByteBuffer}}(data);}
+\DoxyCodeLine{\mbox{\hyperlink{structMyGame_1_1Example_1_1Monster}{Monster}}\ monster\ =\ \mbox{\hyperlink{structMyGame_1_1Example_1_1Monster}{Monster}}.\mbox{\hyperlink{structMyGame_1_1Example_1_1Monster_a0ab715fadec9c82182a3794da9b4402e}{GetRootAsMonster}}(bb);}
+
+\end{DoxyCode}
+
+
+Now you can access the data from the {\ttfamily Monster monster}\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{short}\ hp\ =\ monster.\mbox{\hyperlink{structMyGame_1_1Example_1_1Monster_a32fe8e2ed165c0cf15c4cb69755beb8c}{Hp}};}
+\DoxyCodeLine{\mbox{\hyperlink{structMyGame_1_1Example_1_1Vec3}{Vec3}}\ pos\ =\ monster.\mbox{\hyperlink{structMyGame_1_1Example_1_1Monster_add1b484fda44b51ce2c6d2ce8f35b20c}{Pos}};}
+
+\end{DoxyCode}
+
+
+C\# code naming follows standard C\# style with Pascal\+Casing identifiers, e.\+g. {\ttfamily Get\+Root\+As\+My\+Root\+Type}. Also, values (except vectors and unions) are available as properties instead of parameterless accessor methods. The performance-\/enhancing methods to which you can pass an already created object are prefixed with {\ttfamily Get}, e.\+g.\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{comment}{//\ property}}
+\DoxyCodeLine{var\ pos\ =\ monster.\mbox{\hyperlink{structMyGame_1_1Example_1_1Monster_add1b484fda44b51ce2c6d2ce8f35b20c}{Pos}};}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ method\ filling\ a\ preconstructed\ object}}
+\DoxyCodeLine{var\ preconstructedPos\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{structMyGame_1_1Example_1_1Vec3}{Vec3}}();}
+\DoxyCodeLine{monster.GetPos(preconstructedPos);}
+
+\end{DoxyCode}
+
+
+\doxysection*{Storing dictionaries in a Flat\+Buffer}
+
+Flat\+Buffers doesn\textquotesingle{}t support dictionaries natively, but there is support to emulate their behavior with vectors and binary search, which means you can have fast lookups directly from a Flat\+Buffer without having to unpack your data into a {\ttfamily Dictionary} or similar.
+
+To use it\+:
+\begin{DoxyItemize}
+\item Designate one of the fields in a table as the "{}key"{} field. You do this by setting the {\ttfamily key} attribute on this field, e.\+g. {\ttfamily name\+:string (key)}. You may only have one key field, and it must be of string or scalar type.
+\item Write out tables of this type as usual, collect their offsets in an array.
+\item Instead of calling standard generated method, e.\+g.\+: {\ttfamily Monster.\+create\+Testarrayoftables\+Vector}, call {\ttfamily Create\+Sorted\+Vector\+Of\+Monster} in C\# which will first sort all offsets such that the tables they refer to are sorted by the key field, then serialize it.
+\item Now when you\textquotesingle{}re accessing the Flat\+Buffer, you can use the {\ttfamily By\+Key} accessor to access elements of the vector, e.\+g.\+: {\ttfamily monster.\+Testarrayoftables\+By\+Key("{}\+Frodo"{})} in C\#, which returns an object of the corresponding table type, or {\ttfamily null} if not found. {\ttfamily By\+Key} performs a binary search, so should have a similar speed to {\ttfamily Dictionary}, though may be faster because of better caching. {\ttfamily By\+Key} only works if the vector has been sorted, it will likely not find elements if it hasn\textquotesingle{}t been sorted.
+\end{DoxyItemize}
+
+\doxysection*{Buffer verification}
+
+As mentioned in \doxysectlink{flatbuffers_guide_use_cpp}{C++ Usage}{0} buffer accessor functions do not verify buffer offsets at run-\/time. If it is necessary, you can optionally use a buffer verifier before you access the data. This verifier will check all offsets, all sizes of fields, and null termination of strings to ensure that when a buffer is accessed, all reads will end up inside the buffer.
+
+Each root type will have a verification function generated for it, e.\+g. {\ttfamily Monster.\+Verify\+Monster}. This can be called as shown\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{var\ ok\ =\ \mbox{\hyperlink{structMyGame_1_1Example_1_1Monster}{Monster}}.\mbox{\hyperlink{structMyGame_1_1Example_1_1Monster_a73400b9169383d04c5253b81994b3ad1}{VerifyMonster}}(buf);}
+
+\end{DoxyCode}
+ if {\ttfamily ok} is true, the buffer is safe to read.
+
+For a more detailed control of verification {\ttfamily Monster\+Verify.\+Verify} for {\ttfamily Monster} type can be used\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#\ Sequence\ of\ calls}}
+\DoxyCodeLine{\mbox{\hyperlink{classGoogle_1_1FlatBuffers_1_1Verifier}{FlatBuffers.Verifier}}\ verifier\ =\ \textcolor{keyword}{new}\ FlatBuffers.\mbox{\hyperlink{classGoogle_1_1FlatBuffers_1_1Verifier_a314847378104d7bce65b2a51841d09c7}{Verifier}}(buf);}
+\DoxyCodeLine{var\ ok\ =\ verifier.\mbox{\hyperlink{classGoogle_1_1FlatBuffers_1_1Verifier_a2bdd95466a896b8e167c964938ae0a07}{VerifyBuffer}}(\textcolor{stringliteral}{"{}MONS"{}},\ \textcolor{keyword}{false},\ MonsterVerify.Verify);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{preprocessor}{\#\ Or\ single\ line\ call}}
+\DoxyCodeLine{var\ ok\ =\ \textcolor{keyword}{new}\ FlatBuffers.Verifier(bb).setStringCheck(\textcolor{keyword}{true}).\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ VerifyBuffer(\textcolor{stringliteral}{"{}MONS"{}},\ \textcolor{keyword}{false},\ MonsterVerify.Verify);}
+
+\end{DoxyCode}
+ if {\ttfamily ok} is true, the buffer is safe to read.
+
+A second parameter of {\ttfamily verify\+Buffer} specifies whether buffer content is size prefixed or not. In the example above, the buffer is assumed to not include size prefix ({\ttfamily false}).
+
+Verifier supports options that can be set using appropriate fluent methods\+:
+\begin{DoxyItemize}
+\item Set\+Max\+Depth -\/ limit the nesting depth. Default\+: 1000000
+\item Set\+Max\+Tables -\/ total amount of tables the verifier may encounter. Default\+: 64
+\item Set\+Alignment\+Check -\/ check content alignment. Default\+: True
+\item Set\+String\+Check -\/ check if strings contain termination \textquotesingle{}0\textquotesingle{} character. Default\+: true
+\end{DoxyItemize}
+
+\doxysection*{Text parsing}
+
+There currently is no support for parsing text (Schema\textquotesingle{}s and JSON) directly from C\#, though you could use the C++ parser through native call interfaces available to each language. Please see the C++ documentation for more on text parsing.
+
+\doxysection*{Object based API}
+
+Flat\+Buffers is all about memory efficiency, which is why its base API is written around using as little as possible of it. This does make the API clumsier (requiring pre-\/order construction of all data, and making mutation harder).
+
+For times when efficiency is less important a more convenient object based API can be used (through {\ttfamily -\/-\/gen-\/object-\/api}) that is able to unpack \& pack a Flat\+Buffer into objects and standard {\ttfamily System.\+Collections.\+Generic} containers, allowing for convenient construction, access and mutation.
+
+To use\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{comment}{//\ Deserialize\ from\ buffer\ into\ object.}}
+\DoxyCodeLine{\mbox{\hyperlink{structMyGame_1_1Example_1_1MonsterT}{MonsterT}}\ monsterobj\ =\ \mbox{\hyperlink{namespaceMyGame_1_1Sample_aeffc316d8b80546edb0f37b6ec9f8d7b}{GetMonster}}(flatbuffer).UnPack();}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ Update\ object\ directly\ like\ a\ C\#\ class\ instance.}}
+\DoxyCodeLine{Console.WriteLine(monsterobj.\mbox{\hyperlink{structMyGame_1_1Example_1_1MonsterT_a12d78e2d02580f1298da7a1238c46016}{Name}});}
+\DoxyCodeLine{monsterobj.Name\ =\ \textcolor{stringliteral}{"{}Bob"{}};\ \ \textcolor{comment}{//\ Change\ the\ name.}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ Serialize\ into\ new\ flatbuffer.}}
+\DoxyCodeLine{\mbox{\hyperlink{classFlatBufferBuilder}{FlatBufferBuilder}}\ fbb\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classFlatBufferBuilder}{FlatBufferBuilder}}(1);}
+\DoxyCodeLine{fbb.Finish(\mbox{\hyperlink{structMyGame_1_1Example_1_1Monster}{Monster}}.\mbox{\hyperlink{structMyGame_1_1Example_1_1Monster_ae0f517838aa23d6e5b44279a8b5f09bd}{Pack}}(fbb,\ monsterobj).Value);}
+
+\end{DoxyCode}
+
+
+\doxysubsection*{Json Serialization}
+
+An additional feature of the object API is the ability to allow you to serialize \& deserialize a JSON text. To use Json Serialization, add {\ttfamily -\/-\/cs-\/gen-\/json-\/serializer} option to {\ttfamily flatc} and add {\ttfamily Newtonsoft.\+Json} nuget package to csproj. This requires explicitly setting the {\ttfamily -\/-\/gen-\/object-\/api} option as well.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{comment}{//\ Deserialize\ MonsterT\ from\ json}}
+\DoxyCodeLine{\textcolor{keywordtype}{string}\ jsonText\ =\ File.ReadAllText(\textcolor{stringliteral}{@"{}Resources/monsterdata\_test.json"{}});}
+\DoxyCodeLine{\mbox{\hyperlink{structMyGame_1_1Example_1_1MonsterT}{MonsterT}}\ mon\ =\ \mbox{\hyperlink{structMyGame_1_1Example_1_1MonsterT}{MonsterT}}.\mbox{\hyperlink{structMyGame_1_1Example_1_1MonsterT_a5eb9afd2b11daedb93e40ae58717e017}{DeserializeFromJson}}(jsonText);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ Serialize\ MonsterT\ to\ json}}
+\DoxyCodeLine{\textcolor{keywordtype}{string}\ jsonText2\ =\ mon.\mbox{\hyperlink{structMyGame_1_1Example_1_1MonsterT_af2d7ec3c03b62c851eb46c9d0754e08c}{SerializeToJson}}();}
+
+\end{DoxyCode}
+
+
+
+\begin{DoxyItemize}
+\item Limitation
+\begin{DoxyItemize}
+\item {\ttfamily hash} attribute currently not supported.
+\end{DoxyItemize}
+\item Nu\+Get package Dependency
+\begin{DoxyItemize}
+\item \href{https://github.com/JamesNK/Newtonsoft.Json}{\texttt{ Newtonsoft.\+Json}}
+\end{DoxyItemize}
+\end{DoxyItemize}
+
+\doxysection*{Conditional compilation symbols}
+
+There are three conditional compilation symbols that have an impact on performance/features of the C\# {\ttfamily Byte\+Buffer} implementation.
+
+
+\begin{DoxyItemize}
+\item {\ttfamily UNSAFE\+\_\+\+BYTEBUFFER}
+
+This will use unsafe code to manipulate the underlying byte array. This can yield a reasonable performance increase.
+\item {\ttfamily BYTEBUFFER\+\_\+\+NO\+\_\+\+BOUNDS\+\_\+\+CHECK}
+
+This will disable the bounds check asserts to the byte array. This can yield a small performance gain in normal code.
+\item {\ttfamily ENABLE\+\_\+\+SPAN\+\_\+T}
+
+This will enable reading and writing blocks of memory with a {\ttfamily Span\texorpdfstring{$<$}{<}T\texorpdfstring{$>$}{>}} instead of just {\ttfamily T\mbox{[}\mbox{]}}. You can also enable writing directly to shared memory or other types of memory by providing a custom implementation of {\ttfamily Byte\+Buffer\+Allocator}. {\ttfamily ENABLE\+\_\+\+SPAN\+\_\+T} also requires {\ttfamily UNSAFE\+\_\+\+BYTEBUFFER} to be defined, or .NET Standard 2.\+1.
+\end{DoxyItemize}
+
+Using {\ttfamily UNSAFE\+\_\+\+BYTEBUFFER} and {\ttfamily BYTEBUFFER\+\_\+\+NO\+\_\+\+BOUNDS\+\_\+\+CHECK} together can yield a performance gain of \texorpdfstring{$\sim$}{\string~}15\% for some operations, however doing so is potentially dangerous. Do so at your own risk!
+
+~\newline
+ 

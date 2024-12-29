@@ -1,0 +1,55 @@
+\doxysection{flatbuffers/src/idl\+\_\+gen\+\_\+go.cpp File Reference}
+\hypertarget{idl__gen__go_8cpp}{}\label{idl__gen__go_8cpp}\index{flatbuffers/src/idl\_gen\_go.cpp@{flatbuffers/src/idl\_gen\_go.cpp}}
+{\ttfamily \#include "{}idl\+\_\+gen\+\_\+go.\+h"{}}\newline
+{\ttfamily \#include $<$algorithm$>$}\newline
+{\ttfamily \#include $<$cmath$>$}\newline
+{\ttfamily \#include $<$sstream$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include "{}flatbuffers/base.\+h"{}}\newline
+{\ttfamily \#include "{}flatbuffers/code\+\_\+generators.\+h"{}}\newline
+{\ttfamily \#include "{}flatbuffers/flatbuffers.\+h"{}}\newline
+{\ttfamily \#include "{}flatbuffers/idl.\+h"{}}\newline
+{\ttfamily \#include "{}flatbuffers/util.\+h"{}}\newline
+{\ttfamily \#include "{}idl\+\_\+namer.\+h"{}}\newline
+{\ttfamily \#include $<$sys/stat.\+h$>$}\newline
+Include dependency graph for idl\+\_\+gen\+\_\+go.\+cpp\+:
+% FIG 0
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classflatbuffers_1_1go_1_1GoGenerator}{flatbuffers\+::go\+::\+Go\+Generator}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespaceflatbuffers}{flatbuffers}}
+\item 
+namespace \mbox{\hyperlink{namespaceflatbuffers_1_1go}{flatbuffers\+::go}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{idl__gen__go_8cpp_a256a5721249aa3309437212cc21a9fe4}{PATH\+\_\+\+SEPARATOR}}~"{}/"{}
+\item 
+\#define \mbox{\hyperlink{idl__gen__go_8cpp_a1ffac259c52e7413e67bb526b0aa5f92}{FLATBUFFERS\+\_\+\+TD}}(ENUM,  IDLTYPE,  CTYPE,  JTYPE,  GTYPE, ...)~        \#GTYPE,
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classflatbuffers_1_1CodeGenerator}{Code\+Generator}} $>$ \mbox{\hyperlink{namespaceflatbuffers_aaba3426dc2949eb49eaff8d9d251710c}{flatbuffers\+::\+New\+Go\+Code\+Generator}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{idl__gen__go_8cpp_a1ffac259c52e7413e67bb526b0aa5f92}\label{idl__gen__go_8cpp_a1ffac259c52e7413e67bb526b0aa5f92} 
+\index{idl\_gen\_go.cpp@{idl\_gen\_go.cpp}!FLATBUFFERS\_TD@{FLATBUFFERS\_TD}}
+\index{FLATBUFFERS\_TD@{FLATBUFFERS\_TD}!idl\_gen\_go.cpp@{idl\_gen\_go.cpp}}
+\doxysubsubsection{\texorpdfstring{FLATBUFFERS\_TD}{FLATBUFFERS\_TD}}
+{\footnotesize\ttfamily \#define FLATBUFFERS\+\_\+\+TD(\begin{DoxyParamCaption}\item[{}]{ENUM,  }\item[{}]{IDLTYPE,  }\item[{}]{CTYPE,  }\item[{}]{JTYPE,  }\item[{}]{GTYPE,  }\item[{}]{... }\end{DoxyParamCaption})~        \#GTYPE,}
+
+\Hypertarget{idl__gen__go_8cpp_a256a5721249aa3309437212cc21a9fe4}\label{idl__gen__go_8cpp_a256a5721249aa3309437212cc21a9fe4} 
+\index{idl\_gen\_go.cpp@{idl\_gen\_go.cpp}!PATH\_SEPARATOR@{PATH\_SEPARATOR}}
+\index{PATH\_SEPARATOR@{PATH\_SEPARATOR}!idl\_gen\_go.cpp@{idl\_gen\_go.cpp}}
+\doxysubsubsection{\texorpdfstring{PATH\_SEPARATOR}{PATH\_SEPARATOR}}
+{\footnotesize\ttfamily \#define PATH\+\_\+\+SEPARATOR~"{}/"{}}
+

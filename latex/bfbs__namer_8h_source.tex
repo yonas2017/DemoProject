@@ -1,0 +1,57 @@
+\doxysection{bfbs\+\_\+namer.\+h}
+\hypertarget{bfbs__namer_8h_source}{}\label{bfbs__namer_8h_source}\index{flatbuffers/src/bfbs\_namer.h@{flatbuffers/src/bfbs\_namer.h}}
+\mbox{\hyperlink{bfbs__namer_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ FLATBUFFERS\_BFBS\_NAMER}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ FLATBUFFERS\_BFBS\_NAMER}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{reflection_8h}{flatbuffers/reflection.h}}"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{src_2namer_8h}{namer.h}}"{}}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceflatbuffers}{flatbuffers}}\ \{}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{comment}{//\ Provides\ Namer\ capabilities\ to\ types\ defined\ in\ the\ flatbuffers\ reflection.}}
+\DoxyCodeLine{00010\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classflatbuffers_1_1BfbsNamer}{BfbsNamer}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classflatbuffers_1_1Namer}{Namer}}\ \{}
+\DoxyCodeLine{00011\ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00012\ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classflatbuffers_1_1BfbsNamer_ac8f82eab736520206ad754cd65f5803f}{BfbsNamer}}(\mbox{\hyperlink{structflatbuffers_1_1Namer_1_1Config}{Config}}\ config,\ std::set<std::string>\ keywords)}
+\DoxyCodeLine{00013\ \ \ \ \ \ \ :\ \mbox{\hyperlink{classflatbuffers_1_1Namer}{Namer}}(config,\ \mbox{\hyperlink{namespacestd}{std}}::move(keywords))\ \{\}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \ \ \textcolor{keyword}{using\ }\mbox{\hyperlink{classflatbuffers_1_1Namer_a8664159cfd317e6a64f9b42f5da53544}{Namer::Constant}};}
+\DoxyCodeLine{00016\ \ \ \textcolor{keyword}{using\ }\mbox{\hyperlink{classflatbuffers_1_1Namer_af1f5753ac85a2f2a65e3f1d9fa0bb488}{Namer::Denamespace}};}
+\DoxyCodeLine{00017\ \ \ \textcolor{keyword}{using\ }\mbox{\hyperlink{classflatbuffers_1_1Namer_a1a34c7f54718cacbc4ed6d06586698c5}{Namer::Directories}};}
+\DoxyCodeLine{00018\ \ \ \textcolor{keyword}{using\ }\mbox{\hyperlink{classflatbuffers_1_1Namer_a7fc01b7292953acf8ad5511d74cbdcec}{Namer::Field}};}
+\DoxyCodeLine{00019\ \ \ \textcolor{keyword}{using\ }\mbox{\hyperlink{classflatbuffers_1_1Namer_a7ba0fac80802fe467c7aa1182acbfe5a}{Namer::File}};}
+\DoxyCodeLine{00020\ \ \ \textcolor{keyword}{using\ }\mbox{\hyperlink{classflatbuffers_1_1Namer_a66e38ef43f91696c1209167564e64192}{Namer::Function}};}
+\DoxyCodeLine{00021\ \ \ \textcolor{keyword}{using\ }\mbox{\hyperlink{classflatbuffers_1_1Namer_ae040995ecbde3ec2583fb69ce0b5f4ae}{Namer::Method}};}
+\DoxyCodeLine{00022\ \ \ \textcolor{keyword}{using\ }\mbox{\hyperlink{classflatbuffers_1_1Namer_a6fce1d2696851be63ac7f232ef0bd8cf}{Namer::Namespace}};}
+\DoxyCodeLine{00023\ \ \ \textcolor{keyword}{using\ }\mbox{\hyperlink{classflatbuffers_1_1Namer_a99ab48ea84573e5de215e3c439641df0}{Namer::NamespacedType}};}
+\DoxyCodeLine{00024\ \ \ \textcolor{keyword}{using\ }\mbox{\hyperlink{classflatbuffers_1_1Namer_a997d8c13d879452749a55bf95f4ca9fc}{Namer::ObjectType}};}
+\DoxyCodeLine{00025\ \ \ \textcolor{keyword}{using\ }\mbox{\hyperlink{classflatbuffers_1_1Namer_ac74869999ef842db7847e8d540db3f53}{Namer::Type}};}
+\DoxyCodeLine{00026\ \ \ \textcolor{keyword}{using\ }\mbox{\hyperlink{classflatbuffers_1_1Namer_ac784ab9f000916c4d7251d94309734c6}{Namer::Variable}};}
+\DoxyCodeLine{00027\ \ \ \textcolor{keyword}{using\ }\mbox{\hyperlink{classflatbuffers_1_1Namer_ab3aeb25dd3103103f3d12c45012c8b11}{Namer::Variant}};}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00030\ \ \ std::string\ \mbox{\hyperlink{classflatbuffers_1_1BfbsNamer_a3846755396c5f0314494f65dd4ca2a44}{Denamespace}}(T\ t,\ std::string\ \&namespace\_prefix,}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{annotated__binary__text__gen_8cpp_a2d937314efe2f7ab8dfda68ccd6815bf}{delimiter}}\ =\ \textcolor{charliteral}{'.'})\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classflatbuffers_1_1Namer_af1f5753ac85a2f2a65e3f1d9fa0bb488}{Namer::Denamespace}}(t-\/>name()-\/>c\_str(),\ namespace\_prefix,\ \mbox{\hyperlink{annotated__binary__text__gen_8cpp_a2d937314efe2f7ab8dfda68ccd6815bf}{delimiter}});}
+\DoxyCodeLine{00033\ \ \ \}}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00036\ \ \ std::string\ \mbox{\hyperlink{classflatbuffers_1_1BfbsNamer_a289423fd18ad210f0b89765556034838}{Denamespace}}(T\ t,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{annotated__binary__text__gen_8cpp_a2d937314efe2f7ab8dfda68ccd6815bf}{delimiter}}\ =\ \textcolor{charliteral}{'.'})\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classflatbuffers_1_1Namer_af1f5753ac85a2f2a65e3f1d9fa0bb488}{Namer::Denamespace}}(t-\/>name()-\/>c\_str(),\ \mbox{\hyperlink{annotated__binary__text__gen_8cpp_a2d937314efe2f7ab8dfda68ccd6815bf}{delimiter}});}
+\DoxyCodeLine{00038\ \ \ \}}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \ \ \textcolor{keyword}{virtual}\ std::string\ \mbox{\hyperlink{classflatbuffers_1_1BfbsNamer_a6f75c5a4a1796e8a7ff93f671a0d2756}{Field}}(const\ ::reflection::Field\ \&f)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classflatbuffers_1_1BfbsNamer_a6f75c5a4a1796e8a7ff93f671a0d2756}{Field}}(f.name()-\/>str());}
+\DoxyCodeLine{00042\ \ \ \}}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \ \ \textcolor{keyword}{virtual}\ std::string\ \mbox{\hyperlink{classflatbuffers_1_1BfbsNamer_a2c699293b46e75654ca88b1525014d19}{Variable}}(const\ ::reflection::Field\ \&f)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classflatbuffers_1_1BfbsNamer_a2c699293b46e75654ca88b1525014d19}{Variable}}(f.name()-\/>str());}
+\DoxyCodeLine{00046\ \ \ \}}
+\DoxyCodeLine{00047\ \};}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \}\ \ \textcolor{comment}{//\ namespace\ flatbuffers}}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ FLATBUFFERS\_BFBS\_NAMER}}
+
+\end{DoxyCode}

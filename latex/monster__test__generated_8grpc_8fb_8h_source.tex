@@ -1,0 +1,356 @@
+\doxysection{monster\+\_\+test\+\_\+generated.\+grpc.\+fb.\+h}
+\hypertarget{monster__test__generated_8grpc_8fb_8h_source}{}\label{monster__test__generated_8grpc_8fb_8h_source}\index{flatbuffers/tests/monster\_test\_generated.grpc.fb.h@{flatbuffers/tests/monster\_test\_generated.grpc.fb.h}}
+\mbox{\hyperlink{monster__test__generated_8grpc_8fb_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//\ Generated\ by\ the\ gRPC\ C++\ plugin.}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//\ If\ you\ make\ any\ local\ change,\ they\ will\ be\ lost.}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//\ source:\ monster\_test}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#ifndef\ GRPC\_monster\_5ftest\_\_INCLUDED}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#define\ GRPC\_monster\_5ftest\_\_INCLUDED}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{monster__test__generated_8h}{monster\_test\_generated.h}}"{}}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{grpc_8h}{flatbuffers/grpc.h}}"{}}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <grpcpp/impl/codegen/async\_stream.h>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <grpcpp/impl/codegen/async\_unary\_call.h>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <grpcpp/impl/codegen/method\_handler.h>}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <grpcpp/impl/codegen/proto\_utils.h>}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <grpcpp/impl/codegen/rpc\_method.h>}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ <grpcpp/impl/codegen/service\_type.h>}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ <grpcpp/impl/codegen/status.h>}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ <grpcpp/impl/codegen/stub\_options.h>}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ <grpcpp/impl/codegen/sync\_stream.h>}}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacegrpc}{grpc}}\ \{}
+\DoxyCodeLine{00021\ \textcolor{keyword}{class\ }CompletionQueue;}
+\DoxyCodeLine{00022\ \textcolor{keyword}{class\ }Channel;}
+\DoxyCodeLine{00023\ \textcolor{keyword}{class\ }ServerCompletionQueue;}
+\DoxyCodeLine{00024\ \textcolor{keyword}{class\ }ServerContext;}
+\DoxyCodeLine{00025\ \}\ \ \textcolor{comment}{//\ namespace\ grpc}}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceMyGame}{MyGame}}\ \{}
+\DoxyCodeLine{00028\ \textcolor{keyword}{namespace\ }Example\ \{}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \textcolor{keyword}{class\ }MonsterStorage\ final\ \{}
+\DoxyCodeLine{00031\ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00032\ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{char}\ \textcolor{keyword}{const}*\ \mbox{\hyperlink{classMyGame_1_1Example_1_1MonsterStorage_a475be4f748e627d630aa7561a2084df0}{service\_full\_name}}()\ \{}
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}MyGame.Example.MonsterStorage"{}};}
+\DoxyCodeLine{00034\ \ \ \}}
+\DoxyCodeLine{00035\ \ \ \textcolor{keyword}{class\ }StubInterface\ \{}
+\DoxyCodeLine{00036\ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classMyGame_1_1Example_1_1MonsterStorage_1_1StubInterface_a09caca829185105ab18f5a96745d3840}{\string~StubInterface}}()\ \{\}}
+\DoxyCodeLine{00038\ \ \ \ \ virtual\ ::grpc::Status\ \mbox{\hyperlink{classMyGame_1_1Example_1_1MonsterStorage_1_1StubInterface_af955190f9a4d8b34f49befbaa21d2f5a}{Store}}(::grpc::ClientContext*\ context,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classflatbuffers_1_1grpc_1_1Message}{flatbuffers::grpc::Message<Monster>}}\&\ request,\ \mbox{\hyperlink{classflatbuffers_1_1grpc_1_1Message}{flatbuffers::grpc::Message<Stat>}}*\ response)\ =\ 0;}
+\DoxyCodeLine{00039\ \ \ \ \ std::unique\_ptr<\ ::grpc::ClientAsyncResponseReaderInterface<\ flatbuffers::grpc::Message<Stat>>>\ \mbox{\hyperlink{classMyGame_1_1Example_1_1MonsterStorage_1_1StubInterface_a7f7b1726c3320c9d985f417cc311ddea}{AsyncStore}}(::grpc::ClientContext*\ context,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classflatbuffers_1_1grpc_1_1Message}{flatbuffers::grpc::Message<Monster>}}\&\ request,\ ::grpc::CompletionQueue*\ cq)\ \{}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ std::unique\_ptr<\ ::grpc::ClientAsyncResponseReaderInterface<\ flatbuffers::grpc::Message<Stat>>>(AsyncStoreRaw(context,\ request,\ cq));}
+\DoxyCodeLine{00041\ \ \ \ \ \}}
+\DoxyCodeLine{00042\ \ \ \ \ std::unique\_ptr<\ ::grpc::ClientAsyncResponseReaderInterface<\ flatbuffers::grpc::Message<Stat>>>\ \mbox{\hyperlink{classMyGame_1_1Example_1_1MonsterStorage_1_1StubInterface_a50a0755d7c7ab5253ead180607265bc9}{PrepareAsyncStore}}(::grpc::ClientContext*\ context,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classflatbuffers_1_1grpc_1_1Message}{flatbuffers::grpc::Message<Monster>}}\&\ request,\ ::grpc::CompletionQueue*\ cq)\ \{}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ std::unique\_ptr<\ ::grpc::ClientAsyncResponseReaderInterface<\ flatbuffers::grpc::Message<Stat>>>(PrepareAsyncStoreRaw(context,\ request,\ cq));}
+\DoxyCodeLine{00044\ \ \ \ \ \}}
+\DoxyCodeLine{00045\ \ \ \ \ std::unique\_ptr<\ ::grpc::ClientReaderInterface<\ flatbuffers::grpc::Message<Monster>>>\ \mbox{\hyperlink{classMyGame_1_1Example_1_1MonsterStorage_1_1StubInterface_a6ebb4354b2cfd348a71cc0a4e0e5a750}{Retrieve}}(::grpc::ClientContext*\ context,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classflatbuffers_1_1grpc_1_1Message}{flatbuffers::grpc::Message<Stat>}}\&\ request)\ \{}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ std::unique\_ptr<\ ::grpc::ClientReaderInterface<\ flatbuffers::grpc::Message<Monster>>>(RetrieveRaw(context,\ request));}
+\DoxyCodeLine{00047\ \ \ \ \ \}}
+\DoxyCodeLine{00048\ \ \ \ \ std::unique\_ptr<\ ::grpc::ClientAsyncReaderInterface<\ flatbuffers::grpc::Message<Monster>>>\ \mbox{\hyperlink{classMyGame_1_1Example_1_1MonsterStorage_1_1StubInterface_a89ad184eb3da96eb2840ec7c64bb9ce8}{AsyncRetrieve}}(::grpc::ClientContext*\ context,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classflatbuffers_1_1grpc_1_1Message}{flatbuffers::grpc::Message<Stat>}}\&\ request,\ ::grpc::CompletionQueue*\ cq,\ \textcolor{keywordtype}{void}*\ tag)\ \{}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ std::unique\_ptr<\ ::grpc::ClientAsyncReaderInterface<\ flatbuffers::grpc::Message<Monster>>>(AsyncRetrieveRaw(context,\ request,\ cq,\ tag));}
+\DoxyCodeLine{00050\ \ \ \ \ \}}
+\DoxyCodeLine{00051\ \ \ \ \ std::unique\_ptr<\ ::grpc::ClientAsyncReaderInterface<\ flatbuffers::grpc::Message<Monster>>>\ \mbox{\hyperlink{classMyGame_1_1Example_1_1MonsterStorage_1_1StubInterface_aa74648ba3519dc42f188db0a44fc246a}{PrepareAsyncRetrieve}}(::grpc::ClientContext*\ context,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classflatbuffers_1_1grpc_1_1Message}{flatbuffers::grpc::Message<Stat>}}\&\ request,\ ::grpc::CompletionQueue*\ cq)\ \{}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ std::unique\_ptr<\ ::grpc::ClientAsyncReaderInterface<\ flatbuffers::grpc::Message<Monster>>>(PrepareAsyncRetrieveRaw(context,\ request,\ cq));}
+\DoxyCodeLine{00053\ \ \ \ \ \}}
+\DoxyCodeLine{00054\ \ \ \ \ std::unique\_ptr<\ ::grpc::ClientWriterInterface<\ flatbuffers::grpc::Message<Monster>>>\ \mbox{\hyperlink{classMyGame_1_1Example_1_1MonsterStorage_1_1StubInterface_a23231d1ef1ccb8bbdf98a8d7796ebfc9}{GetMaxHitPoint}}(::grpc::ClientContext*\ context,\ \mbox{\hyperlink{classflatbuffers_1_1grpc_1_1Message}{flatbuffers::grpc::Message<Stat>}}*\ response)\ \{}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ std::unique\_ptr<\ ::grpc::ClientWriterInterface<\ flatbuffers::grpc::Message<Monster>>>(GetMaxHitPointRaw(context,\ response));}
+\DoxyCodeLine{00056\ \ \ \ \ \}}
+\DoxyCodeLine{00057\ \ \ \ \ std::unique\_ptr<\ ::grpc::ClientAsyncWriterInterface<\ flatbuffers::grpc::Message<Monster>>>\ \mbox{\hyperlink{classMyGame_1_1Example_1_1MonsterStorage_1_1StubInterface_aa0f0f501fd76889e577eb6924fb54da3}{AsyncGetMaxHitPoint}}(::grpc::ClientContext*\ context,\ \mbox{\hyperlink{classflatbuffers_1_1grpc_1_1Message}{flatbuffers::grpc::Message<Stat>}}*\ response,\ ::grpc::CompletionQueue*\ cq,\ \textcolor{keywordtype}{void}*\ tag)\ \{}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ std::unique\_ptr<\ ::grpc::ClientAsyncWriterInterface<\ flatbuffers::grpc::Message<Monster>>>(AsyncGetMaxHitPointRaw(context,\ response,\ cq,\ tag));}
+\DoxyCodeLine{00059\ \ \ \ \ \}}
+\DoxyCodeLine{00060\ \ \ \ \ std::unique\_ptr<\ ::grpc::ClientAsyncWriterInterface<\ flatbuffers::grpc::Message<Monster>>>\ \mbox{\hyperlink{classMyGame_1_1Example_1_1MonsterStorage_1_1StubInterface_a806d66efd1d188419a34c31e407e5bbb}{PrepareAsyncGetMaxHitPoint}}(::grpc::ClientContext*\ context,\ \mbox{\hyperlink{classflatbuffers_1_1grpc_1_1Message}{flatbuffers::grpc::Message<Stat>}}*\ response,\ ::grpc::CompletionQueue*\ cq)\ \{}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ std::unique\_ptr<\ ::grpc::ClientAsyncWriterInterface<\ flatbuffers::grpc::Message<Monster>>>(PrepareAsyncGetMaxHitPointRaw(context,\ response,\ cq));}
+\DoxyCodeLine{00062\ \ \ \ \ \}}
+\DoxyCodeLine{00063\ \ \ \ \ std::unique\_ptr<\ ::grpc::ClientReaderWriterInterface<\ flatbuffers::grpc::Message<Monster>,\ \mbox{\hyperlink{classflatbuffers_1_1grpc_1_1Message}{flatbuffers::grpc::Message<Stat>}}>>\ \mbox{\hyperlink{classMyGame_1_1Example_1_1MonsterStorage_1_1StubInterface_a8b3803c74ecec6536cf10cc427de3120}{GetMinMaxHitPoints}}(::grpc::ClientContext*\ context)\ \{}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ std::unique\_ptr<\ ::grpc::ClientReaderWriterInterface<\ flatbuffers::grpc::Message<Monster>,\ \mbox{\hyperlink{classflatbuffers_1_1grpc_1_1Message}{flatbuffers::grpc::Message<Stat>}}>>(GetMinMaxHitPointsRaw(context));}
+\DoxyCodeLine{00065\ \ \ \ \ \}}
+\DoxyCodeLine{00066\ \ \ \ \ std::unique\_ptr<\ ::grpc::ClientAsyncReaderWriterInterface<\ flatbuffers::grpc::Message<Monster>,\ \mbox{\hyperlink{classflatbuffers_1_1grpc_1_1Message}{flatbuffers::grpc::Message<Stat>}}>>\ \mbox{\hyperlink{classMyGame_1_1Example_1_1MonsterStorage_1_1StubInterface_af41a22ebf8d8353048fd43c51afdbabd}{AsyncGetMinMaxHitPoints}}(::grpc::ClientContext*\ context,\ ::grpc::CompletionQueue*\ cq,\ \textcolor{keywordtype}{void}*\ tag)\ \{}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ std::unique\_ptr<\ ::grpc::ClientAsyncReaderWriterInterface<\ flatbuffers::grpc::Message<Monster>,\ \mbox{\hyperlink{classflatbuffers_1_1grpc_1_1Message}{flatbuffers::grpc::Message<Stat>}}>>(AsyncGetMinMaxHitPointsRaw(context,\ cq,\ tag));}
+\DoxyCodeLine{00068\ \ \ \ \ \}}
+\DoxyCodeLine{00069\ \ \ \ \ std::unique\_ptr<\ ::grpc::ClientAsyncReaderWriterInterface<\ flatbuffers::grpc::Message<Monster>,\ \mbox{\hyperlink{classflatbuffers_1_1grpc_1_1Message}{flatbuffers::grpc::Message<Stat>}}>>\ \mbox{\hyperlink{classMyGame_1_1Example_1_1MonsterStorage_1_1StubInterface_ad296d18a263540e87ad206e0ccb37980}{PrepareAsyncGetMinMaxHitPoints}}(::grpc::ClientContext*\ context,\ ::grpc::CompletionQueue*\ cq)\ \{}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ std::unique\_ptr<\ ::grpc::ClientAsyncReaderWriterInterface<\ flatbuffers::grpc::Message<Monster>,\ \mbox{\hyperlink{classflatbuffers_1_1grpc_1_1Message}{flatbuffers::grpc::Message<Stat>}}>>(PrepareAsyncGetMinMaxHitPointsRaw(context,\ cq));}
+\DoxyCodeLine{00071\ \ \ \ \ \}}
+\DoxyCodeLine{00072\ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00073\ \ \ \ \ virtual\ ::grpc::ClientAsyncResponseReaderInterface<\ flatbuffers::grpc::Message<Stat>>*\ AsyncStoreRaw(::grpc::ClientContext*\ context,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classflatbuffers_1_1grpc_1_1Message}{flatbuffers::grpc::Message<Monster>}}\&\ request,\ ::grpc::CompletionQueue*\ cq)\ =\ 0;}
+\DoxyCodeLine{00074\ \ \ \ \ virtual\ ::grpc::ClientAsyncResponseReaderInterface<\ flatbuffers::grpc::Message<Stat>>*\ PrepareAsyncStoreRaw(::grpc::ClientContext*\ context,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classflatbuffers_1_1grpc_1_1Message}{flatbuffers::grpc::Message<Monster>}}\&\ request,\ ::grpc::CompletionQueue*\ cq)\ =\ 0;}
+\DoxyCodeLine{00075\ \ \ \ \ virtual\ ::grpc::ClientReaderInterface<\ flatbuffers::grpc::Message<Monster>>*\ RetrieveRaw(::grpc::ClientContext*\ context,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classflatbuffers_1_1grpc_1_1Message}{flatbuffers::grpc::Message<Stat>}}\&\ request)\ =\ 0;}
+\DoxyCodeLine{00076\ \ \ \ \ virtual\ ::grpc::ClientAsyncReaderInterface<\ flatbuffers::grpc::Message<Monster>>*\ AsyncRetrieveRaw(::grpc::ClientContext*\ context,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classflatbuffers_1_1grpc_1_1Message}{flatbuffers::grpc::Message<Stat>}}\&\ request,\ ::grpc::CompletionQueue*\ cq,\ \textcolor{keywordtype}{void}*\ tag)\ =\ 0;}
+\DoxyCodeLine{00077\ \ \ \ \ virtual\ ::grpc::ClientAsyncReaderInterface<\ flatbuffers::grpc::Message<Monster>>*\ PrepareAsyncRetrieveRaw(::grpc::ClientContext*\ context,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classflatbuffers_1_1grpc_1_1Message}{flatbuffers::grpc::Message<Stat>}}\&\ request,\ ::grpc::CompletionQueue*\ cq)\ =\ 0;}
+\DoxyCodeLine{00078\ \ \ \ \ virtual\ ::grpc::ClientWriterInterface<\ flatbuffers::grpc::Message<Monster>>*\ GetMaxHitPointRaw(::grpc::ClientContext*\ context,\ \mbox{\hyperlink{classflatbuffers_1_1grpc_1_1Message}{flatbuffers::grpc::Message<Stat>}}*\ response)\ =\ 0;}
+\DoxyCodeLine{00079\ \ \ \ \ virtual\ ::grpc::ClientAsyncWriterInterface<\ flatbuffers::grpc::Message<Monster>>*\ AsyncGetMaxHitPointRaw(::grpc::ClientContext*\ context,\ \mbox{\hyperlink{classflatbuffers_1_1grpc_1_1Message}{flatbuffers::grpc::Message<Stat>}}*\ response,\ ::grpc::CompletionQueue*\ cq,\ \textcolor{keywordtype}{void}*\ tag)\ =\ 0;}
+\DoxyCodeLine{00080\ \ \ \ \ virtual\ ::grpc::ClientAsyncWriterInterface<\ flatbuffers::grpc::Message<Monster>>*\ PrepareAsyncGetMaxHitPointRaw(::grpc::ClientContext*\ context,\ \mbox{\hyperlink{classflatbuffers_1_1grpc_1_1Message}{flatbuffers::grpc::Message<Stat>}}*\ response,\ ::grpc::CompletionQueue*\ cq)\ =\ 0;}
+\DoxyCodeLine{00081\ \ \ \ \ virtual\ ::grpc::ClientReaderWriterInterface<\ flatbuffers::grpc::Message<Monster>,\ \mbox{\hyperlink{classflatbuffers_1_1grpc_1_1Message}{flatbuffers::grpc::Message<Stat>}}>*\ GetMinMaxHitPointsRaw(::grpc::ClientContext*\ context)\ =\ 0;}
+\DoxyCodeLine{00082\ \ \ \ \ virtual\ ::grpc::ClientAsyncReaderWriterInterface<\ flatbuffers::grpc::Message<Monster>,\ \mbox{\hyperlink{classflatbuffers_1_1grpc_1_1Message}{flatbuffers::grpc::Message<Stat>}}>*\ AsyncGetMinMaxHitPointsRaw(::grpc::ClientContext*\ context,\ ::grpc::CompletionQueue*\ cq,\ \textcolor{keywordtype}{void}*\ tag)\ =\ 0;}
+\DoxyCodeLine{00083\ \ \ \ \ virtual\ ::grpc::ClientAsyncReaderWriterInterface<\ flatbuffers::grpc::Message<Monster>,\ \mbox{\hyperlink{classflatbuffers_1_1grpc_1_1Message}{flatbuffers::grpc::Message<Stat>}}>*\ PrepareAsyncGetMinMaxHitPointsRaw(::grpc::ClientContext*\ context,\ ::grpc::CompletionQueue*\ cq)\ =\ 0;}
+\DoxyCodeLine{00084\ \ \ \};}
+\DoxyCodeLine{00085\ \ \ \textcolor{keyword}{class\ }Stub\ final\ :\ \textcolor{keyword}{public}\ StubInterface\ \{}
+\DoxyCodeLine{00086\ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00087\ \ \ \ \ \mbox{\hyperlink{classMyGame_1_1Example_1_1MonsterStorage_1_1Stub_a1aeeb7e82783d087e3acbf14a53f4bed}{Stub}}(\textcolor{keyword}{const}\ std::shared\_ptr<\ ::grpc::ChannelInterface>\&\ channel);}
+\DoxyCodeLine{00088\ \ \ \ \ ::grpc::Status\ \mbox{\hyperlink{classMyGame_1_1Example_1_1MonsterStorage_1_1Stub_aa325fc0125301a35dc5cf1a99e233ff9}{Store}}(::grpc::ClientContext*\ context,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classflatbuffers_1_1grpc_1_1Message}{flatbuffers::grpc::Message<Monster>}}\&\ request,\ \mbox{\hyperlink{classflatbuffers_1_1grpc_1_1Message}{flatbuffers::grpc::Message<Stat>}}*\ response)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00089\ \ \ \ \ std::unique\_ptr<\ ::grpc::ClientAsyncResponseReader<\ flatbuffers::grpc::Message<Stat>>>\ \mbox{\hyperlink{classMyGame_1_1Example_1_1MonsterStorage_1_1Stub_a9f0cf0eb8ed8f3e80fd5d6753862d823}{AsyncStore}}(::grpc::ClientContext*\ context,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classflatbuffers_1_1grpc_1_1Message}{flatbuffers::grpc::Message<Monster>}}\&\ request,\ ::grpc::CompletionQueue*\ cq)\ \{}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ std::unique\_ptr<\ ::grpc::ClientAsyncResponseReader<\ flatbuffers::grpc::Message<Stat>>>(AsyncStoreRaw(context,\ request,\ cq));}
+\DoxyCodeLine{00091\ \ \ \ \ \}}
+\DoxyCodeLine{00092\ \ \ \ \ std::unique\_ptr<\ ::grpc::ClientAsyncResponseReader<\ flatbuffers::grpc::Message<Stat>>>\ \mbox{\hyperlink{classMyGame_1_1Example_1_1MonsterStorage_1_1Stub_af1b0b90889b96106c7c8cfcfa162ba59}{PrepareAsyncStore}}(::grpc::ClientContext*\ context,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classflatbuffers_1_1grpc_1_1Message}{flatbuffers::grpc::Message<Monster>}}\&\ request,\ ::grpc::CompletionQueue*\ cq)\ \{}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ std::unique\_ptr<\ ::grpc::ClientAsyncResponseReader<\ flatbuffers::grpc::Message<Stat>>>(PrepareAsyncStoreRaw(context,\ request,\ cq));}
+\DoxyCodeLine{00094\ \ \ \ \ \}}
+\DoxyCodeLine{00095\ \ \ \ \ std::unique\_ptr<\ ::grpc::ClientReader<\ flatbuffers::grpc::Message<Monster>>>\ \mbox{\hyperlink{classMyGame_1_1Example_1_1MonsterStorage_1_1Stub_a3d5cbb4027794fc2c191da6260f4503e}{Retrieve}}(::grpc::ClientContext*\ context,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classflatbuffers_1_1grpc_1_1Message}{flatbuffers::grpc::Message<Stat>}}\&\ request)\ \{}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ std::unique\_ptr<\ ::grpc::ClientReader<\ flatbuffers::grpc::Message<Monster>>>(RetrieveRaw(context,\ request));}
+\DoxyCodeLine{00097\ \ \ \ \ \}}
+\DoxyCodeLine{00098\ \ \ \ \ std::unique\_ptr<\ ::grpc::ClientAsyncReader<\ flatbuffers::grpc::Message<Monster>>>\ \mbox{\hyperlink{classMyGame_1_1Example_1_1MonsterStorage_1_1Stub_a109e041e7e7659af3f38a9d854fc3b61}{AsyncRetrieve}}(::grpc::ClientContext*\ context,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classflatbuffers_1_1grpc_1_1Message}{flatbuffers::grpc::Message<Stat>}}\&\ request,\ ::grpc::CompletionQueue*\ cq,\ \textcolor{keywordtype}{void}*\ tag)\ \{}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ std::unique\_ptr<\ ::grpc::ClientAsyncReader<\ flatbuffers::grpc::Message<Monster>>>(AsyncRetrieveRaw(context,\ request,\ cq,\ tag));}
+\DoxyCodeLine{00100\ \ \ \ \ \}}
+\DoxyCodeLine{00101\ \ \ \ \ std::unique\_ptr<\ ::grpc::ClientAsyncReader<\ flatbuffers::grpc::Message<Monster>>>\ \mbox{\hyperlink{classMyGame_1_1Example_1_1MonsterStorage_1_1Stub_a774d781331955722b9af04444375b7a0}{PrepareAsyncRetrieve}}(::grpc::ClientContext*\ context,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classflatbuffers_1_1grpc_1_1Message}{flatbuffers::grpc::Message<Stat>}}\&\ request,\ ::grpc::CompletionQueue*\ cq)\ \{}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ std::unique\_ptr<\ ::grpc::ClientAsyncReader<\ flatbuffers::grpc::Message<Monster>>>(PrepareAsyncRetrieveRaw(context,\ request,\ cq));}
+\DoxyCodeLine{00103\ \ \ \ \ \}}
+\DoxyCodeLine{00104\ \ \ \ \ std::unique\_ptr<\ ::grpc::ClientWriter<\ flatbuffers::grpc::Message<Monster>>>\ \mbox{\hyperlink{classMyGame_1_1Example_1_1MonsterStorage_1_1Stub_a0b6283c25910b63d5dc8724fcd625d71}{GetMaxHitPoint}}(::grpc::ClientContext*\ context,\ \mbox{\hyperlink{classflatbuffers_1_1grpc_1_1Message}{flatbuffers::grpc::Message<Stat>}}*\ response)\ \{}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ std::unique\_ptr<\ ::grpc::ClientWriter<\ flatbuffers::grpc::Message<Monster>>>(GetMaxHitPointRaw(context,\ response));}
+\DoxyCodeLine{00106\ \ \ \ \ \}}
+\DoxyCodeLine{00107\ \ \ \ \ std::unique\_ptr<\ ::grpc::ClientAsyncWriter<\ flatbuffers::grpc::Message<Monster>>>\ \mbox{\hyperlink{classMyGame_1_1Example_1_1MonsterStorage_1_1Stub_aa61dbbcef61eff1279d33697f1a5a2c2}{AsyncGetMaxHitPoint}}(::grpc::ClientContext*\ context,\ \mbox{\hyperlink{classflatbuffers_1_1grpc_1_1Message}{flatbuffers::grpc::Message<Stat>}}*\ response,\ ::grpc::CompletionQueue*\ cq,\ \textcolor{keywordtype}{void}*\ tag)\ \{}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ std::unique\_ptr<\ ::grpc::ClientAsyncWriter<\ flatbuffers::grpc::Message<Monster>>>(AsyncGetMaxHitPointRaw(context,\ response,\ cq,\ tag));}
+\DoxyCodeLine{00109\ \ \ \ \ \}}
+\DoxyCodeLine{00110\ \ \ \ \ std::unique\_ptr<\ ::grpc::ClientAsyncWriter<\ flatbuffers::grpc::Message<Monster>>>\ \mbox{\hyperlink{classMyGame_1_1Example_1_1MonsterStorage_1_1Stub_ab3e50bf522fde03527bf33cedd82e58d}{PrepareAsyncGetMaxHitPoint}}(::grpc::ClientContext*\ context,\ \mbox{\hyperlink{classflatbuffers_1_1grpc_1_1Message}{flatbuffers::grpc::Message<Stat>}}*\ response,\ ::grpc::CompletionQueue*\ cq)\ \{}
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ std::unique\_ptr<\ ::grpc::ClientAsyncWriter<\ flatbuffers::grpc::Message<Monster>>>(PrepareAsyncGetMaxHitPointRaw(context,\ response,\ cq));}
+\DoxyCodeLine{00112\ \ \ \ \ \}}
+\DoxyCodeLine{00113\ \ \ \ \ std::unique\_ptr<\ ::grpc::ClientReaderWriter<\ flatbuffers::grpc::Message<Monster>,\ \mbox{\hyperlink{classflatbuffers_1_1grpc_1_1Message}{flatbuffers::grpc::Message<Stat>}}>>\ \mbox{\hyperlink{classMyGame_1_1Example_1_1MonsterStorage_1_1Stub_ad3c00beb6c9be54f38a02c1b2adde0b2}{GetMinMaxHitPoints}}(::grpc::ClientContext*\ context)\ \{}
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ std::unique\_ptr<\ ::grpc::ClientReaderWriter<\ flatbuffers::grpc::Message<Monster>,\ \mbox{\hyperlink{classflatbuffers_1_1grpc_1_1Message}{flatbuffers::grpc::Message<Stat>}}>>(GetMinMaxHitPointsRaw(context));}
+\DoxyCodeLine{00115\ \ \ \ \ \}}
+\DoxyCodeLine{00116\ \ \ \ \ std::unique\_ptr<\ \ ::grpc::ClientAsyncReaderWriter<\ flatbuffers::grpc::Message<Monster>,\ \mbox{\hyperlink{classflatbuffers_1_1grpc_1_1Message}{flatbuffers::grpc::Message<Stat>}}>>\ \mbox{\hyperlink{classMyGame_1_1Example_1_1MonsterStorage_1_1Stub_a1a9de01255060ab8d62e25777a2a4b48}{AsyncGetMinMaxHitPoints}}(::grpc::ClientContext*\ context,\ ::grpc::CompletionQueue*\ cq,\ \textcolor{keywordtype}{void}*\ tag)\ \{}
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ std::unique\_ptr<\ ::grpc::ClientAsyncReaderWriter<\ flatbuffers::grpc::Message<Monster>,\ \mbox{\hyperlink{classflatbuffers_1_1grpc_1_1Message}{flatbuffers::grpc::Message<Stat>}}>>(AsyncGetMinMaxHitPointsRaw(context,\ cq,\ tag));}
+\DoxyCodeLine{00118\ \ \ \ \ \}}
+\DoxyCodeLine{00119\ \ \ \ \ std::unique\_ptr<\ \ ::grpc::ClientAsyncReaderWriter<\ flatbuffers::grpc::Message<Monster>,\ \mbox{\hyperlink{classflatbuffers_1_1grpc_1_1Message}{flatbuffers::grpc::Message<Stat>}}>>\ \mbox{\hyperlink{classMyGame_1_1Example_1_1MonsterStorage_1_1Stub_a12fc851513a81428227ec9ba0daf3171}{PrepareAsyncGetMinMaxHitPoints}}(::grpc::ClientContext*\ context,\ ::grpc::CompletionQueue*\ cq)\ \{}
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ std::unique\_ptr<\ ::grpc::ClientAsyncReaderWriter<\ flatbuffers::grpc::Message<Monster>,\ \mbox{\hyperlink{classflatbuffers_1_1grpc_1_1Message}{flatbuffers::grpc::Message<Stat>}}>>(PrepareAsyncGetMinMaxHitPointsRaw(context,\ cq));}
+\DoxyCodeLine{00121\ \ \ \ \ \}}
+\DoxyCodeLine{00122\ \ \ }
+\DoxyCodeLine{00123\ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00124\ \ \ \ \ std::shared\_ptr<\ ::grpc::ChannelInterface>\ channel\_;}
+\DoxyCodeLine{00125\ \ \ \ \ ::grpc::ClientAsyncResponseReader<\ flatbuffers::grpc::Message<Stat>>*\ AsyncStoreRaw(::grpc::ClientContext*\ context,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classflatbuffers_1_1grpc_1_1Message}{flatbuffers::grpc::Message<Monster>}}\&\ request,\ ::grpc::CompletionQueue*\ cq)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00126\ \ \ \ \ ::grpc::ClientAsyncResponseReader<\ flatbuffers::grpc::Message<Stat>>*\ PrepareAsyncStoreRaw(::grpc::ClientContext*\ context,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classflatbuffers_1_1grpc_1_1Message}{flatbuffers::grpc::Message<Monster>}}\&\ request,\ ::grpc::CompletionQueue*\ cq)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00127\ \ \ \ \ ::grpc::ClientReader<\ flatbuffers::grpc::Message<Monster>>*\ RetrieveRaw(::grpc::ClientContext*\ context,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classflatbuffers_1_1grpc_1_1Message}{flatbuffers::grpc::Message<Stat>}}\&\ request)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00128\ \ \ \ \ ::grpc::ClientAsyncReader<\ flatbuffers::grpc::Message<Monster>>*\ AsyncRetrieveRaw(::grpc::ClientContext*\ context,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classflatbuffers_1_1grpc_1_1Message}{flatbuffers::grpc::Message<Stat>}}\&\ request,\ ::grpc::CompletionQueue*\ cq,\ \textcolor{keywordtype}{void}*\ tag)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00129\ \ \ \ \ ::grpc::ClientAsyncReader<\ flatbuffers::grpc::Message<Monster>>*\ PrepareAsyncRetrieveRaw(::grpc::ClientContext*\ context,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classflatbuffers_1_1grpc_1_1Message}{flatbuffers::grpc::Message<Stat>}}\&\ request,\ ::grpc::CompletionQueue*\ cq)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00130\ \ \ \ \ ::grpc::ClientWriter<\ flatbuffers::grpc::Message<Monster>>*\ GetMaxHitPointRaw(::grpc::ClientContext*\ context,\ \mbox{\hyperlink{classflatbuffers_1_1grpc_1_1Message}{flatbuffers::grpc::Message<Stat>}}*\ response)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00131\ \ \ \ \ ::grpc::ClientAsyncWriter<\ flatbuffers::grpc::Message<Monster>>*\ AsyncGetMaxHitPointRaw(::grpc::ClientContext*\ context,\ \mbox{\hyperlink{classflatbuffers_1_1grpc_1_1Message}{flatbuffers::grpc::Message<Stat>}}*\ response,\ ::grpc::CompletionQueue*\ cq,\ \textcolor{keywordtype}{void}*\ tag)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00132\ \ \ \ \ ::grpc::ClientAsyncWriter<\ flatbuffers::grpc::Message<Monster>>*\ PrepareAsyncGetMaxHitPointRaw(::grpc::ClientContext*\ context,\ \mbox{\hyperlink{classflatbuffers_1_1grpc_1_1Message}{flatbuffers::grpc::Message<Stat>}}*\ response,\ ::grpc::CompletionQueue*\ cq)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00133\ \ \ \ \ ::grpc::ClientReaderWriter<\ flatbuffers::grpc::Message<Monster>,\ \mbox{\hyperlink{classflatbuffers_1_1grpc_1_1Message}{flatbuffers::grpc::Message<Stat>}}>*\ GetMinMaxHitPointsRaw(::grpc::ClientContext*\ context)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00134\ \ \ \ \ ::grpc::ClientAsyncReaderWriter<\ flatbuffers::grpc::Message<Monster>,\ \mbox{\hyperlink{classflatbuffers_1_1grpc_1_1Message}{flatbuffers::grpc::Message<Stat>}}>*\ AsyncGetMinMaxHitPointsRaw(::grpc::ClientContext*\ context,\ ::grpc::CompletionQueue*\ cq,\ \textcolor{keywordtype}{void}*\ tag)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00135\ \ \ \ \ ::grpc::ClientAsyncReaderWriter<\ flatbuffers::grpc::Message<Monster>,\ \mbox{\hyperlink{classflatbuffers_1_1grpc_1_1Message}{flatbuffers::grpc::Message<Stat>}}>*\ PrepareAsyncGetMinMaxHitPointsRaw(::grpc::ClientContext*\ context,\ ::grpc::CompletionQueue*\ cq)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00136\ \ \ \ \ const\ ::grpc::internal::RpcMethod\ rpcmethod\_Store\_;}
+\DoxyCodeLine{00137\ \ \ \ \ const\ ::grpc::internal::RpcMethod\ rpcmethod\_Retrieve\_;}
+\DoxyCodeLine{00138\ \ \ \ \ const\ ::grpc::internal::RpcMethod\ rpcmethod\_GetMaxHitPoint\_;}
+\DoxyCodeLine{00139\ \ \ \ \ const\ ::grpc::internal::RpcMethod\ rpcmethod\_GetMinMaxHitPoints\_;}
+\DoxyCodeLine{00140\ \ \ \};}
+\DoxyCodeLine{00141\ \ \ \textcolor{keyword}{static}\ std::unique\_ptr<Stub>\ \mbox{\hyperlink{classMyGame_1_1Example_1_1MonsterStorage_a62c511f95480c03378f49aed03ac0fad}{NewStub}}(\textcolor{keyword}{const}\ std::shared\_ptr<\ ::grpc::ChannelInterface>\&\ channel,\ const\ ::grpc::StubOptions\&\ options\ =\ ::grpc::StubOptions());}
+\DoxyCodeLine{00142\ \ \ }
+\DoxyCodeLine{00143\ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classMyGame_1_1Example_1_1MonsterStorage_1_1Service}{Service}}\ :\ \textcolor{keyword}{public}\ ::grpc::Service\ \{}
+\DoxyCodeLine{00144\ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00145\ \ \ \ \ \mbox{\hyperlink{classMyGame_1_1Example_1_1MonsterStorage_1_1Service_ac27be268d0bd90179a47dc66e13159d8}{Service}}();}
+\DoxyCodeLine{00146\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classMyGame_1_1Example_1_1MonsterStorage_1_1Service_a50c329f1771db6c05cbe25a8f1e3bd78}{\string~Service}}();}
+\DoxyCodeLine{00147\ \ \ \ \ virtual\ ::grpc::Status\ \mbox{\hyperlink{classMyGame_1_1Example_1_1MonsterStorage_1_1Service_ab16917282b99d5c40dd1796870eaa07c}{Store}}(::grpc::ServerContext*\ context,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classflatbuffers_1_1grpc_1_1Message}{flatbuffers::grpc::Message<Monster>}}*\ request,\ \mbox{\hyperlink{classflatbuffers_1_1grpc_1_1Message}{flatbuffers::grpc::Message<Stat>}}*\ response);}
+\DoxyCodeLine{00148\ \ \ \ \ virtual\ ::grpc::Status\ \mbox{\hyperlink{classMyGame_1_1Example_1_1MonsterStorage_1_1Service_ad6d3b52bca9b82ba9f5453e6a20b9ffb}{Retrieve}}(::grpc::ServerContext*\ context,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classflatbuffers_1_1grpc_1_1Message}{flatbuffers::grpc::Message<Stat>}}*\ request,\ ::grpc::ServerWriter<\ \mbox{\hyperlink{classflatbuffers_1_1grpc_1_1Message}{flatbuffers::grpc::Message<Monster>}}>*\ writer);}
+\DoxyCodeLine{00149\ \ \ \ \ virtual\ ::grpc::Status\ \mbox{\hyperlink{classMyGame_1_1Example_1_1MonsterStorage_1_1Service_ac3921573b25b94ccdb903ff92fe0a673}{GetMaxHitPoint}}(::grpc::ServerContext*\ context,\ ::grpc::ServerReader<\ \mbox{\hyperlink{classflatbuffers_1_1grpc_1_1Message}{flatbuffers::grpc::Message<Monster>}}>*\ reader,\ \mbox{\hyperlink{classflatbuffers_1_1grpc_1_1Message}{flatbuffers::grpc::Message<Stat>}}*\ response);}
+\DoxyCodeLine{00150\ \ \ \ \ virtual\ ::grpc::Status\ \mbox{\hyperlink{classMyGame_1_1Example_1_1MonsterStorage_1_1Service_aa1ef84d3e9aa7702f94ec55803d61cb4}{GetMinMaxHitPoints}}(::grpc::ServerContext*\ context,\ ::grpc::ServerReaderWriter<\ \mbox{\hyperlink{classflatbuffers_1_1grpc_1_1Message}{flatbuffers::grpc::Message<Stat>}},\ \mbox{\hyperlink{classflatbuffers_1_1grpc_1_1Message}{flatbuffers::grpc::Message<Monster>}}>*\ stream);}
+\DoxyCodeLine{00151\ \ \ \};}
+\DoxyCodeLine{00152\ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{class}\ BaseClass>}
+\DoxyCodeLine{00153\ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classMyGame_1_1Example_1_1MonsterStorage_1_1WithAsyncMethod__Store}{WithAsyncMethod\_Store}}\ :\ \textcolor{keyword}{public}\ BaseClass\ \{}
+\DoxyCodeLine{00154\ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00155\ \ \ \ \ \textcolor{keywordtype}{void}\ BaseClassMustBeDerivedFromService(\textcolor{keyword}{const}\ \mbox{\hyperlink{classMyGame_1_1Example_1_1MonsterStorage_1_1Service}{Service}}\ *\textcolor{comment}{/*service*/})\ \{\}}
+\DoxyCodeLine{00156\ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00157\ \ \ \ \ \mbox{\hyperlink{classMyGame_1_1Example_1_1MonsterStorage_1_1WithAsyncMethod__Store_a6c6082cd34af66d516a90d42afca5c90}{WithAsyncMethod\_Store}}()\ \{}
+\DoxyCodeLine{00158\ \ \ \ \ \ \ ::grpc::Service::MarkMethodAsync(0);}
+\DoxyCodeLine{00159\ \ \ \ \ \}}
+\DoxyCodeLine{00160\ \ \ \ \ \mbox{\hyperlink{classMyGame_1_1Example_1_1MonsterStorage_1_1WithAsyncMethod__Store_ab23fca4401ce6b9a00e8b3366203aece}{\string~WithAsyncMethod\_Store}}()\textcolor{keyword}{\ override\ }\{}
+\DoxyCodeLine{00161\ \ \ \ \ \ \ BaseClassMustBeDerivedFromService(\textcolor{keyword}{this});}
+\DoxyCodeLine{00162\ \ \ \ \ \}}
+\DoxyCodeLine{00163\ \ \ \ \ \textcolor{comment}{//\ disable\ synchronous\ version\ of\ this\ method}}
+\DoxyCodeLine{00164\ \ \ \ \ ::grpc::Status\ \mbox{\hyperlink{classMyGame_1_1Example_1_1MonsterStorage_1_1WithAsyncMethod__Store_a5d7a2ba6ede2f5a0bede3de54f90ea4f}{Store}}(::grpc::ServerContext*\ \textcolor{comment}{/*context*/},\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classflatbuffers_1_1grpc_1_1Message}{flatbuffers::grpc::Message<Monster>}}*\ \textcolor{comment}{/*request*/},\ \mbox{\hyperlink{classflatbuffers_1_1grpc_1_1Message}{flatbuffers::grpc::Message<Stat>}}*\ \textcolor{comment}{/*response*/})\ \textcolor{keyword}{final}\ \textcolor{keyword}{override}\ \{}
+\DoxyCodeLine{00165\ \ \ \ \ \ \ abort();}
+\DoxyCodeLine{00166\ \ \ \ \ \ \ return\ ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED,\ \textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{00167\ \ \ \ \ \}}
+\DoxyCodeLine{00168\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classMyGame_1_1Example_1_1MonsterStorage_1_1WithAsyncMethod__Store_a403daa625d5f0e26a4d73eb2f4ef5f14}{RequestStore}}(::grpc::ServerContext*\ context,\ \mbox{\hyperlink{classflatbuffers_1_1grpc_1_1Message}{flatbuffers::grpc::Message<Monster>}}*\ request,\ ::grpc::ServerAsyncResponseWriter<\ \mbox{\hyperlink{classflatbuffers_1_1grpc_1_1Message}{flatbuffers::grpc::Message<Stat>}}>*\ response,\ ::grpc::CompletionQueue*\ new\_call\_cq,\ ::grpc::ServerCompletionQueue*\ notification\_cq,\ \textcolor{keywordtype}{void}\ *tag)\ \{}
+\DoxyCodeLine{00169\ \ \ \ \ \ \ ::grpc::Service::RequestAsyncUnary(0,\ context,\ request,\ response,\ new\_call\_cq,\ notification\_cq,\ tag);}
+\DoxyCodeLine{00170\ \ \ \ \ \}}
+\DoxyCodeLine{00171\ \ \ \};}
+\DoxyCodeLine{00172\ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{class}\ BaseClass>}
+\DoxyCodeLine{00173\ \ \ \textcolor{keyword}{class\ }WithAsyncMethod\_Retrieve\ :\ \textcolor{keyword}{public}\ BaseClass\ \{}
+\DoxyCodeLine{00174\ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00175\ \ \ \ \ \textcolor{keywordtype}{void}\ BaseClassMustBeDerivedFromService(\textcolor{keyword}{const}\ Service\ *\textcolor{comment}{/*service*/})\ \{\}}
+\DoxyCodeLine{00176\ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00177\ \ \ \ \ \mbox{\hyperlink{classMyGame_1_1Example_1_1MonsterStorage_1_1WithAsyncMethod__Retrieve_af9094a324dd7dceb11aaadb3c816200a}{WithAsyncMethod\_Retrieve}}()\ \{}
+\DoxyCodeLine{00178\ \ \ \ \ \ \ ::grpc::Service::MarkMethodAsync(1);}
+\DoxyCodeLine{00179\ \ \ \ \ \}}
+\DoxyCodeLine{00180\ \ \ \ \ \mbox{\hyperlink{classMyGame_1_1Example_1_1MonsterStorage_1_1WithAsyncMethod__Retrieve_a9de528b15d5b0937de7ca723529ceb06}{\string~WithAsyncMethod\_Retrieve}}()\textcolor{keyword}{\ override\ }\{}
+\DoxyCodeLine{00181\ \ \ \ \ \ \ BaseClassMustBeDerivedFromService(\textcolor{keyword}{this});}
+\DoxyCodeLine{00182\ \ \ \ \ \}}
+\DoxyCodeLine{00183\ \ \ \ \ \textcolor{comment}{//\ disable\ synchronous\ version\ of\ this\ method}}
+\DoxyCodeLine{00184\ \ \ \ \ ::grpc::Status\ \mbox{\hyperlink{classMyGame_1_1Example_1_1MonsterStorage_1_1WithAsyncMethod__Retrieve_a2c4f9b39a4565943e283465ba6977721}{Retrieve}}(::grpc::ServerContext*\ \textcolor{comment}{/*context*/},\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classflatbuffers_1_1grpc_1_1Message}{flatbuffers::grpc::Message<Stat>}}*\ \textcolor{comment}{/*request*/},\ ::grpc::ServerWriter<\ \mbox{\hyperlink{classflatbuffers_1_1grpc_1_1Message}{flatbuffers::grpc::Message<Monster>}}>*\ \textcolor{comment}{/*writer*/})\ final\textcolor{keyword}{\ override\ }\{}
+\DoxyCodeLine{00185\ \ \ \ \ \ \ abort();}
+\DoxyCodeLine{00186\ \ \ \ \ \ \ return\ ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED,\ \textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{00187\ \ \ \ \ \}}
+\DoxyCodeLine{00188\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classMyGame_1_1Example_1_1MonsterStorage_1_1WithAsyncMethod__Retrieve_a95797ff4c5c97eb96eea41e662862a34}{RequestRetrieve}}(::grpc::ServerContext*\ context,\ \mbox{\hyperlink{classflatbuffers_1_1grpc_1_1Message}{flatbuffers::grpc::Message<Stat>}}*\ request,\ ::grpc::ServerAsyncWriter<\ \mbox{\hyperlink{classflatbuffers_1_1grpc_1_1Message}{flatbuffers::grpc::Message<Monster>}}>*\ writer,\ ::grpc::CompletionQueue*\ new\_call\_cq,\ ::grpc::ServerCompletionQueue*\ notification\_cq,\ \textcolor{keywordtype}{void}\ *tag)\ \{}
+\DoxyCodeLine{00189\ \ \ \ \ \ \ ::grpc::Service::RequestAsyncServerStreaming(1,\ context,\ request,\ writer,\ new\_call\_cq,\ notification\_cq,\ tag);}
+\DoxyCodeLine{00190\ \ \ \ \ \}}
+\DoxyCodeLine{00191\ \ \ \};}
+\DoxyCodeLine{00192\ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{class}\ BaseClass>}
+\DoxyCodeLine{00193\ \ \ \textcolor{keyword}{class\ }WithAsyncMethod\_GetMaxHitPoint\ :\ \textcolor{keyword}{public}\ BaseClass\ \{}
+\DoxyCodeLine{00194\ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00195\ \ \ \ \ \textcolor{keywordtype}{void}\ BaseClassMustBeDerivedFromService(\textcolor{keyword}{const}\ Service\ *\textcolor{comment}{/*service*/})\ \{\}}
+\DoxyCodeLine{00196\ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00197\ \ \ \ \ \mbox{\hyperlink{classMyGame_1_1Example_1_1MonsterStorage_1_1WithAsyncMethod__GetMaxHitPoint_a8b17201b5ec85cdb933baf1c02e64a6f}{WithAsyncMethod\_GetMaxHitPoint}}()\ \{}
+\DoxyCodeLine{00198\ \ \ \ \ \ \ ::grpc::Service::MarkMethodAsync(2);}
+\DoxyCodeLine{00199\ \ \ \ \ \}}
+\DoxyCodeLine{00200\ \ \ \ \ \mbox{\hyperlink{classMyGame_1_1Example_1_1MonsterStorage_1_1WithAsyncMethod__GetMaxHitPoint_ad26bff5b140b677b32ff8b735cf23f90}{\string~WithAsyncMethod\_GetMaxHitPoint}}()\textcolor{keyword}{\ override\ }\{}
+\DoxyCodeLine{00201\ \ \ \ \ \ \ BaseClassMustBeDerivedFromService(\textcolor{keyword}{this});}
+\DoxyCodeLine{00202\ \ \ \ \ \}}
+\DoxyCodeLine{00203\ \ \ \ \ \textcolor{comment}{//\ disable\ synchronous\ version\ of\ this\ method}}
+\DoxyCodeLine{00204\ \ \ \ \ ::grpc::Status\ \mbox{\hyperlink{classMyGame_1_1Example_1_1MonsterStorage_1_1WithAsyncMethod__GetMaxHitPoint_a9a3d6848e4fe26d98d79b0af3ad8ea45}{GetMaxHitPoint}}(::grpc::ServerContext*\ \textcolor{comment}{/*context*/},\ ::grpc::ServerReader<\ \mbox{\hyperlink{classflatbuffers_1_1grpc_1_1Message}{flatbuffers::grpc::Message<Monster>}}>*\ \textcolor{comment}{/*reader*/},\ \mbox{\hyperlink{classflatbuffers_1_1grpc_1_1Message}{flatbuffers::grpc::Message<Stat>}}*\ response)\ \textcolor{keyword}{final}\ \textcolor{keyword}{override}\ \{}
+\DoxyCodeLine{00205\ \ \ \ \ \ \ abort();}
+\DoxyCodeLine{00206\ \ \ \ \ \ \ return\ ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED,\ \textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{00207\ \ \ \ \ \}}
+\DoxyCodeLine{00208\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classMyGame_1_1Example_1_1MonsterStorage_1_1WithAsyncMethod__GetMaxHitPoint_a8485ab98a5fa55749453c107c13e48ad}{RequestGetMaxHitPoint}}(::grpc::ServerContext*\ context,\ ::grpc::ServerAsyncReader<\ \mbox{\hyperlink{classflatbuffers_1_1grpc_1_1Message}{flatbuffers::grpc::Message<Stat>}},\ \mbox{\hyperlink{classflatbuffers_1_1grpc_1_1Message}{flatbuffers::grpc::Message<Monster>}}>*\ reader,\ ::grpc::CompletionQueue*\ new\_call\_cq,\ ::grpc::ServerCompletionQueue*\ notification\_cq,\ \textcolor{keywordtype}{void}\ *tag)\ \{}
+\DoxyCodeLine{00209\ \ \ \ \ \ \ ::grpc::Service::RequestAsyncClientStreaming(2,\ context,\ reader,\ new\_call\_cq,\ notification\_cq,\ tag);}
+\DoxyCodeLine{00210\ \ \ \ \ \}}
+\DoxyCodeLine{00211\ \ \ \};}
+\DoxyCodeLine{00212\ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{class}\ BaseClass>}
+\DoxyCodeLine{00213\ \ \ \textcolor{keyword}{class\ }WithAsyncMethod\_GetMinMaxHitPoints\ :\ \textcolor{keyword}{public}\ BaseClass\ \{}
+\DoxyCodeLine{00214\ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00215\ \ \ \ \ \textcolor{keywordtype}{void}\ BaseClassMustBeDerivedFromService(\textcolor{keyword}{const}\ Service\ *\textcolor{comment}{/*service*/})\ \{\}}
+\DoxyCodeLine{00216\ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00217\ \ \ \ \ \mbox{\hyperlink{classMyGame_1_1Example_1_1MonsterStorage_1_1WithAsyncMethod__GetMinMaxHitPoints_abcda49843b839dd3505a07769030f534}{WithAsyncMethod\_GetMinMaxHitPoints}}()\ \{}
+\DoxyCodeLine{00218\ \ \ \ \ \ \ ::grpc::Service::MarkMethodAsync(3);}
+\DoxyCodeLine{00219\ \ \ \ \ \}}
+\DoxyCodeLine{00220\ \ \ \ \ \mbox{\hyperlink{classMyGame_1_1Example_1_1MonsterStorage_1_1WithAsyncMethod__GetMinMaxHitPoints_a9833eea20a922f39d1bc9c1f8b2804ac}{\string~WithAsyncMethod\_GetMinMaxHitPoints}}()\textcolor{keyword}{\ override\ }\{}
+\DoxyCodeLine{00221\ \ \ \ \ \ \ BaseClassMustBeDerivedFromService(\textcolor{keyword}{this});}
+\DoxyCodeLine{00222\ \ \ \ \ \}}
+\DoxyCodeLine{00223\ \ \ \ \ \textcolor{comment}{//\ disable\ synchronous\ version\ of\ this\ method}}
+\DoxyCodeLine{00224\ \ \ \ \ ::grpc::Status\ \mbox{\hyperlink{classMyGame_1_1Example_1_1MonsterStorage_1_1WithAsyncMethod__GetMinMaxHitPoints_a3e37d3b3e0352c9c435406b3a1a9cf65}{GetMinMaxHitPoints}}(::grpc::ServerContext*\ \textcolor{comment}{/*context*/},\ ::grpc::ServerReaderWriter<\ \mbox{\hyperlink{classflatbuffers_1_1grpc_1_1Message}{flatbuffers::grpc::Message<Stat>}},\ \mbox{\hyperlink{classflatbuffers_1_1grpc_1_1Message}{flatbuffers::grpc::Message<Monster>}}>*\ \textcolor{comment}{/*stream*/})\ final\textcolor{keyword}{\ override\ }\{}
+\DoxyCodeLine{00225\ \ \ \ \ \ \ abort();}
+\DoxyCodeLine{00226\ \ \ \ \ \ \ return\ ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED,\ \textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{00227\ \ \ \ \ \}}
+\DoxyCodeLine{00228\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classMyGame_1_1Example_1_1MonsterStorage_1_1WithAsyncMethod__GetMinMaxHitPoints_aa94d03d665baa44f2c816f63be917ba4}{RequestGetMinMaxHitPoints}}(::grpc::ServerContext*\ context,\ ::grpc::ServerAsyncReaderWriter<\ \mbox{\hyperlink{classflatbuffers_1_1grpc_1_1Message}{flatbuffers::grpc::Message<Stat>}},\ \mbox{\hyperlink{classflatbuffers_1_1grpc_1_1Message}{flatbuffers::grpc::Message<Monster>}}>*\ stream,\ ::grpc::CompletionQueue*\ new\_call\_cq,\ ::grpc::ServerCompletionQueue*\ notification\_cq,\ \textcolor{keywordtype}{void}\ *tag)\ \{}
+\DoxyCodeLine{00229\ \ \ \ \ \ \ ::grpc::Service::RequestAsyncBidiStreaming(3,\ context,\ stream,\ new\_call\_cq,\ notification\_cq,\ tag);}
+\DoxyCodeLine{00230\ \ \ \ \ \}}
+\DoxyCodeLine{00231\ \ \ \};}
+\DoxyCodeLine{00232\ \ \ \textcolor{keyword}{typedef}\ \ \ \mbox{\hyperlink{classMyGame_1_1Example_1_1MonsterStorage_1_1WithAsyncMethod__Store}{WithAsyncMethod\_Store<\ \ WithAsyncMethod\_Retrieve<\ \ WithAsyncMethod\_GetMaxHitPoint<\ \ WithAsyncMethod\_GetMinMaxHitPoints<\ \ Service\ \ \ >}}\ \ \ >\ \ \ >\ \ \ >\ \ \ \mbox{\hyperlink{classMyGame_1_1Example_1_1MonsterStorage_a3462de46d0c01a05fcff5d2147ac36d6}{AsyncService}};}
+\DoxyCodeLine{00233\ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{class}\ BaseClass>}
+\DoxyCodeLine{00234\ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classMyGame_1_1Example_1_1MonsterStorage_1_1WithGenericMethod__Store}{WithGenericMethod\_Store}}\ :\ \textcolor{keyword}{public}\ BaseClass\ \{}
+\DoxyCodeLine{00235\ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00236\ \ \ \ \ \textcolor{keywordtype}{void}\ BaseClassMustBeDerivedFromService(\textcolor{keyword}{const}\ \mbox{\hyperlink{classMyGame_1_1Example_1_1MonsterStorage_1_1Service}{Service}}\ *\textcolor{comment}{/*service*/})\ \{\}}
+\DoxyCodeLine{00237\ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00238\ \ \ \ \ \mbox{\hyperlink{classMyGame_1_1Example_1_1MonsterStorage_1_1WithGenericMethod__Store_a8bda225427e6dabbc004cd58e32c5bba}{WithGenericMethod\_Store}}()\ \{}
+\DoxyCodeLine{00239\ \ \ \ \ \ \ ::grpc::Service::MarkMethodGeneric(0);}
+\DoxyCodeLine{00240\ \ \ \ \ \}}
+\DoxyCodeLine{00241\ \ \ \ \ \mbox{\hyperlink{classMyGame_1_1Example_1_1MonsterStorage_1_1WithGenericMethod__Store_a92a2616021cb85bc67d7104987ad6b7f}{\string~WithGenericMethod\_Store}}()\textcolor{keyword}{\ override\ }\{}
+\DoxyCodeLine{00242\ \ \ \ \ \ \ BaseClassMustBeDerivedFromService(\textcolor{keyword}{this});}
+\DoxyCodeLine{00243\ \ \ \ \ \}}
+\DoxyCodeLine{00244\ \ \ \ \ \textcolor{comment}{//\ disable\ synchronous\ version\ of\ this\ method}}
+\DoxyCodeLine{00245\ \ \ \ \ ::grpc::Status\ \mbox{\hyperlink{classMyGame_1_1Example_1_1MonsterStorage_1_1WithGenericMethod__Store_a63b3db2abb849d5c2afe22ecbde3bf14}{Store}}(::grpc::ServerContext*\ \textcolor{comment}{/*context*/},\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classflatbuffers_1_1grpc_1_1Message}{flatbuffers::grpc::Message<Monster>}}*\ \textcolor{comment}{/*request*/},\ \mbox{\hyperlink{classflatbuffers_1_1grpc_1_1Message}{flatbuffers::grpc::Message<Stat>}}*\ \textcolor{comment}{/*response*/})\ \textcolor{keyword}{final}\ \textcolor{keyword}{override}\ \{}
+\DoxyCodeLine{00246\ \ \ \ \ \ \ abort();}
+\DoxyCodeLine{00247\ \ \ \ \ \ \ return\ ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED,\ \textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{00248\ \ \ \ \ \}}
+\DoxyCodeLine{00249\ \ \ \};}
+\DoxyCodeLine{00250\ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{class}\ BaseClass>}
+\DoxyCodeLine{00251\ \ \ \textcolor{keyword}{class\ }WithGenericMethod\_Retrieve\ :\ \textcolor{keyword}{public}\ BaseClass\ \{}
+\DoxyCodeLine{00252\ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00253\ \ \ \ \ \textcolor{keywordtype}{void}\ BaseClassMustBeDerivedFromService(\textcolor{keyword}{const}\ Service\ *\textcolor{comment}{/*service*/})\ \{\}}
+\DoxyCodeLine{00254\ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00255\ \ \ \ \ \mbox{\hyperlink{classMyGame_1_1Example_1_1MonsterStorage_1_1WithGenericMethod__Retrieve_a5df2f2354804fa71e9514b9080182796}{WithGenericMethod\_Retrieve}}()\ \{}
+\DoxyCodeLine{00256\ \ \ \ \ \ \ ::grpc::Service::MarkMethodGeneric(1);}
+\DoxyCodeLine{00257\ \ \ \ \ \}}
+\DoxyCodeLine{00258\ \ \ \ \ \mbox{\hyperlink{classMyGame_1_1Example_1_1MonsterStorage_1_1WithGenericMethod__Retrieve_a5c34d0e858e8c89c184acc3ffdd5a0dc}{\string~WithGenericMethod\_Retrieve}}()\textcolor{keyword}{\ override\ }\{}
+\DoxyCodeLine{00259\ \ \ \ \ \ \ BaseClassMustBeDerivedFromService(\textcolor{keyword}{this});}
+\DoxyCodeLine{00260\ \ \ \ \ \}}
+\DoxyCodeLine{00261\ \ \ \ \ \textcolor{comment}{//\ disable\ synchronous\ version\ of\ this\ method}}
+\DoxyCodeLine{00262\ \ \ \ \ ::grpc::Status\ \mbox{\hyperlink{classMyGame_1_1Example_1_1MonsterStorage_1_1WithGenericMethod__Retrieve_aa2bde79849bb3a1d6f9fad67b8e3d522}{Retrieve}}(::grpc::ServerContext*\ \textcolor{comment}{/*context*/},\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classflatbuffers_1_1grpc_1_1Message}{flatbuffers::grpc::Message<Stat>}}*\ \textcolor{comment}{/*request*/},\ ::grpc::ServerWriter<\ \mbox{\hyperlink{classflatbuffers_1_1grpc_1_1Message}{flatbuffers::grpc::Message<Monster>}}>*\ \textcolor{comment}{/*writer*/})\ final\textcolor{keyword}{\ override\ }\{}
+\DoxyCodeLine{00263\ \ \ \ \ \ \ abort();}
+\DoxyCodeLine{00264\ \ \ \ \ \ \ return\ ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED,\ \textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{00265\ \ \ \ \ \}}
+\DoxyCodeLine{00266\ \ \ \};}
+\DoxyCodeLine{00267\ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{class}\ BaseClass>}
+\DoxyCodeLine{00268\ \ \ \textcolor{keyword}{class\ }WithGenericMethod\_GetMaxHitPoint\ :\ \textcolor{keyword}{public}\ BaseClass\ \{}
+\DoxyCodeLine{00269\ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00270\ \ \ \ \ \textcolor{keywordtype}{void}\ BaseClassMustBeDerivedFromService(\textcolor{keyword}{const}\ Service\ *\textcolor{comment}{/*service*/})\ \{\}}
+\DoxyCodeLine{00271\ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00272\ \ \ \ \ \mbox{\hyperlink{classMyGame_1_1Example_1_1MonsterStorage_1_1WithGenericMethod__GetMaxHitPoint_a865150dbc335d0dfe92a04e634ba8234}{WithGenericMethod\_GetMaxHitPoint}}()\ \{}
+\DoxyCodeLine{00273\ \ \ \ \ \ \ ::grpc::Service::MarkMethodGeneric(2);}
+\DoxyCodeLine{00274\ \ \ \ \ \}}
+\DoxyCodeLine{00275\ \ \ \ \ \mbox{\hyperlink{classMyGame_1_1Example_1_1MonsterStorage_1_1WithGenericMethod__GetMaxHitPoint_ad4dbc16a1f901f29158251532c0aaffe}{\string~WithGenericMethod\_GetMaxHitPoint}}()\textcolor{keyword}{\ override\ }\{}
+\DoxyCodeLine{00276\ \ \ \ \ \ \ BaseClassMustBeDerivedFromService(\textcolor{keyword}{this});}
+\DoxyCodeLine{00277\ \ \ \ \ \}}
+\DoxyCodeLine{00278\ \ \ \ \ \textcolor{comment}{//\ disable\ synchronous\ version\ of\ this\ method}}
+\DoxyCodeLine{00279\ \ \ \ \ ::grpc::Status\ \mbox{\hyperlink{classMyGame_1_1Example_1_1MonsterStorage_1_1WithGenericMethod__GetMaxHitPoint_adf5cfa5a5a72387d66b5bc01c2f1e7e3}{GetMaxHitPoint}}(::grpc::ServerContext*\ \textcolor{comment}{/*context*/},\ ::grpc::ServerReader<\ \mbox{\hyperlink{classflatbuffers_1_1grpc_1_1Message}{flatbuffers::grpc::Message<Monster>}}>*\ \textcolor{comment}{/*reader*/},\ \mbox{\hyperlink{classflatbuffers_1_1grpc_1_1Message}{flatbuffers::grpc::Message<Stat>}}*\ \textcolor{comment}{/*response*/})\ \textcolor{keyword}{final}\ \textcolor{keyword}{override}\ \{}
+\DoxyCodeLine{00280\ \ \ \ \ \ \ abort();}
+\DoxyCodeLine{00281\ \ \ \ \ \ \ return\ ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED,\ \textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{00282\ \ \ \ \ \}}
+\DoxyCodeLine{00283\ \ \ \};}
+\DoxyCodeLine{00284\ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{class}\ BaseClass>}
+\DoxyCodeLine{00285\ \ \ \textcolor{keyword}{class\ }WithGenericMethod\_GetMinMaxHitPoints\ :\ \textcolor{keyword}{public}\ BaseClass\ \{}
+\DoxyCodeLine{00286\ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00287\ \ \ \ \ \textcolor{keywordtype}{void}\ BaseClassMustBeDerivedFromService(\textcolor{keyword}{const}\ Service\ *\textcolor{comment}{/*service*/})\ \{\}}
+\DoxyCodeLine{00288\ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00289\ \ \ \ \ \mbox{\hyperlink{classMyGame_1_1Example_1_1MonsterStorage_1_1WithGenericMethod__GetMinMaxHitPoints_aaba1a81b5b95c43d801b39ccd1387bf1}{WithGenericMethod\_GetMinMaxHitPoints}}()\ \{}
+\DoxyCodeLine{00290\ \ \ \ \ \ \ ::grpc::Service::MarkMethodGeneric(3);}
+\DoxyCodeLine{00291\ \ \ \ \ \}}
+\DoxyCodeLine{00292\ \ \ \ \ \mbox{\hyperlink{classMyGame_1_1Example_1_1MonsterStorage_1_1WithGenericMethod__GetMinMaxHitPoints_a2fa7214a06e301dce57265d107402c90}{\string~WithGenericMethod\_GetMinMaxHitPoints}}()\textcolor{keyword}{\ override\ }\{}
+\DoxyCodeLine{00293\ \ \ \ \ \ \ BaseClassMustBeDerivedFromService(\textcolor{keyword}{this});}
+\DoxyCodeLine{00294\ \ \ \ \ \}}
+\DoxyCodeLine{00295\ \ \ \ \ \textcolor{comment}{//\ disable\ synchronous\ version\ of\ this\ method}}
+\DoxyCodeLine{00296\ \ \ \ \ ::grpc::Status\ \mbox{\hyperlink{classMyGame_1_1Example_1_1MonsterStorage_1_1WithGenericMethod__GetMinMaxHitPoints_a5685e29670f561a5846ac4eed96ec3b7}{GetMinMaxHitPoints}}(::grpc::ServerContext*\ \textcolor{comment}{/*context*/},\ ::grpc::ServerReaderWriter<\ \mbox{\hyperlink{classflatbuffers_1_1grpc_1_1Message}{flatbuffers::grpc::Message<Stat>}},\ \mbox{\hyperlink{classflatbuffers_1_1grpc_1_1Message}{flatbuffers::grpc::Message<Monster>}}>*\ \textcolor{comment}{/*stream*/})\ final\textcolor{keyword}{\ override\ }\{}
+\DoxyCodeLine{00297\ \ \ \ \ \ \ abort();}
+\DoxyCodeLine{00298\ \ \ \ \ \ \ return\ ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED,\ \textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{00299\ \ \ \ \ \}}
+\DoxyCodeLine{00300\ \ \ \};}
+\DoxyCodeLine{00301\ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{class}\ BaseClass>}
+\DoxyCodeLine{00302\ \ \ \textcolor{keyword}{class\ }WithStreamedUnaryMethod\_Store\ :\ \textcolor{keyword}{public}\ BaseClass\ \{}
+\DoxyCodeLine{00303\ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00304\ \ \ \ \ \textcolor{keywordtype}{void}\ BaseClassMustBeDerivedFromService(\textcolor{keyword}{const}\ Service\ *\textcolor{comment}{/*service*/})\ \{\}}
+\DoxyCodeLine{00305\ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00306\ \ \ \ \ \mbox{\hyperlink{classMyGame_1_1Example_1_1MonsterStorage_1_1WithStreamedUnaryMethod__Store_a1fd3413f0b6229eef559cf06f5536c42}{WithStreamedUnaryMethod\_Store}}()\ \{}
+\DoxyCodeLine{00307\ \ \ \ \ \ \ ::grpc::Service::MarkMethodStreamed(0,}
+\DoxyCodeLine{00308\ \ \ \ \ \ \ \ \ new\ ::grpc::internal::StreamedUnaryHandler<\ \mbox{\hyperlink{classflatbuffers_1_1grpc_1_1Message}{flatbuffers::grpc::Message<Monster>}},\ \mbox{\hyperlink{classflatbuffers_1_1grpc_1_1Message}{flatbuffers::grpc::Message<Stat>}}>(std::bind(\&\mbox{\hyperlink{classMyGame_1_1Example_1_1MonsterStorage_1_1WithStreamedUnaryMethod__Store}{WithStreamedUnaryMethod\_Store<BaseClass>::StreamedStore}},\ \textcolor{keyword}{this},\ std::placeholders::\_1,\ std::placeholders::\_2)));}
+\DoxyCodeLine{00309\ \ \ \ \ \}}
+\DoxyCodeLine{00310\ \ \ \ \ \mbox{\hyperlink{classMyGame_1_1Example_1_1MonsterStorage_1_1WithStreamedUnaryMethod__Store_a8348b945c7869e90cfdd012ec2eb8118}{\string~WithStreamedUnaryMethod\_Store}}()\textcolor{keyword}{\ override\ }\{}
+\DoxyCodeLine{00311\ \ \ \ \ \ \ BaseClassMustBeDerivedFromService(\textcolor{keyword}{this});}
+\DoxyCodeLine{00312\ \ \ \ \ \}}
+\DoxyCodeLine{00313\ \ \ \ \ \textcolor{comment}{//\ disable\ regular\ version\ of\ this\ method}}
+\DoxyCodeLine{00314\ \ \ \ \ ::grpc::Status\ \mbox{\hyperlink{classMyGame_1_1Example_1_1MonsterStorage_1_1WithStreamedUnaryMethod__Store_aa56eb48a5f5dc5f2e9488b36b809c6d4}{Store}}(::grpc::ServerContext*\ \textcolor{comment}{/*context*/},\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classflatbuffers_1_1grpc_1_1Message}{flatbuffers::grpc::Message<Monster>}}*\ \textcolor{comment}{/*request*/},\ \mbox{\hyperlink{classflatbuffers_1_1grpc_1_1Message}{flatbuffers::grpc::Message<Stat>}}*\ \textcolor{comment}{/*response*/})\ \textcolor{keyword}{final}\ \textcolor{keyword}{override}\ \{}
+\DoxyCodeLine{00315\ \ \ \ \ \ \ abort();}
+\DoxyCodeLine{00316\ \ \ \ \ \ \ return\ ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED,\ \textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{00317\ \ \ \ \ \}}
+\DoxyCodeLine{00318\ \ \ \ \ \textcolor{comment}{//\ replace\ default\ version\ of\ method\ with\ streamed\ unary}}
+\DoxyCodeLine{00319\ \ \ \ \ virtual\ ::grpc::Status\ \mbox{\hyperlink{classMyGame_1_1Example_1_1MonsterStorage_1_1WithStreamedUnaryMethod__Store_a60d04044748c28fe47a3c4373c03bee8}{StreamedStore}}(::grpc::ServerContext*\ context,\ ::grpc::ServerUnaryStreamer<\ \mbox{\hyperlink{classflatbuffers_1_1grpc_1_1Message}{flatbuffers::grpc::Message<Monster>}},\mbox{\hyperlink{classflatbuffers_1_1grpc_1_1Message}{flatbuffers::grpc::Message<Stat>}}>*\ server\_unary\_streamer)\ =\ 0;}
+\DoxyCodeLine{00320\ \ \ \};}
+\DoxyCodeLine{00321\ \ \ \textcolor{keyword}{typedef}\ \ \ \mbox{\hyperlink{classMyGame_1_1Example_1_1MonsterStorage_1_1WithStreamedUnaryMethod__Store}{WithStreamedUnaryMethod\_Store<\ \ Service\ \ \ >}}\ \ \ \mbox{\hyperlink{classMyGame_1_1Example_1_1MonsterStorage_a5718a74295142993733571657efd117e}{StreamedUnaryService}};}
+\DoxyCodeLine{00322\ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{class}\ BaseClass>}
+\DoxyCodeLine{00323\ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classMyGame_1_1Example_1_1MonsterStorage_1_1WithSplitStreamingMethod__Retrieve}{WithSplitStreamingMethod\_Retrieve}}\ :\ \textcolor{keyword}{public}\ BaseClass\ \{}
+\DoxyCodeLine{00324\ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00325\ \ \ \ \ \textcolor{keywordtype}{void}\ BaseClassMustBeDerivedFromService(\textcolor{keyword}{const}\ \mbox{\hyperlink{classMyGame_1_1Example_1_1MonsterStorage_1_1Service}{Service}}\ *\textcolor{comment}{/*service*/})\ \{\ \}}
+\DoxyCodeLine{00326\ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00327\ \ \ \ \ \mbox{\hyperlink{classMyGame_1_1Example_1_1MonsterStorage_1_1WithSplitStreamingMethod__Retrieve_af242529062629767ca170ef4d63f28d9}{WithSplitStreamingMethod\_Retrieve}}()\ \{}
+\DoxyCodeLine{00328\ \ \ \ \ \ \ ::grpc::Service::MarkMethodStreamed(1,}
+\DoxyCodeLine{00329\ \ \ \ \ \ \ \ \ new\ ::grpc::internal::SplitServerStreamingHandler<\ \mbox{\hyperlink{classflatbuffers_1_1grpc_1_1Message}{flatbuffers::grpc::Message<Stat>}},\ \mbox{\hyperlink{classflatbuffers_1_1grpc_1_1Message}{flatbuffers::grpc::Message<Monster>}}>(std::bind(\&\mbox{\hyperlink{classMyGame_1_1Example_1_1MonsterStorage_1_1WithSplitStreamingMethod__Retrieve}{WithSplitStreamingMethod\_Retrieve<BaseClass>::StreamedRetrieve}},\ \textcolor{keyword}{this},\ std::placeholders::\_1,\ std::placeholders::\_2)));}
+\DoxyCodeLine{00330\ \ \ \ \ \}}
+\DoxyCodeLine{00331\ \ \ \ \ \mbox{\hyperlink{classMyGame_1_1Example_1_1MonsterStorage_1_1WithSplitStreamingMethod__Retrieve_a1c6669f5128d1b476e23a29ba059cba6}{\string~WithSplitStreamingMethod\_Retrieve}}()\textcolor{keyword}{\ override\ }\{}
+\DoxyCodeLine{00332\ \ \ \ \ \ \ BaseClassMustBeDerivedFromService(\textcolor{keyword}{this});}
+\DoxyCodeLine{00333\ \ \ \ \ \}}
+\DoxyCodeLine{00334\ \ \ \ \ \textcolor{comment}{//\ disable\ regular\ version\ of\ this\ method}}
+\DoxyCodeLine{00335\ \ \ \ \ ::grpc::Status\ \mbox{\hyperlink{classMyGame_1_1Example_1_1MonsterStorage_1_1WithSplitStreamingMethod__Retrieve_a9efa42f94a01a6ddca2350ccba41bda1}{Retrieve}}(::grpc::ServerContext*\ \textcolor{comment}{/*context*/},\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classflatbuffers_1_1grpc_1_1Message}{flatbuffers::grpc::Message<Stat>}}*\ \textcolor{comment}{/*request*/},\ ::grpc::ServerWriter<\ \mbox{\hyperlink{classflatbuffers_1_1grpc_1_1Message}{flatbuffers::grpc::Message<Monster>}}>*\ \textcolor{comment}{/*writer*/})\ final\textcolor{keyword}{\ override\ }\{}
+\DoxyCodeLine{00336\ \ \ \ \ \ \ abort();}
+\DoxyCodeLine{00337\ \ \ \ \ \ \ return\ ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED,\ \textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{00338\ \ \ \ \ \}}
+\DoxyCodeLine{00339\ \ \ \ \ \textcolor{comment}{//\ replace\ default\ version\ of\ method\ with\ split\ streamed}}
+\DoxyCodeLine{00340\ \ \ \ \ virtual\ ::grpc::Status\ \mbox{\hyperlink{classMyGame_1_1Example_1_1MonsterStorage_1_1WithSplitStreamingMethod__Retrieve_a1dbc067f8e4a4f51a0275f3bdc461473}{StreamedRetrieve}}(::grpc::ServerContext*\ context,\ ::grpc::ServerSplitStreamer<\ \mbox{\hyperlink{classflatbuffers_1_1grpc_1_1Message}{flatbuffers::grpc::Message<Stat>}},\mbox{\hyperlink{classflatbuffers_1_1grpc_1_1Message}{flatbuffers::grpc::Message<Monster>}}>*\ server\_split\_streamer)\ =\ 0;}
+\DoxyCodeLine{00341\ \ \ \};}
+\DoxyCodeLine{00342\ \ \ \textcolor{keyword}{typedef}\ \ \ \mbox{\hyperlink{classMyGame_1_1Example_1_1MonsterStorage_1_1WithSplitStreamingMethod__Retrieve}{WithSplitStreamingMethod\_Retrieve<\ \ Service\ \ \ >}}\ \ \ \mbox{\hyperlink{classMyGame_1_1Example_1_1MonsterStorage_ae28f18a0ee4950419f91ed0754c1fde6}{SplitStreamedService}};}
+\DoxyCodeLine{00343\ \ \ \textcolor{keyword}{typedef}\ \ \ \mbox{\hyperlink{classMyGame_1_1Example_1_1MonsterStorage_1_1WithStreamedUnaryMethod__Store}{WithStreamedUnaryMethod\_Store<\ \ WithSplitStreamingMethod\_Retrieve<\ \ Service\ \ \ >}}\ \ \ >\ \ \ \mbox{\hyperlink{classMyGame_1_1Example_1_1MonsterStorage_a069eed009ef4a90f14b456bb36bf8087}{StreamedService}};}
+\DoxyCodeLine{00344\ \};}
+\DoxyCodeLine{00345\ }
+\DoxyCodeLine{00346\ \}\ \ \textcolor{comment}{//\ namespace\ Example}}
+\DoxyCodeLine{00347\ \}\ \ \textcolor{comment}{//\ namespace\ MyGame}}
+\DoxyCodeLine{00348\ }
+\DoxyCodeLine{00349\ }
+\DoxyCodeLine{00350\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ GRPC\_monster\_5ftest\_\_INCLUDED}}
+
+\end{DoxyCode}

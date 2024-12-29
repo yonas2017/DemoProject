@@ -1,0 +1,35 @@
+\doxysection{flatbuffers/conan/build.py File Reference}
+\hypertarget{build_8py}{}\label{build_8py}\index{flatbuffers/conan/build.py@{flatbuffers/conan/build.py}}
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespacebuild}{build}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespacebuild_aba7f819bfb0f746ec49890ee336b967e}{build.\+get\+\_\+branch}} ()
+\item 
+\mbox{\hyperlink{namespacebuild_a507b61ff6e221828c62e9f723446722d}{build.\+get\+\_\+version}} ()
+\item 
+\mbox{\hyperlink{namespacebuild_aad4940d8c20d3c48f6da308740ad8dee}{build.\+get\+\_\+reference}} (\mbox{\hyperlink{namespacebuild_a5240c20d0783f8575d02c5bcd3232ca4}{username}})
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespacebuild_ae10c3bed08424fdc6b98e0e1b52333c3}{build.\+login\+\_\+username}} = os.\+getenv("{}CONAN\+\_\+\+LOGIN\+\_\+\+USERNAME"{}, "{}aardappel"{})
+\item 
+\mbox{\hyperlink{namespacebuild_a5240c20d0783f8575d02c5bcd3232ca4}{build.\+username}} = os.\+getenv("{}CONAN\+\_\+\+USERNAME"{}, "{}google"{})
+\item 
+\mbox{\hyperlink{namespacebuild_add8726350bd479396b3a703ef177ae69}{build.\+upload}} = os.\+getenv("{}CONAN\+\_\+\+UPLOAD"{}, "{}https\+://api.\+bintray.\+com/conan/aardappel/flatbuffers"{})
+\item 
+\mbox{\hyperlink{namespacebuild_a4ec737af665903085d243df79820071c}{build.\+stable\+\_\+branch\+\_\+pattern}} = os.\+getenv("{}CONAN\+\_\+\+STABLE\+\_\+\+BRANCH\+\_\+\+PATTERN"{}, r"{}v\textbackslash{}d+\textbackslash{}.\textbackslash{}d+\textbackslash{}.\textbackslash{}d+.\texorpdfstring{$\ast$}{*}"{})
+\item 
+\mbox{\hyperlink{namespacebuild_a8bd09c331d82e5ff44a30aceb809537b}{build.\+test\+\_\+folder}} = os.\+getenv("{}CPT\+\_\+\+TEST\+\_\+\+FOLDER"{}, os.\+path.\+join("{}conan"{}, "{}test\+\_\+package"{}))
+\item 
+\mbox{\hyperlink{namespacebuild_ac325773042e966db7cddfd7dcec40165}{build.\+upload\+\_\+only\+\_\+when\+\_\+stable}} = os.\+getenv("{}CONAN\+\_\+\+UPLOAD\+\_\+\+ONLY\+\_\+\+WHEN\+\_\+\+STABLE"{}, True)
+\item 
+\mbox{\hyperlink{namespacebuild_ac88b0ec8265b8fb42c15db20ec716d54}{build.\+builder}}
+\item 
+\mbox{\hyperlink{namespacebuild_a3855124bc1b8932f09d003731f98a819}{build.\+pure\+\_\+c}}
+\end{DoxyCompactItemize}

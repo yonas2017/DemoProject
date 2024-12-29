@@ -1,0 +1,120 @@
+\doxysection{Queue\texorpdfstring{$<$}{<} E \texorpdfstring{$>$}{>} Class Template Reference}
+\hypertarget{classQueue}{}\label{classQueue}\index{Queue$<$ E $>$@{Queue$<$ E $>$}}
+
+
+{\ttfamily \#include $<$sample3-\/inl.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classQueue_ab09891e54b51dc677ee6efb350687ae4}{Queue}} ()
+\item 
+\mbox{\hyperlink{classQueue_a49fe82adb8dc2fb62ab53876a6933d0f}{\texorpdfstring{$\sim$}{\string~}\+Queue}} ()
+\item 
+void \mbox{\hyperlink{classQueue_acfdd5f9f7e936ca30dcf877370ef9510}{Clear}} ()
+\item 
+size\+\_\+t \mbox{\hyperlink{classQueue_abc4d78b5f66041011c5590bf703847b0}{Size}} () const
+\item 
+\mbox{\hyperlink{classQueueNode}{Queue\+Node}}$<$ E $>$ \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classQueue_ae6bfe598d2ac848acf99055bbcfeb6df}{Head}} ()
+\item 
+const \mbox{\hyperlink{classQueueNode}{Queue\+Node}}$<$ E $>$ \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classQueue_a24e0568348020ee356981156e71007d0}{Head}} () const
+\item 
+\mbox{\hyperlink{classQueueNode}{Queue\+Node}}$<$ E $>$ \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classQueue_a9ea23f0b64d8005eb032b17861b169dd}{Last}} ()
+\item 
+const \mbox{\hyperlink{classQueueNode}{Queue\+Node}}$<$ E $>$ \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classQueue_a8d1db3ed5d3d43dc76861ecc64b3e1df}{Last}} () const
+\item 
+void \mbox{\hyperlink{classQueue_abaa2e7175457307bca74f5562cbdaaa9}{Enqueue}} (const E \&element)
+\item 
+E \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classQueue_a42bb3a81cb3f6cd084da16a39d38eb03}{Dequeue}} ()
+\item 
+{\footnotesize template$<$typename F $>$ }\\\mbox{\hyperlink{classQueue}{Queue}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classQueue_a61c2800fd12a0ba74523c8763a86423b}{Map}} (F function) const
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classQueue_ab09891e54b51dc677ee6efb350687ae4}\label{classQueue_ab09891e54b51dc677ee6efb350687ae4} 
+\index{Queue$<$ E $>$@{Queue$<$ E $>$}!Queue@{Queue}}
+\index{Queue@{Queue}!Queue$<$ E $>$@{Queue$<$ E $>$}}
+\doxysubsubsection{\texorpdfstring{Queue()}{Queue()}}
+{\footnotesize\ttfamily template$<$typename E $>$ \\
+\mbox{\hyperlink{classQueue}{Queue}}$<$ E $>$\mbox{\hyperlink{classQueue}{\+::\+Queue}} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classQueue_a49fe82adb8dc2fb62ab53876a6933d0f}\label{classQueue_a49fe82adb8dc2fb62ab53876a6933d0f} 
+\index{Queue$<$ E $>$@{Queue$<$ E $>$}!````~Queue@{\texorpdfstring{$\sim$}{\string~}Queue}}
+\index{````~Queue@{\texorpdfstring{$\sim$}{\string~}Queue}!Queue$<$ E $>$@{Queue$<$ E $>$}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Queue()}{\string~Queue()}}
+{\footnotesize\ttfamily template$<$typename E $>$ \\
+\mbox{\hyperlink{classQueue}{Queue}}$<$ E $>$\+::\texorpdfstring{$\sim$}{\string~}\mbox{\hyperlink{classQueue}{Queue}} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classQueue_acfdd5f9f7e936ca30dcf877370ef9510}\label{classQueue_acfdd5f9f7e936ca30dcf877370ef9510} 
+\index{Queue$<$ E $>$@{Queue$<$ E $>$}!Clear@{Clear}}
+\index{Clear@{Clear}!Queue$<$ E $>$@{Queue$<$ E $>$}}
+\doxysubsubsection{\texorpdfstring{Clear()}{Clear()}}
+{\footnotesize\ttfamily template$<$typename E $>$ \\
+void \mbox{\hyperlink{classQueue}{Queue}}$<$ E $>$\+::\+Clear (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classQueue_a42bb3a81cb3f6cd084da16a39d38eb03}\label{classQueue_a42bb3a81cb3f6cd084da16a39d38eb03} 
+\index{Queue$<$ E $>$@{Queue$<$ E $>$}!Dequeue@{Dequeue}}
+\index{Dequeue@{Dequeue}!Queue$<$ E $>$@{Queue$<$ E $>$}}
+\doxysubsubsection{\texorpdfstring{Dequeue()}{Dequeue()}}
+{\footnotesize\ttfamily template$<$typename E $>$ \\
+E \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classQueue}{Queue}}$<$ E $>$\+::\+Dequeue (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classQueue_abaa2e7175457307bca74f5562cbdaaa9}\label{classQueue_abaa2e7175457307bca74f5562cbdaaa9} 
+\index{Queue$<$ E $>$@{Queue$<$ E $>$}!Enqueue@{Enqueue}}
+\index{Enqueue@{Enqueue}!Queue$<$ E $>$@{Queue$<$ E $>$}}
+\doxysubsubsection{\texorpdfstring{Enqueue()}{Enqueue()}}
+{\footnotesize\ttfamily template$<$typename E $>$ \\
+void \mbox{\hyperlink{classQueue}{Queue}}$<$ E $>$\+::\+Enqueue (\begin{DoxyParamCaption}\item[{const E \&}]{element }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classQueue_ae6bfe598d2ac848acf99055bbcfeb6df}\label{classQueue_ae6bfe598d2ac848acf99055bbcfeb6df} 
+\index{Queue$<$ E $>$@{Queue$<$ E $>$}!Head@{Head}}
+\index{Head@{Head}!Queue$<$ E $>$@{Queue$<$ E $>$}}
+\doxysubsubsection{\texorpdfstring{Head()}{Head()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename E $>$ \\
+\mbox{\hyperlink{classQueueNode}{Queue\+Node}}$<$ E $>$ \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classQueue}{Queue}}$<$ E $>$\+::\+Head (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classQueue_a24e0568348020ee356981156e71007d0}\label{classQueue_a24e0568348020ee356981156e71007d0} 
+\index{Queue$<$ E $>$@{Queue$<$ E $>$}!Head@{Head}}
+\index{Head@{Head}!Queue$<$ E $>$@{Queue$<$ E $>$}}
+\doxysubsubsection{\texorpdfstring{Head()}{Head()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename E $>$ \\
+const \mbox{\hyperlink{classQueueNode}{Queue\+Node}}$<$ E $>$ \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classQueue}{Queue}}$<$ E $>$\+::\+Head (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classQueue_a9ea23f0b64d8005eb032b17861b169dd}\label{classQueue_a9ea23f0b64d8005eb032b17861b169dd} 
+\index{Queue$<$ E $>$@{Queue$<$ E $>$}!Last@{Last}}
+\index{Last@{Last}!Queue$<$ E $>$@{Queue$<$ E $>$}}
+\doxysubsubsection{\texorpdfstring{Last()}{Last()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename E $>$ \\
+\mbox{\hyperlink{classQueueNode}{Queue\+Node}}$<$ E $>$ \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classQueue}{Queue}}$<$ E $>$\+::\+Last (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classQueue_a8d1db3ed5d3d43dc76861ecc64b3e1df}\label{classQueue_a8d1db3ed5d3d43dc76861ecc64b3e1df} 
+\index{Queue$<$ E $>$@{Queue$<$ E $>$}!Last@{Last}}
+\index{Last@{Last}!Queue$<$ E $>$@{Queue$<$ E $>$}}
+\doxysubsubsection{\texorpdfstring{Last()}{Last()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename E $>$ \\
+const \mbox{\hyperlink{classQueueNode}{Queue\+Node}}$<$ E $>$ \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classQueue}{Queue}}$<$ E $>$\+::\+Last (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classQueue_a61c2800fd12a0ba74523c8763a86423b}\label{classQueue_a61c2800fd12a0ba74523c8763a86423b} 
+\index{Queue$<$ E $>$@{Queue$<$ E $>$}!Map@{Map}}
+\index{Map@{Map}!Queue$<$ E $>$@{Queue$<$ E $>$}}
+\doxysubsubsection{\texorpdfstring{Map()}{Map()}}
+{\footnotesize\ttfamily template$<$typename E $>$ \\
+template$<$typename F $>$ \\
+\mbox{\hyperlink{classQueue}{Queue}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classQueue}{Queue}}$<$ E $>$\+::\+Map (\begin{DoxyParamCaption}\item[{F}]{function }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classQueue_abc4d78b5f66041011c5590bf703847b0}\label{classQueue_abc4d78b5f66041011c5590bf703847b0} 
+\index{Queue$<$ E $>$@{Queue$<$ E $>$}!Size@{Size}}
+\index{Size@{Size}!Queue$<$ E $>$@{Queue$<$ E $>$}}
+\doxysubsubsection{\texorpdfstring{Size()}{Size()}}
+{\footnotesize\ttfamily template$<$typename E $>$ \\
+size\+\_\+t \mbox{\hyperlink{classQueue}{Queue}}$<$ E $>$\mbox{\hyperlink{enums__generated_8h_a05d226f4fefc3e309a60033809f1714e}{\+::\+Size}} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+googletest/googletest/samples/\mbox{\hyperlink{sample3-inl_8h}{sample3-\/inl.\+h}}\end{DoxyCompactItemize}

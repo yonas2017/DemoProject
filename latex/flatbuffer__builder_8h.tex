@@ -1,0 +1,61 @@
+\doxysection{flatbuffers/include/flatbuffers/flatbuffer\+\_\+builder.h File Reference}
+\hypertarget{flatbuffer__builder_8h}{}\label{flatbuffer__builder_8h}\index{flatbuffers/include/flatbuffers/flatbuffer\_builder.h@{flatbuffers/include/flatbuffers/flatbuffer\_builder.h}}
+{\ttfamily \#include $<$algorithm$>$}\newline
+{\ttfamily \#include $<$cstdint$>$}\newline
+{\ttfamily \#include $<$functional$>$}\newline
+{\ttfamily \#include $<$initializer\+\_\+list$>$}\newline
+{\ttfamily \#include $<$type\+\_\+traits$>$}\newline
+{\ttfamily \#include "{}flatbuffers/allocator.\+h"{}}\newline
+{\ttfamily \#include "{}flatbuffers/array.\+h"{}}\newline
+{\ttfamily \#include "{}flatbuffers/base.\+h"{}}\newline
+{\ttfamily \#include "{}flatbuffers/buffer.\+h"{}}\newline
+{\ttfamily \#include "{}flatbuffers/buffer\+\_\+ref.\+h"{}}\newline
+{\ttfamily \#include "{}flatbuffers/default\+\_\+allocator.\+h"{}}\newline
+{\ttfamily \#include "{}flatbuffers/detached\+\_\+buffer.\+h"{}}\newline
+{\ttfamily \#include "{}flatbuffers/stl\+\_\+emulation.\+h"{}}\newline
+{\ttfamily \#include "{}flatbuffers/string.\+h"{}}\newline
+{\ttfamily \#include "{}flatbuffers/struct.\+h"{}}\newline
+{\ttfamily \#include "{}flatbuffers/table.\+h"{}}\newline
+{\ttfamily \#include "{}flatbuffers/vector.\+h"{}}\newline
+{\ttfamily \#include "{}flatbuffers/vector\+\_\+downward.\+h"{}}\newline
+{\ttfamily \#include "{}flatbuffers/verifier.\+h"{}}\newline
+Include dependency graph for flatbuffer\+\_\+builder.\+h\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classflatbuffers_1_1FlatBufferBuilderImpl}{flatbuffers\+::\+Flat\+Buffer\+Builder\+Impl$<$ Is64\+Aware $>$}}
+\item 
+struct \mbox{\hyperlink{structflatbuffers_1_1FlatBufferBuilderImpl_1_1FieldLoc}{flatbuffers\+::\+Flat\+Buffer\+Builder\+Impl$<$ Is64\+Aware $>$\+::\+Field\+Loc}}
+\item 
+struct \mbox{\hyperlink{structflatbuffers_1_1FlatBufferBuilderImpl_1_1StringOffsetCompare}{flatbuffers\+::\+Flat\+Buffer\+Builder\+Impl$<$ Is64\+Aware $>$\+::\+String\+Offset\+Compare}}
+\item 
+struct \mbox{\hyperlink{structflatbuffers_1_1EmptyOffset}{flatbuffers\+::\+Empty\+Offset$<$ T $>$}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespaceflatbuffers}{flatbuffers}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+using \mbox{\hyperlink{namespaceflatbuffers_a41ac7b1c8f5f4a869e8f649b6c171ce7}{flatbuffers\+::\+Flat\+Buffer\+Builder}} = \mbox{\hyperlink{classflatbuffers_1_1FlatBufferBuilderImpl}{Flat\+Buffer\+Builder\+Impl}}$<$ false $>$
+\item 
+using \mbox{\hyperlink{namespaceflatbuffers_a48d23e99fbf3153c6076faa41bd0e617}{flatbuffers\+::\+Flat\+Buffer\+Builder64}} = \mbox{\hyperlink{classflatbuffers_1_1FlatBufferBuilderImpl}{Flat\+Buffer\+Builder\+Impl}}$<$ true $>$
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+voffset\+\_\+t \mbox{\hyperlink{namespaceflatbuffers_ac81ceb5f1a4228f7cd4b9a4b342c0547}{flatbuffers\+::\+Field\+Index\+To\+Offset}} (voffset\+\_\+t field\+\_\+id)
+\item 
+{\footnotesize template$<$typename T , typename Alloc  = std\+::allocator$<$\+T$>$$>$ }\\const T \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{namespaceflatbuffers_ae8b86e00c88ce4892cc7f5bfe7545e06}{flatbuffers\+::data}} (const std\+::vector$<$ T, Alloc $>$ \&v)
+\item 
+{\footnotesize template$<$typename T , typename Alloc  = std\+::allocator$<$\+T$>$$>$ }\\T \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{namespaceflatbuffers_ae02fa99ebc37539cdee7a1aeb9b1c425}{flatbuffers\+::data}} (std\+::vector$<$ T, Alloc $>$ \&v)
+\item 
+{\footnotesize template$<$typename T $>$ }\\T \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{namespaceflatbuffers_a07e931175b582018921d1db022f69da4}{flatbuffers\+::\+Get\+Mutable\+Temporary\+Pointer}} (\mbox{\hyperlink{namespaceflatbuffers_a41ac7b1c8f5f4a869e8f649b6c171ce7}{Flat\+Buffer\+Builder}} \&fbb, Offset$<$ T $>$ offset)
+\item 
+{\footnotesize template$<$typename T $>$ }\\const T \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{namespaceflatbuffers_a1f9da5c7b5d766bc4ad063f08d84470a}{flatbuffers\+::\+Get\+Temporary\+Pointer}} (const \mbox{\hyperlink{namespaceflatbuffers_a41ac7b1c8f5f4a869e8f649b6c171ce7}{Flat\+Buffer\+Builder}} \&fbb, Offset$<$ T $>$ offset)
+\end{DoxyCompactItemize}

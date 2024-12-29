@@ -1,0 +1,276 @@
+\doxysection{namer.\+h}
+\hypertarget{include_2codegen_2namer_8h_source}{}\label{include_2codegen_2namer_8h_source}\index{flatbuffers/include/codegen/namer.h@{flatbuffers/include/codegen/namer.h}}
+\mbox{\hyperlink{include_2codegen_2namer_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ FLATBUFFERS\_INCLUDE\_CODEGEN\_NAMER\_H\_}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ FLATBUFFERS\_INCLUDE\_CODEGEN\_NAMER\_H\_}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{util_8h}{flatbuffers/util.h}}"{}}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceflatbuffers}{flatbuffers}}\ \{}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{comment}{//\ Options\ for\ Namer::File.}}
+\DoxyCodeLine{00009\ \textcolor{keyword}{enum\ class}\ \mbox{\hyperlink{namespaceflatbuffers_a77a8b67a8dd834785bcf61b5788e56e1}{SkipFile}}\ \{}
+\DoxyCodeLine{00010\ \ \ \mbox{\hyperlink{namespaceflatbuffers_a77a8b67a8dd834785bcf61b5788e56e1a6adf97f83acf6453d4a6a4b1070f3754}{None}}\ =\ 0,}
+\DoxyCodeLine{00011\ \ \ \mbox{\hyperlink{namespaceflatbuffers_a77a8b67a8dd834785bcf61b5788e56e1a56e6ddd1cb6cec596b433440dfb21c17}{Suffix}}\ =\ 1,}
+\DoxyCodeLine{00012\ \ \ \mbox{\hyperlink{namespaceflatbuffers_a77a8b67a8dd834785bcf61b5788e56e1a63e4e92bb7d207ca577b11c07f827279}{Extension}}\ =\ 2,}
+\DoxyCodeLine{00013\ \ \ \mbox{\hyperlink{namespaceflatbuffers_a77a8b67a8dd834785bcf61b5788e56e1a049a57a8171f4b391ba90018a1080164}{SuffixAndExtension}}\ =\ 3,}
+\DoxyCodeLine{00014\ \};}
+\DoxyCodeLine{00015\ \textcolor{keyword}{inline}\ \mbox{\hyperlink{namespaceflatbuffers_a77a8b67a8dd834785bcf61b5788e56e1}{SkipFile}}\ \mbox{\hyperlink{namespaceflatbuffers_a52ab558a957a207f3f28821df4d26877}{operator\&}}(\mbox{\hyperlink{namespaceflatbuffers_a77a8b67a8dd834785bcf61b5788e56e1}{SkipFile}}\ a,\ \mbox{\hyperlink{namespaceflatbuffers_a77a8b67a8dd834785bcf61b5788e56e1}{SkipFile}}\ b)\ \{}
+\DoxyCodeLine{00016\ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{static\_cast<}\mbox{\hyperlink{namespaceflatbuffers_a77a8b67a8dd834785bcf61b5788e56e1}{SkipFile}}\textcolor{keyword}{>}(\textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(a)\ \&\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(b));}
+\DoxyCodeLine{00017\ \}}
+\DoxyCodeLine{00018\ \textcolor{comment}{//\ Options\ for\ Namer::Directories}}
+\DoxyCodeLine{00019\ \textcolor{keyword}{enum\ class}\ \mbox{\hyperlink{namespaceflatbuffers_ac8fb13afcc4ada7592285690e8c42870}{SkipDir}}\ \{}
+\DoxyCodeLine{00020\ \ \ \mbox{\hyperlink{namespaceflatbuffers_a77a8b67a8dd834785bcf61b5788e56e1a6adf97f83acf6453d4a6a4b1070f3754}{None}}\ =\ 0,}
+\DoxyCodeLine{00021\ \ \ \textcolor{comment}{//\ Skip\ prefixing\ the\ -\/o\ \$output\_path.}}
+\DoxyCodeLine{00022\ \ \ \mbox{\hyperlink{namespaceflatbuffers_ac8fb13afcc4ada7592285690e8c42870ae4979dda6e714259ff80ee105323599c}{OutputPath}}\ =\ 1,}
+\DoxyCodeLine{00023\ \ \ \textcolor{comment}{//\ Skip\ trailing\ path\ seperator.}}
+\DoxyCodeLine{00024\ \ \ \mbox{\hyperlink{namespaceflatbuffers_ac8fb13afcc4ada7592285690e8c42870a6073c49a6784ff9179d5a05f06ac1daa}{TrailingPathSeperator}}\ =\ 2,}
+\DoxyCodeLine{00025\ \ \ \mbox{\hyperlink{namespaceflatbuffers_ac8fb13afcc4ada7592285690e8c42870a7c200d21dbd3180a6aab509c7ab95ad6}{OutputPathAndTrailingPathSeparator}}\ =\ 3,}
+\DoxyCodeLine{00026\ \};}
+\DoxyCodeLine{00027\ \textcolor{keyword}{inline}\ \mbox{\hyperlink{namespaceflatbuffers_ac8fb13afcc4ada7592285690e8c42870}{SkipDir}}\ \mbox{\hyperlink{namespaceflatbuffers_a52ab558a957a207f3f28821df4d26877}{operator\&}}(\mbox{\hyperlink{namespaceflatbuffers_ac8fb13afcc4ada7592285690e8c42870}{SkipDir}}\ a,\ \mbox{\hyperlink{namespaceflatbuffers_ac8fb13afcc4ada7592285690e8c42870}{SkipDir}}\ b)\ \{}
+\DoxyCodeLine{00028\ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{static\_cast<}\mbox{\hyperlink{namespaceflatbuffers_ac8fb13afcc4ada7592285690e8c42870}{SkipDir}}\textcolor{keyword}{>}(\textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(a)\ \&\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(b));}
+\DoxyCodeLine{00029\ \}}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \textcolor{comment}{//\ \`{}Namer`\ applies\ style\ configuration\ to\ symbols\ in\ generated\ code.\ It\ manages}}
+\DoxyCodeLine{00032\ \textcolor{comment}{//\ casing,\ escapes\ keywords,\ and\ object\ API\ naming.}}
+\DoxyCodeLine{00033\ \textcolor{comment}{//\ TODO:\ Refactor\ all\ code\ generators\ to\ use\ this.}}
+\DoxyCodeLine{00034\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classflatbuffers_1_1Namer}{Namer}}\ \{}
+\DoxyCodeLine{00035\ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00036\ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structflatbuffers_1_1Namer_1_1Config}{Config}}\ \{}
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{comment}{//\ Symbols\ in\ code.}}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{comment}{//\ Case\ style\ for\ flatbuffers-\/defined\ types.}}
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{comment}{//\ e.g.\ \`{}class\ TableA\ \{\}`}}
+\DoxyCodeLine{00041\ \ \ \ \ \mbox{\hyperlink{namespaceflatbuffers_a51f13331958603317b446d2ea6d46c55}{Case}}\ \mbox{\hyperlink{structflatbuffers_1_1Namer_1_1Config_a70bb83f0942f7a13af12be2b9f19dbf1}{types}};}
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{comment}{//\ Case\ style\ for\ flatbuffers-\/defined\ constants.}}
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{comment}{//\ e.g.\ \`{}uint64\_t\ ENUM\_A\_MAX`;}}
+\DoxyCodeLine{00044\ \ \ \ \ \mbox{\hyperlink{namespaceflatbuffers_a51f13331958603317b446d2ea6d46c55}{Case}}\ \mbox{\hyperlink{structflatbuffers_1_1Namer_1_1Config_a9d2865a8a1ea9b395d804c7a062f19f2}{constants}};}
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{comment}{//\ Case\ style\ for\ flatbuffers-\/defined\ methods.}}
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{comment}{//\ e.g.\ \`{}class\ TableA\ \{\ int\ field\_a();\ \}`}}
+\DoxyCodeLine{00047\ \ \ \ \ \mbox{\hyperlink{namespaceflatbuffers_a51f13331958603317b446d2ea6d46c55}{Case}}\ \mbox{\hyperlink{structflatbuffers_1_1Namer_1_1Config_a440f7c56bac598260339cf4a711d8705}{methods}};}
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{comment}{//\ Case\ style\ for\ flatbuffers-\/defined\ functions.}}
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{comment}{//\ e.g.\ \`{}TableA*\ get\_table\_a\_root()`;}}
+\DoxyCodeLine{00050\ \ \ \ \ \mbox{\hyperlink{namespaceflatbuffers_a51f13331958603317b446d2ea6d46c55}{Case}}\ \mbox{\hyperlink{structflatbuffers_1_1Namer_1_1Config_acd08f396ffccc59771054d1aed518f1f}{functions}};}
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{comment}{//\ Case\ style\ for\ flatbuffers-\/defined\ fields.}}
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{comment}{//\ e.g.\ \`{}struct\ Struct\ \{\ int\ my\_field;\ \}`}}
+\DoxyCodeLine{00053\ \ \ \ \ \mbox{\hyperlink{namespaceflatbuffers_a51f13331958603317b446d2ea6d46c55}{Case}}\ \mbox{\hyperlink{structflatbuffers_1_1Namer_1_1Config_a6914773c48fef7686ce3c8c5469b2a41}{fields}};}
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{comment}{//\ Case\ style\ for\ flatbuffers-\/defined\ variables.}}
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{comment}{//\ e.g.\ \`{}int\ my\_variable\ =\ 2`}}
+\DoxyCodeLine{00056\ \ \ \ \ \mbox{\hyperlink{namespaceflatbuffers_a51f13331958603317b446d2ea6d46c55}{Case}}\ \mbox{\hyperlink{structflatbuffers_1_1Namer_1_1Config_a0c7f41db802f65d76ab647ffcd5ddf55}{variables}};}
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{comment}{//\ Case\ style\ for\ flatbuffers-\/defined\ variants.}}
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{comment}{//\ e.g.\ \`{}enum\ class\ Enum\ \{\ MyVariant,\ \}`}}
+\DoxyCodeLine{00059\ \ \ \ \ \mbox{\hyperlink{namespaceflatbuffers_a51f13331958603317b446d2ea6d46c55}{Case}}\ \mbox{\hyperlink{structflatbuffers_1_1Namer_1_1Config_ab2470d4a70cf397681ebab5b50679242}{variants}};}
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{comment}{//\ Seperator\ for\ qualified\ enum\ names.}}
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{comment}{//\ e.g.\ \`{}Enum::MyVariant`\ uses\ \`{}::`.}}
+\DoxyCodeLine{00062\ \ \ \ \ std::string\ \mbox{\hyperlink{structflatbuffers_1_1Namer_1_1Config_a16018616ce993e7dad4be298ddb7fd9c}{enum\_variant\_seperator}};}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{comment}{//\ Configures,\ when\ formatting\ code,\ whether\ symbols\ are\ checked\ against}}
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{comment}{//\ keywords\ and\ escaped\ before\ or\ after\ case\ conversion.\ It\ does\ not\ make}}
+\DoxyCodeLine{00066\ \ \ \ \ \textcolor{comment}{//\ sense\ to\ do\ so\ before,\ but\ its\ legacy\ behavior.\ :shrug:}}
+\DoxyCodeLine{00067\ \ \ \ \ \textcolor{comment}{//\ TODO(caspern):\ Deprecate.}}
+\DoxyCodeLine{00068\ \ \ \ \ \textcolor{keyword}{enum\ class}\ \mbox{\hyperlink{structflatbuffers_1_1Namer_1_1Config_a43d11e85acac80a53f28b50bdd884e5d}{Escape}}\ \{}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \mbox{\hyperlink{structflatbuffers_1_1Namer_1_1Config_a43d11e85acac80a53f28b50bdd884e5dac76f50b429ac3476b08e8841b42e9e34}{BeforeConvertingCase}},}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \mbox{\hyperlink{structflatbuffers_1_1Namer_1_1Config_a43d11e85acac80a53f28b50bdd884e5da1f8b280a2a5adbb0a1082bb461adbcff}{AfterConvertingCase}},}
+\DoxyCodeLine{00071\ \ \ \ \ \};}
+\DoxyCodeLine{00072\ \ \ \ \ \mbox{\hyperlink{structflatbuffers_1_1Namer_1_1Config_a43d11e85acac80a53f28b50bdd884e5d}{Escape}}\ \mbox{\hyperlink{structflatbuffers_1_1Namer_1_1Config_a8a2b9df558f7808106d9a3f6514e5523}{escape\_keywords}};}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00074\ \ \ \ \ \textcolor{comment}{//\ Namespaces}}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00076\ \ \ \ \ \textcolor{comment}{//\ e.g.\ \`{}namespace\ my\_namespace\ \{\}`}}
+\DoxyCodeLine{00077\ \ \ \ \ \mbox{\hyperlink{namespaceflatbuffers_a51f13331958603317b446d2ea6d46c55}{Case}}\ \mbox{\hyperlink{structflatbuffers_1_1Namer_1_1Config_a6b0d2473dcd35de8354057c9b6a92350}{namespaces}};}
+\DoxyCodeLine{00078\ \ \ \ \ \textcolor{comment}{//\ The\ seperator\ between\ namespaces\ in\ a\ namespace\ path.}}
+\DoxyCodeLine{00079\ \ \ \ \ std::string\ \mbox{\hyperlink{structflatbuffers_1_1Namer_1_1Config_a679751b0968ed33bf255718037851023}{namespace\_seperator}};}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00081\ \ \ \ \ \textcolor{comment}{//\ Object\ API.}}
+\DoxyCodeLine{00082\ \ \ \ \ \textcolor{comment}{//\ Native\ versions\ flatbuffers\ types\ have\ this\ prefix.}}
+\DoxyCodeLine{00083\ \ \ \ \ \textcolor{comment}{//\ e.g.\ "{}"{}\ (it's\ usually\ empty\ string)}}
+\DoxyCodeLine{00084\ \ \ \ \ std::string\ \mbox{\hyperlink{structflatbuffers_1_1Namer_1_1Config_a70dd741032b4fdd812de4cf5ccd9fd7f}{object\_prefix}};}
+\DoxyCodeLine{00085\ \ \ \ \ \textcolor{comment}{//\ Native\ versions\ flatbuffers\ types\ have\ this\ suffix.}}
+\DoxyCodeLine{00086\ \ \ \ \ \textcolor{comment}{//\ e.g.\ "{}T"{}}}
+\DoxyCodeLine{00087\ \ \ \ \ std::string\ \mbox{\hyperlink{structflatbuffers_1_1Namer_1_1Config_a916b4e608a5d1e40f0fc8bada661efbf}{object\_suffix}};}
+\DoxyCodeLine{00088\ }
+\DoxyCodeLine{00089\ \ \ \ \ \textcolor{comment}{//\ Keywords.}}
+\DoxyCodeLine{00090\ \ \ \ \ \textcolor{comment}{//\ Prefix\ used\ to\ escape\ keywords.\ It\ is\ usually\ empty\ string.}}
+\DoxyCodeLine{00091\ \ \ \ \ std::string\ \mbox{\hyperlink{structflatbuffers_1_1Namer_1_1Config_af269d212038cf42bd58b157196180d5a}{keyword\_prefix}};}
+\DoxyCodeLine{00092\ \ \ \ \ \textcolor{comment}{//\ Suffix\ used\ to\ escape\ keywords.\ It\ is\ usually\ "{}\_"{}.}}
+\DoxyCodeLine{00093\ \ \ \ \ std::string\ \mbox{\hyperlink{structflatbuffers_1_1Namer_1_1Config_a7bc914e09602e69a9d04bcb75f3d3152}{keyword\_suffix}};}
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00095\ \ \ \ \ \textcolor{comment}{//\ Files.}}
+\DoxyCodeLine{00096\ }
+\DoxyCodeLine{00097\ \ \ \ \ \textcolor{comment}{//\ Case\ style\ for\ filenames.\ e.g.\ \`{}foo\_bar\_generated.rs`}}
+\DoxyCodeLine{00098\ \ \ \ \ \mbox{\hyperlink{namespaceflatbuffers_a51f13331958603317b446d2ea6d46c55}{Case}}\ \mbox{\hyperlink{structflatbuffers_1_1Namer_1_1Config_ab163e99d58a5cc9f1c149069c79a09e6}{filenames}};}
+\DoxyCodeLine{00099\ \ \ \ \ \textcolor{comment}{//\ Case\ style\ for\ directories,\ e.g.\ \`{}output\_files/foo\_bar/baz/`}}
+\DoxyCodeLine{00100\ \ \ \ \ \mbox{\hyperlink{namespaceflatbuffers_a51f13331958603317b446d2ea6d46c55}{Case}}\ \mbox{\hyperlink{structflatbuffers_1_1Namer_1_1Config_a179115960487bcc0144a4a43382c2ffe}{directories}};}
+\DoxyCodeLine{00101\ \ \ \ \ \textcolor{comment}{//\ The\ directory\ within\ which\ we\ will\ generate\ files.}}
+\DoxyCodeLine{00102\ \ \ \ \ std::string\ \mbox{\hyperlink{structflatbuffers_1_1Namer_1_1Config_a4993f74b3a45dc7fd33543a7fc56b037}{output\_path}};}
+\DoxyCodeLine{00103\ \ \ \ \ \textcolor{comment}{//\ Suffix\ for\ generated\ file\ names,\ e.g.\ "{}\_generated"{}.}}
+\DoxyCodeLine{00104\ \ \ \ \ std::string\ \mbox{\hyperlink{structflatbuffers_1_1Namer_1_1Config_a7011065c5cd0b5c115ca1ef7dc9c5f5e}{filename\_suffix}};}
+\DoxyCodeLine{00105\ \ \ \ \ \textcolor{comment}{//\ Extension\ for\ generated\ files,\ e.g.\ "{}.cpp"{}\ or\ "{}.rs"{}.}}
+\DoxyCodeLine{00106\ \ \ \ \ std::string\ \mbox{\hyperlink{structflatbuffers_1_1Namer_1_1Config_a594272bfefeb0dfc8c2d00dc1acbf4f5}{filename\_extension}};}
+\DoxyCodeLine{00107\ \ \ \};}
+\DoxyCodeLine{00108\ \ \ \mbox{\hyperlink{classflatbuffers_1_1Namer_aeff94a1ac3d3399d62fbe44b6c149860}{Namer}}(\mbox{\hyperlink{structflatbuffers_1_1Namer_1_1Config}{Config}}\ config,\ std::set<std::string>\ keywords)}
+\DoxyCodeLine{00109\ \ \ \ \ \ \ :\ \mbox{\hyperlink{classflatbuffers_1_1Namer_a7f4965fdf7b82ade573688c90e0aef9e}{config\_}}(config),\ \mbox{\hyperlink{classflatbuffers_1_1Namer_aec4d483168abcd3071e41d0dcff6603d}{keywords\_}}(\mbox{\hyperlink{namespacestd}{std}}::move(keywords))\ \{\}}
+\DoxyCodeLine{00110\ }
+\DoxyCodeLine{00111\ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classflatbuffers_1_1Namer_affe706473b5f48e6ec54d71cd0c595c9}{\string~Namer}}()\ \{\}}
+\DoxyCodeLine{00112\ }
+\DoxyCodeLine{00113\ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>\ std::string\ \mbox{\hyperlink{classflatbuffers_1_1Namer_ae040995ecbde3ec2583fb69ce0b5f4ae}{Method}}(\textcolor{keyword}{const}\ T\ \&s)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00114\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{gmock-spec-builders__test_8cc_a95606368148f3e5aab5db46c32466afd}{Method}}(s.name);}
+\DoxyCodeLine{00115\ \ \ \}}
+\DoxyCodeLine{00116\ }
+\DoxyCodeLine{00117\ \ \ \textcolor{keyword}{virtual}\ std::string\ \mbox{\hyperlink{classflatbuffers_1_1Namer_a77acbbf79466a6e4b0348ce83078a8c6}{Method}}(\textcolor{keyword}{const}\ std::string\ \&pre,}
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\ \&mid,}
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\ \&suf)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00120\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classflatbuffers_1_1Namer_a5a14c9167f55c1ee1a55c4b30d797424}{Format}}(pre\ +\ \textcolor{stringliteral}{"{}\_"{}}\ +\ \ mid\ +\ \textcolor{stringliteral}{"{}\_"{}}\ +\ suf,\ \mbox{\hyperlink{classflatbuffers_1_1Namer_a7f4965fdf7b82ade573688c90e0aef9e}{config\_}}.\mbox{\hyperlink{structflatbuffers_1_1Namer_1_1Config_a440f7c56bac598260339cf4a711d8705}{methods}});}
+\DoxyCodeLine{00121\ \ \ \}}
+\DoxyCodeLine{00122\ \ \ \textcolor{keyword}{virtual}\ std::string\ \mbox{\hyperlink{classflatbuffers_1_1Namer_ad9f5122ba4bb121eefe6847046975b2c}{Method}}(\textcolor{keyword}{const}\ std::string\ \&pre,}
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\ \&suf)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00124\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classflatbuffers_1_1Namer_a5a14c9167f55c1ee1a55c4b30d797424}{Format}}(pre\ +\ \textcolor{stringliteral}{"{}\_"{}}\ +\ suf,\ \mbox{\hyperlink{classflatbuffers_1_1Namer_a7f4965fdf7b82ade573688c90e0aef9e}{config\_}}.\mbox{\hyperlink{structflatbuffers_1_1Namer_1_1Config_a440f7c56bac598260339cf4a711d8705}{methods}});}
+\DoxyCodeLine{00125\ \ \ \}}
+\DoxyCodeLine{00126\ \ \ \textcolor{keyword}{virtual}\ std::string\ \mbox{\hyperlink{classflatbuffers_1_1Namer_a36274f331452b436dcbedc0db6aa096e}{Method}}(\textcolor{keyword}{const}\ std::string\ \&s)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00127\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classflatbuffers_1_1Namer_a5a14c9167f55c1ee1a55c4b30d797424}{Format}}(s,\ \mbox{\hyperlink{classflatbuffers_1_1Namer_a7f4965fdf7b82ade573688c90e0aef9e}{config\_}}.\mbox{\hyperlink{structflatbuffers_1_1Namer_1_1Config_a440f7c56bac598260339cf4a711d8705}{methods}});}
+\DoxyCodeLine{00128\ \ \ \}}
+\DoxyCodeLine{00129\ }
+\DoxyCodeLine{00130\ \ \ \textcolor{keyword}{virtual}\ std::string\ \mbox{\hyperlink{classflatbuffers_1_1Namer_a8664159cfd317e6a64f9b42f5da53544}{Constant}}(\textcolor{keyword}{const}\ std::string\ \&s)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00131\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classflatbuffers_1_1Namer_a5a14c9167f55c1ee1a55c4b30d797424}{Format}}(s,\ \mbox{\hyperlink{classflatbuffers_1_1Namer_a7f4965fdf7b82ade573688c90e0aef9e}{config\_}}.\mbox{\hyperlink{structflatbuffers_1_1Namer_1_1Config_a9d2865a8a1ea9b395d804c7a062f19f2}{constants}});}
+\DoxyCodeLine{00132\ \ \ \}}
+\DoxyCodeLine{00133\ }
+\DoxyCodeLine{00134\ \ \ \textcolor{keyword}{virtual}\ std::string\ \mbox{\hyperlink{classflatbuffers_1_1Namer_a66e38ef43f91696c1209167564e64192}{Function}}(\textcolor{keyword}{const}\ std::string\ \&s)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00135\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classflatbuffers_1_1Namer_a5a14c9167f55c1ee1a55c4b30d797424}{Format}}(s,\ \mbox{\hyperlink{classflatbuffers_1_1Namer_a7f4965fdf7b82ade573688c90e0aef9e}{config\_}}.\mbox{\hyperlink{structflatbuffers_1_1Namer_1_1Config_acd08f396ffccc59771054d1aed518f1f}{functions}});}
+\DoxyCodeLine{00136\ \ \ \}}
+\DoxyCodeLine{00137\ }
+\DoxyCodeLine{00138\ \ \ \textcolor{keyword}{virtual}\ std::string\ \mbox{\hyperlink{classflatbuffers_1_1Namer_ac784ab9f000916c4d7251d94309734c6}{Variable}}(\textcolor{keyword}{const}\ std::string\ \&s)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00139\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classflatbuffers_1_1Namer_a5a14c9167f55c1ee1a55c4b30d797424}{Format}}(s,\ \mbox{\hyperlink{classflatbuffers_1_1Namer_a7f4965fdf7b82ade573688c90e0aef9e}{config\_}}.\mbox{\hyperlink{structflatbuffers_1_1Namer_1_1Config_a0c7f41db802f65d76ab647ffcd5ddf55}{variables}});}
+\DoxyCodeLine{00140\ \ \ \}}
+\DoxyCodeLine{00141\ }
+\DoxyCodeLine{00142\ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00143\ \ \ std::string\ \mbox{\hyperlink{classflatbuffers_1_1Namer_ad494ba91b667f70b77b5b0397f57d72c}{Variable}}(\textcolor{keyword}{const}\ std::string\ \&\mbox{\hyperlink{gmock-matchers-containers__test_8cc_a6bc6b007533335efe02bafff799ec64c}{p}},\ \textcolor{keyword}{const}\ T\ \&s)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00144\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classflatbuffers_1_1Namer_a5a14c9167f55c1ee1a55c4b30d797424}{Format}}(\mbox{\hyperlink{gmock-matchers-containers__test_8cc_a6bc6b007533335efe02bafff799ec64c}{p}}\ +\ \textcolor{stringliteral}{"{}\_"{}}\ +\ s.name,\ \mbox{\hyperlink{classflatbuffers_1_1Namer_a7f4965fdf7b82ade573688c90e0aef9e}{config\_}}.\mbox{\hyperlink{structflatbuffers_1_1Namer_1_1Config_a0c7f41db802f65d76ab647ffcd5ddf55}{variables}});}
+\DoxyCodeLine{00145\ \ \ \}}
+\DoxyCodeLine{00146\ \ \ \textcolor{keyword}{virtual}\ std::string\ \mbox{\hyperlink{classflatbuffers_1_1Namer_a7162f181183bbd4ee1328c20e232c3b1}{Variable}}(\textcolor{keyword}{const}\ std::string\ \&\mbox{\hyperlink{gmock-matchers-containers__test_8cc_a6bc6b007533335efe02bafff799ec64c}{p}},}
+\DoxyCodeLine{00147\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\ \&s)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00148\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classflatbuffers_1_1Namer_a5a14c9167f55c1ee1a55c4b30d797424}{Format}}(\mbox{\hyperlink{gmock-matchers-containers__test_8cc_a6bc6b007533335efe02bafff799ec64c}{p}}\ +\ \textcolor{stringliteral}{"{}\_"{}}\ +\ s,\ \mbox{\hyperlink{classflatbuffers_1_1Namer_a7f4965fdf7b82ade573688c90e0aef9e}{config\_}}.\mbox{\hyperlink{structflatbuffers_1_1Namer_1_1Config_a0c7f41db802f65d76ab647ffcd5ddf55}{variables}});}
+\DoxyCodeLine{00149\ \ \ \}}
+\DoxyCodeLine{00150\ }
+\DoxyCodeLine{00151\ \ \ \textcolor{keyword}{virtual}\ std::string\ \mbox{\hyperlink{classflatbuffers_1_1Namer_a6fce1d2696851be63ac7f232ef0bd8cf}{Namespace}}(\textcolor{keyword}{const}\ std::string\ \&s)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00152\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classflatbuffers_1_1Namer_a5a14c9167f55c1ee1a55c4b30d797424}{Format}}(s,\ \mbox{\hyperlink{classflatbuffers_1_1Namer_a7f4965fdf7b82ade573688c90e0aef9e}{config\_}}.\mbox{\hyperlink{structflatbuffers_1_1Namer_1_1Config_a6b0d2473dcd35de8354057c9b6a92350}{namespaces}});}
+\DoxyCodeLine{00153\ \ \ \}}
+\DoxyCodeLine{00154\ }
+\DoxyCodeLine{00155\ \ \ \textcolor{keyword}{virtual}\ std::string\ \mbox{\hyperlink{classflatbuffers_1_1Namer_a76f994e2a7badd6d84fedcd661389cb0}{Namespace}}(\textcolor{keyword}{const}\ std::vector<std::string>\ \&\mbox{\hyperlink{idl__gen__ts_8cpp_a97618fe2e31e62d92ace9b30478febba}{ns}})\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00156\ \ \ \ \ std::string\ result;}
+\DoxyCodeLine{00157\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ it\ =\ \mbox{\hyperlink{idl__gen__ts_8cpp_a97618fe2e31e62d92ace9b30478febba}{ns}}.begin();\ it\ !=\ \mbox{\hyperlink{idl__gen__ts_8cpp_a97618fe2e31e62d92ace9b30478febba}{ns}}.end();\ it++)\ \{}
+\DoxyCodeLine{00158\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (it\ !=\ \mbox{\hyperlink{idl__gen__ts_8cpp_a97618fe2e31e62d92ace9b30478febba}{ns}}.begin())\ result\ +=\ \mbox{\hyperlink{classflatbuffers_1_1Namer_a7f4965fdf7b82ade573688c90e0aef9e}{config\_}}.\mbox{\hyperlink{structflatbuffers_1_1Namer_1_1Config_a679751b0968ed33bf255718037851023}{namespace\_seperator}};}
+\DoxyCodeLine{00159\ \ \ \ \ \ \ result\ +=\ \mbox{\hyperlink{structflatbuffers_1_1Namespace}{Namespace}}(*it);}
+\DoxyCodeLine{00160\ \ \ \ \ \}}
+\DoxyCodeLine{00161\ \ \ \ \ \textcolor{keywordflow}{return}\ result;}
+\DoxyCodeLine{00162\ \ \ \}}
+\DoxyCodeLine{00163\ }
+\DoxyCodeLine{00164\ \ \ \textcolor{keyword}{virtual}\ std::string\ \mbox{\hyperlink{classflatbuffers_1_1Namer_a99ab48ea84573e5de215e3c439641df0}{NamespacedType}}(\textcolor{keyword}{const}\ std::vector<std::string>\ \&\mbox{\hyperlink{idl__gen__ts_8cpp_a97618fe2e31e62d92ace9b30478febba}{ns}},}
+\DoxyCodeLine{00165\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\ \&s)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00166\ \ \ \ \ \textcolor{keywordflow}{return}\ (\mbox{\hyperlink{idl__gen__ts_8cpp_a97618fe2e31e62d92ace9b30478febba}{ns}}.empty()\ ?\ \textcolor{stringliteral}{"{}"{}}\ :\ (\mbox{\hyperlink{structflatbuffers_1_1Namespace}{Namespace}}(\mbox{\hyperlink{idl__gen__ts_8cpp_a97618fe2e31e62d92ace9b30478febba}{ns}})\ +\ \mbox{\hyperlink{classflatbuffers_1_1Namer_a7f4965fdf7b82ade573688c90e0aef9e}{config\_}}.\mbox{\hyperlink{structflatbuffers_1_1Namer_1_1Config_a679751b0968ed33bf255718037851023}{namespace\_seperator}}))\ +}
+\DoxyCodeLine{00167\ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structflatbuffers_1_1Type}{Type}}(s);}
+\DoxyCodeLine{00168\ \ \ \}}
+\DoxyCodeLine{00169\ }
+\DoxyCodeLine{00170\ \ \ \textcolor{comment}{//\ Returns\ \`{}filename`\ with\ the\ right\ casing,\ suffix,\ and\ extension.}}
+\DoxyCodeLine{00171\ \ \ \textcolor{keyword}{virtual}\ std::string\ \mbox{\hyperlink{classflatbuffers_1_1Namer_a7ba0fac80802fe467c7aa1182acbfe5a}{File}}(\textcolor{keyword}{const}\ std::string\ \&filename,}
+\DoxyCodeLine{00172\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceflatbuffers_a77a8b67a8dd834785bcf61b5788e56e1}{SkipFile}}\ skips\ =\ \mbox{\hyperlink{namespaceflatbuffers_a77a8b67a8dd834785bcf61b5788e56e1a6adf97f83acf6453d4a6a4b1070f3754}{SkipFile::None}})\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00173\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{bool}\ skip\_suffix\ =\ (skips\ \&\ \mbox{\hyperlink{namespaceflatbuffers_a77a8b67a8dd834785bcf61b5788e56e1a56e6ddd1cb6cec596b433440dfb21c17}{SkipFile::Suffix}})\ !=\ \mbox{\hyperlink{namespaceflatbuffers_a77a8b67a8dd834785bcf61b5788e56e1a6adf97f83acf6453d4a6a4b1070f3754}{SkipFile::None}};}
+\DoxyCodeLine{00174\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{bool}\ skip\_ext\ =\ (skips\ \&\ \mbox{\hyperlink{namespaceflatbuffers_a77a8b67a8dd834785bcf61b5788e56e1a63e4e92bb7d207ca577b11c07f827279}{SkipFile::Extension}})\ !=\ \mbox{\hyperlink{namespaceflatbuffers_a77a8b67a8dd834785bcf61b5788e56e1a6adf97f83acf6453d4a6a4b1070f3754}{SkipFile::None}};}
+\DoxyCodeLine{00175\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{namespaceflatbuffers_a2d22ce6be342773407559f0c20ab68d1}{ConvertCase}}(filename,\ \mbox{\hyperlink{classflatbuffers_1_1Namer_a7f4965fdf7b82ade573688c90e0aef9e}{config\_}}.\mbox{\hyperlink{structflatbuffers_1_1Namer_1_1Config_ab163e99d58a5cc9f1c149069c79a09e6}{filenames}},\ \mbox{\hyperlink{namespaceflatbuffers_a51f13331958603317b446d2ea6d46c55a9f2f58218b575491fdfd8059304771b4}{Case::kUpperCamel}})\ +}
+\DoxyCodeLine{00176\ \ \ \ \ \ \ \ \ \ \ \ (skip\_suffix\ ?\ \textcolor{stringliteral}{"{}"{}}\ :\ \mbox{\hyperlink{classflatbuffers_1_1Namer_a7f4965fdf7b82ade573688c90e0aef9e}{config\_}}.\mbox{\hyperlink{structflatbuffers_1_1Namer_1_1Config_a7011065c5cd0b5c115ca1ef7dc9c5f5e}{filename\_suffix}})\ +}
+\DoxyCodeLine{00177\ \ \ \ \ \ \ \ \ \ \ \ (skip\_ext\ ?\ \textcolor{stringliteral}{"{}"{}}\ :\ \mbox{\hyperlink{classflatbuffers_1_1Namer_a7f4965fdf7b82ade573688c90e0aef9e}{config\_}}.\mbox{\hyperlink{structflatbuffers_1_1Namer_1_1Config_a594272bfefeb0dfc8c2d00dc1acbf4f5}{filename\_extension}});}
+\DoxyCodeLine{00178\ \ \ \}}
+\DoxyCodeLine{00179\ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00180\ \ \ std::string\ \mbox{\hyperlink{classflatbuffers_1_1Namer_a2d5a609743174788e7e678a68e8961a9}{File}}(\textcolor{keyword}{const}\ T\ \&f,\ \mbox{\hyperlink{namespaceflatbuffers_a77a8b67a8dd834785bcf61b5788e56e1}{SkipFile}}\ skips\ =\ \mbox{\hyperlink{namespaceflatbuffers_a77a8b67a8dd834785bcf61b5788e56e1a6adf97f83acf6453d4a6a4b1070f3754}{SkipFile::None}})\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00181\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classflatbuffers_1_1Namer_a7ba0fac80802fe467c7aa1182acbfe5a}{File}}(f.name,\ skips);}
+\DoxyCodeLine{00182\ \ \ \}}
+\DoxyCodeLine{00183\ }
+\DoxyCodeLine{00184\ \ \ \textcolor{comment}{//\ Formats\ \`{}directories`\ prefixed\ with\ the\ output\_path\ and\ joined\ with\ the}}
+\DoxyCodeLine{00185\ \ \ \textcolor{comment}{//\ right\ seperator.\ Output\ path\ prefixing\ and\ the\ trailing\ separator\ may\ be}}
+\DoxyCodeLine{00186\ \ \ \textcolor{comment}{//\ skiped\ using\ \`{}skips`.}}
+\DoxyCodeLine{00187\ \ \ \textcolor{comment}{//\ Callers\ may\ want\ to\ use\ \`{}EnsureDirExists`\ with\ the\ result.}}
+\DoxyCodeLine{00188\ \ \ \textcolor{comment}{//\ input\_case\ is\ used\ to\ tell\ how\ to\ modify\ namespace.\ e.g.\ kUpperCamel\ will}}
+\DoxyCodeLine{00189\ \ \ \textcolor{comment}{//\ add\ a\ underscode\ between\ case\ changes,\ so\ MyGame\ turns\ into\ My\_Game}}
+\DoxyCodeLine{00190\ \ \ \textcolor{comment}{//\ (depending\ also\ on\ the\ output\_case).}}
+\DoxyCodeLine{00191\ \ \ \textcolor{keyword}{virtual}\ std::string\ \mbox{\hyperlink{classflatbuffers_1_1Namer_a1a34c7f54718cacbc4ed6d06586698c5}{Directories}}(\textcolor{keyword}{const}\ std::vector<std::string>\ \&directories,}
+\DoxyCodeLine{00192\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceflatbuffers_ac8fb13afcc4ada7592285690e8c42870}{SkipDir}}\ skips\ =\ \mbox{\hyperlink{namespaceflatbuffers_ac8fb13afcc4ada7592285690e8c42870a6adf97f83acf6453d4a6a4b1070f3754}{SkipDir::None}},}
+\DoxyCodeLine{00193\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceflatbuffers_a51f13331958603317b446d2ea6d46c55}{Case}}\ input\_case\ =\ \mbox{\hyperlink{namespaceflatbuffers_a51f13331958603317b446d2ea6d46c55a9f2f58218b575491fdfd8059304771b4}{Case::kUpperCamel}})\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00194\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{bool}\ skip\_output\_path\ =}
+\DoxyCodeLine{00195\ \ \ \ \ \ \ \ \ (skips\ \&\ \mbox{\hyperlink{namespaceflatbuffers_ac8fb13afcc4ada7592285690e8c42870ae4979dda6e714259ff80ee105323599c}{SkipDir::OutputPath}})\ !=\ \mbox{\hyperlink{namespaceflatbuffers_ac8fb13afcc4ada7592285690e8c42870a6adf97f83acf6453d4a6a4b1070f3754}{SkipDir::None}};}
+\DoxyCodeLine{00196\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{bool}\ skip\_trailing\_seperator\ =}
+\DoxyCodeLine{00197\ \ \ \ \ \ \ \ \ (skips\ \&\ \mbox{\hyperlink{namespaceflatbuffers_ac8fb13afcc4ada7592285690e8c42870a6073c49a6784ff9179d5a05f06ac1daa}{SkipDir::TrailingPathSeperator}})\ !=\ \mbox{\hyperlink{namespaceflatbuffers_ac8fb13afcc4ada7592285690e8c42870a6adf97f83acf6453d4a6a4b1070f3754}{SkipDir::None}};}
+\DoxyCodeLine{00198\ \ \ \ \ std::string\ result\ =\ skip\_output\_path\ ?\ \textcolor{stringliteral}{"{}"{}}\ :\ \mbox{\hyperlink{classflatbuffers_1_1Namer_a7f4965fdf7b82ade573688c90e0aef9e}{config\_}}.\mbox{\hyperlink{structflatbuffers_1_1Namer_1_1Config_a4993f74b3a45dc7fd33543a7fc56b037}{output\_path}};}
+\DoxyCodeLine{00199\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ d\ =\ directories.begin();\ d\ !=\ directories.end();\ d++)\ \{}
+\DoxyCodeLine{00200\ \ \ \ \ \ \ result\ +=\ \mbox{\hyperlink{namespaceflatbuffers_a2d22ce6be342773407559f0c20ab68d1}{ConvertCase}}(*d,\ \mbox{\hyperlink{classflatbuffers_1_1Namer_a7f4965fdf7b82ade573688c90e0aef9e}{config\_}}.\mbox{\hyperlink{structflatbuffers_1_1Namer_1_1Config_a179115960487bcc0144a4a43382c2ffe}{directories}},\ input\_case);}
+\DoxyCodeLine{00201\ \ \ \ \ \ \ result.push\_back(\mbox{\hyperlink{namespaceflatbuffers_a1bc4d5e6da57c98881fca7e817ad82e8}{kPathSeparator}});}
+\DoxyCodeLine{00202\ \ \ \ \ \}}
+\DoxyCodeLine{00203\ \ \ \ \ \textcolor{keywordflow}{if}\ (skip\_trailing\_seperator\ \&\&\ !result.empty())\ result.pop\_back();}
+\DoxyCodeLine{00204\ \ \ \ \ \textcolor{keywordflow}{return}\ result;}
+\DoxyCodeLine{00205\ \ \ \}}
+\DoxyCodeLine{00206\ }
+\DoxyCodeLine{00207\ \ \ \textcolor{keyword}{virtual}\ std::string\ \mbox{\hyperlink{classflatbuffers_1_1Namer_a034918fb748f5d4a1f3b4be59cd34289}{EscapeKeyword}}(\textcolor{keyword}{const}\ std::string\ \&\mbox{\hyperlink{idl__gen__ts_8cpp_a9b45b3e13bd9167aab02e17e08916231}{name}})\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00208\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classflatbuffers_1_1Namer_aec4d483168abcd3071e41d0dcff6603d}{keywords\_}}.find(\mbox{\hyperlink{idl__gen__ts_8cpp_a9b45b3e13bd9167aab02e17e08916231}{name}})\ ==\ \mbox{\hyperlink{classflatbuffers_1_1Namer_aec4d483168abcd3071e41d0dcff6603d}{keywords\_}}.end())\ \{}
+\DoxyCodeLine{00209\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{idl__gen__ts_8cpp_a9b45b3e13bd9167aab02e17e08916231}{name}};}
+\DoxyCodeLine{00210\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00211\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classflatbuffers_1_1Namer_a7f4965fdf7b82ade573688c90e0aef9e}{config\_}}.\mbox{\hyperlink{structflatbuffers_1_1Namer_1_1Config_af269d212038cf42bd58b157196180d5a}{keyword\_prefix}}\ +\ \mbox{\hyperlink{idl__gen__ts_8cpp_a9b45b3e13bd9167aab02e17e08916231}{name}}\ +\ \mbox{\hyperlink{classflatbuffers_1_1Namer_a7f4965fdf7b82ade573688c90e0aef9e}{config\_}}.\mbox{\hyperlink{structflatbuffers_1_1Namer_1_1Config_a7bc914e09602e69a9d04bcb75f3d3152}{keyword\_suffix}};}
+\DoxyCodeLine{00212\ \ \ \ \ \}}
+\DoxyCodeLine{00213\ \ \ \}}
+\DoxyCodeLine{00214\ }
+\DoxyCodeLine{00215\ \ \ \textcolor{keyword}{virtual}\ std::string\ \mbox{\hyperlink{classflatbuffers_1_1Namer_ac74869999ef842db7847e8d540db3f53}{Type}}(\textcolor{keyword}{const}\ std::string\ \&s)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00216\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classflatbuffers_1_1Namer_a5a14c9167f55c1ee1a55c4b30d797424}{Format}}(s,\ \mbox{\hyperlink{classflatbuffers_1_1Namer_a7f4965fdf7b82ade573688c90e0aef9e}{config\_}}.\mbox{\hyperlink{structflatbuffers_1_1Namer_1_1Config_a70bb83f0942f7a13af12be2b9f19dbf1}{types}});}
+\DoxyCodeLine{00217\ \ \ \}}
+\DoxyCodeLine{00218\ \ \ \textcolor{keyword}{virtual}\ std::string\ \mbox{\hyperlink{classflatbuffers_1_1Namer_a7f299714cc3bac24b35d58c22aa0c111}{Type}}(\textcolor{keyword}{const}\ std::string\ \&t,\ \textcolor{keyword}{const}\ std::string\ \&s)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00219\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classflatbuffers_1_1Namer_a5a14c9167f55c1ee1a55c4b30d797424}{Format}}(t\ +\ \textcolor{stringliteral}{"{}\_"{}}\ +\ s,\ \mbox{\hyperlink{classflatbuffers_1_1Namer_a7f4965fdf7b82ade573688c90e0aef9e}{config\_}}.\mbox{\hyperlink{structflatbuffers_1_1Namer_1_1Config_a70bb83f0942f7a13af12be2b9f19dbf1}{types}});}
+\DoxyCodeLine{00220\ \ \ \}}
+\DoxyCodeLine{00221\ }
+\DoxyCodeLine{00222\ \ \ \textcolor{keyword}{virtual}\ std::string\ \mbox{\hyperlink{classflatbuffers_1_1Namer_a997d8c13d879452749a55bf95f4ca9fc}{ObjectType}}(\textcolor{keyword}{const}\ std::string\ \&s)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00223\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classflatbuffers_1_1Namer_a7f4965fdf7b82ade573688c90e0aef9e}{config\_}}.\mbox{\hyperlink{structflatbuffers_1_1Namer_1_1Config_a70dd741032b4fdd812de4cf5ccd9fd7f}{object\_prefix}}\ +\ \mbox{\hyperlink{structflatbuffers_1_1Type}{Type}}(s)\ +\ \mbox{\hyperlink{classflatbuffers_1_1Namer_a7f4965fdf7b82ade573688c90e0aef9e}{config\_}}.\mbox{\hyperlink{structflatbuffers_1_1Namer_1_1Config_a916b4e608a5d1e40f0fc8bada661efbf}{object\_suffix}};}
+\DoxyCodeLine{00224\ \ \ \}}
+\DoxyCodeLine{00225\ }
+\DoxyCodeLine{00226\ \ \ \textcolor{keyword}{virtual}\ std::string\ \mbox{\hyperlink{classflatbuffers_1_1Namer_a7fc01b7292953acf8ad5511d74cbdcec}{Field}}(\textcolor{keyword}{const}\ std::string\ \&s)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00227\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classflatbuffers_1_1Namer_a5a14c9167f55c1ee1a55c4b30d797424}{Format}}(s,\ \mbox{\hyperlink{classflatbuffers_1_1Namer_a7f4965fdf7b82ade573688c90e0aef9e}{config\_}}.\mbox{\hyperlink{structflatbuffers_1_1Namer_1_1Config_a6914773c48fef7686ce3c8c5469b2a41}{fields}});}
+\DoxyCodeLine{00228\ \ \ \}}
+\DoxyCodeLine{00229\ }
+\DoxyCodeLine{00230\ \ \ \textcolor{keyword}{virtual}\ std::string\ \mbox{\hyperlink{classflatbuffers_1_1Namer_ab3aeb25dd3103103f3d12c45012c8b11}{Variant}}(\textcolor{keyword}{const}\ std::string\ \&s)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00231\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classflatbuffers_1_1Namer_a5a14c9167f55c1ee1a55c4b30d797424}{Format}}(s,\ \mbox{\hyperlink{classflatbuffers_1_1Namer_a7f4965fdf7b82ade573688c90e0aef9e}{config\_}}.\mbox{\hyperlink{structflatbuffers_1_1Namer_1_1Config_ab2470d4a70cf397681ebab5b50679242}{variants}});}
+\DoxyCodeLine{00232\ \ \ \}}
+\DoxyCodeLine{00233\ }
+\DoxyCodeLine{00234\ \ \ \textcolor{keyword}{virtual}\ std::string\ \mbox{\hyperlink{classflatbuffers_1_1Namer_a5a14c9167f55c1ee1a55c4b30d797424}{Format}}(\textcolor{keyword}{const}\ std::string\ \&s,\ \mbox{\hyperlink{namespaceflatbuffers_a51f13331958603317b446d2ea6d46c55}{Case}}\ casing)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00235\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classflatbuffers_1_1Namer_a7f4965fdf7b82ade573688c90e0aef9e}{config\_}}.\mbox{\hyperlink{structflatbuffers_1_1Namer_1_1Config_a8a2b9df558f7808106d9a3f6514e5523}{escape\_keywords}}\ ==\ \mbox{\hyperlink{structflatbuffers_1_1Namer_1_1Config_a43d11e85acac80a53f28b50bdd884e5dac76f50b429ac3476b08e8841b42e9e34}{Config::Escape::BeforeConvertingCase}})\ \{}
+\DoxyCodeLine{00236\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{namespaceflatbuffers_a2d22ce6be342773407559f0c20ab68d1}{ConvertCase}}(\mbox{\hyperlink{classflatbuffers_1_1Namer_a034918fb748f5d4a1f3b4be59cd34289}{EscapeKeyword}}(s),\ casing,\ \mbox{\hyperlink{namespaceflatbuffers_a51f13331958603317b446d2ea6d46c55a7e914b0f91be0644bfcdb1b41bea4276}{Case::kLowerCamel}});}
+\DoxyCodeLine{00237\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00238\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classflatbuffers_1_1Namer_a034918fb748f5d4a1f3b4be59cd34289}{EscapeKeyword}}(\mbox{\hyperlink{namespaceflatbuffers_a2d22ce6be342773407559f0c20ab68d1}{ConvertCase}}(s,\ casing,\ \mbox{\hyperlink{namespaceflatbuffers_a51f13331958603317b446d2ea6d46c55a7e914b0f91be0644bfcdb1b41bea4276}{Case::kLowerCamel}}));}
+\DoxyCodeLine{00239\ \ \ \ \ \}}
+\DoxyCodeLine{00240\ \ \ \}}
+\DoxyCodeLine{00241\ }
+\DoxyCodeLine{00242\ \ \ \textcolor{comment}{//\ Denamespaces\ a\ string\ (e.g.\ The.Quick.Brown.Fox)\ by\ returning\ the\ last\ part}}
+\DoxyCodeLine{00243\ \ \ \textcolor{comment}{//\ after\ the\ \`{}delimiter`\ (Fox)\ and\ placing\ the\ rest\ in\ \`{}namespace\_prefix`}}
+\DoxyCodeLine{00244\ \ \ \textcolor{comment}{//\ (The.Quick.Brown).}}
+\DoxyCodeLine{00245\ \ \ \textcolor{keyword}{virtual}\ std::string\ \mbox{\hyperlink{classflatbuffers_1_1Namer_af1f5753ac85a2f2a65e3f1d9fa0bb488}{Denamespace}}(\textcolor{keyword}{const}\ std::string\ \&s,}
+\DoxyCodeLine{00246\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ \&namespace\_prefix,}
+\DoxyCodeLine{00247\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{annotated__binary__text__gen_8cpp_a2d937314efe2f7ab8dfda68ccd6815bf}{delimiter}}\ =\ \textcolor{charliteral}{'.'})\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00248\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ pos\ =\ s.find\_last\_of(\mbox{\hyperlink{annotated__binary__text__gen_8cpp_a2d937314efe2f7ab8dfda68ccd6815bf}{delimiter}});}
+\DoxyCodeLine{00249\ \ \ \ \ \textcolor{keywordflow}{if}\ (pos\ ==\ std::string::npos)\ \{}
+\DoxyCodeLine{00250\ \ \ \ \ \ \ namespace\_prefix\ =\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{00251\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ s;}
+\DoxyCodeLine{00252\ \ \ \ \ \}}
+\DoxyCodeLine{00253\ \ \ \ \ namespace\_prefix\ =\ s.substr(0,\ pos);}
+\DoxyCodeLine{00254\ \ \ \ \ \textcolor{keywordflow}{return}\ s.substr(pos\ +\ 1);}
+\DoxyCodeLine{00255\ \ \ \}}
+\DoxyCodeLine{00256\ }
+\DoxyCodeLine{00257\ \ \ \textcolor{comment}{//\ Same\ as\ above,\ but\ disregards\ the\ prefix.}}
+\DoxyCodeLine{00258\ \ \ \textcolor{keyword}{virtual}\ std::string\ \mbox{\hyperlink{classflatbuffers_1_1Namer_a44a36e62ce6553900e0d646d2225f60b}{Denamespace}}(\textcolor{keyword}{const}\ std::string\ \&s,}
+\DoxyCodeLine{00259\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{annotated__binary__text__gen_8cpp_a2d937314efe2f7ab8dfda68ccd6815bf}{delimiter}}\ =\ \textcolor{charliteral}{'.'})\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00260\ \ \ \ \ std::string\ prefix;}
+\DoxyCodeLine{00261\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classflatbuffers_1_1Namer_af1f5753ac85a2f2a65e3f1d9fa0bb488}{Denamespace}}(s,\ prefix,\ \mbox{\hyperlink{annotated__binary__text__gen_8cpp_a2d937314efe2f7ab8dfda68ccd6815bf}{delimiter}});}
+\DoxyCodeLine{00262\ \ \ \}}
+\DoxyCodeLine{00263\ }
+\DoxyCodeLine{00264\ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{structflatbuffers_1_1Namer_1_1Config}{Config}}\ \mbox{\hyperlink{classflatbuffers_1_1Namer_a7f4965fdf7b82ade573688c90e0aef9e}{config\_}};}
+\DoxyCodeLine{00265\ \ \ \textcolor{keyword}{const}\ std::set<std::string>\ \mbox{\hyperlink{classflatbuffers_1_1Namer_aec4d483168abcd3071e41d0dcff6603d}{keywords\_}};}
+\DoxyCodeLine{00266\ \};}
+\DoxyCodeLine{00267\ }
+\DoxyCodeLine{00268\ \}\ \ \textcolor{comment}{//\ namespace\ flatbuffers}}
+\DoxyCodeLine{00269\ }
+\DoxyCodeLine{00270\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ FLATBUFFERS\_INCLUDE\_CODEGEN\_NAMER\_H\_}}
+
+\end{DoxyCode}

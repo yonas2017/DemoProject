@@ -1,0 +1,262 @@
+\doxysection{array.\+h}
+\hypertarget{array_8h_source}{}\label{array_8h_source}\index{flatbuffers/include/flatbuffers/array.h@{flatbuffers/include/flatbuffers/array.h}}
+\mbox{\hyperlink{array_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ Copyright\ 2021\ Google\ Inc.\ All\ rights\ reserved.}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ Licensed\ under\ the\ Apache\ License,\ Version\ 2.0\ (the\ "{}License"{});}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ you\ may\ not\ use\ this\ file\ except\ in\ compliance\ with\ the\ License.}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *\ You\ may\ obtain\ a\ copy\ of\ the\ License\ at}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ *\ \ \ \ \ http://www.apache.org/licenses/LICENSE-\/2.0}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ *\ Unless\ required\ by\ applicable\ law\ or\ agreed\ to\ in\ writing,\ software}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ *\ distributed\ under\ the\ License\ is\ distributed\ on\ an\ "{}AS\ IS"{}\ BASIS,}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ *\ WITHOUT\ WARRANTIES\ OR\ CONDITIONS\ OF\ ANY\ KIND,\ either\ express\ or\ implied.}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ *\ See\ the\ License\ for\ the\ specific\ language\ governing\ permissions\ and}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ *\ limitations\ under\ the\ License.}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#ifndef\ FLATBUFFERS\_ARRAY\_H\_}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#define\ FLATBUFFERS\_ARRAY\_H\_}}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ <cstdint>}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{base_8h}{flatbuffers/base.h}}"{}}}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{stl__emulation_8h}{flatbuffers/stl\_emulation.h}}"{}}}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{vector_8h}{flatbuffers/vector.h}}"{}}}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceflatbuffers}{flatbuffers}}\ \{}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \textcolor{comment}{//\ This\ is\ used\ as\ a\ helper\ type\ for\ accessing\ arrays.}}
+\DoxyCodeLine{00030\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T,\ u\textcolor{keywordtype}{int}16\_t\ length>\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classflatbuffers_1_1Array}{Array}}\ \{}
+\DoxyCodeLine{00031\ \ \ \textcolor{comment}{//\ Array<T>\ can\ carry\ only\ POD\ data\ types\ (scalars\ or\ structs).}}
+\DoxyCodeLine{00032\ \ \ \textcolor{keyword}{typedef}\ \textcolor{keyword}{typename}\ \mbox{\hyperlink{structflatbuffers_1_1bool__constant}{flatbuffers::bool\_constant<flatbuffers::is\_scalar<T>::value}}>}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \mbox{\hyperlink{structflatbuffers_1_1bool__constant}{scalar\_tag}};}
+\DoxyCodeLine{00034\ \ \ \textcolor{keyword}{typedef}}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \textcolor{keyword}{typename}\ \mbox{\hyperlink{structflatbuffers_1_1conditional}{flatbuffers::conditional<scalar\_tag::value,\ T,\ const\ T\ *>::type}}}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \ \ IndirectHelperType;}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00039\ \ \ \textcolor{keyword}{typedef}\ uint16\_t\ \mbox{\hyperlink{classflatbuffers_1_1Array_a695602e3d8b6581bd41aac335be0b909}{size\_type}};}
+\DoxyCodeLine{00040\ \ \ \textcolor{keyword}{typedef}\ \textcolor{keyword}{typename}\ IndirectHelper<IndirectHelperType>::return\_type\ \mbox{\hyperlink{classflatbuffers_1_1Array_a252ab64a89bfd61cb7baa5d4b1d74cd3}{return\_type}};}
+\DoxyCodeLine{00041\ \ \ \textcolor{keyword}{typedef}\ \mbox{\hyperlink{structflatbuffers_1_1VectorIterator}{VectorConstIterator<T,\ return\_type,\ uoffset\_t>}}\ \mbox{\hyperlink{classflatbuffers_1_1Array_ae2adee1ae31940475a376b35ae9801f8}{const\_iterator}};}
+\DoxyCodeLine{00042\ \ \ \textcolor{keyword}{typedef}\ \mbox{\hyperlink{structflatbuffers_1_1VectorReverseIterator}{VectorReverseIterator<const\_iterator>}}\ \mbox{\hyperlink{classflatbuffers_1_1Array_adbd9cf3b6515d4eb6af29d493ac4e4be}{const\_reverse\_iterator}};}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \ \ \textcolor{comment}{//\ If\ T\ is\ a\ LE-\/scalar\ or\ a\ struct\ (!scalar\_tag::value).}}
+\DoxyCodeLine{00045\ \ \ \textcolor{keyword}{static}\ FLATBUFFERS\_CONSTEXPR\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classflatbuffers_1_1Array_a8055cdf5a0cc33fde943a169a343af77}{is\_span\_observable}}\ =}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ (scalar\_tag::value\ \&\&\ (FLATBUFFERS\_LITTLEENDIAN\ ||\ \textcolor{keyword}{sizeof}(T)\ ==\ 1))\ ||}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ !scalar\_tag::value;}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \ \ FLATBUFFERS\_CONSTEXPR\ uint16\_t\ \mbox{\hyperlink{classflatbuffers_1_1Array_a43f5115933697ef5066319dbde1bfc51}{size}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ length;\ \}}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \ \ \mbox{\hyperlink{classflatbuffers_1_1Array_a252ab64a89bfd61cb7baa5d4b1d74cd3}{return\_type}}\ \mbox{\hyperlink{classflatbuffers_1_1Array_a70d39741861851799c06f757cb06213a}{Get}}(uoffset\_t\ \mbox{\hyperlink{gmock-matchers-comparisons__test_8cc_acb559820d9ca11295b4500f179ef6392}{i}})\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00052\ \ \ \ \ \mbox{\hyperlink{base_8h_ab2116a3957cb3c19761609ea7fd796fe}{FLATBUFFERS\_ASSERT}}(\mbox{\hyperlink{gmock-matchers-comparisons__test_8cc_acb559820d9ca11295b4500f179ef6392}{i}}\ <\ \mbox{\hyperlink{classflatbuffers_1_1Array_a43f5115933697ef5066319dbde1bfc51}{size}}());}
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keywordflow}{return}\ IndirectHelper<IndirectHelperType>::Read(\mbox{\hyperlink{classflatbuffers_1_1Array_ac849bcb5c2fcac62c03b995ec1b20829}{Data}}(),\ \mbox{\hyperlink{gmock-matchers-comparisons__test_8cc_acb559820d9ca11295b4500f179ef6392}{i}});}
+\DoxyCodeLine{00054\ \ \ \}}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \ \ \mbox{\hyperlink{classflatbuffers_1_1Array_a252ab64a89bfd61cb7baa5d4b1d74cd3}{return\_type}}\ \mbox{\hyperlink{classflatbuffers_1_1Array_abb558b81e4f92c2c0b3195c5efceb5b0}{operator[]}}(uoffset\_t\ \mbox{\hyperlink{gmock-matchers-comparisons__test_8cc_acb559820d9ca11295b4500f179ef6392}{i}})\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classflatbuffers_1_1Array_a70d39741861851799c06f757cb06213a}{Get}}(\mbox{\hyperlink{gmock-matchers-comparisons__test_8cc_acb559820d9ca11295b4500f179ef6392}{i}});\ \}}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ \ \ \textcolor{comment}{//\ If\ this\ is\ a\ Vector\ of\ enums,\ T\ will\ be\ its\ storage\ type,\ not\ the\ enum}}
+\DoxyCodeLine{00059\ \ \ \textcolor{comment}{//\ type.\ This\ function\ makes\ it\ convenient\ to\ retrieve\ value\ with\ enum}}
+\DoxyCodeLine{00060\ \ \ \textcolor{comment}{//\ type\ E.}}
+\DoxyCodeLine{00061\ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ E>\ E\ \mbox{\hyperlink{classflatbuffers_1_1Array_aa9d081d782c23ad782c9b499ae2e701c}{GetEnum}}(uoffset\_t\ \mbox{\hyperlink{gmock-matchers-comparisons__test_8cc_acb559820d9ca11295b4500f179ef6392}{i}})\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{static\_cast<}E\textcolor{keyword}{>}(\mbox{\hyperlink{classflatbuffers_1_1Array_a70d39741861851799c06f757cb06213a}{Get}}(\mbox{\hyperlink{gmock-matchers-comparisons__test_8cc_acb559820d9ca11295b4500f179ef6392}{i}}));}
+\DoxyCodeLine{00063\ \ \ \}}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ \ \ \mbox{\hyperlink{structflatbuffers_1_1VectorIterator}{const\_iterator}}\ \mbox{\hyperlink{classflatbuffers_1_1Array_af9f143cef0786ce109b66145340b79a3}{begin}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classflatbuffers_1_1Array_ae2adee1ae31940475a376b35ae9801f8}{const\_iterator}}(\mbox{\hyperlink{classflatbuffers_1_1Array_ac849bcb5c2fcac62c03b995ec1b20829}{Data}}(),\ 0);\ \}}
+\DoxyCodeLine{00066\ \ \ \mbox{\hyperlink{structflatbuffers_1_1VectorIterator}{const\_iterator}}\ \mbox{\hyperlink{classflatbuffers_1_1Array_a79a4f5097c04d03fd32c0c0bc505f77a}{end}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classflatbuffers_1_1Array_ae2adee1ae31940475a376b35ae9801f8}{const\_iterator}}(\mbox{\hyperlink{classflatbuffers_1_1Array_ac849bcb5c2fcac62c03b995ec1b20829}{Data}}(),\ \mbox{\hyperlink{classflatbuffers_1_1Array_a43f5115933697ef5066319dbde1bfc51}{size}}());\ \}}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00068\ \ \ \mbox{\hyperlink{structflatbuffers_1_1VectorReverseIterator}{const\_reverse\_iterator}}\ \mbox{\hyperlink{classflatbuffers_1_1Array_af00e71a586f8842a66047806db4a3371}{rbegin}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00069\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classflatbuffers_1_1Array_adbd9cf3b6515d4eb6af29d493ac4e4be}{const\_reverse\_iterator}}(\mbox{\hyperlink{classflatbuffers_1_1Array_a79a4f5097c04d03fd32c0c0bc505f77a}{end}}());}
+\DoxyCodeLine{00070\ \ \ \}}
+\DoxyCodeLine{00071\ \ \ \mbox{\hyperlink{structflatbuffers_1_1VectorReverseIterator}{const\_reverse\_iterator}}\ \mbox{\hyperlink{classflatbuffers_1_1Array_ab1179436593ebd7576a19d884a509cec}{rend}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00072\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classflatbuffers_1_1Array_adbd9cf3b6515d4eb6af29d493ac4e4be}{const\_reverse\_iterator}}(\mbox{\hyperlink{classflatbuffers_1_1Array_af9f143cef0786ce109b66145340b79a3}{begin}}());}
+\DoxyCodeLine{00073\ \ \ \}}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00075\ \ \ \mbox{\hyperlink{structflatbuffers_1_1VectorIterator}{const\_iterator}}\ \mbox{\hyperlink{classflatbuffers_1_1Array_ab77a4e365df1c8f92b23ba290850cdcb}{cbegin}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classflatbuffers_1_1Array_af9f143cef0786ce109b66145340b79a3}{begin}}();\ \}}
+\DoxyCodeLine{00076\ \ \ \mbox{\hyperlink{structflatbuffers_1_1VectorIterator}{const\_iterator}}\ \mbox{\hyperlink{classflatbuffers_1_1Array_a2965190c2f307ee733bcf06384bf1cbb}{cend}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classflatbuffers_1_1Array_a79a4f5097c04d03fd32c0c0bc505f77a}{end}}();\ \}}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00078\ \ \ \mbox{\hyperlink{structflatbuffers_1_1VectorReverseIterator}{const\_reverse\_iterator}}\ \mbox{\hyperlink{classflatbuffers_1_1Array_a0c44e968453f813e89a6876d91f3a3ac}{crbegin}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classflatbuffers_1_1Array_af00e71a586f8842a66047806db4a3371}{rbegin}}();\ \}}
+\DoxyCodeLine{00079\ \ \ \mbox{\hyperlink{structflatbuffers_1_1VectorReverseIterator}{const\_reverse\_iterator}}\ \mbox{\hyperlink{classflatbuffers_1_1Array_a348aed71a81bf7c9adcc4f7f5d131ce3}{crend}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classflatbuffers_1_1Array_ab1179436593ebd7576a19d884a509cec}{rend}}();\ \}}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00081\ \ \ \textcolor{comment}{//\ Get\ a\ mutable\ pointer\ to\ elements\ inside\ this\ array.}}
+\DoxyCodeLine{00082\ \ \ \textcolor{comment}{//\ This\ method\ used\ to\ mutate\ arrays\ of\ structs\ followed\ by\ a\ @p\ Mutate}}
+\DoxyCodeLine{00083\ \ \ \textcolor{comment}{//\ operation.\ For\ primitive\ types\ use\ @p\ Mutate\ directly.}}
+\DoxyCodeLine{00084\ \ \ \textcolor{comment}{//\ @warning\ Assignments\ and\ reads\ to/from\ the\ dereferenced\ pointer\ are\ not}}
+\DoxyCodeLine{00085\ \ \ \textcolor{comment}{//\ \ automatically\ converted\ to\ the\ correct\ endianness.}}
+\DoxyCodeLine{00086\ \ \ \textcolor{keyword}{typename}\ \mbox{\hyperlink{structflatbuffers_1_1conditional}{flatbuffers::conditional<scalar\_tag::value,\ void,\ T\ *>::type}}}
+\DoxyCodeLine{00087\ \ \ \mbox{\hyperlink{classflatbuffers_1_1Array_a791ca0cb0bb009a9feaf1b55640275b6}{GetMutablePointer}}(uoffset\_t\ \mbox{\hyperlink{gmock-matchers-comparisons__test_8cc_acb559820d9ca11295b4500f179ef6392}{i}})\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00088\ \ \ \ \ \mbox{\hyperlink{base_8h_ab2116a3957cb3c19761609ea7fd796fe}{FLATBUFFERS\_ASSERT}}(\mbox{\hyperlink{gmock-matchers-comparisons__test_8cc_acb559820d9ca11295b4500f179ef6392}{i}}\ <\ \mbox{\hyperlink{classflatbuffers_1_1Array_a43f5115933697ef5066319dbde1bfc51}{size}}());}
+\DoxyCodeLine{00089\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{const\_cast<}T\ *\textcolor{keyword}{>}(\&\mbox{\hyperlink{classflatbuffers_1_1Array_a348624c6213211928e5d8c03393df4f2}{data}}()[\mbox{\hyperlink{gmock-matchers-comparisons__test_8cc_acb559820d9ca11295b4500f179ef6392}{i}}]);}
+\DoxyCodeLine{00090\ \ \ \}}
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00092\ \ \ \textcolor{comment}{//\ Change\ elements\ if\ you\ have\ a\ non-\/const\ pointer\ to\ this\ object.}}
+\DoxyCodeLine{00093\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classflatbuffers_1_1Array_a2c9b05e49518115552f6f550cd844b64}{Mutate}}(uoffset\_t\ \mbox{\hyperlink{gmock-matchers-comparisons__test_8cc_acb559820d9ca11295b4500f179ef6392}{i}},\ \textcolor{keyword}{const}\ T\ \&val)\ \{\ \mbox{\hyperlink{classflatbuffers_1_1Array_a8473825261d1fca4e384edfeabc0699a}{MutateImpl}}(\mbox{\hyperlink{structflatbuffers_1_1bool__constant}{scalar\_tag}}(),\ \mbox{\hyperlink{gmock-matchers-comparisons__test_8cc_acb559820d9ca11295b4500f179ef6392}{i}},\ val);\ \}}
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00095\ \ \ \textcolor{comment}{//\ The\ raw\ data\ in\ little\ endian\ format.\ Use\ with\ care.}}
+\DoxyCodeLine{00096\ \ \ \textcolor{keyword}{const}\ uint8\_t\ *\mbox{\hyperlink{classflatbuffers_1_1Array_ac849bcb5c2fcac62c03b995ec1b20829}{Data}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classflatbuffers_1_1Array_adfb542aeb0528b606187162ed44952df}{data\_}};\ \}}
+\DoxyCodeLine{00097\ }
+\DoxyCodeLine{00098\ \ \ uint8\_t\ *\mbox{\hyperlink{classflatbuffers_1_1Array_a4a685050780bb0ba00c8c92bd12d30c6}{Data}}()\ \{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classflatbuffers_1_1Array_adfb542aeb0528b606187162ed44952df}{data\_}};\ \}}
+\DoxyCodeLine{00099\ }
+\DoxyCodeLine{00100\ \ \ \textcolor{comment}{//\ Similarly,\ but\ typed,\ much\ like\ std::vector::data}}
+\DoxyCodeLine{00101\ \ \ \textcolor{keyword}{const}\ T\ *\mbox{\hyperlink{classflatbuffers_1_1Array_a348624c6213211928e5d8c03393df4f2}{data}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{reinterpret\_cast<}\textcolor{keyword}{const\ }T\ *\textcolor{keyword}{>}(\mbox{\hyperlink{classflatbuffers_1_1Array_ac849bcb5c2fcac62c03b995ec1b20829}{Data}}());\ \}}
+\DoxyCodeLine{00102\ \ \ T\ *\mbox{\hyperlink{classflatbuffers_1_1Array_afd6df80f2d71e3801469c129370cf618}{data}}()\ \{\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{reinterpret\_cast<}T\ *\textcolor{keyword}{>}(\mbox{\hyperlink{classflatbuffers_1_1Array_ac849bcb5c2fcac62c03b995ec1b20829}{Data}}());\ \}}
+\DoxyCodeLine{00103\ }
+\DoxyCodeLine{00104\ \ \ \textcolor{comment}{//\ Copy\ data\ from\ a\ span\ with\ endian\ conversion.}}
+\DoxyCodeLine{00105\ \ \ \textcolor{comment}{//\ If\ this\ Array\ and\ the\ span\ overlap,\ the\ behavior\ is\ undefined.}}
+\DoxyCodeLine{00106\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classflatbuffers_1_1Array_a459e3784ef433678828e1f6dce583754}{CopyFromSpan}}(flatbuffers::span<const\ T,\ length>\ src)\ \{}
+\DoxyCodeLine{00107\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{auto}\ p1\ =\ \textcolor{keyword}{reinterpret\_cast<}\textcolor{keyword}{const\ }uint8\_t\ *\textcolor{keyword}{>}(src.data());}
+\DoxyCodeLine{00108\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{auto}\ p2\ =\ \mbox{\hyperlink{classflatbuffers_1_1Array_ac849bcb5c2fcac62c03b995ec1b20829}{Data}}();}
+\DoxyCodeLine{00109\ \ \ \ \ \mbox{\hyperlink{base_8h_ab2116a3957cb3c19761609ea7fd796fe}{FLATBUFFERS\_ASSERT}}(!(p1\ >=\ p2\ \&\&\ p1\ <\ (p2\ +\ length))\ \&\&}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ !(p2\ >=\ p1\ \&\&\ p2\ <\ (p1\ +\ length)));}
+\DoxyCodeLine{00111\ \ \ \ \ (void)p1;}
+\DoxyCodeLine{00112\ \ \ \ \ (void)p2;}
+\DoxyCodeLine{00113\ \ \ \ \ \mbox{\hyperlink{classflatbuffers_1_1Array_a7154384b6fd55bd7eb6fea4556b37461}{CopyFromSpanImpl}}(\mbox{\hyperlink{structflatbuffers_1_1bool__constant}{flatbuffers::bool\_constant<is\_span\_observable>}}(),\ src);}
+\DoxyCodeLine{00114\ \ \ \}}
+\DoxyCodeLine{00115\ }
+\DoxyCodeLine{00116\ \ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00117\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classflatbuffers_1_1Array_a8473825261d1fca4e384edfeabc0699a}{MutateImpl}}(\mbox{\hyperlink{structflatbuffers_1_1bool__constant}{flatbuffers::true\_type}},\ uoffset\_t\ \mbox{\hyperlink{gmock-matchers-comparisons__test_8cc_acb559820d9ca11295b4500f179ef6392}{i}},\ \textcolor{keyword}{const}\ T\ \&val)\ \{}
+\DoxyCodeLine{00118\ \ \ \ \ \mbox{\hyperlink{base_8h_ab2116a3957cb3c19761609ea7fd796fe}{FLATBUFFERS\_ASSERT}}(\mbox{\hyperlink{gmock-matchers-comparisons__test_8cc_acb559820d9ca11295b4500f179ef6392}{i}}\ <\ \mbox{\hyperlink{classflatbuffers_1_1Array_a43f5115933697ef5066319dbde1bfc51}{size}}());}
+\DoxyCodeLine{00119\ \ \ \ \ WriteScalar(\mbox{\hyperlink{classflatbuffers_1_1Array_a348624c6213211928e5d8c03393df4f2}{data}}()\ +\ \mbox{\hyperlink{gmock-matchers-comparisons__test_8cc_acb559820d9ca11295b4500f179ef6392}{i}},\ val);}
+\DoxyCodeLine{00120\ \ \ \}}
+\DoxyCodeLine{00121\ }
+\DoxyCodeLine{00122\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classflatbuffers_1_1Array_ae824273e4c5e98cdd075100fd2b654ff}{MutateImpl}}(\mbox{\hyperlink{structflatbuffers_1_1bool__constant}{flatbuffers::false\_type}},\ uoffset\_t\ \mbox{\hyperlink{gmock-matchers-comparisons__test_8cc_acb559820d9ca11295b4500f179ef6392}{i}},\ \textcolor{keyword}{const}\ T\ \&val)\ \{}
+\DoxyCodeLine{00123\ \ \ \ \ *(\mbox{\hyperlink{classflatbuffers_1_1Array_a791ca0cb0bb009a9feaf1b55640275b6}{GetMutablePointer}}(\mbox{\hyperlink{gmock-matchers-comparisons__test_8cc_acb559820d9ca11295b4500f179ef6392}{i}}))\ =\ val;}
+\DoxyCodeLine{00124\ \ \ \}}
+\DoxyCodeLine{00125\ }
+\DoxyCodeLine{00126\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classflatbuffers_1_1Array_a7154384b6fd55bd7eb6fea4556b37461}{CopyFromSpanImpl}}(\mbox{\hyperlink{structflatbuffers_1_1bool__constant}{flatbuffers::true\_type}},}
+\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ flatbuffers::span<const\ T,\ length>\ src)\ \{}
+\DoxyCodeLine{00128\ \ \ \ \ \textcolor{comment}{//\ Use\ std::memcpy()\ instead\ of\ std::copy()\ to\ avoid\ performance\ degradation}}
+\DoxyCodeLine{00129\ \ \ \ \ \textcolor{comment}{//\ due\ to\ aliasing\ if\ T\ is\ char\ or\ unsigned\ char.}}
+\DoxyCodeLine{00130\ \ \ \ \ \textcolor{comment}{//\ The\ size\ is\ known\ at\ compile\ time,\ so\ memcpy\ would\ be\ inlined.}}
+\DoxyCodeLine{00131\ \ \ \ \ std::memcpy(\mbox{\hyperlink{classflatbuffers_1_1Array_a348624c6213211928e5d8c03393df4f2}{data}}(),\ src.data(),\ length\ *\ \textcolor{keyword}{sizeof}(T));}
+\DoxyCodeLine{00132\ \ \ \}}
+\DoxyCodeLine{00133\ }
+\DoxyCodeLine{00134\ \ \ \textcolor{comment}{//\ Copy\ data\ from\ flatbuffers::span\ with\ endian\ conversion.}}
+\DoxyCodeLine{00135\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classflatbuffers_1_1Array_ab3b8dfa37fdd6ac224fa21b97606d99b}{CopyFromSpanImpl}}(\mbox{\hyperlink{structflatbuffers_1_1bool__constant}{flatbuffers::false\_type}},}
+\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ flatbuffers::span<const\ T,\ length>\ src)\ \{}
+\DoxyCodeLine{00137\ \ \ \ \ \textcolor{keywordflow}{for}\ (\mbox{\hyperlink{classflatbuffers_1_1Array_a695602e3d8b6581bd41aac335be0b909}{size\_type}}\ k\ =\ 0;\ k\ <\ length;\ k++)\ \{\ \mbox{\hyperlink{classflatbuffers_1_1Array_a2c9b05e49518115552f6f550cd844b64}{Mutate}}(k,\ src[k]);\ \}}
+\DoxyCodeLine{00138\ \ \ \}}
+\DoxyCodeLine{00139\ }
+\DoxyCodeLine{00140\ \ \ \textcolor{comment}{//\ This\ class\ is\ only\ used\ to\ access\ pre-\/existing\ data.\ Don't\ ever}}
+\DoxyCodeLine{00141\ \ \ \textcolor{comment}{//\ try\ to\ construct\ these\ manually.}}
+\DoxyCodeLine{00142\ \ \ \textcolor{comment}{//\ 'constexpr'\ allows\ us\ to\ use\ 'size()'\ at\ compile\ time.}}
+\DoxyCodeLine{00143\ \ \ \textcolor{comment}{//\ @note\ Must\ not\ use\ 'FLATBUFFERS\_CONSTEXPR'\ here,\ as\ const\ is\ not\ allowed\ on}}
+\DoxyCodeLine{00144\ \ \ \textcolor{comment}{//\ \ a\ constructor.}}
+\DoxyCodeLine{00145\ \textcolor{preprocessor}{\#if\ defined(\_\_cpp\_constexpr)}}
+\DoxyCodeLine{00146\ \ \ \textcolor{keyword}{constexpr}\ \mbox{\hyperlink{classflatbuffers_1_1Array_a903c2af17987c1a71873a842bd35989c}{Array}}();}
+\DoxyCodeLine{00147\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00148\ \ \ \mbox{\hyperlink{classflatbuffers_1_1Array_a903c2af17987c1a71873a842bd35989c}{Array}}();}
+\DoxyCodeLine{00149\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00150\ }
+\DoxyCodeLine{00151\ \ \ uint8\_t\ \mbox{\hyperlink{classflatbuffers_1_1Array_adfb542aeb0528b606187162ed44952df}{data\_}}[length\ *\ \textcolor{keyword}{sizeof}(T)];}
+\DoxyCodeLine{00152\ }
+\DoxyCodeLine{00153\ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00154\ \ \ \textcolor{comment}{//\ This\ class\ is\ a\ pointer.\ Copying\ will\ therefore\ create\ an\ invalid\ object.}}
+\DoxyCodeLine{00155\ \ \ \textcolor{comment}{//\ Private\ and\ unimplemented\ copy\ constructor.}}
+\DoxyCodeLine{00156\ \ \ \mbox{\hyperlink{classflatbuffers_1_1Array_a903c2af17987c1a71873a842bd35989c}{Array}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classflatbuffers_1_1Array}{Array}}\ \&);}
+\DoxyCodeLine{00157\ \ \ \mbox{\hyperlink{classflatbuffers_1_1Array}{Array}}\ \&operator=(\textcolor{keyword}{const}\ \mbox{\hyperlink{classflatbuffers_1_1Array}{Array}}\ \&);}
+\DoxyCodeLine{00158\ \};}
+\DoxyCodeLine{00159\ }
+\DoxyCodeLine{00160\ \textcolor{comment}{//\ Specialization\ for\ Array[struct]\ with\ access\ using\ Offset<void>\ pointer.}}
+\DoxyCodeLine{00161\ \textcolor{comment}{//\ This\ specialization\ used\ by\ idl\_gen\_text.cpp.}}
+\DoxyCodeLine{00162\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T,\ u\textcolor{keywordtype}{int}16\_t\ length,\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}>\ \textcolor{keyword}{class\ }OffsetT>}
+\DoxyCodeLine{00163\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classflatbuffers_1_1Array}{Array}}<OffsetT<T>,\ length>\ \{}
+\DoxyCodeLine{00164\ \ \ \textcolor{keyword}{static\_assert}(\mbox{\hyperlink{structflatbuffers_1_1is__same}{flatbuffers::is\_same<T,\ void>::value}},\ \textcolor{stringliteral}{"{}unexpected\ type\ T"{}});}
+\DoxyCodeLine{00165\ }
+\DoxyCodeLine{00166\ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00167\ \ \ \textcolor{keyword}{typedef}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{void}\ *\mbox{\hyperlink{classflatbuffers_1_1Array_3_01OffsetT_3_01T_01_4_00_01length_01_4_a15b1117e1640c8425cdd0b42659b5a42}{return\_type}};}
+\DoxyCodeLine{00168\ \ \ \textcolor{keyword}{typedef}\ uint16\_t\ \mbox{\hyperlink{classflatbuffers_1_1Array_3_01OffsetT_3_01T_01_4_00_01length_01_4_a831abcdf1668cae87ea2287f09c389af}{size\_type}};}
+\DoxyCodeLine{00169\ }
+\DoxyCodeLine{00170\ \ \ \textcolor{keyword}{const}\ uint8\_t\ *\mbox{\hyperlink{classflatbuffers_1_1Array_3_01OffsetT_3_01T_01_4_00_01length_01_4_a389e350c44b653ff763b78b0f2e9445a}{Data}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classflatbuffers_1_1Array_adfb542aeb0528b606187162ed44952df}{data\_}};\ \}}
+\DoxyCodeLine{00171\ }
+\DoxyCodeLine{00172\ \ \ \textcolor{comment}{//\ Make\ idl\_gen\_text.cpp::PrintContainer\ happy.}}
+\DoxyCodeLine{00173\ \ \ \mbox{\hyperlink{classflatbuffers_1_1Array_3_01OffsetT_3_01T_01_4_00_01length_01_4_a15b1117e1640c8425cdd0b42659b5a42}{return\_type}}\ \mbox{\hyperlink{classflatbuffers_1_1Array_3_01OffsetT_3_01T_01_4_00_01length_01_4_a2c9124641f7779bb03b12cc0f3804c54}{operator[]}}(uoffset\_t)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00174\ \ \ \ \ \mbox{\hyperlink{base_8h_ab2116a3957cb3c19761609ea7fd796fe}{FLATBUFFERS\_ASSERT}}(\textcolor{keyword}{false});}
+\DoxyCodeLine{00175\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00176\ \ \ \}}
+\DoxyCodeLine{00177\ }
+\DoxyCodeLine{00178\ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00179\ \ \ \textcolor{comment}{//\ This\ class\ is\ only\ used\ to\ access\ pre-\/existing\ data.}}
+\DoxyCodeLine{00180\ \ \ \mbox{\hyperlink{classflatbuffers_1_1Array_a903c2af17987c1a71873a842bd35989c}{Array}}();}
+\DoxyCodeLine{00181\ \ \ \mbox{\hyperlink{classflatbuffers_1_1Array_a903c2af17987c1a71873a842bd35989c}{Array}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classflatbuffers_1_1Array}{Array}}\ \&);}
+\DoxyCodeLine{00182\ \ \ \mbox{\hyperlink{classflatbuffers_1_1Array}{Array}}\ \&operator=(\textcolor{keyword}{const}\ \mbox{\hyperlink{classflatbuffers_1_1Array}{Array}}\ \&);}
+\DoxyCodeLine{00183\ }
+\DoxyCodeLine{00184\ \ \ uint8\_t\ \mbox{\hyperlink{classflatbuffers_1_1Array_adfb542aeb0528b606187162ed44952df}{data\_}}[1];}
+\DoxyCodeLine{00185\ \};}
+\DoxyCodeLine{00186\ }
+\DoxyCodeLine{00187\ \textcolor{keyword}{template}<\textcolor{keyword}{class}\ U,\ u\textcolor{keywordtype}{int}16\_t\ N>}
+\DoxyCodeLine{00188\ FLATBUFFERS\_CONSTEXPR\_CPP11\ flatbuffers::span<U,\ N>\ \mbox{\hyperlink{namespaceflatbuffers_a43017d11c89159c12e7de86ee9f9396d}{make\_span}}(\mbox{\hyperlink{classflatbuffers_1_1Array}{Array<U,\ N>}}\ \&arr)}
+\DoxyCodeLine{00189\ \ \ \ \ FLATBUFFERS\_NOEXCEPT\ \{}
+\DoxyCodeLine{00190\ \ \ \textcolor{keyword}{static\_assert}(}
+\DoxyCodeLine{00191\ \ \ \ \ \ \ \mbox{\hyperlink{classflatbuffers_1_1Array}{Array<U,\ N>::is\_span\_observable}},}
+\DoxyCodeLine{00192\ \ \ \ \ \ \ \textcolor{stringliteral}{"{}wrong\ type\ U,\ only\ plain\ struct,\ LE-\/scalar,\ or\ byte\ types\ are\ allowed"{}});}
+\DoxyCodeLine{00193\ \ \ \textcolor{keywordflow}{return}\ span<U,\ N>(arr.data(),\ N);}
+\DoxyCodeLine{00194\ \}}
+\DoxyCodeLine{00195\ }
+\DoxyCodeLine{00196\ \textcolor{keyword}{template}<\textcolor{keyword}{class}\ U,\ u\textcolor{keywordtype}{int}16\_t\ N>}
+\DoxyCodeLine{00197\ FLATBUFFERS\_CONSTEXPR\_CPP11\ flatbuffers::span<const\ U,\ N>\ \mbox{\hyperlink{namespaceflatbuffers_a43017d11c89159c12e7de86ee9f9396d}{make\_span}}(}
+\DoxyCodeLine{00198\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classflatbuffers_1_1Array}{Array<U,\ N>}}\ \&arr)\ FLATBUFFERS\_NOEXCEPT\ \{}
+\DoxyCodeLine{00199\ \ \ \textcolor{keyword}{static\_assert}(}
+\DoxyCodeLine{00200\ \ \ \ \ \ \ \mbox{\hyperlink{classflatbuffers_1_1Array}{Array<U,\ N>::is\_span\_observable}},}
+\DoxyCodeLine{00201\ \ \ \ \ \ \ \textcolor{stringliteral}{"{}wrong\ type\ U,\ only\ plain\ struct,\ LE-\/scalar,\ or\ byte\ types\ are\ allowed"{}});}
+\DoxyCodeLine{00202\ \ \ \textcolor{keywordflow}{return}\ span<const\ U,\ N>(arr.data(),\ N);}
+\DoxyCodeLine{00203\ \}}
+\DoxyCodeLine{00204\ }
+\DoxyCodeLine{00205\ \textcolor{keyword}{template}<\textcolor{keyword}{class}\ U,\ u\textcolor{keywordtype}{int}16\_t\ N>}
+\DoxyCodeLine{00206\ FLATBUFFERS\_CONSTEXPR\_CPP11\ flatbuffers::span<uint8\_t,\ \textcolor{keyword}{sizeof}(U)\ *\ N>}
+\DoxyCodeLine{00207\ \mbox{\hyperlink{namespaceflatbuffers_a589c80b1beda29f78eb972c40afe7c70}{make\_bytes\_span}}(\mbox{\hyperlink{classflatbuffers_1_1Array}{Array<U,\ N>}}\ \&arr)\ FLATBUFFERS\_NOEXCEPT\ \{}
+\DoxyCodeLine{00208\ \ \ \textcolor{keyword}{static\_assert}(\mbox{\hyperlink{classflatbuffers_1_1Array}{Array<U,\ N>::is\_span\_observable}},}
+\DoxyCodeLine{00209\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}internal\ error,\ Array<T>\ might\ hold\ only\ scalars\ or\ structs"{}});}
+\DoxyCodeLine{00210\ \ \ \textcolor{keywordflow}{return}\ span<uint8\_t,\ sizeof(U)\ *\ N>(arr.\mbox{\hyperlink{classflatbuffers_1_1Array_ac849bcb5c2fcac62c03b995ec1b20829}{Data}}(),\ \textcolor{keyword}{sizeof}(U)\ *\ N);}
+\DoxyCodeLine{00211\ \}}
+\DoxyCodeLine{00212\ }
+\DoxyCodeLine{00213\ \textcolor{keyword}{template}<\textcolor{keyword}{class}\ U,\ u\textcolor{keywordtype}{int}16\_t\ N>}
+\DoxyCodeLine{00214\ FLATBUFFERS\_CONSTEXPR\_CPP11\ flatbuffers::span<\textcolor{keyword}{const}\ uint8\_t,\ \textcolor{keyword}{sizeof}(U)\ *\ N>}
+\DoxyCodeLine{00215\ \mbox{\hyperlink{namespaceflatbuffers_a589c80b1beda29f78eb972c40afe7c70}{make\_bytes\_span}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classflatbuffers_1_1Array}{Array<U,\ N>}}\ \&arr)\ FLATBUFFERS\_NOEXCEPT\ \{}
+\DoxyCodeLine{00216\ \ \ \textcolor{keyword}{static\_assert}(\mbox{\hyperlink{classflatbuffers_1_1Array}{Array<U,\ N>::is\_span\_observable}},}
+\DoxyCodeLine{00217\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}internal\ error,\ Array<T>\ might\ hold\ only\ scalars\ or\ structs"{}});}
+\DoxyCodeLine{00218\ \ \ \textcolor{keywordflow}{return}\ span<const\ uint8\_t,\ sizeof(U)\ *\ N>(arr.\mbox{\hyperlink{classflatbuffers_1_1Array_ac849bcb5c2fcac62c03b995ec1b20829}{Data}}(),\ \textcolor{keyword}{sizeof}(U)\ *\ N);}
+\DoxyCodeLine{00219\ \}}
+\DoxyCodeLine{00220\ }
+\DoxyCodeLine{00221\ \textcolor{comment}{//\ Cast\ a\ raw\ T[length]\ to\ a\ raw\ flatbuffers::Array<T,\ length>}}
+\DoxyCodeLine{00222\ \textcolor{comment}{//\ without\ endian\ conversion.\ Use\ with\ care.}}
+\DoxyCodeLine{00223\ \textcolor{comment}{//\ TODO:\ move\ these\ Cast-\/methods\ to\ \`{}internal`\ namespace.}}
+\DoxyCodeLine{00224\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T,\ u\textcolor{keywordtype}{int}16\_t\ length>}
+\DoxyCodeLine{00225\ \mbox{\hyperlink{classflatbuffers_1_1Array}{Array<T,\ length>}}\ \&\mbox{\hyperlink{namespaceflatbuffers_ae596fee57ccff735d36598bf6545eaf2}{CastToArray}}(T\ (\&arr)[length])\ \{}
+\DoxyCodeLine{00226\ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{reinterpret\_cast<}\mbox{\hyperlink{classflatbuffers_1_1Array}{Array<T,\ length>}}\ *\textcolor{keyword}{>}(arr);}
+\DoxyCodeLine{00227\ \}}
+\DoxyCodeLine{00228\ }
+\DoxyCodeLine{00229\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T,\ u\textcolor{keywordtype}{int}16\_t\ length>}
+\DoxyCodeLine{00230\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classflatbuffers_1_1Array}{Array<T,\ length>}}\ \&\mbox{\hyperlink{namespaceflatbuffers_ae596fee57ccff735d36598bf6545eaf2}{CastToArray}}(\textcolor{keyword}{const}\ T\ (\&arr)[length])\ \{}
+\DoxyCodeLine{00231\ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{reinterpret\_cast<}\textcolor{keyword}{const\ }\mbox{\hyperlink{classflatbuffers_1_1Array}{Array<T,\ length>}}\ *\textcolor{keyword}{>}(arr);}
+\DoxyCodeLine{00232\ \}}
+\DoxyCodeLine{00233\ }
+\DoxyCodeLine{00234\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ E,\ \textcolor{keyword}{typename}\ T,\ u\textcolor{keywordtype}{int}16\_t\ length>}
+\DoxyCodeLine{00235\ \mbox{\hyperlink{classflatbuffers_1_1Array}{Array<E,\ length>}}\ \&\mbox{\hyperlink{namespaceflatbuffers_a2b58dcb8209efa7797ef85ca4ca665c2}{CastToArrayOfEnum}}(T\ (\&arr)[length])\ \{}
+\DoxyCodeLine{00236\ \ \ \textcolor{keyword}{static\_assert}(\textcolor{keyword}{sizeof}(E)\ ==\ \textcolor{keyword}{sizeof}(T),\ \textcolor{stringliteral}{"{}invalid\ enum\ type\ E"{}});}
+\DoxyCodeLine{00237\ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{reinterpret\_cast<}\mbox{\hyperlink{classflatbuffers_1_1Array}{Array<E,\ length>}}\ *\textcolor{keyword}{>}(arr);}
+\DoxyCodeLine{00238\ \}}
+\DoxyCodeLine{00239\ }
+\DoxyCodeLine{00240\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ E,\ \textcolor{keyword}{typename}\ T,\ u\textcolor{keywordtype}{int}16\_t\ length>}
+\DoxyCodeLine{00241\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classflatbuffers_1_1Array}{Array<E,\ length>}}\ \&\mbox{\hyperlink{namespaceflatbuffers_a2b58dcb8209efa7797ef85ca4ca665c2}{CastToArrayOfEnum}}(\textcolor{keyword}{const}\ T\ (\&arr)[length])\ \{}
+\DoxyCodeLine{00242\ \ \ \textcolor{keyword}{static\_assert}(\textcolor{keyword}{sizeof}(E)\ ==\ \textcolor{keyword}{sizeof}(T),\ \textcolor{stringliteral}{"{}invalid\ enum\ type\ E"{}});}
+\DoxyCodeLine{00243\ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{reinterpret\_cast<}\textcolor{keyword}{const\ }\mbox{\hyperlink{classflatbuffers_1_1Array}{Array<E,\ length>}}\ *\textcolor{keyword}{>}(arr);}
+\DoxyCodeLine{00244\ \}}
+\DoxyCodeLine{00245\ }
+\DoxyCodeLine{00246\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T,\ u\textcolor{keywordtype}{int}16\_t\ length>}
+\DoxyCodeLine{00247\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{namespaceflatbuffers_a631e4acac5593d532a4252ccc5d0851e}{operator==}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classflatbuffers_1_1Array}{Array<T,\ length>}}\ \&lhs,}
+\DoxyCodeLine{00248\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classflatbuffers_1_1Array}{Array<T,\ length>}}\ \&rhs)\ \textcolor{keyword}{noexcept}\ \{}
+\DoxyCodeLine{00249\ \ \ \textcolor{keywordflow}{return}\ std::addressof(lhs)\ ==\ std::addressof(rhs)\ ||}
+\DoxyCodeLine{00250\ \ \ \ \ \ \ \ \ \ (lhs.size()\ ==\ rhs.size()\ \&\&}
+\DoxyCodeLine{00251\ \ \ \ \ \ \ \ \ \ \ std::memcmp(lhs.Data(),\ rhs.Data(),\ rhs.size()\ *\ \textcolor{keyword}{sizeof}(T))\ ==\ 0);}
+\DoxyCodeLine{00252\ \}}
+\DoxyCodeLine{00253\ }
+\DoxyCodeLine{00254\ \}\ \ \textcolor{comment}{//\ namespace\ flatbuffers}}
+\DoxyCodeLine{00255\ }
+\DoxyCodeLine{00256\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ FLATBUFFERS\_ARRAY\_H\_}}
+
+\end{DoxyCode}

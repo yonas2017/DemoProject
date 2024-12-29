@@ -1,0 +1,591 @@
+\doxysection{Google.\+Flat\+Buffers.\+Verifier Class Reference}
+\hypertarget{classGoogle_1_1FlatBuffers_1_1Verifier}{}\label{classGoogle_1_1FlatBuffers_1_1Verifier}\index{Google.FlatBuffers.Verifier@{Google.FlatBuffers.Verifier}}
+
+
+The Main Class of the Flat\+Buffer Verifier.  
+
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classGoogle_1_1FlatBuffers_1_1Verifier_a314847378104d7bce65b2a51841d09c7}{Verifier}} ()
+\begin{DoxyCompactList}\small\item\em The \doxylink{classBase}{Base} Constructor of the Verifier object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classGoogle_1_1FlatBuffers_1_1Verifier_a13025d3cee1d14084bb1c69118b80e28}{Verifier}} (\mbox{\hyperlink{classGoogle_1_1FlatBuffers_1_1ByteBuffer}{Byte\+Buffer}} buf, \mbox{\hyperlink{classGoogle_1_1FlatBuffers_1_1Options}{Options}} \mbox{\hyperlink{classGoogle_1_1FlatBuffers_1_1Verifier_a7fcfb58ae22a2f850f8b163aeb103992}{options}}=null)
+\begin{DoxyCompactList}\small\item\em The Constructor of the Verifier object with input parameters\+: Byte\+Buffer and/or Options. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classGoogle_1_1FlatBuffers_1_1Verifier}{Verifier}} \mbox{\hyperlink{classGoogle_1_1FlatBuffers_1_1Verifier_af8e7d4a9e5c2226a5141839f61bd2f9e}{Set\+Max\+Depth}} (int \mbox{\hyperlink{annotated__binary__text__gen_8cpp_a5c33da5929c9f2f9ef8d006d2350e6ec}{value}})
+\begin{DoxyCompactList}\small\item\em Method set maximum tables depth of valid structure. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classGoogle_1_1FlatBuffers_1_1Verifier}{Verifier}} \mbox{\hyperlink{classGoogle_1_1FlatBuffers_1_1Verifier_a012fa3ed6b288996d9c11cfa812e79fd}{Set\+Max\+Tables}} (int \mbox{\hyperlink{annotated__binary__text__gen_8cpp_a5c33da5929c9f2f9ef8d006d2350e6ec}{value}})
+\begin{DoxyCompactList}\small\item\em Specify maximum number of tables in structure. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classGoogle_1_1FlatBuffers_1_1Verifier}{Verifier}} \mbox{\hyperlink{classGoogle_1_1FlatBuffers_1_1Verifier_aabc551b75f22fc0288839c81603ee16d}{Set\+Alignment\+Check}} (bool \mbox{\hyperlink{annotated__binary__text__gen_8cpp_a5c33da5929c9f2f9ef8d006d2350e6ec}{value}})
+\begin{DoxyCompactList}\small\item\em Enable/disable buffer content alignment check. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classGoogle_1_1FlatBuffers_1_1Verifier}{Verifier}} \mbox{\hyperlink{classGoogle_1_1FlatBuffers_1_1Verifier_a6ad659b217d43dbcbbe4227f4c442047}{Set\+String\+Check}} (bool \mbox{\hyperlink{annotated__binary__text__gen_8cpp_a5c33da5929c9f2f9ef8d006d2350e6ec}{value}})
+\begin{DoxyCompactList}\small\item\em Enable/disable checking of string termination \textquotesingle{}0\textquotesingle{} character. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classGoogle_1_1FlatBuffers_1_1Verifier_a208441fcb48b1a1e3f511cfb30d9708c}{Verify\+Table\+Start}} (uint table\+Pos)
+\begin{DoxyCompactList}\small\item\em Verify beginning of table. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classGoogle_1_1FlatBuffers_1_1Verifier_aed91070bd8573c65e610068af48a1b5b}{Verify\+Table\+End}} (uint table\+Pos)
+\begin{DoxyCompactList}\small\item\em Verify end of table. In practice, this function does not check buffer but handles verification statistics update. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classGoogle_1_1FlatBuffers_1_1Verifier_acaacbc148b2b48eda4b4b1eeaa6bd646}{Verify\+Field}} (uint table\+Pos, short offset\+Id, ulong element\+Size, ulong align, bool required)
+\begin{DoxyCompactList}\small\item\em Verifiy static/inlined data area field. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classGoogle_1_1FlatBuffers_1_1Verifier_aabd93d73c544b3a10fd85ae535f903ff}{Verify\+String}} (uint table\+Pos, short v\+Offset, bool required)
+\begin{DoxyCompactList}\small\item\em Verify string. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classGoogle_1_1FlatBuffers_1_1Verifier_ac2cb246ae2d0017fe2fcf894a3a955d4}{Verify\+Vector\+Of\+Data}} (uint table\+Pos, short v\+Offset, ulong element\+Size, bool required)
+\begin{DoxyCompactList}\small\item\em Verify vector of fixed size structures and scalars. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classGoogle_1_1FlatBuffers_1_1Verifier_aa081a878e5070c45eac949e0c537e4ee}{Verify\+Vector\+Of\+Strings}} (uint table\+Pos, short offset\+Id, bool required)
+\begin{DoxyCompactList}\small\item\em Verify array of strings. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classGoogle_1_1FlatBuffers_1_1Verifier_a240f16fd69fffd53153814e45fdf61d8}{Verify\+Vector\+Of\+Tables}} (uint table\+Pos, short offset\+Id, \mbox{\hyperlink{namespaceGoogle_1_1FlatBuffers_a9f5d4a8d41586d0f13f628f62fb86423}{Verify\+Table\+Action}} verify\+Action, bool required)
+\begin{DoxyCompactList}\small\item\em Verify vector of tables (objects). Tables are verified using generated verify\+Obj\+Func. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classGoogle_1_1FlatBuffers_1_1Verifier_aae80a0f974b6993c24260e72f9e89b8b}{Verify\+Table}} (uint table\+Pos, short offset\+Id, \mbox{\hyperlink{namespaceGoogle_1_1FlatBuffers_a9f5d4a8d41586d0f13f628f62fb86423}{Verify\+Table\+Action}} verify\+Action, bool required)
+\begin{DoxyCompactList}\small\item\em Verify table object using generated verification function. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classGoogle_1_1FlatBuffers_1_1Verifier_a7188250daf0b5f27035b8fae581959be}{Verify\+Nested\+Buffer}} (uint table\+Pos, short offset\+Id, \mbox{\hyperlink{namespaceGoogle_1_1FlatBuffers_a9f5d4a8d41586d0f13f628f62fb86423}{Verify\+Table\+Action}} verify\+Action, bool required)
+\begin{DoxyCompactList}\small\item\em Verify nested buffer object. When verify\+Obj\+Func is provided, it is used to verify object structure. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classGoogle_1_1FlatBuffers_1_1Verifier_a1a8ba5b02b48fa0630999987bed2c071}{Verify\+Union\+Data}} (uint pos, ulong element\+Size, ulong align)
+\begin{DoxyCompactList}\small\item\em Verifiy static/inlined data area at absolute offset. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classGoogle_1_1FlatBuffers_1_1Verifier_ab30daab6322f59fd4e83bb4c9c198eb9}{Verify\+Union\+String}} (uint pos)
+\begin{DoxyCompactList}\small\item\em Verify string referenced by absolute offset value. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classGoogle_1_1FlatBuffers_1_1Verifier_a489db20166e755788299f3f20e2c5cd6}{Verify\+Union}} (uint table\+Pos, short type\+Id\+VOffset, short value\+VOffset, \mbox{\hyperlink{namespaceGoogle_1_1FlatBuffers_a2f8f0d2769bbbb5f25b9aef7b62cdedf}{Verify\+Union\+Action}} verify\+Action, bool required)
+\begin{DoxyCompactList}\small\item\em Method verifies union object using generated verification function. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classGoogle_1_1FlatBuffers_1_1Verifier_a5395060efc62fddd71c886bdc5a11817}{Verify\+Vector\+Of\+Union}} (uint table\+Pos, short type\+Offset\+Id, short offset\+Id, \mbox{\hyperlink{namespaceGoogle_1_1FlatBuffers_a2f8f0d2769bbbb5f25b9aef7b62cdedf}{Verify\+Union\+Action}} verify\+Action, bool required)
+\begin{DoxyCompactList}\small\item\em Verify vector of unions (objects). Unions are verified using generated verify\+Obj\+Func. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classGoogle_1_1FlatBuffers_1_1Verifier_a2bdd95466a896b8e167c964938ae0a07}{Verify\+Buffer}} (string identifier, bool size\+Prefixed, \mbox{\hyperlink{namespaceGoogle_1_1FlatBuffers_a9f5d4a8d41586d0f13f628f62fb86423}{Verify\+Table\+Action}} verify\+Action)
+\begin{DoxyCompactList}\small\item\em Method verifies flatbuffer data using generated Table verification function. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+const int \mbox{\hyperlink{classGoogle_1_1FlatBuffers_1_1Verifier_aa4680209cff359dfaee652ffbbe58e35}{SIZE\+\_\+\+BYTE}} = 1
+\item 
+const int \mbox{\hyperlink{classGoogle_1_1FlatBuffers_1_1Verifier_a90256eddf2edb880295ea927a942bd9b}{SIZE\+\_\+\+INT}} = 4
+\item 
+const int \mbox{\hyperlink{classGoogle_1_1FlatBuffers_1_1Verifier_a6c8e339ea93c069390262d47c7bae95b}{SIZE\+\_\+\+U\+\_\+\+OFFSET}} = 4
+\item 
+const int \mbox{\hyperlink{classGoogle_1_1FlatBuffers_1_1Verifier_ab4afd057109983f64a0faee7160ddc3d}{SIZE\+\_\+\+S\+\_\+\+OFFSET}} = 4
+\item 
+const int \mbox{\hyperlink{classGoogle_1_1FlatBuffers_1_1Verifier_a0311078d01a646a57e1a58acdac55e32}{SIZE\+\_\+\+V\+\_\+\+OFFSET}} = 2
+\item 
+const int \mbox{\hyperlink{classGoogle_1_1FlatBuffers_1_1Verifier_a59e79d9640c23ec0359d212cf8ffbea0}{SIZE\+\_\+\+PREFIX\+\_\+\+LENGTH}} = Flat\+Buffer\+Constants.\+Size\+Prefix\+Length
+\item 
+const int \mbox{\hyperlink{classGoogle_1_1FlatBuffers_1_1Verifier_ad3c1f6abac9ee49e426383933d748839}{FLATBUFFERS\+\_\+\+MAX\+\_\+\+BUFFER\+\_\+\+SIZE}} = System.\+Int32.\+Max\+Value
+\item 
+const int \mbox{\hyperlink{classGoogle_1_1FlatBuffers_1_1Verifier_a9f209c3a077721ad1947217572fe6fea}{FILE\+\_\+\+IDENTIFIER\+\_\+\+LENGTH}} = Flat\+Buffer\+Constants.\+File\+Identifier\+Length
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classGoogle_1_1FlatBuffers_1_1ByteBuffer}{Byte\+Buffer}} \mbox{\hyperlink{classGoogle_1_1FlatBuffers_1_1Verifier_a2e4749cadd712f096a51433cf551dd74}{Buf}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Bytes Buffer for Verify. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classGoogle_1_1FlatBuffers_1_1Options}{Options}} \mbox{\hyperlink{classGoogle_1_1FlatBuffers_1_1Verifier_a7fcfb58ae22a2f850f8b163aeb103992}{options}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Options of the Verifier. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classGoogle_1_1FlatBuffers_1_1Verifier_a2f1f0dc5537c8a979ac42a3ab64278d2}{depth}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em \doxylink{classCounter}{Counter} of tables depth in a tested flatbuffer. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classGoogle_1_1FlatBuffers_1_1Verifier_adb2ffd934b2d335bb5704647cb27b4c7}{num\+Tables}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em \doxylink{classCounter}{Counter} of tables in a tested flatbuffer. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The Main Class of the Flat\+Buffer Verifier. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classGoogle_1_1FlatBuffers_1_1Verifier_a314847378104d7bce65b2a51841d09c7}\label{classGoogle_1_1FlatBuffers_1_1Verifier_a314847378104d7bce65b2a51841d09c7} 
+\index{Google.FlatBuffers.Verifier@{Google.FlatBuffers.Verifier}!Verifier@{Verifier}}
+\index{Verifier@{Verifier}!Google.FlatBuffers.Verifier@{Google.FlatBuffers.Verifier}}
+\doxysubsubsection{\texorpdfstring{Verifier()}{Verifier()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Google.\+Flat\+Buffers.\+Verifier.\+Verifier (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+The \doxylink{classBase}{Base} Constructor of the Verifier object. 
+
+\Hypertarget{classGoogle_1_1FlatBuffers_1_1Verifier_a13025d3cee1d14084bb1c69118b80e28}\label{classGoogle_1_1FlatBuffers_1_1Verifier_a13025d3cee1d14084bb1c69118b80e28} 
+\index{Google.FlatBuffers.Verifier@{Google.FlatBuffers.Verifier}!Verifier@{Verifier}}
+\index{Verifier@{Verifier}!Google.FlatBuffers.Verifier@{Google.FlatBuffers.Verifier}}
+\doxysubsubsection{\texorpdfstring{Verifier()}{Verifier()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Google.\+Flat\+Buffers.\+Verifier.\+Verifier (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classGoogle_1_1FlatBuffers_1_1ByteBuffer}{Byte\+Buffer}}}]{buf,  }\item[{\mbox{\hyperlink{classGoogle_1_1FlatBuffers_1_1Options}{Options}}}]{options = {\ttfamily null} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+The Constructor of the Verifier object with input parameters\+: Byte\+Buffer and/or Options. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em buf} & Input flat byte buffer defined as Byte\+Buffer type\\
+\hline
+{\em options} & Options object with settings for the coniguration the Verifier \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classGoogle_1_1FlatBuffers_1_1Verifier_aabc551b75f22fc0288839c81603ee16d}\label{classGoogle_1_1FlatBuffers_1_1Verifier_aabc551b75f22fc0288839c81603ee16d} 
+\index{Google.FlatBuffers.Verifier@{Google.FlatBuffers.Verifier}!SetAlignmentCheck@{SetAlignmentCheck}}
+\index{SetAlignmentCheck@{SetAlignmentCheck}!Google.FlatBuffers.Verifier@{Google.FlatBuffers.Verifier}}
+\doxysubsubsection{\texorpdfstring{SetAlignmentCheck()}{SetAlignmentCheck()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classGoogle_1_1FlatBuffers_1_1Verifier}{Verifier}} Google.\+Flat\+Buffers.\+Verifier.\+Set\+Alignment\+Check (\begin{DoxyParamCaption}\item[{bool}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Enable/disable buffer content alignment check. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & Value of the State for buffer content alignment check (Enable = true) \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classGoogle_1_1FlatBuffers_1_1Verifier_af8e7d4a9e5c2226a5141839f61bd2f9e}\label{classGoogle_1_1FlatBuffers_1_1Verifier_af8e7d4a9e5c2226a5141839f61bd2f9e} 
+\index{Google.FlatBuffers.Verifier@{Google.FlatBuffers.Verifier}!SetMaxDepth@{SetMaxDepth}}
+\index{SetMaxDepth@{SetMaxDepth}!Google.FlatBuffers.Verifier@{Google.FlatBuffers.Verifier}}
+\doxysubsubsection{\texorpdfstring{SetMaxDepth()}{SetMaxDepth()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classGoogle_1_1FlatBuffers_1_1Verifier}{Verifier}} Google.\+Flat\+Buffers.\+Verifier.\+Set\+Max\+Depth (\begin{DoxyParamCaption}\item[{int}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Method set maximum tables depth of valid structure. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & Specify Value of the maximum depth of the structure\\
+\hline
+\end{DoxyParams}
+\Hypertarget{classGoogle_1_1FlatBuffers_1_1Verifier_a012fa3ed6b288996d9c11cfa812e79fd}\label{classGoogle_1_1FlatBuffers_1_1Verifier_a012fa3ed6b288996d9c11cfa812e79fd} 
+\index{Google.FlatBuffers.Verifier@{Google.FlatBuffers.Verifier}!SetMaxTables@{SetMaxTables}}
+\index{SetMaxTables@{SetMaxTables}!Google.FlatBuffers.Verifier@{Google.FlatBuffers.Verifier}}
+\doxysubsubsection{\texorpdfstring{SetMaxTables()}{SetMaxTables()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classGoogle_1_1FlatBuffers_1_1Verifier}{Verifier}} Google.\+Flat\+Buffers.\+Verifier.\+Set\+Max\+Tables (\begin{DoxyParamCaption}\item[{int}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Specify maximum number of tables in structure. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & Specify Value of the maximum number of the tables in the structure\\
+\hline
+\end{DoxyParams}
+\Hypertarget{classGoogle_1_1FlatBuffers_1_1Verifier_a6ad659b217d43dbcbbe4227f4c442047}\label{classGoogle_1_1FlatBuffers_1_1Verifier_a6ad659b217d43dbcbbe4227f4c442047} 
+\index{Google.FlatBuffers.Verifier@{Google.FlatBuffers.Verifier}!SetStringCheck@{SetStringCheck}}
+\index{SetStringCheck@{SetStringCheck}!Google.FlatBuffers.Verifier@{Google.FlatBuffers.Verifier}}
+\doxysubsubsection{\texorpdfstring{SetStringCheck()}{SetStringCheck()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classGoogle_1_1FlatBuffers_1_1Verifier}{Verifier}} Google.\+Flat\+Buffers.\+Verifier.\+Set\+String\+Check (\begin{DoxyParamCaption}\item[{bool}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Enable/disable checking of string termination \textquotesingle{}0\textquotesingle{} character. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & Value of the option for string termination \textquotesingle{}0\textquotesingle{} character check (Enable = true)\\
+\hline
+\end{DoxyParams}
+\Hypertarget{classGoogle_1_1FlatBuffers_1_1Verifier_a2bdd95466a896b8e167c964938ae0a07}\label{classGoogle_1_1FlatBuffers_1_1Verifier_a2bdd95466a896b8e167c964938ae0a07} 
+\index{Google.FlatBuffers.Verifier@{Google.FlatBuffers.Verifier}!VerifyBuffer@{VerifyBuffer}}
+\index{VerifyBuffer@{VerifyBuffer}!Google.FlatBuffers.Verifier@{Google.FlatBuffers.Verifier}}
+\doxysubsubsection{\texorpdfstring{VerifyBuffer()}{VerifyBuffer()}}
+{\footnotesize\ttfamily bool Google.\+Flat\+Buffers.\+Verifier.\+Verify\+Buffer (\begin{DoxyParamCaption}\item[{string}]{identifier,  }\item[{bool}]{size\+Prefixed,  }\item[{\mbox{\hyperlink{namespaceGoogle_1_1FlatBuffers_a9f5d4a8d41586d0f13f628f62fb86423}{Verify\+Table\+Action}}}]{verify\+Action }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Method verifies flatbuffer data using generated Table verification function. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em identifier} & The expected identifier of buffer data\\
+\hline
+{\em size\+Prefixed} & Flag should be true when buffer is prefixed with content size\\
+\hline
+{\em verify\+Action} & Function to be used for verification. This function is generated by compiler and included in each table definition file\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Return True when verification of Flat\+Buffer passed
+\end{DoxyReturn}
+
+
+Example 1. Verify Monster table. Ignore buffer name and assume buffer does not contain data length prefix 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{isValid\ =\ verifier.VerifyBuffer(bb,\ \textcolor{keyword}{false},\ MonsterVerify)}
+
+\end{DoxyCode}
+ Example 2. Verify Monster table. Buffer name is \textquotesingle{}MONS\textquotesingle{} and contains data length prefix 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{isValid\ =\ verifier.VerifyBuffer(\textcolor{stringliteral}{"{}MONS"{}},\ \textcolor{keyword}{true},\ MonsterVerify)}
+
+\end{DoxyCode}
+ \Hypertarget{classGoogle_1_1FlatBuffers_1_1Verifier_acaacbc148b2b48eda4b4b1eeaa6bd646}\label{classGoogle_1_1FlatBuffers_1_1Verifier_acaacbc148b2b48eda4b4b1eeaa6bd646} 
+\index{Google.FlatBuffers.Verifier@{Google.FlatBuffers.Verifier}!VerifyField@{VerifyField}}
+\index{VerifyField@{VerifyField}!Google.FlatBuffers.Verifier@{Google.FlatBuffers.Verifier}}
+\doxysubsubsection{\texorpdfstring{VerifyField()}{VerifyField()}}
+{\footnotesize\ttfamily bool Google.\+Flat\+Buffers.\+Verifier.\+Verify\+Field (\begin{DoxyParamCaption}\item[{uint}]{table\+Pos,  }\item[{short}]{offset\+Id,  }\item[{ulong}]{element\+Size,  }\item[{ulong}]{align,  }\item[{bool}]{required }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Verifiy static/inlined data area field. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em table\+Pos} & Position in the Table\\
+\hline
+{\em offset\+Id} & Offset to the static/inlined data element \\
+\hline
+{\em element\+Size} & Size of the element \\
+\hline
+{\em align} & Alignment bool value \\
+\hline
+{\em required} & Required Value when the offset == 0 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Return True when the verification of the static/inlined data element is passed
+\end{DoxyReturn}
+\Hypertarget{classGoogle_1_1FlatBuffers_1_1Verifier_a7188250daf0b5f27035b8fae581959be}\label{classGoogle_1_1FlatBuffers_1_1Verifier_a7188250daf0b5f27035b8fae581959be} 
+\index{Google.FlatBuffers.Verifier@{Google.FlatBuffers.Verifier}!VerifyNestedBuffer@{VerifyNestedBuffer}}
+\index{VerifyNestedBuffer@{VerifyNestedBuffer}!Google.FlatBuffers.Verifier@{Google.FlatBuffers.Verifier}}
+\doxysubsubsection{\texorpdfstring{VerifyNestedBuffer()}{VerifyNestedBuffer()}}
+{\footnotesize\ttfamily bool Google.\+Flat\+Buffers.\+Verifier.\+Verify\+Nested\+Buffer (\begin{DoxyParamCaption}\item[{uint}]{table\+Pos,  }\item[{short}]{offset\+Id,  }\item[{\mbox{\hyperlink{namespaceGoogle_1_1FlatBuffers_a9f5d4a8d41586d0f13f628f62fb86423}{Verify\+Table\+Action}}}]{verify\+Action,  }\item[{bool}]{required }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Verify nested buffer object. When verify\+Obj\+Func is provided, it is used to verify object structure. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em table\+Pos} & Position in the Table \\
+\hline
+{\em offset\+Id} & Offset to the Table \\
+\hline
+{\em verify\+Action} & Method used to the verification Table \\
+\hline
+{\em required} & Required Value when the offset == 0 \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classGoogle_1_1FlatBuffers_1_1Verifier_aabd93d73c544b3a10fd85ae535f903ff}\label{classGoogle_1_1FlatBuffers_1_1Verifier_aabd93d73c544b3a10fd85ae535f903ff} 
+\index{Google.FlatBuffers.Verifier@{Google.FlatBuffers.Verifier}!VerifyString@{VerifyString}}
+\index{VerifyString@{VerifyString}!Google.FlatBuffers.Verifier@{Google.FlatBuffers.Verifier}}
+\doxysubsubsection{\texorpdfstring{VerifyString()}{VerifyString()}}
+{\footnotesize\ttfamily bool Google.\+Flat\+Buffers.\+Verifier.\+Verify\+String (\begin{DoxyParamCaption}\item[{uint}]{table\+Pos,  }\item[{short}]{v\+Offset,  }\item[{bool}]{required }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Verify string. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em table\+Pos} & Position in the Table\\
+\hline
+{\em v\+Offset} & Offset to the String element \\
+\hline
+{\em required} & Required Value when the offset == 0 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Return True when the verification of the String is passed
+\end{DoxyReturn}
+\Hypertarget{classGoogle_1_1FlatBuffers_1_1Verifier_aae80a0f974b6993c24260e72f9e89b8b}\label{classGoogle_1_1FlatBuffers_1_1Verifier_aae80a0f974b6993c24260e72f9e89b8b} 
+\index{Google.FlatBuffers.Verifier@{Google.FlatBuffers.Verifier}!VerifyTable@{VerifyTable}}
+\index{VerifyTable@{VerifyTable}!Google.FlatBuffers.Verifier@{Google.FlatBuffers.Verifier}}
+\doxysubsubsection{\texorpdfstring{VerifyTable()}{VerifyTable()}}
+{\footnotesize\ttfamily bool Google.\+Flat\+Buffers.\+Verifier.\+Verify\+Table (\begin{DoxyParamCaption}\item[{uint}]{table\+Pos,  }\item[{short}]{offset\+Id,  }\item[{\mbox{\hyperlink{namespaceGoogle_1_1FlatBuffers_a9f5d4a8d41586d0f13f628f62fb86423}{Verify\+Table\+Action}}}]{verify\+Action,  }\item[{bool}]{required }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Verify table object using generated verification function. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em table\+Pos} & Position in the Table\\
+\hline
+{\em offset\+Id} & Offset to the Table \\
+\hline
+{\em verify\+Action} & Method used to the verification Table \\
+\hline
+{\em required} & Required Value when the offset == 0 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Return True when the verification of the Table passed
+\end{DoxyReturn}
+\Hypertarget{classGoogle_1_1FlatBuffers_1_1Verifier_aed91070bd8573c65e610068af48a1b5b}\label{classGoogle_1_1FlatBuffers_1_1Verifier_aed91070bd8573c65e610068af48a1b5b} 
+\index{Google.FlatBuffers.Verifier@{Google.FlatBuffers.Verifier}!VerifyTableEnd@{VerifyTableEnd}}
+\index{VerifyTableEnd@{VerifyTableEnd}!Google.FlatBuffers.Verifier@{Google.FlatBuffers.Verifier}}
+\doxysubsubsection{\texorpdfstring{VerifyTableEnd()}{VerifyTableEnd()}}
+{\footnotesize\ttfamily bool Google.\+Flat\+Buffers.\+Verifier.\+Verify\+Table\+End (\begin{DoxyParamCaption}\item[{uint}]{table\+Pos }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Verify end of table. In practice, this function does not check buffer but handles verification statistics update. 
+
+\Hypertarget{classGoogle_1_1FlatBuffers_1_1Verifier_a208441fcb48b1a1e3f511cfb30d9708c}\label{classGoogle_1_1FlatBuffers_1_1Verifier_a208441fcb48b1a1e3f511cfb30d9708c} 
+\index{Google.FlatBuffers.Verifier@{Google.FlatBuffers.Verifier}!VerifyTableStart@{VerifyTableStart}}
+\index{VerifyTableStart@{VerifyTableStart}!Google.FlatBuffers.Verifier@{Google.FlatBuffers.Verifier}}
+\doxysubsubsection{\texorpdfstring{VerifyTableStart()}{VerifyTableStart()}}
+{\footnotesize\ttfamily bool Google.\+Flat\+Buffers.\+Verifier.\+Verify\+Table\+Start (\begin{DoxyParamCaption}\item[{uint}]{table\+Pos }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Verify beginning of table. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em table\+Pos} & Position in the Table \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Return True when the verification of the beginning of the table is passed
+\end{DoxyReturn}
+~\newline
+ \Hypertarget{classGoogle_1_1FlatBuffers_1_1Verifier_a489db20166e755788299f3f20e2c5cd6}\label{classGoogle_1_1FlatBuffers_1_1Verifier_a489db20166e755788299f3f20e2c5cd6} 
+\index{Google.FlatBuffers.Verifier@{Google.FlatBuffers.Verifier}!VerifyUnion@{VerifyUnion}}
+\index{VerifyUnion@{VerifyUnion}!Google.FlatBuffers.Verifier@{Google.FlatBuffers.Verifier}}
+\doxysubsubsection{\texorpdfstring{VerifyUnion()}{VerifyUnion()}}
+{\footnotesize\ttfamily bool Google.\+Flat\+Buffers.\+Verifier.\+Verify\+Union (\begin{DoxyParamCaption}\item[{uint}]{table\+Pos,  }\item[{short}]{type\+Id\+VOffset,  }\item[{short}]{value\+VOffset,  }\item[{\mbox{\hyperlink{namespaceGoogle_1_1FlatBuffers_a2f8f0d2769bbbb5f25b9aef7b62cdedf}{Verify\+Union\+Action}}}]{verify\+Action,  }\item[{bool}]{required }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Method verifies union object using generated verification function. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em table\+Pos} & Position in the Table\\
+\hline
+{\em type\+Id\+VOffset} & Offset in the Table\\
+\hline
+{\em value\+VOffset} & Offset to Element\\
+\hline
+{\em verify\+Action} & Verification Method used for Union\\
+\hline
+{\em required} & Required Value when the offset == 0 \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classGoogle_1_1FlatBuffers_1_1Verifier_a1a8ba5b02b48fa0630999987bed2c071}\label{classGoogle_1_1FlatBuffers_1_1Verifier_a1a8ba5b02b48fa0630999987bed2c071} 
+\index{Google.FlatBuffers.Verifier@{Google.FlatBuffers.Verifier}!VerifyUnionData@{VerifyUnionData}}
+\index{VerifyUnionData@{VerifyUnionData}!Google.FlatBuffers.Verifier@{Google.FlatBuffers.Verifier}}
+\doxysubsubsection{\texorpdfstring{VerifyUnionData()}{VerifyUnionData()}}
+{\footnotesize\ttfamily bool Google.\+Flat\+Buffers.\+Verifier.\+Verify\+Union\+Data (\begin{DoxyParamCaption}\item[{uint}]{pos,  }\item[{ulong}]{element\+Size,  }\item[{ulong}]{align }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Verifiy static/inlined data area at absolute offset. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pos} & Position of static/inlined data area in the Byte Buffer\\
+\hline
+{\em element\+Size} & Size of the union data\\
+\hline
+{\em align} & Alignment bool value \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Return True when the verification of the Union Data is passed
+\end{DoxyReturn}
+\Hypertarget{classGoogle_1_1FlatBuffers_1_1Verifier_ab30daab6322f59fd4e83bb4c9c198eb9}\label{classGoogle_1_1FlatBuffers_1_1Verifier_ab30daab6322f59fd4e83bb4c9c198eb9} 
+\index{Google.FlatBuffers.Verifier@{Google.FlatBuffers.Verifier}!VerifyUnionString@{VerifyUnionString}}
+\index{VerifyUnionString@{VerifyUnionString}!Google.FlatBuffers.Verifier@{Google.FlatBuffers.Verifier}}
+\doxysubsubsection{\texorpdfstring{VerifyUnionString()}{VerifyUnionString()}}
+{\footnotesize\ttfamily bool Google.\+Flat\+Buffers.\+Verifier.\+Verify\+Union\+String (\begin{DoxyParamCaption}\item[{uint}]{pos }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Verify string referenced by absolute offset value. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pos} & Position of Union String in the Byte Buffer\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Return True when the verification of the Union String is passed
+\end{DoxyReturn}
+~\newline
+ \Hypertarget{classGoogle_1_1FlatBuffers_1_1Verifier_ac2cb246ae2d0017fe2fcf894a3a955d4}\label{classGoogle_1_1FlatBuffers_1_1Verifier_ac2cb246ae2d0017fe2fcf894a3a955d4} 
+\index{Google.FlatBuffers.Verifier@{Google.FlatBuffers.Verifier}!VerifyVectorOfData@{VerifyVectorOfData}}
+\index{VerifyVectorOfData@{VerifyVectorOfData}!Google.FlatBuffers.Verifier@{Google.FlatBuffers.Verifier}}
+\doxysubsubsection{\texorpdfstring{VerifyVectorOfData()}{VerifyVectorOfData()}}
+{\footnotesize\ttfamily bool Google.\+Flat\+Buffers.\+Verifier.\+Verify\+Vector\+Of\+Data (\begin{DoxyParamCaption}\item[{uint}]{table\+Pos,  }\item[{short}]{v\+Offset,  }\item[{ulong}]{element\+Size,  }\item[{bool}]{required }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Verify vector of fixed size structures and scalars. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em table\+Pos} & Position in the Table\\
+\hline
+{\em v\+Offset} & Offset to the Vector of Data \\
+\hline
+{\em element\+Size} & Size of the element\\
+\hline
+{\em required} & Required Value when the offset == 0 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Return True when the verification of the Vector of Data passed
+\end{DoxyReturn}
+\Hypertarget{classGoogle_1_1FlatBuffers_1_1Verifier_aa081a878e5070c45eac949e0c537e4ee}\label{classGoogle_1_1FlatBuffers_1_1Verifier_aa081a878e5070c45eac949e0c537e4ee} 
+\index{Google.FlatBuffers.Verifier@{Google.FlatBuffers.Verifier}!VerifyVectorOfStrings@{VerifyVectorOfStrings}}
+\index{VerifyVectorOfStrings@{VerifyVectorOfStrings}!Google.FlatBuffers.Verifier@{Google.FlatBuffers.Verifier}}
+\doxysubsubsection{\texorpdfstring{VerifyVectorOfStrings()}{VerifyVectorOfStrings()}}
+{\footnotesize\ttfamily bool Google.\+Flat\+Buffers.\+Verifier.\+Verify\+Vector\+Of\+Strings (\begin{DoxyParamCaption}\item[{uint}]{table\+Pos,  }\item[{short}]{offset\+Id,  }\item[{bool}]{required }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Verify array of strings. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em table\+Pos} & Position in the Table\\
+\hline
+{\em offset\+Id} & Offset to the Vector of String \\
+\hline
+{\em required} & Required Value when the offset == 0 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Return True when the verification of the Vector of String passed
+\end{DoxyReturn}
+\Hypertarget{classGoogle_1_1FlatBuffers_1_1Verifier_a240f16fd69fffd53153814e45fdf61d8}\label{classGoogle_1_1FlatBuffers_1_1Verifier_a240f16fd69fffd53153814e45fdf61d8} 
+\index{Google.FlatBuffers.Verifier@{Google.FlatBuffers.Verifier}!VerifyVectorOfTables@{VerifyVectorOfTables}}
+\index{VerifyVectorOfTables@{VerifyVectorOfTables}!Google.FlatBuffers.Verifier@{Google.FlatBuffers.Verifier}}
+\doxysubsubsection{\texorpdfstring{VerifyVectorOfTables()}{VerifyVectorOfTables()}}
+{\footnotesize\ttfamily bool Google.\+Flat\+Buffers.\+Verifier.\+Verify\+Vector\+Of\+Tables (\begin{DoxyParamCaption}\item[{uint}]{table\+Pos,  }\item[{short}]{offset\+Id,  }\item[{\mbox{\hyperlink{namespaceGoogle_1_1FlatBuffers_a9f5d4a8d41586d0f13f628f62fb86423}{Verify\+Table\+Action}}}]{verify\+Action,  }\item[{bool}]{required }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Verify vector of tables (objects). Tables are verified using generated verify\+Obj\+Func. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em table\+Pos} & Position in the Table\\
+\hline
+{\em offset\+Id} & Offset to the Vector of Table \\
+\hline
+{\em verify\+Action} & Method used to the verification Table \\
+\hline
+{\em required} & Required Value when the offset == 0 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Return True when the verification of the Vector of Table passed
+\end{DoxyReturn}
+\Hypertarget{classGoogle_1_1FlatBuffers_1_1Verifier_a5395060efc62fddd71c886bdc5a11817}\label{classGoogle_1_1FlatBuffers_1_1Verifier_a5395060efc62fddd71c886bdc5a11817} 
+\index{Google.FlatBuffers.Verifier@{Google.FlatBuffers.Verifier}!VerifyVectorOfUnion@{VerifyVectorOfUnion}}
+\index{VerifyVectorOfUnion@{VerifyVectorOfUnion}!Google.FlatBuffers.Verifier@{Google.FlatBuffers.Verifier}}
+\doxysubsubsection{\texorpdfstring{VerifyVectorOfUnion()}{VerifyVectorOfUnion()}}
+{\footnotesize\ttfamily bool Google.\+Flat\+Buffers.\+Verifier.\+Verify\+Vector\+Of\+Union (\begin{DoxyParamCaption}\item[{uint}]{table\+Pos,  }\item[{short}]{type\+Offset\+Id,  }\item[{short}]{offset\+Id,  }\item[{\mbox{\hyperlink{namespaceGoogle_1_1FlatBuffers_a2f8f0d2769bbbb5f25b9aef7b62cdedf}{Verify\+Union\+Action}}}]{verify\+Action,  }\item[{bool}]{required }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Verify vector of unions (objects). Unions are verified using generated verify\+Obj\+Func. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em table\+Pos} & Position of the Table\\
+\hline
+{\em type\+Offset\+Id} & Offset in the Table (Union type id)\\
+\hline
+{\em offset\+Id} & Offset to vector of Data Stucture offset\\
+\hline
+{\em verify\+Action} & Verification Method used for Union\\
+\hline
+{\em required} & Required Value when the offset == 0 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Return True when the verification of the Vector of Unions passed
+\end{DoxyReturn}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classGoogle_1_1FlatBuffers_1_1Verifier_a9f209c3a077721ad1947217572fe6fea}\label{classGoogle_1_1FlatBuffers_1_1Verifier_a9f209c3a077721ad1947217572fe6fea} 
+\index{Google.FlatBuffers.Verifier@{Google.FlatBuffers.Verifier}!FILE\_IDENTIFIER\_LENGTH@{FILE\_IDENTIFIER\_LENGTH}}
+\index{FILE\_IDENTIFIER\_LENGTH@{FILE\_IDENTIFIER\_LENGTH}!Google.FlatBuffers.Verifier@{Google.FlatBuffers.Verifier}}
+\doxysubsubsection{\texorpdfstring{FILE\_IDENTIFIER\_LENGTH}{FILE\_IDENTIFIER\_LENGTH}}
+{\footnotesize\ttfamily const int Google.\+Flat\+Buffers.\+Verifier.\+FILE\+\_\+\+IDENTIFIER\+\_\+\+LENGTH = Flat\+Buffer\+Constants.\+File\+Identifier\+Length\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{classGoogle_1_1FlatBuffers_1_1Verifier_ad3c1f6abac9ee49e426383933d748839}\label{classGoogle_1_1FlatBuffers_1_1Verifier_ad3c1f6abac9ee49e426383933d748839} 
+\index{Google.FlatBuffers.Verifier@{Google.FlatBuffers.Verifier}!FLATBUFFERS\_MAX\_BUFFER\_SIZE@{FLATBUFFERS\_MAX\_BUFFER\_SIZE}}
+\index{FLATBUFFERS\_MAX\_BUFFER\_SIZE@{FLATBUFFERS\_MAX\_BUFFER\_SIZE}!Google.FlatBuffers.Verifier@{Google.FlatBuffers.Verifier}}
+\doxysubsubsection{\texorpdfstring{FLATBUFFERS\_MAX\_BUFFER\_SIZE}{FLATBUFFERS\_MAX\_BUFFER\_SIZE}}
+{\footnotesize\ttfamily const int Google.\+Flat\+Buffers.\+Verifier.\+FLATBUFFERS\+\_\+\+MAX\+\_\+\+BUFFER\+\_\+\+SIZE = System.\+Int32.\+Max\+Value\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{classGoogle_1_1FlatBuffers_1_1Verifier_aa4680209cff359dfaee652ffbbe58e35}\label{classGoogle_1_1FlatBuffers_1_1Verifier_aa4680209cff359dfaee652ffbbe58e35} 
+\index{Google.FlatBuffers.Verifier@{Google.FlatBuffers.Verifier}!SIZE\_BYTE@{SIZE\_BYTE}}
+\index{SIZE\_BYTE@{SIZE\_BYTE}!Google.FlatBuffers.Verifier@{Google.FlatBuffers.Verifier}}
+\doxysubsubsection{\texorpdfstring{SIZE\_BYTE}{SIZE\_BYTE}}
+{\footnotesize\ttfamily const int Google.\+Flat\+Buffers.\+Verifier.\+SIZE\+\_\+\+BYTE = 1\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{classGoogle_1_1FlatBuffers_1_1Verifier_a90256eddf2edb880295ea927a942bd9b}\label{classGoogle_1_1FlatBuffers_1_1Verifier_a90256eddf2edb880295ea927a942bd9b} 
+\index{Google.FlatBuffers.Verifier@{Google.FlatBuffers.Verifier}!SIZE\_INT@{SIZE\_INT}}
+\index{SIZE\_INT@{SIZE\_INT}!Google.FlatBuffers.Verifier@{Google.FlatBuffers.Verifier}}
+\doxysubsubsection{\texorpdfstring{SIZE\_INT}{SIZE\_INT}}
+{\footnotesize\ttfamily const int Google.\+Flat\+Buffers.\+Verifier.\+SIZE\+\_\+\+INT = 4\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{classGoogle_1_1FlatBuffers_1_1Verifier_a59e79d9640c23ec0359d212cf8ffbea0}\label{classGoogle_1_1FlatBuffers_1_1Verifier_a59e79d9640c23ec0359d212cf8ffbea0} 
+\index{Google.FlatBuffers.Verifier@{Google.FlatBuffers.Verifier}!SIZE\_PREFIX\_LENGTH@{SIZE\_PREFIX\_LENGTH}}
+\index{SIZE\_PREFIX\_LENGTH@{SIZE\_PREFIX\_LENGTH}!Google.FlatBuffers.Verifier@{Google.FlatBuffers.Verifier}}
+\doxysubsubsection{\texorpdfstring{SIZE\_PREFIX\_LENGTH}{SIZE\_PREFIX\_LENGTH}}
+{\footnotesize\ttfamily const int Google.\+Flat\+Buffers.\+Verifier.\+SIZE\+\_\+\+PREFIX\+\_\+\+LENGTH = Flat\+Buffer\+Constants.\+Size\+Prefix\+Length\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{classGoogle_1_1FlatBuffers_1_1Verifier_ab4afd057109983f64a0faee7160ddc3d}\label{classGoogle_1_1FlatBuffers_1_1Verifier_ab4afd057109983f64a0faee7160ddc3d} 
+\index{Google.FlatBuffers.Verifier@{Google.FlatBuffers.Verifier}!SIZE\_S\_OFFSET@{SIZE\_S\_OFFSET}}
+\index{SIZE\_S\_OFFSET@{SIZE\_S\_OFFSET}!Google.FlatBuffers.Verifier@{Google.FlatBuffers.Verifier}}
+\doxysubsubsection{\texorpdfstring{SIZE\_S\_OFFSET}{SIZE\_S\_OFFSET}}
+{\footnotesize\ttfamily const int Google.\+Flat\+Buffers.\+Verifier.\+SIZE\+\_\+\+S\+\_\+\+OFFSET = 4\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{classGoogle_1_1FlatBuffers_1_1Verifier_a6c8e339ea93c069390262d47c7bae95b}\label{classGoogle_1_1FlatBuffers_1_1Verifier_a6c8e339ea93c069390262d47c7bae95b} 
+\index{Google.FlatBuffers.Verifier@{Google.FlatBuffers.Verifier}!SIZE\_U\_OFFSET@{SIZE\_U\_OFFSET}}
+\index{SIZE\_U\_OFFSET@{SIZE\_U\_OFFSET}!Google.FlatBuffers.Verifier@{Google.FlatBuffers.Verifier}}
+\doxysubsubsection{\texorpdfstring{SIZE\_U\_OFFSET}{SIZE\_U\_OFFSET}}
+{\footnotesize\ttfamily const int Google.\+Flat\+Buffers.\+Verifier.\+SIZE\+\_\+\+U\+\_\+\+OFFSET = 4\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{classGoogle_1_1FlatBuffers_1_1Verifier_a0311078d01a646a57e1a58acdac55e32}\label{classGoogle_1_1FlatBuffers_1_1Verifier_a0311078d01a646a57e1a58acdac55e32} 
+\index{Google.FlatBuffers.Verifier@{Google.FlatBuffers.Verifier}!SIZE\_V\_OFFSET@{SIZE\_V\_OFFSET}}
+\index{SIZE\_V\_OFFSET@{SIZE\_V\_OFFSET}!Google.FlatBuffers.Verifier@{Google.FlatBuffers.Verifier}}
+\doxysubsubsection{\texorpdfstring{SIZE\_V\_OFFSET}{SIZE\_V\_OFFSET}}
+{\footnotesize\ttfamily const int Google.\+Flat\+Buffers.\+Verifier.\+SIZE\+\_\+\+V\+\_\+\+OFFSET = 2\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+\doxysubsection{Property Documentation}
+\Hypertarget{classGoogle_1_1FlatBuffers_1_1Verifier_a2e4749cadd712f096a51433cf551dd74}\label{classGoogle_1_1FlatBuffers_1_1Verifier_a2e4749cadd712f096a51433cf551dd74} 
+\index{Google.FlatBuffers.Verifier@{Google.FlatBuffers.Verifier}!Buf@{Buf}}
+\index{Buf@{Buf}!Google.FlatBuffers.Verifier@{Google.FlatBuffers.Verifier}}
+\doxysubsubsection{\texorpdfstring{Buf}{Buf}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classGoogle_1_1FlatBuffers_1_1ByteBuffer}{Byte\+Buffer}} Google.\+Flat\+Buffers.\+Verifier.\+Buf\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Bytes Buffer for Verify. 
+
+\Hypertarget{classGoogle_1_1FlatBuffers_1_1Verifier_a2f1f0dc5537c8a979ac42a3ab64278d2}\label{classGoogle_1_1FlatBuffers_1_1Verifier_a2f1f0dc5537c8a979ac42a3ab64278d2} 
+\index{Google.FlatBuffers.Verifier@{Google.FlatBuffers.Verifier}!depth@{depth}}
+\index{depth@{depth}!Google.FlatBuffers.Verifier@{Google.FlatBuffers.Verifier}}
+\doxysubsubsection{\texorpdfstring{depth}{depth}}
+{\footnotesize\ttfamily int Google.\+Flat\+Buffers.\+Verifier.\+depth\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+\doxylink{classCounter}{Counter} of tables depth in a tested flatbuffer. 
+
+\Hypertarget{classGoogle_1_1FlatBuffers_1_1Verifier_adb2ffd934b2d335bb5704647cb27b4c7}\label{classGoogle_1_1FlatBuffers_1_1Verifier_adb2ffd934b2d335bb5704647cb27b4c7} 
+\index{Google.FlatBuffers.Verifier@{Google.FlatBuffers.Verifier}!numTables@{numTables}}
+\index{numTables@{numTables}!Google.FlatBuffers.Verifier@{Google.FlatBuffers.Verifier}}
+\doxysubsubsection{\texorpdfstring{numTables}{numTables}}
+{\footnotesize\ttfamily int Google.\+Flat\+Buffers.\+Verifier.\+num\+Tables\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+\doxylink{classCounter}{Counter} of tables in a tested flatbuffer. 
+
+\Hypertarget{classGoogle_1_1FlatBuffers_1_1Verifier_a7fcfb58ae22a2f850f8b163aeb103992}\label{classGoogle_1_1FlatBuffers_1_1Verifier_a7fcfb58ae22a2f850f8b163aeb103992} 
+\index{Google.FlatBuffers.Verifier@{Google.FlatBuffers.Verifier}!options@{options}}
+\index{options@{options}!Google.FlatBuffers.Verifier@{Google.FlatBuffers.Verifier}}
+\doxysubsubsection{\texorpdfstring{options}{options}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classGoogle_1_1FlatBuffers_1_1Options}{Options}} Google.\+Flat\+Buffers.\+Verifier.\+options\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Options of the Verifier. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+flatbuffers/net/\+Flat\+Buffers/\mbox{\hyperlink{FlatBufferVerify_8cs}{Flat\+Buffer\+Verify.\+cs}}\end{DoxyCompactItemize}

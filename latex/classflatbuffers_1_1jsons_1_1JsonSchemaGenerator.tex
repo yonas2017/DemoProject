@@ -1,0 +1,156 @@
+\doxysection{flatbuffers\+::jsons\+::Json\+Schema\+Generator Class Reference}
+\hypertarget{classflatbuffers_1_1jsons_1_1JsonSchemaGenerator}{}\label{classflatbuffers_1_1jsons_1_1JsonSchemaGenerator}\index{flatbuffers::jsons::JsonSchemaGenerator@{flatbuffers::jsons::JsonSchemaGenerator}}
+
+
+Inheritance diagram for flatbuffers\+::jsons\+::Json\+Schema\+Generator\+:
+% FIG 0
+
+
+Collaboration diagram for flatbuffers\+::jsons\+::Json\+Schema\+Generator\+:
+% FIG 1
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classflatbuffers_1_1jsons_1_1JsonSchemaGenerator_a98cfd3cf905aef4e0263828208da641b}{Json\+Schema\+Generator}} (const \mbox{\hyperlink{classflatbuffers_1_1Parser}{Parser}} \&parser, const std\+::string \&path, const std\+::string \&file\+\_\+name)
+\item 
+\mbox{\hyperlink{classflatbuffers_1_1jsons_1_1JsonSchemaGenerator_a9fa2305f20e018a657fdc98412ef943a}{Json\+Schema\+Generator}} (const \mbox{\hyperlink{classflatbuffers_1_1BaseGenerator}{Base\+Generator}} \&base\+\_\+generator)
+\item 
+std\+::string \mbox{\hyperlink{classflatbuffers_1_1jsons_1_1JsonSchemaGenerator_ac36fb13f391fe7051bd1a1af3ab86156}{Generated\+File\+Name}} (const std\+::string \&path, const std\+::string \&file\+\_\+name, const \mbox{\hyperlink{structflatbuffers_1_1IDLOptions}{IDLOptions}} \&options) const
+\item 
+std\+::string \mbox{\hyperlink{classflatbuffers_1_1jsons_1_1JsonSchemaGenerator_a396f21608a8e963a3fb596429cc84ed2}{New\+Line}} () const
+\item 
+std\+::string \mbox{\hyperlink{classflatbuffers_1_1jsons_1_1JsonSchemaGenerator_a05006e6891268449eb429d440f828e58}{Indent}} (int indent) const
+\item 
+std\+::string \mbox{\hyperlink{classflatbuffers_1_1jsons_1_1JsonSchemaGenerator_aeea3922a51ae67b7fa771ef1043efc33}{Prepare\+Description}} (const std\+::vector$<$ std\+::string $>$ \&comment\+\_\+lines)
+\item 
+bool \mbox{\hyperlink{classflatbuffers_1_1jsons_1_1JsonSchemaGenerator_abff658e07c62e3297d30f9838b118bc5}{generate}} ()
+\item 
+bool \mbox{\hyperlink{classflatbuffers_1_1jsons_1_1JsonSchemaGenerator_af5a75b39d2648a75c4889583842f271b}{save}} () const
+\item 
+const std\+::string \mbox{\hyperlink{classflatbuffers_1_1jsons_1_1JsonSchemaGenerator_a4fdb7f13e600d61903ac3d32e99ed1a9}{get\+Json}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classflatbuffers_1_1BaseGenerator}{flatbuffers\+::\+Base\+Generator}}}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{classflatbuffers_1_1BaseGenerator_a8559bf41626bdecd53736bfc9153d4b5}{Generated\+File\+Name}} (const std\+::string \&path, const std\+::string \&file\+\_\+name, const \mbox{\hyperlink{structflatbuffers_1_1IDLOptions}{IDLOptions}} \&options) const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Static Public Member Functions inherited from \mbox{\hyperlink{classflatbuffers_1_1BaseGenerator}{flatbuffers\+::\+Base\+Generator}}}
+\begin{DoxyCompactItemize}
+\item 
+static std\+::string \mbox{\hyperlink{classflatbuffers_1_1BaseGenerator_ab7fdb905d7dd8d1177a470eef2da089e}{Namespace\+Dir}} (const \mbox{\hyperlink{classflatbuffers_1_1Parser}{Parser}} \&parser, const std\+::string \&path, const \mbox{\hyperlink{structflatbuffers_1_1Namespace}{Namespace}} \&\mbox{\hyperlink{idl__gen__ts_8cpp_a97618fe2e31e62d92ace9b30478febba}{ns}}, const bool dasherize=false)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{classflatbuffers_1_1BaseGenerator}{flatbuffers\+::\+Base\+Generator}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classflatbuffers_1_1BaseGenerator_aa1607736e698a0105f44e2c167963343}{Base\+Generator}} (const \mbox{\hyperlink{classflatbuffers_1_1Parser}{Parser}} \&parser, const std\+::string \&path, const std\+::string \&file\+\_\+name, std\+::string qualifying\+\_\+start, std\+::string qualifying\+\_\+separator, std\+::string default\+\_\+extension)
+\item 
+virtual \mbox{\hyperlink{classflatbuffers_1_1BaseGenerator_aeab72f6ee75c6753054c84ef9d8a7f04}{\texorpdfstring{$\sim$}{\string~}\+Base\+Generator}} ()
+\item 
+\mbox{\hyperlink{classflatbuffers_1_1BaseGenerator}{Base\+Generator}} \& \mbox{\hyperlink{classflatbuffers_1_1BaseGenerator_a10696c81aa5d52cb15c4365238ba27ed}{operator=}} (const \mbox{\hyperlink{classflatbuffers_1_1BaseGenerator}{Base\+Generator}} \&)
+\item 
+\mbox{\hyperlink{classflatbuffers_1_1BaseGenerator_a6769aab327d5dcb931f9f8c8c1797525}{Base\+Generator}} (const \mbox{\hyperlink{classflatbuffers_1_1BaseGenerator}{Base\+Generator}} \&)
+\item 
+std\+::string \mbox{\hyperlink{classflatbuffers_1_1BaseGenerator_a99f2098106976757252afd99c05bf0ff}{Namespace\+Dir}} (const \mbox{\hyperlink{structflatbuffers_1_1Namespace}{Namespace}} \&\mbox{\hyperlink{idl__gen__ts_8cpp_a97618fe2e31e62d92ace9b30478febba}{ns}}, const bool dasherize=false) const
+\item 
+virtual const \mbox{\hyperlink{structflatbuffers_1_1Namespace}{Namespace}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classflatbuffers_1_1BaseGenerator_ae9894dabc9bac7eff32a810067a9a221}{Current\+Name\+Space}} () const
+\item 
+std\+::string \mbox{\hyperlink{classflatbuffers_1_1BaseGenerator_a4ceefb68a9f65fe861458e82b87c3944}{Wrap\+In\+Name\+Space}} (const \mbox{\hyperlink{structflatbuffers_1_1Namespace}{Namespace}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{idl__gen__ts_8cpp_a97618fe2e31e62d92ace9b30478febba}{ns}}, const std\+::string \&\mbox{\hyperlink{idl__gen__ts_8cpp_a9b45b3e13bd9167aab02e17e08916231}{name}}) const
+\item 
+std\+::string \mbox{\hyperlink{classflatbuffers_1_1BaseGenerator_a1a39f31f1d50c515c1943989765b2330}{Wrap\+In\+Name\+Space}} (const \mbox{\hyperlink{structflatbuffers_1_1Definition}{Definition}} \&def, const std\+::string \&suffix="{}"{}) const
+\item 
+std\+::string \mbox{\hyperlink{classflatbuffers_1_1BaseGenerator_a6b6bbd8e0606f051018d90994bb73e4c}{Get\+Name\+Space}} (const \mbox{\hyperlink{structflatbuffers_1_1Definition}{Definition}} \&def) const
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Protected Member Functions inherited from \mbox{\hyperlink{classflatbuffers_1_1BaseGenerator}{flatbuffers\+::\+Base\+Generator}}}
+\begin{DoxyCompactItemize}
+\item 
+static const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classflatbuffers_1_1BaseGenerator_a04ffaceb3b3c37e9eb8296ddf72ff0f3}{Flat\+Buffers\+Generated\+Warning}} ()
+\item 
+static std\+::string \mbox{\hyperlink{classflatbuffers_1_1BaseGenerator_aa6d96041a6635ba2edc088834fb57ed6}{Full\+Namespace}} (const char \texorpdfstring{$\ast$}{*}separator, const \mbox{\hyperlink{structflatbuffers_1_1Namespace}{Namespace}} \&\mbox{\hyperlink{idl__gen__ts_8cpp_a97618fe2e31e62d92ace9b30478febba}{ns}})
+\item 
+static std\+::string \mbox{\hyperlink{classflatbuffers_1_1BaseGenerator_a8ce0d595629188ca5de97c3b37d556f5}{Last\+Namespace\+Part}} (const \mbox{\hyperlink{structflatbuffers_1_1Namespace}{Namespace}} \&\mbox{\hyperlink{idl__gen__ts_8cpp_a97618fe2e31e62d92ace9b30478febba}{ns}})
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classflatbuffers_1_1BaseGenerator}{flatbuffers\+::\+Base\+Generator}}}
+\begin{DoxyCompactItemize}
+\item 
+const \mbox{\hyperlink{classflatbuffers_1_1Parser}{Parser}} \& \mbox{\hyperlink{classflatbuffers_1_1BaseGenerator_a0cc4eb04a1d94766c92684135b89c245}{parser\+\_\+}}
+\item 
+const std\+::string \& \mbox{\hyperlink{classflatbuffers_1_1BaseGenerator_ad50fb4f2324ac78a5bc86bb6eb97858c}{path\+\_\+}}
+\item 
+const std\+::string \& \mbox{\hyperlink{classflatbuffers_1_1BaseGenerator_af25bcc46e0d71cfc0f23377c30f426c5}{file\+\_\+name\+\_\+}}
+\item 
+const std\+::string \mbox{\hyperlink{classflatbuffers_1_1BaseGenerator_ab3f483b39345cbc52bc266ebcd0643db}{qualifying\+\_\+start\+\_\+}}
+\item 
+const std\+::string \mbox{\hyperlink{classflatbuffers_1_1BaseGenerator_a95353c1506706274d696a79bb4214215}{qualifying\+\_\+separator\+\_\+}}
+\item 
+const std\+::string \mbox{\hyperlink{classflatbuffers_1_1BaseGenerator_a37d8a4da67a4e0272aed29f28f212762}{default\+\_\+extension\+\_\+}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classflatbuffers_1_1jsons_1_1JsonSchemaGenerator_a98cfd3cf905aef4e0263828208da641b}\label{classflatbuffers_1_1jsons_1_1JsonSchemaGenerator_a98cfd3cf905aef4e0263828208da641b} 
+\index{flatbuffers::jsons::JsonSchemaGenerator@{flatbuffers::jsons::JsonSchemaGenerator}!JsonSchemaGenerator@{JsonSchemaGenerator}}
+\index{JsonSchemaGenerator@{JsonSchemaGenerator}!flatbuffers::jsons::JsonSchemaGenerator@{flatbuffers::jsons::JsonSchemaGenerator}}
+\doxysubsubsection{\texorpdfstring{JsonSchemaGenerator()}{JsonSchemaGenerator()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily flatbuffers\+::jsons\+::\+Json\+Schema\+Generator\+::\+Json\+Schema\+Generator (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classflatbuffers_1_1Parser}{Parser}} \&}]{parser,  }\item[{const std\+::string \&}]{path,  }\item[{const std\+::string \&}]{file\+\_\+name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflatbuffers_1_1jsons_1_1JsonSchemaGenerator_a9fa2305f20e018a657fdc98412ef943a}\label{classflatbuffers_1_1jsons_1_1JsonSchemaGenerator_a9fa2305f20e018a657fdc98412ef943a} 
+\index{flatbuffers::jsons::JsonSchemaGenerator@{flatbuffers::jsons::JsonSchemaGenerator}!JsonSchemaGenerator@{JsonSchemaGenerator}}
+\index{JsonSchemaGenerator@{JsonSchemaGenerator}!flatbuffers::jsons::JsonSchemaGenerator@{flatbuffers::jsons::JsonSchemaGenerator}}
+\doxysubsubsection{\texorpdfstring{JsonSchemaGenerator()}{JsonSchemaGenerator()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily flatbuffers\+::jsons\+::\+Json\+Schema\+Generator\+::\+Json\+Schema\+Generator (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classflatbuffers_1_1BaseGenerator}{Base\+Generator}} \&}]{base\+\_\+generator }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classflatbuffers_1_1jsons_1_1JsonSchemaGenerator_abff658e07c62e3297d30f9838b118bc5}\label{classflatbuffers_1_1jsons_1_1JsonSchemaGenerator_abff658e07c62e3297d30f9838b118bc5} 
+\index{flatbuffers::jsons::JsonSchemaGenerator@{flatbuffers::jsons::JsonSchemaGenerator}!generate@{generate}}
+\index{generate@{generate}!flatbuffers::jsons::JsonSchemaGenerator@{flatbuffers::jsons::JsonSchemaGenerator}}
+\doxysubsubsection{\texorpdfstring{generate()}{generate()}}
+{\footnotesize\ttfamily bool flatbuffers\+::jsons\+::\+Json\+Schema\+Generator\+::generate (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classflatbuffers_1_1BaseGenerator_a32156e35f9273398435ce55386874187}{flatbuffers\+::\+Base\+Generator}}.
+
+\Hypertarget{classflatbuffers_1_1jsons_1_1JsonSchemaGenerator_ac36fb13f391fe7051bd1a1af3ab86156}\label{classflatbuffers_1_1jsons_1_1JsonSchemaGenerator_ac36fb13f391fe7051bd1a1af3ab86156} 
+\index{flatbuffers::jsons::JsonSchemaGenerator@{flatbuffers::jsons::JsonSchemaGenerator}!GeneratedFileName@{GeneratedFileName}}
+\index{GeneratedFileName@{GeneratedFileName}!flatbuffers::jsons::JsonSchemaGenerator@{flatbuffers::jsons::JsonSchemaGenerator}}
+\doxysubsubsection{\texorpdfstring{GeneratedFileName()}{GeneratedFileName()}}
+{\footnotesize\ttfamily std\+::string flatbuffers\+::jsons\+::\+Json\+Schema\+Generator\+::\+Generated\+File\+Name (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{path,  }\item[{const std\+::string \&}]{file\+\_\+name,  }\item[{const \mbox{\hyperlink{structflatbuffers_1_1IDLOptions}{IDLOptions}} \&}]{options }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflatbuffers_1_1jsons_1_1JsonSchemaGenerator_a4fdb7f13e600d61903ac3d32e99ed1a9}\label{classflatbuffers_1_1jsons_1_1JsonSchemaGenerator_a4fdb7f13e600d61903ac3d32e99ed1a9} 
+\index{flatbuffers::jsons::JsonSchemaGenerator@{flatbuffers::jsons::JsonSchemaGenerator}!getJson@{getJson}}
+\index{getJson@{getJson}!flatbuffers::jsons::JsonSchemaGenerator@{flatbuffers::jsons::JsonSchemaGenerator}}
+\doxysubsubsection{\texorpdfstring{getJson()}{getJson()}}
+{\footnotesize\ttfamily const std\+::string flatbuffers\+::jsons\+::\+Json\+Schema\+Generator\+::get\+Json (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflatbuffers_1_1jsons_1_1JsonSchemaGenerator_a05006e6891268449eb429d440f828e58}\label{classflatbuffers_1_1jsons_1_1JsonSchemaGenerator_a05006e6891268449eb429d440f828e58} 
+\index{flatbuffers::jsons::JsonSchemaGenerator@{flatbuffers::jsons::JsonSchemaGenerator}!Indent@{Indent}}
+\index{Indent@{Indent}!flatbuffers::jsons::JsonSchemaGenerator@{flatbuffers::jsons::JsonSchemaGenerator}}
+\doxysubsubsection{\texorpdfstring{Indent()}{Indent()}}
+{\footnotesize\ttfamily std\+::string flatbuffers\+::jsons\+::\+Json\+Schema\+Generator\+::\+Indent (\begin{DoxyParamCaption}\item[{int}]{indent }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflatbuffers_1_1jsons_1_1JsonSchemaGenerator_a396f21608a8e963a3fb596429cc84ed2}\label{classflatbuffers_1_1jsons_1_1JsonSchemaGenerator_a396f21608a8e963a3fb596429cc84ed2} 
+\index{flatbuffers::jsons::JsonSchemaGenerator@{flatbuffers::jsons::JsonSchemaGenerator}!NewLine@{NewLine}}
+\index{NewLine@{NewLine}!flatbuffers::jsons::JsonSchemaGenerator@{flatbuffers::jsons::JsonSchemaGenerator}}
+\doxysubsubsection{\texorpdfstring{NewLine()}{NewLine()}}
+{\footnotesize\ttfamily std\+::string flatbuffers\+::jsons\+::\+Json\+Schema\+Generator\+::\+New\+Line (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflatbuffers_1_1jsons_1_1JsonSchemaGenerator_aeea3922a51ae67b7fa771ef1043efc33}\label{classflatbuffers_1_1jsons_1_1JsonSchemaGenerator_aeea3922a51ae67b7fa771ef1043efc33} 
+\index{flatbuffers::jsons::JsonSchemaGenerator@{flatbuffers::jsons::JsonSchemaGenerator}!PrepareDescription@{PrepareDescription}}
+\index{PrepareDescription@{PrepareDescription}!flatbuffers::jsons::JsonSchemaGenerator@{flatbuffers::jsons::JsonSchemaGenerator}}
+\doxysubsubsection{\texorpdfstring{PrepareDescription()}{PrepareDescription()}}
+{\footnotesize\ttfamily std\+::string flatbuffers\+::jsons\+::\+Json\+Schema\+Generator\+::\+Prepare\+Description (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ std\+::string $>$ \&}]{comment\+\_\+lines }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classflatbuffers_1_1jsons_1_1JsonSchemaGenerator_af5a75b39d2648a75c4889583842f271b}\label{classflatbuffers_1_1jsons_1_1JsonSchemaGenerator_af5a75b39d2648a75c4889583842f271b} 
+\index{flatbuffers::jsons::JsonSchemaGenerator@{flatbuffers::jsons::JsonSchemaGenerator}!save@{save}}
+\index{save@{save}!flatbuffers::jsons::JsonSchemaGenerator@{flatbuffers::jsons::JsonSchemaGenerator}}
+\doxysubsubsection{\texorpdfstring{save()}{save()}}
+{\footnotesize\ttfamily bool flatbuffers\+::jsons\+::\+Json\+Schema\+Generator\+::save (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+flatbuffers/src/\mbox{\hyperlink{idl__gen__json__schema_8cpp}{idl\+\_\+gen\+\_\+json\+\_\+schema.\+cpp}}\end{DoxyCompactItemize}

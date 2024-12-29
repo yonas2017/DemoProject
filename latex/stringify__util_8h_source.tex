@@ -1,0 +1,195 @@
+\doxysection{stringify\+\_\+util.\+h}
+\hypertarget{stringify__util_8h_source}{}\label{stringify__util_8h_source}\index{flatbuffers/tests/cpp17/stringify\_util.h@{flatbuffers/tests/cpp17/stringify\_util.h}}
+\mbox{\hyperlink{stringify__util_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ Copyright\ 2020\ Google\ Inc.\ All\ rights\ reserved.}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ Licensed\ under\ the\ Apache\ License,\ Version\ 2.0\ (the\ "{}License"{});}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ you\ may\ not\ use\ this\ file\ except\ in\ compliance\ with\ the\ License.}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *\ You\ may\ obtain\ a\ copy\ of\ the\ License\ at}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ *\ \ \ \ \ http://www.apache.org/licenses/LICENSE-\/2.0}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ *\ Unless\ required\ by\ applicable\ law\ or\ agreed\ to\ in\ writing,\ software}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ *\ distributed\ under\ the\ License\ is\ distributed\ on\ an\ "{}AS\ IS"{}\ BASIS,}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ *\ WITHOUT\ WARRANTIES\ OR\ CONDITIONS\ OF\ ANY\ KIND,\ either\ express\ or\ implied.}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ *\ See\ the\ License\ for\ the\ specific\ language\ governing\ permissions\ and}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ *\ limitations\ under\ the\ License.}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{comment}{//\ This\ contains\ some\ utilities/examples\ for\ how\ to\ leverage\ the\ static\ reflec-\/}}
+\DoxyCodeLine{00018\ \textcolor{comment}{//\ tion\ features\ of\ tables\ and\ structs\ in\ the\ C++17\ code\ generation\ to\ recur-\/}}
+\DoxyCodeLine{00019\ \textcolor{comment}{//\ sively\ produce\ a\ string\ representation\ of\ any\ Flatbuffer\ table\ or\ struct\ use}}
+\DoxyCodeLine{00020\ \textcolor{comment}{//\ compile-\/time\ iteration\ over\ the\ fields.\ Note\ that\ this\ code\ is\ completely}}
+\DoxyCodeLine{00021\ \textcolor{comment}{//\ generic\ in\ that\ it\ makes\ no\ reference\ to\ any\ particular\ Flatbuffer\ type.}}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#include\ <optional>}}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#include\ <type\_traits>}}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#include\ <utility>}}
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{flatbuffers_8h}{flatbuffers/flatbuffers.h}}"{}}}
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{util_8h}{flatbuffers/util.h}}"{}}}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacecpp17}{cpp17}}\ \{}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \textcolor{comment}{//\ User\ calls\ this;\ need\ to\ forward\ declare\ it\ since\ it\ is\ called\ recursively.}}
+\DoxyCodeLine{00035\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00036\ std::optional<std::string>\ \mbox{\hyperlink{namespacecpp17_ad251c7744f2680824d1593b7b9214585}{StringifyFlatbufferValue}}(}
+\DoxyCodeLine{00037\ \ \ \ \ T\ \&\&val,\ \textcolor{keyword}{const}\ std::string\ \&indent\ =\ \textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \textcolor{keyword}{namespace\ }detail\ \{}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \textcolor{comment}{/*******************************************************************************}}
+\DoxyCodeLine{00042\ \textcolor{comment}{**\ Metaprogramming\ helpers\ for\ detecting\ Flatbuffers\ Tables,\ Structs,\ \&\ Vectors.}}
+\DoxyCodeLine{00043\ \textcolor{comment}{*******************************************************************************/}}
+\DoxyCodeLine{00044\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ FBS,\ \textcolor{keyword}{typename}\ =\ \textcolor{keywordtype}{void}>}
+\DoxyCodeLine{00045\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structcpp17_1_1detail_1_1is__flatbuffers__table__or__struct}{is\_flatbuffers\_table\_or\_struct}}\ :\ std::false\_type\ \{\};}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \textcolor{comment}{//\ We\ know\ it's\ a\ table\ or\ struct\ when\ it\ has\ a\ Traits\ subclass.}}
+\DoxyCodeLine{00048\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ FBS>}
+\DoxyCodeLine{00049\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structcpp17_1_1detail_1_1is__flatbuffers__table__or__struct}{is\_flatbuffers\_table\_or\_struct}}<FBS,\ \mbox{\hyperlink{namespacestd}{std}}::void\_t<typename\ FBS::Traits>>}
+\DoxyCodeLine{00050\ \ \ \ \ :\ std::true\_type\ \{\};}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ FBS>}
+\DoxyCodeLine{00053\ \textcolor{keyword}{inline}\ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{namespacecpp17_1_1detail_af1a4c7d27d5a07dc8ac9a7ba95f4bbb2}{is\_flatbuffers\_table\_or\_struct\_v}}\ =}
+\DoxyCodeLine{00054\ \ \ \ \ \mbox{\hyperlink{structcpp17_1_1detail_1_1is__flatbuffers__table__or__struct}{is\_flatbuffers\_table\_or\_struct<FBS>::value}};}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structcpp17_1_1detail_1_1is__flatbuffers__vector}{is\_flatbuffers\_vector}}\ :\ std::false\_type\ \{\};}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00059\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structcpp17_1_1detail_1_1is__flatbuffers__vector}{is\_flatbuffers\_vector}}<\mbox{\hyperlink{namespaceflatbuffers}{flatbuffers}}::Vector<T>>\ :\ std::true\_type\ \{\};}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00062\ \textcolor{keyword}{inline}\ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{namespacecpp17_1_1detail_a8fca1fb63bb34234867f9a1bfe50317b}{is\_flatbuffers\_vector\_v}}\ =\ \mbox{\hyperlink{structcpp17_1_1detail_1_1is__flatbuffers__vector}{is\_flatbuffers\_vector<T>::value}};}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00064\ \textcolor{comment}{/*******************************************************************************}}
+\DoxyCodeLine{00065\ \textcolor{comment}{**\ Compile-\/time\ Iteration\ \&\ Recursive\ Stringification\ over\ Flatbuffers\ types.}}
+\DoxyCodeLine{00066\ \textcolor{comment}{*******************************************************************************/}}
+\DoxyCodeLine{00067\ \textcolor{keyword}{template}<\textcolor{keywordtype}{size\_t}\ Index,\ \textcolor{keyword}{typename}\ FBS>}
+\DoxyCodeLine{00068\ std::string\ \mbox{\hyperlink{namespacecpp17_1_1detail_aac8ec8ee2d7041a984ac12389da1a0e1}{AddStringifiedField}}(\textcolor{keyword}{const}\ FBS\ \&fbs,\ \textcolor{keyword}{const}\ std::string\ \&indent)\ \{}
+\DoxyCodeLine{00069\ \ \ \textcolor{keyword}{auto}\ value\_string\ =}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \mbox{\hyperlink{namespacecpp17_ad251c7744f2680824d1593b7b9214585}{StringifyFlatbufferValue}}(fbs.template\ get\_field<Index>(),\ indent);}
+\DoxyCodeLine{00071\ \ \ \textcolor{keywordflow}{if}\ (!value\_string)\ \{\ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}"{}};\ \}}
+\DoxyCodeLine{00072\ \ \ \textcolor{keywordflow}{return}\ indent\ +\ FBS::Traits::field\_names[Index]\ +\ \textcolor{stringliteral}{"{}\ =\ "{}}\ +\ *value\_string\ +}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{00074\ \}}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00076\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ FBS,\ \textcolor{keywordtype}{size\_t}...\ Indexes>}
+\DoxyCodeLine{00077\ std::string\ \mbox{\hyperlink{namespacecpp17_1_1detail_a71ba43ddc420d19d4b6a4b9d7eb14d27}{StringifyTableOrStructImpl}}(\textcolor{keyword}{const}\ FBS\ \&fbs,}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\ \&indent,}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::index\_sequence<Indexes...>)\ \{}
+\DoxyCodeLine{00080\ \ \ \textcolor{comment}{//\ This\ line\ is\ where\ the\ compile-\/time\ iteration\ happens!}}
+\DoxyCodeLine{00081\ \ \ \textcolor{keywordflow}{return}\ (AddStringifiedField<Indexes>(fbs,\ indent)\ +\ ...);}
+\DoxyCodeLine{00082\ \}}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00084\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ FBS>}
+\DoxyCodeLine{00085\ std::string\ \mbox{\hyperlink{namespacecpp17_1_1detail_af0a06dc1270fe5d0b6d0581b55e8fd86}{StringifyTableOrStruct}}(\textcolor{keyword}{const}\ FBS\ \&fbs,\ \textcolor{keyword}{const}\ std::string\ \&indent)\ \{}
+\DoxyCodeLine{00086\ \ \ (void)fbs;}
+\DoxyCodeLine{00087\ \ \ (void)indent;}
+\DoxyCodeLine{00088\ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{size\_t}\ field\_count\ =\ FBS::Traits::fields\_number;}
+\DoxyCodeLine{00089\ \ \ std::string\ out;}
+\DoxyCodeLine{00090\ \ \ \textcolor{keywordflow}{if}\ \textcolor{keyword}{constexpr}\ (field\_count\ >\ 0)\ \{}
+\DoxyCodeLine{00091\ \ \ \ \ out\ =\ std::string(FBS::Traits::fully\_qualified\_name)\ +\ \textcolor{stringliteral}{"{}\{\(\backslash\)n"{}}\ +}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespacecpp17_1_1detail_a71ba43ddc420d19d4b6a4b9d7eb14d27}{StringifyTableOrStructImpl}}(fbs,\ indent\ +\ \textcolor{stringliteral}{"{}\ \ "{}},}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_index\_sequence<field\_count>\{\})\ +}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \ \ indent\ +\ \textcolor{charliteral}{'\}'};}
+\DoxyCodeLine{00095\ \ \ \}}
+\DoxyCodeLine{00096\ \ \ \textcolor{keywordflow}{return}\ out;}
+\DoxyCodeLine{00097\ \}}
+\DoxyCodeLine{00098\ }
+\DoxyCodeLine{00099\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00100\ std::string\ \mbox{\hyperlink{namespacecpp17_1_1detail_a88c23c9c4f7076538ccf2ac5ddaedbb9}{StringifyVector}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classflatbuffers_1_1Vector}{flatbuffers::Vector<T>}}\ \&vec,}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\ \&indent)\ \{}
+\DoxyCodeLine{00102\ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{auto}\ prologue\ =\ indent\ +\ std::string(\textcolor{stringliteral}{"{}\ \ "{}});}
+\DoxyCodeLine{00103\ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{auto}\ epilogue\ =\ std::string(\textcolor{stringliteral}{"{},\(\backslash\)n"{}});}
+\DoxyCodeLine{00104\ \ \ std::string\ text;}
+\DoxyCodeLine{00105\ \ \ text\ +=\ \textcolor{stringliteral}{"{}[\(\backslash\)n"{}};}
+\DoxyCodeLine{00106\ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ it\ =\ vec.\mbox{\hyperlink{classflatbuffers_1_1Vector_a099bff85cfb0d5a4015f52c6c813563f}{cbegin}}(),\ end\ =\ vec.\mbox{\hyperlink{classflatbuffers_1_1Vector_abd89c95cc4a12a273ab90ef4b609c1ce}{cend}}();\ it\ !=\ end;\ ++it)\ \{}
+\DoxyCodeLine{00107\ \ \ \ \ text\ +=\ prologue;}
+\DoxyCodeLine{00108\ \ \ \ \ text\ +=\ \mbox{\hyperlink{namespacecpp17_ad251c7744f2680824d1593b7b9214585}{StringifyFlatbufferValue}}(*it).value\_or(\textcolor{stringliteral}{"{}(field\ absent)"{}});}
+\DoxyCodeLine{00109\ \ \ \ \ text\ +=\ epilogue;}
+\DoxyCodeLine{00110\ \ \ \}}
+\DoxyCodeLine{00111\ \ \ \textcolor{keywordflow}{if}\ (vec.\mbox{\hyperlink{classflatbuffers_1_1Vector_a099bff85cfb0d5a4015f52c6c813563f}{cbegin}}()\ !=\ vec.\mbox{\hyperlink{classflatbuffers_1_1Vector_abd89c95cc4a12a273ab90ef4b609c1ce}{cend}}())\ \{}
+\DoxyCodeLine{00112\ \ \ \ \ text.resize(text.size()\ -\/\ epilogue.size());}
+\DoxyCodeLine{00113\ \ \ \}}
+\DoxyCodeLine{00114\ \ \ text\ +=\ \textcolor{charliteral}{'\(\backslash\)n'}\ +\ indent\ +\ \textcolor{charliteral}{']'};}
+\DoxyCodeLine{00115\ \ \ \textcolor{keywordflow}{return}\ text;}
+\DoxyCodeLine{00116\ \}}
+\DoxyCodeLine{00117\ }
+\DoxyCodeLine{00118\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>\ std::string\ \mbox{\hyperlink{namespacecpp17_1_1detail_a8d468b75504397f7693b0337197d3c4e}{StringifyArithmeticType}}(T\ val)\ \{}
+\DoxyCodeLine{00119\ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{namespaceflatbuffers_a3cd13d0bf35e8b0c8f0005863fb00a21}{flatbuffers::NumToString}}(val);}
+\DoxyCodeLine{00120\ \}}
+\DoxyCodeLine{00121\ }
+\DoxyCodeLine{00122\ \}\ \ \textcolor{comment}{//\ namespace\ detail}}
+\DoxyCodeLine{00123\ }
+\DoxyCodeLine{00124\ \textcolor{comment}{/*******************************************************************************}}
+\DoxyCodeLine{00125\ \textcolor{comment}{**\ Take\ any\ flatbuffer\ type\ (table,\ struct,\ Vector,\ int...)\ and\ stringify\ it.}}
+\DoxyCodeLine{00126\ \textcolor{comment}{*******************************************************************************/}}
+\DoxyCodeLine{00127\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00128\ std::optional<std::string>\ \mbox{\hyperlink{namespacecpp17_ad251c7744f2680824d1593b7b9214585}{StringifyFlatbufferValue}}(T\ \&\&val,}
+\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\ \&indent)\ \{}
+\DoxyCodeLine{00130\ \ \ (void)indent;}
+\DoxyCodeLine{00131\ \ \ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{bool}\ is\_pointer\ =\ std::is\_pointer\_v<std::remove\_reference\_t<T>>;}
+\DoxyCodeLine{00132\ \ \ \textcolor{keywordflow}{if}\ \textcolor{keyword}{constexpr}\ (is\_pointer)\ \{}
+\DoxyCodeLine{00133\ \ \ \ \ \textcolor{keywordflow}{if}\ (val\ ==\ \textcolor{keyword}{nullptr})\ \textcolor{keywordflow}{return}\ std::nullopt;\ \ \textcolor{comment}{//\ Field\ is\ absent.}}
+\DoxyCodeLine{00134\ \ \ \}}
+\DoxyCodeLine{00135\ \ \ \textcolor{keyword}{using\ }decayed\ =}
+\DoxyCodeLine{00136\ \ \ \ \ \ \ std::decay\_t<std::remove\_pointer\_t<std::remove\_reference\_t<T>>>;}
+\DoxyCodeLine{00137\ }
+\DoxyCodeLine{00138\ \ \ \textcolor{comment}{//\ Is\ it\ a\ Flatbuffers\ Table\ or\ Struct?}}
+\DoxyCodeLine{00139\ \ \ \textcolor{keywordflow}{if}\ \textcolor{keyword}{constexpr}\ (detail::is\_flatbuffers\_table\_or\_struct\_v<decayed>)\ \{}
+\DoxyCodeLine{00140\ \ \ \ \ \textcolor{comment}{//\ We\ have\ a\ nested\ table\ or\ struct;\ use\ recursion!}}
+\DoxyCodeLine{00141\ \ \ \ \ \textcolor{keywordflow}{if}\ \textcolor{keyword}{constexpr}\ (is\_pointer)}
+\DoxyCodeLine{00142\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{namespacecpp17_1_1detail_af0a06dc1270fe5d0b6d0581b55e8fd86}{detail::StringifyTableOrStruct}}(*val,\ indent);}
+\DoxyCodeLine{00143\ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00144\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{namespacecpp17_1_1detail_af0a06dc1270fe5d0b6d0581b55e8fd86}{detail::StringifyTableOrStruct}}(val,\ indent);}
+\DoxyCodeLine{00145\ \ \ \}}
+\DoxyCodeLine{00146\ }
+\DoxyCodeLine{00147\ \ \ \textcolor{comment}{//\ Is\ it\ an\ 8-\/bit\ number?\ \ If\ so,\ print\ it\ like\ an\ int\ (not\ char).}}
+\DoxyCodeLine{00148\ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ \textcolor{keyword}{constexpr}\ (std::is\_same\_v<decayed,\ int8\_t>\ ||}
+\DoxyCodeLine{00149\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::is\_same\_v<decayed,\ uint8\_t>)\ \{}
+\DoxyCodeLine{00150\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{namespacecpp17_1_1detail_a8d468b75504397f7693b0337197d3c4e}{detail::StringifyArithmeticType}}(\textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(val));}
+\DoxyCodeLine{00151\ \ \ \}}
+\DoxyCodeLine{00152\ }
+\DoxyCodeLine{00153\ \ \ \textcolor{comment}{//\ Is\ it\ an\ enum?\ If\ so,\ print\ it\ like\ an\ int,\ since\ Flatbuffers\ doesn't\ yet}}
+\DoxyCodeLine{00154\ \ \ \textcolor{comment}{//\ have\ type-\/based\ reflection\ for\ enums,\ so\ we\ can't\ print\ the\ enum's\ name\ :(}}
+\DoxyCodeLine{00155\ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ \textcolor{keyword}{constexpr}\ (std::is\_enum\_v<decayed>)\ \{}
+\DoxyCodeLine{00156\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{namespacecpp17_ad251c7744f2680824d1593b7b9214585}{StringifyFlatbufferValue}}(}
+\DoxyCodeLine{00157\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static\_cast<}std::underlying\_type\_t<decayed>\textcolor{keyword}{>}(val),\ indent);}
+\DoxyCodeLine{00158\ \ \ \}}
+\DoxyCodeLine{00159\ }
+\DoxyCodeLine{00160\ \ \ \textcolor{comment}{//\ Is\ it\ an\ int,\ double,\ float,\ uint32\_t,\ etc.?}}
+\DoxyCodeLine{00161\ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ \textcolor{keyword}{constexpr}\ (std::is\_arithmetic\_v<decayed>)\ \{}
+\DoxyCodeLine{00162\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{namespacecpp17_1_1detail_a8d468b75504397f7693b0337197d3c4e}{detail::StringifyArithmeticType}}(val);}
+\DoxyCodeLine{00163\ \ \ \}}
+\DoxyCodeLine{00164\ }
+\DoxyCodeLine{00165\ \ \ \textcolor{comment}{//\ Is\ it\ a\ Flatbuffers\ string?}}
+\DoxyCodeLine{00166\ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ \textcolor{keyword}{constexpr}\ (std::is\_same\_v<decayed,\ flatbuffers::String>)\ \{}
+\DoxyCodeLine{00167\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{charliteral}{'"{}'}\ +\ val-\/>str()\ +\ \textcolor{charliteral}{'"{}'};}
+\DoxyCodeLine{00168\ \ \ \}}
+\DoxyCodeLine{00169\ }
+\DoxyCodeLine{00170\ \ \ \textcolor{comment}{//\ Is\ it\ a\ Flatbuffers\ Vector?}}
+\DoxyCodeLine{00171\ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ \textcolor{keyword}{constexpr}\ (detail::is\_flatbuffers\_vector\_v<decayed>)\ \{}
+\DoxyCodeLine{00172\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{namespacecpp17_1_1detail_a88c23c9c4f7076538ccf2ac5ddaedbb9}{detail::StringifyVector}}(*val,\ indent);}
+\DoxyCodeLine{00173\ \ \ \}}
+\DoxyCodeLine{00174\ }
+\DoxyCodeLine{00175\ \ \ \textcolor{comment}{//\ Is\ it\ a\ void\ pointer?}}
+\DoxyCodeLine{00176\ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ \textcolor{keyword}{constexpr}\ (std::is\_same\_v<decayed,\ void>)\ \{}
+\DoxyCodeLine{00177\ \ \ \ \ \textcolor{comment}{//\ Can't\ format\ it.}}
+\DoxyCodeLine{00178\ \ \ \ \ \textcolor{keywordflow}{return}\ std::nullopt;}
+\DoxyCodeLine{00179\ \ \ \}}
+\DoxyCodeLine{00180\ }
+\DoxyCodeLine{00181\ \ \ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00182\ \ \ \ \ \textcolor{comment}{//\ Not\ sure\ how\ to\ format\ this\ type,\ whatever\ it\ is.}}
+\DoxyCodeLine{00183\ \ \ \ \ \textcolor{keyword}{static\_assert}(\textcolor{keyword}{sizeof}(T)\ !=\ \textcolor{keyword}{sizeof}(T),}
+\DoxyCodeLine{00184\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}Do\ not\ know\ how\ to\ format\ this\ type\ T\ (the\ compiler\ error\ "{}}}
+\DoxyCodeLine{00185\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}should\ tell\ you\ nearby\ what\ T\ is)."{}});}
+\DoxyCodeLine{00186\ \ \ \}}
+\DoxyCodeLine{00187\ \}}
+\DoxyCodeLine{00188\ }
+\DoxyCodeLine{00189\ \}\ \ \textcolor{comment}{//\ namespace\ cpp17}}
+
+\end{DoxyCode}

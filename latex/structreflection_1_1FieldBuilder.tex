@@ -1,0 +1,188 @@
+\doxysection{reflection\+::Field\+Builder Struct Reference}
+\hypertarget{structreflection_1_1FieldBuilder}{}\label{structreflection_1_1FieldBuilder}\index{reflection::FieldBuilder@{reflection::FieldBuilder}}
+
+
+{\ttfamily \#include $<$reflection\+\_\+generated.\+h$>$}
+
+
+
+Collaboration diagram for reflection\+::Field\+Builder\+:
+% FIG 0
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef Field \mbox{\hyperlink{structreflection_1_1FieldBuilder_a4ed6cd689fbc66916670bdca99209978}{Table}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{structreflection_1_1FieldBuilder_ad4452bbc35f816e7ba10e2477dfc22fb}{add\+\_\+name}} (\+::flatbuffers\+::\+Offset$<$\mbox{\hyperlink{structflatbuffers_1_1String}{\+::flatbuffers\+::\+String}} $>$ \mbox{\hyperlink{idl__gen__ts_8cpp_a9b45b3e13bd9167aab02e17e08916231}{name}})
+\item 
+void \mbox{\hyperlink{structreflection_1_1FieldBuilder_a6aedd0376612ca72969a86ef1f3dc8ec}{add\+\_\+type}} (\+::flatbuffers\+::\+Offset$<$ reflection\+::\+Type $>$ type)
+\item 
+void \mbox{\hyperlink{structreflection_1_1FieldBuilder_a636c24e0d6484b7024a0dcaa51e02124}{add\+\_\+id}} (uint16\+\_\+t id)
+\item 
+void \mbox{\hyperlink{structreflection_1_1FieldBuilder_ac3cb1eb0b1f620678fc6c8cfe3836092}{add\+\_\+offset}} (uint16\+\_\+t offset)
+\item 
+void \mbox{\hyperlink{structreflection_1_1FieldBuilder_a347ac15d9f54c37e7cd7576b874ba5f0}{add\+\_\+default\+\_\+integer}} (int64\+\_\+t default\+\_\+integer)
+\item 
+void \mbox{\hyperlink{structreflection_1_1FieldBuilder_a9633139b9b64b43751d892bfda9123fe}{add\+\_\+default\+\_\+real}} (double default\+\_\+real)
+\item 
+void \mbox{\hyperlink{structreflection_1_1FieldBuilder_a529dcf02943ce3026c0d798ade2b9edf}{add\+\_\+deprecated}} (bool deprecated)
+\item 
+void \mbox{\hyperlink{structreflection_1_1FieldBuilder_a413ade123c3aeffc9efd36b482287037}{add\+\_\+required}} (bool required)
+\item 
+void \mbox{\hyperlink{structreflection_1_1FieldBuilder_aae334df6a55cb7256090df59546e04f8}{add\+\_\+key}} (bool key)
+\item 
+void \mbox{\hyperlink{structreflection_1_1FieldBuilder_a7fba8f525198c528881f1045282e6e65}{add\+\_\+attributes}} (\+::flatbuffers\+::\+Offset$<$\mbox{\hyperlink{classflatbuffers_1_1Vector}{\+::flatbuffers\+::\+Vector}}$<$\+::flatbuffers\+::\+Offset$<$ reflection\+::\+Key\+Value $>$ $>$ $>$ attributes)
+\item 
+void \mbox{\hyperlink{structreflection_1_1FieldBuilder_aaee7e0b50e7fc3a2df2ad4212c74dd26}{add\+\_\+documentation}} (\+::flatbuffers\+::\+Offset$<$\mbox{\hyperlink{classflatbuffers_1_1Vector}{\+::flatbuffers\+::\+Vector}}$<$\+::flatbuffers\+::\+Offset$<$\mbox{\hyperlink{structflatbuffers_1_1String}{\+::flatbuffers\+::\+String}} $>$ $>$ $>$ documentation)
+\item 
+void \mbox{\hyperlink{structreflection_1_1FieldBuilder_a70981108708b7cb3ef6a073e6ef66f03}{add\+\_\+optional}} (bool optional)
+\item 
+void \mbox{\hyperlink{structreflection_1_1FieldBuilder_ac57cddb75511f5b4ed9ee5b486dd5678}{add\+\_\+padding}} (uint16\+\_\+t padding)
+\item 
+void \mbox{\hyperlink{structreflection_1_1FieldBuilder_a077c48616da055d25b68df6a09221d47}{add\+\_\+offset64}} (bool offset64)
+\item 
+\mbox{\hyperlink{structreflection_1_1FieldBuilder_a29fe50e86c238d57591a73df31917b65}{Field\+Builder}} (\mbox{\hyperlink{namespaceflatbuffers_a41ac7b1c8f5f4a869e8f649b6c171ce7}{\+::flatbuffers\+::\+Flat\+Buffer\+Builder}} \&\+\_\+fbb)
+\item 
+\+::flatbuffers\+::\+Offset$<$ Field $>$ \mbox{\hyperlink{structreflection_1_1FieldBuilder_afa8ed8c1f7a07cafee1bb724b2ed0423}{Finish}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespaceflatbuffers_a41ac7b1c8f5f4a869e8f649b6c171ce7}{\+::flatbuffers\+::\+Flat\+Buffer\+Builder}} \& \mbox{\hyperlink{structreflection_1_1FieldBuilder_a955198b35cf512bc774858a727daffe2}{fbb\+\_\+}}
+\item 
+\+::flatbuffers\+::uoffset\+\_\+t \mbox{\hyperlink{structreflection_1_1FieldBuilder_a87be5e367a9d30d6b1b3a5f7114553a0}{start\+\_\+}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Typedef Documentation}
+\Hypertarget{structreflection_1_1FieldBuilder_a4ed6cd689fbc66916670bdca99209978}\label{structreflection_1_1FieldBuilder_a4ed6cd689fbc66916670bdca99209978} 
+\index{reflection::FieldBuilder@{reflection::FieldBuilder}!Table@{Table}}
+\index{Table@{Table}!reflection::FieldBuilder@{reflection::FieldBuilder}}
+\doxysubsubsection{\texorpdfstring{Table}{Table}}
+{\footnotesize\ttfamily typedef Field \mbox{\hyperlink{structreflection_1_1FieldBuilder_a4ed6cd689fbc66916670bdca99209978}{reflection\+::\+Field\+Builder\+::\+Table}}}
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{structreflection_1_1FieldBuilder_a29fe50e86c238d57591a73df31917b65}\label{structreflection_1_1FieldBuilder_a29fe50e86c238d57591a73df31917b65} 
+\index{reflection::FieldBuilder@{reflection::FieldBuilder}!FieldBuilder@{FieldBuilder}}
+\index{FieldBuilder@{FieldBuilder}!reflection::FieldBuilder@{reflection::FieldBuilder}}
+\doxysubsubsection{\texorpdfstring{FieldBuilder()}{FieldBuilder()}}
+{\footnotesize\ttfamily reflection\+::\+Field\+Builder\+::\+Field\+Builder (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceflatbuffers_a41ac7b1c8f5f4a869e8f649b6c171ce7}{\+::flatbuffers\+::\+Flat\+Buffer\+Builder}} \&}]{\+\_\+fbb }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{structreflection_1_1FieldBuilder_a7fba8f525198c528881f1045282e6e65}\label{structreflection_1_1FieldBuilder_a7fba8f525198c528881f1045282e6e65} 
+\index{reflection::FieldBuilder@{reflection::FieldBuilder}!add\_attributes@{add\_attributes}}
+\index{add\_attributes@{add\_attributes}!reflection::FieldBuilder@{reflection::FieldBuilder}}
+\doxysubsubsection{\texorpdfstring{add\_attributes()}{add\_attributes()}}
+{\footnotesize\ttfamily void reflection\+::\+Field\+Builder\+::add\+\_\+attributes (\begin{DoxyParamCaption}\item[{\+::flatbuffers\+::\+Offset$<$\mbox{\hyperlink{classflatbuffers_1_1Vector}{\+::flatbuffers\+::\+Vector}}$<$\+::flatbuffers\+::\+Offset$<$ reflection\+::\+Key\+Value $>$ $>$ $>$}]{attributes }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{structreflection_1_1FieldBuilder_a347ac15d9f54c37e7cd7576b874ba5f0}\label{structreflection_1_1FieldBuilder_a347ac15d9f54c37e7cd7576b874ba5f0} 
+\index{reflection::FieldBuilder@{reflection::FieldBuilder}!add\_default\_integer@{add\_default\_integer}}
+\index{add\_default\_integer@{add\_default\_integer}!reflection::FieldBuilder@{reflection::FieldBuilder}}
+\doxysubsubsection{\texorpdfstring{add\_default\_integer()}{add\_default\_integer()}}
+{\footnotesize\ttfamily void reflection\+::\+Field\+Builder\+::add\+\_\+default\+\_\+integer (\begin{DoxyParamCaption}\item[{int64\+\_\+t}]{default\+\_\+integer }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{structreflection_1_1FieldBuilder_a9633139b9b64b43751d892bfda9123fe}\label{structreflection_1_1FieldBuilder_a9633139b9b64b43751d892bfda9123fe} 
+\index{reflection::FieldBuilder@{reflection::FieldBuilder}!add\_default\_real@{add\_default\_real}}
+\index{add\_default\_real@{add\_default\_real}!reflection::FieldBuilder@{reflection::FieldBuilder}}
+\doxysubsubsection{\texorpdfstring{add\_default\_real()}{add\_default\_real()}}
+{\footnotesize\ttfamily void reflection\+::\+Field\+Builder\+::add\+\_\+default\+\_\+real (\begin{DoxyParamCaption}\item[{double}]{default\+\_\+real }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{structreflection_1_1FieldBuilder_a529dcf02943ce3026c0d798ade2b9edf}\label{structreflection_1_1FieldBuilder_a529dcf02943ce3026c0d798ade2b9edf} 
+\index{reflection::FieldBuilder@{reflection::FieldBuilder}!add\_deprecated@{add\_deprecated}}
+\index{add\_deprecated@{add\_deprecated}!reflection::FieldBuilder@{reflection::FieldBuilder}}
+\doxysubsubsection{\texorpdfstring{add\_deprecated()}{add\_deprecated()}}
+{\footnotesize\ttfamily void reflection\+::\+Field\+Builder\+::add\+\_\+deprecated (\begin{DoxyParamCaption}\item[{bool}]{deprecated }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{structreflection_1_1FieldBuilder_aaee7e0b50e7fc3a2df2ad4212c74dd26}\label{structreflection_1_1FieldBuilder_aaee7e0b50e7fc3a2df2ad4212c74dd26} 
+\index{reflection::FieldBuilder@{reflection::FieldBuilder}!add\_documentation@{add\_documentation}}
+\index{add\_documentation@{add\_documentation}!reflection::FieldBuilder@{reflection::FieldBuilder}}
+\doxysubsubsection{\texorpdfstring{add\_documentation()}{add\_documentation()}}
+{\footnotesize\ttfamily void reflection\+::\+Field\+Builder\+::add\+\_\+documentation (\begin{DoxyParamCaption}\item[{\+::flatbuffers\+::\+Offset$<$\mbox{\hyperlink{classflatbuffers_1_1Vector}{\+::flatbuffers\+::\+Vector}}$<$\+::flatbuffers\+::\+Offset$<$\mbox{\hyperlink{structflatbuffers_1_1String}{\+::flatbuffers\+::\+String}} $>$ $>$ $>$}]{documentation }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{structreflection_1_1FieldBuilder_a636c24e0d6484b7024a0dcaa51e02124}\label{structreflection_1_1FieldBuilder_a636c24e0d6484b7024a0dcaa51e02124} 
+\index{reflection::FieldBuilder@{reflection::FieldBuilder}!add\_id@{add\_id}}
+\index{add\_id@{add\_id}!reflection::FieldBuilder@{reflection::FieldBuilder}}
+\doxysubsubsection{\texorpdfstring{add\_id()}{add\_id()}}
+{\footnotesize\ttfamily void reflection\+::\+Field\+Builder\+::add\+\_\+id (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{structreflection_1_1FieldBuilder_aae334df6a55cb7256090df59546e04f8}\label{structreflection_1_1FieldBuilder_aae334df6a55cb7256090df59546e04f8} 
+\index{reflection::FieldBuilder@{reflection::FieldBuilder}!add\_key@{add\_key}}
+\index{add\_key@{add\_key}!reflection::FieldBuilder@{reflection::FieldBuilder}}
+\doxysubsubsection{\texorpdfstring{add\_key()}{add\_key()}}
+{\footnotesize\ttfamily void reflection\+::\+Field\+Builder\+::add\+\_\+key (\begin{DoxyParamCaption}\item[{bool}]{key }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{structreflection_1_1FieldBuilder_ad4452bbc35f816e7ba10e2477dfc22fb}\label{structreflection_1_1FieldBuilder_ad4452bbc35f816e7ba10e2477dfc22fb} 
+\index{reflection::FieldBuilder@{reflection::FieldBuilder}!add\_name@{add\_name}}
+\index{add\_name@{add\_name}!reflection::FieldBuilder@{reflection::FieldBuilder}}
+\doxysubsubsection{\texorpdfstring{add\_name()}{add\_name()}}
+{\footnotesize\ttfamily void reflection\+::\+Field\+Builder\+::add\+\_\+name (\begin{DoxyParamCaption}\item[{\+::flatbuffers\+::\+Offset$<$\mbox{\hyperlink{structflatbuffers_1_1String}{\+::flatbuffers\+::\+String}} $>$}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{structreflection_1_1FieldBuilder_ac3cb1eb0b1f620678fc6c8cfe3836092}\label{structreflection_1_1FieldBuilder_ac3cb1eb0b1f620678fc6c8cfe3836092} 
+\index{reflection::FieldBuilder@{reflection::FieldBuilder}!add\_offset@{add\_offset}}
+\index{add\_offset@{add\_offset}!reflection::FieldBuilder@{reflection::FieldBuilder}}
+\doxysubsubsection{\texorpdfstring{add\_offset()}{add\_offset()}}
+{\footnotesize\ttfamily void reflection\+::\+Field\+Builder\+::add\+\_\+offset (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{offset }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{structreflection_1_1FieldBuilder_a077c48616da055d25b68df6a09221d47}\label{structreflection_1_1FieldBuilder_a077c48616da055d25b68df6a09221d47} 
+\index{reflection::FieldBuilder@{reflection::FieldBuilder}!add\_offset64@{add\_offset64}}
+\index{add\_offset64@{add\_offset64}!reflection::FieldBuilder@{reflection::FieldBuilder}}
+\doxysubsubsection{\texorpdfstring{add\_offset64()}{add\_offset64()}}
+{\footnotesize\ttfamily void reflection\+::\+Field\+Builder\+::add\+\_\+offset64 (\begin{DoxyParamCaption}\item[{bool}]{offset64 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{structreflection_1_1FieldBuilder_a70981108708b7cb3ef6a073e6ef66f03}\label{structreflection_1_1FieldBuilder_a70981108708b7cb3ef6a073e6ef66f03} 
+\index{reflection::FieldBuilder@{reflection::FieldBuilder}!add\_optional@{add\_optional}}
+\index{add\_optional@{add\_optional}!reflection::FieldBuilder@{reflection::FieldBuilder}}
+\doxysubsubsection{\texorpdfstring{add\_optional()}{add\_optional()}}
+{\footnotesize\ttfamily void reflection\+::\+Field\+Builder\+::add\+\_\+optional (\begin{DoxyParamCaption}\item[{bool}]{optional }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{structreflection_1_1FieldBuilder_ac57cddb75511f5b4ed9ee5b486dd5678}\label{structreflection_1_1FieldBuilder_ac57cddb75511f5b4ed9ee5b486dd5678} 
+\index{reflection::FieldBuilder@{reflection::FieldBuilder}!add\_padding@{add\_padding}}
+\index{add\_padding@{add\_padding}!reflection::FieldBuilder@{reflection::FieldBuilder}}
+\doxysubsubsection{\texorpdfstring{add\_padding()}{add\_padding()}}
+{\footnotesize\ttfamily void reflection\+::\+Field\+Builder\+::add\+\_\+padding (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{padding }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{structreflection_1_1FieldBuilder_a413ade123c3aeffc9efd36b482287037}\label{structreflection_1_1FieldBuilder_a413ade123c3aeffc9efd36b482287037} 
+\index{reflection::FieldBuilder@{reflection::FieldBuilder}!add\_required@{add\_required}}
+\index{add\_required@{add\_required}!reflection::FieldBuilder@{reflection::FieldBuilder}}
+\doxysubsubsection{\texorpdfstring{add\_required()}{add\_required()}}
+{\footnotesize\ttfamily void reflection\+::\+Field\+Builder\+::add\+\_\+required (\begin{DoxyParamCaption}\item[{bool}]{required }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{structreflection_1_1FieldBuilder_a6aedd0376612ca72969a86ef1f3dc8ec}\label{structreflection_1_1FieldBuilder_a6aedd0376612ca72969a86ef1f3dc8ec} 
+\index{reflection::FieldBuilder@{reflection::FieldBuilder}!add\_type@{add\_type}}
+\index{add\_type@{add\_type}!reflection::FieldBuilder@{reflection::FieldBuilder}}
+\doxysubsubsection{\texorpdfstring{add\_type()}{add\_type()}}
+{\footnotesize\ttfamily void reflection\+::\+Field\+Builder\+::add\+\_\+type (\begin{DoxyParamCaption}\item[{\+::flatbuffers\+::\+Offset$<$ reflection\+::\+Type $>$}]{type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{structreflection_1_1FieldBuilder_afa8ed8c1f7a07cafee1bb724b2ed0423}\label{structreflection_1_1FieldBuilder_afa8ed8c1f7a07cafee1bb724b2ed0423} 
+\index{reflection::FieldBuilder@{reflection::FieldBuilder}!Finish@{Finish}}
+\index{Finish@{Finish}!reflection::FieldBuilder@{reflection::FieldBuilder}}
+\doxysubsubsection{\texorpdfstring{Finish()}{Finish()}}
+{\footnotesize\ttfamily \+::flatbuffers\+::\+Offset$<$ Field $>$ reflection\+::\+Field\+Builder\+::\+Finish (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{structreflection_1_1FieldBuilder_a955198b35cf512bc774858a727daffe2}\label{structreflection_1_1FieldBuilder_a955198b35cf512bc774858a727daffe2} 
+\index{reflection::FieldBuilder@{reflection::FieldBuilder}!fbb\_@{fbb\_}}
+\index{fbb\_@{fbb\_}!reflection::FieldBuilder@{reflection::FieldBuilder}}
+\doxysubsubsection{\texorpdfstring{fbb\_}{fbb\_}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespaceflatbuffers_a41ac7b1c8f5f4a869e8f649b6c171ce7}{\+::flatbuffers\+::\+Flat\+Buffer\+Builder}}\& reflection\+::\+Field\+Builder\+::fbb\+\_\+}
+
+\Hypertarget{structreflection_1_1FieldBuilder_a87be5e367a9d30d6b1b3a5f7114553a0}\label{structreflection_1_1FieldBuilder_a87be5e367a9d30d6b1b3a5f7114553a0} 
+\index{reflection::FieldBuilder@{reflection::FieldBuilder}!start\_@{start\_}}
+\index{start\_@{start\_}!reflection::FieldBuilder@{reflection::FieldBuilder}}
+\doxysubsubsection{\texorpdfstring{start\_}{start\_}}
+{\footnotesize\ttfamily \+::flatbuffers\+::uoffset\+\_\+t reflection\+::\+Field\+Builder\+::start\+\_\+}
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+flatbuffers/include/flatbuffers/\mbox{\hyperlink{reflection__generated_8h}{reflection\+\_\+generated.\+h}}\end{DoxyCompactItemize}

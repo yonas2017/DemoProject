@@ -1,0 +1,75 @@
+\doxysection{string.\+h}
+\hypertarget{string_8h_source}{}\label{string_8h_source}\index{flatbuffers/include/flatbuffers/string.h@{flatbuffers/include/flatbuffers/string.h}}
+\mbox{\hyperlink{string_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ Copyright\ 2021\ Google\ Inc.\ All\ rights\ reserved.}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ Licensed\ under\ the\ Apache\ License,\ Version\ 2.0\ (the\ "{}License"{});}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ you\ may\ not\ use\ this\ file\ except\ in\ compliance\ with\ the\ License.}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *\ You\ may\ obtain\ a\ copy\ of\ the\ License\ at}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ *\ \ \ \ \ http://www.apache.org/licenses/LICENSE-\/2.0}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ *\ Unless\ required\ by\ applicable\ law\ or\ agreed\ to\ in\ writing,\ software}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ *\ distributed\ under\ the\ License\ is\ distributed\ on\ an\ "{}AS\ IS"{}\ BASIS,}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ *\ WITHOUT\ WARRANTIES\ OR\ CONDITIONS\ OF\ ANY\ KIND,\ either\ express\ or\ implied.}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ *\ See\ the\ License\ for\ the\ specific\ language\ governing\ permissions\ and}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ *\ limitations\ under\ the\ License.}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#ifndef\ FLATBUFFERS\_STRING\_H\_}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#define\ FLATBUFFERS\_STRING\_H\_}}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{base_8h}{flatbuffers/base.h}}"{}}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{vector_8h}{flatbuffers/vector.h}}"{}}}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceflatbuffers}{flatbuffers}}\ \{}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structflatbuffers_1_1String}{String}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classflatbuffers_1_1Vector}{Vector}}<char>\ \{}
+\DoxyCodeLine{00026\ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *\mbox{\hyperlink{structflatbuffers_1_1String_a7b6265f21045313537cb44979459dd37}{c\_str}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{reinterpret\_cast<}\textcolor{keyword}{const\ }\textcolor{keywordtype}{char}\ *\textcolor{keyword}{>}(\mbox{\hyperlink{classflatbuffers_1_1Vector_ab6a1493f93fed43383a12e6379e06fab}{Data}}());\ \}}
+\DoxyCodeLine{00027\ \ \ std::string\ \mbox{\hyperlink{structflatbuffers_1_1String_a4c49c553dfec1da5a6fd8852a97d508e}{str}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ std::string(\mbox{\hyperlink{structflatbuffers_1_1String_a7b6265f21045313537cb44979459dd37}{c\_str}}(),\ \mbox{\hyperlink{classflatbuffers_1_1Vector_a70e1b54b9c82251be5496f1729d60e9a}{size}}());\ \}}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \ \ \textcolor{comment}{//\ clang-\/format\ off}}
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\ \ \#ifdef\ FLATBUFFERS\_HAS\_STRING\_VIEW}}
+\DoxyCodeLine{00031\ \ \ flatbuffers::string\_view\ string\_view()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keywordflow}{return}\ flatbuffers::string\_view(\mbox{\hyperlink{structflatbuffers_1_1String_a7b6265f21045313537cb44979459dd37}{c\_str}}(),\ \mbox{\hyperlink{classflatbuffers_1_1Vector_a70e1b54b9c82251be5496f1729d60e9a}{size}}());}
+\DoxyCodeLine{00033\ \ \ \}}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \ \ \textcolor{comment}{/*\ implicit\ */}}
+\DoxyCodeLine{00036\ \ \ \textcolor{keyword}{operator}\ flatbuffers::string\_view()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keywordflow}{return}\ flatbuffers::string\_view(\mbox{\hyperlink{structflatbuffers_1_1String_a7b6265f21045313537cb44979459dd37}{c\_str}}(),\ \mbox{\hyperlink{classflatbuffers_1_1Vector_a70e1b54b9c82251be5496f1729d60e9a}{size}}());}
+\DoxyCodeLine{00038\ \ \ \}}
+\DoxyCodeLine{00039\ \textcolor{preprocessor}{\ \ \#endif\ }\textcolor{comment}{//\ FLATBUFFERS\_HAS\_STRING\_VIEW}}
+\DoxyCodeLine{00040\ \ \ \textcolor{comment}{//\ clang-\/format\ on}}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structflatbuffers_1_1String_a1028f4733cff070adae7d57bf4325726}{operator<}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{structflatbuffers_1_1String}{String}}\ \&o)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keywordflow}{return}\ StringLessThan(this-\/>\mbox{\hyperlink{classflatbuffers_1_1Vector_a138405be6fda9f3af1a54ee8725af080}{data}}(),\ this-\/>\mbox{\hyperlink{classflatbuffers_1_1Vector_a70e1b54b9c82251be5496f1729d60e9a}{size}}(),\ o.\mbox{\hyperlink{classflatbuffers_1_1Vector_a138405be6fda9f3af1a54ee8725af080}{data}}(),\ o.\mbox{\hyperlink{classflatbuffers_1_1Vector_a70e1b54b9c82251be5496f1729d60e9a}{size}}());}
+\DoxyCodeLine{00044\ \ \ \}}
+\DoxyCodeLine{00045\ \};}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \textcolor{comment}{//\ Convenience\ function\ to\ get\ std::string\ from\ a\ String\ returning\ an\ empty}}
+\DoxyCodeLine{00048\ \textcolor{comment}{//\ string\ on\ null\ pointer.}}
+\DoxyCodeLine{00049\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ std::string\ GetString(\textcolor{keyword}{const}\ String\ *str)\ \{}
+\DoxyCodeLine{00050\ \ \ \textcolor{keywordflow}{return}\ str\ ?\ str-\/>str()\ :\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{00051\ \}}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \textcolor{comment}{//\ Convenience\ function\ to\ get\ char*\ from\ a\ String\ returning\ an\ empty\ string\ on}}
+\DoxyCodeLine{00054\ \textcolor{comment}{//\ null\ pointer.}}
+\DoxyCodeLine{00055\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *GetCstring(\textcolor{keyword}{const}\ String\ *str)\ \{}
+\DoxyCodeLine{00056\ \ \ \textcolor{keywordflow}{return}\ str\ ?\ str-\/>c\_str()\ :\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{00057\ \}}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \textcolor{preprocessor}{\#ifdef\ FLATBUFFERS\_HAS\_STRING\_VIEW}}
+\DoxyCodeLine{00060\ \textcolor{comment}{//\ Convenience\ function\ to\ get\ string\_view\ from\ a\ String\ returning\ an\ empty}}
+\DoxyCodeLine{00061\ \textcolor{comment}{//\ string\_view\ on\ null\ pointer.}}
+\DoxyCodeLine{00062\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ flatbuffers::string\_view\ GetStringView(\textcolor{keyword}{const}\ String\ *str)\ \{}
+\DoxyCodeLine{00063\ \ \ \textcolor{keywordflow}{return}\ str\ ?\ str-\/>string\_view()\ :\ flatbuffers::string\_view();}
+\DoxyCodeLine{00064\ \}}
+\DoxyCodeLine{00065\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ FLATBUFFERS\_HAS\_STRING\_VIEW}}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00067\ \}\ \ \textcolor{comment}{//\ namespace\ flatbuffers}}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00069\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ FLATBUFFERS\_STRING\_H\_}}
+
+\end{DoxyCode}

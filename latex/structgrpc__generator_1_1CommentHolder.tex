@@ -1,0 +1,68 @@
+\doxysection{grpc\+\_\+generator\+::Comment\+Holder Struct Reference}
+\hypertarget{structgrpc__generator_1_1CommentHolder}{}\label{structgrpc__generator_1_1CommentHolder}\index{grpc\_generator::CommentHolder@{grpc\_generator::CommentHolder}}
+
+
+{\ttfamily \#include $<$schema\+\_\+interface.\+h$>$}
+
+
+
+Inheritance diagram for grpc\+\_\+generator\+::Comment\+Holder\+:
+% FIG 0
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{structgrpc__generator_1_1CommentHolder_a6e517ec1311b1452816b343037640752}{\texorpdfstring{$\sim$}{\string~}\+Comment\+Holder}} ()
+\item 
+virtual \mbox{\hyperlink{namespacegrpc_a77f15e90a2c3651195f88645e4512267}{grpc\+::string}} \mbox{\hyperlink{structgrpc__generator_1_1CommentHolder_a3975709afbea2352888d9de6c1542f44}{Get\+Leading\+Comments}} (const \mbox{\hyperlink{namespacegrpc_a77f15e90a2c3651195f88645e4512267}{grpc\+::string}} prefix) const =0
+\item 
+virtual \mbox{\hyperlink{namespacegrpc_a77f15e90a2c3651195f88645e4512267}{grpc\+::string}} \mbox{\hyperlink{structgrpc__generator_1_1CommentHolder_a7384d43fe69a661729f2b136ecab419f}{Get\+Trailing\+Comments}} (const \mbox{\hyperlink{namespacegrpc_a77f15e90a2c3651195f88645e4512267}{grpc\+::string}} prefix) const =0
+\item 
+virtual std\+::vector$<$ \mbox{\hyperlink{namespacegrpc_a77f15e90a2c3651195f88645e4512267}{grpc\+::string}} $>$ \mbox{\hyperlink{structgrpc__generator_1_1CommentHolder_a716a95b8025b11b4a91aebc80e50834d}{Get\+All\+Comments}} () const =0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{structgrpc__generator_1_1CommentHolder_a6e517ec1311b1452816b343037640752}\label{structgrpc__generator_1_1CommentHolder_a6e517ec1311b1452816b343037640752} 
+\index{grpc\_generator::CommentHolder@{grpc\_generator::CommentHolder}!````~CommentHolder@{\texorpdfstring{$\sim$}{\string~}CommentHolder}}
+\index{````~CommentHolder@{\texorpdfstring{$\sim$}{\string~}CommentHolder}!grpc\_generator::CommentHolder@{grpc\_generator::CommentHolder}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}CommentHolder()}{\string~CommentHolder()}}
+{\footnotesize\ttfamily virtual grpc\+\_\+generator\+::\+Comment\+Holder\+::\texorpdfstring{$\sim$}{\string~}\+Comment\+Holder (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{structgrpc__generator_1_1CommentHolder_a716a95b8025b11b4a91aebc80e50834d}\label{structgrpc__generator_1_1CommentHolder_a716a95b8025b11b4a91aebc80e50834d} 
+\index{grpc\_generator::CommentHolder@{grpc\_generator::CommentHolder}!GetAllComments@{GetAllComments}}
+\index{GetAllComments@{GetAllComments}!grpc\_generator::CommentHolder@{grpc\_generator::CommentHolder}}
+\doxysubsubsection{\texorpdfstring{GetAllComments()}{GetAllComments()}}
+{\footnotesize\ttfamily virtual std\+::vector$<$ \mbox{\hyperlink{namespacegrpc_a77f15e90a2c3651195f88645e4512267}{grpc\+::string}} $>$ grpc\+\_\+generator\+::\+Comment\+Holder\+::\+Get\+All\+Comments (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{classflatbuffers_1_1FlatBufMethod_a77fcc8e7c31567896836b9b138c50a19}{flatbuffers\+::\+Flat\+Buf\+Method}}, \mbox{\hyperlink{classflatbuffers_1_1FlatBufService_a8339a058521e78a97ad435402585fd1a}{flatbuffers\+::\+Flat\+Buf\+Service}}, and \mbox{\hyperlink{classflatbuffers_1_1FlatBufFile_a48878e8a038e3cea831c550db78db2d9}{flatbuffers\+::\+Flat\+Buf\+File}}.
+
+\Hypertarget{structgrpc__generator_1_1CommentHolder_a3975709afbea2352888d9de6c1542f44}\label{structgrpc__generator_1_1CommentHolder_a3975709afbea2352888d9de6c1542f44} 
+\index{grpc\_generator::CommentHolder@{grpc\_generator::CommentHolder}!GetLeadingComments@{GetLeadingComments}}
+\index{GetLeadingComments@{GetLeadingComments}!grpc\_generator::CommentHolder@{grpc\_generator::CommentHolder}}
+\doxysubsubsection{\texorpdfstring{GetLeadingComments()}{GetLeadingComments()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{namespacegrpc_a77f15e90a2c3651195f88645e4512267}{grpc\+::string}} grpc\+\_\+generator\+::\+Comment\+Holder\+::\+Get\+Leading\+Comments (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{namespacegrpc_a77f15e90a2c3651195f88645e4512267}{grpc\+::string}}}]{prefix }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{classflatbuffers_1_1FlatBufMethod_a2b02f496f60d40659b5e60b2a0a4081d}{flatbuffers\+::\+Flat\+Buf\+Method}}, \mbox{\hyperlink{classflatbuffers_1_1FlatBufService_ab8bdecd4e0419d50eeb937d36ffee7dc}{flatbuffers\+::\+Flat\+Buf\+Service}}, and \mbox{\hyperlink{classflatbuffers_1_1FlatBufFile_a5f32349055695c8d9e1ac9bb11eddc52}{flatbuffers\+::\+Flat\+Buf\+File}}.
+
+\Hypertarget{structgrpc__generator_1_1CommentHolder_a7384d43fe69a661729f2b136ecab419f}\label{structgrpc__generator_1_1CommentHolder_a7384d43fe69a661729f2b136ecab419f} 
+\index{grpc\_generator::CommentHolder@{grpc\_generator::CommentHolder}!GetTrailingComments@{GetTrailingComments}}
+\index{GetTrailingComments@{GetTrailingComments}!grpc\_generator::CommentHolder@{grpc\_generator::CommentHolder}}
+\doxysubsubsection{\texorpdfstring{GetTrailingComments()}{GetTrailingComments()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{namespacegrpc_a77f15e90a2c3651195f88645e4512267}{grpc\+::string}} grpc\+\_\+generator\+::\+Comment\+Holder\+::\+Get\+Trailing\+Comments (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{namespacegrpc_a77f15e90a2c3651195f88645e4512267}{grpc\+::string}}}]{prefix }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{classflatbuffers_1_1FlatBufMethod_a079bb64c403edb98eb4b6c400ccf5df3}{flatbuffers\+::\+Flat\+Buf\+Method}}, \mbox{\hyperlink{classflatbuffers_1_1FlatBufService_a3dee7b4caa078041904bdaf3cfb0de9c}{flatbuffers\+::\+Flat\+Buf\+Service}}, and \mbox{\hyperlink{classflatbuffers_1_1FlatBufFile_a2c62cf3e152ad24eb547d3dd163a32f2}{flatbuffers\+::\+Flat\+Buf\+File}}.
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+flatbuffers/grpc/src/compiler/\mbox{\hyperlink{schema__interface_8h}{schema\+\_\+interface.\+h}}\end{DoxyCompactItemize}

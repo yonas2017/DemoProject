@@ -1,0 +1,114 @@
+\chapter{Use in Rust}
+\hypertarget{flatbuffers_guide_use_rust}{}\label{flatbuffers_guide_use_rust}\index{Use in Rust@{Use in Rust}}
+\doxysection*{Before you get started}
+
+Before diving into the Flat\+Buffers usage in Rust, it should be noted that the \doxysectlink{flatbuffers_guide_tutorial}{Tutorial}{0} page has a complete guide to general Flat\+Buffers usage in all of the supported languages (including Rust). This page is designed to cover the nuances of Flat\+Buffers usage, specific to Rust.
+
+\doxysubsubsection*{Prerequisites}
+
+This page assumes you have written a Flat\+Buffers schema and compiled it with the Schema Compiler. If you have not, please see \doxysectlink{flatbuffers_guide_using_schema_compiler}{Using the schema compiler}{0} and \doxysectlink{flatbuffers_guide_writing_schema}{Writing a schema}{0}.
+
+Assuming you wrote a schema, say {\ttfamily mygame.\+fbs} (though the extension doesn\textquotesingle{}t matter), you\textquotesingle{}ve generated a Rust file called {\ttfamily mygame\+\_\+generated.\+rs} using the compiler (e.\+g. {\ttfamily flatc -\/-\/rust mygame.\+fbs} or via helpers listed in "{}\+Useful tools created by others"{} section bellow), you can now start using this in your program by including the file. As noted, this header relies on the crate {\ttfamily flatbuffers}, which should be in your include {\ttfamily Cargo.\+toml}.
+
+\doxysection*{Flat\+Buffers Rust library code location}
+
+The code for the Flat\+Buffers Rust library can be found at {\ttfamily flatbuffers/rust}. You can browse the library code on the \href{https://github.com/google/flatbuffers/tree/master/rust}{\texttt{ Flat\+Buffers Git\+Hub page}}.
+
+\doxysection*{Testing the Flat\+Buffers Rust library}
+
+The code to test the Rust library can be found at {\ttfamily flatbuffers/tests/rust\+\_\+usage\+\_\+test}. The test code itself is located in \href{https://github.com/google/flatbuffers/blob/master/tests/rust_usage_test/tests/integration_test.rs}{\texttt{ integration\+\_\+test.\+rs}}
+
+This test file requires {\ttfamily flatc} to be present. To review how to build the project, please read the \doxysectlink{flatbuffers_guide_building}{Building}{0} documentation.
+
+To run the tests, execute {\ttfamily Rust\+Test.\+sh} from the {\ttfamily flatbuffers/tests} directory. For example, on \href{https://en.wikipedia.org/wiki/Linux}{\texttt{ Linux}}, you would simply run\+: {\ttfamily cd tests \&\& ./\+Rust\+Test.sh}.
+
+{\itshape Note\+: The shell script requires \href{https://www.rust-lang.org}{\texttt{ Rust}} to be installed.}
+
+\doxysection*{Using the Flat\+Buffers Rust library}
+
+{\itshape Note\+: See \doxysectlink{flatbuffers_guide_tutorial}{Tutorial}{0} for a more in-\/depth example of how to use Flat\+Buffers in Rust.}
+
+Flat\+Buffers supports both reading and writing Flat\+Buffers in Rust.
+
+To use Flat\+Buffers in your code, first generate the Rust modules from your schema with the {\ttfamily -\/-\/rust} option to {\ttfamily flatc}. Then you can import both Flat\+Buffers and the generated code to read or write Flat\+Buffers.
+
+For example, here is how you would read a Flat\+Buffer binary file in Rust\+: First, include the library and generated code. Then read the file into a {\ttfamily u8} vector, which you pass, as a byte slice, to {\ttfamily root\+\_\+as\+\_\+monster()}.
+
+This full example program is available in the Rust test suite\+: \href{https://github.com/google/flatbuffers/blob/master/tests/rust_usage_test/bin/monster_example.rs}{\texttt{ monster\+\_\+example.\+rs}}
+
+It can be run by {\ttfamily cd}ing to the {\ttfamily rust\+\_\+usage\+\_\+test} directory and executing\+: {\ttfamily cargo run monster\+\_\+example}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{extern\ crate\ flatbuffers;}
+\DoxyCodeLine{}
+\DoxyCodeLine{\#[allow(dead\_code,\ unused\_imports)]}
+\DoxyCodeLine{\#[path\ =\ "{}../../monster\_test\_generated.rs"{}]}
+\DoxyCodeLine{mod\ monster\_test\_generated;}
+\DoxyCodeLine{pub\ use\ monster\_test\_generated::my\_game;}
+\DoxyCodeLine{}
+\DoxyCodeLine{use\ std::io::Read;}
+\DoxyCodeLine{}
+\DoxyCodeLine{fn\ main()\ \{}
+\DoxyCodeLine{\ \ \ \ let\ mut\ f\ =\ std::fs::File::open("{}../monsterdata\_test.mon"{}).unwrap();}
+\DoxyCodeLine{\ \ \ \ let\ mut\ buf\ =\ Vec::new();}
+\DoxyCodeLine{\ \ \ \ f.read\_to\_end(\&mut\ buf).expect("{}file\ reading\ failed"{});}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ let\ monster\ =\ my\_game::example::root\_as\_monster(\&buf[..]);}
+
+\end{DoxyCode}
+
+
+{\ttfamily monster} is of type {\ttfamily Monster}, and points to somewhere {\itshape inside} your buffer (root object pointers are not the same as {\ttfamily buffer\+\_\+pointer} !). If you look in your generated header, you\textquotesingle{}ll see it has convenient accessors for all fields, e.\+g. {\ttfamily hp()}, {\ttfamily mana()}, etc\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ println!("{}\{\}"{},\ monster.hp());\ \ \ \ \ //\ \`{}80`}
+\DoxyCodeLine{\ \ \ \ println!("{}\{\}"{},\ monster.mana());\ \ \ //\ default\ value\ of\ \`{}150`}
+\DoxyCodeLine{\ \ \ \ println!("{}\{:?\}"{},\ monster.name());\ //\ Some("{}MyMonster"{})}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+{\itshape Note\+: That we never stored a {\ttfamily mana} value, so it will return the default.}
+
+\doxysection*{Direct memory access}
+
+As you can see from the above examples, all elements in a buffer are accessed through generated accessors. This is because everything is stored in little endian format on all platforms (the accessor performs a swap operation on big endian machines), and also because the layout of things is generally not known to the user.
+
+For structs, layout is deterministic and guaranteed to be the same across platforms (scalars are aligned to their own size, and structs themselves to their largest member), and you are allowed to access this memory directly by using {\ttfamily safe\+\_\+slice} on the reference to a struct, or even an array of structs.
+
+To compute offsets to sub-\/elements of a struct, make sure they are structs themselves, as then you can use the pointers to figure out the offset without having to hardcode it. This is handy for use of arrays of structs with calls like {\ttfamily gl\+Vertex\+Attrib\+Pointer} in Open\+GL or similar APIs.
+
+It is important to note is that structs are still little endian on all machines, so the functions to enable tricks like this are only exposed on little endian machines. If you also ship on big endian machines, using an {\ttfamily \#\mbox{[}cfg(target\+\_\+endian = "{}little"{})\mbox{]}} attribute would be wise or your code will not compile.
+
+The special function {\ttfamily safe\+\_\+slice} is implemented on Vector objects that are represented in memory the same way as they are represented on the wire. This function is always available on vectors of struct, bool, u8, and i8. It is conditionally-\/compiled on little-\/endian systems for all the remaining scalar types.
+
+The \doxylink{classFlatBufferBuilder}{Flat\+Buffer\+Builder} function {\ttfamily create\+\_\+vector\+\_\+direct} is implemented for all types that are endian-\/safe to write with a {\ttfamily memcpy}. It is the write-\/equivalent of {\ttfamily safe\+\_\+slice}.
+
+\doxysection*{Access of untrusted buffers}
+
+The safe Rust functions to interpret a slice as a table ({\ttfamily root}, {\ttfamily size\+\_\+prefixed\+\_\+root}, {\ttfamily root\+\_\+with\+\_\+opts}, and {\ttfamily size\+\_\+prefixed\+\_\+root\+\_\+with\+\_\+opts}) verify the data first. This has some performance cost, but is intended to be safe for use on flatbuffers from untrusted sources. There are corresponding {\ttfamily unsafe} versions with names ending in {\ttfamily \+\_\+unchecked} which skip this verification, and may access arbitrary memory.
+
+The generated accessor functions access fields over offsets, which is very quick. The current implementation uses these to access memory without any further bounds checking. All of the safe Rust APIs ensure the verifier is run over these flatbuffers before accessing them.
+
+When you\textquotesingle{}re processing large amounts of data from a source you know (e.\+g. your own generated data on disk), the {\ttfamily \+\_\+unchecked} versions are acceptable, but when reading data from the network that can potentially have been modified by an attacker, it is desirable to use the safe versions which use the verifier.
+
+\doxysection*{Threading}
+
+Reading a Flat\+Buffer does not touch any memory outside the original buffer, and is entirely read-\/only (all immutable), so is safe to access from multiple threads even without synchronisation primitives.
+
+Creating a Flat\+Buffer is not thread safe. All state related to building a Flat\+Buffer is contained in a \doxylink{classFlatBufferBuilder}{Flat\+Buffer\+Builder} instance, and no memory outside of it is touched. To make this thread safe, either do not share instances of \doxylink{classFlatBufferBuilder}{Flat\+Buffer\+Builder} between threads (recommended), or manually wrap it in synchronisation primitives. There\textquotesingle{}s no automatic way to accomplish this, by design, as we feel multithreaded construction of a single buffer will be rare, and synchronisation overhead would be costly.
+
+Unlike most other languages, in Rust these properties are exposed to and enforced by the type system. {\ttfamily \doxylink{classflatbuffers_1_1Table}{flatbuffers\+::\+Table}} and the generated table types are {\ttfamily Send + Sync}, indicating they may be freely shared across threads and data may be accessed from any thread which receives a const (aka shared) reference. There are no functions which require a mutable (aka exclusive) reference, which means all the available functions may be called like this. {\ttfamily \doxylink{namespaceflatbuffers_a41ac7b1c8f5f4a869e8f649b6c171ce7}{flatbuffers\+::\+Flat\+Buffer\+Builder}} is also {\ttfamily Send + Sync}, but all of the mutating functions require a mutable (aka exclusive) reference which can only be created when no other references to the {\ttfamily \doxylink{classFlatBufferBuilder}{Flat\+Buffer\+Builder}} exist, and may not be copied within the same thread, let alone to a second thread.
+
+\doxysection*{Useful tools created by others}
+
+
+\begin{DoxyItemize}
+\item \href{https://github.com/frol/flatc-rust}{\texttt{ flatc-\/rust}} -\/ Flat\+Buffers compiler (flatc) as API for transparent {\ttfamily .fbs} to {\ttfamily .rs} code-\/generation via Cargo build scripts integration.
+\end{DoxyItemize}
+
+~\newline
+ 

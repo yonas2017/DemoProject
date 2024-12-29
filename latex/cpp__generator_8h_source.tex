@@ -1,0 +1,114 @@
+\doxysection{cpp\+\_\+generator.\+h}
+\hypertarget{cpp__generator_8h_source}{}\label{cpp__generator_8h_source}\index{flatbuffers/grpc/src/compiler/cpp\_generator.h@{flatbuffers/grpc/src/compiler/cpp\_generator.h}}
+\mbox{\hyperlink{cpp__generator_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ GRPC\_INTERNAL\_COMPILER\_CPP\_GENERATOR\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ GRPC\_INTERNAL\_COMPILER\_CPP\_GENERATOR\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{comment}{//\ cpp\_generator.h/.cc\ do\ not\ directly\ depend\ on\ GRPC/ProtoBuf,\ such\ that\ they}}
+\DoxyCodeLine{00005\ \textcolor{comment}{//\ can\ be\ used\ to\ generate\ code\ for\ other\ serialization\ systems,\ such\ as}}
+\DoxyCodeLine{00006\ \textcolor{comment}{//\ FlatBuffers.}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{schema__interface_8h}{src/compiler/schema\_interface.h}}"{}}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#ifndef\ GRPC\_CUSTOM\_STRING}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#\ \ include\ <string>}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#\ \ define\ GRPC\_CUSTOM\_STRING\ std::string}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacegrpc}{grpc}}\ \{}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{keyword}{typedef}\ \mbox{\hyperlink{cpp__generator_8h_af6ef913b6d13d83d79be41d007120992}{GRPC\_CUSTOM\_STRING}}\ \mbox{\hyperlink{namespacegrpc_a77f15e90a2c3651195f88645e4512267}{string}};}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \}\ \ \textcolor{comment}{//\ namespace\ grpc}}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacegrpc__cpp__generator}{grpc\_cpp\_generator}}\ \{}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \textcolor{comment}{//\ Contains\ all\ the\ parameters\ that\ are\ parsed\ from\ the\ command\ line.}}
+\DoxyCodeLine{00027\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structgrpc__cpp__generator_1_1Parameters}{Parameters}}\ \{}
+\DoxyCodeLine{00028\ \ \ \textcolor{comment}{//\ Puts\ the\ service\ into\ a\ namespace}}
+\DoxyCodeLine{00029\ \ \ \mbox{\hyperlink{namespacegrpc_a77f15e90a2c3651195f88645e4512267}{grpc::string}}\ \mbox{\hyperlink{structgrpc__cpp__generator_1_1Parameters_aa26891187e12c919f701b3270bea6cdc}{services\_namespace}};}
+\DoxyCodeLine{00030\ \ \ \textcolor{comment}{//\ Use\ system\ includes\ (<>)\ or\ local\ includes\ ("{}"{})}}
+\DoxyCodeLine{00031\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structgrpc__cpp__generator_1_1Parameters_a98950867037750417321c2c3fee85889}{use\_system\_headers}};}
+\DoxyCodeLine{00032\ \ \ \textcolor{comment}{//\ Prefix\ to\ any\ grpc\ include}}
+\DoxyCodeLine{00033\ \ \ \mbox{\hyperlink{namespacegrpc_a77f15e90a2c3651195f88645e4512267}{grpc::string}}\ \mbox{\hyperlink{structgrpc__cpp__generator_1_1Parameters_a5652d9c8f3a1626ab13a8420e31c6ee9}{grpc\_search\_path}};}
+\DoxyCodeLine{00034\ \ \ \textcolor{comment}{//\ Generate\ GMOCK\ code\ to\ facilitate\ unit\ testing.}}
+\DoxyCodeLine{00035\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structgrpc__cpp__generator_1_1Parameters_afef693e145efdcf6ab15fe9c2d75705c}{generate\_mock\_code}};}
+\DoxyCodeLine{00036\ \ \ \textcolor{comment}{//\ By\ default,\ use\ "{}\_generated.h"{}}}
+\DoxyCodeLine{00037\ \ \ std::string\ \mbox{\hyperlink{structgrpc__cpp__generator_1_1Parameters_a01ef7d8cbcabc06e0869befa5dac6944}{message\_header\_extension}};}
+\DoxyCodeLine{00038\ \ \ \textcolor{comment}{//\ Default:\ "{}.grpc.fb.h"{}}}
+\DoxyCodeLine{00039\ \ \ std::string\ \mbox{\hyperlink{structgrpc__cpp__generator_1_1Parameters_a6e90815c5b0f0c53842e0a4f9a694325}{service\_header\_extension}};}
+\DoxyCodeLine{00040\ \};}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \textcolor{comment}{//\ Return\ the\ prologue\ of\ the\ generated\ header\ file.}}
+\DoxyCodeLine{00043\ \mbox{\hyperlink{namespacegrpc_a77f15e90a2c3651195f88645e4512267}{grpc::string}}\ \mbox{\hyperlink{namespacegrpc__cpp__generator_a1c78067ba1a4a4319c5b8f40e5b9c2d9}{GetHeaderPrologue}}(\mbox{\hyperlink{structgrpc__generator_1_1File}{grpc\_generator::File}}\ *file,}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{structgrpc__cpp__generator_1_1Parameters}{Parameters}}\ \&params);}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \textcolor{comment}{//\ Return\ the\ includes\ needed\ for\ generated\ header\ file.}}
+\DoxyCodeLine{00047\ \mbox{\hyperlink{namespacegrpc_a77f15e90a2c3651195f88645e4512267}{grpc::string}}\ \mbox{\hyperlink{namespacegrpc__cpp__generator_ac4d5110974d5aaedf39a1dc870021dba}{GetHeaderIncludes}}(\mbox{\hyperlink{structgrpc__generator_1_1File}{grpc\_generator::File}}\ *file,}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{structgrpc__cpp__generator_1_1Parameters}{Parameters}}\ \&params);}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \textcolor{comment}{//\ Return\ the\ includes\ needed\ for\ generated\ source\ file.}}
+\DoxyCodeLine{00051\ \mbox{\hyperlink{namespacegrpc_a77f15e90a2c3651195f88645e4512267}{grpc::string}}\ \mbox{\hyperlink{namespacegrpc__cpp__generator_ac96277a6a29c44dc5e455056ffd276de}{GetSourceIncludes}}(\mbox{\hyperlink{structgrpc__generator_1_1File}{grpc\_generator::File}}\ *file,}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{structgrpc__cpp__generator_1_1Parameters}{Parameters}}\ \&params);}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ \textcolor{comment}{//\ Return\ the\ epilogue\ of\ the\ generated\ header\ file.}}
+\DoxyCodeLine{00055\ \mbox{\hyperlink{namespacegrpc_a77f15e90a2c3651195f88645e4512267}{grpc::string}}\ \mbox{\hyperlink{namespacegrpc__cpp__generator_a76f1db3c87c71491c78154fcad4f7807}{GetHeaderEpilogue}}(\mbox{\hyperlink{structgrpc__generator_1_1File}{grpc\_generator::File}}\ *file,}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{structgrpc__cpp__generator_1_1Parameters}{Parameters}}\ \&params);}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ \textcolor{comment}{//\ Return\ the\ prologue\ of\ the\ generated\ source\ file.}}
+\DoxyCodeLine{00059\ \mbox{\hyperlink{namespacegrpc_a77f15e90a2c3651195f88645e4512267}{grpc::string}}\ \mbox{\hyperlink{namespacegrpc__cpp__generator_acfa4f73a86362e3e9e910885f09c9674}{GetSourcePrologue}}(\mbox{\hyperlink{structgrpc__generator_1_1File}{grpc\_generator::File}}\ *file,}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{structgrpc__cpp__generator_1_1Parameters}{Parameters}}\ \&params);}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ \textcolor{comment}{//\ Return\ the\ services\ for\ generated\ header\ file.}}
+\DoxyCodeLine{00063\ \mbox{\hyperlink{namespacegrpc_a77f15e90a2c3651195f88645e4512267}{grpc::string}}\ \mbox{\hyperlink{namespacegrpc__cpp__generator_a944b25dbaf1b6d70f83718243d9067af}{GetHeaderServices}}(\mbox{\hyperlink{structgrpc__generator_1_1File}{grpc\_generator::File}}\ *file,}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{structgrpc__cpp__generator_1_1Parameters}{Parameters}}\ \&params);}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00066\ \textcolor{comment}{//\ Return\ the\ services\ for\ generated\ source\ file.}}
+\DoxyCodeLine{00067\ \mbox{\hyperlink{namespacegrpc_a77f15e90a2c3651195f88645e4512267}{grpc::string}}\ \mbox{\hyperlink{namespacegrpc__cpp__generator_a83bdb1fb45d4201e8725d293560fa2c0}{GetSourceServices}}(\mbox{\hyperlink{structgrpc__generator_1_1File}{grpc\_generator::File}}\ *file,}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{structgrpc__cpp__generator_1_1Parameters}{Parameters}}\ \&params);}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00070\ \textcolor{comment}{//\ Return\ the\ epilogue\ of\ the\ generated\ source\ file.}}
+\DoxyCodeLine{00071\ \mbox{\hyperlink{namespacegrpc_a77f15e90a2c3651195f88645e4512267}{grpc::string}}\ \mbox{\hyperlink{namespacegrpc__cpp__generator_ae9ac624f36b4163e6edb322d13ccbd9f}{GetSourceEpilogue}}(\mbox{\hyperlink{structgrpc__generator_1_1File}{grpc\_generator::File}}\ *file,}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{structgrpc__cpp__generator_1_1Parameters}{Parameters}}\ \&params);}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00074\ \textcolor{comment}{//\ Return\ the\ prologue\ of\ the\ generated\ mock\ file.}}
+\DoxyCodeLine{00075\ \mbox{\hyperlink{namespacegrpc_a77f15e90a2c3651195f88645e4512267}{grpc::string}}\ \mbox{\hyperlink{namespacegrpc__cpp__generator_a016b41569c0a432b7aebc41d61483991}{GetMockPrologue}}(\mbox{\hyperlink{structgrpc__generator_1_1File}{grpc\_generator::File}}\ *file,}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{structgrpc__cpp__generator_1_1Parameters}{Parameters}}\ \&params);}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00078\ \textcolor{comment}{//\ Return\ the\ includes\ needed\ for\ generated\ mock\ file.}}
+\DoxyCodeLine{00079\ \mbox{\hyperlink{namespacegrpc_a77f15e90a2c3651195f88645e4512267}{grpc::string}}\ \mbox{\hyperlink{namespacegrpc__cpp__generator_a888bc1fdc975edcbc3ffdf1552a3f215}{GetMockIncludes}}(\mbox{\hyperlink{structgrpc__generator_1_1File}{grpc\_generator::File}}\ *file,}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{structgrpc__cpp__generator_1_1Parameters}{Parameters}}\ \&params);}
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00082\ \textcolor{comment}{//\ Return\ the\ services\ for\ generated\ mock\ file.}}
+\DoxyCodeLine{00083\ \mbox{\hyperlink{namespacegrpc_a77f15e90a2c3651195f88645e4512267}{grpc::string}}\ \mbox{\hyperlink{namespacegrpc__cpp__generator_a8d81f436db1e5bae7ef15b5ecb76c61e}{GetMockServices}}(\mbox{\hyperlink{structgrpc__generator_1_1File}{grpc\_generator::File}}\ *file,}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{structgrpc__cpp__generator_1_1Parameters}{Parameters}}\ \&params);}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00086\ \textcolor{comment}{//\ Return\ the\ epilogue\ of\ generated\ mock\ file.}}
+\DoxyCodeLine{00087\ \mbox{\hyperlink{namespacegrpc_a77f15e90a2c3651195f88645e4512267}{grpc::string}}\ \mbox{\hyperlink{namespacegrpc__cpp__generator_a442252400014d78220cf5fcace3e47ac}{GetMockEpilogue}}(\mbox{\hyperlink{structgrpc__generator_1_1File}{grpc\_generator::File}}\ *file,}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{structgrpc__cpp__generator_1_1Parameters}{Parameters}}\ \&params);}
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00090\ \textcolor{comment}{//\ Return\ the\ prologue\ of\ the\ generated\ mock\ file.}}
+\DoxyCodeLine{00091\ \mbox{\hyperlink{namespacegrpc_a77f15e90a2c3651195f88645e4512267}{grpc::string}}\ \mbox{\hyperlink{namespacegrpc__cpp__generator_a016b41569c0a432b7aebc41d61483991}{GetMockPrologue}}(\mbox{\hyperlink{structgrpc__generator_1_1File}{grpc\_generator::File}}\ *file,}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{structgrpc__cpp__generator_1_1Parameters}{Parameters}}\ \&params);}
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00094\ \textcolor{comment}{//\ Return\ the\ includes\ needed\ for\ generated\ mock\ file.}}
+\DoxyCodeLine{00095\ \mbox{\hyperlink{namespacegrpc_a77f15e90a2c3651195f88645e4512267}{grpc::string}}\ \mbox{\hyperlink{namespacegrpc__cpp__generator_a888bc1fdc975edcbc3ffdf1552a3f215}{GetMockIncludes}}(\mbox{\hyperlink{structgrpc__generator_1_1File}{grpc\_generator::File}}\ *file,}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{structgrpc__cpp__generator_1_1Parameters}{Parameters}}\ \&params);}
+\DoxyCodeLine{00097\ }
+\DoxyCodeLine{00098\ \textcolor{comment}{//\ Return\ the\ services\ for\ generated\ mock\ file.}}
+\DoxyCodeLine{00099\ \mbox{\hyperlink{namespacegrpc_a77f15e90a2c3651195f88645e4512267}{grpc::string}}\ \mbox{\hyperlink{namespacegrpc__cpp__generator_a8d81f436db1e5bae7ef15b5ecb76c61e}{GetMockServices}}(\mbox{\hyperlink{structgrpc__generator_1_1File}{grpc\_generator::File}}\ *file,}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{structgrpc__cpp__generator_1_1Parameters}{Parameters}}\ \&params);}
+\DoxyCodeLine{00101\ }
+\DoxyCodeLine{00102\ \textcolor{comment}{//\ Return\ the\ epilogue\ of\ generated\ mock\ file.}}
+\DoxyCodeLine{00103\ \mbox{\hyperlink{namespacegrpc_a77f15e90a2c3651195f88645e4512267}{grpc::string}}\ \mbox{\hyperlink{namespacegrpc__cpp__generator_a442252400014d78220cf5fcace3e47ac}{GetMockEpilogue}}(\mbox{\hyperlink{structgrpc__generator_1_1File}{grpc\_generator::File}}\ *file,}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{structgrpc__cpp__generator_1_1Parameters}{Parameters}}\ \&params);}
+\DoxyCodeLine{00105\ }
+\DoxyCodeLine{00106\ \}\ \ \textcolor{comment}{//\ namespace\ grpc\_cpp\_generator}}
+\DoxyCodeLine{00107\ }
+\DoxyCodeLine{00108\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ GRPC\_INTERNAL\_COMPILER\_CPP\_GENERATOR\_H}}
+
+\end{DoxyCode}

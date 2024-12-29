@@ -1,0 +1,118 @@
+\chapter{Building}
+\hypertarget{flatbuffers_guide_building}{}\label{flatbuffers_guide_building}\index{Building@{Building}}
+\doxysection*{Building with CMake}
+
+The distribution comes with a {\ttfamily cmake} file that should allow you to build project/make files for any platform. For details on {\ttfamily cmake}, see \href{https://www.cmake.org}{\texttt{ https\+://www.\+cmake.\+org}}. In brief, depending on your platform, use one of e.\+g.\+: \begin{DoxyVerb}cmake -G "Unix Makefiles" -DCMAKE_BUILD_TYPE=Release
+cmake -G "Visual Studio 10" -DCMAKE_BUILD_TYPE=Release
+cmake -G "Xcode" -DCMAKE_BUILD_TYPE=Release
+\end{DoxyVerb}
+ Then, build as normal for your platform. This should result in a {\ttfamily flatc} executable, essential for the next steps. Note that to use clang instead of gcc, you may need to set up your environment variables, e.\+g. {\ttfamily CC=/usr/bin/clang CXX=/usr/bin/clang++ cmake -\/G "{}\+Unix Makefiles"{}}.
+
+Optionally, run the {\ttfamily flattests} executable from the root {\ttfamily flatbuffers/} directory to ensure everything is working correctly on your system. If this fails, please contact us!
+
+Building should also produce two sample executables, {\ttfamily flatsamplebinary} and {\ttfamily flatsampletext}, see the corresponding {\ttfamily .cpp} files in the {\ttfamily flatbuffers/samples} directory.
+
+{\itshape Note that you MUST be in the root of the Flat\+Buffers distribution when you run \textquotesingle{}flattests\textquotesingle{} or {\ttfamily flatsampletext}, or it will fail to load its files.}
+
+\doxysubsection*{Make all warnings into errors}
+
+By default all Flatbuffers {\ttfamily cmake} targets are {\bfseries{not}} built with the {\ttfamily -\/Werror} (or {\ttfamily /\+WX} for MSVC) flag that treats any warning as an error. This allows more flexibility for users of Flatbuffers to use newer compilers and toolsets that may add new warnings that would cause a build failure.
+
+To enable a stricter build that does treat warnings as errors, set the {\ttfamily FLATBUFFERS\+\_\+\+STRICT\+\_\+\+MODE} {\ttfamily cmake} compliation flag to {\ttfamily ON}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{cmake\ .\ -\/DFLATBUFFERS\_STRICT\_MODE=ON}
+
+\end{DoxyCode}
+
+
+Our CI builds run with strict mode on, ensuring the code that is committed to the project is as portable and warning free as possible. Thus developers contributing to the project should enable strict mode locally before making a PR.
+
+\doxysection*{Building with VCPKG}
+
+You can download and install flatbuffers using the \href{https://github.com/Microsoft/vcpkg/}{\texttt{ vcpkg}} dependency manager\+: \begin{DoxyVerb}git clone https://github.com/Microsoft/vcpkg.git
+cd vcpkg
+./bootstrap-vcpkg.sh
+./vcpkg integrate install
+./vcpkg install flatbuffers
+\end{DoxyVerb}
+ The flatbuffers port in vcpkg is kept up to date by Microsoft team members and community contributors. If the version is out of date, please \href{https://github.com/Microsoft/vcpkg}{\texttt{ create an issue or pull request}} on the vcpkg repository.
+
+\doxysection*{Downloading binaries}
+
+You can download the binaries from the \href{https://github.com/google/flatbuffers/releases}{\texttt{ Git\+Hub release page}}.
+
+We generate \href{slsa.dev}{\texttt{ SLSA3 signatures}} using the Open\+SSF\textquotesingle{}s \href{https://github.com/slsa-framework/slsa-github-generator}{\texttt{ slsa-\/framework/slsa-\/github-\/generator}}. To verify the binaries\+:
+\begin{DoxyEnumerate}
+\item Install the verification tool from \href{https://github.com/slsa-framework/slsa-verifier\#installation}{\texttt{ slsa-\/framework/slsa-\/verifier\#installation}}
+\end{DoxyEnumerate}
+\begin{DoxyEnumerate}
+\item Download the file named {\ttfamily attestation.\+intoto.\+jsonl} from the Git\+Hub release
+\end{DoxyEnumerate}
+\begin{DoxyEnumerate}
+\item Run\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\$\ slsa-\/verifier\ -\/artifact-\/path\ <downloaded.zip>\ -\/provenance\ attestation.intoto.jsonl\ -\/source\ github.com/google/flatbuffers\ -\/tag\ <version>}
+\DoxyCodeLine{\ \ PASSED:\ Verified\ SLSA\ provenance}
+\DoxyCodeLine{}
+\DoxyCodeLine{\#\#\ Building\ for\ Android}
+\DoxyCodeLine{}
+\DoxyCodeLine{There\ is\ a\ \`{}flatbuffers/android`\ directory\ that\ contains\ all\ you\ need\ to\ build}
+\DoxyCodeLine{the\ test\ executable\ on\ android\ (use\ the\ included\ \`{}build\_apk.sh`\ script,\ or\ use}
+\DoxyCodeLine{\`{}ndk\_build`\ /\ \`{}adb`\ etc.\ as\ usual).\ Upon\ running,\ it\ will\ output\ to\ the\ log}
+\DoxyCodeLine{if\ tests\ succeeded\ or\ not.}
+\DoxyCodeLine{}
+\DoxyCodeLine{You\ may\ also\ run\ an\ android\ sample\ from\ inside\ the\ \`{}flatbuffers/samples`,\ by}
+\DoxyCodeLine{running\ the\ \`{}android\_sample.sh`\ script.\ Optionally,\ you\ may\ go\ to\ the}
+\DoxyCodeLine{\`{}flatbuffers/samples/android`\ folder\ and\ build\ the\ sample\ with\ the}
+\DoxyCodeLine{\`{}build\_apk.sh`\ script\ or\ \`{}ndk\_build`\ /\ \`{}adb`\ etc.}
+\DoxyCodeLine{}
+\DoxyCodeLine{\#\#\ Using\ FlatBuffers\ in\ your\ own\ projects}
+\DoxyCodeLine{}
+\DoxyCodeLine{For\ C++,\ there\ is\ usually\ no\ runtime\ to\ compile,\ as\ the\ code\ consists\ of\ a}
+\DoxyCodeLine{single\ header,\ \`{}include/flatbuffers/flatbuffers.h`.\ You\ should\ add\ the}
+\DoxyCodeLine{\`{}include`\ folder\ to\ your\ include\ paths.\ If\ you\ wish\ to\ be}
+\DoxyCodeLine{able\ to\ load\ schemas\ and/or\ parse\ text\ into\ binary\ buffers\ at\ runtime,}
+\DoxyCodeLine{you\ additionally\ need\ the\ other\ headers\ in\ \`{}include/flatbuffers`.\ You\ must}
+\DoxyCodeLine{also\ compile/link\ \`{}src/idl\_parser.cpp`\ (and\ \`{}src/idl\_gen\_text.cpp`\ if\ you}
+\DoxyCodeLine{also\ want\ to\ be\ able\ convert\ binary\ to\ text).}
+\DoxyCodeLine{}
+\DoxyCodeLine{To\ see\ how\ to\ include\ FlatBuffers\ in\ any\ of\ our\ supported\ languages,\ please}
+\DoxyCodeLine{view\ the\ [Tutorial](@ref\ flatbuffers\_guide\_tutorial)\ and\ select\ your\ appropriate}
+\DoxyCodeLine{language\ using\ the\ radio\ buttons.}
+\DoxyCodeLine{}
+\DoxyCodeLine{\#\#\#\ Using\ in\ CMake-\/based\ projects}
+\DoxyCodeLine{If\ you\ want\ to\ use\ FlatBuffers\ in\ a\ project\ which\ already\ uses\ CMake,\ then\ a\ more}
+\DoxyCodeLine{robust\ and\ flexible\ approach\ is\ to\ build\ FlatBuffers\ as\ part\ of\ that\ project\ directly.}
+\DoxyCodeLine{This\ is\ done\ by\ making\ the\ FlatBuffers\ source\ code\ available\ to\ the\ main\ build}
+\DoxyCodeLine{and\ adding\ it\ using\ CMake's\ \`{}add\_subdirectory()`\ command.\ This\ has\ the}
+\DoxyCodeLine{significant\ advantage\ that\ the\ same\ compiler\ and\ linker\ settings\ are\ used}
+\DoxyCodeLine{between\ FlatBuffers\ and\ the\ rest\ of\ your\ project,\ so\ issues\ associated\ with\ using}
+\DoxyCodeLine{incompatible\ libraries\ (eg\ debug/release),\ etc.\ are\ avoided.\ This\ is}
+\DoxyCodeLine{particularly\ useful\ on\ Windows.}
+\DoxyCodeLine{}
+\DoxyCodeLine{Suppose\ you\ put\ FlatBuffers\ source\ code\ in\ directory\ \`{}\$\{FLATBUFFERS\_SRC\_DIR\}`.}
+\DoxyCodeLine{To\ build\ it\ as\ part\ of\ your\ project,\ add\ following\ code\ to\ your\ \`{}CMakeLists.txt`\ file:}
+
+\end{DoxyCode}
+ cmake \doxysection*{Add Flat\+Buffers directly to our build. This defines the {\ttfamily flatbuffers} target.}
+\end{DoxyEnumerate}
+
+add\+\_\+subdirectory(\$\{FLATBUFFERS\+\_\+\+SRC\+\_\+\+DIR\} \$\{CMAKE\+\_\+\+CURRENT\+\_\+\+BINARY\+\_\+\+DIR\}/flatbuffers-\/build EXCLUDE\+\_\+\+FROM\+\_\+\+ALL)
+
+\doxysection*{Now simply link against flatbuffers as needed to your already declared target.}
+
+\doxysection*{The flatbuffers target carry header search path automatically if CMake \texorpdfstring{$>$}{>} 2.\+8.\+11.}
+
+target\+\_\+link\+\_\+libraries(own\+\_\+project\+\_\+target PRIVATE flatbuffers) 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{When\ build\ your\ project\ the\ \`{}flatbuffers`\ library\ will\ be\ compiled\ and\ linked\ }
+\DoxyCodeLine{to\ a\ target\ as\ part\ of\ your\ project.}
+\DoxyCodeLine{}
+\DoxyCodeLine{\#\#\#\#\ Override\ default\ depth\ limit\ of\ nested\ objects}
+\DoxyCodeLine{To\ override\ [the\ depth\ limit\ of\ recursion](@ref\ flatbuffers\_guide\_use\_cpp),\ }
+\DoxyCodeLine{add\ this\ directive:}
+
+\end{DoxyCode}
+ cmake set(\+FLATBUFFERS\+\_\+\+MAX\+\_\+\+PARSING\+\_\+\+DEPTH 16) \`{}\`{}{\ttfamily  to}CMake\+Lists.\+txt{\ttfamily file before}add\+\_\+subdirectory(\$\{FLATBUFFERS\+\_\+\+SRC\+\_\+\+DIR\})\`{} line. 

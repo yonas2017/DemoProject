@@ -1,0 +1,59 @@
+\doxysection{struct.\+h}
+\hypertarget{struct_8h_source}{}\label{struct_8h_source}\index{flatbuffers/include/flatbuffers/struct.h@{flatbuffers/include/flatbuffers/struct.h}}
+\mbox{\hyperlink{struct_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ Copyright\ 2021\ Google\ Inc.\ All\ rights\ reserved.}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ Licensed\ under\ the\ Apache\ License,\ Version\ 2.0\ (the\ "{}License"{});}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ you\ may\ not\ use\ this\ file\ except\ in\ compliance\ with\ the\ License.}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *\ You\ may\ obtain\ a\ copy\ of\ the\ License\ at}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ *\ \ \ \ \ http://www.apache.org/licenses/LICENSE-\/2.0}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ *\ Unless\ required\ by\ applicable\ law\ or\ agreed\ to\ in\ writing,\ software}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ *\ distributed\ under\ the\ License\ is\ distributed\ on\ an\ "{}AS\ IS"{}\ BASIS,}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ *\ WITHOUT\ WARRANTIES\ OR\ CONDITIONS\ OF\ ANY\ KIND,\ either\ express\ or\ implied.}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ *\ See\ the\ License\ for\ the\ specific\ language\ governing\ permissions\ and}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ *\ limitations\ under\ the\ License.}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#ifndef\ FLATBUFFERS\_STRUCT\_H\_}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#define\ FLATBUFFERS\_STRUCT\_H\_}}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{base_8h}{flatbuffers/base.h}}"{}}}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceflatbuffers}{flatbuffers}}\ \{}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \textcolor{comment}{//\ "{}structs"{}\ are\ flat\ structures\ that\ do\ not\ have\ an\ offset\ table,\ thus}}
+\DoxyCodeLine{00025\ \textcolor{comment}{//\ always\ have\ all\ members\ present\ and\ do\ not\ support\ forwards/backwards}}
+\DoxyCodeLine{00026\ \textcolor{comment}{//\ compatible\ extensions.}}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \textcolor{keyword}{class\ }\mbox{\hyperlink{namespaceflatbuffers_a83021555a8107d7d2791e8db0b4d7d18a886ef5dbd655a6c97726d7091c6b173e}{Struct}}\ \mbox{\hyperlink{structFLATBUFFERS__FINAL__CLASS}{FLATBUFFERS\_FINAL\_CLASS}}\ \{}
+\DoxyCodeLine{00029\ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00030\ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>\ T\ \mbox{\hyperlink{classflatbuffers_1_1FLATBUFFERS__FINAL__CLASS_a69fbca712d4a455a098da87e86cb4b43}{GetField}}(uoffset\_t\ o)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordflow}{return}\ ReadScalar<T>(\&data\_[o]);}
+\DoxyCodeLine{00032\ \ \ \}}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>\ T\ \mbox{\hyperlink{classflatbuffers_1_1FLATBUFFERS__FINAL__CLASS_ad9ab08cde6461502ca3ad1b65a39ee5c}{GetStruct}}(uoffset\_t\ o)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{reinterpret\_cast<}T\textcolor{keyword}{>}(\&data\_[o]);}
+\DoxyCodeLine{00036\ \ \ \}}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \ \ \textcolor{keyword}{const}\ uint8\_t\ *\mbox{\hyperlink{classflatbuffers_1_1FLATBUFFERS__FINAL__CLASS_a75bfea25ad12e35bc100cadad1d4e79a}{GetAddressOf}}(uoffset\_t\ o)\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \&data\_[o];\ \}}
+\DoxyCodeLine{00039\ \ \ uint8\_t\ *\mbox{\hyperlink{classflatbuffers_1_1FLATBUFFERS__FINAL__CLASS_a7a0dd0cf8f874cce2d383c73a925f228}{GetAddressOf}}(uoffset\_t\ o)\ \{\ \textcolor{keywordflow}{return}\ \&data\_[o];\ \}}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00042\ \ \ \textcolor{comment}{//\ private\ constructor\ \&\ copy\ constructor:\ you\ obtain\ instances\ of\ this}}
+\DoxyCodeLine{00043\ \ \ \textcolor{comment}{//\ class\ by\ pointing\ to\ existing\ data\ only}}
+\DoxyCodeLine{00044\ \ \ \mbox{\hyperlink{namespaceflatbuffers_a83021555a8107d7d2791e8db0b4d7d18a886ef5dbd655a6c97726d7091c6b173e}{Struct}}();}
+\DoxyCodeLine{00045\ \ \ \mbox{\hyperlink{namespaceflatbuffers_a83021555a8107d7d2791e8db0b4d7d18a886ef5dbd655a6c97726d7091c6b173e}{Struct}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{namespaceflatbuffers_a83021555a8107d7d2791e8db0b4d7d18a886ef5dbd655a6c97726d7091c6b173e}{Struct}}\ \&);}
+\DoxyCodeLine{00046\ \ \ \mbox{\hyperlink{namespaceflatbuffers_a83021555a8107d7d2791e8db0b4d7d18a886ef5dbd655a6c97726d7091c6b173e}{Struct}}\ \&operator=(\textcolor{keyword}{const}\ \mbox{\hyperlink{namespaceflatbuffers_a83021555a8107d7d2791e8db0b4d7d18a886ef5dbd655a6c97726d7091c6b173e}{Struct}}\ \&);}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \ \ uint8\_t\ data\_[1];}
+\DoxyCodeLine{00049\ \};}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \}\ \ \textcolor{comment}{//\ namespace\ flatbuffers}}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ FLATBUFFERS\_STRUCT\_H\_}}
+
+\end{DoxyCode}

@@ -1,0 +1,86 @@
+\chapter{Annotated Flatbuffer Binary}
+\hypertarget{md_flatbuffers_2tests_2annotated__binary_2README}{}\label{md_flatbuffers_2tests_2annotated__binary_2README}\index{Annotated Flatbuffer Binary@{Annotated Flatbuffer Binary}}
+This directory demonstrates the ability of flatc to annotate binary flatbuffers with helpful annotations. The resulting annotated flatbuffer binary (afb) contains all the binary data with line-\/by-\/line annotations.
+
+\doxysection*{Usage}
+
+Given a {\ttfamily schema} in either plain-\/text (.fbs) or already compiled to a binary schema (.bfbs) and {\ttfamily binary} file(s) that was created by the {\ttfamily schema}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{flatc\ -\/-\/annotate\ \{schema\_file\}\ -\/-\/\ \{binary\_file\}...}
+
+\end{DoxyCode}
+
+
+\doxysubsection*{Example}
+
+The following command should produce {\ttfamily annotated\+\_\+binary.\+afb} in this directory\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{cd\ tests\(\backslash\)annotated\_binary}
+\DoxyCodeLine{..\(\backslash\)..\(\backslash\)flatc\ -\/-\/annotate\ annotated\_binary.fbs\ -\/-\/\ annotated\_binary.bin}
+
+\end{DoxyCode}
+
+
+The {\ttfamily annotated\+\_\+binary.\+bin} is the flatbufer binary of the data contained within {\ttfamily annotated\+\_\+binary.\+json}, which was made by the following command\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{..\(\backslash\)..\(\backslash\)flatc\ -\/b\ annotated\_binary.fbs\ annotated\_binary.json}
+
+\end{DoxyCode}
+
+
+\doxysection*{Text Format}
+
+Currently there is a built-\/in text-\/based format for outputting the annotations. The {\ttfamily annotated\+\_\+binary.\+afb} is an example of the text format of a binary {\ttfamily annotated\+\_\+binary.\+bin} and the {\ttfamily annotated\+\_\+binary.\+fbs} (or {\ttfamily annotated\+\_\+binary.\+bfbs}) schema.
+
+The file is ordered in increasing the offsets from the beginning of the binary. The offset is the 1st column, expressed in hexadecimal format (e.\+g. {\ttfamily +0x003c}).
+
+\doxysubsection*{Binary Sections}
+
+Binary sections are comprised of contigious binary regions that are logically grouped together. For example, a binary section may be a single instance of a flatbuffer {\ttfamily Table} or its {\ttfamily vtable}. The sections may be labelled with the name of the associated type, as defined in the input schema.
+
+Example of a {\ttfamily vtable} Binary Section that is associated with the user-\/defined {\ttfamily Annotate\+Binary.\+Bar} table.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{vtable\ (AnnotatedBinary.Bar):}
+\DoxyCodeLine{\ \ +0x00A0\ |\ 08\ 00\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ |\ uint16\_t\ \ \ |\ 0x0008\ (8)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ |\ size\ of\ this\ vtable}
+\DoxyCodeLine{\ \ +0x00A2\ |\ 13\ 00\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ |\ uint16\_t\ \ \ |\ 0x0013\ (19)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ |\ size\ of\ referring\ table}
+\DoxyCodeLine{\ \ +0x00A4\ |\ 08\ 00\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ |\ VOffset16\ \ |\ 0x0008\ (8)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ |\ offset\ to\ field\ \`{}a`\ (id:\ 0)}
+\DoxyCodeLine{\ \ +0x00A6\ |\ 04\ 00\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ |\ VOffset16\ \ |\ 0x0004\ (4)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ |\ offset\ to\ field\ \`{}b`\ (id:\ 1)}
+
+\end{DoxyCode}
+
+
+\doxysubsection*{Binary Regions}
+
+Binary regions are contigious bytes regions that are grouped together to form some sort of value, e.\+g. a {\ttfamily scalar} or an array of scalars. A binary region may be split up over multiple text lines, if the size of the region is large.
+
+Looking at an example binary region\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{vtable\ (AnnotatedBinary.Bar):}
+\DoxyCodeLine{\ \ +0x00A0\ |\ 08\ 00\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ |\ uint16\_t\ \ \ |\ 0x0008\ (8)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ |\ size\ of\ this\ vtable}
+
+\end{DoxyCode}
+
+
+The first column ({\ttfamily +0x00\+A0}) is the offset to this region from the beginning of the buffer.
+
+The second column are the raw bytes (hexadecimal) that make up this region. These are expressed in the little-\/endian format that flatbuffers uses for the wire format.
+
+The third column is the type to interpret the bytes as. Some types are special to flatbuffer internals (e.\+g. {\ttfamily SOffet32}, {\ttfamily Offset32}, and {\ttfamily VOffset16}) which are used by flatbuffers to point to various offsetes. The other types are specified as C++-\/like types which are the standard fix-\/width scalars. For the above example, the type is {\ttfamily uint16\+\_\+t} which is a 16-\/bit unsigned integer type.
+
+The fourth column shows the raw bytes as a compacted, big-\/endian value. The raw bytes are duplicated in this fashion since it is more intutive to read the data in the big-\/endian format (e.\+g., {\ttfamily 0x0008}). This value is followed by the decimal representation of the value (e.\+g., {\ttfamily (8)}). (For strings, the raw string value is shown instead).
+
+The fifth column is a textual comment on what the value is. As much metadata as known is provided.
+
+\doxysubsubsection*{Offsets}
+
+If the type in the 3rd column is of an absolute offset ({\ttfamily SOffet32} or {\ttfamily Offset32}), the fourth column also shows an {\ttfamily Loc\+: +0x025A} value which shows where in the binary this region is pointing to. These values are absolute from the beginning of the file, their calculation from the raw value in the 4th column depends on the context. 

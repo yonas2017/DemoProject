@@ -1,0 +1,38 @@
+\doxysection{proto\+\_\+test.\+h}
+\hypertarget{proto__test_8h_source}{}\label{proto__test_8h_source}\index{flatbuffers/tests/proto\_test.h@{flatbuffers/tests/proto\_test.h}}
+\mbox{\hyperlink{proto__test_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ TESTS\_PROTO\_TEST\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ TESTS\_PROTO\_TEST\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{idl_8h}{flatbuffers/idl.h}}"{}}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceflatbuffers}{flatbuffers}}\ \{}
+\DoxyCodeLine{00009\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacetests}{tests}}\ \{}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceflatbuffers_1_1tests_af4b1935de0d6c01a23529bb5d24d2bdd}{RunTest}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{structflatbuffers_1_1IDLOptions}{flatbuffers::IDLOptions}}\ \&opts,\ \textcolor{keyword}{const}\ std::string\ \&proto\_path,\ \textcolor{keyword}{const}\ std::string\ \&proto\_file,}
+\DoxyCodeLine{00012\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\ \&golden\_file,\ \textcolor{keyword}{const}\ std::string\ import\_proto\_file\ =\ \{\});}
+\DoxyCodeLine{00013\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceflatbuffers_1_1tests_ad0389be8970562f12f6482596b643498}{proto\_test}}(\textcolor{keyword}{const}\ std::string\ \&proto\_path,\ \textcolor{keyword}{const}\ std::string\ \&proto\_file);}
+\DoxyCodeLine{00014\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceflatbuffers_1_1tests_a6b09d27d0243da51fec1181c4afa14cc}{proto\_test\_union}}(\textcolor{keyword}{const}\ std::string\ \&proto\_path,\ \textcolor{keyword}{const}\ std::string\ \&proto\_file);}
+\DoxyCodeLine{00015\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceflatbuffers_1_1tests_ab17d213d04fb3bb56897a49d21425b66}{proto\_test\_union\_suffix}}(\textcolor{keyword}{const}\ std::string\ \&proto\_path,\ \textcolor{keyword}{const}\ std::string\ \&proto\_file);}
+\DoxyCodeLine{00016\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceflatbuffers_1_1tests_ac2fa2bfb0eb2842405bdcf52e976ce9a}{proto\_test\_include}}(\textcolor{keyword}{const}\ std::string\ \&proto\_path,\ \textcolor{keyword}{const}\ std::string\ \&proto\_file,\ \textcolor{keyword}{const}\ std::string\ \&import\_proto\_file);}
+\DoxyCodeLine{00017\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceflatbuffers_1_1tests_a32d858741a8110709fbd445751b0a24d}{proto\_test\_include\_union}}(\textcolor{keyword}{const}\ std::string\ \&proto\_path,\ \textcolor{keyword}{const}\ std::string\ \&proto\_file,\ \textcolor{keyword}{const}\ std::string\ \&import\_proto\_file);}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceflatbuffers_1_1tests_a6d2d3d0676aefd3e693d3623a8e1b5a0}{proto\_test\_id}}(\textcolor{keyword}{const}\ std::string\ \&proto\_path,\ \textcolor{keyword}{const}\ std::string\ \&proto\_file);}
+\DoxyCodeLine{00020\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceflatbuffers_1_1tests_ad4407454849f166c45d0aeca053ccccd}{proto\_test\_union\_id}}(\textcolor{keyword}{const}\ std::string\ \&proto\_path,\ \textcolor{keyword}{const}\ std::string\ \&proto\_file);}
+\DoxyCodeLine{00021\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceflatbuffers_1_1tests_a804548ed8e823df2d7b63922ca5c3b44}{proto\_test\_union\_suffix\_id}}(\textcolor{keyword}{const}\ std::string\ \&proto\_path,\ \textcolor{keyword}{const}\ std::string\ \&proto\_file);}
+\DoxyCodeLine{00022\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceflatbuffers_1_1tests_a4c1b6d6bc6b170a9c7cbaa30d8294e74}{proto\_test\_include\_id}}(\textcolor{keyword}{const}\ std::string\ \&proto\_path,\ \textcolor{keyword}{const}\ std::string\ \&proto\_file,\ \textcolor{keyword}{const}\ std::string\ \&import\_proto\_file);}
+\DoxyCodeLine{00023\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceflatbuffers_1_1tests_a565a10ae4ffdb13ac2add5846f55584b}{proto\_test\_include\_union\_id}}(\textcolor{keyword}{const}\ std::string\ \&proto\_path,\ \textcolor{keyword}{const}\ std::string\ \&proto\_file,\ \textcolor{keyword}{const}\ std::string\ \&import\_proto\_file);}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceflatbuffers_1_1tests_a5769b1c66796513b4c042d5b970c4c3a}{ParseCorruptedProto}}(\textcolor{keyword}{const}\ std::string\ \&proto\_path);}
+\DoxyCodeLine{00026\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceflatbuffers_1_1tests_a9b03cbd95bccf0e61e0b228604592255}{ParseProtoTest}}(\textcolor{keyword}{const}\ std::string\&\ tests\_data\_path);}
+\DoxyCodeLine{00027\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceflatbuffers_1_1tests_ab04d7390e5dbd7da99c70f736e2d079f}{ParseProtoBufAsciiTest}}();}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \}\ \ \textcolor{comment}{//\ namespace\ tests}}
+\DoxyCodeLine{00030\ \}\ \ \textcolor{comment}{//\ namespace\ flatbuffers}}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

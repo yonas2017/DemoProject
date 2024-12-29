@@ -1,0 +1,140 @@
+\doxysection{animal\+\_\+generated.\+h}
+\hypertarget{animal__generated_8h_source}{}\label{animal__generated_8h_source}\index{flatbuffers/android/app/src/main/cpp/generated/animal\_generated.h@{flatbuffers/android/app/src/main/cpp/generated/animal\_generated.h}}
+\mbox{\hyperlink{animal__generated_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//\ automatically\ generated\ by\ the\ FlatBuffers\ compiler,\ do\ not\ modify}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#ifndef\ FLATBUFFERS\_GENERATED\_ANIMAL\_COM\_FBS\_APP\_H\_}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#define\ FLATBUFFERS\_GENERATED\_ANIMAL\_COM\_FBS\_APP\_H\_}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{flatbuffers_8h}{flatbuffers/flatbuffers.h}}"{}}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{comment}{//\ Ensure\ the\ included\ flatbuffers.h\ is\ the\ same\ version\ as\ when\ this\ file\ was}}
+\DoxyCodeLine{00010\ \textcolor{comment}{//\ generated,\ otherwise\ it\ may\ not\ be\ compatible.}}
+\DoxyCodeLine{00011\ \textcolor{keyword}{static\_assert}(FLATBUFFERS\_VERSION\_MAJOR\ ==\ 24\ \&\&}
+\DoxyCodeLine{00012\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ FLATBUFFERS\_VERSION\_MINOR\ ==\ 12\ \&\&}
+\DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ FLATBUFFERS\_VERSION\_REVISION\ ==\ 23,}
+\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}Non-\/compatible\ flatbuffers\ version\ included"{}});}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacecom}{com}}\ \{}
+\DoxyCodeLine{00017\ \textcolor{keyword}{namespace\ }fbs\ \{}
+\DoxyCodeLine{00018\ \textcolor{keyword}{namespace\ }app\ \{}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{keyword}{struct\ }Animal;}
+\DoxyCodeLine{00021\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structcom_1_1fbs_1_1app_1_1AnimalBuilder}{AnimalBuilder}};}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \textcolor{keyword}{struct\ }Animal\ \mbox{\hyperlink{structcom_1_1fbs_1_1app_1_1FLATBUFFERS__FINAL__CLASS}{FLATBUFFERS\_FINAL\_CLASS}}\ :\ \textcolor{keyword}{private}\ \mbox{\hyperlink{classflatbuffers_1_1Table}{::flatbuffers::Table}}\ \{}
+\DoxyCodeLine{00024\ \ \ \textcolor{keyword}{typedef}\ \mbox{\hyperlink{structcom_1_1fbs_1_1app_1_1AnimalBuilder}{AnimalBuilder}}\ \mbox{\hyperlink{structcom_1_1fbs_1_1app_1_1FLATBUFFERS__FINAL__CLASS_a107e6c959f12f54bbeed38e2db1a5aa1}{Builder}};}
+\DoxyCodeLine{00025\ \ \ \textcolor{keyword}{enum}\ FlatBuffersVTableOffset\ FLATBUFFERS\_VTABLE\_UNDERLYING\_TYPE\ \{}
+\DoxyCodeLine{00026\ \ \ \ \ \mbox{\hyperlink{animal__generated_8h_ad17bb8bd997e6ac35eddbf626077375f}{VT\_NAME}}\ =\ 4,}
+\DoxyCodeLine{00027\ \ \ \ \ \mbox{\hyperlink{animal__generated_8h_aa35d70c55851772d311cb58ebd4e203a}{VT\_SOUND}}\ =\ 6,}
+\DoxyCodeLine{00028\ \ \ \ \ VT\_WEIGHT\ =\ 8}
+\DoxyCodeLine{00029\ \ \ \};}
+\DoxyCodeLine{00030\ \ \ const\ ::flatbuffers::String\ *\mbox{\hyperlink{structcom_1_1fbs_1_1app_1_1FLATBUFFERS__FINAL__CLASS_a5828adfc1a947a7082ced04b9b01836e}{name}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordflow}{return}\ GetPointer<const\ ::flatbuffers::String\ *>(\mbox{\hyperlink{animal__generated_8h_ad17bb8bd997e6ac35eddbf626077375f}{VT\_NAME}});}
+\DoxyCodeLine{00032\ \ \ \}}
+\DoxyCodeLine{00033\ \ \ const\ ::flatbuffers::String\ *\mbox{\hyperlink{structcom_1_1fbs_1_1app_1_1FLATBUFFERS__FINAL__CLASS_a8d6bf31ad01a5e690195784532391ff9}{sound}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keywordflow}{return}\ GetPointer<const\ ::flatbuffers::String\ *>(\mbox{\hyperlink{animal__generated_8h_aa35d70c55851772d311cb58ebd4e203a}{VT\_SOUND}});}
+\DoxyCodeLine{00035\ \ \ \}}
+\DoxyCodeLine{00036\ \ \ uint16\_t\ \mbox{\hyperlink{structcom_1_1fbs_1_1app_1_1FLATBUFFERS__FINAL__CLASS_aedd98b1217436d3011111d420057e8d3}{weight}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keywordflow}{return}\ GetField<uint16\_t>(VT\_WEIGHT,\ 0);}
+\DoxyCodeLine{00038\ \ \ \}}
+\DoxyCodeLine{00039\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structcom_1_1fbs_1_1app_1_1FLATBUFFERS__FINAL__CLASS_af9cd4d9a59380df4eaae611b98edf452}{Verify}}(\mbox{\hyperlink{namespaceflatbuffers_a3268477941df91db2eb06442b6e5f922}{::flatbuffers::Verifier}}\ \&verifier)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keywordflow}{return}\ VerifyTableStart(verifier)\ \&\&}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \ \ \ VerifyOffset(verifier,\ \mbox{\hyperlink{animal__generated_8h_ad17bb8bd997e6ac35eddbf626077375f}{VT\_NAME}})\ \&\&}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \ \ \ verifier.VerifyString(\mbox{\hyperlink{idl__gen__ts_8cpp_a9b45b3e13bd9167aab02e17e08916231}{name}}())\ \&\&}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \ \ \ VerifyOffset(verifier,\ \mbox{\hyperlink{animal__generated_8h_aa35d70c55851772d311cb58ebd4e203a}{VT\_SOUND}})\ \&\&}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \ \ \ verifier.VerifyString(sound())\ \&\&}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \ \ \ VerifyField<uint16\_t>(verifier,\ VT\_WEIGHT,\ 2)\ \&\&}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \ \ \ verifier.EndTable();}
+\DoxyCodeLine{00047\ \ \ \}}
+\DoxyCodeLine{00048\ \};}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structcom_1_1fbs_1_1app_1_1AnimalBuilder}{AnimalBuilder}}\ \{}
+\DoxyCodeLine{00051\ \ \ \textcolor{keyword}{typedef}\ Animal\ \mbox{\hyperlink{structcom_1_1fbs_1_1app_1_1AnimalBuilder_ab6277c15f63c54a5634ceaf655df12fb}{Table}};}
+\DoxyCodeLine{00052\ \ \ \mbox{\hyperlink{classflatbuffers_1_1FlatBufferBuilderImpl}{::flatbuffers::FlatBufferBuilder}}\ \&\mbox{\hyperlink{structcom_1_1fbs_1_1app_1_1AnimalBuilder_ad4ec19688bb65b9255f44120e3398531}{fbb\_}};}
+\DoxyCodeLine{00053\ \ \ ::flatbuffers::uoffset\_t\ \mbox{\hyperlink{structcom_1_1fbs_1_1app_1_1AnimalBuilder_a4e1b09ed6ef60cb036e60fbe69bdcef8}{start\_}};}
+\DoxyCodeLine{00054\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{structcom_1_1fbs_1_1app_1_1AnimalBuilder_a886e0f901f0b263e77099ba9f173825a}{add\_name}}(::flatbuffers::Offset<::flatbuffers::String>\ \mbox{\hyperlink{idl__gen__ts_8cpp_a9b45b3e13bd9167aab02e17e08916231}{name}})\ \{}
+\DoxyCodeLine{00055\ \ \ \ \ \mbox{\hyperlink{structcom_1_1fbs_1_1app_1_1AnimalBuilder_ad4ec19688bb65b9255f44120e3398531}{fbb\_}}.AddOffset(Animal::VT\_NAME,\ \mbox{\hyperlink{idl__gen__ts_8cpp_a9b45b3e13bd9167aab02e17e08916231}{name}});}
+\DoxyCodeLine{00056\ \ \ \}}
+\DoxyCodeLine{00057\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{structcom_1_1fbs_1_1app_1_1AnimalBuilder_a4c5627fa9be365f357a208635b20af0f}{add\_sound}}(::flatbuffers::Offset<::flatbuffers::String>\ sound)\ \{}
+\DoxyCodeLine{00058\ \ \ \ \ \mbox{\hyperlink{structcom_1_1fbs_1_1app_1_1AnimalBuilder_ad4ec19688bb65b9255f44120e3398531}{fbb\_}}.AddOffset(Animal::VT\_SOUND,\ sound);}
+\DoxyCodeLine{00059\ \ \ \}}
+\DoxyCodeLine{00060\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{structcom_1_1fbs_1_1app_1_1AnimalBuilder_a85392527a097beba9248a13a0fc69558}{add\_weight}}(uint16\_t\ weight)\ \{}
+\DoxyCodeLine{00061\ \ \ \ \ \mbox{\hyperlink{structcom_1_1fbs_1_1app_1_1AnimalBuilder_ad4ec19688bb65b9255f44120e3398531}{fbb\_}}.AddElement<uint16\_t>(Animal::VT\_WEIGHT,\ weight,\ 0);}
+\DoxyCodeLine{00062\ \ \ \}}
+\DoxyCodeLine{00063\ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{structcom_1_1fbs_1_1app_1_1AnimalBuilder_a7443ba6561f81a30c5f437142b2222cc}{AnimalBuilder}}(\mbox{\hyperlink{classflatbuffers_1_1FlatBufferBuilderImpl}{::flatbuffers::FlatBufferBuilder}}\ \&\_fbb)}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{structcom_1_1fbs_1_1app_1_1AnimalBuilder_ad4ec19688bb65b9255f44120e3398531}{fbb\_}}(\_fbb)\ \{}
+\DoxyCodeLine{00065\ \ \ \ \ \mbox{\hyperlink{structcom_1_1fbs_1_1app_1_1AnimalBuilder_a4e1b09ed6ef60cb036e60fbe69bdcef8}{start\_}}\ =\ \mbox{\hyperlink{structcom_1_1fbs_1_1app_1_1AnimalBuilder_ad4ec19688bb65b9255f44120e3398531}{fbb\_}}.StartTable();}
+\DoxyCodeLine{00066\ \ \ \}}
+\DoxyCodeLine{00067\ \ \ ::flatbuffers::Offset<Animal>\ \mbox{\hyperlink{structcom_1_1fbs_1_1app_1_1AnimalBuilder_acf06178d2125b5de1b7bf03eef4683db}{Finish}}()\ \{}
+\DoxyCodeLine{00068\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{auto}\ end\ =\ \mbox{\hyperlink{structcom_1_1fbs_1_1app_1_1AnimalBuilder_ad4ec19688bb65b9255f44120e3398531}{fbb\_}}.EndTable(\mbox{\hyperlink{structcom_1_1fbs_1_1app_1_1AnimalBuilder_a4e1b09ed6ef60cb036e60fbe69bdcef8}{start\_}});}
+\DoxyCodeLine{00069\ \ \ \ \ \textcolor{keyword}{auto}\ o\ =\ ::flatbuffers::Offset<Animal>(end);}
+\DoxyCodeLine{00070\ \ \ \ \ \textcolor{keywordflow}{return}\ o;}
+\DoxyCodeLine{00071\ \ \ \}}
+\DoxyCodeLine{00072\ \};}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00074\ inline\ ::flatbuffers::Offset<Animal>\ \mbox{\hyperlink{namespacecom_1_1fbs_1_1app_aeda83a8e3d8868d85671eb226249d705}{CreateAnimal}}(}
+\DoxyCodeLine{00075\ \ \ \ \ \mbox{\hyperlink{classflatbuffers_1_1FlatBufferBuilderImpl}{::flatbuffers::FlatBufferBuilder}}\ \&\_fbb,}
+\DoxyCodeLine{00076\ \ \ \ \ ::flatbuffers::Offset<::flatbuffers::String>\ \mbox{\hyperlink{idl__gen__ts_8cpp_a9b45b3e13bd9167aab02e17e08916231}{name}}\ =\ 0,}
+\DoxyCodeLine{00077\ \ \ \ \ ::flatbuffers::Offset<::flatbuffers::String>\ sound\ =\ 0,}
+\DoxyCodeLine{00078\ \ \ \ \ uint16\_t\ weight\ =\ 0)\ \{}
+\DoxyCodeLine{00079\ \ \ \mbox{\hyperlink{structcom_1_1fbs_1_1app_1_1AnimalBuilder}{AnimalBuilder}}\ builder\_(\_fbb);}
+\DoxyCodeLine{00080\ \ \ builder\_.\mbox{\hyperlink{structcom_1_1fbs_1_1app_1_1AnimalBuilder_a4c5627fa9be365f357a208635b20af0f}{add\_sound}}(sound);}
+\DoxyCodeLine{00081\ \ \ builder\_.\mbox{\hyperlink{structcom_1_1fbs_1_1app_1_1AnimalBuilder_a886e0f901f0b263e77099ba9f173825a}{add\_name}}(\mbox{\hyperlink{idl__gen__ts_8cpp_a9b45b3e13bd9167aab02e17e08916231}{name}});}
+\DoxyCodeLine{00082\ \ \ builder\_.\mbox{\hyperlink{structcom_1_1fbs_1_1app_1_1AnimalBuilder_a85392527a097beba9248a13a0fc69558}{add\_weight}}(weight);}
+\DoxyCodeLine{00083\ \ \ \textcolor{keywordflow}{return}\ builder\_.\mbox{\hyperlink{structcom_1_1fbs_1_1app_1_1AnimalBuilder_acf06178d2125b5de1b7bf03eef4683db}{Finish}}();}
+\DoxyCodeLine{00084\ \}}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00086\ inline\ ::flatbuffers::Offset<Animal>\ \mbox{\hyperlink{namespacecom_1_1fbs_1_1app_a610f930b195ff1c18dc8a29938845c76}{CreateAnimalDirect}}(}
+\DoxyCodeLine{00087\ \ \ \ \ \mbox{\hyperlink{classflatbuffers_1_1FlatBufferBuilderImpl}{::flatbuffers::FlatBufferBuilder}}\ \&\_fbb,}
+\DoxyCodeLine{00088\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *\mbox{\hyperlink{idl__gen__ts_8cpp_a9b45b3e13bd9167aab02e17e08916231}{name}}\ =\ \textcolor{keyword}{nullptr},}
+\DoxyCodeLine{00089\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *sound\ =\ \textcolor{keyword}{nullptr},}
+\DoxyCodeLine{00090\ \ \ \ \ uint16\_t\ weight\ =\ 0)\ \{}
+\DoxyCodeLine{00091\ \ \ \textcolor{keyword}{auto}\ name\_\_\ =\ \mbox{\hyperlink{idl__gen__ts_8cpp_a9b45b3e13bd9167aab02e17e08916231}{name}}\ ?\ \_fbb.\mbox{\hyperlink{classflatbuffers_1_1FlatBufferBuilderImpl_a302e3db0669a9597d8d613077cc6c203}{CreateString}}(\mbox{\hyperlink{idl__gen__ts_8cpp_a9b45b3e13bd9167aab02e17e08916231}{name}})\ :\ 0;}
+\DoxyCodeLine{00092\ \ \ \textcolor{keyword}{auto}\ sound\_\_\ =\ sound\ ?\ \_fbb.\mbox{\hyperlink{classflatbuffers_1_1FlatBufferBuilderImpl_a302e3db0669a9597d8d613077cc6c203}{CreateString}}(sound)\ :\ 0;}
+\DoxyCodeLine{00093\ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{namespacecom_1_1fbs_1_1app_aeda83a8e3d8868d85671eb226249d705}{com::fbs::app::CreateAnimal}}(}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \_fbb,}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ name\_\_,}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ sound\_\_,}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ weight);}
+\DoxyCodeLine{00098\ \}}
+\DoxyCodeLine{00099\ }
+\DoxyCodeLine{00100\ \textcolor{keyword}{inline}\ \textcolor{keyword}{const}\ com::fbs::app::Animal\ *\mbox{\hyperlink{namespacecom_1_1fbs_1_1app_ab7045e3dd8a0c82c59c7cd40bb2f069d}{GetAnimal}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{void}\ *buf)\ \{}
+\DoxyCodeLine{00101\ \ \ return\ ::flatbuffers::GetRoot<com::fbs::app::Animal>(buf);}
+\DoxyCodeLine{00102\ \}}
+\DoxyCodeLine{00103\ }
+\DoxyCodeLine{00104\ \textcolor{keyword}{inline}\ \textcolor{keyword}{const}\ com::fbs::app::Animal\ *\mbox{\hyperlink{namespacecom_1_1fbs_1_1app_a56cc73084412a7cb324e80cdabfe4f9b}{GetSizePrefixedAnimal}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{void}\ *buf)\ \{}
+\DoxyCodeLine{00105\ \ \ return\ ::flatbuffers::GetSizePrefixedRoot<com::fbs::app::Animal>(buf);}
+\DoxyCodeLine{00106\ \}}
+\DoxyCodeLine{00107\ }
+\DoxyCodeLine{00108\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{namespacecom_1_1fbs_1_1app_a4e4173b87b97183051989ba6031ae193}{VerifyAnimalBuffer}}(}
+\DoxyCodeLine{00109\ \ \ \ \ \mbox{\hyperlink{namespaceflatbuffers_a3268477941df91db2eb06442b6e5f922}{::flatbuffers::Verifier}}\ \&verifier)\ \{}
+\DoxyCodeLine{00110\ \ \ \textcolor{keywordflow}{return}\ verifier.VerifyBuffer<com::fbs::app::Animal>(\textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00111\ \}}
+\DoxyCodeLine{00112\ }
+\DoxyCodeLine{00113\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{namespacecom_1_1fbs_1_1app_ae0d74ba2405f6e1aec7d06a268b59f1a}{VerifySizePrefixedAnimalBuffer}}(}
+\DoxyCodeLine{00114\ \ \ \ \ \mbox{\hyperlink{namespaceflatbuffers_a3268477941df91db2eb06442b6e5f922}{::flatbuffers::Verifier}}\ \&verifier)\ \{}
+\DoxyCodeLine{00115\ \ \ \textcolor{keywordflow}{return}\ verifier.VerifySizePrefixedBuffer<com::fbs::app::Animal>(\textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00116\ \}}
+\DoxyCodeLine{00117\ }
+\DoxyCodeLine{00118\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespacecom_1_1fbs_1_1app_af51504328c632a554fe6e9346c45e77c}{FinishAnimalBuffer}}(}
+\DoxyCodeLine{00119\ \ \ \ \ \mbox{\hyperlink{classflatbuffers_1_1FlatBufferBuilderImpl}{::flatbuffers::FlatBufferBuilder}}\ \&fbb,}
+\DoxyCodeLine{00120\ \ \ \ \ ::flatbuffers::Offset<com::fbs::app::Animal>\ root)\ \{}
+\DoxyCodeLine{00121\ \ \ fbb.\mbox{\hyperlink{classflatbuffers_1_1FlatBufferBuilderImpl_a813b376143a53bd2828d9684713fe03c}{Finish}}(root);}
+\DoxyCodeLine{00122\ \}}
+\DoxyCodeLine{00123\ }
+\DoxyCodeLine{00124\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespacecom_1_1fbs_1_1app_a3a02f63256a67d99a39fe18538243c73}{FinishSizePrefixedAnimalBuffer}}(}
+\DoxyCodeLine{00125\ \ \ \ \ \mbox{\hyperlink{classflatbuffers_1_1FlatBufferBuilderImpl}{::flatbuffers::FlatBufferBuilder}}\ \&fbb,}
+\DoxyCodeLine{00126\ \ \ \ \ ::flatbuffers::Offset<com::fbs::app::Animal>\ root)\ \{}
+\DoxyCodeLine{00127\ \ \ fbb.\mbox{\hyperlink{classflatbuffers_1_1FlatBufferBuilderImpl_aaa87fe5c3b85e47bb959e6d1aec96b2c}{FinishSizePrefixed}}(root);}
+\DoxyCodeLine{00128\ \}}
+\DoxyCodeLine{00129\ }
+\DoxyCodeLine{00130\ \}\ \ \textcolor{comment}{//\ namespace\ app}}
+\DoxyCodeLine{00131\ \}\ \ \textcolor{comment}{//\ namespace\ fbs}}
+\DoxyCodeLine{00132\ \}\ \ \textcolor{comment}{//\ namespace\ com}}
+\DoxyCodeLine{00133\ }
+\DoxyCodeLine{00134\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ FLATBUFFERS\_GENERATED\_ANIMAL\_COM\_FBS\_APP\_H\_}}
+
+\end{DoxyCode}

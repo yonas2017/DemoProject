@@ -1,0 +1,225 @@
+\doxysection{v1\+\_\+generated.\+h}
+\hypertarget{v1__generated_8h_source}{}\label{v1__generated_8h_source}\index{flatbuffers/tests/64bit/evolution/v1\_generated.h@{flatbuffers/tests/64bit/evolution/v1\_generated.h}}
+\mbox{\hyperlink{v1__generated_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//\ automatically\ generated\ by\ the\ FlatBuffers\ compiler,\ do\ not\ modify}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#ifndef\ FLATBUFFERS\_GENERATED\_V1\_V1\_H\_}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#define\ FLATBUFFERS\_GENERATED\_V1\_V1\_H\_}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{flatbuffers_8h}{flatbuffers/flatbuffers.h}}"{}}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{comment}{//\ Ensure\ the\ included\ flatbuffers.h\ is\ the\ same\ version\ as\ when\ this\ file\ was}}
+\DoxyCodeLine{00010\ \textcolor{comment}{//\ generated,\ otherwise\ it\ may\ not\ be\ compatible.}}
+\DoxyCodeLine{00011\ \textcolor{keyword}{static\_assert}(FLATBUFFERS\_VERSION\_MAJOR\ ==\ 24\ \&\&}
+\DoxyCodeLine{00012\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ FLATBUFFERS\_VERSION\_MINOR\ ==\ 12\ \&\&}
+\DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ FLATBUFFERS\_VERSION\_REVISION\ ==\ 23,}
+\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}Non-\/compatible\ flatbuffers\ version\ included"{}});}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacev1}{v1}}\ \{}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \textcolor{keyword}{struct\ }RootTable;}
+\DoxyCodeLine{00019\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structv1_1_1RootTableBuilder}{RootTableBuilder}};}
+\DoxyCodeLine{00020\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structv1_1_1RootTableT}{RootTableT}};}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{namespacev1_a7c2fcbd6d5d1a52f8f1224d84d49c89e}{operator==}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{structv1_1_1RootTableT}{RootTableT}}\ \&lhs,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{structv1_1_1RootTableT}{RootTableT}}\ \&rhs);}
+\DoxyCodeLine{00023\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{namespacev1_aa83907116cdfd7e8949f8472856d8f74}{operator!=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{structv1_1_1RootTableT}{RootTableT}}\ \&lhs,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{structv1_1_1RootTableT}{RootTableT}}\ \&rhs);}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \textcolor{keyword}{inline}\ const\ ::flatbuffers::TypeTable\ *\mbox{\hyperlink{namespacev1_a69a5f20fd9347717823a59d981384f0a}{RootTableTypeTable}}();}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structv1_1_1RootTableT}{RootTableT}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{structflatbuffers_1_1NativeTable}{::flatbuffers::NativeTable}}\ \{}
+\DoxyCodeLine{00028\ \ \ \textcolor{keyword}{typedef}\ RootTable\ \mbox{\hyperlink{structv1_1_1RootTableT_a623bff09e97354cbe978caa95fe2270d}{TableType}};}
+\DoxyCodeLine{00029\ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{structv1_1_1RootTableT_ae54166d0dc64c7a01c56522a779ee29d}{a}}\ =\ 0.0f;}
+\DoxyCodeLine{00030\ \ \ std::vector<uint8\_t>\ \mbox{\hyperlink{structv1_1_1RootTableT_a8b24d3c50879d9a57781eeb818dea4a4}{b}}\{\};}
+\DoxyCodeLine{00031\ \};}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \textcolor{keyword}{struct\ }RootTable\ \mbox{\hyperlink{structv1_1_1FLATBUFFERS__FINAL__CLASS}{FLATBUFFERS\_FINAL\_CLASS}}\ :\ \textcolor{keyword}{private}\ \mbox{\hyperlink{classflatbuffers_1_1Table}{::flatbuffers::Table}}\ \{}
+\DoxyCodeLine{00034\ \ \ \textcolor{keyword}{typedef}\ \mbox{\hyperlink{structv1_1_1RootTableT}{RootTableT}}\ \mbox{\hyperlink{structv1_1_1FLATBUFFERS__FINAL__CLASS_a0c7018a15ec2a0189fb5059a36059ed3}{NativeTableType}};}
+\DoxyCodeLine{00035\ \ \ \textcolor{keyword}{typedef}\ \mbox{\hyperlink{structv1_1_1RootTableBuilder}{RootTableBuilder}}\ \mbox{\hyperlink{structv1_1_1FLATBUFFERS__FINAL__CLASS_a4f23d6ba436da9ec8da4bd7100dabe86}{Builder}};}
+\DoxyCodeLine{00036\ \ \ \textcolor{keyword}{static}\ const\ ::flatbuffers::TypeTable\ *\mbox{\hyperlink{structv1_1_1FLATBUFFERS__FINAL__CLASS_ac3e2e030ecd8bba12d4ffd6be68a4013}{MiniReflectTypeTable}}()\ \{}
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{test__64bit__generated_8h_ae9e3e058a31bc7be5df3f6522f16d0c1}{RootTableTypeTable}}();}
+\DoxyCodeLine{00038\ \ \ \}}
+\DoxyCodeLine{00039\ \ \ \textcolor{keyword}{enum}\ FlatBuffersVTableOffset\ FLATBUFFERS\_VTABLE\_UNDERLYING\_TYPE\ \{}
+\DoxyCodeLine{00040\ \ \ \ \ \mbox{\hyperlink{v1__generated_8h_ac3b99c30e0da3ff30223e90774fccb67}{VT\_A}}\ =\ 4,}
+\DoxyCodeLine{00041\ \ \ \ \ \mbox{\hyperlink{v2__generated_8h_acc3cdd2aaefb7840a13744d06a4c59fa}{VT\_B}}\ =\ 6}
+\DoxyCodeLine{00042\ \ \ \};}
+\DoxyCodeLine{00043\ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{structv1_1_1FLATBUFFERS__FINAL__CLASS_a2cb97b666c06704588bd46c0086a1b2b}{a}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keywordflow}{return}\ GetField<float>(\mbox{\hyperlink{v1__generated_8h_ac3b99c30e0da3ff30223e90774fccb67}{VT\_A}},\ 0.0f);}
+\DoxyCodeLine{00045\ \ \ \}}
+\DoxyCodeLine{00046\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structv1_1_1FLATBUFFERS__FINAL__CLASS_ab51996de23aa12bb7f080b78a127c78a}{mutate\_a}}(\textcolor{keywordtype}{float}\ \_a\ =\ 0.0f)\ \{}
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keywordflow}{return}\ SetField<float>(\mbox{\hyperlink{v1__generated_8h_ac3b99c30e0da3ff30223e90774fccb67}{VT\_A}},\ \_a,\ 0.0f);}
+\DoxyCodeLine{00048\ \ \ \}}
+\DoxyCodeLine{00049\ \ \ const\ ::flatbuffers::Vector<uint8\_t>\ *\mbox{\hyperlink{structv1_1_1FLATBUFFERS__FINAL__CLASS_a92e21ad159328ad7a799efde4b4a694f}{b}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keywordflow}{return}\ GetPointer<const\ ::flatbuffers::Vector<uint8\_t>\ *>(\mbox{\hyperlink{v2__generated_8h_acc3cdd2aaefb7840a13744d06a4c59fa}{VT\_B}});}
+\DoxyCodeLine{00051\ \ \ \}}
+\DoxyCodeLine{00052\ \ \ \mbox{\hyperlink{classflatbuffers_1_1Vector}{::flatbuffers::Vector<uint8\_t>}}\ *\mbox{\hyperlink{structv1_1_1FLATBUFFERS__FINAL__CLASS_a73116011acd80a26582b7ddfe4f33d42}{mutable\_b}}()\ \{}
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keywordflow}{return}\ GetPointer<::flatbuffers::Vector<uint8\_t>\ *>(\mbox{\hyperlink{v2__generated_8h_acc3cdd2aaefb7840a13744d06a4c59fa}{VT\_B}});}
+\DoxyCodeLine{00054\ \ \ \}}
+\DoxyCodeLine{00055\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structv1_1_1FLATBUFFERS__FINAL__CLASS_adce23bb9b71e1786b275a08b558162e0}{Verify}}(\mbox{\hyperlink{namespaceflatbuffers_a3268477941df91db2eb06442b6e5f922}{::flatbuffers::Verifier}}\ \&verifier)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keywordflow}{return}\ VerifyTableStart(verifier)\ \&\&}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \ \ \ VerifyField<float>(verifier,\ \mbox{\hyperlink{v1__generated_8h_ac3b99c30e0da3ff30223e90774fccb67}{VT\_A}},\ 4)\ \&\&}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \ \ \ VerifyOffset(verifier,\ \mbox{\hyperlink{v2__generated_8h_acc3cdd2aaefb7840a13744d06a4c59fa}{VT\_B}})\ \&\&}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \ \ \ verifier.VerifyVector(b())\ \&\&}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \ \ \ verifier.EndTable();}
+\DoxyCodeLine{00061\ \ \ \}}
+\DoxyCodeLine{00062\ \ \ \mbox{\hyperlink{structv1_1_1RootTableT}{RootTableT}}\ *\mbox{\hyperlink{structv1_1_1FLATBUFFERS__FINAL__CLASS_a729ad6014a0a29498637ce6952eaca3a}{UnPack}}(const\ ::flatbuffers::resolver\_function\_t\ *\_resolver\ =\ \textcolor{keyword}{nullptr})\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00063\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{structv1_1_1FLATBUFFERS__FINAL__CLASS_a6e4f83aefef7bd981d34b1d913423654}{UnPackTo}}(\mbox{\hyperlink{structv1_1_1RootTableT}{RootTableT}}\ *\_o,\ const\ ::flatbuffers::resolver\_function\_t\ *\_resolver\ =\ \textcolor{keyword}{nullptr})\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00064\ \ \ static\ ::flatbuffers::Offset<RootTable>\ \mbox{\hyperlink{structv1_1_1FLATBUFFERS__FINAL__CLASS_a736e5592d2799884a685100b1b685ed8}{Pack}}(\mbox{\hyperlink{classflatbuffers_1_1FlatBufferBuilderImpl}{::flatbuffers::FlatBufferBuilder}}\ \&\_fbb,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{structv1_1_1RootTableT}{RootTableT}}*\ \_o,\ const\ ::flatbuffers::rehasher\_function\_t\ *\_rehasher\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00065\ \};}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00067\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structv1_1_1RootTableBuilder}{RootTableBuilder}}\ \{}
+\DoxyCodeLine{00068\ \ \ \textcolor{keyword}{typedef}\ RootTable\ \mbox{\hyperlink{structv1_1_1RootTableBuilder_aa9f512b76d5b66b539c3454c224d6444}{Table}};}
+\DoxyCodeLine{00069\ \ \ \mbox{\hyperlink{classflatbuffers_1_1FlatBufferBuilderImpl}{::flatbuffers::FlatBufferBuilder}}\ \&\mbox{\hyperlink{structv1_1_1RootTableBuilder_a78af74a0cc5cc5df2103882ae3e12562}{fbb\_}};}
+\DoxyCodeLine{00070\ \ \ ::flatbuffers::uoffset\_t\ \mbox{\hyperlink{structv1_1_1RootTableBuilder_a3e37b9b88a6244efa7dc2c2849633f9c}{start\_}};}
+\DoxyCodeLine{00071\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{structv1_1_1RootTableBuilder_a2cbbf4f70499ed078357db8087e6da88}{add\_a}}(\textcolor{keywordtype}{float}\ a)\ \{}
+\DoxyCodeLine{00072\ \ \ \ \ \mbox{\hyperlink{structv1_1_1RootTableBuilder_a78af74a0cc5cc5df2103882ae3e12562}{fbb\_}}.AddElement<\textcolor{keywordtype}{float}>(RootTable::VT\_A,\ a,\ 0.0f);}
+\DoxyCodeLine{00073\ \ \ \}}
+\DoxyCodeLine{00074\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{structv1_1_1RootTableBuilder_a8da7c5973ca8bbc402076e86322dbc96}{add\_b}}(::flatbuffers::Offset<\mbox{\hyperlink{classflatbuffers_1_1Vector}{::flatbuffers::Vector<uint8\_t>}}>\ b)\ \{}
+\DoxyCodeLine{00075\ \ \ \ \ \mbox{\hyperlink{structv1_1_1RootTableBuilder_a78af74a0cc5cc5df2103882ae3e12562}{fbb\_}}.AddOffset(RootTable::VT\_B,\ b);}
+\DoxyCodeLine{00076\ \ \ \}}
+\DoxyCodeLine{00077\ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{structv1_1_1RootTableBuilder_a14a0ccb05d09fb981a7ee9626efaff42}{RootTableBuilder}}(\mbox{\hyperlink{classflatbuffers_1_1FlatBufferBuilderImpl}{::flatbuffers::FlatBufferBuilder}}\ \&\_fbb)}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{structv1_1_1RootTableBuilder_a78af74a0cc5cc5df2103882ae3e12562}{fbb\_}}(\_fbb)\ \{}
+\DoxyCodeLine{00079\ \ \ \ \ \mbox{\hyperlink{structv1_1_1RootTableBuilder_a3e37b9b88a6244efa7dc2c2849633f9c}{start\_}}\ =\ \mbox{\hyperlink{structv1_1_1RootTableBuilder_a78af74a0cc5cc5df2103882ae3e12562}{fbb\_}}.StartTable();}
+\DoxyCodeLine{00080\ \ \ \}}
+\DoxyCodeLine{00081\ \ \ ::flatbuffers::Offset<RootTable>\ \mbox{\hyperlink{structv1_1_1RootTableBuilder_a5dfd970ef30834c3e9eec09e2f37e5e5}{Finish}}()\ \{}
+\DoxyCodeLine{00082\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{auto}\ end\ =\ \mbox{\hyperlink{structv1_1_1RootTableBuilder_a78af74a0cc5cc5df2103882ae3e12562}{fbb\_}}.EndTable(\mbox{\hyperlink{structv1_1_1RootTableBuilder_a3e37b9b88a6244efa7dc2c2849633f9c}{start\_}});}
+\DoxyCodeLine{00083\ \ \ \ \ \textcolor{keyword}{auto}\ o\ =\ ::flatbuffers::Offset<RootTable>(end);}
+\DoxyCodeLine{00084\ \ \ \ \ \textcolor{keywordflow}{return}\ o;}
+\DoxyCodeLine{00085\ \ \ \}}
+\DoxyCodeLine{00086\ \};}
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00088\ inline\ ::flatbuffers::Offset<RootTable>\ \mbox{\hyperlink{namespacev1_af73ae78cd7da0f1d5d123f4faa3bedb1}{CreateRootTable}}(}
+\DoxyCodeLine{00089\ \ \ \ \ \mbox{\hyperlink{classflatbuffers_1_1FlatBufferBuilderImpl}{::flatbuffers::FlatBufferBuilder}}\ \&\_fbb,}
+\DoxyCodeLine{00090\ \ \ \ \ \textcolor{keywordtype}{float}\ a\ =\ 0.0f,}
+\DoxyCodeLine{00091\ \ \ \ \ ::flatbuffers::Offset<\mbox{\hyperlink{classflatbuffers_1_1Vector}{::flatbuffers::Vector<uint8\_t>}}>\ b\ =\ 0)\ \{}
+\DoxyCodeLine{00092\ \ \ \mbox{\hyperlink{structv1_1_1RootTableBuilder}{RootTableBuilder}}\ builder\_(\_fbb);}
+\DoxyCodeLine{00093\ \ \ builder\_.\mbox{\hyperlink{structv1_1_1RootTableBuilder_a8da7c5973ca8bbc402076e86322dbc96}{add\_b}}(b);}
+\DoxyCodeLine{00094\ \ \ builder\_.\mbox{\hyperlink{structv1_1_1RootTableBuilder_a2cbbf4f70499ed078357db8087e6da88}{add\_a}}(a);}
+\DoxyCodeLine{00095\ \ \ \textcolor{keywordflow}{return}\ builder\_.\mbox{\hyperlink{structv1_1_1RootTableBuilder_a5dfd970ef30834c3e9eec09e2f37e5e5}{Finish}}();}
+\DoxyCodeLine{00096\ \}}
+\DoxyCodeLine{00097\ }
+\DoxyCodeLine{00098\ inline\ ::flatbuffers::Offset<RootTable>\ \mbox{\hyperlink{namespacev1_a5ad85a523d4e690ad7da4728460f8390}{CreateRootTableDirect}}(}
+\DoxyCodeLine{00099\ \ \ \ \ \mbox{\hyperlink{classflatbuffers_1_1FlatBufferBuilderImpl}{::flatbuffers::FlatBufferBuilder}}\ \&\_fbb,}
+\DoxyCodeLine{00100\ \ \ \ \ \textcolor{keywordtype}{float}\ a\ =\ 0.0f,}
+\DoxyCodeLine{00101\ \ \ \ \ \textcolor{keyword}{const}\ std::vector<uint8\_t>\ *b\ =\ \textcolor{keyword}{nullptr})\ \{}
+\DoxyCodeLine{00102\ \ \ \textcolor{keyword}{auto}\ b\_\_\ =\ b\ ?\ \_fbb.\mbox{\hyperlink{classflatbuffers_1_1FlatBufferBuilderImpl_aceecafe87cf7fa1dd4117af618784884}{CreateVector}}<uint8\_t>(*b)\ :\ 0;}
+\DoxyCodeLine{00103\ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{namespacev1_af73ae78cd7da0f1d5d123f4faa3bedb1}{v1::CreateRootTable}}(}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \_fbb,}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ a,}
+\DoxyCodeLine{00106\ \ \ \ \ \ \ b\_\_);}
+\DoxyCodeLine{00107\ \}}
+\DoxyCodeLine{00108\ }
+\DoxyCodeLine{00109\ ::flatbuffers::Offset<RootTable>\ \mbox{\hyperlink{namespacev1_af73ae78cd7da0f1d5d123f4faa3bedb1}{CreateRootTable}}(\mbox{\hyperlink{classflatbuffers_1_1FlatBufferBuilderImpl}{::flatbuffers::FlatBufferBuilder}}\ \&\_fbb,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{structRootTableT}{RootTableT}}\ *\_o,\ const\ ::flatbuffers::rehasher\_function\_t\ *\_rehasher\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00110\ }
+\DoxyCodeLine{00111\ }
+\DoxyCodeLine{00112\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{namespacev1_a7c2fcbd6d5d1a52f8f1224d84d49c89e}{operator==}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{structv1_1_1RootTableT}{RootTableT}}\ \&lhs,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{structv1_1_1RootTableT}{RootTableT}}\ \&rhs)\ \{}
+\DoxyCodeLine{00113\ \ \ \textcolor{keywordflow}{return}}
+\DoxyCodeLine{00114\ \ \ \ \ \ \ (lhs.\mbox{\hyperlink{structv1_1_1RootTableT_ae54166d0dc64c7a01c56522a779ee29d}{a}}\ ==\ rhs.\mbox{\hyperlink{structv1_1_1RootTableT_ae54166d0dc64c7a01c56522a779ee29d}{a}})\ \&\&}
+\DoxyCodeLine{00115\ \ \ \ \ \ \ (lhs.\mbox{\hyperlink{structv1_1_1RootTableT_a8b24d3c50879d9a57781eeb818dea4a4}{b}}\ ==\ rhs.\mbox{\hyperlink{structv1_1_1RootTableT_a8b24d3c50879d9a57781eeb818dea4a4}{b}});}
+\DoxyCodeLine{00116\ \}}
+\DoxyCodeLine{00117\ }
+\DoxyCodeLine{00118\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{namespacev1_aa83907116cdfd7e8949f8472856d8f74}{operator!=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{structv1_1_1RootTableT}{RootTableT}}\ \&lhs,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{structv1_1_1RootTableT}{RootTableT}}\ \&rhs)\ \{}
+\DoxyCodeLine{00119\ \ \ \ \ \textcolor{keywordflow}{return}\ !(lhs\ ==\ rhs);}
+\DoxyCodeLine{00120\ \}}
+\DoxyCodeLine{00121\ }
+\DoxyCodeLine{00122\ }
+\DoxyCodeLine{00123\ \textcolor{keyword}{inline}\ \mbox{\hyperlink{structRootTableT}{RootTableT}}\ *RootTable::UnPack(const\ ::flatbuffers::resolver\_function\_t\ *\_resolver)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00124\ \ \ \textcolor{keyword}{auto}\ \_o\ =\ std::unique\_ptr<RootTableT>(\textcolor{keyword}{new}\ \mbox{\hyperlink{structRootTableT}{RootTableT}}());}
+\DoxyCodeLine{00125\ \ \ UnPackTo(\_o.get(),\ \_resolver);}
+\DoxyCodeLine{00126\ \ \ \textcolor{keywordflow}{return}\ \_o.release();}
+\DoxyCodeLine{00127\ \}}
+\DoxyCodeLine{00128\ }
+\DoxyCodeLine{00129\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ RootTable::UnPackTo(\mbox{\hyperlink{structRootTableT}{RootTableT}}\ *\_o,\ const\ ::flatbuffers::resolver\_function\_t\ *\_resolver)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00130\ \ \ (\mbox{\hyperlink{namespaceKeywordTest_ac9113d43992ca4eb6d9c5fba0e88fd6eacab8111fd0b710a336c898e539090e34}{void}})\_o;}
+\DoxyCodeLine{00131\ \ \ (\mbox{\hyperlink{namespaceKeywordTest_ac9113d43992ca4eb6d9c5fba0e88fd6eacab8111fd0b710a336c898e539090e34}{void}})\_resolver;}
+\DoxyCodeLine{00132\ \ \ \{\ \textcolor{keyword}{auto}\ \_e\ =\ a();\ \_o-\/>\mbox{\hyperlink{structRootTableT_a8366a827e92934d57c1b7105a5c42243}{a}}\ =\ \_e;\ \}}
+\DoxyCodeLine{00133\ \ \ \{\ \textcolor{keyword}{auto}\ \_e\ =\ b();\ \textcolor{keywordflow}{if}\ (\_e)\ \{\ \_o-\/>b.resize(\_e-\/>size());\ std::copy(\_e-\/>begin(),\ \_e-\/>end(),\ \_o-\/>b.begin());\ \}\ \}}
+\DoxyCodeLine{00134\ \}}
+\DoxyCodeLine{00135\ }
+\DoxyCodeLine{00136\ inline\ ::flatbuffers::Offset<RootTable>\ RootTable::Pack(\mbox{\hyperlink{classflatbuffers_1_1FlatBufferBuilderImpl}{::flatbuffers::FlatBufferBuilder}}\ \&\_fbb,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{structRootTableT}{RootTableT}}*\ \_o,\ const\ ::flatbuffers::rehasher\_function\_t\ *\_rehasher)\ \{}
+\DoxyCodeLine{00137\ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{namespacev1_af73ae78cd7da0f1d5d123f4faa3bedb1}{CreateRootTable}}(\_fbb,\ \_o,\ \_rehasher);}
+\DoxyCodeLine{00138\ \}}
+\DoxyCodeLine{00139\ }
+\DoxyCodeLine{00140\ inline\ ::flatbuffers::Offset<RootTable>\ \mbox{\hyperlink{namespacev1_af73ae78cd7da0f1d5d123f4faa3bedb1}{CreateRootTable}}(\mbox{\hyperlink{classflatbuffers_1_1FlatBufferBuilderImpl}{::flatbuffers::FlatBufferBuilder}}\ \&\_fbb,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{structv1_1_1RootTableT}{RootTableT}}\ *\_o,\ const\ ::flatbuffers::rehasher\_function\_t\ *\_rehasher)\ \{}
+\DoxyCodeLine{00141\ \ \ (void)\_rehasher;}
+\DoxyCodeLine{00142\ \ \ (void)\_o;}
+\DoxyCodeLine{00143\ \ \ \textcolor{keyword}{struct\ }\_VectorArgs\ \{\ \mbox{\hyperlink{classflatbuffers_1_1FlatBufferBuilderImpl}{::flatbuffers::FlatBufferBuilder}}\ *\_\_fbb;\ \textcolor{keyword}{const}\ \mbox{\hyperlink{structv1_1_1RootTableT}{RootTableT}}*\ \_\_o;\ const\ ::flatbuffers::rehasher\_function\_t\ *\_\_rehasher;\ \}\ \_va\ =\ \{\ \&\_fbb,\ \_o,\ \_rehasher\};\ (void)\_va;}
+\DoxyCodeLine{00144\ \ \ \textcolor{keyword}{auto}\ \_a\ =\ \_o-\/>\mbox{\hyperlink{structv1_1_1RootTableT_ae54166d0dc64c7a01c56522a779ee29d}{a}};}
+\DoxyCodeLine{00145\ \ \ \textcolor{keyword}{auto}\ \_b\ =\ \_o-\/>\mbox{\hyperlink{structv1_1_1RootTableT_a8b24d3c50879d9a57781eeb818dea4a4}{b}}.size()\ ?\ \_fbb.\mbox{\hyperlink{classflatbuffers_1_1FlatBufferBuilderImpl_aceecafe87cf7fa1dd4117af618784884}{CreateVector}}(\_o-\/>\mbox{\hyperlink{structv1_1_1RootTableT_a8b24d3c50879d9a57781eeb818dea4a4}{b}})\ :\ 0;}
+\DoxyCodeLine{00146\ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{namespacev1_af73ae78cd7da0f1d5d123f4faa3bedb1}{v1::CreateRootTable}}(}
+\DoxyCodeLine{00147\ \ \ \ \ \ \ \_fbb,}
+\DoxyCodeLine{00148\ \ \ \ \ \ \ \_a,}
+\DoxyCodeLine{00149\ \ \ \ \ \ \ \_b);}
+\DoxyCodeLine{00150\ \}}
+\DoxyCodeLine{00151\ }
+\DoxyCodeLine{00152\ \textcolor{keyword}{inline}\ const\ ::flatbuffers::TypeTable\ *\mbox{\hyperlink{namespacev1_a69a5f20fd9347717823a59d981384f0a}{RootTableTypeTable}}()\ \{}
+\DoxyCodeLine{00153\ \ \ \textcolor{keyword}{static}\ const\ ::flatbuffers::TypeCode\ type\_codes[]\ =\ \{}
+\DoxyCodeLine{00154\ \ \ \ \ \{\ ::flatbuffers::ET\_FLOAT,\ 0,\ -\/1\ \},}
+\DoxyCodeLine{00155\ \ \ \ \ \{\ ::flatbuffers::ET\_UCHAR,\ 1,\ -\/1\ \}}
+\DoxyCodeLine{00156\ \ \ \};}
+\DoxyCodeLine{00157\ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *\ \textcolor{keyword}{const}\ names[]\ =\ \{}
+\DoxyCodeLine{00158\ \ \ \ \ \textcolor{stringliteral}{"{}a"{}},}
+\DoxyCodeLine{00159\ \ \ \ \ \textcolor{stringliteral}{"{}b"{}}}
+\DoxyCodeLine{00160\ \ \ \};}
+\DoxyCodeLine{00161\ \ \ \textcolor{keyword}{static}\ const\ ::flatbuffers::TypeTable\ tt\ =\ \{}
+\DoxyCodeLine{00162\ \ \ \ \ \mbox{\hyperlink{namespaceflatbuffers_a38583f915214f05d7cd1841571d07208a8ecc4069f66bbf1d6547f0bd888520c0}{::flatbuffers::ST\_TABLE}},\ 2,\ type\_codes,\ \textcolor{keyword}{nullptr},\ \textcolor{keyword}{nullptr},\ \textcolor{keyword}{nullptr},\ names}
+\DoxyCodeLine{00163\ \ \ \};}
+\DoxyCodeLine{00164\ \ \ \textcolor{keywordflow}{return}\ \&tt;}
+\DoxyCodeLine{00165\ \}}
+\DoxyCodeLine{00166\ }
+\DoxyCodeLine{00167\ \textcolor{keyword}{inline}\ \textcolor{keyword}{const}\ v1::RootTable\ *\mbox{\hyperlink{namespacev1_aecc8d8a9e2591dbb172a49e96874e222}{GetRootTable}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{void}\ *buf)\ \{}
+\DoxyCodeLine{00168\ \ \ return\ ::flatbuffers::GetRoot<v1::RootTable>(buf);}
+\DoxyCodeLine{00169\ \}}
+\DoxyCodeLine{00170\ }
+\DoxyCodeLine{00171\ \textcolor{keyword}{inline}\ \textcolor{keyword}{const}\ v1::RootTable\ *\mbox{\hyperlink{namespacev1_af5d05fbe13980c443989c085323cb80b}{GetSizePrefixedRootTable}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{void}\ *buf)\ \{}
+\DoxyCodeLine{00172\ \ \ return\ ::flatbuffers::GetSizePrefixedRoot<v1::RootTable>(buf);}
+\DoxyCodeLine{00173\ \}}
+\DoxyCodeLine{00174\ }
+\DoxyCodeLine{00175\ \textcolor{keyword}{inline}\ RootTable\ *\mbox{\hyperlink{namespacev1_a2065e25ba297beef3fb849f8ce7b7322}{GetMutableRootTable}}(\textcolor{keywordtype}{void}\ *buf)\ \{}
+\DoxyCodeLine{00176\ \ \ return\ ::flatbuffers::GetMutableRoot<RootTable>(buf);}
+\DoxyCodeLine{00177\ \}}
+\DoxyCodeLine{00178\ }
+\DoxyCodeLine{00179\ \textcolor{keyword}{inline}\ v1::RootTable\ *\mbox{\hyperlink{namespacev1_a1be94162931d9e57dfc0727c0fe56585}{GetMutableSizePrefixedRootTable}}(\textcolor{keywordtype}{void}\ *buf)\ \{}
+\DoxyCodeLine{00180\ \ \ return\ ::flatbuffers::GetMutableSizePrefixedRoot<v1::RootTable>(buf);}
+\DoxyCodeLine{00181\ \}}
+\DoxyCodeLine{00182\ }
+\DoxyCodeLine{00183\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{namespacev1_a543e00121d1db5db20cac4886e6a19c6}{VerifyRootTableBuffer}}(}
+\DoxyCodeLine{00184\ \ \ \ \ \mbox{\hyperlink{namespaceflatbuffers_a3268477941df91db2eb06442b6e5f922}{::flatbuffers::Verifier}}\ \&verifier)\ \{}
+\DoxyCodeLine{00185\ \ \ \textcolor{keywordflow}{return}\ verifier.VerifyBuffer<v1::RootTable>(\textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00186\ \}}
+\DoxyCodeLine{00187\ }
+\DoxyCodeLine{00188\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{namespacev1_a5f94b894afab3512d3b2dd8eea5662c9}{VerifySizePrefixedRootTableBuffer}}(}
+\DoxyCodeLine{00189\ \ \ \ \ \mbox{\hyperlink{namespaceflatbuffers_a3268477941df91db2eb06442b6e5f922}{::flatbuffers::Verifier}}\ \&verifier)\ \{}
+\DoxyCodeLine{00190\ \ \ \textcolor{keywordflow}{return}\ verifier.VerifySizePrefixedBuffer<v1::RootTable>(\textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00191\ \}}
+\DoxyCodeLine{00192\ }
+\DoxyCodeLine{00193\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespacev1_ae749dec08109e6f89cb01444ba7a2376}{FinishRootTableBuffer}}(}
+\DoxyCodeLine{00194\ \ \ \ \ \mbox{\hyperlink{classflatbuffers_1_1FlatBufferBuilderImpl}{::flatbuffers::FlatBufferBuilder}}\ \&fbb,}
+\DoxyCodeLine{00195\ \ \ \ \ ::flatbuffers::Offset<v1::RootTable>\ root)\ \{}
+\DoxyCodeLine{00196\ \ \ fbb.\mbox{\hyperlink{classflatbuffers_1_1FlatBufferBuilderImpl_a813b376143a53bd2828d9684713fe03c}{Finish}}(root);}
+\DoxyCodeLine{00197\ \}}
+\DoxyCodeLine{00198\ }
+\DoxyCodeLine{00199\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespacev1_afa8e08c75e67b50960a8bd2a345f438e}{FinishSizePrefixedRootTableBuffer}}(}
+\DoxyCodeLine{00200\ \ \ \ \ \mbox{\hyperlink{classflatbuffers_1_1FlatBufferBuilderImpl}{::flatbuffers::FlatBufferBuilder}}\ \&fbb,}
+\DoxyCodeLine{00201\ \ \ \ \ ::flatbuffers::Offset<v1::RootTable>\ root)\ \{}
+\DoxyCodeLine{00202\ \ \ fbb.\mbox{\hyperlink{classflatbuffers_1_1FlatBufferBuilderImpl_aaa87fe5c3b85e47bb959e6d1aec96b2c}{FinishSizePrefixed}}(root);}
+\DoxyCodeLine{00203\ \}}
+\DoxyCodeLine{00204\ }
+\DoxyCodeLine{00205\ \textcolor{keyword}{inline}\ std::unique\_ptr<v1::RootTableT>\ \mbox{\hyperlink{namespacev1_a97418c78b5b8621cb16bbf8266b4c491}{UnPackRootTable}}(}
+\DoxyCodeLine{00206\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{void}\ *buf,}
+\DoxyCodeLine{00207\ \ \ \ \ const\ ::flatbuffers::resolver\_function\_t\ *res\ =\ \textcolor{keyword}{nullptr})\ \{}
+\DoxyCodeLine{00208\ \ \ \textcolor{keywordflow}{return}\ std::unique\_ptr<v1::RootTableT>(\mbox{\hyperlink{namespacev1_aecc8d8a9e2591dbb172a49e96874e222}{GetRootTable}}(buf)-\/>UnPack(res));}
+\DoxyCodeLine{00209\ \}}
+\DoxyCodeLine{00210\ }
+\DoxyCodeLine{00211\ \textcolor{keyword}{inline}\ std::unique\_ptr<v1::RootTableT>\ \mbox{\hyperlink{namespacev1_a6eea568b341cbeaa83f7fe7beef1dee9}{UnPackSizePrefixedRootTable}}(}
+\DoxyCodeLine{00212\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{void}\ *buf,}
+\DoxyCodeLine{00213\ \ \ \ \ const\ ::flatbuffers::resolver\_function\_t\ *res\ =\ \textcolor{keyword}{nullptr})\ \{}
+\DoxyCodeLine{00214\ \ \ \textcolor{keywordflow}{return}\ std::unique\_ptr<v1::RootTableT>(\mbox{\hyperlink{namespacev1_af5d05fbe13980c443989c085323cb80b}{GetSizePrefixedRootTable}}(buf)-\/>UnPack(res));}
+\DoxyCodeLine{00215\ \}}
+\DoxyCodeLine{00216\ }
+\DoxyCodeLine{00217\ \}\ \ \textcolor{comment}{//\ namespace\ v1}}
+\DoxyCodeLine{00218\ }
+\DoxyCodeLine{00219\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ FLATBUFFERS\_GENERATED\_V1\_V1\_H\_}}
+
+\end{DoxyCode}

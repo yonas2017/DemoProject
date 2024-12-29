@@ -1,0 +1,1159 @@
+\doxysection{Google.\+Flat\+Buffers.\+Byte\+Buffer Class Reference}
+\hypertarget{classGoogle_1_1FlatBuffers_1_1ByteBuffer}{}\label{classGoogle_1_1FlatBuffers_1_1ByteBuffer}\index{Google.FlatBuffers.ByteBuffer@{Google.FlatBuffers.ByteBuffer}}
+
+
+Class to mimic Java\textquotesingle{}s Byte\+Buffer which is used heavily in Flatbuffers.  
+
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classGoogle_1_1FlatBuffers_1_1ByteBuffer_a5514d149af7ec51a382d4e0af378c06c}{Byte\+Buffer}} (\mbox{\hyperlink{classGoogle_1_1FlatBuffers_1_1ByteBufferAllocator}{Byte\+Buffer\+Allocator}} allocator, int position)
+\item 
+\mbox{\hyperlink{classGoogle_1_1FlatBuffers_1_1ByteBuffer_a79865de1e0c266726b0b4b4704c553f2}{Byte\+Buffer}} (int size)
+\item 
+\mbox{\hyperlink{classGoogle_1_1FlatBuffers_1_1ByteBuffer_a891bfa33a8aca296598c2d440335ed42}{Byte\+Buffer}} (byte\mbox{[}$\,$\mbox{]} buffer)
+\item 
+\mbox{\hyperlink{classGoogle_1_1FlatBuffers_1_1ByteBuffer_a635c85ac266e1d690616e2dd94b83a35}{Byte\+Buffer}} (byte\mbox{[}$\,$\mbox{]} buffer, int pos)
+\item 
+void \mbox{\hyperlink{classGoogle_1_1FlatBuffers_1_1ByteBuffer_a0c2a7eed386daab8879eea6e674c7329}{Reset}} ()
+\item 
+\mbox{\hyperlink{classGoogle_1_1FlatBuffers_1_1ByteBuffer}{Byte\+Buffer}} \mbox{\hyperlink{classGoogle_1_1FlatBuffers_1_1ByteBuffer_a3dcdbec24b480fa7deb9643c7aaca81e}{Duplicate}} ()
+\item 
+void \mbox{\hyperlink{classGoogle_1_1FlatBuffers_1_1ByteBuffer_aba8085c48fdc3931eb93f00bc194fb4a}{Grow\+Front}} (int new\+Size)
+\item 
+byte\mbox{[}$\,$\mbox{]} \mbox{\hyperlink{classGoogle_1_1FlatBuffers_1_1ByteBuffer_a217a7744d36423e40ec8115ef44b253f}{To\+Array}} (int pos, int len)
+\item 
+T\mbox{[}$\,$\mbox{]} \mbox{\hyperlink{classGoogle_1_1FlatBuffers_1_1ByteBuffer_a05e7fc6ac5909acf24b220d0ba17651f}{To\+Array$<$ T $>$}} (int pos, int len)
+\item 
+byte\mbox{[}$\,$\mbox{]} \mbox{\hyperlink{classGoogle_1_1FlatBuffers_1_1ByteBuffer_a4f845bfa9afea2fe43950aef2b447a3b}{To\+Sized\+Array}} ()
+\item 
+byte\mbox{[}$\,$\mbox{]} \mbox{\hyperlink{classGoogle_1_1FlatBuffers_1_1ByteBuffer_a07af6360783375c79f451b7f65ecf97b}{To\+Full\+Array}} ()
+\item 
+Array\+Segment$<$ byte $>$ \mbox{\hyperlink{classGoogle_1_1FlatBuffers_1_1ByteBuffer_af6ecb73a4fc47d1db76d5538f9c303aa}{To\+Array\+Segment}} (int pos, int len)
+\item 
+Memory\+Stream \mbox{\hyperlink{classGoogle_1_1FlatBuffers_1_1ByteBuffer_acbf794fcd34b79baf236cdeb172ab4c2}{To\+Memory\+Stream}} (int pos, int len)
+\item 
+void \mbox{\hyperlink{classGoogle_1_1FlatBuffers_1_1ByteBuffer_a34c142ca5620b6814a772722949af6f3}{Put\+Sbyte}} (int offset, sbyte \mbox{\hyperlink{annotated__binary__text__gen_8cpp_a5c33da5929c9f2f9ef8d006d2350e6ec}{value}})
+\item 
+void \mbox{\hyperlink{classGoogle_1_1FlatBuffers_1_1ByteBuffer_aeec3f9f7fe1b4b0b4f9f1cc5c1483fe2}{Put\+Byte}} (int offset, byte \mbox{\hyperlink{annotated__binary__text__gen_8cpp_a5c33da5929c9f2f9ef8d006d2350e6ec}{value}})
+\item 
+void \mbox{\hyperlink{classGoogle_1_1FlatBuffers_1_1ByteBuffer_a527748b75fbcec1f741487f2e056c74d}{Put\+Byte}} (int offset, byte \mbox{\hyperlink{annotated__binary__text__gen_8cpp_a5c33da5929c9f2f9ef8d006d2350e6ec}{value}}, int \mbox{\hyperlink{gmock__stress__test_8cc_afd9db40e3361ae09188795e8cbe19752}{count}})
+\item 
+void \mbox{\hyperlink{classGoogle_1_1FlatBuffers_1_1ByteBuffer_a52cc136abf8018c0708f34ef3d57cbf8}{Put}} (int offset, byte \mbox{\hyperlink{annotated__binary__text__gen_8cpp_a5c33da5929c9f2f9ef8d006d2350e6ec}{value}})
+\item 
+void \mbox{\hyperlink{classGoogle_1_1FlatBuffers_1_1ByteBuffer_a7d87b6661cac9a3551e57951778dcd81}{Put\+String\+UTF8}} (int offset, string \mbox{\hyperlink{annotated__binary__text__gen_8cpp_a5c33da5929c9f2f9ef8d006d2350e6ec}{value}})
+\item 
+void \mbox{\hyperlink{classGoogle_1_1FlatBuffers_1_1ByteBuffer_a2d53d3b633086ac64cb82ae364ff19fe}{Put\+Short}} (int offset, short \mbox{\hyperlink{annotated__binary__text__gen_8cpp_a5c33da5929c9f2f9ef8d006d2350e6ec}{value}})
+\item 
+void \mbox{\hyperlink{classGoogle_1_1FlatBuffers_1_1ByteBuffer_a139d84e22cc893263bf35b4493ca51b7}{Put\+Ushort}} (int offset, ushort \mbox{\hyperlink{annotated__binary__text__gen_8cpp_a5c33da5929c9f2f9ef8d006d2350e6ec}{value}})
+\item 
+void \mbox{\hyperlink{classGoogle_1_1FlatBuffers_1_1ByteBuffer_a5b9a0c104768f1e55360c367ed53c19f}{Put\+Int}} (int offset, int \mbox{\hyperlink{annotated__binary__text__gen_8cpp_a5c33da5929c9f2f9ef8d006d2350e6ec}{value}})
+\item 
+void \mbox{\hyperlink{classGoogle_1_1FlatBuffers_1_1ByteBuffer_a3f0f9d52f2cc2e342c12d39e5c21ca66}{Put\+Uint}} (int offset, uint \mbox{\hyperlink{annotated__binary__text__gen_8cpp_a5c33da5929c9f2f9ef8d006d2350e6ec}{value}})
+\item 
+void \mbox{\hyperlink{classGoogle_1_1FlatBuffers_1_1ByteBuffer_a5f7ee2f7dd3206e83578ae1ce26c82da}{Put\+Long}} (int offset, long \mbox{\hyperlink{annotated__binary__text__gen_8cpp_a5c33da5929c9f2f9ef8d006d2350e6ec}{value}})
+\item 
+void \mbox{\hyperlink{classGoogle_1_1FlatBuffers_1_1ByteBuffer_a18bb27518f55da26c484b9b61361932d}{Put\+Ulong}} (int offset, ulong \mbox{\hyperlink{annotated__binary__text__gen_8cpp_a5c33da5929c9f2f9ef8d006d2350e6ec}{value}})
+\item 
+void \mbox{\hyperlink{classGoogle_1_1FlatBuffers_1_1ByteBuffer_a7756666dbb93490e69dcfc539550fb8c}{Put\+Float}} (int offset, float \mbox{\hyperlink{annotated__binary__text__gen_8cpp_a5c33da5929c9f2f9ef8d006d2350e6ec}{value}})
+\item 
+void \mbox{\hyperlink{classGoogle_1_1FlatBuffers_1_1ByteBuffer_ab8ede71fb29facfcedeb68f21feb3dfe}{Put\+Double}} (int offset, double \mbox{\hyperlink{annotated__binary__text__gen_8cpp_a5c33da5929c9f2f9ef8d006d2350e6ec}{value}})
+\item 
+sbyte \mbox{\hyperlink{classGoogle_1_1FlatBuffers_1_1ByteBuffer_a76b55c09107679a0cfef9e93ebcb70e3}{Get\+Sbyte}} (int index)
+\item 
+byte \mbox{\hyperlink{classGoogle_1_1FlatBuffers_1_1ByteBuffer_ab30e71cbfe3fcee139066080e0b1a336}{Get}} (int index)
+\item 
+string \mbox{\hyperlink{classGoogle_1_1FlatBuffers_1_1ByteBuffer_a1dbd96a0a333470484e50a6bb60ac365}{Get\+String\+UTF8}} (int start\+Pos, int len)
+\item 
+short \mbox{\hyperlink{classGoogle_1_1FlatBuffers_1_1ByteBuffer_afb25b1e1c16694ac36082b2f6fd986f0}{Get\+Short}} (int index)
+\item 
+ushort \mbox{\hyperlink{classGoogle_1_1FlatBuffers_1_1ByteBuffer_a6f07b367daf9559b3ddfec2bd6503469}{Get\+Ushort}} (int index)
+\item 
+int \mbox{\hyperlink{classGoogle_1_1FlatBuffers_1_1ByteBuffer_acf2ec6721338b92afb162b27ae8bdeab}{Get\+Int}} (int index)
+\item 
+uint \mbox{\hyperlink{classGoogle_1_1FlatBuffers_1_1ByteBuffer_a3276c703c92993cb8859e1b69d2965b3}{Get\+Uint}} (int index)
+\item 
+long \mbox{\hyperlink{classGoogle_1_1FlatBuffers_1_1ByteBuffer_ad5af8c54b7f6e18682e8306c4a6446fa}{Get\+Long}} (int index)
+\item 
+ulong \mbox{\hyperlink{classGoogle_1_1FlatBuffers_1_1ByteBuffer_a71edaf64ace4447093067808ff66b066}{Get\+Ulong}} (int index)
+\item 
+float \mbox{\hyperlink{classGoogle_1_1FlatBuffers_1_1ByteBuffer_abdde74d5eb63e7ff5cb2d55251d98f64}{Get\+Float}} (int index)
+\item 
+double \mbox{\hyperlink{classGoogle_1_1FlatBuffers_1_1ByteBuffer_abdc66d31741608b668958a0e9347361d}{Get\+Double}} (int index)
+\item 
+int \mbox{\hyperlink{classGoogle_1_1FlatBuffers_1_1ByteBuffer_a933b128f3a88d3b65ce54be7903d2e83}{Put$<$ T $>$}} (int offset, T\mbox{[}$\,$\mbox{]} \mbox{\hyperlink{gmock-matchers-containers__test_8cc_a6150e0515f7202e2fb518f7206ed97dc}{x}})
+\begin{DoxyCompactList}\small\item\em Copies an array of type T into this buffer, ending at the given offset into this buffer. The starting offset is calculated based on the length of the array and is the value returned. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classGoogle_1_1FlatBuffers_1_1ByteBuffer_a3019990a18e8efb273d19911592b609f}{Put$<$ T $>$}} (int offset, Array\+Segment$<$ T $>$ \mbox{\hyperlink{gmock-matchers-containers__test_8cc_a6150e0515f7202e2fb518f7206ed97dc}{x}})
+\begin{DoxyCompactList}\small\item\em Copies an array segment of type T into this buffer, ending at the given offset into this buffer. The starting offset is calculated based on the count of the array segment and is the value returned. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classGoogle_1_1FlatBuffers_1_1ByteBuffer_a830106c38bdb24bfb288d2be6d60aaaa}{Put$<$ T $>$}} (int offset, Int\+Ptr ptr, int size\+In\+Bytes)
+\begin{DoxyCompactList}\small\item\em Copies an array segment of type T into this buffer, ending at the given offset into this buffer. The starting offset is calculated based on the count of the array segment and is the value returned. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classGoogle_1_1FlatBuffers_1_1ByteBuffer_a1c1480d85ab59a5756b3b2af30ed9ea2}{\+\_\+\+\_\+construct}} (\$size)
+\item 
+\mbox{\hyperlink{classGoogle_1_1FlatBuffers_1_1ByteBuffer_a490b9a142f72c348d821dd5b86e7a354}{capacity}} ()
+\item 
+\mbox{\hyperlink{classGoogle_1_1FlatBuffers_1_1ByteBuffer_a2ca502d849475568a5aad6ca4e6070fc}{get\+Position}} ()
+\item 
+\mbox{\hyperlink{classGoogle_1_1FlatBuffers_1_1ByteBuffer_a9bdf2596c765dc80f365795e1e175bff}{set\+Position}} (\$pos)
+\item 
+\mbox{\hyperlink{classGoogle_1_1FlatBuffers_1_1ByteBuffer_acd649922b8d92b88d3474c2fc9576e14}{reset}} ()
+\item 
+\mbox{\hyperlink{classGoogle_1_1FlatBuffers_1_1ByteBuffer_afbe57a5c9abd0c04cd5b1fcb9021d8ac}{length}} ()
+\item 
+\mbox{\hyperlink{classGoogle_1_1FlatBuffers_1_1ByteBuffer_ac1484fb704257887bbf9793ab9f80d1f}{data}} ()
+\item 
+\mbox{\hyperlink{classGoogle_1_1FlatBuffers_1_1ByteBuffer_a4621126e4432a77c8d3cbca24197ddf4}{write\+Little\+Endian}} (\$offset, \$\mbox{\hyperlink{gmock__stress__test_8cc_afd9db40e3361ae09188795e8cbe19752}{count}}, \$\mbox{\hyperlink{classGoogle_1_1FlatBuffers_1_1ByteBuffer_ac1484fb704257887bbf9793ab9f80d1f}{data}})
+\item 
+\mbox{\hyperlink{classGoogle_1_1FlatBuffers_1_1ByteBuffer_aa3a3955599470ae63e146f92c9397cef}{read\+Little\+Endian}} (\$offset, \$\mbox{\hyperlink{gmock__stress__test_8cc_afd9db40e3361ae09188795e8cbe19752}{count}}, \$force\+\_\+bigendian=false)
+\item 
+\mbox{\hyperlink{classGoogle_1_1FlatBuffers_1_1ByteBuffer_aaf845ed862d6068f15e8159dfde64679}{assert\+Offset\+And\+Length}} (\$offset, \$\mbox{\hyperlink{classGoogle_1_1FlatBuffers_1_1ByteBuffer_afbe57a5c9abd0c04cd5b1fcb9021d8ac}{length}})
+\item 
+\mbox{\hyperlink{classGoogle_1_1FlatBuffers_1_1ByteBuffer_a58d0f52062edbd1827e2eed6a1bb8b1a}{put\+Sbyte}} (\$offset, \$\mbox{\hyperlink{annotated__binary__text__gen_8cpp_a5c33da5929c9f2f9ef8d006d2350e6ec}{value}})
+\item 
+\mbox{\hyperlink{classGoogle_1_1FlatBuffers_1_1ByteBuffer_a4dfc34b3b47b101cb846a0244bca39f7}{put\+Byte}} (\$offset, \$\mbox{\hyperlink{annotated__binary__text__gen_8cpp_a5c33da5929c9f2f9ef8d006d2350e6ec}{value}})
+\item 
+\mbox{\hyperlink{classGoogle_1_1FlatBuffers_1_1ByteBuffer_a52f70d16e4354befa9d64c032f6c3797}{put}} (\$offset, \$\mbox{\hyperlink{annotated__binary__text__gen_8cpp_a5c33da5929c9f2f9ef8d006d2350e6ec}{value}})
+\item 
+\mbox{\hyperlink{classGoogle_1_1FlatBuffers_1_1ByteBuffer_ad181b12409703c350e2da310fa5582ca}{put\+Short}} (\$offset, \$\mbox{\hyperlink{annotated__binary__text__gen_8cpp_a5c33da5929c9f2f9ef8d006d2350e6ec}{value}})
+\item 
+\mbox{\hyperlink{classGoogle_1_1FlatBuffers_1_1ByteBuffer_a0c29d991914bbcbb9cba9d3adf2aa76c}{put\+Ushort}} (\$offset, \$\mbox{\hyperlink{annotated__binary__text__gen_8cpp_a5c33da5929c9f2f9ef8d006d2350e6ec}{value}})
+\item 
+\mbox{\hyperlink{classGoogle_1_1FlatBuffers_1_1ByteBuffer_a9164f600d5312234fc008ba549407cc1}{put\+Int}} (\$offset, \$\mbox{\hyperlink{annotated__binary__text__gen_8cpp_a5c33da5929c9f2f9ef8d006d2350e6ec}{value}})
+\item 
+\mbox{\hyperlink{classGoogle_1_1FlatBuffers_1_1ByteBuffer_ab09baf9fee756fac77ac17538b35a00d}{put\+Uint}} (\$offset, \$\mbox{\hyperlink{annotated__binary__text__gen_8cpp_a5c33da5929c9f2f9ef8d006d2350e6ec}{value}})
+\item 
+\mbox{\hyperlink{classGoogle_1_1FlatBuffers_1_1ByteBuffer_a3226dd68b114b1120304ce3ae05f4e07}{put\+Long}} (\$offset, \$\mbox{\hyperlink{annotated__binary__text__gen_8cpp_a5c33da5929c9f2f9ef8d006d2350e6ec}{value}})
+\item 
+\mbox{\hyperlink{classGoogle_1_1FlatBuffers_1_1ByteBuffer_af012ac6182d8e9656690e0248aefcd3e}{put\+Ulong}} (\$offset, \$\mbox{\hyperlink{annotated__binary__text__gen_8cpp_a5c33da5929c9f2f9ef8d006d2350e6ec}{value}})
+\item 
+\mbox{\hyperlink{classGoogle_1_1FlatBuffers_1_1ByteBuffer_a69cb7b4a5d3e9f14a56fe51a8a2f1723}{put\+Float}} (\$offset, \$\mbox{\hyperlink{annotated__binary__text__gen_8cpp_a5c33da5929c9f2f9ef8d006d2350e6ec}{value}})
+\item 
+\mbox{\hyperlink{classGoogle_1_1FlatBuffers_1_1ByteBuffer_abf0b75351871b2bfb0968c24e8d274df}{put\+Double}} (\$offset, \$\mbox{\hyperlink{annotated__binary__text__gen_8cpp_a5c33da5929c9f2f9ef8d006d2350e6ec}{value}})
+\item 
+\mbox{\hyperlink{classGoogle_1_1FlatBuffers_1_1ByteBuffer_a54c80676d3c683c095182ee5d1db4925}{get\+Byte}} (\$index)
+\item 
+\mbox{\hyperlink{classGoogle_1_1FlatBuffers_1_1ByteBuffer_aeb42415d7004e55ac9e40a7a70208fc5}{get\+Sbyte}} (\$index)
+\item 
+\mbox{\hyperlink{classGoogle_1_1FlatBuffers_1_1ByteBuffer_a811d97222ff8ae4e2e39a36b2b10a782}{getX}} (\&\$buffer)
+\item 
+\mbox{\hyperlink{classGoogle_1_1FlatBuffers_1_1ByteBuffer_a1b7b42ffb6714942e77452d1897bad05}{get}} (\$index)
+\item 
+\mbox{\hyperlink{classGoogle_1_1FlatBuffers_1_1ByteBuffer_a60c05485f6d94f464e22299b60209cbf}{get\+Bool}} (\$index)
+\item 
+\mbox{\hyperlink{classGoogle_1_1FlatBuffers_1_1ByteBuffer_add91d500563272509229123aee2ab651}{get\+Short}} (\$index)
+\item 
+\mbox{\hyperlink{classGoogle_1_1FlatBuffers_1_1ByteBuffer_ac883432d1b52bc736c949be4081dd61a}{get\+UShort}} (\$index)
+\item 
+\mbox{\hyperlink{classGoogle_1_1FlatBuffers_1_1ByteBuffer_a9afd207525162c36489645987c764a94}{get\+Int}} (\$index)
+\item 
+\mbox{\hyperlink{classGoogle_1_1FlatBuffers_1_1ByteBuffer_af518fbc96a4d7398e1930d05f1db9c59}{get\+Uint}} (\$index)
+\item 
+\mbox{\hyperlink{classGoogle_1_1FlatBuffers_1_1ByteBuffer_ad34d5932b54cb6e2c40565535a8dfdce}{get\+Long}} (\$index)
+\item 
+\mbox{\hyperlink{classGoogle_1_1FlatBuffers_1_1ByteBuffer_acfe045bf4058df2aa09c1eacdb1d9289}{get\+Ulong}} (\$index)
+\item 
+\mbox{\hyperlink{classGoogle_1_1FlatBuffers_1_1ByteBuffer_a53b15dc0d6e453b76f7f05917cf7210a}{get\+Float}} (\$index)
+\item 
+\mbox{\hyperlink{classGoogle_1_1FlatBuffers_1_1ByteBuffer_a6712a0cf5aad7166317d6568f3ed4fb5}{get\+Double}} (\$index)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static int \mbox{\hyperlink{classGoogle_1_1FlatBuffers_1_1ByteBuffer_a7b1c8281d39e433fbbb1b0e7c560448a}{Size\+Of$<$ T $>$}} ()
+\begin{DoxyCompactList}\small\item\em Get the wire-\/size (in bytes) of a type supported by flatbuffers. \end{DoxyCompactList}\item 
+static bool \mbox{\hyperlink{classGoogle_1_1FlatBuffers_1_1ByteBuffer_ac42b1e9b544a3c97b8054c00fc1d01c0}{Is\+Supported\+Type$<$ T $>$}} ()
+\begin{DoxyCompactList}\small\item\em Checks if the Type provided is supported as scalar value. \end{DoxyCompactList}\item 
+static int \mbox{\hyperlink{classGoogle_1_1FlatBuffers_1_1ByteBuffer_acfdf1c5c8ff6c7b2b286cff217ca078d}{Array\+Size$<$ T $>$}} (T\mbox{[}$\,$\mbox{]} \mbox{\hyperlink{gmock-matchers-containers__test_8cc_a6150e0515f7202e2fb518f7206ed97dc}{x}})
+\begin{DoxyCompactList}\small\item\em Get the wire-\/size (in bytes) of an typed array. \end{DoxyCompactList}\item 
+static int \mbox{\hyperlink{classGoogle_1_1FlatBuffers_1_1ByteBuffer_a50ca89f894021f1e9e68b3874db4a88e}{Array\+Size$<$ T $>$}} (Array\+Segment$<$ T $>$ \mbox{\hyperlink{gmock-matchers-containers__test_8cc_a6150e0515f7202e2fb518f7206ed97dc}{x}})
+\begin{DoxyCompactList}\small\item\em Get the wire-\/size (in bytes) of an typed array segment, taking only the range specified by {\itshape x}  into account. \end{DoxyCompactList}\item 
+static ushort \mbox{\hyperlink{classGoogle_1_1FlatBuffers_1_1ByteBuffer_ab8261b7b1372a63054d30950c038eaba}{Reverse\+Bytes}} (ushort input)
+\item 
+static uint \mbox{\hyperlink{classGoogle_1_1FlatBuffers_1_1ByteBuffer_ac674dc8f724423f4e6e003ce0c6e4fd4}{Reverse\+Bytes}} (uint input)
+\item 
+static ulong \mbox{\hyperlink{classGoogle_1_1FlatBuffers_1_1ByteBuffer_ad3c666d83c4fae4fa53a0f1172b5ffff}{Reverse\+Bytes}} (ulong input)
+\item 
+static \mbox{\hyperlink{classGoogle_1_1FlatBuffers_1_1ByteBuffer_a0592604e850105e6428d037b00bae87b}{wrap}} (\$bytes)
+\item 
+static \mbox{\hyperlink{classGoogle_1_1FlatBuffers_1_1ByteBuffer_a1d8782a58e19b31e8469c58134a07ae3}{is\+Little\+Endian}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classGoogle_1_1FlatBuffers_1_1ByteBuffer_ad8712566bdbf4966f7d2e9e4feaadee4}{\$\+\_\+buffer}}
+\item 
+const \mbox{\hyperlink{classGoogle_1_1FlatBuffers_1_1ByteBuffer_acf08e89cfb0f4ca904a908dc25f72843}{\+\_\+\+\_\+\+SHORT}} = 1
+\item 
+const \mbox{\hyperlink{classGoogle_1_1FlatBuffers_1_1ByteBuffer_aaedeb0bb17d0796063fd4cc7845d2260}{\+\_\+\+\_\+\+INT}} = 2
+\item 
+const \mbox{\hyperlink{classGoogle_1_1FlatBuffers_1_1ByteBuffer_a8da3eea1f02059941630a187a1b43ff5}{\+\_\+\+\_\+\+LONG}} = 3
+\item 
+const \mbox{\hyperlink{classGoogle_1_1FlatBuffers_1_1ByteBuffer_a1e404cafe409ce2bc0ab52fde670040e}{\+\_\+\+\_\+\+FLOAT}} = 4
+\item 
+const \mbox{\hyperlink{classGoogle_1_1FlatBuffers_1_1ByteBuffer_af50234271e419a9fecf63b456f2bd96a}{\+\_\+\+\_\+\+DOUBLE}} = 5
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classGoogle_1_1FlatBuffers_1_1ByteBuffer_a7a64c5f5fdc0fd46ffb5821da7fd9ccf}{Write\+Little\+Endian}} (int offset, int \mbox{\hyperlink{gmock__stress__test_8cc_afd9db40e3361ae09188795e8cbe19752}{count}}, ulong \mbox{\hyperlink{classGoogle_1_1FlatBuffers_1_1ByteBuffer_ac1484fb704257887bbf9793ab9f80d1f}{data}})
+\item 
+ulong \mbox{\hyperlink{classGoogle_1_1FlatBuffers_1_1ByteBuffer_aaa8f70e6e776a649f4dd058142482e44}{Read\+Little\+Endian}} (int offset, int \mbox{\hyperlink{gmock__stress__test_8cc_afd9db40e3361ae09188795e8cbe19752}{count}})
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{classGoogle_1_1FlatBuffers_1_1ByteBuffer_a95227c322181cf3f8bf2751a85ccac36}{Position}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\item 
+int \mbox{\hyperlink{classGoogle_1_1FlatBuffers_1_1ByteBuffer_ad4e2dbbc689ef800557291f9c1192685}{Length}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class to mimic Java\textquotesingle{}s Byte\+Buffer which is used heavily in Flatbuffers. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classGoogle_1_1FlatBuffers_1_1ByteBuffer_a5514d149af7ec51a382d4e0af378c06c}\label{classGoogle_1_1FlatBuffers_1_1ByteBuffer_a5514d149af7ec51a382d4e0af378c06c} 
+\index{Google.FlatBuffers.ByteBuffer@{Google.FlatBuffers.ByteBuffer}!ByteBuffer@{ByteBuffer}}
+\index{ByteBuffer@{ByteBuffer}!Google.FlatBuffers.ByteBuffer@{Google.FlatBuffers.ByteBuffer}}
+\doxysubsubsection{\texorpdfstring{ByteBuffer()}{ByteBuffer()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily Google.\+Flat\+Buffers.\+Byte\+Buffer.\+Byte\+Buffer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classGoogle_1_1FlatBuffers_1_1ByteBufferAllocator}{Byte\+Buffer\+Allocator}}}]{allocator,  }\item[{int}]{position }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classGoogle_1_1FlatBuffers_1_1ByteBuffer_a79865de1e0c266726b0b4b4704c553f2}\label{classGoogle_1_1FlatBuffers_1_1ByteBuffer_a79865de1e0c266726b0b4b4704c553f2} 
+\index{Google.FlatBuffers.ByteBuffer@{Google.FlatBuffers.ByteBuffer}!ByteBuffer@{ByteBuffer}}
+\index{ByteBuffer@{ByteBuffer}!Google.FlatBuffers.ByteBuffer@{Google.FlatBuffers.ByteBuffer}}
+\doxysubsubsection{\texorpdfstring{ByteBuffer()}{ByteBuffer()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily Google.\+Flat\+Buffers.\+Byte\+Buffer.\+Byte\+Buffer (\begin{DoxyParamCaption}\item[{int}]{size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classGoogle_1_1FlatBuffers_1_1ByteBuffer_a891bfa33a8aca296598c2d440335ed42}\label{classGoogle_1_1FlatBuffers_1_1ByteBuffer_a891bfa33a8aca296598c2d440335ed42} 
+\index{Google.FlatBuffers.ByteBuffer@{Google.FlatBuffers.ByteBuffer}!ByteBuffer@{ByteBuffer}}
+\index{ByteBuffer@{ByteBuffer}!Google.FlatBuffers.ByteBuffer@{Google.FlatBuffers.ByteBuffer}}
+\doxysubsubsection{\texorpdfstring{ByteBuffer()}{ByteBuffer()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily Google.\+Flat\+Buffers.\+Byte\+Buffer.\+Byte\+Buffer (\begin{DoxyParamCaption}\item[{byte\mbox{[}$\,$\mbox{]}}]{buffer }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classGoogle_1_1FlatBuffers_1_1ByteBuffer_a635c85ac266e1d690616e2dd94b83a35}\label{classGoogle_1_1FlatBuffers_1_1ByteBuffer_a635c85ac266e1d690616e2dd94b83a35} 
+\index{Google.FlatBuffers.ByteBuffer@{Google.FlatBuffers.ByteBuffer}!ByteBuffer@{ByteBuffer}}
+\index{ByteBuffer@{ByteBuffer}!Google.FlatBuffers.ByteBuffer@{Google.FlatBuffers.ByteBuffer}}
+\doxysubsubsection{\texorpdfstring{ByteBuffer()}{ByteBuffer()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily Google.\+Flat\+Buffers.\+Byte\+Buffer.\+Byte\+Buffer (\begin{DoxyParamCaption}\item[{byte\mbox{[}$\,$\mbox{]}}]{buffer,  }\item[{int}]{pos }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classGoogle_1_1FlatBuffers_1_1ByteBuffer_a1c1480d85ab59a5756b3b2af30ed9ea2}\label{classGoogle_1_1FlatBuffers_1_1ByteBuffer_a1c1480d85ab59a5756b3b2af30ed9ea2} 
+\index{Google.FlatBuffers.ByteBuffer@{Google.FlatBuffers.ByteBuffer}!\_\_construct@{\_\_construct}}
+\index{\_\_construct@{\_\_construct}!Google.FlatBuffers.ByteBuffer@{Google.FlatBuffers.ByteBuffer}}
+\doxysubsubsection{\texorpdfstring{\_\_construct()}{\_\_construct()}}
+{\footnotesize\ttfamily Google.\+Flat\+Buffers.\+Byte\+Buffer.\+\_\+\+\_\+construct (\begin{DoxyParamCaption}\item[{}]{\$size }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em \$size} & \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classGoogle_1_1FlatBuffers_1_1ByteBuffer_a50ca89f894021f1e9e68b3874db4a88e}\label{classGoogle_1_1FlatBuffers_1_1ByteBuffer_a50ca89f894021f1e9e68b3874db4a88e} 
+\index{Google.FlatBuffers.ByteBuffer@{Google.FlatBuffers.ByteBuffer}!ArraySize$<$ T $>$@{ArraySize$<$ T $>$}}
+\index{ArraySize$<$ T $>$@{ArraySize$<$ T $>$}!Google.FlatBuffers.ByteBuffer@{Google.FlatBuffers.ByteBuffer}}
+\doxysubsubsection{\texorpdfstring{ArraySize$<$ T $>$()}{ArraySize< T >()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily static int Google.\+Flat\+Buffers.\+Byte\+Buffer.\+Array\+Size$<$ T $>$ (\begin{DoxyParamCaption}\item[{Array\+Segment$<$ T $>$}]{x }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Get the wire-\/size (in bytes) of an typed array segment, taking only the range specified by {\itshape x}  into account. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & The type of the array\\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em x} & The array segment to get the size of\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The number of bytes the array segment takes on wire
+\end{DoxyReturn}
+\Hypertarget{classGoogle_1_1FlatBuffers_1_1ByteBuffer_acfdf1c5c8ff6c7b2b286cff217ca078d}\label{classGoogle_1_1FlatBuffers_1_1ByteBuffer_acfdf1c5c8ff6c7b2b286cff217ca078d} 
+\index{Google.FlatBuffers.ByteBuffer@{Google.FlatBuffers.ByteBuffer}!ArraySize$<$ T $>$@{ArraySize$<$ T $>$}}
+\index{ArraySize$<$ T $>$@{ArraySize$<$ T $>$}!Google.FlatBuffers.ByteBuffer@{Google.FlatBuffers.ByteBuffer}}
+\doxysubsubsection{\texorpdfstring{ArraySize$<$ T $>$()}{ArraySize< T >()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily static int Google.\+Flat\+Buffers.\+Byte\+Buffer.\+Array\+Size$<$ T $>$ (\begin{DoxyParamCaption}\item[{T\mbox{[}$\,$\mbox{]}}]{x }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Get the wire-\/size (in bytes) of an typed array. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & The type of the array\\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em x} & The array to get the size of\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The number of bytes the array takes on wire
+\end{DoxyReturn}
+\Hypertarget{classGoogle_1_1FlatBuffers_1_1ByteBuffer_aaf845ed862d6068f15e8159dfde64679}\label{classGoogle_1_1FlatBuffers_1_1ByteBuffer_aaf845ed862d6068f15e8159dfde64679} 
+\index{Google.FlatBuffers.ByteBuffer@{Google.FlatBuffers.ByteBuffer}!assertOffsetAndLength@{assertOffsetAndLength}}
+\index{assertOffsetAndLength@{assertOffsetAndLength}!Google.FlatBuffers.ByteBuffer@{Google.FlatBuffers.ByteBuffer}}
+\doxysubsubsection{\texorpdfstring{assertOffsetAndLength()}{assertOffsetAndLength()}}
+{\footnotesize\ttfamily Google.\+Flat\+Buffers.\+Byte\+Buffer.\+assert\+Offset\+And\+Length (\begin{DoxyParamCaption}\item[{}]{\$offset,  }\item[{}]{\$length }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em \$offset} & \\
+\hline
+{\em \$length} & \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classGoogle_1_1FlatBuffers_1_1ByteBuffer_a490b9a142f72c348d821dd5b86e7a354}\label{classGoogle_1_1FlatBuffers_1_1ByteBuffer_a490b9a142f72c348d821dd5b86e7a354} 
+\index{Google.FlatBuffers.ByteBuffer@{Google.FlatBuffers.ByteBuffer}!capacity@{capacity}}
+\index{capacity@{capacity}!Google.FlatBuffers.ByteBuffer@{Google.FlatBuffers.ByteBuffer}}
+\doxysubsubsection{\texorpdfstring{capacity()}{capacity()}}
+{\footnotesize\ttfamily Google.\+Flat\+Buffers.\+Byte\+Buffer.\+capacity (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\begin{DoxyReturn}{Returns}
+int 
+\end{DoxyReturn}
+\Hypertarget{classGoogle_1_1FlatBuffers_1_1ByteBuffer_ac1484fb704257887bbf9793ab9f80d1f}\label{classGoogle_1_1FlatBuffers_1_1ByteBuffer_ac1484fb704257887bbf9793ab9f80d1f} 
+\index{Google.FlatBuffers.ByteBuffer@{Google.FlatBuffers.ByteBuffer}!data@{data}}
+\index{data@{data}!Google.FlatBuffers.ByteBuffer@{Google.FlatBuffers.ByteBuffer}}
+\doxysubsubsection{\texorpdfstring{data()}{data()}}
+{\footnotesize\ttfamily Google.\+Flat\+Buffers.\+Byte\+Buffer.\+data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\begin{DoxyReturn}{Returns}
+string 
+\end{DoxyReturn}
+\Hypertarget{classGoogle_1_1FlatBuffers_1_1ByteBuffer_a3dcdbec24b480fa7deb9643c7aaca81e}\label{classGoogle_1_1FlatBuffers_1_1ByteBuffer_a3dcdbec24b480fa7deb9643c7aaca81e} 
+\index{Google.FlatBuffers.ByteBuffer@{Google.FlatBuffers.ByteBuffer}!Duplicate@{Duplicate}}
+\index{Duplicate@{Duplicate}!Google.FlatBuffers.ByteBuffer@{Google.FlatBuffers.ByteBuffer}}
+\doxysubsubsection{\texorpdfstring{Duplicate()}{Duplicate()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classGoogle_1_1FlatBuffers_1_1ByteBuffer}{Byte\+Buffer}} Google.\+Flat\+Buffers.\+Byte\+Buffer.\+Duplicate (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classGoogle_1_1FlatBuffers_1_1ByteBuffer_a1b7b42ffb6714942e77452d1897bad05}\label{classGoogle_1_1FlatBuffers_1_1ByteBuffer_a1b7b42ffb6714942e77452d1897bad05} 
+\index{Google.FlatBuffers.ByteBuffer@{Google.FlatBuffers.ByteBuffer}!get@{get}}
+\index{get@{get}!Google.FlatBuffers.ByteBuffer@{Google.FlatBuffers.ByteBuffer}}
+\doxysubsubsection{\texorpdfstring{get()}{get()}}
+{\footnotesize\ttfamily Google.\+Flat\+Buffers.\+Byte\+Buffer.\+get (\begin{DoxyParamCaption}\item[{}]{\$index }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em \$index} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+mixed 
+\end{DoxyReturn}
+\Hypertarget{classGoogle_1_1FlatBuffers_1_1ByteBuffer_ab30e71cbfe3fcee139066080e0b1a336}\label{classGoogle_1_1FlatBuffers_1_1ByteBuffer_ab30e71cbfe3fcee139066080e0b1a336} 
+\index{Google.FlatBuffers.ByteBuffer@{Google.FlatBuffers.ByteBuffer}!Get@{Get}}
+\index{Get@{Get}!Google.FlatBuffers.ByteBuffer@{Google.FlatBuffers.ByteBuffer}}
+\doxysubsubsection{\texorpdfstring{Get()}{Get()}}
+{\footnotesize\ttfamily byte Google.\+Flat\+Buffers.\+Byte\+Buffer.\+Get (\begin{DoxyParamCaption}\item[{int}]{index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classGoogle_1_1FlatBuffers_1_1ByteBuffer_a60c05485f6d94f464e22299b60209cbf}\label{classGoogle_1_1FlatBuffers_1_1ByteBuffer_a60c05485f6d94f464e22299b60209cbf} 
+\index{Google.FlatBuffers.ByteBuffer@{Google.FlatBuffers.ByteBuffer}!getBool@{getBool}}
+\index{getBool@{getBool}!Google.FlatBuffers.ByteBuffer@{Google.FlatBuffers.ByteBuffer}}
+\doxysubsubsection{\texorpdfstring{getBool()}{getBool()}}
+{\footnotesize\ttfamily Google.\+Flat\+Buffers.\+Byte\+Buffer.\+get\+Bool (\begin{DoxyParamCaption}\item[{}]{\$index }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em \$index} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+mixed 
+\end{DoxyReturn}
+\Hypertarget{classGoogle_1_1FlatBuffers_1_1ByteBuffer_a54c80676d3c683c095182ee5d1db4925}\label{classGoogle_1_1FlatBuffers_1_1ByteBuffer_a54c80676d3c683c095182ee5d1db4925} 
+\index{Google.FlatBuffers.ByteBuffer@{Google.FlatBuffers.ByteBuffer}!getByte@{getByte}}
+\index{getByte@{getByte}!Google.FlatBuffers.ByteBuffer@{Google.FlatBuffers.ByteBuffer}}
+\doxysubsubsection{\texorpdfstring{getByte()}{getByte()}}
+{\footnotesize\ttfamily Google.\+Flat\+Buffers.\+Byte\+Buffer.\+get\+Byte (\begin{DoxyParamCaption}\item[{}]{\$index }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em \$index} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+mixed 
+\end{DoxyReturn}
+\Hypertarget{classGoogle_1_1FlatBuffers_1_1ByteBuffer_a6712a0cf5aad7166317d6568f3ed4fb5}\label{classGoogle_1_1FlatBuffers_1_1ByteBuffer_a6712a0cf5aad7166317d6568f3ed4fb5} 
+\index{Google.FlatBuffers.ByteBuffer@{Google.FlatBuffers.ByteBuffer}!getDouble@{getDouble}}
+\index{getDouble@{getDouble}!Google.FlatBuffers.ByteBuffer@{Google.FlatBuffers.ByteBuffer}}
+\doxysubsubsection{\texorpdfstring{getDouble()}{getDouble()}}
+{\footnotesize\ttfamily Google.\+Flat\+Buffers.\+Byte\+Buffer.\+get\+Double (\begin{DoxyParamCaption}\item[{}]{\$index }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em \$index} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+float 
+\end{DoxyReturn}
+\Hypertarget{classGoogle_1_1FlatBuffers_1_1ByteBuffer_abdc66d31741608b668958a0e9347361d}\label{classGoogle_1_1FlatBuffers_1_1ByteBuffer_abdc66d31741608b668958a0e9347361d} 
+\index{Google.FlatBuffers.ByteBuffer@{Google.FlatBuffers.ByteBuffer}!GetDouble@{GetDouble}}
+\index{GetDouble@{GetDouble}!Google.FlatBuffers.ByteBuffer@{Google.FlatBuffers.ByteBuffer}}
+\doxysubsubsection{\texorpdfstring{GetDouble()}{GetDouble()}}
+{\footnotesize\ttfamily double Google.\+Flat\+Buffers.\+Byte\+Buffer.\+Get\+Double (\begin{DoxyParamCaption}\item[{int}]{index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classGoogle_1_1FlatBuffers_1_1ByteBuffer_a53b15dc0d6e453b76f7f05917cf7210a}\label{classGoogle_1_1FlatBuffers_1_1ByteBuffer_a53b15dc0d6e453b76f7f05917cf7210a} 
+\index{Google.FlatBuffers.ByteBuffer@{Google.FlatBuffers.ByteBuffer}!getFloat@{getFloat}}
+\index{getFloat@{getFloat}!Google.FlatBuffers.ByteBuffer@{Google.FlatBuffers.ByteBuffer}}
+\doxysubsubsection{\texorpdfstring{getFloat()}{getFloat()}}
+{\footnotesize\ttfamily Google.\+Flat\+Buffers.\+Byte\+Buffer.\+get\+Float (\begin{DoxyParamCaption}\item[{}]{\$index }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em \$index} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+mixed 
+\end{DoxyReturn}
+\Hypertarget{classGoogle_1_1FlatBuffers_1_1ByteBuffer_abdde74d5eb63e7ff5cb2d55251d98f64}\label{classGoogle_1_1FlatBuffers_1_1ByteBuffer_abdde74d5eb63e7ff5cb2d55251d98f64} 
+\index{Google.FlatBuffers.ByteBuffer@{Google.FlatBuffers.ByteBuffer}!GetFloat@{GetFloat}}
+\index{GetFloat@{GetFloat}!Google.FlatBuffers.ByteBuffer@{Google.FlatBuffers.ByteBuffer}}
+\doxysubsubsection{\texorpdfstring{GetFloat()}{GetFloat()}}
+{\footnotesize\ttfamily float Google.\+Flat\+Buffers.\+Byte\+Buffer.\+Get\+Float (\begin{DoxyParamCaption}\item[{int}]{index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classGoogle_1_1FlatBuffers_1_1ByteBuffer_a9afd207525162c36489645987c764a94}\label{classGoogle_1_1FlatBuffers_1_1ByteBuffer_a9afd207525162c36489645987c764a94} 
+\index{Google.FlatBuffers.ByteBuffer@{Google.FlatBuffers.ByteBuffer}!getInt@{getInt}}
+\index{getInt@{getInt}!Google.FlatBuffers.ByteBuffer@{Google.FlatBuffers.ByteBuffer}}
+\doxysubsubsection{\texorpdfstring{getInt()}{getInt()}}
+{\footnotesize\ttfamily Google.\+Flat\+Buffers.\+Byte\+Buffer.\+get\+Int (\begin{DoxyParamCaption}\item[{}]{\$index }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em \$index} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int 
+\end{DoxyReturn}
+\Hypertarget{classGoogle_1_1FlatBuffers_1_1ByteBuffer_acf2ec6721338b92afb162b27ae8bdeab}\label{classGoogle_1_1FlatBuffers_1_1ByteBuffer_acf2ec6721338b92afb162b27ae8bdeab} 
+\index{Google.FlatBuffers.ByteBuffer@{Google.FlatBuffers.ByteBuffer}!GetInt@{GetInt}}
+\index{GetInt@{GetInt}!Google.FlatBuffers.ByteBuffer@{Google.FlatBuffers.ByteBuffer}}
+\doxysubsubsection{\texorpdfstring{GetInt()}{GetInt()}}
+{\footnotesize\ttfamily int Google.\+Flat\+Buffers.\+Byte\+Buffer.\+Get\+Int (\begin{DoxyParamCaption}\item[{int}]{index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classGoogle_1_1FlatBuffers_1_1ByteBuffer_ad34d5932b54cb6e2c40565535a8dfdce}\label{classGoogle_1_1FlatBuffers_1_1ByteBuffer_ad34d5932b54cb6e2c40565535a8dfdce} 
+\index{Google.FlatBuffers.ByteBuffer@{Google.FlatBuffers.ByteBuffer}!getLong@{getLong}}
+\index{getLong@{getLong}!Google.FlatBuffers.ByteBuffer@{Google.FlatBuffers.ByteBuffer}}
+\doxysubsubsection{\texorpdfstring{getLong()}{getLong()}}
+{\footnotesize\ttfamily Google.\+Flat\+Buffers.\+Byte\+Buffer.\+get\+Long (\begin{DoxyParamCaption}\item[{}]{\$index }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em \$index} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int 
+\end{DoxyReturn}
+\Hypertarget{classGoogle_1_1FlatBuffers_1_1ByteBuffer_ad5af8c54b7f6e18682e8306c4a6446fa}\label{classGoogle_1_1FlatBuffers_1_1ByteBuffer_ad5af8c54b7f6e18682e8306c4a6446fa} 
+\index{Google.FlatBuffers.ByteBuffer@{Google.FlatBuffers.ByteBuffer}!GetLong@{GetLong}}
+\index{GetLong@{GetLong}!Google.FlatBuffers.ByteBuffer@{Google.FlatBuffers.ByteBuffer}}
+\doxysubsubsection{\texorpdfstring{GetLong()}{GetLong()}}
+{\footnotesize\ttfamily long Google.\+Flat\+Buffers.\+Byte\+Buffer.\+Get\+Long (\begin{DoxyParamCaption}\item[{int}]{index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classGoogle_1_1FlatBuffers_1_1ByteBuffer_a2ca502d849475568a5aad6ca4e6070fc}\label{classGoogle_1_1FlatBuffers_1_1ByteBuffer_a2ca502d849475568a5aad6ca4e6070fc} 
+\index{Google.FlatBuffers.ByteBuffer@{Google.FlatBuffers.ByteBuffer}!getPosition@{getPosition}}
+\index{getPosition@{getPosition}!Google.FlatBuffers.ByteBuffer@{Google.FlatBuffers.ByteBuffer}}
+\doxysubsubsection{\texorpdfstring{getPosition()}{getPosition()}}
+{\footnotesize\ttfamily Google.\+Flat\+Buffers.\+Byte\+Buffer.\+get\+Position (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\begin{DoxyReturn}{Returns}
+int 
+\end{DoxyReturn}
+\Hypertarget{classGoogle_1_1FlatBuffers_1_1ByteBuffer_aeb42415d7004e55ac9e40a7a70208fc5}\label{classGoogle_1_1FlatBuffers_1_1ByteBuffer_aeb42415d7004e55ac9e40a7a70208fc5} 
+\index{Google.FlatBuffers.ByteBuffer@{Google.FlatBuffers.ByteBuffer}!getSbyte@{getSbyte}}
+\index{getSbyte@{getSbyte}!Google.FlatBuffers.ByteBuffer@{Google.FlatBuffers.ByteBuffer}}
+\doxysubsubsection{\texorpdfstring{getSbyte()}{getSbyte()}}
+{\footnotesize\ttfamily Google.\+Flat\+Buffers.\+Byte\+Buffer.\+get\+Sbyte (\begin{DoxyParamCaption}\item[{}]{\$index }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em \$index} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+mixed 
+\end{DoxyReturn}
+\Hypertarget{classGoogle_1_1FlatBuffers_1_1ByteBuffer_a76b55c09107679a0cfef9e93ebcb70e3}\label{classGoogle_1_1FlatBuffers_1_1ByteBuffer_a76b55c09107679a0cfef9e93ebcb70e3} 
+\index{Google.FlatBuffers.ByteBuffer@{Google.FlatBuffers.ByteBuffer}!GetSbyte@{GetSbyte}}
+\index{GetSbyte@{GetSbyte}!Google.FlatBuffers.ByteBuffer@{Google.FlatBuffers.ByteBuffer}}
+\doxysubsubsection{\texorpdfstring{GetSbyte()}{GetSbyte()}}
+{\footnotesize\ttfamily sbyte Google.\+Flat\+Buffers.\+Byte\+Buffer.\+Get\+Sbyte (\begin{DoxyParamCaption}\item[{int}]{index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classGoogle_1_1FlatBuffers_1_1ByteBuffer_add91d500563272509229123aee2ab651}\label{classGoogle_1_1FlatBuffers_1_1ByteBuffer_add91d500563272509229123aee2ab651} 
+\index{Google.FlatBuffers.ByteBuffer@{Google.FlatBuffers.ByteBuffer}!getShort@{getShort}}
+\index{getShort@{getShort}!Google.FlatBuffers.ByteBuffer@{Google.FlatBuffers.ByteBuffer}}
+\doxysubsubsection{\texorpdfstring{getShort()}{getShort()}}
+{\footnotesize\ttfamily Google.\+Flat\+Buffers.\+Byte\+Buffer.\+get\+Short (\begin{DoxyParamCaption}\item[{}]{\$index }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em \$index} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int 
+\end{DoxyReturn}
+\Hypertarget{classGoogle_1_1FlatBuffers_1_1ByteBuffer_afb25b1e1c16694ac36082b2f6fd986f0}\label{classGoogle_1_1FlatBuffers_1_1ByteBuffer_afb25b1e1c16694ac36082b2f6fd986f0} 
+\index{Google.FlatBuffers.ByteBuffer@{Google.FlatBuffers.ByteBuffer}!GetShort@{GetShort}}
+\index{GetShort@{GetShort}!Google.FlatBuffers.ByteBuffer@{Google.FlatBuffers.ByteBuffer}}
+\doxysubsubsection{\texorpdfstring{GetShort()}{GetShort()}}
+{\footnotesize\ttfamily short Google.\+Flat\+Buffers.\+Byte\+Buffer.\+Get\+Short (\begin{DoxyParamCaption}\item[{int}]{index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classGoogle_1_1FlatBuffers_1_1ByteBuffer_a1dbd96a0a333470484e50a6bb60ac365}\label{classGoogle_1_1FlatBuffers_1_1ByteBuffer_a1dbd96a0a333470484e50a6bb60ac365} 
+\index{Google.FlatBuffers.ByteBuffer@{Google.FlatBuffers.ByteBuffer}!GetStringUTF8@{GetStringUTF8}}
+\index{GetStringUTF8@{GetStringUTF8}!Google.FlatBuffers.ByteBuffer@{Google.FlatBuffers.ByteBuffer}}
+\doxysubsubsection{\texorpdfstring{GetStringUTF8()}{GetStringUTF8()}}
+{\footnotesize\ttfamily string Google.\+Flat\+Buffers.\+Byte\+Buffer.\+Get\+String\+UTF8 (\begin{DoxyParamCaption}\item[{int}]{start\+Pos,  }\item[{int}]{len }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classGoogle_1_1FlatBuffers_1_1ByteBuffer_af518fbc96a4d7398e1930d05f1db9c59}\label{classGoogle_1_1FlatBuffers_1_1ByteBuffer_af518fbc96a4d7398e1930d05f1db9c59} 
+\index{Google.FlatBuffers.ByteBuffer@{Google.FlatBuffers.ByteBuffer}!getUint@{getUint}}
+\index{getUint@{getUint}!Google.FlatBuffers.ByteBuffer@{Google.FlatBuffers.ByteBuffer}}
+\doxysubsubsection{\texorpdfstring{getUint()}{getUint()}}
+{\footnotesize\ttfamily Google.\+Flat\+Buffers.\+Byte\+Buffer.\+get\+Uint (\begin{DoxyParamCaption}\item[{}]{\$index }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em \$index} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int 
+\end{DoxyReturn}
+\Hypertarget{classGoogle_1_1FlatBuffers_1_1ByteBuffer_a3276c703c92993cb8859e1b69d2965b3}\label{classGoogle_1_1FlatBuffers_1_1ByteBuffer_a3276c703c92993cb8859e1b69d2965b3} 
+\index{Google.FlatBuffers.ByteBuffer@{Google.FlatBuffers.ByteBuffer}!GetUint@{GetUint}}
+\index{GetUint@{GetUint}!Google.FlatBuffers.ByteBuffer@{Google.FlatBuffers.ByteBuffer}}
+\doxysubsubsection{\texorpdfstring{GetUint()}{GetUint()}}
+{\footnotesize\ttfamily uint Google.\+Flat\+Buffers.\+Byte\+Buffer.\+Get\+Uint (\begin{DoxyParamCaption}\item[{int}]{index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classGoogle_1_1FlatBuffers_1_1ByteBuffer_acfe045bf4058df2aa09c1eacdb1d9289}\label{classGoogle_1_1FlatBuffers_1_1ByteBuffer_acfe045bf4058df2aa09c1eacdb1d9289} 
+\index{Google.FlatBuffers.ByteBuffer@{Google.FlatBuffers.ByteBuffer}!getUlong@{getUlong}}
+\index{getUlong@{getUlong}!Google.FlatBuffers.ByteBuffer@{Google.FlatBuffers.ByteBuffer}}
+\doxysubsubsection{\texorpdfstring{getUlong()}{getUlong()}}
+{\footnotesize\ttfamily Google.\+Flat\+Buffers.\+Byte\+Buffer.\+get\+Ulong (\begin{DoxyParamCaption}\item[{}]{\$index }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em \$index} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int 
+\end{DoxyReturn}
+\Hypertarget{classGoogle_1_1FlatBuffers_1_1ByteBuffer_a71edaf64ace4447093067808ff66b066}\label{classGoogle_1_1FlatBuffers_1_1ByteBuffer_a71edaf64ace4447093067808ff66b066} 
+\index{Google.FlatBuffers.ByteBuffer@{Google.FlatBuffers.ByteBuffer}!GetUlong@{GetUlong}}
+\index{GetUlong@{GetUlong}!Google.FlatBuffers.ByteBuffer@{Google.FlatBuffers.ByteBuffer}}
+\doxysubsubsection{\texorpdfstring{GetUlong()}{GetUlong()}}
+{\footnotesize\ttfamily ulong Google.\+Flat\+Buffers.\+Byte\+Buffer.\+Get\+Ulong (\begin{DoxyParamCaption}\item[{int}]{index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classGoogle_1_1FlatBuffers_1_1ByteBuffer_ac883432d1b52bc736c949be4081dd61a}\label{classGoogle_1_1FlatBuffers_1_1ByteBuffer_ac883432d1b52bc736c949be4081dd61a} 
+\index{Google.FlatBuffers.ByteBuffer@{Google.FlatBuffers.ByteBuffer}!getUShort@{getUShort}}
+\index{getUShort@{getUShort}!Google.FlatBuffers.ByteBuffer@{Google.FlatBuffers.ByteBuffer}}
+\doxysubsubsection{\texorpdfstring{getUShort()}{getUShort()}}
+{\footnotesize\ttfamily Google.\+Flat\+Buffers.\+Byte\+Buffer.\+get\+UShort (\begin{DoxyParamCaption}\item[{}]{\$index }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em \$index} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int 
+\end{DoxyReturn}
+\Hypertarget{classGoogle_1_1FlatBuffers_1_1ByteBuffer_a6f07b367daf9559b3ddfec2bd6503469}\label{classGoogle_1_1FlatBuffers_1_1ByteBuffer_a6f07b367daf9559b3ddfec2bd6503469} 
+\index{Google.FlatBuffers.ByteBuffer@{Google.FlatBuffers.ByteBuffer}!GetUshort@{GetUshort}}
+\index{GetUshort@{GetUshort}!Google.FlatBuffers.ByteBuffer@{Google.FlatBuffers.ByteBuffer}}
+\doxysubsubsection{\texorpdfstring{GetUshort()}{GetUshort()}}
+{\footnotesize\ttfamily ushort Google.\+Flat\+Buffers.\+Byte\+Buffer.\+Get\+Ushort (\begin{DoxyParamCaption}\item[{int}]{index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classGoogle_1_1FlatBuffers_1_1ByteBuffer_a811d97222ff8ae4e2e39a36b2b10a782}\label{classGoogle_1_1FlatBuffers_1_1ByteBuffer_a811d97222ff8ae4e2e39a36b2b10a782} 
+\index{Google.FlatBuffers.ByteBuffer@{Google.FlatBuffers.ByteBuffer}!getX@{getX}}
+\index{getX@{getX}!Google.FlatBuffers.ByteBuffer@{Google.FlatBuffers.ByteBuffer}}
+\doxysubsubsection{\texorpdfstring{getX()}{getX()}}
+{\footnotesize\ttfamily Google.\+Flat\+Buffers.\+Byte\+Buffer.\+getX (\begin{DoxyParamCaption}\item[{\&}]{\$buffer }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em \$buffer} & \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classGoogle_1_1FlatBuffers_1_1ByteBuffer_aba8085c48fdc3931eb93f00bc194fb4a}\label{classGoogle_1_1FlatBuffers_1_1ByteBuffer_aba8085c48fdc3931eb93f00bc194fb4a} 
+\index{Google.FlatBuffers.ByteBuffer@{Google.FlatBuffers.ByteBuffer}!GrowFront@{GrowFront}}
+\index{GrowFront@{GrowFront}!Google.FlatBuffers.ByteBuffer@{Google.FlatBuffers.ByteBuffer}}
+\doxysubsubsection{\texorpdfstring{GrowFront()}{GrowFront()}}
+{\footnotesize\ttfamily void Google.\+Flat\+Buffers.\+Byte\+Buffer.\+Grow\+Front (\begin{DoxyParamCaption}\item[{int}]{new\+Size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classGoogle_1_1FlatBuffers_1_1ByteBuffer_a1d8782a58e19b31e8469c58134a07ae3}\label{classGoogle_1_1FlatBuffers_1_1ByteBuffer_a1d8782a58e19b31e8469c58134a07ae3} 
+\index{Google.FlatBuffers.ByteBuffer@{Google.FlatBuffers.ByteBuffer}!isLittleEndian@{isLittleEndian}}
+\index{isLittleEndian@{isLittleEndian}!Google.FlatBuffers.ByteBuffer@{Google.FlatBuffers.ByteBuffer}}
+\doxysubsubsection{\texorpdfstring{isLittleEndian()}{isLittleEndian()}}
+{\footnotesize\ttfamily static Google.\+Flat\+Buffers.\+Byte\+Buffer.\+is\+Little\+Endian (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\begin{DoxyReturn}{Returns}
+bool 
+\end{DoxyReturn}
+\Hypertarget{classGoogle_1_1FlatBuffers_1_1ByteBuffer_ac42b1e9b544a3c97b8054c00fc1d01c0}\label{classGoogle_1_1FlatBuffers_1_1ByteBuffer_ac42b1e9b544a3c97b8054c00fc1d01c0} 
+\index{Google.FlatBuffers.ByteBuffer@{Google.FlatBuffers.ByteBuffer}!IsSupportedType$<$ T $>$@{IsSupportedType$<$ T $>$}}
+\index{IsSupportedType$<$ T $>$@{IsSupportedType$<$ T $>$}!Google.FlatBuffers.ByteBuffer@{Google.FlatBuffers.ByteBuffer}}
+\doxysubsubsection{\texorpdfstring{IsSupportedType$<$ T $>$()}{IsSupportedType< T >()}}
+{\footnotesize\ttfamily static bool Google.\+Flat\+Buffers.\+Byte\+Buffer.\+Is\+Supported\+Type$<$ T $>$ (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Checks if the Type provided is supported as scalar value. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & The Type to check\\
+\hline
+\end{DoxyTemplParams}
+\begin{DoxyReturn}{Returns}
+True if the type is a scalar type that is supported, falsed otherwise
+\end{DoxyReturn}
+\Hypertarget{classGoogle_1_1FlatBuffers_1_1ByteBuffer_afbe57a5c9abd0c04cd5b1fcb9021d8ac}\label{classGoogle_1_1FlatBuffers_1_1ByteBuffer_afbe57a5c9abd0c04cd5b1fcb9021d8ac} 
+\index{Google.FlatBuffers.ByteBuffer@{Google.FlatBuffers.ByteBuffer}!length@{length}}
+\index{length@{length}!Google.FlatBuffers.ByteBuffer@{Google.FlatBuffers.ByteBuffer}}
+\doxysubsubsection{\texorpdfstring{length()}{length()}}
+{\footnotesize\ttfamily Google.\+Flat\+Buffers.\+Byte\+Buffer.\+length (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\begin{DoxyReturn}{Returns}
+int 
+\end{DoxyReturn}
+\Hypertarget{classGoogle_1_1FlatBuffers_1_1ByteBuffer_a52f70d16e4354befa9d64c032f6c3797}\label{classGoogle_1_1FlatBuffers_1_1ByteBuffer_a52f70d16e4354befa9d64c032f6c3797} 
+\index{Google.FlatBuffers.ByteBuffer@{Google.FlatBuffers.ByteBuffer}!put@{put}}
+\index{put@{put}!Google.FlatBuffers.ByteBuffer@{Google.FlatBuffers.ByteBuffer}}
+\doxysubsubsection{\texorpdfstring{put()}{put()}}
+{\footnotesize\ttfamily Google.\+Flat\+Buffers.\+Byte\+Buffer.\+put (\begin{DoxyParamCaption}\item[{}]{\$offset,  }\item[{}]{\$value }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em \$offset} & \\
+\hline
+{\em \$value} & \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classGoogle_1_1FlatBuffers_1_1ByteBuffer_a52cc136abf8018c0708f34ef3d57cbf8}\label{classGoogle_1_1FlatBuffers_1_1ByteBuffer_a52cc136abf8018c0708f34ef3d57cbf8} 
+\index{Google.FlatBuffers.ByteBuffer@{Google.FlatBuffers.ByteBuffer}!Put@{Put}}
+\index{Put@{Put}!Google.FlatBuffers.ByteBuffer@{Google.FlatBuffers.ByteBuffer}}
+\doxysubsubsection{\texorpdfstring{Put()}{Put()}}
+{\footnotesize\ttfamily void Google.\+Flat\+Buffers.\+Byte\+Buffer.\+Put (\begin{DoxyParamCaption}\item[{int}]{offset,  }\item[{byte}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classGoogle_1_1FlatBuffers_1_1ByteBuffer_a3019990a18e8efb273d19911592b609f}\label{classGoogle_1_1FlatBuffers_1_1ByteBuffer_a3019990a18e8efb273d19911592b609f} 
+\index{Google.FlatBuffers.ByteBuffer@{Google.FlatBuffers.ByteBuffer}!Put$<$ T $>$@{Put$<$ T $>$}}
+\index{Put$<$ T $>$@{Put$<$ T $>$}!Google.FlatBuffers.ByteBuffer@{Google.FlatBuffers.ByteBuffer}}
+\doxysubsubsection{\texorpdfstring{Put$<$ T $>$()}{Put< T >()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily int \mbox{\hyperlink{classGoogle_1_1FlatBuffers_1_1ByteBuffer_a52cc136abf8018c0708f34ef3d57cbf8}{Google.\+Flat\+Buffers.\+Byte\+Buffer.\+Put}}$<$ T $>$ (\begin{DoxyParamCaption}\item[{int}]{offset,  }\item[{Array\+Segment$<$ T $>$}]{x }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Copies an array segment of type T into this buffer, ending at the given offset into this buffer. The starting offset is calculated based on the count of the array segment and is the value returned. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & The type of the input data (must be a struct) \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em offset} & The offset into this buffer where the copy will end\\
+\hline
+{\em x} & The array segment to copy data from\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The \textquotesingle{}start\textquotesingle{} location of this buffer now, after the copy completed
+\end{DoxyReturn}
+\begin{Desc}
+\item[Type Constraints]\begin{description}
+\item[{\em T} : {\em struct}]\end{description}
+\end{Desc}
+\Hypertarget{classGoogle_1_1FlatBuffers_1_1ByteBuffer_a830106c38bdb24bfb288d2be6d60aaaa}\label{classGoogle_1_1FlatBuffers_1_1ByteBuffer_a830106c38bdb24bfb288d2be6d60aaaa} 
+\index{Google.FlatBuffers.ByteBuffer@{Google.FlatBuffers.ByteBuffer}!Put$<$ T $>$@{Put$<$ T $>$}}
+\index{Put$<$ T $>$@{Put$<$ T $>$}!Google.FlatBuffers.ByteBuffer@{Google.FlatBuffers.ByteBuffer}}
+\doxysubsubsection{\texorpdfstring{Put$<$ T $>$()}{Put< T >()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily int \mbox{\hyperlink{classGoogle_1_1FlatBuffers_1_1ByteBuffer_a52cc136abf8018c0708f34ef3d57cbf8}{Google.\+Flat\+Buffers.\+Byte\+Buffer.\+Put}}$<$ T $>$ (\begin{DoxyParamCaption}\item[{int}]{offset,  }\item[{Int\+Ptr}]{ptr,  }\item[{int}]{size\+In\+Bytes }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Copies an array segment of type T into this buffer, ending at the given offset into this buffer. The starting offset is calculated based on the count of the array segment and is the value returned. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & The type of the input data (must be a struct) \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em offset} & The offset into this buffer where the copy will end\\
+\hline
+{\em ptr} & The pointer to copy data from\\
+\hline
+{\em size\+In\+Bytes} & The number of bytes to copy\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The \textquotesingle{}start\textquotesingle{} location of this buffer now, after the copy completed
+\end{DoxyReturn}
+\begin{Desc}
+\item[Type Constraints]\begin{description}
+\item[{\em T} : {\em struct}]\end{description}
+\end{Desc}
+\Hypertarget{classGoogle_1_1FlatBuffers_1_1ByteBuffer_a933b128f3a88d3b65ce54be7903d2e83}\label{classGoogle_1_1FlatBuffers_1_1ByteBuffer_a933b128f3a88d3b65ce54be7903d2e83} 
+\index{Google.FlatBuffers.ByteBuffer@{Google.FlatBuffers.ByteBuffer}!Put$<$ T $>$@{Put$<$ T $>$}}
+\index{Put$<$ T $>$@{Put$<$ T $>$}!Google.FlatBuffers.ByteBuffer@{Google.FlatBuffers.ByteBuffer}}
+\doxysubsubsection{\texorpdfstring{Put$<$ T $>$()}{Put< T >()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily int \mbox{\hyperlink{classGoogle_1_1FlatBuffers_1_1ByteBuffer_a52cc136abf8018c0708f34ef3d57cbf8}{Google.\+Flat\+Buffers.\+Byte\+Buffer.\+Put}}$<$ T $>$ (\begin{DoxyParamCaption}\item[{int}]{offset,  }\item[{T\mbox{[}$\,$\mbox{]}}]{x }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Copies an array of type T into this buffer, ending at the given offset into this buffer. The starting offset is calculated based on the length of the array and is the value returned. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & The type of the input data (must be a struct)\\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em offset} & The offset into this buffer where the copy will end\\
+\hline
+{\em x} & The array to copy data from\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The \textquotesingle{}start\textquotesingle{} location of this buffer now, after the copy completed
+\end{DoxyReturn}
+\begin{Desc}
+\item[Type Constraints]\begin{description}
+\item[{\em T} : {\em struct}]\end{description}
+\end{Desc}
+\Hypertarget{classGoogle_1_1FlatBuffers_1_1ByteBuffer_a4dfc34b3b47b101cb846a0244bca39f7}\label{classGoogle_1_1FlatBuffers_1_1ByteBuffer_a4dfc34b3b47b101cb846a0244bca39f7} 
+\index{Google.FlatBuffers.ByteBuffer@{Google.FlatBuffers.ByteBuffer}!putByte@{putByte}}
+\index{putByte@{putByte}!Google.FlatBuffers.ByteBuffer@{Google.FlatBuffers.ByteBuffer}}
+\doxysubsubsection{\texorpdfstring{putByte()}{putByte()}}
+{\footnotesize\ttfamily Google.\+Flat\+Buffers.\+Byte\+Buffer.\+put\+Byte (\begin{DoxyParamCaption}\item[{}]{\$offset,  }\item[{}]{\$value }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em \$offset} & \\
+\hline
+{\em \$value} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+mixed 
+\end{DoxyReturn}
+\Hypertarget{classGoogle_1_1FlatBuffers_1_1ByteBuffer_aeec3f9f7fe1b4b0b4f9f1cc5c1483fe2}\label{classGoogle_1_1FlatBuffers_1_1ByteBuffer_aeec3f9f7fe1b4b0b4f9f1cc5c1483fe2} 
+\index{Google.FlatBuffers.ByteBuffer@{Google.FlatBuffers.ByteBuffer}!PutByte@{PutByte}}
+\index{PutByte@{PutByte}!Google.FlatBuffers.ByteBuffer@{Google.FlatBuffers.ByteBuffer}}
+\doxysubsubsection{\texorpdfstring{PutByte()}{PutByte()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Google.\+Flat\+Buffers.\+Byte\+Buffer.\+Put\+Byte (\begin{DoxyParamCaption}\item[{int}]{offset,  }\item[{byte}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classGoogle_1_1FlatBuffers_1_1ByteBuffer_a527748b75fbcec1f741487f2e056c74d}\label{classGoogle_1_1FlatBuffers_1_1ByteBuffer_a527748b75fbcec1f741487f2e056c74d} 
+\index{Google.FlatBuffers.ByteBuffer@{Google.FlatBuffers.ByteBuffer}!PutByte@{PutByte}}
+\index{PutByte@{PutByte}!Google.FlatBuffers.ByteBuffer@{Google.FlatBuffers.ByteBuffer}}
+\doxysubsubsection{\texorpdfstring{PutByte()}{PutByte()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Google.\+Flat\+Buffers.\+Byte\+Buffer.\+Put\+Byte (\begin{DoxyParamCaption}\item[{int}]{offset,  }\item[{byte}]{value,  }\item[{int}]{count }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classGoogle_1_1FlatBuffers_1_1ByteBuffer_abf0b75351871b2bfb0968c24e8d274df}\label{classGoogle_1_1FlatBuffers_1_1ByteBuffer_abf0b75351871b2bfb0968c24e8d274df} 
+\index{Google.FlatBuffers.ByteBuffer@{Google.FlatBuffers.ByteBuffer}!putDouble@{putDouble}}
+\index{putDouble@{putDouble}!Google.FlatBuffers.ByteBuffer@{Google.FlatBuffers.ByteBuffer}}
+\doxysubsubsection{\texorpdfstring{putDouble()}{putDouble()}}
+{\footnotesize\ttfamily Google.\+Flat\+Buffers.\+Byte\+Buffer.\+put\+Double (\begin{DoxyParamCaption}\item[{}]{\$offset,  }\item[{}]{\$value }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em \$offset} & \\
+\hline
+{\em \$value} & \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classGoogle_1_1FlatBuffers_1_1ByteBuffer_ab8ede71fb29facfcedeb68f21feb3dfe}\label{classGoogle_1_1FlatBuffers_1_1ByteBuffer_ab8ede71fb29facfcedeb68f21feb3dfe} 
+\index{Google.FlatBuffers.ByteBuffer@{Google.FlatBuffers.ByteBuffer}!PutDouble@{PutDouble}}
+\index{PutDouble@{PutDouble}!Google.FlatBuffers.ByteBuffer@{Google.FlatBuffers.ByteBuffer}}
+\doxysubsubsection{\texorpdfstring{PutDouble()}{PutDouble()}}
+{\footnotesize\ttfamily void Google.\+Flat\+Buffers.\+Byte\+Buffer.\+Put\+Double (\begin{DoxyParamCaption}\item[{int}]{offset,  }\item[{double}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classGoogle_1_1FlatBuffers_1_1ByteBuffer_a69cb7b4a5d3e9f14a56fe51a8a2f1723}\label{classGoogle_1_1FlatBuffers_1_1ByteBuffer_a69cb7b4a5d3e9f14a56fe51a8a2f1723} 
+\index{Google.FlatBuffers.ByteBuffer@{Google.FlatBuffers.ByteBuffer}!putFloat@{putFloat}}
+\index{putFloat@{putFloat}!Google.FlatBuffers.ByteBuffer@{Google.FlatBuffers.ByteBuffer}}
+\doxysubsubsection{\texorpdfstring{putFloat()}{putFloat()}}
+{\footnotesize\ttfamily Google.\+Flat\+Buffers.\+Byte\+Buffer.\+put\+Float (\begin{DoxyParamCaption}\item[{}]{\$offset,  }\item[{}]{\$value }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em \$offset} & \\
+\hline
+{\em \$value} & \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classGoogle_1_1FlatBuffers_1_1ByteBuffer_a7756666dbb93490e69dcfc539550fb8c}\label{classGoogle_1_1FlatBuffers_1_1ByteBuffer_a7756666dbb93490e69dcfc539550fb8c} 
+\index{Google.FlatBuffers.ByteBuffer@{Google.FlatBuffers.ByteBuffer}!PutFloat@{PutFloat}}
+\index{PutFloat@{PutFloat}!Google.FlatBuffers.ByteBuffer@{Google.FlatBuffers.ByteBuffer}}
+\doxysubsubsection{\texorpdfstring{PutFloat()}{PutFloat()}}
+{\footnotesize\ttfamily void Google.\+Flat\+Buffers.\+Byte\+Buffer.\+Put\+Float (\begin{DoxyParamCaption}\item[{int}]{offset,  }\item[{float}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classGoogle_1_1FlatBuffers_1_1ByteBuffer_a9164f600d5312234fc008ba549407cc1}\label{classGoogle_1_1FlatBuffers_1_1ByteBuffer_a9164f600d5312234fc008ba549407cc1} 
+\index{Google.FlatBuffers.ByteBuffer@{Google.FlatBuffers.ByteBuffer}!putInt@{putInt}}
+\index{putInt@{putInt}!Google.FlatBuffers.ByteBuffer@{Google.FlatBuffers.ByteBuffer}}
+\doxysubsubsection{\texorpdfstring{putInt()}{putInt()}}
+{\footnotesize\ttfamily Google.\+Flat\+Buffers.\+Byte\+Buffer.\+put\+Int (\begin{DoxyParamCaption}\item[{}]{\$offset,  }\item[{}]{\$value }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em \$offset} & \\
+\hline
+{\em \$value} & \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classGoogle_1_1FlatBuffers_1_1ByteBuffer_a5b9a0c104768f1e55360c367ed53c19f}\label{classGoogle_1_1FlatBuffers_1_1ByteBuffer_a5b9a0c104768f1e55360c367ed53c19f} 
+\index{Google.FlatBuffers.ByteBuffer@{Google.FlatBuffers.ByteBuffer}!PutInt@{PutInt}}
+\index{PutInt@{PutInt}!Google.FlatBuffers.ByteBuffer@{Google.FlatBuffers.ByteBuffer}}
+\doxysubsubsection{\texorpdfstring{PutInt()}{PutInt()}}
+{\footnotesize\ttfamily void Google.\+Flat\+Buffers.\+Byte\+Buffer.\+Put\+Int (\begin{DoxyParamCaption}\item[{int}]{offset,  }\item[{int}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classGoogle_1_1FlatBuffers_1_1ByteBuffer_a3226dd68b114b1120304ce3ae05f4e07}\label{classGoogle_1_1FlatBuffers_1_1ByteBuffer_a3226dd68b114b1120304ce3ae05f4e07} 
+\index{Google.FlatBuffers.ByteBuffer@{Google.FlatBuffers.ByteBuffer}!putLong@{putLong}}
+\index{putLong@{putLong}!Google.FlatBuffers.ByteBuffer@{Google.FlatBuffers.ByteBuffer}}
+\doxysubsubsection{\texorpdfstring{putLong()}{putLong()}}
+{\footnotesize\ttfamily Google.\+Flat\+Buffers.\+Byte\+Buffer.\+put\+Long (\begin{DoxyParamCaption}\item[{}]{\$offset,  }\item[{}]{\$value }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em \$offset} & \\
+\hline
+{\em \$value} & \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classGoogle_1_1FlatBuffers_1_1ByteBuffer_a5f7ee2f7dd3206e83578ae1ce26c82da}\label{classGoogle_1_1FlatBuffers_1_1ByteBuffer_a5f7ee2f7dd3206e83578ae1ce26c82da} 
+\index{Google.FlatBuffers.ByteBuffer@{Google.FlatBuffers.ByteBuffer}!PutLong@{PutLong}}
+\index{PutLong@{PutLong}!Google.FlatBuffers.ByteBuffer@{Google.FlatBuffers.ByteBuffer}}
+\doxysubsubsection{\texorpdfstring{PutLong()}{PutLong()}}
+{\footnotesize\ttfamily void Google.\+Flat\+Buffers.\+Byte\+Buffer.\+Put\+Long (\begin{DoxyParamCaption}\item[{int}]{offset,  }\item[{long}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classGoogle_1_1FlatBuffers_1_1ByteBuffer_a58d0f52062edbd1827e2eed6a1bb8b1a}\label{classGoogle_1_1FlatBuffers_1_1ByteBuffer_a58d0f52062edbd1827e2eed6a1bb8b1a} 
+\index{Google.FlatBuffers.ByteBuffer@{Google.FlatBuffers.ByteBuffer}!putSbyte@{putSbyte}}
+\index{putSbyte@{putSbyte}!Google.FlatBuffers.ByteBuffer@{Google.FlatBuffers.ByteBuffer}}
+\doxysubsubsection{\texorpdfstring{putSbyte()}{putSbyte()}}
+{\footnotesize\ttfamily Google.\+Flat\+Buffers.\+Byte\+Buffer.\+put\+Sbyte (\begin{DoxyParamCaption}\item[{}]{\$offset,  }\item[{}]{\$value }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em \$offset} & \\
+\hline
+{\em \$value} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+mixed 
+\end{DoxyReturn}
+\Hypertarget{classGoogle_1_1FlatBuffers_1_1ByteBuffer_a34c142ca5620b6814a772722949af6f3}\label{classGoogle_1_1FlatBuffers_1_1ByteBuffer_a34c142ca5620b6814a772722949af6f3} 
+\index{Google.FlatBuffers.ByteBuffer@{Google.FlatBuffers.ByteBuffer}!PutSbyte@{PutSbyte}}
+\index{PutSbyte@{PutSbyte}!Google.FlatBuffers.ByteBuffer@{Google.FlatBuffers.ByteBuffer}}
+\doxysubsubsection{\texorpdfstring{PutSbyte()}{PutSbyte()}}
+{\footnotesize\ttfamily void Google.\+Flat\+Buffers.\+Byte\+Buffer.\+Put\+Sbyte (\begin{DoxyParamCaption}\item[{int}]{offset,  }\item[{sbyte}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classGoogle_1_1FlatBuffers_1_1ByteBuffer_ad181b12409703c350e2da310fa5582ca}\label{classGoogle_1_1FlatBuffers_1_1ByteBuffer_ad181b12409703c350e2da310fa5582ca} 
+\index{Google.FlatBuffers.ByteBuffer@{Google.FlatBuffers.ByteBuffer}!putShort@{putShort}}
+\index{putShort@{putShort}!Google.FlatBuffers.ByteBuffer@{Google.FlatBuffers.ByteBuffer}}
+\doxysubsubsection{\texorpdfstring{putShort()}{putShort()}}
+{\footnotesize\ttfamily Google.\+Flat\+Buffers.\+Byte\+Buffer.\+put\+Short (\begin{DoxyParamCaption}\item[{}]{\$offset,  }\item[{}]{\$value }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em \$offset} & \\
+\hline
+{\em \$value} & \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classGoogle_1_1FlatBuffers_1_1ByteBuffer_a2d53d3b633086ac64cb82ae364ff19fe}\label{classGoogle_1_1FlatBuffers_1_1ByteBuffer_a2d53d3b633086ac64cb82ae364ff19fe} 
+\index{Google.FlatBuffers.ByteBuffer@{Google.FlatBuffers.ByteBuffer}!PutShort@{PutShort}}
+\index{PutShort@{PutShort}!Google.FlatBuffers.ByteBuffer@{Google.FlatBuffers.ByteBuffer}}
+\doxysubsubsection{\texorpdfstring{PutShort()}{PutShort()}}
+{\footnotesize\ttfamily void Google.\+Flat\+Buffers.\+Byte\+Buffer.\+Put\+Short (\begin{DoxyParamCaption}\item[{int}]{offset,  }\item[{short}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classGoogle_1_1FlatBuffers_1_1ByteBuffer_a7d87b6661cac9a3551e57951778dcd81}\label{classGoogle_1_1FlatBuffers_1_1ByteBuffer_a7d87b6661cac9a3551e57951778dcd81} 
+\index{Google.FlatBuffers.ByteBuffer@{Google.FlatBuffers.ByteBuffer}!PutStringUTF8@{PutStringUTF8}}
+\index{PutStringUTF8@{PutStringUTF8}!Google.FlatBuffers.ByteBuffer@{Google.FlatBuffers.ByteBuffer}}
+\doxysubsubsection{\texorpdfstring{PutStringUTF8()}{PutStringUTF8()}}
+{\footnotesize\ttfamily void Google.\+Flat\+Buffers.\+Byte\+Buffer.\+Put\+String\+UTF8 (\begin{DoxyParamCaption}\item[{int}]{offset,  }\item[{string}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classGoogle_1_1FlatBuffers_1_1ByteBuffer_ab09baf9fee756fac77ac17538b35a00d}\label{classGoogle_1_1FlatBuffers_1_1ByteBuffer_ab09baf9fee756fac77ac17538b35a00d} 
+\index{Google.FlatBuffers.ByteBuffer@{Google.FlatBuffers.ByteBuffer}!putUint@{putUint}}
+\index{putUint@{putUint}!Google.FlatBuffers.ByteBuffer@{Google.FlatBuffers.ByteBuffer}}
+\doxysubsubsection{\texorpdfstring{putUint()}{putUint()}}
+{\footnotesize\ttfamily Google.\+Flat\+Buffers.\+Byte\+Buffer.\+put\+Uint (\begin{DoxyParamCaption}\item[{}]{\$offset,  }\item[{}]{\$value }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em \$offset} & \\
+\hline
+{\em \$value} & \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classGoogle_1_1FlatBuffers_1_1ByteBuffer_a3f0f9d52f2cc2e342c12d39e5c21ca66}\label{classGoogle_1_1FlatBuffers_1_1ByteBuffer_a3f0f9d52f2cc2e342c12d39e5c21ca66} 
+\index{Google.FlatBuffers.ByteBuffer@{Google.FlatBuffers.ByteBuffer}!PutUint@{PutUint}}
+\index{PutUint@{PutUint}!Google.FlatBuffers.ByteBuffer@{Google.FlatBuffers.ByteBuffer}}
+\doxysubsubsection{\texorpdfstring{PutUint()}{PutUint()}}
+{\footnotesize\ttfamily void Google.\+Flat\+Buffers.\+Byte\+Buffer.\+Put\+Uint (\begin{DoxyParamCaption}\item[{int}]{offset,  }\item[{uint}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classGoogle_1_1FlatBuffers_1_1ByteBuffer_af012ac6182d8e9656690e0248aefcd3e}\label{classGoogle_1_1FlatBuffers_1_1ByteBuffer_af012ac6182d8e9656690e0248aefcd3e} 
+\index{Google.FlatBuffers.ByteBuffer@{Google.FlatBuffers.ByteBuffer}!putUlong@{putUlong}}
+\index{putUlong@{putUlong}!Google.FlatBuffers.ByteBuffer@{Google.FlatBuffers.ByteBuffer}}
+\doxysubsubsection{\texorpdfstring{putUlong()}{putUlong()}}
+{\footnotesize\ttfamily Google.\+Flat\+Buffers.\+Byte\+Buffer.\+put\+Ulong (\begin{DoxyParamCaption}\item[{}]{\$offset,  }\item[{}]{\$value }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em \$offset} & \\
+\hline
+{\em \$value} & \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classGoogle_1_1FlatBuffers_1_1ByteBuffer_a18bb27518f55da26c484b9b61361932d}\label{classGoogle_1_1FlatBuffers_1_1ByteBuffer_a18bb27518f55da26c484b9b61361932d} 
+\index{Google.FlatBuffers.ByteBuffer@{Google.FlatBuffers.ByteBuffer}!PutUlong@{PutUlong}}
+\index{PutUlong@{PutUlong}!Google.FlatBuffers.ByteBuffer@{Google.FlatBuffers.ByteBuffer}}
+\doxysubsubsection{\texorpdfstring{PutUlong()}{PutUlong()}}
+{\footnotesize\ttfamily void Google.\+Flat\+Buffers.\+Byte\+Buffer.\+Put\+Ulong (\begin{DoxyParamCaption}\item[{int}]{offset,  }\item[{ulong}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classGoogle_1_1FlatBuffers_1_1ByteBuffer_a0c29d991914bbcbb9cba9d3adf2aa76c}\label{classGoogle_1_1FlatBuffers_1_1ByteBuffer_a0c29d991914bbcbb9cba9d3adf2aa76c} 
+\index{Google.FlatBuffers.ByteBuffer@{Google.FlatBuffers.ByteBuffer}!putUshort@{putUshort}}
+\index{putUshort@{putUshort}!Google.FlatBuffers.ByteBuffer@{Google.FlatBuffers.ByteBuffer}}
+\doxysubsubsection{\texorpdfstring{putUshort()}{putUshort()}}
+{\footnotesize\ttfamily Google.\+Flat\+Buffers.\+Byte\+Buffer.\+put\+Ushort (\begin{DoxyParamCaption}\item[{}]{\$offset,  }\item[{}]{\$value }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em \$offset} & \\
+\hline
+{\em \$value} & \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classGoogle_1_1FlatBuffers_1_1ByteBuffer_a139d84e22cc893263bf35b4493ca51b7}\label{classGoogle_1_1FlatBuffers_1_1ByteBuffer_a139d84e22cc893263bf35b4493ca51b7} 
+\index{Google.FlatBuffers.ByteBuffer@{Google.FlatBuffers.ByteBuffer}!PutUshort@{PutUshort}}
+\index{PutUshort@{PutUshort}!Google.FlatBuffers.ByteBuffer@{Google.FlatBuffers.ByteBuffer}}
+\doxysubsubsection{\texorpdfstring{PutUshort()}{PutUshort()}}
+{\footnotesize\ttfamily void Google.\+Flat\+Buffers.\+Byte\+Buffer.\+Put\+Ushort (\begin{DoxyParamCaption}\item[{int}]{offset,  }\item[{ushort}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classGoogle_1_1FlatBuffers_1_1ByteBuffer_aa3a3955599470ae63e146f92c9397cef}\label{classGoogle_1_1FlatBuffers_1_1ByteBuffer_aa3a3955599470ae63e146f92c9397cef} 
+\index{Google.FlatBuffers.ByteBuffer@{Google.FlatBuffers.ByteBuffer}!readLittleEndian@{readLittleEndian}}
+\index{readLittleEndian@{readLittleEndian}!Google.FlatBuffers.ByteBuffer@{Google.FlatBuffers.ByteBuffer}}
+\doxysubsubsection{\texorpdfstring{readLittleEndian()}{readLittleEndian()}}
+{\footnotesize\ttfamily Google.\+Flat\+Buffers.\+Byte\+Buffer.\+read\+Little\+Endian (\begin{DoxyParamCaption}\item[{}]{\$offset,  }\item[{}]{\$count,  }\item[{}]{\$force\+\_\+bigendian = {\ttfamily false} }\end{DoxyParamCaption})}
+
+read little endian value from the buffer
+
+
+\begin{DoxyParams}{Parameters}
+{\em \$offset} & \\
+\hline
+{\em \$count} & acutal size \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int 
+\end{DoxyReturn}
+\Hypertarget{classGoogle_1_1FlatBuffers_1_1ByteBuffer_aaa8f70e6e776a649f4dd058142482e44}\label{classGoogle_1_1FlatBuffers_1_1ByteBuffer_aaa8f70e6e776a649f4dd058142482e44} 
+\index{Google.FlatBuffers.ByteBuffer@{Google.FlatBuffers.ByteBuffer}!ReadLittleEndian@{ReadLittleEndian}}
+\index{ReadLittleEndian@{ReadLittleEndian}!Google.FlatBuffers.ByteBuffer@{Google.FlatBuffers.ByteBuffer}}
+\doxysubsubsection{\texorpdfstring{ReadLittleEndian()}{ReadLittleEndian()}}
+{\footnotesize\ttfamily ulong Google.\+Flat\+Buffers.\+Byte\+Buffer.\+Read\+Little\+Endian (\begin{DoxyParamCaption}\item[{int}]{offset,  }\item[{int}]{count }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+\Hypertarget{classGoogle_1_1FlatBuffers_1_1ByteBuffer_a0c2a7eed386daab8879eea6e674c7329}\label{classGoogle_1_1FlatBuffers_1_1ByteBuffer_a0c2a7eed386daab8879eea6e674c7329} 
+\index{Google.FlatBuffers.ByteBuffer@{Google.FlatBuffers.ByteBuffer}!Reset@{Reset}}
+\index{Reset@{Reset}!Google.FlatBuffers.ByteBuffer@{Google.FlatBuffers.ByteBuffer}}
+\doxysubsubsection{\texorpdfstring{Reset()}{Reset()}}
+{\footnotesize\ttfamily void Google.\+Flat\+Buffers.\+Byte\+Buffer.\+Reset (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classGoogle_1_1FlatBuffers_1_1ByteBuffer_acd649922b8d92b88d3474c2fc9576e14}\label{classGoogle_1_1FlatBuffers_1_1ByteBuffer_acd649922b8d92b88d3474c2fc9576e14} 
+\index{Google.FlatBuffers.ByteBuffer@{Google.FlatBuffers.ByteBuffer}!reset@{reset}}
+\index{reset@{reset}!Google.FlatBuffers.ByteBuffer@{Google.FlatBuffers.ByteBuffer}}
+\doxysubsubsection{\texorpdfstring{reset()}{reset()}}
+{\footnotesize\ttfamily Google.\+Flat\+Buffers.\+Byte\+Buffer.\+reset (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{classGoogle_1_1FlatBuffers_1_1ByteBuffer_ac674dc8f724423f4e6e003ce0c6e4fd4}\label{classGoogle_1_1FlatBuffers_1_1ByteBuffer_ac674dc8f724423f4e6e003ce0c6e4fd4} 
+\index{Google.FlatBuffers.ByteBuffer@{Google.FlatBuffers.ByteBuffer}!ReverseBytes@{ReverseBytes}}
+\index{ReverseBytes@{ReverseBytes}!Google.FlatBuffers.ByteBuffer@{Google.FlatBuffers.ByteBuffer}}
+\doxysubsubsection{\texorpdfstring{ReverseBytes()}{ReverseBytes()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily static uint Google.\+Flat\+Buffers.\+Byte\+Buffer.\+Reverse\+Bytes (\begin{DoxyParamCaption}\item[{uint}]{input }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+\Hypertarget{classGoogle_1_1FlatBuffers_1_1ByteBuffer_ad3c666d83c4fae4fa53a0f1172b5ffff}\label{classGoogle_1_1FlatBuffers_1_1ByteBuffer_ad3c666d83c4fae4fa53a0f1172b5ffff} 
+\index{Google.FlatBuffers.ByteBuffer@{Google.FlatBuffers.ByteBuffer}!ReverseBytes@{ReverseBytes}}
+\index{ReverseBytes@{ReverseBytes}!Google.FlatBuffers.ByteBuffer@{Google.FlatBuffers.ByteBuffer}}
+\doxysubsubsection{\texorpdfstring{ReverseBytes()}{ReverseBytes()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily static ulong Google.\+Flat\+Buffers.\+Byte\+Buffer.\+Reverse\+Bytes (\begin{DoxyParamCaption}\item[{ulong}]{input }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+\Hypertarget{classGoogle_1_1FlatBuffers_1_1ByteBuffer_ab8261b7b1372a63054d30950c038eaba}\label{classGoogle_1_1FlatBuffers_1_1ByteBuffer_ab8261b7b1372a63054d30950c038eaba} 
+\index{Google.FlatBuffers.ByteBuffer@{Google.FlatBuffers.ByteBuffer}!ReverseBytes@{ReverseBytes}}
+\index{ReverseBytes@{ReverseBytes}!Google.FlatBuffers.ByteBuffer@{Google.FlatBuffers.ByteBuffer}}
+\doxysubsubsection{\texorpdfstring{ReverseBytes()}{ReverseBytes()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily static ushort Google.\+Flat\+Buffers.\+Byte\+Buffer.\+Reverse\+Bytes (\begin{DoxyParamCaption}\item[{ushort}]{input }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+\Hypertarget{classGoogle_1_1FlatBuffers_1_1ByteBuffer_a9bdf2596c765dc80f365795e1e175bff}\label{classGoogle_1_1FlatBuffers_1_1ByteBuffer_a9bdf2596c765dc80f365795e1e175bff} 
+\index{Google.FlatBuffers.ByteBuffer@{Google.FlatBuffers.ByteBuffer}!setPosition@{setPosition}}
+\index{setPosition@{setPosition}!Google.FlatBuffers.ByteBuffer@{Google.FlatBuffers.ByteBuffer}}
+\doxysubsubsection{\texorpdfstring{setPosition()}{setPosition()}}
+{\footnotesize\ttfamily Google.\+Flat\+Buffers.\+Byte\+Buffer.\+set\+Position (\begin{DoxyParamCaption}\item[{}]{\$pos }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em \$pos} & \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classGoogle_1_1FlatBuffers_1_1ByteBuffer_a7b1c8281d39e433fbbb1b0e7c560448a}\label{classGoogle_1_1FlatBuffers_1_1ByteBuffer_a7b1c8281d39e433fbbb1b0e7c560448a} 
+\index{Google.FlatBuffers.ByteBuffer@{Google.FlatBuffers.ByteBuffer}!SizeOf$<$ T $>$@{SizeOf$<$ T $>$}}
+\index{SizeOf$<$ T $>$@{SizeOf$<$ T $>$}!Google.FlatBuffers.ByteBuffer@{Google.FlatBuffers.ByteBuffer}}
+\doxysubsubsection{\texorpdfstring{SizeOf$<$ T $>$()}{SizeOf< T >()}}
+{\footnotesize\ttfamily static int Google.\+Flat\+Buffers.\+Byte\+Buffer.\+Size\+Of$<$ T $>$ (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Get the wire-\/size (in bytes) of a type supported by flatbuffers. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t} & The type to get the wire size of\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\Hypertarget{classGoogle_1_1FlatBuffers_1_1ByteBuffer_a217a7744d36423e40ec8115ef44b253f}\label{classGoogle_1_1FlatBuffers_1_1ByteBuffer_a217a7744d36423e40ec8115ef44b253f} 
+\index{Google.FlatBuffers.ByteBuffer@{Google.FlatBuffers.ByteBuffer}!ToArray@{ToArray}}
+\index{ToArray@{ToArray}!Google.FlatBuffers.ByteBuffer@{Google.FlatBuffers.ByteBuffer}}
+\doxysubsubsection{\texorpdfstring{ToArray()}{ToArray()}}
+{\footnotesize\ttfamily byte\mbox{[}$\,$\mbox{]} Google.\+Flat\+Buffers.\+Byte\+Buffer.\+To\+Array (\begin{DoxyParamCaption}\item[{int}]{pos,  }\item[{int}]{len }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classGoogle_1_1FlatBuffers_1_1ByteBuffer_a05e7fc6ac5909acf24b220d0ba17651f}\label{classGoogle_1_1FlatBuffers_1_1ByteBuffer_a05e7fc6ac5909acf24b220d0ba17651f} 
+\index{Google.FlatBuffers.ByteBuffer@{Google.FlatBuffers.ByteBuffer}!ToArray$<$ T $>$@{ToArray$<$ T $>$}}
+\index{ToArray$<$ T $>$@{ToArray$<$ T $>$}!Google.FlatBuffers.ByteBuffer@{Google.FlatBuffers.ByteBuffer}}
+\doxysubsubsection{\texorpdfstring{ToArray$<$ T $>$()}{ToArray< T >()}}
+{\footnotesize\ttfamily T\mbox{[}$\,$\mbox{]} \mbox{\hyperlink{classGoogle_1_1FlatBuffers_1_1ByteBuffer_a217a7744d36423e40ec8115ef44b253f}{Google.\+Flat\+Buffers.\+Byte\+Buffer.\+To\+Array}}$<$ T $>$ (\begin{DoxyParamCaption}\item[{int}]{pos,  }\item[{int}]{len }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{Desc}
+\item[Type Constraints]\begin{description}
+\item[{\em T} : {\em struct}]\end{description}
+\end{Desc}
+\Hypertarget{classGoogle_1_1FlatBuffers_1_1ByteBuffer_af6ecb73a4fc47d1db76d5538f9c303aa}\label{classGoogle_1_1FlatBuffers_1_1ByteBuffer_af6ecb73a4fc47d1db76d5538f9c303aa} 
+\index{Google.FlatBuffers.ByteBuffer@{Google.FlatBuffers.ByteBuffer}!ToArraySegment@{ToArraySegment}}
+\index{ToArraySegment@{ToArraySegment}!Google.FlatBuffers.ByteBuffer@{Google.FlatBuffers.ByteBuffer}}
+\doxysubsubsection{\texorpdfstring{ToArraySegment()}{ToArraySegment()}}
+{\footnotesize\ttfamily Array\+Segment$<$ byte $>$ Google.\+Flat\+Buffers.\+Byte\+Buffer.\+To\+Array\+Segment (\begin{DoxyParamCaption}\item[{int}]{pos,  }\item[{int}]{len }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classGoogle_1_1FlatBuffers_1_1ByteBuffer_a07af6360783375c79f451b7f65ecf97b}\label{classGoogle_1_1FlatBuffers_1_1ByteBuffer_a07af6360783375c79f451b7f65ecf97b} 
+\index{Google.FlatBuffers.ByteBuffer@{Google.FlatBuffers.ByteBuffer}!ToFullArray@{ToFullArray}}
+\index{ToFullArray@{ToFullArray}!Google.FlatBuffers.ByteBuffer@{Google.FlatBuffers.ByteBuffer}}
+\doxysubsubsection{\texorpdfstring{ToFullArray()}{ToFullArray()}}
+{\footnotesize\ttfamily byte\mbox{[}$\,$\mbox{]} Google.\+Flat\+Buffers.\+Byte\+Buffer.\+To\+Full\+Array (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classGoogle_1_1FlatBuffers_1_1ByteBuffer_acbf794fcd34b79baf236cdeb172ab4c2}\label{classGoogle_1_1FlatBuffers_1_1ByteBuffer_acbf794fcd34b79baf236cdeb172ab4c2} 
+\index{Google.FlatBuffers.ByteBuffer@{Google.FlatBuffers.ByteBuffer}!ToMemoryStream@{ToMemoryStream}}
+\index{ToMemoryStream@{ToMemoryStream}!Google.FlatBuffers.ByteBuffer@{Google.FlatBuffers.ByteBuffer}}
+\doxysubsubsection{\texorpdfstring{ToMemoryStream()}{ToMemoryStream()}}
+{\footnotesize\ttfamily Memory\+Stream Google.\+Flat\+Buffers.\+Byte\+Buffer.\+To\+Memory\+Stream (\begin{DoxyParamCaption}\item[{int}]{pos,  }\item[{int}]{len }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classGoogle_1_1FlatBuffers_1_1ByteBuffer_a4f845bfa9afea2fe43950aef2b447a3b}\label{classGoogle_1_1FlatBuffers_1_1ByteBuffer_a4f845bfa9afea2fe43950aef2b447a3b} 
+\index{Google.FlatBuffers.ByteBuffer@{Google.FlatBuffers.ByteBuffer}!ToSizedArray@{ToSizedArray}}
+\index{ToSizedArray@{ToSizedArray}!Google.FlatBuffers.ByteBuffer@{Google.FlatBuffers.ByteBuffer}}
+\doxysubsubsection{\texorpdfstring{ToSizedArray()}{ToSizedArray()}}
+{\footnotesize\ttfamily byte\mbox{[}$\,$\mbox{]} Google.\+Flat\+Buffers.\+Byte\+Buffer.\+To\+Sized\+Array (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classGoogle_1_1FlatBuffers_1_1ByteBuffer_a0592604e850105e6428d037b00bae87b}\label{classGoogle_1_1FlatBuffers_1_1ByteBuffer_a0592604e850105e6428d037b00bae87b} 
+\index{Google.FlatBuffers.ByteBuffer@{Google.FlatBuffers.ByteBuffer}!wrap@{wrap}}
+\index{wrap@{wrap}!Google.FlatBuffers.ByteBuffer@{Google.FlatBuffers.ByteBuffer}}
+\doxysubsubsection{\texorpdfstring{wrap()}{wrap()}}
+{\footnotesize\ttfamily static Google.\+Flat\+Buffers.\+Byte\+Buffer.\+wrap (\begin{DoxyParamCaption}\item[{}]{\$bytes }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{classGoogle_1_1FlatBuffers_1_1ByteBuffer_a4621126e4432a77c8d3cbca24197ddf4}\label{classGoogle_1_1FlatBuffers_1_1ByteBuffer_a4621126e4432a77c8d3cbca24197ddf4} 
+\index{Google.FlatBuffers.ByteBuffer@{Google.FlatBuffers.ByteBuffer}!writeLittleEndian@{writeLittleEndian}}
+\index{writeLittleEndian@{writeLittleEndian}!Google.FlatBuffers.ByteBuffer@{Google.FlatBuffers.ByteBuffer}}
+\doxysubsubsection{\texorpdfstring{writeLittleEndian()}{writeLittleEndian()}}
+{\footnotesize\ttfamily Google.\+Flat\+Buffers.\+Byte\+Buffer.\+write\+Little\+Endian (\begin{DoxyParamCaption}\item[{}]{\$offset,  }\item[{}]{\$count,  }\item[{}]{\$data }\end{DoxyParamCaption})}
+
+write little endian value to the buffer.
+
+
+\begin{DoxyParams}{Parameters}
+{\em \$offset} & \\
+\hline
+{\em \$count} & byte length \\
+\hline
+{\em \$data} & actual values \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classGoogle_1_1FlatBuffers_1_1ByteBuffer_a7a64c5f5fdc0fd46ffb5821da7fd9ccf}\label{classGoogle_1_1FlatBuffers_1_1ByteBuffer_a7a64c5f5fdc0fd46ffb5821da7fd9ccf} 
+\index{Google.FlatBuffers.ByteBuffer@{Google.FlatBuffers.ByteBuffer}!WriteLittleEndian@{WriteLittleEndian}}
+\index{WriteLittleEndian@{WriteLittleEndian}!Google.FlatBuffers.ByteBuffer@{Google.FlatBuffers.ByteBuffer}}
+\doxysubsubsection{\texorpdfstring{WriteLittleEndian()}{WriteLittleEndian()}}
+{\footnotesize\ttfamily void Google.\+Flat\+Buffers.\+Byte\+Buffer.\+Write\+Little\+Endian (\begin{DoxyParamCaption}\item[{int}]{offset,  }\item[{int}]{count,  }\item[{ulong}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classGoogle_1_1FlatBuffers_1_1ByteBuffer_ad8712566bdbf4966f7d2e9e4feaadee4}\label{classGoogle_1_1FlatBuffers_1_1ByteBuffer_ad8712566bdbf4966f7d2e9e4feaadee4} 
+\index{Google.FlatBuffers.ByteBuffer@{Google.FlatBuffers.ByteBuffer}!\$\_buffer@{\$\_buffer}}
+\index{\$\_buffer@{\$\_buffer}!Google.FlatBuffers.ByteBuffer@{Google.FlatBuffers.ByteBuffer}}
+\doxysubsubsection{\texorpdfstring{\$\_buffer}{\$\_buffer}}
+{\footnotesize\ttfamily string Google.\+Flat\+Buffers.\+Byte\+Buffer\+::\$\+\_\+buffer}
+
+\Hypertarget{classGoogle_1_1FlatBuffers_1_1ByteBuffer_af50234271e419a9fecf63b456f2bd96a}\label{classGoogle_1_1FlatBuffers_1_1ByteBuffer_af50234271e419a9fecf63b456f2bd96a} 
+\index{Google.FlatBuffers.ByteBuffer@{Google.FlatBuffers.ByteBuffer}!\_\_DOUBLE@{\_\_DOUBLE}}
+\index{\_\_DOUBLE@{\_\_DOUBLE}!Google.FlatBuffers.ByteBuffer@{Google.FlatBuffers.ByteBuffer}}
+\doxysubsubsection{\texorpdfstring{\_\_DOUBLE}{\_\_DOUBLE}}
+{\footnotesize\ttfamily const Google.\+Flat\+Buffers.\+Byte\+Buffer.\+\_\+\+\_\+\+DOUBLE = 5}
+
+\Hypertarget{classGoogle_1_1FlatBuffers_1_1ByteBuffer_a1e404cafe409ce2bc0ab52fde670040e}\label{classGoogle_1_1FlatBuffers_1_1ByteBuffer_a1e404cafe409ce2bc0ab52fde670040e} 
+\index{Google.FlatBuffers.ByteBuffer@{Google.FlatBuffers.ByteBuffer}!\_\_FLOAT@{\_\_FLOAT}}
+\index{\_\_FLOAT@{\_\_FLOAT}!Google.FlatBuffers.ByteBuffer@{Google.FlatBuffers.ByteBuffer}}
+\doxysubsubsection{\texorpdfstring{\_\_FLOAT}{\_\_FLOAT}}
+{\footnotesize\ttfamily const Google.\+Flat\+Buffers.\+Byte\+Buffer.\+\_\+\+\_\+\+FLOAT = 4}
+
+\Hypertarget{classGoogle_1_1FlatBuffers_1_1ByteBuffer_aaedeb0bb17d0796063fd4cc7845d2260}\label{classGoogle_1_1FlatBuffers_1_1ByteBuffer_aaedeb0bb17d0796063fd4cc7845d2260} 
+\index{Google.FlatBuffers.ByteBuffer@{Google.FlatBuffers.ByteBuffer}!\_\_INT@{\_\_INT}}
+\index{\_\_INT@{\_\_INT}!Google.FlatBuffers.ByteBuffer@{Google.FlatBuffers.ByteBuffer}}
+\doxysubsubsection{\texorpdfstring{\_\_INT}{\_\_INT}}
+{\footnotesize\ttfamily const Google.\+Flat\+Buffers.\+Byte\+Buffer.\+\_\+\+\_\+\+INT = 2}
+
+\Hypertarget{classGoogle_1_1FlatBuffers_1_1ByteBuffer_a8da3eea1f02059941630a187a1b43ff5}\label{classGoogle_1_1FlatBuffers_1_1ByteBuffer_a8da3eea1f02059941630a187a1b43ff5} 
+\index{Google.FlatBuffers.ByteBuffer@{Google.FlatBuffers.ByteBuffer}!\_\_LONG@{\_\_LONG}}
+\index{\_\_LONG@{\_\_LONG}!Google.FlatBuffers.ByteBuffer@{Google.FlatBuffers.ByteBuffer}}
+\doxysubsubsection{\texorpdfstring{\_\_LONG}{\_\_LONG}}
+{\footnotesize\ttfamily const Google.\+Flat\+Buffers.\+Byte\+Buffer.\+\_\+\+\_\+\+LONG = 3}
+
+\Hypertarget{classGoogle_1_1FlatBuffers_1_1ByteBuffer_acf08e89cfb0f4ca904a908dc25f72843}\label{classGoogle_1_1FlatBuffers_1_1ByteBuffer_acf08e89cfb0f4ca904a908dc25f72843} 
+\index{Google.FlatBuffers.ByteBuffer@{Google.FlatBuffers.ByteBuffer}!\_\_SHORT@{\_\_SHORT}}
+\index{\_\_SHORT@{\_\_SHORT}!Google.FlatBuffers.ByteBuffer@{Google.FlatBuffers.ByteBuffer}}
+\doxysubsubsection{\texorpdfstring{\_\_SHORT}{\_\_SHORT}}
+{\footnotesize\ttfamily const Google.\+Flat\+Buffers.\+Byte\+Buffer.\+\_\+\+\_\+\+SHORT = 1}
+
+
+
+\doxysubsection{Property Documentation}
+\Hypertarget{classGoogle_1_1FlatBuffers_1_1ByteBuffer_ad4e2dbbc689ef800557291f9c1192685}\label{classGoogle_1_1FlatBuffers_1_1ByteBuffer_ad4e2dbbc689ef800557291f9c1192685} 
+\index{Google.FlatBuffers.ByteBuffer@{Google.FlatBuffers.ByteBuffer}!Length@{Length}}
+\index{Length@{Length}!Google.FlatBuffers.ByteBuffer@{Google.FlatBuffers.ByteBuffer}}
+\doxysubsubsection{\texorpdfstring{Length}{Length}}
+{\footnotesize\ttfamily int Google.\+Flat\+Buffers.\+Byte\+Buffer.\+Length\hspace{0.3cm}{\ttfamily [get]}}
+
+\Hypertarget{classGoogle_1_1FlatBuffers_1_1ByteBuffer_a95227c322181cf3f8bf2751a85ccac36}\label{classGoogle_1_1FlatBuffers_1_1ByteBuffer_a95227c322181cf3f8bf2751a85ccac36} 
+\index{Google.FlatBuffers.ByteBuffer@{Google.FlatBuffers.ByteBuffer}!Position@{Position}}
+\index{Position@{Position}!Google.FlatBuffers.ByteBuffer@{Google.FlatBuffers.ByteBuffer}}
+\doxysubsubsection{\texorpdfstring{Position}{Position}}
+{\footnotesize\ttfamily int Google.\+Flat\+Buffers.\+Byte\+Buffer.\+Position\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+flatbuffers/net/\+Flat\+Buffers/\mbox{\hyperlink{ByteBuffer_8cs}{Byte\+Buffer.\+cs}}\item 
+flatbuffers/php/\mbox{\hyperlink{ByteBuffer_8php}{Byte\+Buffer.\+php}}\end{DoxyCompactItemize}
