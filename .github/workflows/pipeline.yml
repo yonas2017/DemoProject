@@ -1,4 +1,4 @@
-name: C/C++ CI
+name: DemoProject CI
 
 on:
   push:
@@ -9,15 +9,98 @@ on:
 jobs:
   build:
 
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
 
     steps:
-    - uses: actions/checkout@v4
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    # Step to set the execute permission for the test shell script
+    - name: Make script_test.sh executable
+      run: chmod +x ./test/script_test.sh
+
+    # Install dependencies
+    - name: Install Dependencies
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y build-essential ninja-build doxygen git wget gcc g++
+
+    # Install the latest version of CMake
+    - name: Install CMake
+      run: |
+        wget https://github.com/Kitware/CMake/releases/download/v3.31.3/cmake-3.31.3-linux-x86_64.sh
+        sudo bash cmake-3.31.3-linux-x86_64.sh --prefix=/usr/local --skip-license
+        cmake --version
+
+    # Download and build FlatBuffers Test
+    - name: Install flatc (FlatBuffers Compiler)
+      run: |
+        # Download FlatBuffers from GitHub
+        git clone --recursive https://github.com/google/flatbuffers.git
+        cd flatbuffers
+        
+        # Build FlatBuffers
+        cmake -G "Unix Makefiles"
+        make -j$(nproc)  # Use multiple cores for faster build
+
+        # Install FlatBuffers
+        sudo make install
+
+        # Verify installation
+        flatc --version
+
+    # Download and build Google Test
+    - name: Install Google Test
+      run: |
+        # Clone the Google Test repository
+        git clone https://github.com/google/googletest.git
+        cd googletest
+        mkdir build
+        cd build
+
+        # Configure Google Test with CMake
+        cmake .. -DCMAKE_INSTALL_PREFIX=/usr/local
+        make -j$(nproc)  # Use multiple cores for faster build
+        sudo make install
+
+    # Configure project
     - name: configure
-      run: ./configure
-    - name: make
-      run: make
-    - name: make check
-      run: make check
-    - name: make distcheck
-      run: make distcheck
+      run: cmake --preset=release
+
+    # Build project
+    - name: build
+      run: cmake --build --preset=release
+
+    # Run tests
+    - name: Run tests
+      run: ctest --test-dir build/release/test --verbose
+
+    # Upload build as an artifact
+    - name: Upload build as Artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: build
+        path: ./build/release/
+
+    # Package project
+    - name: Package project
+      run: cpack --preset=release
+
+    # Publish package to GitHub Pages
+    - name: Deploy package to GitHub Pages
+      if: github.ref == 'refs/heads/master' && success()
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        personal_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./build/release/package/
+
+    # Generate documentation
+    #- name: Generate Documentation
+    #  run: cd ./build/release && ninja doc
+
+    # Upload generated documentation as an artifact
+    #- name: Upload Documentation as Artifact
+    #  uses: actions/upload-artifact@v4
+    #  with:
+    #    name: docs
+    #    path: docs/

@@ -1,7 +1,6 @@
 #include <gtest/gtest.h>
 #include <iostream>
 #include <vector>
-#include <flatbuffers/flatbuffers.h>
 #include "server_message_generated.h"  // Include the generated header
 
 TEST(ServerSchemaTest, TestServerSchema) {

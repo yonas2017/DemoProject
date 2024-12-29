@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.21)
+cmake_minimum_required(VERSION 3.31)
 
 # Set C++ version to C++11 for this directory and below
 set(CMAKE_CXX_STANDARD 11)

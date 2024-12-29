@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.21)
+cmake_minimum_required(VERSION 3.31)
 
 project(DemoProject VERSION 1.0.0 LANGUAGES C CXX)
 
@@ -117,6 +117,7 @@ install(FILES "${CMAKE_SOURCE_DIR}/LICENSE" DESTINATION doc)
 include(InstallRequiredSystemLibraries)
 set(CPACK_PACKAGE_NAME "${PROJECT_NAME}")
 set(CPACK_PACKAGE_VERSION "${PROJECT_VERSION}")
+set(CPACK_PACKAGE_DIRECTORY "${CMAKE_BINARY_DIR}/package")
 set(CPACK_PACKAGE_CONTACT "your_email@example.com")
 set(CPACK_PACKAGE_DESCRIPTION "This is DemoProject, a sample CMake-based project.")
 set(CPACK_PACKAGE_VENDOR "MyCompany")
