@@ -1,0 +1,16 @@
+digraph "flatbuffers/CMakeFiles/flatc.dir/grpc/src"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  compound=true
+  subgraph clusterdir_0a802c3142a701827735ceb7234ee0f7 {
+    graph [ bgcolor="#edf0f7", pencolor="grey50", label="grpc", fontname=Helvetica,fontsize=10 style="filled,dashed", URL="dir_0a802c3142a701827735ceb7234ee0f7.html",tooltip=""]
+  subgraph clusterdir_59e8af75999f5dab58cea4834ff36deb {
+    graph [ bgcolor="#edf0f7", pencolor="grey25", label="", fontname=Helvetica,fontsize=10 style="filled,bold", URL="dir_59e8af75999f5dab58cea4834ff36deb.html",tooltip=""]
+    dir_59e8af75999f5dab58cea4834ff36deb [shape=plaintext, label="src"];
+  dir_2206f2c6f29edd2a295ebe42dc9d39e0 [label="compiler", fillcolor="#a2b4d6", color="grey25", style="filled", URL="dir_2206f2c6f29edd2a295ebe42dc9d39e0.html",tooltip=""];
+  }
+  }
+}

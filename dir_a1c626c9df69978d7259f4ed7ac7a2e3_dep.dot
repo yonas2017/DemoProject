@@ -1,0 +1,14 @@
+digraph "flatbuffers/conan/test_package"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  compound=true
+  subgraph clusterdir_658083ac7e4872be2a37b911954627ac {
+    graph [ bgcolor="#edf0f7", pencolor="grey50", label="conan", fontname=Helvetica,fontsize=10 style="filled,dashed", URL="dir_658083ac7e4872be2a37b911954627ac.html",tooltip=""]
+  dir_a1c626c9df69978d7259f4ed7ac7a2e3 [label="test_package", fillcolor="#edf0f7", color="grey25", style="filled,bold", URL="dir_a1c626c9df69978d7259f4ed7ac7a2e3.html",tooltip=""];
+  }
+  dir_1070400e4fc31576c7133789377210a4 [label="include", fillcolor="#edf0f7", color="red", style="filled,dashed", URL="dir_1070400e4fc31576c7133789377210a4.html",tooltip=""];
+  dir_a1c626c9df69978d7259f4ed7ac7a2e3->dir_1070400e4fc31576c7133789377210a4 [headlabel="1", labeldistance=1.5 headhref="dir_000207_000117.html" href="dir_000207_000117.html" color="steelblue1" fontcolor="steelblue1"];
+}
