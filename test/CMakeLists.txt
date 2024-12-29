@@ -8,8 +8,12 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 find_package(GTest REQUIRED)
 
 # Add executable for your main code
-add_executable(client_server_test tcp_test.cpp schema_test.cpp)
+add_executable(client_server_test
+    tcp_test.cpp
+    schema_test.cpp)
+
 target_link_libraries(client_server_test ${GTEST_LIBRARIES})
+
 target_include_directories(client_server_test PRIVATE
     ${GTEST_INCLUDE_DIRS}
     ${CMAKE_CURRENT_LIST_DIR}/../inc)

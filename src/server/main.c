@@ -28,8 +28,8 @@ static void sighandler(int sig)
 {
     printf("Signal: %d caught... Shutting down Server.\n", sig);
 
-    server.server_message.job_info = 'Q';            // JobType -> 'Q'
-    server.server_message.job_text_length = 0;        // jobTextLength = 0
+    server.server_message.job_info = 'Q';              // JobType -> 'Q'
+    server.server_message.job_text_length = 0;         // jobTextLength = 0
     set_job_info(&server.server_message.job_info, 0);  // Checksun -> 0
 
     // Send job to client
@@ -66,9 +66,9 @@ int main(int argc, char* argv[])
 
     // Open TCP Socket
     server.tcp.file_name = argv[1];
-    //sscanf(argv[2], "%hu",
+    // sscanf(argv[2], "%hu",
     //       &server.m_tcp.m_port);  // Read formatted input from a string
-    server.tcp.port = (uint16_t) atoi(argv[2]);
+    server.tcp.port = (uint16_t)atoi(argv[2]);
 
     if (tcp_open(&server.tcp) != 0)
     {
@@ -103,8 +103,8 @@ int main(int argc, char* argv[])
             // Read Job files and send it to the Client
             long int totalreadSize = 0;
             while ((readSize = get_job(handler, fileSize, totalreadSize,
-                                      &server.client_message,
-                                      &server.server_message)) > 0)
+                                       &server.client_message,
+                                       &server.server_message)) > 0)
             {
                 // printf("JobType= %c\n", server.m_serverMessage.JobInfo);
                 // printf("jobTextLength=%d\n",
@@ -114,7 +114,7 @@ int main(int argc, char* argv[])
                 // Compute checksum
                 uint8_t checksum =
                     compute_checksum(server.server_message.job_text_length,
-                                    server.server_message.job_tekst);
+                                     server.server_message.job_tekst);
 
                 // Fill in Job Info
                 set_job_info(&server.server_message.job_info, checksum);
@@ -136,10 +136,10 @@ int main(int argc, char* argv[])
             {
                 printf("Finished Job. Sending Quit message to Client.\n");
                 // Fill in 'Q' JobType
-                server.server_message.job_info = 'Q';      // JobType -> 'Q'
+                server.server_message.job_info = 'Q';       // JobType -> 'Q'
                 server.server_message.job_text_length = 0;  // jobTextLength = 0
                 set_job_info(&server.server_message.job_info,
-                           0);  // Checksun -> 0
+                             0);  // Checksun -> 0
 
                 // Send job to client
                 tcp_send(&server.tcp, &server.server_message);
@@ -165,7 +165,7 @@ int main(int argc, char* argv[])
                 "Received Quit Message. Sending Quit message back to Client "
                 "and Exiting Server.\n");
             // Fill in 'Q' JobType
-            server.server_message.job_info = 'Q';      // JobType -> 'Q'
+            server.server_message.job_info = 'Q';       // JobType -> 'Q'
             server.server_message.job_text_length = 0;  // jobTextLength = 0
             set_job_info(&server.server_message.job_info, 0);  // Checksun -> 0
 

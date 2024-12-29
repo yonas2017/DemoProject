@@ -9,19 +9,29 @@ RUNNING
 		$ cmake --preset=user-debug
 	## For the Release build:
 		$ cmake --preset=user-release
+
 # Build the Project:
 Once the project is configured, you can build it using:
 	## For Debug build:
 		$ cmake --build --preset=user-debug
 	## For Release build:
 		$ cmake --build --preset=user-release
+
+# Clean the project
+	## For Debug build:
+		$ cmake --build --preset=user-debug --target=clean
+	## For Release build:
+		$ cmake --build --preset=user-release --target=clean
+
 # Install the Project
 	## For Debug build:
 		$ cmake --install build/debug 
 	## For Release build:
 		$ cmake --install build/release
+
 # UnitTest the Project
 	$ ctest --test-dir build/debug/test --verbose
+
 # Package the project
 	$ cpack --preset=release
 

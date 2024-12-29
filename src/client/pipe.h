@@ -41,7 +41,7 @@ void write_to_pipe(int* pipeFd, char jobType, server_message_t* msg);
  *@param pipeTermChildB: pipe for terminating child B pointer
  */
 void parent_process(client_t* client, int* pipeChildA, int* pipeChildB,
-                   int* pipeTermChildA, int* pipeTermChildB);
+                    int* pipeTermChildA, int* pipeTermChildB);
 
 /*
  * Wait and terminate child.

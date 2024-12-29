@@ -117,7 +117,7 @@ void write_to_pipe(int* pipeFd, char jobType, server_message_t* msg)
 }
 
 void parent_process(client_t* client, int* pipeChildA, int* pipeChildB,
-                   int* pipeTermChildA, int* pipeTermChildB)
+                    int* pipeTermChildA, int* pipeTermChildB)
 {
     if (tcp_open(&client->tcp) != 0)
     {

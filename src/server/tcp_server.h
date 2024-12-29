@@ -7,8 +7,9 @@
 
 typedef struct
 {
-    char*    file_name;  // File name holding one or more jobs used to send to the client
-    uint16_t port;   // Server listening Port
+    char* file_name;  // File name holding one or more jobs used to send to the
+                      // client
+    uint16_t port;    // Server listening Port
     int      listen_sock;  // TCP socket
     int      new_sock;     // New socket to transmit data per connection
 } tcp_t;

@@ -81,7 +81,7 @@ include_directories(${CMAKE_SOURCE_DIR}/inc)
 # Add subdirectories for the libraries and tests
 add_subdirectory(src/client)
 add_subdirectory(src/server)
-#add_subdirectory(inc/schema)
+add_subdirectory(inc/schema)
 add_subdirectory(test)
 
 # Add the executable target and link it with the libraries

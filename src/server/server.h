@@ -33,7 +33,7 @@ const char* Client_message_type_str(enum ClientMessageType client_message_type);
  * @return: size of the file(job) read
  */
 int get_job(FILE* handler, int long file_size, int long total_read_size,
-           client_message_t* client_message, server_message_t* server_message);
+            client_message_t* client_message, server_message_t* server_message);
 
 /*
  * computes checksum.

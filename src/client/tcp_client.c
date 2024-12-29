@@ -19,14 +19,14 @@ int tcp_open(tcp_t* tcp)
     }
 
     struct sockaddr_in server_address;
-    memset((char *)&server_address, 0, sizeof(server_address));
+    memset((char*)&server_address, 0, sizeof(server_address));
     server_address.sin_family = AF_INET;
     server_address.sin_port = htons(tcp->port);
     server_address.sin_addr.s_addr = inet_addr(tcp->ip);
 
     // TCP is connection oriented, a reliable connection must be established
     // before any data is exchanged
-    if (connect(tcp->sockDesc, (struct sockaddr *)&server_address,
+    if (connect(tcp->sockDesc, (struct sockaddr*)&server_address,
                 sizeof(server_address)) < 0)
     {
         printf("could not connect to server\n");

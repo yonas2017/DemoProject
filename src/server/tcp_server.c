@@ -19,14 +19,14 @@ int tcp_open(tcp_t* tcp)
     }
 
     struct sockaddr_in server_address;
-    memset((char *)&server_address, 0, sizeof(server_address));
+    memset((char*)&server_address, 0, sizeof(server_address));
     server_address.sin_family = AF_INET;
     server_address.sin_port = htons(tcp->port);
     server_address.sin_addr.s_addr = INADDR_ANY;
 
     // bind it to listen to the incoming connections on the created server
     // address
-    if (bind(tcp->listen_sock, (struct sockaddr *)&server_address,
+    if (bind(tcp->listen_sock, (struct sockaddr*)&server_address,
              sizeof(server_address)) < 0)
     {
         printf("could not bind socket.\n");
@@ -47,7 +47,7 @@ int tcp_open(tcp_t* tcp)
 
     // open a new socket to transmit data per connection
     if ((tcp->new_sock =
-             accept(tcp->listen_sock, (struct sockaddr *)&client_address,
+             accept(tcp->listen_sock, (struct sockaddr*)&client_address,
                     &client_address_len)) < 0)
     {
         printf("could not open a socket to accept data\n");

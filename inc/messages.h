@@ -23,7 +23,6 @@ typedef struct
     uint16_t num_jobs;
 } client_message_t;
 
-
 /*
  * Used for sending a message from Server to Client using tcp socket
  */

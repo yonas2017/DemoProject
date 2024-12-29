@@ -18,11 +18,11 @@ const char* Client_message_type_str(enum ClientMessageType client_message_type)
 }
 
 static unsigned int read_job_header(FILE*             handler,
-                                  server_message_t* server_message)
+                                    server_message_t* server_message)
 {
     unsigned char buffer[8];
     unsigned int  job_header_size = sizeof(server_message->job_info) +
-                                 sizeof(server_message->job_text_length);
+                                   sizeof(server_message->job_text_length);
 
     if (handler)
     {
@@ -43,10 +43,10 @@ static unsigned int read_job_header(FILE*             handler,
 }
 
 static int read_job_tekst(FILE* handler, int long total_read_size,
-                        server_message_t* server_message)
+                          server_message_t* server_message)
 {
     unsigned int job_header_size = read_job_header(handler, server_message);
-    int read_size = job_header_size;
+    int          read_size = job_header_size;
     if (handler)
     {
         // Seek to the beginning of the file
@@ -54,7 +54,7 @@ static int read_job_tekst(FILE* handler, int long total_read_size,
 
         // Read it all in one operation
         read_size += fread(server_message->job_tekst, sizeof(char),
-                          server_message->job_text_length, handler);
+                           server_message->job_text_length, handler);
     }
     else
     {
@@ -65,7 +65,7 @@ static int read_job_tekst(FILE* handler, int long total_read_size,
 }
 
 int get_job(FILE* handler, int long file_size, int long total_read_size,
-           client_message_t* client_message, server_message_t* server_message)
+            client_message_t* client_message, server_message_t* server_message)
 {
     int readSize = 0;
     if (total_read_size < file_size)

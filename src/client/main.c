@@ -87,7 +87,7 @@ int main(int argc, char* argv[])
     {
         // Start Parent Process.
         parent_process(&client, pipeChildA, pipeChildB, pipeTermChildA,
-                      pipeTermChildB);
+                       pipeTermChildB);
     }
     else if (fA == 0)
     {
