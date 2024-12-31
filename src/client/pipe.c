@@ -14,14 +14,14 @@ void create_pipe(int* pipeA, int* pipeB)
     p = pipe(pipeA);
     if (p < 0)
     {
-        printf("Error Creating piple for Child A.");
+        printf("Error Creating pipe for Child A.");
         exit(1);
     }
 
     p = pipe(pipeB);
     if (p < 0)
     {
-        printf("Error Creating piple for Child B.");
+        printf("Error Creating pipe for Child B.");
         exit(1);
     }
 }
@@ -113,6 +113,7 @@ void write_to_pipe(int* pipeFd, char jobType, server_message_t* msg)
     {
         size = write(pipeFd[1], msg->job_tekst, msg->job_text_length);
     }
+
     (void)size;
 }
 
@@ -147,11 +148,14 @@ MENU:
             write_to_pipe(pipeTermChildA, jobType, NULL);
             write_to_pipe(pipeTermChildB, jobType, NULL);
 
-            printf("\n\nWait Children to terminate....\n");
+            close(pipeChildA[0]);
+            close(pipeChildB[0]);
             close(pipeChildA[1]);
             close(pipeChildB[1]);
             close(pipeTermChildA[1]);
             close(pipeTermChildB[1]);
+
+            printf("\n\nWait Children to terminate....\n");
             wait_child();
 
             // send server that client has terminated Normally

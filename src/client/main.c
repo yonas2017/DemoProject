@@ -40,6 +40,8 @@ static void sighandler(int sig)
 
     write_to_pipe(pipeTermChildA, 'Q', NULL);
     write_to_pipe(pipeTermChildB, 'Q', NULL);
+    close(pipeTermChildA[1]);
+    close(pipeTermChildB[1]);
 
     printf("\nWait Children to terminate....\n");
     wait_child();
@@ -73,7 +75,8 @@ int main(int argc, char* argv[])
 
     // Open TCP Socket
     client.tcp.ip = argv[1];
-    sscanf(argv[2], "%hu", &client.tcp.port);
+    // sscanf(argv[2], "%hu", &client.tcp.port);
+    client.tcp.port = (uint16_t)atoi(argv[2]);
 
     // Creat Pipe for Client-to-Child communication
     int pipeChildA[2];
@@ -85,17 +88,12 @@ int main(int argc, char* argv[])
     pid_t fA = fork();
     if (fA > 0)
     {
-        // Start Parent Process.
-        parent_process(&client, pipeChildA, pipeChildB, pipeTermChildA,
-                       pipeTermChildB);
-    }
-    else if (fA == 0)
-    {
         pid_t fB = fork();
         if (fB > 0)
         {
-            // Start Child Process A.
-            child_process(pipeChildA, pipeTermChildA, STDOUT_FILENO);
+            // Start Parent Process.
+            parent_process(&client, pipeChildA, pipeChildB, pipeTermChildA,
+                           pipeTermChildB);
         }
         else if (fB == 0)
         {
@@ -106,6 +104,11 @@ int main(int argc, char* argv[])
         {
             printf("Error creating child process B.");
         }
+    }
+    else if (fA == 0)
+    {
+        // Start Child Process A.
+        child_process(pipeChildA, pipeTermChildA, STDOUT_FILENO);
     }
     else
     {

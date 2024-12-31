@@ -7,6 +7,11 @@ int get_client_message(client_message_t* message)
     /*
      * Get input from User
      */
+    if (!message)
+    {
+        printf("client message is null ptr.\n");
+        return -1;
+    }
     int option;
     printf("\n Choose 1 - 4 from the list below:\n\n");
     printf("1 - Get one Job from server.\n");
@@ -65,6 +70,9 @@ int get_client_message(client_message_t* message)
             printf("Invald choice  %d\n", option);
             printf(
                 "-----------------------------------------------------.\n\n");
+            message->msg_type = FAIL_TERMINATION;
+            message->all_jobs = 0;
+            message->num_jobs = 0;
             return -1;
     }
 
@@ -73,6 +81,11 @@ int get_client_message(client_message_t* message)
 
 char get_job_type(const uint8_t* jobInfo)
 {
+    if (!jobInfo)
+    {
+        return 'X';
+    }
+
     uint8_t jobType = (*jobInfo >> 5) & 0x07;
     switch (jobType)
     {
@@ -92,7 +105,10 @@ void close_tcp_socket(client_t* client)
     /*
      * Close TCP Sockets
      */
-    tcp_close(&client->tcp);
+    if (client)
+    {
+        tcp_close(&client->tcp);
+    }
 
     printf("TCP Socket Closed.\n");
 }
