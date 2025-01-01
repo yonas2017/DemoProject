@@ -2,9 +2,9 @@ name: DemoProject CI
 
 on:
   push:
-    branches: [ "master" ]
+    branches: [ "main" ]
   pull_request:
-    branches: [ "master" ]
+    branches: [ "main" ]
 
 jobs:
   build:
@@ -88,7 +88,7 @@ jobs:
 
     # Publish package to GitHub Pages
     - name: Deploy package to GitHub Pages
-      if: github.ref == 'refs/heads/master' && success()
+      if: github.ref == 'refs/heads/main' && success()
       uses: peaceiris/actions-gh-pages@v3
       with:
         personal_token: ${{ secrets.GITHUB_TOKEN }}
