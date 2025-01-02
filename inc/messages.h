@@ -30,7 +30,7 @@ typedef struct
 {
     unsigned char job_info;
     unsigned int  job_text_length;
-    char          job_tekst[4096];
+    char          job_tekst[64000];
 } server_message_t;
 
 #endif

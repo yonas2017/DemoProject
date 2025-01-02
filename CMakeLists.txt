@@ -44,6 +44,7 @@ if(CLANG_FORMAT_EXE)
         src/client/*.h
         src/server/*.c
         src/server/*.h
+        src/server/jobfiles/*.c
         test/*.c
         inc/*.h
     )

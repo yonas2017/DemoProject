@@ -7,14 +7,10 @@ add_library(server STATIC
   tcp_server.c
 )
 
-# Create a custom target to copy files after the build
-add_custom_target(copy_jobfiles
-    COMMAND ${CMAKE_COMMAND} -E copy_directory ${CMAKE_CURRENT_LIST_DIR}/jobfiles ${CMAKE_BINARY_DIR}/jobfiles
-    COMMENT "Copying jobfiles to the build directory"
-)
+add_subdirectory(jobfiles)
 
-# Ensure that the 'copy_jobfiles' target runs after the ibrary is built
-add_dependencies(server copy_jobfiles)
+# Ensure that the 'run_jobs' target runs after the library is built
+add_dependencies(server run_jobs)
 
 # Specify the include directories for this library
 target_include_directories(server PUBLIC ${CMAKE_SOURCE_DIR}/inc)
