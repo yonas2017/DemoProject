@@ -68,6 +68,7 @@ int main(int argc, char* argv[])
                 exit(1);
             }
             written = write_job(buf, ret, out_file);
+            (void)written;
             break;
         }
 

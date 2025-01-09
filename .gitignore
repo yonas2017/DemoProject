@@ -33,3 +33,6 @@ desktop.ini
 CMakeCache.txt
 CMakeFiles/
 CMakeUserPresets.json
+
+# Ignore documentation files
+/docs/

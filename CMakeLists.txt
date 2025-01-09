@@ -93,8 +93,8 @@ add_executable(serverapp ${CMAKE_SOURCE_DIR}/src/server/main.c)
 target_compile_features(serverapp PRIVATE c_std_99)
 
 # Add dependency on the FlatBuffers code generation target
-#add_dependencies(clientapp generate_flatbuffers_code)
-#add_dependencies(serverapp generate_flatbuffers_code)
+add_dependencies(clientapp generate_flatbuffers_code)
+add_dependencies(serverapp generate_flatbuffers_code)
 
 # Link libraries to the executable
 target_link_libraries(clientapp client)
