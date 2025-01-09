@@ -22,7 +22,7 @@ foreach(file ${SCHEMA_FILES})
     add_custom_command(
         TARGET generate_flatbuffers_code PRE_BUILD
         COMMAND ${CMAKE_COMMAND} -E make_directory "${GENERATED_DIR}"
-        COMMAND "${FLATC}" -c --no-prefix --gen-all --gen-mutable --cpp-std c++0x -o "${GENERATED_DIR}" "${file}"
+        COMMAND "${FLATC}" -c --no-prefix --gen-all --gen-mutable --cpp-std c++11 -o "${GENERATED_DIR}" "${file}"
         COMMENT "Generating C code from FlatBuffers schemas"
     )
 endforeach()

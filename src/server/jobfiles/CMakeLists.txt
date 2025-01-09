@@ -3,6 +3,8 @@ cmake_minimum_required(VERSION 3.31)
 # Add executable for generating job files
 add_executable(genjob genjob.c)
 
+target_compile_features(client PRIVATE c_std_99)
+
 # Set the directory where the executable will be placed
 set_target_properties(genjob PROPERTIES
     RUNTIME_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}"
@@ -38,3 +40,5 @@ endforeach()
 
 # Create a custom target to trigger the executable execution
 add_custom_target(run_jobs ALL DEPENDS genjob)
+
+install(DIRECTORY ${JOB_FILE_OUTPUT_DIR} DESTINATION bin PATTERN "*.job")

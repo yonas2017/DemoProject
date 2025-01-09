@@ -6,13 +6,13 @@ project(DemoProject VERSION 1.0.0 LANGUAGES C CXX)
 set(CMAKE_C_STANDARD 99)
 set(CMAKE_C_STANDARD_REQUIRED ON)
 
-if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_C_COMPILER_ID MATCHES "Clang")
-    add_compile_options(-Wall -Wextra -Werror)
-endif()
+#if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_C_COMPILER_ID MATCHES "Clang")
+#    add_compile_options(-Wall -Wextra -Werror)
+#endif()
 
-if(MSVC)
-    add_compile_options(/WX)
-endif()
+#if(MSVC)
+#    add_compile_options(/WX)
+#endif()
 
 # Enable clang-tidy if it's available
 find_program(CLANG_TIDY_EXE NAMES "clang-tidy" HINTS "/usr/bin" "/usr/local/bin")
@@ -105,14 +105,9 @@ install(TARGETS clientapp DESTINATION bin)
 install(TARGETS serverapp DESTINATION bin)
 
 # Optionally install other files, like documentation or configuration files
-install(DIRECTORY src/server/jobfiles/ DESTINATION bin/jobfiles
-        FILES_MATCHING PATTERN "*.txt" PATTERN "*.job")
 install(FILES "${CMAKE_SOURCE_DIR}/README.md" DESTINATION doc)
 install(FILES "${CMAKE_SOURCE_DIR}/CHANGELOG.md" DESTINATION doc)
 install(FILES "${CMAKE_SOURCE_DIR}/LICENSE" DESTINATION doc)
-
-# Set the install prefix (this is where files will be installed by default)
-#set(CMAKE_INSTALL_PREFIX "${CMAKE_BINARY_DIR}/install")
 
 # Set CPack properties for packaging
 include(InstallRequiredSystemLibraries)

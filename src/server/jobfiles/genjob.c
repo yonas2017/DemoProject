@@ -75,7 +75,7 @@ int main(int argc, char* argv[])
         written = write_job(buf, chars_to_read, out_file);
         written_total += written;
         loops++;
-        printf("Status: %5d >> %7d (%4d)\n", written, written_total, loops);
+        // printf("Status: %5d >> %7d (%4d)\n", written, written_total, loops);
     }
 
     fclose(out_file);
