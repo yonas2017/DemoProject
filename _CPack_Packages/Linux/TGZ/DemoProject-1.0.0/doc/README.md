@@ -36,7 +36,7 @@ Once the project is configured, you can build it using:
 	$ cpack --preset=release
 
 	# check content of package without extructing
-	$ cd build/release && tar -tzvf DemoProject-1.0.0.tar.gz
+	$ cd build/release/package && tar -tzvf DemoProject-1.0.0.tar.gz
 
 # formatting
 	$ cd build/debug && ninja format
